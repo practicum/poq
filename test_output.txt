@@ -1,0 +1,117 @@
+Running (kelly's modified) API test
+test1(): {
+Query: TRUE
+Valid
+
+Query: FALSE
+Invalid
+
+Query: (p OR NOT p)
+Valid
+
+Query: ((x = y) => (f(x) = f(y)))
+Valid
+
+Query: ((f(x) = f(y)) => (x = y))
+Invalid
+
+Scope level: 4
+Counter-example:
+NOT (y = x)
+(f(y) = f(x))
+End of counter-example
+
+Resetting
+Scope level: 1
+
+Push Scope
+
+Assert: (w = x)
+Assert: (x = y)
+Assert: (y = z)
+Assert: (f(x) = f(y))
+Assert: (x = 1)
+
+simplify(w) = 1
+
+Assert: (z = 2)
+Inconsistent?: 1
+Assumptions Used:
+(z = 2)
+((1 + (-1 * x)) = 0)
+(z = x)
+
+Pop Scope
+
+simplify(w) = w
+
+Inconsistent?: 0
+
+} // end of test1 
+
+
+test3(): {
+i: 37
+Trying test: ((((i - 1) < i) OR (((i - 1) = i) AND ((j - k) < j))) AND ((j < (j - k)) OR ((j = (j - k)) AND (i < (i - 1)))))
+
+Test Invalid Under Conditions:
+(0 <= k)
+Trying test under condition: NOT (0 <= k)
+
+Result Valid
+
+} // end of test3 
+
+
+test4(): {
+i: 37
+Trying test: ((((i - 1) < i) OR (((i - 1) = i) AND ((j - k) < j))) AND ((j < (j - k)) OR ((j = (j - k)) AND (i < (i - 1)))))
+
+Test Invalid Under Conditions:
+(0 <= k)
+Trying test under condition: NOT (0 <= k)
+
+Result Valid
+
+} // end of test4 
+
+
+test17(): {
+Query: (car(cons(x, y)) = x)
+Valid
+
+Query: (((z = cons1(x, y)) AND is_null(y)) => (z = cons1(x, null)))
+Valid
+
+Query: NOT (NOT (x = y) AND NOT (y = z) AND NOT (x = z))
+Valid
+
+
+} // end of test17 
+
+
+test18(): {
+Query: NOT (zero = null)
+Query: (succ(pred(x)) = x)
+Query: (is_succ(x) => (succ(pred(x)) = x))
+Valid
+
+Query: (is_zero(x) OR is_succ(x))
+Valid
+
+Query: ((x = y) => (succ(x) = succ(y)))
+Valid
+
+Query: NOT (succ(x) = zero)
+Valid
+
+Query: ((succ(x) = succ(y)) => (x = y))
+Valid
+
+Query: NOT (succ(x) = x)
+Valid
+
+
+} // end of test18 
+
+Program exits successfully.
