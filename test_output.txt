@@ -1,4 +1,4 @@
-Running (kelly's modified) API test
+Running test
 test1(): {
 Query: TRUE
 Valid
