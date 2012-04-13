@@ -115,4 +115,3 @@ Valid
 } // end of test18 
 
 Program exits successfully.
-
