@@ -11,7 +11,7 @@ SRC = test.cpp
 #HEADERS = george.h
 
 #On some compilers, george.cpp takes forever with -O2
-EXTRAFLAGS = -O0
+EXTRAFLAGS = -O0 -g
 
 LD_LIBS = -l$(PROJECTNAME)
 

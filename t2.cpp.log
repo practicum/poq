@@ -1,0 +1,18 @@
+a: INT;
+b: INT;
+c: INT;
+d: INT;
+e: INT;
+ASSERT ((c = a) OR (c = b));
+ASSERT ((d = a) OR (d = b));
+ASSERT ((e = a) OR (e = b));
+PUSH;
+ASSERT NOT (c = d);
+QUERY NOT TRUE;
+POP;
+PUSH;
+ASSERT NOT (c = d);
+ASSERT NOT (d = e);
+ASSERT NOT (e = c);
+QUERY NOT TRUE;
+POPTO 0;
