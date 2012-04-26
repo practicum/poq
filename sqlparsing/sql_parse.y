@@ -47,7 +47,7 @@
 // code file that implements the parser.
 //
 %include {
-#include "sqliteInt.h"
+#include "callbacks.h"
 
 /*
 ** Disable all error recovery processing in the parser push-down
