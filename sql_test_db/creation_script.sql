@@ -1,0 +1,10 @@
+PRAGMA foreign_keys=OFF;
+BEGIN TRANSACTION;
+CREATE TABLE CustomerAccount
+(
+account_id INTEGER PRIMARY KEY AUTOINCREMENT,
+email_address INTEGER NOT NULL,
+password INTEGER NOT NULL,
+account_desc_id INTEGER NOT NULL
+);
+COMMIT;
