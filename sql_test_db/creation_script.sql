@@ -47,6 +47,10 @@ purchase_date INTEGER NOT NULL,
 quantity INTEGER NOT NULL,
 canceled INTEGER NOT NULL DEFAULT 0
 );
+INSERT INTO "Purchase" VALUES(1,735452,50,10,0);
+INSERT INTO "Purchase" VALUES(2,968689,53,1,0);
+INSERT INTO "Purchase" VALUES(3,1918171,55,5,0);
+INSERT INTO "Purchase" VALUES(4,432335,40,25,0);
 CREATE TABLE AccountDescription
 (
 account_desc_id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -58,4 +62,5 @@ INSERT INTO "AccountDescription" VALUES(3,7531);
 DELETE FROM sqlite_sequence;
 INSERT INTO "sqlite_sequence" VALUES('AccountDescription',3);
 INSERT INTO "sqlite_sequence" VALUES('CustomerAccount',5);
+INSERT INTO "sqlite_sequence" VALUES('Purchase',4);
 COMMIT;
