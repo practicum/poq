@@ -7,17 +7,38 @@ email_address INTEGER NOT NULL,
 password INTEGER NOT NULL,
 account_desc_id INTEGER NOT NULL
 );
+INSERT INTO "CustomerAccount" VALUES(1,30,1111,1);
+INSERT INTO "CustomerAccount" VALUES(2,31,2222,1);
+INSERT INTO "CustomerAccount" VALUES(3,32,3333,3);
+INSERT INTO "CustomerAccount" VALUES(4,33,4444,3);
+INSERT INTO "CustomerAccount" VALUES(5,34,1111,3);
 CREATE TABLE LicnumAccountJoin
 (
 licnum INTEGER NOT NULL,
 cust_account_id INTEGER NOT NULL,
 canceled INTEGER NOT NULL DEFAULT 0
 );
+INSERT INTO "LicnumAccountJoin" VALUES(735452,1,0);
+INSERT INTO "LicnumAccountJoin" VALUES(968689,2,0);
+INSERT INTO "LicnumAccountJoin" VALUES(1918171,3,0);
+INSERT INTO "LicnumAccountJoin" VALUES(432335,4,0);
+INSERT INTO "LicnumAccountJoin" VALUES(968689,4,0);
 CREATE TABLE Licnum
 (
 licnum INTEGER PRIMARY KEY,
 product_id INTEGER NOT NULL
 );
+INSERT INTO "Licnum" VALUES(432335,2);
+INSERT INTO "Licnum" VALUES(635454,2);
+INSERT INTO "Licnum" VALUES(687989,2);
+INSERT INTO "Licnum" VALUES(735452,2);
+INSERT INTO "Licnum" VALUES(968689,2);
+INSERT INTO "Licnum" VALUES(1918171,2);
+INSERT INTO "Licnum" VALUES(3830045,2);
+INSERT INTO "Licnum" VALUES(6354545,2);
+INSERT INTO "Licnum" VALUES(6453490,2);
+INSERT INTO "Licnum" VALUES(6482655,2);
+INSERT INTO "Licnum" VALUES(9376563,2);
 CREATE TABLE Purchase
 (
 purchase_id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -31,4 +52,10 @@ CREATE TABLE AccountDescription
 account_desc_id INTEGER PRIMARY KEY AUTOINCREMENT,
 organization_name INTEGER
 );
+INSERT INTO "AccountDescription" VALUES(1,1234);
+INSERT INTO "AccountDescription" VALUES(2,5678);
+INSERT INTO "AccountDescription" VALUES(3,7531);
+DELETE FROM sqlite_sequence;
+INSERT INTO "sqlite_sequence" VALUES('AccountDescription',3);
+INSERT INTO "sqlite_sequence" VALUES('CustomerAccount',5);
 COMMIT;
