@@ -7,4 +7,28 @@ email_address INTEGER NOT NULL,
 password INTEGER NOT NULL,
 account_desc_id INTEGER NOT NULL
 );
+CREATE TABLE LicnumAccountJoin
+(
+licnum INTEGER NOT NULL,
+cust_account_id INTEGER NOT NULL,
+canceled INTEGER NOT NULL DEFAULT 0
+);
+CREATE TABLE Licnum
+(
+licnum INTEGER PRIMARY KEY,
+product_id INTEGER NOT NULL
+);
+CREATE TABLE Purchase
+(
+purchase_id INTEGER PRIMARY KEY AUTOINCREMENT,
+licnum INTEGER NOT NULL,
+purchase_date INTEGER NOT NULL,
+quantity INTEGER NOT NULL,
+canceled INTEGER NOT NULL DEFAULT 0
+);
+CREATE TABLE AccountDescription
+(
+account_desc_id INTEGER PRIMARY KEY AUTOINCREMENT,
+organization_name INTEGER
+);
 COMMIT;
