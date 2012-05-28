@@ -59,8 +59,30 @@ organization_name INTEGER
 INSERT INTO "AccountDescription" VALUES(1,1234);
 INSERT INTO "AccountDescription" VALUES(2,5678);
 INSERT INTO "AccountDescription" VALUES(3,7531);
+CREATE TABLE IntentionallyEmptyTable
+(
+id INTEGER PRIMARY KEY AUTOINCREMENT,
+col_1 INTEGER NOT NULL,
+col_2 INTEGER NOT NULL
+);
+CREATE TABLE IntentionallyNullableTable
+(
+id INTEGER PRIMARY KEY AUTOINCREMENT,
+col_1 INTEGER,
+col_2 INTEGER
+);
+INSERT INTO "IntentionallyNullableTable" VALUES(1,3,5);
+INSERT INTO "IntentionallyNullableTable" VALUES(2,8,5);
+INSERT INTO "IntentionallyNullableTable" VALUES(3,9,2);
+INSERT INTO "IntentionallyNullableTable" VALUES(4,3,NULL);
+INSERT INTO "IntentionallyNullableTable" VALUES(5,8,NULL);
+INSERT INTO "IntentionallyNullableTable" VALUES(6,9,NULL);
+INSERT INTO "IntentionallyNullableTable" VALUES(7,NULL,5);
+INSERT INTO "IntentionallyNullableTable" VALUES(8,NULL,5);
+INSERT INTO "IntentionallyNullableTable" VALUES(9,NULL,2);
 DELETE FROM sqlite_sequence;
 INSERT INTO "sqlite_sequence" VALUES('AccountDescription',3);
 INSERT INTO "sqlite_sequence" VALUES('CustomerAccount',5);
 INSERT INTO "sqlite_sequence" VALUES('Purchase',4);
+INSERT INTO "sqlite_sequence" VALUES('IntentionallyNullableTable',9);
 COMMIT;
