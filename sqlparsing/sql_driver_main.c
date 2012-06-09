@@ -21,7 +21,7 @@
 #include "my_callbacks.c"
 #include "my_callbacks2.c"
 
-#include "parser_driver_logic.c"
+#include "run_parser_function.c"
 
 /*
   Constant tokens for values 0 and 1.
