@@ -39,8 +39,9 @@ int sqlite3RunParser(Parse *pParse, const char *zSql, char **pzErrMsg)
     while( zSql[i]!=0 )
     {
         assert( i>=0 );
-        pParse->sLastToken.z = &zSql[i];
-        pParse->sLastToken.n = sqlite3GetToken((unsigned char*)&zSql[i],&tokenType);
+        pParse->sLastToken.z = &zSql[i]; // the entire string 'tail' from current position onward
+        pParse->sLastToken.n = // the size (character count) of whichever token just got found
+            sqlite3GetToken( (unsigned char*)&zSql[i], &tokenType );
         i += pParse->sLastToken.n;
 
         if( i>mxSqlLen )
