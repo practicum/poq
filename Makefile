@@ -4,13 +4,10 @@
 # This Makefile depends on srcMakefile.opts
 ##################################################
 
-EXECUTABLE=test
+EXECUTABLE=t2
 
-SRC = test.cpp 
+SRC = t2.cpp
 
-#HEADERS = george.h
-
-#On some compilers, george.cpp takes forever with -O2
 EXTRAFLAGS = -O0 -g
 
 LD_LIBS = -l$(PROJECTNAME)
