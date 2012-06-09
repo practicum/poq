@@ -27,6 +27,9 @@ const Token sqlite3IntTokens[] = {
 
 int main()
 {
+    /*
+    // sqlite3ParserAlloc is one of the first things done in sqlite3RunParser
+      
     // sql_driver_main.c:7:19: warning: initialization makes pointer from integer without a cast [enabled by default]
     void* pParser = sqlite3ParserAlloc (malloc);
     printf("did alloc\n");
@@ -34,7 +37,7 @@ int main()
     sqlite3ParserFree(pParser, free );
     printf("did free\n");
 
-
+    */
 
     const char *zSql = "select * from lic.LoggableEvent;";
 
