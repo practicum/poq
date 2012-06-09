@@ -15,8 +15,8 @@
 #define TK_UPLUS                          157
 
 #include "sqliteLimit.h"
-#include "sql_parse.h"
-#include "sql_parse.c"
+#include "lemon_sql_parse.h"
+#include "lemon_sql_parse.c"
 
 #include "my_callbacks.c"
 #include "my_callbacks2.c"
