@@ -5,10 +5,8 @@
 #include <assert.h>
 #include <stddef.h>
 
-
 #include "sqliteLimit.h"
 #include "tk_defs.h"
-#include <assert.h>
 #include "sql_parse.c"
 
 #include "my_callbacks.c"
@@ -17,7 +15,8 @@
 #include "parser_driver_logic.c"
 
 /*
-** Constant tokens for values 0 and 1.
+  Constant tokens for values 0 and 1.
+  Without this, we get a linker error:   In function `yy_reduce':
 */
 const Token sqlite3IntTokens[] = {
    { "0", 1 },
@@ -25,73 +24,54 @@ const Token sqlite3IntTokens[] = {
 };
 
 
-int main()
+int parse_one_string( const char *zSql )
 {
-    /*
-    // sqlite3ParserAlloc is one of the first things done in sqlite3RunParser
-      
-    // sql_driver_main.c:7:19: warning: initialization makes pointer from integer without a cast [enabled by default]
-    void* pParser = sqlite3ParserAlloc (malloc);
-    printf("did alloc\n");
-
-    sqlite3ParserFree(pParser, free );
-    printf("did free\n");
-
-    */
-
-    const char *zSql = "select * from lic.LoggableEvent;";
-
     Parse *pParse;            /* Parsing context */
     char *zErrMsg = 0;        /* Error message */
-    int rc = 0;//SQLITE_OK;       /* Result code */
-    int i;                    /* Loop counter */
+    int rc = 0;               /* Result code */
 
-
-    //  pParse = sqlite3StackAllocZero(db, sizeof(*pParse));
-  
     pParse = (Parse *) malloc(sizeof(Parse));
-    if( pParse ){
-        memset(pParse, 0, sizeof(*pParse));
-    }
-
-  
-    if( pParse==0 )
+    if( ! pParse )
     {
+        // this should virtually NEVER happen
         rc = -1;
     }
     else
     {
+        printf("parsing: %s\n", zSql );
+
+        memset(pParse, 0, sizeof(*pParse));
+
         pParse->nQueryLoop = (double)1;
 
-        /*
-          if( nBytes>=0 && (nBytes==0 || zSql[nBytes-1]!=0) ){
-          char *zSqlCopy;
-          int mxLen = db->aLimit[SQLITE_LIMIT_SQL_LENGTH];
-          testcase( nBytes==mxLen );
-          testcase( nBytes==mxLen+1 );
-          if( nBytes>mxLen ){
-          sqlite3Error(db, SQLITE_TOOBIG, "statement too long");
-          rc = sqlite3ApiExit(db, SQLITE_TOOBIG);
-          goto end_prepare;
-          }
-          zSqlCopy = sqlite3DbStrNDup(db, zSql, nBytes);
-          if( zSqlCopy ){
-          sqlite3RunParser(pParse, zSqlCopy, &zErrMsg);
-          sqlite3DbFree(db, zSqlCopy);
-          pParse->zTail = &zSql[pParse->zTail-zSqlCopy];
-          }else{
-          pParse->zTail = &zSql[nBytes];
-          }
-          }*/
-
-        //else{
         sqlite3RunParser(pParse, zSql, &zErrMsg);
-        //}
-    
-        //assert( 1==(int)pParse->nQueryLoop );
+
+        assert( 1==(int)pParse->nQueryLoop );
 
         rc = pParse->rc;
+
+        if ( rc == 0 )
+        {
+            printf("\tresult: happy parse\n");
+        }
+        else
+        {
+            printf("\tresult: oops\n");
+        }
     }
 
     return rc;
+}
+
+
+
+int main()
+{
+    const char *one = "select * from lic.LoggableEvent;";
+    const char *two = "selectx * from lic.LoggableEvent;";
+    const char *three = "select * from; lic.LoggableEvent;";
+
+    parse_one_string( one );
+    parse_one_string( two );
+    parse_one_string( three );
 }
