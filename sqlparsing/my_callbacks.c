@@ -47,6 +47,8 @@ void sqlite3ErrorMsg(Parse* p, const char* str, ...)
     va_list vl;
     va_start(vl, str);
 
+    // if there is no '%' (percent char) in 'str', then there is no va arg!!
+    // otherwise, there should be a max of one '%' and one token va arg.
     int i;
     for (i=0;i<   1   ;i++)
     {
