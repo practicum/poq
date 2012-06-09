@@ -5,8 +5,17 @@
 #include <assert.h>
 #include <stddef.h>
 
+//#include "tk_defs.h" // we used to get the following 'defines' from tk_defs. but shouldn't lemon be putting them in sql_parse.h ??
+#define TK_ISNOT                          146
+#define TK_ILLEGAL                        148
+#define TK_SPACE                          149
+#define TK_COLUMN                         152
+#define TK_CONST_FUNC                     155
+#define TK_UMINUS                         156
+#define TK_UPLUS                          157
+
 #include "sqliteLimit.h"
-#include "tk_defs.h"
+#include "sql_parse.h"
 #include "sql_parse.c"
 
 #include "my_callbacks.c"
