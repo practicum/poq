@@ -14,22 +14,20 @@ int sqlite3RunParser(Parse *pParse, const char *zSql, char **pzErrMsg){
   void *pEngine;                  /* The LEMON-generated LALR(1) parser */
   int tokenType;                  /* type of the next token */
   int lastTokenParsed = -1;       /* type of the previous token */
-  u8 enableLookaside;             /* Saved value of db->lookaside.bEnabled */
-  sqlite3 *db = pParse->db;       /* The database connection */
+  const u8 enableLookaside = 0;             /* Saved value of db->lookaside.bEnabled */
+  //sqlite3 *db = pParse->db;       /* The database connection */
   int mxSqlLen;                   /* Max length of an SQL string */
 
+  // The maximum number of bytes in the text of an SQL statement is limited to SQLITE_MAX_SQL_LENGTH which defaults to 1000000.
+  mxSqlLen = 1000000;
 
-  mxSqlLen = db->aLimit[SQLITE_LIMIT_SQL_LENGTH];
-  if( db->activeVdbeCnt==0 ){
-    db->u1.isInterrupted = 0;
-  }
   pParse->rc = 0;//SQLITE_OK;
   pParse->zTail = zSql;
   i = 0;
   assert( pzErrMsg!=0 );
   pEngine = sqlite3ParserAlloc(malloc);//(void*(*)(size_t))sqlite3Malloc);
   if( pEngine==0 ){
-    db->mallocFailed = 1;
+
     return 8;//SQLITE_NOMEM;
   }
   assert( pParse->pNewTable==0 );
@@ -37,9 +35,9 @@ int sqlite3RunParser(Parse *pParse, const char *zSql, char **pzErrMsg){
   assert( pParse->nVar==0 );
   assert( pParse->nzVar==0 );
   assert( pParse->azVar==0 );
-  enableLookaside = db->lookaside.bEnabled;
-  if( db->lookaside.pStart ) db->lookaside.bEnabled = 1;
-  while( !db->mallocFailed && zSql[i]!=0 ){
+
+
+  while( zSql[i]!=0 ){
     assert( i>=0 );
     pParse->sLastToken.z = &zSql[i];
     pParse->sLastToken.n = sqlite3GetToken((unsigned char*)&zSql[i],&tokenType);
@@ -50,11 +48,12 @@ int sqlite3RunParser(Parse *pParse, const char *zSql, char **pzErrMsg){
     }
     switch( tokenType ){
       case TK_SPACE: {
+          /*
         if( db->u1.isInterrupted ){
           sqlite3ErrorMsg(pParse, "interrupt");
           pParse->rc = 1;// SQLITE_INTERRUPT;
           goto abort_parse;
-        }
+          }*/
         break;
       }
       case TK_ILLEGAL: {
