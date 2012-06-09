@@ -1,0 +1,8 @@
+# assuming CWD of right in 'sqlparsing' subdir
+
+gcc -g -O0 -o parseTestBinary  -I. sql_driver_main.c
+
+file [CWD]/parseTestBinary
+
+[CWD]/bin/lemon sql_parse.y
+# lemon complains if lempar.c is not in 'bin' with it. run lemon to refresh sql_parse.c
