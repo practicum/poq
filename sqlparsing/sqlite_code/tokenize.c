@@ -36,7 +36,10 @@
 //#ifdef SQLITE_ASCII
 # define charMap(X) sqlite3UpperToLower[(unsigned char)X]
 //#endif
-#ifdef SQLITE_EBCDIC
+
+
+#if 0
+//#ifdef SQLITE_EBCDIC
 # define charMap(X) ebcdicToAscii[(unsigned char)X]
 const unsigned char ebcdicToAscii[] = {
 /* 0   1   2   3   4   5   6   7   8   9   A   B   C   D   E   F */
@@ -92,7 +95,9 @@ const unsigned char ebcdicToAscii[] = {
 //#ifdef SQLITE_ASCII
 #define IdChar(C)  ((sqlite3CtypeMap[(unsigned char)C]&0x46)!=0)
 //#endif
-#ifdef SQLITE_EBCDIC
+
+#if 0
+//#ifdef SQLITE_EBCDIC
 const char sqlite3IsEbcdicIdChar[] = {
 /* x0 x1 x2 x3 x4 x5 x6 x7 x8 x9 xA xB xC xD xE xF */
     0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0,  /* 4x */
