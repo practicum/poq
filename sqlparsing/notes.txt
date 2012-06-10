@@ -1,6 +1,6 @@
 # assuming CWD of right in 'sqlparsing' subdir
 
-gcc -g -O0 -o parseTestBinary  -I. -Isqlite_code sql_driver_main.c
+gcc -g -O0 -o parseTestBinary  -I. -Isqlite_code main_sql_driver.c
 
 file [CWD]/parseTestBinary
 
