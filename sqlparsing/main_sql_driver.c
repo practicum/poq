@@ -35,7 +35,7 @@ const Token sqlite3IntTokens[] = {
 
 int parse_one_string( const char *zSql )
 {
-    Parse *pParse = 0;            /* Parsing context */
+    Parse *pParse = 0;        /* Parsing context */
     char *zErrMsg = 0;        /* Error message */
     int rc = 0;               /* Result code */
 
@@ -48,14 +48,9 @@ int parse_one_string( const char *zSql )
     else
     {
         printf("parsing: %s\n", zSql );
-
         memset(pParse, 0, sizeof(*pParse));
 
-        pParse->nQueryLoop = (double)1;// nQueryLoop only matters for triggers?
-
         sqlite3RunParser(pParse, zSql, &zErrMsg);
-
-        assert( 1==(int)pParse->nQueryLoop );// nQueryLoop only matters for triggers?
 
         rc = pParse->rc;
 
