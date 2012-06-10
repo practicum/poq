@@ -1,5 +1,7 @@
+#ifndef BORROWED_SQLITE_CODE_FOR_CALLBACKS
+#define BORROWED_SQLITE_CODE_FOR_CALLBACKS
 
-
+#include "sqliteLimit.h"
 /*
 ** Forward references to structures
 */
@@ -1420,3 +1422,4 @@ void sqlite3ExplainBegin(Vdbe*v);
 void sqlite3ExplainSelect(Vdbe*v, Select*s);
 void sqlite3ExplainFinish(Vdbe*v);
 
+#endif // BORROWED_SQLITE_CODE_FOR_CALLBACKS

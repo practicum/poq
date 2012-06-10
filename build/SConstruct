@@ -1,0 +1,24 @@
+#!/usr/bin/python
+
+env = Environment()
+
+sources = [
+    '../sqlparsing/main_sql_driver.c',
+    '../sqlparsing/sqlite_code/walker_helpers.c'
+    ]
+
+env.Program( target='scons-out/parseTestBinary',
+             source=sources )
+
+
+#gcc -g -O0  -I. -Isqlite_code
+
+env.AppendUnique(
+    CPPPATH = [ '../sqlparsing', '../sqlparsing/sqlite_code' ],
+#CPPDEFINES =
+#LIBS =
+#LIBPATH =
+#LINKFLAGS =
+    CCFLAGS = ['-g', '-O0' ],
+    CXXFLAGS = ['-g', '-O0' ],
+    )

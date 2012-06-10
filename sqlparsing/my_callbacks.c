@@ -1,5 +1,7 @@
 #include <stdarg.h> // for va_start
 #include  <signal.h>      // for SIGTRAP
+#include "callbacks.h"
+#include "walker_helpers.h"
 
 // forward declared prototype
 Expr *sqlite3ExprAlloc(
@@ -11,6 +13,14 @@ Expr *sqlite3ExprAlloc(
 
 // forward declared prototype
 char *sqlite3NameFromToken(sqlite3 *db, Token *pName);
+
+// forward declared prototype
+Expr *sqlite3Expr
+(
+ sqlite3*db,
+ int op, // expression opcode
+ const char* zToken // possibly NULL token
+ );
 
 
 void DebugHelperSilliness()
@@ -516,9 +526,82 @@ Index *sqlite3CreateIndex(Parse* p,Token* tk,Token* tk2,SrcList* slist,ExprList*
 }
 
 
-Select *sqlite3SelectNew(Parse* p,ExprList* elist,SrcList* slist,Expr* e,ExprList* elist2,Expr*e2,ExprList*elist3,int i1,Expr*e3,Expr*e4)
+void printExpressionList( ExprList* pEList, Parse *pParse /*for iAlias*/ )
+{
+    printf( "\t\t printExpressionList:\n");
+
+    int i = 0;
+    for( i = 0; i < pEList->nExpr; i++ )
+    {
+        /*
+          struct ExprList_item {
+          Expr *pExpr;           // The list of expressions
+          char *zName;           // Token associated with this expression
+          char *zSpan;           // Original text of the expression
+          u8 sortOrder;          // 1 for DESC or 0 for ASC
+          u8 done;               // A flag to indicate when processing is finished
+          u16 iOrderByCol;       // For ORDER BY, column number in result set
+          u16 iAlias;            // Index into Parse.aAlias[] for zName
+          }
+         */
+        struct ExprList_item* item = (&( pEList->a[i] ));
+
+        printf("\t\t\t original text: %s\n", item->zSpan );
+        printf("\t\t\t    token text: %s\n", item->zSpan );
+    }
+
+}
+
+
+Select *sqlite3SelectNew(
+  Parse *pParse,        /* Parsing context */
+  ExprList *pEList,     /* which columns to include in the result */
+  SrcList *pSrc,        /* the FROM clause -- which tables to scan */
+  Expr *pWhere,         /* the WHERE clause */
+  ExprList *pGroupBy,   /* the GROUP BY clause */
+  Expr *pHaving,        /* the HAVING clause */
+  ExprList *pOrderBy,   /* the ORDER BY clause */
+  int isDistinct,       /* true if the DISTINCT keyword is present */
+  Expr *pLimit,         /* LIMIT value.  NULL means not used */
+  Expr *pOffset         /* OFFSET value.  NULL means no offset */
+)
 {
     DebugHelperSilliness();
+
+    assert( !pOffset || pLimit ); /* OFFSET implies LIMIT */
+    assert( pOffset==0 || pLimit!=0 );
+
+    // i'm not yet sure WHEN this would happen, but the sqlite code plans for it, so i should too...?
+    if( pEList==0 )
+    {
+        pEList = sqlite3ExprListAppend(pParse, 0, sqlite3Expr(/*db*/NULL,TK_ALL,0));
+    }
+
+    // so what the sqlite code does is to create:
+    // Select *pNew;
+
+    // most things get copied directly from the incoming parameters to pNew.
+    // some things get 'tweaked' on pNew. they are shown here:
+
+    //pNew->selFlags = isDistinct ? SF_Distinct : 0;
+    //pNew->op = TK_SELECT;
+
+    // initial "test printer" to see if i was anywhere near obtaining info that i want. so far so good!
+    printExpressionList( pEList, pParse );
+
+    walk_sqlite3SelectNew
+        ( pParse,
+          pEList,
+          pSrc,
+          pWhere,
+          pGroupBy,
+          pHaving,
+          pOrderBy,
+          isDistinct,
+          pLimit,
+          pOffset );
+
+
     return NULL;
 }
 

@@ -1,8 +1,7 @@
-# assuming CWD of right in 'sqlparsing' subdir
+# go to 'build' directory (where SConstruct is located).
+# run command 'scons'
 
-gcc -g -O0 -o parseTestBinary  -I. -Isqlite_code main_sql_driver.c
+file proof/build/scons-out/parseTestBinary
 
-file [CWD]/parseTestBinary
-
-[CWD]/bin/lemon lemon_sql_parse.y
+proof/sqlparsing/bin/lemon lemon_sql_parse.y
 # lemon complains if lempar.c is not in 'bin' with it. run lemon to refresh lemon_sql_parse.c

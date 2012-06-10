@@ -1,1 +1,5 @@
 bin
+build/.sconsign.dblite
+build/scons-out
+sqlparsing/*o
+sqlparsing/sqlite_code/*o
