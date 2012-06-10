@@ -2,6 +2,7 @@
 #include <string.h>
 
 #include "global.c"
+#define sqlite3StrNICmp sqlite3_strnicmp
 
 /*
 ** Some systems have stricmp().  Others have strcasecmp().  Because
@@ -20,11 +21,23 @@ int sqlite3StrICmp(const char *zLeft, const char *zRight){
   while( *a!=0 && sqlite3UpperToLower[*a]==sqlite3UpperToLower[*b]){ a++; b++; }
   return sqlite3UpperToLower[*a] - sqlite3UpperToLower[*b];
 }
-int sqlite3_strnicmp(const char *zLeft, const char *zRight, int N){
+
+int sqlite3_strnicmp(const char *zLeft, const char *zRight, int N)
+{
   register unsigned char *a, *b;
   a = (unsigned char *)zLeft;
   b = (unsigned char *)zRight;
-  while( N-- > 0 && *a!=0 && sqlite3UpperToLower[*a]==sqlite3UpperToLower[*b]){ a++; b++; }
+
+  while( N-- > 0 
+         && *a!=0 
+         && sqlite3UpperToLower[*a]==sqlite3UpperToLower[*b]
+         )
+  { 
+      a++; 
+      b++; 
+      //printf("\n");//just a breakpoint
+  }
+
   return N<0 ? 0 : sqlite3UpperToLower[*a] - sqlite3UpperToLower[*b];
 }
 
@@ -43,7 +56,7 @@ int sqlite3_strnicmp(const char *zLeft, const char *zRight, int N){
 */
 /* Hash score: 175 */
 static int keywordCode(const char *z, int n){
-  /* zText[] encodes 811 bytes of keywords in 541 bytes */
+  /* massive_matchable_blobstring[] encodes 811 bytes of keywords in 541 bytes */
   /*   REINDEXEDESCAPEACHECKEYBEFOREIGNOREGEXPLAINSTEADDATABASELECT       */
   /*   ABLEFTHENDEFERRABLELSEXCEPTRANSACTIONATURALTERAISEXCLUSIVE         */
   /*   XISTSAVEPOINTERSECTRIGGEREFERENCESCONSTRAINTOFFSETEMPORARY         */
@@ -54,7 +67,7 @@ static int keywordCode(const char *z, int n){
   /*   CURRENT_TIMESTAMPRIMARYDEFERREDISTINCTDROPFAILFROMFULLGLOBYIF      */
   /*   ISNULLORDERESTRICTOUTERIGHTROLLBACKROWUNIONUSINGVACUUMVIEW         */
   /*   INITIALLY                                                          */
-  static const char zText[540] = {
+  static const char massive_matchable_blobstring[540] = {
     'R','E','I','N','D','E','X','E','D','E','S','C','A','P','E','A','C','H',
     'E','C','K','E','Y','B','E','F','O','R','E','I','G','N','O','R','E','G',
     'E','X','P','L','A','I','N','S','T','E','A','D','D','A','T','A','B','A',
@@ -167,8 +180,7 @@ static int keywordCode(const char *z, int n){
       (charMap(z[n-1])*3) ^
       n) % 127;
   for(i=((int)aHash[h])-1; i>=0; i=((int)aNext[i])-1){
-      //      if( aLen[i]==n && sqlite3StrNICmp(&zText[aOffset[i]],z,n)==0 ){ // strnicmp
-      if( aLen[i]==n && sqlite3_strnicmp(&zText[aOffset[i]],z,n)==0 ){ // strnicmp          
+    if( aLen[i]==n && sqlite3StrNICmp(&massive_matchable_blobstring[aOffset[i]],z,n)==0 ){
       testcase( i==0 ); /* REINDEX */
       testcase( i==1 ); /* INDEXED */
       testcase( i==2 ); /* INDEX */
