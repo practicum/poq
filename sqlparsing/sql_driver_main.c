@@ -19,6 +19,7 @@
 #include "lemon_sql_parse.c"
 
 #include "my_callbacks.c"
+#include "hodgepodge_borrowed_needs_reorganization.c"
 
 #include "run_parser_function.c"
 

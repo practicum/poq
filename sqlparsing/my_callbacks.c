@@ -1,6 +1,18 @@
 #include <stdarg.h> // for va_start
 #include  <signal.h>      // for SIGTRAP
 
+// forward declared prototype
+Expr *sqlite3ExprAlloc(
+  sqlite3 *db,            /* Handle for sqlite3DbMallocZero() (may be null) */
+  int op,                 /* Expression opcode */
+  const Token *pToken,    /* Token argument.  Might be NULL */
+  int dequote             /* True to dequote */
+);
+
+// forward declared prototype
+char *sqlite3NameFromToken(sqlite3 *db, Token *pName);
+
+
 void DebugHelperSilliness()
 {
     raise(SIGTRAP);
@@ -178,9 +190,15 @@ void sqlite3ExprListSetSpan(Parse* p,ExprList* elist,ExprSpan* espan)
 
 
 
-void *sqlite3DbMallocZero(sqlite3* db,int i1)
+void *sqlite3DbMallocZero(sqlite3* db,int n)
 {
-    DebugHelperSilliness();
+    void *p = malloc(n);
+    if( p ){
+        memset(p, 0, n);
+    }
+
+    //DebugHelperSilliness();
+    return p;
 }
 
 
@@ -191,9 +209,14 @@ void sqlite3DeleteFrom(Parse* p, SrcList* slist, Expr* e)
     DebugHelperSilliness();
 }
 
+/// we would only need to implement this if we want to support INDEXED BY or NOT INDEXED
 void sqlite3SrcListIndexedBy(Parse *p, SrcList *slist, Token *tk)
 {
-    DebugHelperSilliness();
+    if ( tk->z != 0 )
+    {
+        assert( ! "we do not support the INDEXED keyword");
+        DebugHelperSilliness();// verify that tk->z is NULL, otherwise raise!
+    }
 }
 
 void sqlite3ExprListCheckLength(Parse* p, ExprList* elist, const char* str)
@@ -357,11 +380,86 @@ Expr *sqlite3PExpr(Parse* p,int i1, Expr* e, Expr* e2, const Token* tk)
 }
 
 
-ExprList *sqlite3ExprListAppend(Parse* p,ExprList* elist,Expr* e)
+/*
+** Resize the block of memory pointed to by p to n bytes. If the
+** resize fails, set the mallocFailed flag in the connection object.
+*/
+void *sqlite3DbRealloc(sqlite3 *db, void *p, int n)
+{
+    void *pNew = 0;
+
+    if( p==0 )
+    {
+        return malloc(n);
+    }
+
+    pNew = realloc(p, n);
+
+    return pNew;
+}
+
+
+
+/*
+** Add a new element to the end of an expression list.  If pList is
+** initially NULL, then create a new expression list.
+**
+** If a memory allocation error occurs, the entire list is freed and
+** NULL is returned.  If non-NULL is returned, then it is guaranteed
+** that the new entry was successfully appended.
+*/
+ExprList *sqlite3ExprListAppend(
+  Parse *pParse,          /* Parsing context */
+  ExprList *pList,        /* List to which to append. Might be NULL */
+  Expr *pExpr             /* Expression to be appended. Might be NULL */
+)
 {
     DebugHelperSilliness();
-    return NULL;
+    sqlite3 *db = 0;
+
+    // we want to append to pList, but pList is null so create it
+    if( pList==0 )
+    {
+        pList = sqlite3DbMallocZero(db, sizeof(ExprList) );
+        if( pList==0 ){
+            goto no_mem;
+        }
+        assert( pList->nAlloc==0 );
+    }
+
+    if( pList->nAlloc <= pList->nExpr )
+    {
+        struct ExprList_item *a;
+        int n = pList->nAlloc*2 + 4;
+
+        //** Resize the block of memory pointed to by p to n bytes. If the
+        //** resize fails, set the mallocFailed flag in the connection object.
+
+        a = sqlite3DbRealloc(db, pList->a, n*sizeof(pList->a[0]));
+        if( a==0 ){
+            goto no_mem;
+        }
+        pList->a = a;
+        pList->nAlloc = n;// /sizeof(a[0]);  // <<------------- FIX
+    }
+
+    assert( pList->a!=0 );
+    if( 1 )
+    {
+        struct ExprList_item *pItem = &pList->a[pList->nExpr++];
+        memset(pItem, 0, sizeof(*pItem));
+        pItem->pExpr = pExpr;
+    }
+
+    return pList;
+
+ no_mem:
+    /* Avoid leaking memory if malloc has failed. */
+    /////// sqlite3ExprDelete(db, pExpr);
+    /////// sqlite3ExprListDelete(db, pList);
+    return 0;
 }
+
 
 
 IdList *sqlite3IdListAppend(sqlite3* db, IdList* idlist, Token* tk)
@@ -399,11 +497,7 @@ Expr *sqlite3ExprFunction(Parse* p,ExprList* elist, Token* tk)
 
 
 
-SrcList *sqlite3SrcListAppend(sqlite3* db, SrcList* slist, Token* tk, Token* tk2)
-{
-    DebugHelperSilliness();
-    return NULL;
-}
+
 
 int sqlite3JoinType(Parse* p, Token* tk, Token* tk2, Token* tk3)
 {
@@ -429,11 +523,233 @@ Select *sqlite3SelectNew(Parse* p,ExprList* elist,SrcList* slist,Expr* e,ExprLis
 }
 
 
-SrcList * sqlite3SrcListAppendFromTerm(Parse* p, SrcList* slist, Token* tk, Token* tk1,Token*tk2, Select*s, Expr*e, IdList*ilist)
+/*
+** Expand the space allocated for the given SrcList object by
+** creating nExtra new slots beginning at iStart.  iStart is zero based.
+** New slots are zeroed.
+**
+** For example, suppose a SrcList initially contains two entries: A,B.
+** To append 3 new entries onto the end, do this:
+**
+**    sqlite3SrcListEnlarge(db, pSrclist, 3, 2);
+**
+** After the call above it would contain:  A, B, nil, nil, nil.
+** If the iStart argument had been 1 instead of 2, then the result
+** would have been:  A, nil, nil, nil, B.  To prepend the new slots,
+** the iStart value would be 0.  The result then would
+** be: nil, nil, nil, A, B.
+**
+** If a memory allocation fails the SrcList is unchanged.  The
+** db->mallocFailed flag will be set to true.
+*/
+SrcList *sqlite3SrcListEnlarge
+(
+  sqlite3 * unused,  /* Database connection to notify of OOM errors */
+  SrcList *pSrc,     /* The SrcList to be enlarged */
+  int nExtra,        /* Number of new slots to add to pSrc->a[] */
+  int iStart         /* Index in pSrc->a[] of first new slot */
+)
+{
+    int i;
+
+    /* Sanity checking on calling parameters */
+    assert( iStart>=0 );
+    assert( nExtra>=1 );
+    assert( pSrc!=0 );
+    assert( iStart<=pSrc->nSrc );
+
+    /* Allocate additional space if needed */
+    if( pSrc->nSrc+nExtra > pSrc->nAlloc )
+    {
+        SrcList *pNew;
+        int nAlloc = pSrc->nSrc+nExtra;
+        int nGot;
+
+        const int alloc_size = sizeof(*pSrc) + (nAlloc-1)*sizeof(pSrc->a[0]);
+        pNew = sqlite3DbRealloc(0, pSrc, alloc_size );
+
+        if( pNew==0 )
+        {
+            raise(SIGTRAP);
+            //            assert( 0->mallocFailed ); // 0 was db
+            return pSrc;
+        }
+        pSrc = pNew;
+        nGot = alloc_size/sizeof(pSrc->a[0]);
+        pSrc->nAlloc = (u16)nGot;
+    }
+
+    /* Move existing slots that come after the newly inserted slots
+    ** out of the way */
+    for(i=pSrc->nSrc-1; i>=iStart; i--)
+    {
+        pSrc->a[i+nExtra] = pSrc->a[i];
+    }
+    pSrc->nSrc += (i16)nExtra;
+
+    /* Zero the newly allocated slots */
+    memset(&pSrc->a[iStart], 0, sizeof(pSrc->a[0])*nExtra);
+    for(i=iStart; i<iStart+nExtra; i++)
+    {
+        pSrc->a[i].iCursor = -1;
+    }
+
+    /* Return a pointer to the enlarged SrcList */
+    return pSrc;
+}
+
+
+/*
+** Append a new table name to the given SrcList.  Create a new SrcList if
+** need be.  A new entry is created in the SrcList even if pTable is NULL.
+**
+** A SrcList is returned, or NULL if there is an OOM error.  The returned
+** SrcList might be the same as the SrcList that was input or it might be
+** a new one.  If an OOM error does occurs, then the prior value of pList
+** that is input to this routine is automatically freed.
+**
+** If pDatabase is not null, it means that the table has an optional
+** database name prefix.  Like this:  "database.table".  The pDatabase
+** points to the table name and the pTable points to the database name.
+** The SrcList.a[].zName field is filled with the table name which might
+** come from pTable (if pDatabase is NULL) or from pDatabase.
+** SrcList.a[].zDatabase is filled with the database name from pTable,
+** or with NULL if no database is specified.
+**
+** In other words, if call like this:
+**
+**         sqlite3SrcListAppend(D,A,B,0);
+**
+** Then B is a table name and the database name is unspecified.  If called
+** like this:
+**
+**         sqlite3SrcListAppend(D,A,B,C);
+**
+** Then C is the table name and B is the database name.  If C is defined
+** then so is B.  In other words, we never have a case where:
+**
+**         sqlite3SrcListAppend(D,A,0,C);
+**
+** Both pTable and pDatabase are assumed to be quoted.  They are dequoted
+** before being added to the SrcList.
+*/
+SrcList *sqlite3SrcListAppend
+(
+  sqlite3 * unused,        /* Connection to notify of malloc failures */
+  SrcList *pList,     /* Append to this SrcList. NULL creates a new SrcList */
+  Token *pTable,      /* Table to append */
+  Token *pDatabase    /* Database of the table */
+)
 {
     DebugHelperSilliness();
-    return NULL;
+    struct SrcList_item *pItem;
+    assert( pDatabase==0 || pTable!=0 );  /* Cannot have C without B */
+
+    if( pList==0 )
+    {
+        pList = sqlite3DbMallocZero(0, sizeof(SrcList) );
+        if( pList==0 ) return 0;
+        pList->nAlloc = 1;
+    }
+
+    pList = sqlite3SrcListEnlarge(0, pList, 1, pList->nSrc);
+
+    /* if( db->mallocFailed ) */
+    /* { */
+    /*     //sqlite3SrcListDelete(0, pList); */
+    /*     return 0; */
+    /* } */
+
+    pItem = &pList->a[pList->nSrc-1];
+
+    if( pDatabase && pDatabase->z==0 )
+    {
+        pDatabase = 0;
+    }
+
+    if( pDatabase )
+    {
+        Token *pTemp = pDatabase;
+        pDatabase = pTable;
+        pTable = pTemp;
+    }
+
+    pItem->zName = sqlite3NameFromToken(0, pTable);
+    pItem->zDatabase = sqlite3NameFromToken(0, pDatabase);
+    return pList;
 }
+
+
+/*
+** This routine is called by the parser to add a new term to the
+** end of a growing FROM clause.  The "p" parameter is the part of
+** the FROM clause that has already been constructed.  "p" is NULL
+** if this is the first term of the FROM clause.  pTable and pDatabase
+** are the name of the table and database named in the FROM clause term.
+** pDatabase is NULL if the database name qualifier is missing - the
+** usual case.  If the term has a alias, then pAlias points to the
+** alias token.  If the term is a subquery, then pSubquery is the
+** SELECT statement that the subquery encodes.  The pTable and
+** pDatabase parameters are NULL for subqueries.  The pOn and pUsing
+** parameters are the content of the ON and USING clauses.
+**
+** Return a new SrcList which encodes is the FROM with the new
+** term added.
+*/
+SrcList *sqlite3SrcListAppendFromTerm
+(
+ Parse *pParse,          /* Parsing context */
+ SrcList *p,             /* The left part of the FROM clause already seen */
+ // NOTE: pTable and pDatabase actually start out reversed when both are being used. they get swapped.
+ Token *pTable,          /* Name of the table to add to the FROM clause */
+ // NOTE: pTable and pDatabase actually start out reversed when both are being used. they get swapped.
+ Token *pDatabase,       /* Name of the database containing pTable */
+ Token *pAlias,          /* The right-hand side of the AS subexpression */
+ Select *pSubquery,      /* A subquery used in place of a table name */
+ Expr *pOn,              /* The ON clause of a join */
+ IdList *pUsing          /* The USING clause of a join */
+)
+{
+    DebugHelperSilliness();
+    struct SrcList_item *pItem;
+
+    if( !p && (pOn || pUsing) )
+    {
+        printf("a JOIN clause is required before %s", (pOn ? "ON" : "USING") );
+        raise(SIGTRAP);
+        goto append_from_error;
+    }
+
+    p = sqlite3SrcListAppend(NULL, p, pTable, pDatabase);
+
+    if( p==0 || NEVER(p->nSrc==0) )
+    {
+        raise(SIGTRAP);
+        goto append_from_error;
+    }
+
+    pItem = &p->a[p->nSrc-1];
+    assert( pAlias!=0 );
+
+    if( pAlias->n )
+    {
+        pItem->zAlias = sqlite3NameFromToken(0, pAlias);
+    }
+
+    pItem->pSelect = pSubquery;
+    pItem->pOn = pOn;
+    pItem->pUsing = pUsing;
+
+    return p;
+
+ append_from_error:
+    /* assert( p==0 ); */
+    /* sqlite3ExprDelete(db, pOn); */
+    /* sqlite3IdListDelete(db, pUsing); */
+    /* sqlite3SelectDelete(db, pSubquery); */
+    return 0;
+}
+
 
 
 
@@ -460,16 +776,53 @@ int sqlite3Select(Parse*p, Select*s, SelectDest*sd)
     return -1;
 }
 
-Expr *sqlite3Expr(sqlite3*db,int i1,const char* str)
+/// there are other callbacks beginning with 'sqlite3Expr', but this is the one with the shortest name.
+/// "allocate a new expression node from a zero-terminated token that has already been dequoted."
+Expr *sqlite3Expr
+(
+ sqlite3*db,
+ int op, // expression opcode
+ const char* zToken // possibly NULL token
+)
 {
+    Token x;
+    x.z = zToken;
+    x.n = zToken ? sqlite3Strlen30(zToken) : 0;
     DebugHelperSilliness();
-    return NULL;
+    return sqlite3ExprAlloc(db, op, &x, 0);
 }
 
-void sqlite3SrcListShiftJoinType(SrcList* slist)
+
+/// we probably do not need this??  sqlite does this shifting for some reason. in the 'proof' project we probably don't care...
+/*
+** When building up a FROM clause in the parser, the join operator
+** is initially attached to the left operand.  But the code generator
+** expects the join operator to be on the right operand.  This routine
+** Shifts all join operators from left to right for an entire FROM
+** clause.
+**
+** Example: Suppose the join is like this:
+**
+**           A natural cross join B
+**
+** The operator is "natural cross join".  The A and B operands are stored
+** in p->a[0] and p->a[1], respectively.  The parser initially stores the
+** operator with A.  This routine shifts that operator over to B.
+*/
+void sqlite3SrcListShiftJoinType(SrcList *p)
 {
-    DebugHelperSilliness();
+    if( p )
+    {
+        int i;
+        assert( p->a || p->nSrc==0 );
+        for(i=p->nSrc-1; i>0; i--)
+        {
+            p->a[i].jointype = p->a[i-1].jointype;
+        }
+        p->a[0].jointype = 0;
+    }
 }
+
 
 void sqlite3Update(Parse*p, SrcList*slist, ExprList*elist, Expr*e, int i1)
 {
