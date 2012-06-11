@@ -4,6 +4,9 @@
 /* First off, code is included that follows the "include" declaration
 ** in the input grammar file. */
 #include <stdio.h>
+#include <assert.h>
+#include "lemon_sql_parse.h"
+
 #line 49 "lemon_sql_parse.y"
 
 #include "callbacks.h"

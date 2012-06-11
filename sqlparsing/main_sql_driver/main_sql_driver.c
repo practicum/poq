@@ -5,21 +5,12 @@
 #include <assert.h>
 #include <stddef.h>
 
-//#include "tk_defs.h" // we used to get the following 'defines' from tk_defs. but shouldn't lemon be putting them in sql_parse.h ??
-#define TK_ISNOT                          146
-#define TK_ILLEGAL                        148
-#define TK_SPACE                          149
-#define TK_COLUMN                         152
-#define TK_CONST_FUNC                     155
-#define TK_UMINUS                         156
-#define TK_UPLUS                          157
 
 #include "sqliteLimit.h"
-#include "lemon_sql_parse.h"
-#include "lemon_sql_parse.c"
+#include "generated_parser/lemon_sql_parse.h"
 
 #include "my_callbacks.c"
-#include "hodgepodge_borrowed_needs_reorganization.c"
+#include "sqlite_code/hodgepodge_borrowed_needs_reorganization.c"
 
 #include "run_parser_function.c"
 
@@ -84,12 +75,12 @@ int main()
       guarantees)
     */
 
-    const char *one = "select * from lic.LoggableEvent;";
+    const char *one = "select event_id from lic.LoggableEvent;";
 
     // for each semicolon-delimited statement, you get a call to
     // 'sqlite3BeginParse' and 'sqlite3FinishCoding' (all inside the single call
     // to sqlite3RunParser)
-    const char *two = "select * from lic.LoggableEvent;select * from lic.LoggableEvent;";
+    const char *two = "select event_id, event_date from lic.LoggableEvent;select * from lic.LoggableEvent;";
 
     const char *three = "select * from; lic.LoggableEvent;";
     const char *four = "select 1!!2 from lic.LoggableEvent;";

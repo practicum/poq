@@ -1,7 +1,7 @@
 
 #include "walker_helpers.h"
 
-#include "debugging_helpers.h"
+#include "utils/debugging_helpers.h"
 #include "callbacks.h"
 #include <stdlib.h>
 #include <string.h>

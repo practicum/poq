@@ -1,3 +1,4 @@
 ignored_notes.txt
 parseTestBinary
 bin
+*/*o
