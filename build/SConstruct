@@ -3,13 +3,16 @@
 env = Environment()
 
 sources = [
-    '../sqlparsing/main_sql_driver/main_sql_driver.c',
-    '../sqlparsing/main_sql_driver/run_parser_function.c',
+    '../sqlparsing/generated_parser/lemon_sql_parse.c',
     '../sqlparsing/sqlite_code/walker_helpers.c',
     '../sqlparsing/sqlite_code/global.c',
     '../sqlparsing/sqlite_code/tokenize.c',
+
     '../sqlparsing/utils/debugging_helpers.c',
-    '../sqlparsing/generated_parser/lemon_sql_parse.c',
+
+    '../sqlparsing/main_sql_driver/main_sql_driver.c',
+    '../sqlparsing/main_sql_driver/run_parser_function.c',
+    '../sqlparsing/main_sql_driver/my_callbacks.c',
     ]
 
 env.Program( target='scons-out/parseTestBinary',

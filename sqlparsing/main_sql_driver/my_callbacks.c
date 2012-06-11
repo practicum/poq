@@ -1,6 +1,16 @@
+#include "my_callbacks.h"
 #include <stdarg.h> // for va_start
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <stddef.h> // for NULL
 #include "callbacks.h"
 #include "walker_helpers.h"
+#include "generated_parser/extra_tokens.h"
+#include "generated_parser/lemon_sql_parse.h"
+#include <assert.h>
+
+
 
 // forward declared prototype
 Expr *sqlite3ExprAlloc(
@@ -19,7 +29,7 @@ Expr *sqlite3Expr
  sqlite3*db,
  int op, // expression opcode
  const char* zToken // possibly NULL token
- );
+);
 
 
 

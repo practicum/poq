@@ -1,3 +1,4 @@
+#include "callbacks.h"
 
 /*
 ** Convert an SQL-style quoted string into a normal string by removing
