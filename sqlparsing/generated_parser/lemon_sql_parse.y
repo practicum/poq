@@ -47,6 +47,9 @@
 // code file that implements the parser.
 //
 %include {
+#include <assert.h>
+#include "lemon_sql_parse.h"
+#include "extra_tokens.h"
 #include "callbacks.h"
 
 /*

@@ -17,6 +17,7 @@
 */
 
 #include <stdlib.h>
+#include "generated_parser/extra_tokens.h"
 
 # define sqlite3Toupper(x)   toupper((unsigned char)(x))
 # define sqlite3Isspace(x)   isspace((unsigned char)(x))

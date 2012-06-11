@@ -4,11 +4,11 @@
 /* First off, code is included that follows the "include" declaration
 ** in the input grammar file. */
 #include <stdio.h>
-#include <assert.h>
-#include "lemon_sql_parse.h"
-
 #line 49 "lemon_sql_parse.y"
 
+#include <assert.h>
+#include "lemon_sql_parse.h"
+#include "extra_tokens.h"
 #include "callbacks.h"
 
 /*
@@ -56,7 +56,7 @@ struct TrigEvent { int a; IdList * b; };
 */
 struct AttachKey { int type;  Token key; };
 
-#line 723 "lemon_sql_parse.y"
+#line 726 "lemon_sql_parse.y"
 
   /* This is a utility routine used to set the ExprSpan.zStart and
   ** ExprSpan.zEnd values of pOut so that the span covers the complete
@@ -76,7 +76,7 @@ struct AttachKey { int type;  Token key; };
     pOut->zStart = pValue->z;
     pOut->zEnd = &pValue->z[pValue->n];
   }
-#line 818 "lemon_sql_parse.y"
+#line 821 "lemon_sql_parse.y"
 
   /* This routine constructs a binary expression node out of two ExprSpan
   ** objects and uses the result to populate a new ExprSpan object.
@@ -92,7 +92,7 @@ struct AttachKey { int type;  Token key; };
     pOut->zStart = pLeft->zStart;
     pOut->zEnd = pRight->zEnd;
   }
-#line 874 "lemon_sql_parse.y"
+#line 877 "lemon_sql_parse.y"
 
   /* Construct an expression node for a unary postfix operator
   */
@@ -107,7 +107,7 @@ struct AttachKey { int type;  Token key; };
     pOut->zStart = pOperand->zStart;
     pOut->zEnd = &pPostOp->z[pPostOp->n];
   }                           
-#line 893 "lemon_sql_parse.y"
+#line 896 "lemon_sql_parse.y"
 
   /* A routine to convert a binary TK_IS or TK_ISNOT expression into a
   ** unary TK_ISNULL or TK_NOTNULL expression. */
@@ -119,7 +119,7 @@ struct AttachKey { int type;  Token key; };
       pA->pRight = 0;
     }
   }
-#line 921 "lemon_sql_parse.y"
+#line 924 "lemon_sql_parse.y"
 
   /* Construct an expression node for a unary prefix operator
   */
@@ -134,7 +134,7 @@ struct AttachKey { int type;  Token key; };
     pOut->zStart = pPreOp->z;
     pOut->zEnd = pOperand->zEnd;
   }
-#line 135 "lemon_sql_parse.c"
+#line 138 "lemon_sql_parse.c"
 /* Next is all token values, in a form suitable for use by makeheaders.
 ** This section will be null unless lemon is run with the -m switch.
 */
@@ -1390,17 +1390,17 @@ static void yy_destructor(
     case 160: /* select */
     case 194: /* oneselect */
 {
-#line 404 "lemon_sql_parse.y"
+#line 407 "lemon_sql_parse.y"
 sqlite3SelectDelete(pParse->db, (yypminor->yy387));
-#line 1393 "lemon_sql_parse.c"
+#line 1396 "lemon_sql_parse.c"
 }
       break;
     case 174: /* term */
     case 175: /* expr */
 {
-#line 721 "lemon_sql_parse.y"
+#line 724 "lemon_sql_parse.y"
 sqlite3ExprDelete(pParse->db, (yypminor->yy118).pExpr);
-#line 1401 "lemon_sql_parse.c"
+#line 1404 "lemon_sql_parse.c"
 }
       break;
     case 179: /* idxlist_opt */
@@ -1416,9 +1416,9 @@ sqlite3ExprDelete(pParse->db, (yypminor->yy118).pExpr);
     case 221: /* exprlist */
     case 226: /* case_exprlist */
 {
-#line 1104 "lemon_sql_parse.y"
+#line 1107 "lemon_sql_parse.y"
 sqlite3ExprListDelete(pParse->db, (yypminor->yy322));
-#line 1419 "lemon_sql_parse.c"
+#line 1422 "lemon_sql_parse.c"
 }
       break;
     case 193: /* fullname */
@@ -1426,9 +1426,9 @@ sqlite3ExprListDelete(pParse->db, (yypminor->yy322));
     case 206: /* seltablist */
     case 207: /* stl_prefix */
 {
-#line 535 "lemon_sql_parse.y"
+#line 538 "lemon_sql_parse.y"
 sqlite3SrcListDelete(pParse->db, (yypminor->yy259));
-#line 1429 "lemon_sql_parse.c"
+#line 1432 "lemon_sql_parse.c"
 }
       break;
     case 199: /* where_opt */
@@ -1440,33 +1440,33 @@ sqlite3SrcListDelete(pParse->db, (yypminor->yy259));
     case 238: /* when_clause */
     case 243: /* key_opt */
 {
-#line 645 "lemon_sql_parse.y"
+#line 648 "lemon_sql_parse.y"
 sqlite3ExprDelete(pParse->db, (yypminor->yy314));
-#line 1443 "lemon_sql_parse.c"
+#line 1446 "lemon_sql_parse.c"
 }
       break;
     case 211: /* using_opt */
     case 213: /* inscollist */
     case 219: /* inscollist_opt */
 {
-#line 567 "lemon_sql_parse.y"
+#line 570 "lemon_sql_parse.y"
 sqlite3IdListDelete(pParse->db, (yypminor->yy384));
-#line 1452 "lemon_sql_parse.c"
+#line 1455 "lemon_sql_parse.c"
 }
       break;
     case 234: /* trigger_cmd_list */
     case 239: /* trigger_cmd */
 {
-#line 1211 "lemon_sql_parse.y"
+#line 1214 "lemon_sql_parse.y"
 sqlite3DeleteTriggerStep(pParse->db, (yypminor->yy203));
-#line 1460 "lemon_sql_parse.c"
+#line 1463 "lemon_sql_parse.c"
 }
       break;
     case 236: /* trigger_event */
 {
-#line 1197 "lemon_sql_parse.y"
+#line 1200 "lemon_sql_parse.y"
 sqlite3IdListDelete(pParse->db, (yypminor->yy90).b);
-#line 1467 "lemon_sql_parse.c"
+#line 1470 "lemon_sql_parse.c"
 }
       break;
     default:  break;   /* If no destructor action specified: do nothing */
@@ -1652,7 +1652,7 @@ static void yyStackOverflow(yyParser *yypParser, YYMINORTYPE *yypMinor){
 
   UNUSED_PARAMETER(yypMinor); /* Silence some compiler warnings */
   sqlite3ErrorMsg(pParse, "parser stack overflow");
-#line 1653 "lemon_sql_parse.c"
+#line 1656 "lemon_sql_parse.c"
    sqlite3ParserARG_STORE; /* Suppress warning about unused %extra_argument var */
 }
 
@@ -2093,90 +2093,90 @@ static void yy_reduce(
   **     break;
   */
       case 5: /* explain ::= */
-#line 105 "lemon_sql_parse.y"
+#line 108 "lemon_sql_parse.y"
 { sqlite3BeginParse(pParse, 0); }
-#line 2096 "lemon_sql_parse.c"
+#line 2099 "lemon_sql_parse.c"
         break;
       case 6: /* explain ::= EXPLAIN */
-#line 107 "lemon_sql_parse.y"
+#line 110 "lemon_sql_parse.y"
 { sqlite3BeginParse(pParse, 1); }
-#line 2101 "lemon_sql_parse.c"
+#line 2104 "lemon_sql_parse.c"
         break;
       case 7: /* explain ::= EXPLAIN QUERY PLAN */
-#line 108 "lemon_sql_parse.y"
+#line 111 "lemon_sql_parse.y"
 { sqlite3BeginParse(pParse, 2); }
-#line 2106 "lemon_sql_parse.c"
+#line 2109 "lemon_sql_parse.c"
         break;
       case 8: /* cmdx ::= cmd */
-#line 110 "lemon_sql_parse.y"
+#line 113 "lemon_sql_parse.y"
 { sqlite3FinishCoding(pParse); }
-#line 2111 "lemon_sql_parse.c"
+#line 2114 "lemon_sql_parse.c"
         break;
       case 9: /* cmd ::= BEGIN transtype trans_opt */
-#line 115 "lemon_sql_parse.y"
+#line 118 "lemon_sql_parse.y"
 {sqlite3BeginTransaction(pParse, yymsp[-1].minor.yy4);}
-#line 2116 "lemon_sql_parse.c"
+#line 2119 "lemon_sql_parse.c"
         break;
       case 13: /* transtype ::= */
-#line 120 "lemon_sql_parse.y"
+#line 123 "lemon_sql_parse.y"
 {yygotominor.yy4 = TK_DEFERRED;}
-#line 2121 "lemon_sql_parse.c"
+#line 2124 "lemon_sql_parse.c"
         break;
       case 14: /* transtype ::= DEFERRED */
       case 15: /* transtype ::= IMMEDIATE */ yytestcase(yyruleno==15);
       case 16: /* transtype ::= EXCLUSIVE */ yytestcase(yyruleno==16);
       case 115: /* multiselect_op ::= UNION */ yytestcase(yyruleno==115);
       case 117: /* multiselect_op ::= EXCEPT|INTERSECT */ yytestcase(yyruleno==117);
-#line 121 "lemon_sql_parse.y"
+#line 124 "lemon_sql_parse.y"
 {yygotominor.yy4 = yymsp[0].major;}
-#line 2130 "lemon_sql_parse.c"
+#line 2133 "lemon_sql_parse.c"
         break;
       case 17: /* cmd ::= COMMIT trans_opt */
       case 18: /* cmd ::= END trans_opt */ yytestcase(yyruleno==18);
-#line 124 "lemon_sql_parse.y"
+#line 127 "lemon_sql_parse.y"
 {sqlite3CommitTransaction(pParse);}
-#line 2136 "lemon_sql_parse.c"
+#line 2139 "lemon_sql_parse.c"
         break;
       case 19: /* cmd ::= ROLLBACK trans_opt */
-#line 126 "lemon_sql_parse.y"
+#line 129 "lemon_sql_parse.y"
 {sqlite3RollbackTransaction(pParse);}
-#line 2141 "lemon_sql_parse.c"
+#line 2144 "lemon_sql_parse.c"
         break;
       case 22: /* cmd ::= SAVEPOINT nm */
-#line 130 "lemon_sql_parse.y"
+#line 133 "lemon_sql_parse.y"
 {
   sqlite3Savepoint(pParse, SAVEPOINT_BEGIN, &yymsp[0].minor.yy0);
 }
-#line 2148 "lemon_sql_parse.c"
+#line 2151 "lemon_sql_parse.c"
         break;
       case 23: /* cmd ::= RELEASE savepoint_opt nm */
-#line 133 "lemon_sql_parse.y"
+#line 136 "lemon_sql_parse.y"
 {
   sqlite3Savepoint(pParse, SAVEPOINT_RELEASE, &yymsp[0].minor.yy0);
 }
-#line 2155 "lemon_sql_parse.c"
+#line 2158 "lemon_sql_parse.c"
         break;
       case 24: /* cmd ::= ROLLBACK trans_opt TO savepoint_opt nm */
-#line 136 "lemon_sql_parse.y"
+#line 139 "lemon_sql_parse.y"
 {
   sqlite3Savepoint(pParse, SAVEPOINT_ROLLBACK, &yymsp[0].minor.yy0);
 }
-#line 2162 "lemon_sql_parse.c"
+#line 2165 "lemon_sql_parse.c"
         break;
       case 26: /* create_table ::= createkw temp TABLE ifnotexists nm dbnm */
-#line 143 "lemon_sql_parse.y"
+#line 146 "lemon_sql_parse.y"
 {
    sqlite3StartTable(pParse,&yymsp[-1].minor.yy0,&yymsp[0].minor.yy0,yymsp[-4].minor.yy4,0,0,yymsp[-2].minor.yy4);
 }
-#line 2169 "lemon_sql_parse.c"
+#line 2172 "lemon_sql_parse.c"
         break;
       case 27: /* createkw ::= CREATE */
-#line 146 "lemon_sql_parse.y"
+#line 149 "lemon_sql_parse.y"
 {
   pParse->db->lookaside.bEnabled = 0;
   yygotominor.yy0 = yymsp[0].minor.yy0;
 }
-#line 2177 "lemon_sql_parse.c"
+#line 2180 "lemon_sql_parse.c"
         break;
       case 28: /* ifnotexists ::= */
       case 31: /* temp ::= */ yytestcase(yyruleno==31);
@@ -2190,9 +2190,9 @@ static void yy_reduce(
       case 121: /* distinct ::= */ yytestcase(yyruleno==121);
       case 222: /* between_op ::= BETWEEN */ yytestcase(yyruleno==222);
       case 225: /* in_op ::= IN */ yytestcase(yyruleno==225);
-#line 151 "lemon_sql_parse.y"
+#line 154 "lemon_sql_parse.y"
 {yygotominor.yy4 = 0;}
-#line 2193 "lemon_sql_parse.c"
+#line 2196 "lemon_sql_parse.c"
         break;
       case 29: /* ifnotexists ::= IF NOT EXISTS */
       case 30: /* temp ::= TEMP */ yytestcase(yyruleno==30);
@@ -2202,40 +2202,40 @@ static void yy_reduce(
       case 119: /* distinct ::= DISTINCT */ yytestcase(yyruleno==119);
       case 223: /* between_op ::= NOT BETWEEN */ yytestcase(yyruleno==223);
       case 226: /* in_op ::= NOT IN */ yytestcase(yyruleno==226);
-#line 152 "lemon_sql_parse.y"
+#line 155 "lemon_sql_parse.y"
 {yygotominor.yy4 = 1;}
-#line 2205 "lemon_sql_parse.c"
+#line 2208 "lemon_sql_parse.c"
         break;
       case 32: /* create_table_args ::= LP columnlist conslist_opt RP */
-#line 158 "lemon_sql_parse.y"
+#line 161 "lemon_sql_parse.y"
 {
   sqlite3EndTable(pParse,&yymsp[-1].minor.yy0,&yymsp[0].minor.yy0,0);
 }
-#line 2212 "lemon_sql_parse.c"
+#line 2215 "lemon_sql_parse.c"
         break;
       case 33: /* create_table_args ::= AS select */
-#line 161 "lemon_sql_parse.y"
+#line 164 "lemon_sql_parse.y"
 {
   sqlite3EndTable(pParse,0,0,yymsp[0].minor.yy387);
   sqlite3SelectDelete(pParse->db, yymsp[0].minor.yy387);
 }
-#line 2220 "lemon_sql_parse.c"
+#line 2223 "lemon_sql_parse.c"
         break;
       case 36: /* column ::= columnid type carglist */
-#line 173 "lemon_sql_parse.y"
+#line 176 "lemon_sql_parse.y"
 {
   yygotominor.yy0.z = yymsp[-2].minor.yy0.z;
   yygotominor.yy0.n = (int)(pParse->sLastToken.z-yymsp[-2].minor.yy0.z) + pParse->sLastToken.n;
 }
-#line 2228 "lemon_sql_parse.c"
+#line 2231 "lemon_sql_parse.c"
         break;
       case 37: /* columnid ::= nm */
-#line 177 "lemon_sql_parse.y"
+#line 180 "lemon_sql_parse.y"
 {
   sqlite3AddColumn(pParse,&yymsp[0].minor.yy0);
   yygotominor.yy0 = yymsp[0].minor.yy0;
 }
-#line 2236 "lemon_sql_parse.c"
+#line 2239 "lemon_sql_parse.c"
         break;
       case 38: /* id ::= ID */
       case 39: /* id ::= INDEXED */ yytestcase(yyruleno==39);
@@ -2259,49 +2259,49 @@ static void yy_reduce(
       case 266: /* minus_num ::= MINUS number */ yytestcase(yyruleno==266);
       case 267: /* number ::= INTEGER|FLOAT */ yytestcase(yyruleno==267);
       case 285: /* trnm ::= nm */ yytestcase(yyruleno==285);
-#line 187 "lemon_sql_parse.y"
+#line 190 "lemon_sql_parse.y"
 {yygotominor.yy0 = yymsp[0].minor.yy0;}
-#line 2262 "lemon_sql_parse.c"
+#line 2265 "lemon_sql_parse.c"
         break;
       case 45: /* type ::= typetoken */
-#line 249 "lemon_sql_parse.y"
+#line 252 "lemon_sql_parse.y"
 {sqlite3AddColumnType(pParse,&yymsp[0].minor.yy0);}
-#line 2267 "lemon_sql_parse.c"
+#line 2270 "lemon_sql_parse.c"
         break;
       case 47: /* typetoken ::= typename LP signed RP */
-#line 251 "lemon_sql_parse.y"
+#line 254 "lemon_sql_parse.y"
 {
   yygotominor.yy0.z = yymsp[-3].minor.yy0.z;
   yygotominor.yy0.n = (int)(&yymsp[0].minor.yy0.z[yymsp[0].minor.yy0.n] - yymsp[-3].minor.yy0.z);
 }
-#line 2275 "lemon_sql_parse.c"
+#line 2278 "lemon_sql_parse.c"
         break;
       case 48: /* typetoken ::= typename LP signed COMMA signed RP */
-#line 255 "lemon_sql_parse.y"
+#line 258 "lemon_sql_parse.y"
 {
   yygotominor.yy0.z = yymsp[-5].minor.yy0.z;
   yygotominor.yy0.n = (int)(&yymsp[0].minor.yy0.z[yymsp[0].minor.yy0.n] - yymsp[-5].minor.yy0.z);
 }
-#line 2283 "lemon_sql_parse.c"
+#line 2286 "lemon_sql_parse.c"
         break;
       case 50: /* typename ::= typename ids */
-#line 261 "lemon_sql_parse.y"
+#line 264 "lemon_sql_parse.y"
 {yygotominor.yy0.z=yymsp[-1].minor.yy0.z; yygotominor.yy0.n=yymsp[0].minor.yy0.n+(int)(yymsp[0].minor.yy0.z-yymsp[-1].minor.yy0.z);}
-#line 2288 "lemon_sql_parse.c"
+#line 2291 "lemon_sql_parse.c"
         break;
       case 57: /* ccons ::= DEFAULT term */
       case 59: /* ccons ::= DEFAULT PLUS term */ yytestcase(yyruleno==59);
-#line 272 "lemon_sql_parse.y"
+#line 275 "lemon_sql_parse.y"
 {sqlite3AddDefaultValue(pParse,&yymsp[0].minor.yy118);}
-#line 2294 "lemon_sql_parse.c"
+#line 2297 "lemon_sql_parse.c"
         break;
       case 58: /* ccons ::= DEFAULT LP expr RP */
-#line 273 "lemon_sql_parse.y"
+#line 276 "lemon_sql_parse.y"
 {sqlite3AddDefaultValue(pParse,&yymsp[-1].minor.yy118);}
-#line 2299 "lemon_sql_parse.c"
+#line 2302 "lemon_sql_parse.c"
         break;
       case 60: /* ccons ::= DEFAULT MINUS term */
-#line 275 "lemon_sql_parse.y"
+#line 278 "lemon_sql_parse.y"
 {
   ExprSpan v;
   v.pExpr = sqlite3PExpr(pParse, TK_UMINUS, yymsp[0].minor.yy118.pExpr, 0, 0);
@@ -2309,192 +2309,192 @@ static void yy_reduce(
   v.zEnd = yymsp[0].minor.yy118.zEnd;
   sqlite3AddDefaultValue(pParse,&v);
 }
-#line 2310 "lemon_sql_parse.c"
+#line 2313 "lemon_sql_parse.c"
         break;
       case 61: /* ccons ::= DEFAULT id */
-#line 282 "lemon_sql_parse.y"
+#line 285 "lemon_sql_parse.y"
 {
   ExprSpan v;
   spanExpr(&v, pParse, TK_STRING, &yymsp[0].minor.yy0);
   sqlite3AddDefaultValue(pParse,&v);
 }
-#line 2319 "lemon_sql_parse.c"
+#line 2322 "lemon_sql_parse.c"
         break;
       case 63: /* ccons ::= NOT NULL onconf */
-#line 292 "lemon_sql_parse.y"
+#line 295 "lemon_sql_parse.y"
 {sqlite3AddNotNull(pParse, yymsp[0].minor.yy4);}
-#line 2324 "lemon_sql_parse.c"
+#line 2327 "lemon_sql_parse.c"
         break;
       case 64: /* ccons ::= PRIMARY KEY sortorder onconf autoinc */
-#line 294 "lemon_sql_parse.y"
+#line 297 "lemon_sql_parse.y"
 {sqlite3AddPrimaryKey(pParse,0,yymsp[-1].minor.yy4,yymsp[0].minor.yy4,yymsp[-2].minor.yy4);}
-#line 2329 "lemon_sql_parse.c"
+#line 2332 "lemon_sql_parse.c"
         break;
       case 65: /* ccons ::= UNIQUE onconf */
-#line 295 "lemon_sql_parse.y"
+#line 298 "lemon_sql_parse.y"
 {sqlite3CreateIndex(pParse,0,0,0,0,yymsp[0].minor.yy4,0,0,0,0);}
-#line 2334 "lemon_sql_parse.c"
+#line 2337 "lemon_sql_parse.c"
         break;
       case 66: /* ccons ::= CHECK LP expr RP */
-#line 296 "lemon_sql_parse.y"
+#line 299 "lemon_sql_parse.y"
 {sqlite3AddCheckConstraint(pParse,yymsp[-1].minor.yy118.pExpr);}
-#line 2339 "lemon_sql_parse.c"
+#line 2342 "lemon_sql_parse.c"
         break;
       case 67: /* ccons ::= REFERENCES nm idxlist_opt refargs */
-#line 298 "lemon_sql_parse.y"
+#line 301 "lemon_sql_parse.y"
 {sqlite3CreateForeignKey(pParse,0,&yymsp[-2].minor.yy0,yymsp[-1].minor.yy322,yymsp[0].minor.yy4);}
-#line 2344 "lemon_sql_parse.c"
+#line 2347 "lemon_sql_parse.c"
         break;
       case 68: /* ccons ::= defer_subclause */
-#line 299 "lemon_sql_parse.y"
+#line 302 "lemon_sql_parse.y"
 {sqlite3DeferForeignKey(pParse,yymsp[0].minor.yy4);}
-#line 2349 "lemon_sql_parse.c"
+#line 2352 "lemon_sql_parse.c"
         break;
       case 69: /* ccons ::= COLLATE ids */
-#line 300 "lemon_sql_parse.y"
+#line 303 "lemon_sql_parse.y"
 {sqlite3AddCollateType(pParse, &yymsp[0].minor.yy0);}
-#line 2354 "lemon_sql_parse.c"
+#line 2357 "lemon_sql_parse.c"
         break;
       case 72: /* refargs ::= */
-#line 313 "lemon_sql_parse.y"
+#line 316 "lemon_sql_parse.y"
 { yygotominor.yy4 = OE_None*0x0101; /* EV: R-19803-45884 */}
-#line 2359 "lemon_sql_parse.c"
+#line 2362 "lemon_sql_parse.c"
         break;
       case 73: /* refargs ::= refargs refarg */
-#line 314 "lemon_sql_parse.y"
+#line 317 "lemon_sql_parse.y"
 { yygotominor.yy4 = (yymsp[-1].minor.yy4 & ~yymsp[0].minor.yy215.mask) | yymsp[0].minor.yy215.value; }
-#line 2364 "lemon_sql_parse.c"
+#line 2367 "lemon_sql_parse.c"
         break;
       case 74: /* refarg ::= MATCH nm */
       case 75: /* refarg ::= ON INSERT refact */ yytestcase(yyruleno==75);
-#line 316 "lemon_sql_parse.y"
+#line 319 "lemon_sql_parse.y"
 { yygotominor.yy215.value = 0;     yygotominor.yy215.mask = 0x000000; }
-#line 2370 "lemon_sql_parse.c"
+#line 2373 "lemon_sql_parse.c"
         break;
       case 76: /* refarg ::= ON DELETE refact */
-#line 318 "lemon_sql_parse.y"
+#line 321 "lemon_sql_parse.y"
 { yygotominor.yy215.value = yymsp[0].minor.yy4;     yygotominor.yy215.mask = 0x0000ff; }
-#line 2375 "lemon_sql_parse.c"
+#line 2378 "lemon_sql_parse.c"
         break;
       case 77: /* refarg ::= ON UPDATE refact */
-#line 319 "lemon_sql_parse.y"
+#line 322 "lemon_sql_parse.y"
 { yygotominor.yy215.value = yymsp[0].minor.yy4<<8;  yygotominor.yy215.mask = 0x00ff00; }
-#line 2380 "lemon_sql_parse.c"
+#line 2383 "lemon_sql_parse.c"
         break;
       case 78: /* refact ::= SET NULL */
-#line 321 "lemon_sql_parse.y"
+#line 324 "lemon_sql_parse.y"
 { yygotominor.yy4 = OE_SetNull;  /* EV: R-33326-45252 */}
-#line 2385 "lemon_sql_parse.c"
+#line 2388 "lemon_sql_parse.c"
         break;
       case 79: /* refact ::= SET DEFAULT */
-#line 322 "lemon_sql_parse.y"
+#line 325 "lemon_sql_parse.y"
 { yygotominor.yy4 = OE_SetDflt;  /* EV: R-33326-45252 */}
-#line 2390 "lemon_sql_parse.c"
+#line 2393 "lemon_sql_parse.c"
         break;
       case 80: /* refact ::= CASCADE */
-#line 323 "lemon_sql_parse.y"
+#line 326 "lemon_sql_parse.y"
 { yygotominor.yy4 = OE_Cascade;  /* EV: R-33326-45252 */}
-#line 2395 "lemon_sql_parse.c"
+#line 2398 "lemon_sql_parse.c"
         break;
       case 81: /* refact ::= RESTRICT */
-#line 324 "lemon_sql_parse.y"
+#line 327 "lemon_sql_parse.y"
 { yygotominor.yy4 = OE_Restrict; /* EV: R-33326-45252 */}
-#line 2400 "lemon_sql_parse.c"
+#line 2403 "lemon_sql_parse.c"
         break;
       case 82: /* refact ::= NO ACTION */
-#line 325 "lemon_sql_parse.y"
+#line 328 "lemon_sql_parse.y"
 { yygotominor.yy4 = OE_None;     /* EV: R-33326-45252 */}
-#line 2405 "lemon_sql_parse.c"
+#line 2408 "lemon_sql_parse.c"
         break;
       case 84: /* defer_subclause ::= DEFERRABLE init_deferred_pred_opt */
       case 99: /* defer_subclause_opt ::= defer_subclause */ yytestcase(yyruleno==99);
       case 101: /* onconf ::= ON CONFLICT resolvetype */ yytestcase(yyruleno==101);
       case 104: /* resolvetype ::= raisetype */ yytestcase(yyruleno==104);
-#line 328 "lemon_sql_parse.y"
+#line 331 "lemon_sql_parse.y"
 {yygotominor.yy4 = yymsp[0].minor.yy4;}
-#line 2413 "lemon_sql_parse.c"
+#line 2416 "lemon_sql_parse.c"
         break;
       case 88: /* conslist_opt ::= */
-#line 337 "lemon_sql_parse.y"
+#line 340 "lemon_sql_parse.y"
 {yygotominor.yy0.n = 0; yygotominor.yy0.z = 0;}
-#line 2418 "lemon_sql_parse.c"
+#line 2421 "lemon_sql_parse.c"
         break;
       case 89: /* conslist_opt ::= COMMA conslist */
-#line 338 "lemon_sql_parse.y"
+#line 341 "lemon_sql_parse.y"
 {yygotominor.yy0 = yymsp[-1].minor.yy0;}
-#line 2423 "lemon_sql_parse.c"
+#line 2426 "lemon_sql_parse.c"
         break;
       case 94: /* tcons ::= PRIMARY KEY LP idxlist autoinc RP onconf */
-#line 344 "lemon_sql_parse.y"
+#line 347 "lemon_sql_parse.y"
 {sqlite3AddPrimaryKey(pParse,yymsp[-3].minor.yy322,yymsp[0].minor.yy4,yymsp[-2].minor.yy4,0);}
-#line 2428 "lemon_sql_parse.c"
+#line 2431 "lemon_sql_parse.c"
         break;
       case 95: /* tcons ::= UNIQUE LP idxlist RP onconf */
-#line 346 "lemon_sql_parse.y"
+#line 349 "lemon_sql_parse.y"
 {sqlite3CreateIndex(pParse,0,0,0,yymsp[-2].minor.yy322,yymsp[0].minor.yy4,0,0,0,0);}
-#line 2433 "lemon_sql_parse.c"
+#line 2436 "lemon_sql_parse.c"
         break;
       case 96: /* tcons ::= CHECK LP expr RP onconf */
-#line 348 "lemon_sql_parse.y"
+#line 351 "lemon_sql_parse.y"
 {sqlite3AddCheckConstraint(pParse,yymsp[-2].minor.yy118.pExpr);}
-#line 2438 "lemon_sql_parse.c"
+#line 2441 "lemon_sql_parse.c"
         break;
       case 97: /* tcons ::= FOREIGN KEY LP idxlist RP REFERENCES nm idxlist_opt refargs defer_subclause_opt */
-#line 350 "lemon_sql_parse.y"
+#line 353 "lemon_sql_parse.y"
 {
     sqlite3CreateForeignKey(pParse, yymsp[-6].minor.yy322, &yymsp[-3].minor.yy0, yymsp[-2].minor.yy322, yymsp[-1].minor.yy4);
     sqlite3DeferForeignKey(pParse, yymsp[0].minor.yy4);
 }
-#line 2446 "lemon_sql_parse.c"
+#line 2449 "lemon_sql_parse.c"
         break;
       case 100: /* onconf ::= */
-#line 364 "lemon_sql_parse.y"
+#line 367 "lemon_sql_parse.y"
 {yygotominor.yy4 = OE_Default;}
-#line 2451 "lemon_sql_parse.c"
+#line 2454 "lemon_sql_parse.c"
         break;
       case 102: /* orconf ::= */
-#line 366 "lemon_sql_parse.y"
+#line 369 "lemon_sql_parse.y"
 {yygotominor.yy210 = OE_Default;}
-#line 2456 "lemon_sql_parse.c"
+#line 2459 "lemon_sql_parse.c"
         break;
       case 103: /* orconf ::= OR resolvetype */
-#line 367 "lemon_sql_parse.y"
+#line 370 "lemon_sql_parse.y"
 {yygotominor.yy210 = (u8)yymsp[0].minor.yy4;}
-#line 2461 "lemon_sql_parse.c"
+#line 2464 "lemon_sql_parse.c"
         break;
       case 105: /* resolvetype ::= IGNORE */
-#line 369 "lemon_sql_parse.y"
+#line 372 "lemon_sql_parse.y"
 {yygotominor.yy4 = OE_Ignore;}
-#line 2466 "lemon_sql_parse.c"
+#line 2469 "lemon_sql_parse.c"
         break;
       case 106: /* resolvetype ::= REPLACE */
-#line 370 "lemon_sql_parse.y"
+#line 373 "lemon_sql_parse.y"
 {yygotominor.yy4 = OE_Replace;}
-#line 2471 "lemon_sql_parse.c"
+#line 2474 "lemon_sql_parse.c"
         break;
       case 107: /* cmd ::= DROP TABLE ifexists fullname */
-#line 374 "lemon_sql_parse.y"
+#line 377 "lemon_sql_parse.y"
 {
   sqlite3DropTable(pParse, yymsp[0].minor.yy259, 0, yymsp[-1].minor.yy4);
 }
-#line 2478 "lemon_sql_parse.c"
+#line 2481 "lemon_sql_parse.c"
         break;
       case 110: /* cmd ::= createkw temp VIEW ifnotexists nm dbnm AS select */
-#line 384 "lemon_sql_parse.y"
+#line 387 "lemon_sql_parse.y"
 {
   sqlite3CreateView(pParse, &yymsp[-7].minor.yy0, &yymsp[-3].minor.yy0, &yymsp[-2].minor.yy0, yymsp[0].minor.yy387, yymsp[-6].minor.yy4, yymsp[-4].minor.yy4);
 }
-#line 2485 "lemon_sql_parse.c"
+#line 2488 "lemon_sql_parse.c"
         break;
       case 111: /* cmd ::= DROP VIEW ifexists fullname */
-#line 387 "lemon_sql_parse.y"
+#line 390 "lemon_sql_parse.y"
 {
   sqlite3DropTable(pParse, yymsp[0].minor.yy259, 1, yymsp[-1].minor.yy4);
 }
-#line 2492 "lemon_sql_parse.c"
+#line 2495 "lemon_sql_parse.c"
         break;
       case 112: /* cmd ::= select */
-#line 394 "lemon_sql_parse.y"
+#line 397 "lemon_sql_parse.y"
 {
   SelectDest dest = {SRT_Output, 0, 0, 0, 0};
   sqlite3Select(pParse, yymsp[0].minor.yy387, &dest);
@@ -2503,15 +2503,15 @@ static void yy_reduce(
   sqlite3ExplainFinish(pParse->pVdbe);
   sqlite3SelectDelete(pParse->db, yymsp[0].minor.yy387);
 }
-#line 2504 "lemon_sql_parse.c"
+#line 2507 "lemon_sql_parse.c"
         break;
       case 113: /* select ::= oneselect */
-#line 408 "lemon_sql_parse.y"
+#line 411 "lemon_sql_parse.y"
 {yygotominor.yy387 = yymsp[0].minor.yy387;}
-#line 2509 "lemon_sql_parse.c"
+#line 2512 "lemon_sql_parse.c"
         break;
       case 114: /* select ::= select multiselect_op oneselect */
-#line 410 "lemon_sql_parse.y"
+#line 413 "lemon_sql_parse.y"
 {
   if( yymsp[0].minor.yy387 ){
     yymsp[0].minor.yy387->op = (u8)yymsp[-1].minor.yy4;
@@ -2521,110 +2521,110 @@ static void yy_reduce(
   }
   yygotominor.yy387 = yymsp[0].minor.yy387;
 }
-#line 2522 "lemon_sql_parse.c"
+#line 2525 "lemon_sql_parse.c"
         break;
       case 116: /* multiselect_op ::= UNION ALL */
-#line 421 "lemon_sql_parse.y"
+#line 424 "lemon_sql_parse.y"
 {yygotominor.yy4 = TK_ALL;}
-#line 2527 "lemon_sql_parse.c"
+#line 2530 "lemon_sql_parse.c"
         break;
       case 118: /* oneselect ::= SELECT distinct selcollist from where_opt groupby_opt having_opt orderby_opt limit_opt */
-#line 425 "lemon_sql_parse.y"
+#line 428 "lemon_sql_parse.y"
 {
   yygotominor.yy387 = sqlite3SelectNew(pParse,yymsp[-6].minor.yy322,yymsp[-5].minor.yy259,yymsp[-4].minor.yy314,yymsp[-3].minor.yy322,yymsp[-2].minor.yy314,yymsp[-1].minor.yy322,yymsp[-7].minor.yy4,yymsp[0].minor.yy292.pLimit,yymsp[0].minor.yy292.pOffset);
 }
-#line 2534 "lemon_sql_parse.c"
+#line 2537 "lemon_sql_parse.c"
         break;
       case 122: /* sclp ::= selcollist COMMA */
       case 247: /* idxlist_opt ::= LP idxlist RP */ yytestcase(yyruleno==247);
-#line 446 "lemon_sql_parse.y"
+#line 449 "lemon_sql_parse.y"
 {yygotominor.yy322 = yymsp[-1].minor.yy322;}
-#line 2540 "lemon_sql_parse.c"
+#line 2543 "lemon_sql_parse.c"
         break;
       case 123: /* sclp ::= */
       case 151: /* orderby_opt ::= */ yytestcase(yyruleno==151);
       case 159: /* groupby_opt ::= */ yytestcase(yyruleno==159);
       case 240: /* exprlist ::= */ yytestcase(yyruleno==240);
       case 246: /* idxlist_opt ::= */ yytestcase(yyruleno==246);
-#line 447 "lemon_sql_parse.y"
+#line 450 "lemon_sql_parse.y"
 {yygotominor.yy322 = 0;}
-#line 2549 "lemon_sql_parse.c"
+#line 2552 "lemon_sql_parse.c"
         break;
       case 124: /* selcollist ::= sclp expr as */
-#line 448 "lemon_sql_parse.y"
+#line 451 "lemon_sql_parse.y"
 {
    yygotominor.yy322 = sqlite3ExprListAppend(pParse, yymsp[-2].minor.yy322, yymsp[-1].minor.yy118.pExpr);
    if( yymsp[0].minor.yy0.n>0 ) sqlite3ExprListSetName(pParse, yygotominor.yy322, &yymsp[0].minor.yy0, 1);
    sqlite3ExprListSetSpan(pParse,yygotominor.yy322,&yymsp[-1].minor.yy118);
 }
-#line 2558 "lemon_sql_parse.c"
+#line 2561 "lemon_sql_parse.c"
         break;
       case 125: /* selcollist ::= sclp STAR */
-#line 453 "lemon_sql_parse.y"
+#line 456 "lemon_sql_parse.y"
 {
   Expr *p = sqlite3Expr(pParse->db, TK_ALL, 0);
   yygotominor.yy322 = sqlite3ExprListAppend(pParse, yymsp[-1].minor.yy322, p);
 }
-#line 2566 "lemon_sql_parse.c"
+#line 2569 "lemon_sql_parse.c"
         break;
       case 126: /* selcollist ::= sclp nm DOT STAR */
-#line 457 "lemon_sql_parse.y"
+#line 460 "lemon_sql_parse.y"
 {
   Expr *pRight = sqlite3PExpr(pParse, TK_ALL, 0, 0, &yymsp[0].minor.yy0);
   Expr *pLeft = sqlite3PExpr(pParse, TK_ID, 0, 0, &yymsp[-2].minor.yy0);
   Expr *pDot = sqlite3PExpr(pParse, TK_DOT, pLeft, pRight, 0);
   yygotominor.yy322 = sqlite3ExprListAppend(pParse,yymsp[-3].minor.yy322, pDot);
 }
-#line 2576 "lemon_sql_parse.c"
+#line 2579 "lemon_sql_parse.c"
         break;
       case 129: /* as ::= */
-#line 470 "lemon_sql_parse.y"
+#line 473 "lemon_sql_parse.y"
 {yygotominor.yy0.n = 0;}
-#line 2581 "lemon_sql_parse.c"
+#line 2584 "lemon_sql_parse.c"
         break;
       case 130: /* from ::= */
-#line 482 "lemon_sql_parse.y"
+#line 485 "lemon_sql_parse.y"
 {yygotominor.yy259 = sqlite3DbMallocZero(pParse->db, sizeof(*yygotominor.yy259));}
-#line 2586 "lemon_sql_parse.c"
+#line 2589 "lemon_sql_parse.c"
         break;
       case 131: /* from ::= FROM seltablist */
-#line 483 "lemon_sql_parse.y"
+#line 486 "lemon_sql_parse.y"
 {
   yygotominor.yy259 = yymsp[0].minor.yy259;
   sqlite3SrcListShiftJoinType(yygotominor.yy259);
 }
-#line 2594 "lemon_sql_parse.c"
+#line 2597 "lemon_sql_parse.c"
         break;
       case 132: /* stl_prefix ::= seltablist joinop */
-#line 491 "lemon_sql_parse.y"
+#line 494 "lemon_sql_parse.y"
 {
    yygotominor.yy259 = yymsp[-1].minor.yy259;
    if( ALWAYS(yygotominor.yy259 && yygotominor.yy259->nSrc>0) ) yygotominor.yy259->a[yygotominor.yy259->nSrc-1].jointype = (u8)yymsp[0].minor.yy4;
 }
-#line 2602 "lemon_sql_parse.c"
+#line 2605 "lemon_sql_parse.c"
         break;
       case 133: /* stl_prefix ::= */
-#line 495 "lemon_sql_parse.y"
+#line 498 "lemon_sql_parse.y"
 {yygotominor.yy259 = 0;}
-#line 2607 "lemon_sql_parse.c"
+#line 2610 "lemon_sql_parse.c"
         break;
       case 134: /* seltablist ::= stl_prefix nm dbnm as indexed_opt on_opt using_opt */
-#line 496 "lemon_sql_parse.y"
+#line 499 "lemon_sql_parse.y"
 {
   yygotominor.yy259 = sqlite3SrcListAppendFromTerm(pParse,yymsp[-6].minor.yy259,&yymsp[-5].minor.yy0,&yymsp[-4].minor.yy0,&yymsp[-3].minor.yy0,0,yymsp[-1].minor.yy314,yymsp[0].minor.yy384);
   sqlite3SrcListIndexedBy(pParse, yygotominor.yy259, &yymsp[-2].minor.yy0);
 }
-#line 2615 "lemon_sql_parse.c"
+#line 2618 "lemon_sql_parse.c"
         break;
       case 135: /* seltablist ::= stl_prefix LP select RP as on_opt using_opt */
-#line 502 "lemon_sql_parse.y"
+#line 505 "lemon_sql_parse.y"
 {
     yygotominor.yy259 = sqlite3SrcListAppendFromTerm(pParse,yymsp[-6].minor.yy259,0,0,&yymsp[-2].minor.yy0,yymsp[-4].minor.yy387,yymsp[-1].minor.yy314,yymsp[0].minor.yy384);
   }
-#line 2622 "lemon_sql_parse.c"
+#line 2625 "lemon_sql_parse.c"
         break;
       case 136: /* seltablist ::= stl_prefix LP seltablist RP as on_opt using_opt */
-#line 506 "lemon_sql_parse.y"
+#line 509 "lemon_sql_parse.y"
 {
     if( yymsp[-6].minor.yy259==0 && yymsp[-2].minor.yy0.n==0 && yymsp[-1].minor.yy314==0 && yymsp[0].minor.yy384==0 ){
       yygotominor.yy259 = yymsp[-4].minor.yy259;
@@ -2635,38 +2635,38 @@ static void yy_reduce(
       yygotominor.yy259 = sqlite3SrcListAppendFromTerm(pParse,yymsp[-6].minor.yy259,0,0,&yymsp[-2].minor.yy0,pSubquery,yymsp[-1].minor.yy314,yymsp[0].minor.yy384);
     }
   }
-#line 2636 "lemon_sql_parse.c"
+#line 2639 "lemon_sql_parse.c"
         break;
       case 137: /* dbnm ::= */
       case 146: /* indexed_opt ::= */ yytestcase(yyruleno==146);
-#line 531 "lemon_sql_parse.y"
+#line 534 "lemon_sql_parse.y"
 {yygotominor.yy0.z=0; yygotominor.yy0.n=0;}
-#line 2642 "lemon_sql_parse.c"
+#line 2645 "lemon_sql_parse.c"
         break;
       case 139: /* fullname ::= nm dbnm */
-#line 536 "lemon_sql_parse.y"
+#line 539 "lemon_sql_parse.y"
 {yygotominor.yy259 = sqlite3SrcListAppend(pParse->db,0,&yymsp[-1].minor.yy0,&yymsp[0].minor.yy0);}
-#line 2647 "lemon_sql_parse.c"
+#line 2650 "lemon_sql_parse.c"
         break;
       case 140: /* joinop ::= COMMA|JOIN */
-#line 540 "lemon_sql_parse.y"
+#line 543 "lemon_sql_parse.y"
 { yygotominor.yy4 = JT_INNER; }
-#line 2652 "lemon_sql_parse.c"
+#line 2655 "lemon_sql_parse.c"
         break;
       case 141: /* joinop ::= JOIN_KW JOIN */
-#line 541 "lemon_sql_parse.y"
+#line 544 "lemon_sql_parse.y"
 { yygotominor.yy4 = sqlite3JoinType(pParse,&yymsp[-1].minor.yy0,0,0); }
-#line 2657 "lemon_sql_parse.c"
+#line 2660 "lemon_sql_parse.c"
         break;
       case 142: /* joinop ::= JOIN_KW nm JOIN */
-#line 542 "lemon_sql_parse.y"
+#line 545 "lemon_sql_parse.y"
 { yygotominor.yy4 = sqlite3JoinType(pParse,&yymsp[-2].minor.yy0,&yymsp[-1].minor.yy0,0); }
-#line 2662 "lemon_sql_parse.c"
+#line 2665 "lemon_sql_parse.c"
         break;
       case 143: /* joinop ::= JOIN_KW nm nm JOIN */
-#line 544 "lemon_sql_parse.y"
+#line 547 "lemon_sql_parse.y"
 { yygotominor.yy4 = sqlite3JoinType(pParse,&yymsp[-3].minor.yy0,&yymsp[-2].minor.yy0,&yymsp[-1].minor.yy0); }
-#line 2667 "lemon_sql_parse.c"
+#line 2670 "lemon_sql_parse.c"
         break;
       case 144: /* on_opt ::= ON expr */
       case 155: /* sortitem ::= expr */ yytestcase(yyruleno==155);
@@ -2674,205 +2674,205 @@ static void yy_reduce(
       case 169: /* where_opt ::= WHERE expr */ yytestcase(yyruleno==169);
       case 235: /* case_else ::= ELSE expr */ yytestcase(yyruleno==235);
       case 237: /* case_operand ::= expr */ yytestcase(yyruleno==237);
-#line 548 "lemon_sql_parse.y"
+#line 551 "lemon_sql_parse.y"
 {yygotominor.yy314 = yymsp[0].minor.yy118.pExpr;}
-#line 2677 "lemon_sql_parse.c"
+#line 2680 "lemon_sql_parse.c"
         break;
       case 145: /* on_opt ::= */
       case 161: /* having_opt ::= */ yytestcase(yyruleno==161);
       case 168: /* where_opt ::= */ yytestcase(yyruleno==168);
       case 236: /* case_else ::= */ yytestcase(yyruleno==236);
       case 238: /* case_operand ::= */ yytestcase(yyruleno==238);
-#line 549 "lemon_sql_parse.y"
+#line 552 "lemon_sql_parse.y"
 {yygotominor.yy314 = 0;}
-#line 2686 "lemon_sql_parse.c"
+#line 2689 "lemon_sql_parse.c"
         break;
       case 148: /* indexed_opt ::= NOT INDEXED */
-#line 564 "lemon_sql_parse.y"
+#line 567 "lemon_sql_parse.y"
 {yygotominor.yy0.z=0; yygotominor.yy0.n=1;}
-#line 2691 "lemon_sql_parse.c"
+#line 2694 "lemon_sql_parse.c"
         break;
       case 149: /* using_opt ::= USING LP inscollist RP */
       case 181: /* inscollist_opt ::= LP inscollist RP */ yytestcase(yyruleno==181);
-#line 568 "lemon_sql_parse.y"
+#line 571 "lemon_sql_parse.y"
 {yygotominor.yy384 = yymsp[-1].minor.yy384;}
-#line 2697 "lemon_sql_parse.c"
+#line 2700 "lemon_sql_parse.c"
         break;
       case 150: /* using_opt ::= */
       case 180: /* inscollist_opt ::= */ yytestcase(yyruleno==180);
-#line 569 "lemon_sql_parse.y"
+#line 572 "lemon_sql_parse.y"
 {yygotominor.yy384 = 0;}
-#line 2703 "lemon_sql_parse.c"
+#line 2706 "lemon_sql_parse.c"
         break;
       case 152: /* orderby_opt ::= ORDER BY sortlist */
       case 160: /* groupby_opt ::= GROUP BY nexprlist */ yytestcase(yyruleno==160);
       case 239: /* exprlist ::= nexprlist */ yytestcase(yyruleno==239);
-#line 580 "lemon_sql_parse.y"
+#line 583 "lemon_sql_parse.y"
 {yygotominor.yy322 = yymsp[0].minor.yy322;}
-#line 2710 "lemon_sql_parse.c"
+#line 2713 "lemon_sql_parse.c"
         break;
       case 153: /* sortlist ::= sortlist COMMA sortitem sortorder */
-#line 581 "lemon_sql_parse.y"
+#line 584 "lemon_sql_parse.y"
 {
   yygotominor.yy322 = sqlite3ExprListAppend(pParse,yymsp[-3].minor.yy322,yymsp[-1].minor.yy314);
   if( yygotominor.yy322 ) yygotominor.yy322->a[yygotominor.yy322->nExpr-1].sortOrder = (u8)yymsp[0].minor.yy4;
 }
-#line 2718 "lemon_sql_parse.c"
+#line 2721 "lemon_sql_parse.c"
         break;
       case 154: /* sortlist ::= sortitem sortorder */
-#line 585 "lemon_sql_parse.y"
+#line 588 "lemon_sql_parse.y"
 {
   yygotominor.yy322 = sqlite3ExprListAppend(pParse,0,yymsp[-1].minor.yy314);
   if( yygotominor.yy322 && ALWAYS(yygotominor.yy322->a) ) yygotominor.yy322->a[0].sortOrder = (u8)yymsp[0].minor.yy4;
 }
-#line 2726 "lemon_sql_parse.c"
+#line 2729 "lemon_sql_parse.c"
         break;
       case 156: /* sortorder ::= ASC */
       case 158: /* sortorder ::= */ yytestcase(yyruleno==158);
-#line 593 "lemon_sql_parse.y"
+#line 596 "lemon_sql_parse.y"
 {yygotominor.yy4 = SQLITE_SO_ASC;}
-#line 2732 "lemon_sql_parse.c"
+#line 2735 "lemon_sql_parse.c"
         break;
       case 157: /* sortorder ::= DESC */
-#line 594 "lemon_sql_parse.y"
+#line 597 "lemon_sql_parse.y"
 {yygotominor.yy4 = SQLITE_SO_DESC;}
-#line 2737 "lemon_sql_parse.c"
+#line 2740 "lemon_sql_parse.c"
         break;
       case 163: /* limit_opt ::= */
-#line 620 "lemon_sql_parse.y"
+#line 623 "lemon_sql_parse.y"
 {yygotominor.yy292.pLimit = 0; yygotominor.yy292.pOffset = 0;}
-#line 2742 "lemon_sql_parse.c"
+#line 2745 "lemon_sql_parse.c"
         break;
       case 164: /* limit_opt ::= LIMIT expr */
-#line 621 "lemon_sql_parse.y"
+#line 624 "lemon_sql_parse.y"
 {yygotominor.yy292.pLimit = yymsp[0].minor.yy118.pExpr; yygotominor.yy292.pOffset = 0;}
-#line 2747 "lemon_sql_parse.c"
+#line 2750 "lemon_sql_parse.c"
         break;
       case 165: /* limit_opt ::= LIMIT expr OFFSET expr */
-#line 623 "lemon_sql_parse.y"
+#line 626 "lemon_sql_parse.y"
 {yygotominor.yy292.pLimit = yymsp[-2].minor.yy118.pExpr; yygotominor.yy292.pOffset = yymsp[0].minor.yy118.pExpr;}
-#line 2752 "lemon_sql_parse.c"
+#line 2755 "lemon_sql_parse.c"
         break;
       case 166: /* limit_opt ::= LIMIT expr COMMA expr */
-#line 625 "lemon_sql_parse.y"
+#line 628 "lemon_sql_parse.y"
 {yygotominor.yy292.pOffset = yymsp[-2].minor.yy118.pExpr; yygotominor.yy292.pLimit = yymsp[0].minor.yy118.pExpr;}
-#line 2757 "lemon_sql_parse.c"
+#line 2760 "lemon_sql_parse.c"
         break;
       case 167: /* cmd ::= DELETE FROM fullname indexed_opt where_opt */
-#line 638 "lemon_sql_parse.y"
+#line 641 "lemon_sql_parse.y"
 {
   sqlite3SrcListIndexedBy(pParse, yymsp[-2].minor.yy259, &yymsp[-1].minor.yy0);
   sqlite3DeleteFrom(pParse,yymsp[-2].minor.yy259,yymsp[0].minor.yy314);
 }
-#line 2765 "lemon_sql_parse.c"
+#line 2768 "lemon_sql_parse.c"
         break;
       case 170: /* cmd ::= UPDATE orconf fullname indexed_opt SET setlist where_opt */
-#line 661 "lemon_sql_parse.y"
+#line 664 "lemon_sql_parse.y"
 {
   sqlite3SrcListIndexedBy(pParse, yymsp[-4].minor.yy259, &yymsp[-3].minor.yy0);
   sqlite3ExprListCheckLength(pParse,yymsp[-1].minor.yy322,"set list"); 
   sqlite3Update(pParse,yymsp[-4].minor.yy259,yymsp[-1].minor.yy322,yymsp[0].minor.yy314,yymsp[-5].minor.yy210);
 }
-#line 2774 "lemon_sql_parse.c"
+#line 2777 "lemon_sql_parse.c"
         break;
       case 171: /* setlist ::= setlist COMMA nm EQ expr */
-#line 671 "lemon_sql_parse.y"
+#line 674 "lemon_sql_parse.y"
 {
   yygotominor.yy322 = sqlite3ExprListAppend(pParse, yymsp[-4].minor.yy322, yymsp[0].minor.yy118.pExpr);
   sqlite3ExprListSetName(pParse, yygotominor.yy322, &yymsp[-2].minor.yy0, 1);
 }
-#line 2782 "lemon_sql_parse.c"
+#line 2785 "lemon_sql_parse.c"
         break;
       case 172: /* setlist ::= nm EQ expr */
-#line 675 "lemon_sql_parse.y"
+#line 678 "lemon_sql_parse.y"
 {
   yygotominor.yy322 = sqlite3ExprListAppend(pParse, 0, yymsp[0].minor.yy118.pExpr);
   sqlite3ExprListSetName(pParse, yygotominor.yy322, &yymsp[-2].minor.yy0, 1);
 }
-#line 2790 "lemon_sql_parse.c"
+#line 2793 "lemon_sql_parse.c"
         break;
       case 173: /* cmd ::= insert_cmd INTO fullname inscollist_opt VALUES LP itemlist RP */
-#line 684 "lemon_sql_parse.y"
+#line 687 "lemon_sql_parse.y"
 {sqlite3Insert(pParse, yymsp[-5].minor.yy259, yymsp[-1].minor.yy322, 0, yymsp[-4].minor.yy384, yymsp[-7].minor.yy210);}
-#line 2795 "lemon_sql_parse.c"
+#line 2798 "lemon_sql_parse.c"
         break;
       case 174: /* cmd ::= insert_cmd INTO fullname inscollist_opt select */
-#line 686 "lemon_sql_parse.y"
+#line 689 "lemon_sql_parse.y"
 {sqlite3Insert(pParse, yymsp[-2].minor.yy259, 0, yymsp[0].minor.yy387, yymsp[-1].minor.yy384, yymsp[-4].minor.yy210);}
-#line 2800 "lemon_sql_parse.c"
+#line 2803 "lemon_sql_parse.c"
         break;
       case 175: /* cmd ::= insert_cmd INTO fullname inscollist_opt DEFAULT VALUES */
-#line 688 "lemon_sql_parse.y"
+#line 691 "lemon_sql_parse.y"
 {sqlite3Insert(pParse, yymsp[-3].minor.yy259, 0, 0, yymsp[-2].minor.yy384, yymsp[-5].minor.yy210);}
-#line 2805 "lemon_sql_parse.c"
+#line 2808 "lemon_sql_parse.c"
         break;
       case 176: /* insert_cmd ::= INSERT orconf */
-#line 691 "lemon_sql_parse.y"
+#line 694 "lemon_sql_parse.y"
 {yygotominor.yy210 = yymsp[0].minor.yy210;}
-#line 2810 "lemon_sql_parse.c"
+#line 2813 "lemon_sql_parse.c"
         break;
       case 177: /* insert_cmd ::= REPLACE */
-#line 692 "lemon_sql_parse.y"
+#line 695 "lemon_sql_parse.y"
 {yygotominor.yy210 = OE_Replace;}
-#line 2815 "lemon_sql_parse.c"
+#line 2818 "lemon_sql_parse.c"
         break;
       case 178: /* itemlist ::= itemlist COMMA expr */
       case 241: /* nexprlist ::= nexprlist COMMA expr */ yytestcase(yyruleno==241);
-#line 699 "lemon_sql_parse.y"
+#line 702 "lemon_sql_parse.y"
 {yygotominor.yy322 = sqlite3ExprListAppend(pParse,yymsp[-2].minor.yy322,yymsp[0].minor.yy118.pExpr);}
-#line 2821 "lemon_sql_parse.c"
+#line 2824 "lemon_sql_parse.c"
         break;
       case 179: /* itemlist ::= expr */
       case 242: /* nexprlist ::= expr */ yytestcase(yyruleno==242);
-#line 701 "lemon_sql_parse.y"
+#line 704 "lemon_sql_parse.y"
 {yygotominor.yy322 = sqlite3ExprListAppend(pParse,0,yymsp[0].minor.yy118.pExpr);}
-#line 2827 "lemon_sql_parse.c"
+#line 2830 "lemon_sql_parse.c"
         break;
       case 182: /* inscollist ::= inscollist COMMA nm */
-#line 711 "lemon_sql_parse.y"
+#line 714 "lemon_sql_parse.y"
 {yygotominor.yy384 = sqlite3IdListAppend(pParse->db,yymsp[-2].minor.yy384,&yymsp[0].minor.yy0);}
-#line 2832 "lemon_sql_parse.c"
+#line 2835 "lemon_sql_parse.c"
         break;
       case 183: /* inscollist ::= nm */
-#line 713 "lemon_sql_parse.y"
+#line 716 "lemon_sql_parse.y"
 {yygotominor.yy384 = sqlite3IdListAppend(pParse->db,0,&yymsp[0].minor.yy0);}
-#line 2837 "lemon_sql_parse.c"
+#line 2840 "lemon_sql_parse.c"
         break;
       case 184: /* expr ::= term */
-#line 744 "lemon_sql_parse.y"
+#line 747 "lemon_sql_parse.y"
 {yygotominor.yy118 = yymsp[0].minor.yy118;}
-#line 2842 "lemon_sql_parse.c"
+#line 2845 "lemon_sql_parse.c"
         break;
       case 185: /* expr ::= LP expr RP */
-#line 745 "lemon_sql_parse.y"
+#line 748 "lemon_sql_parse.y"
 {yygotominor.yy118.pExpr = yymsp[-1].minor.yy118.pExpr; spanSet(&yygotominor.yy118,&yymsp[-2].minor.yy0,&yymsp[0].minor.yy0);}
-#line 2847 "lemon_sql_parse.c"
+#line 2850 "lemon_sql_parse.c"
         break;
       case 186: /* term ::= NULL */
       case 191: /* term ::= INTEGER|FLOAT|BLOB */ yytestcase(yyruleno==191);
       case 192: /* term ::= STRING */ yytestcase(yyruleno==192);
-#line 746 "lemon_sql_parse.y"
+#line 749 "lemon_sql_parse.y"
 {spanExpr(&yygotominor.yy118, pParse, yymsp[0].major, &yymsp[0].minor.yy0);}
-#line 2854 "lemon_sql_parse.c"
+#line 2857 "lemon_sql_parse.c"
         break;
       case 187: /* expr ::= id */
       case 188: /* expr ::= JOIN_KW */ yytestcase(yyruleno==188);
-#line 747 "lemon_sql_parse.y"
+#line 750 "lemon_sql_parse.y"
 {spanExpr(&yygotominor.yy118, pParse, TK_ID, &yymsp[0].minor.yy0);}
-#line 2860 "lemon_sql_parse.c"
+#line 2863 "lemon_sql_parse.c"
         break;
       case 189: /* expr ::= nm DOT nm */
-#line 749 "lemon_sql_parse.y"
+#line 752 "lemon_sql_parse.y"
 {
   Expr *temp1 = sqlite3PExpr(pParse, TK_ID, 0, 0, &yymsp[-2].minor.yy0);
   Expr *temp2 = sqlite3PExpr(pParse, TK_ID, 0, 0, &yymsp[0].minor.yy0);
   yygotominor.yy118.pExpr = sqlite3PExpr(pParse, TK_DOT, temp1, temp2, 0);
   spanSet(&yygotominor.yy118,&yymsp[-2].minor.yy0,&yymsp[0].minor.yy0);
 }
-#line 2870 "lemon_sql_parse.c"
+#line 2873 "lemon_sql_parse.c"
         break;
       case 190: /* expr ::= nm DOT nm DOT nm */
-#line 755 "lemon_sql_parse.y"
+#line 758 "lemon_sql_parse.y"
 {
   Expr *temp1 = sqlite3PExpr(pParse, TK_ID, 0, 0, &yymsp[-4].minor.yy0);
   Expr *temp2 = sqlite3PExpr(pParse, TK_ID, 0, 0, &yymsp[-2].minor.yy0);
@@ -2881,10 +2881,10 @@ static void yy_reduce(
   yygotominor.yy118.pExpr = sqlite3PExpr(pParse, TK_DOT, temp1, temp4, 0);
   spanSet(&yygotominor.yy118,&yymsp[-4].minor.yy0,&yymsp[0].minor.yy0);
 }
-#line 2882 "lemon_sql_parse.c"
+#line 2885 "lemon_sql_parse.c"
         break;
       case 193: /* expr ::= REGISTER */
-#line 765 "lemon_sql_parse.y"
+#line 768 "lemon_sql_parse.y"
 {
   /* When doing a nested parse, one can include terms in an expression
   ** that look like this:   #1 #2 ...  These terms refer to registers
@@ -2898,36 +2898,36 @@ static void yy_reduce(
   }
   spanSet(&yygotominor.yy118, &yymsp[0].minor.yy0, &yymsp[0].minor.yy0);
 }
-#line 2899 "lemon_sql_parse.c"
+#line 2902 "lemon_sql_parse.c"
         break;
       case 194: /* expr ::= VARIABLE */
-#line 778 "lemon_sql_parse.y"
+#line 781 "lemon_sql_parse.y"
 {
   spanExpr(&yygotominor.yy118, pParse, TK_VARIABLE, &yymsp[0].minor.yy0);
   sqlite3ExprAssignVarNumber(pParse, yygotominor.yy118.pExpr);
   spanSet(&yygotominor.yy118, &yymsp[0].minor.yy0, &yymsp[0].minor.yy0);
 }
-#line 2908 "lemon_sql_parse.c"
+#line 2911 "lemon_sql_parse.c"
         break;
       case 195: /* expr ::= expr COLLATE ids */
-#line 783 "lemon_sql_parse.y"
+#line 786 "lemon_sql_parse.y"
 {
   yygotominor.yy118.pExpr = sqlite3ExprSetCollByToken(pParse, yymsp[-2].minor.yy118.pExpr, &yymsp[0].minor.yy0);
   yygotominor.yy118.zStart = yymsp[-2].minor.yy118.zStart;
   yygotominor.yy118.zEnd = &yymsp[0].minor.yy0.z[yymsp[0].minor.yy0.n];
 }
-#line 2917 "lemon_sql_parse.c"
+#line 2920 "lemon_sql_parse.c"
         break;
       case 196: /* expr ::= CAST LP expr AS typetoken RP */
-#line 789 "lemon_sql_parse.y"
+#line 792 "lemon_sql_parse.y"
 {
   yygotominor.yy118.pExpr = sqlite3PExpr(pParse, TK_CAST, yymsp[-3].minor.yy118.pExpr, 0, &yymsp[-1].minor.yy0);
   spanSet(&yygotominor.yy118,&yymsp[-5].minor.yy0,&yymsp[0].minor.yy0);
 }
-#line 2925 "lemon_sql_parse.c"
+#line 2928 "lemon_sql_parse.c"
         break;
       case 197: /* expr ::= ID LP distinct exprlist RP */
-#line 794 "lemon_sql_parse.y"
+#line 797 "lemon_sql_parse.y"
 {
   if( yymsp[-1].minor.yy322 && yymsp[-1].minor.yy322->nExpr>pParse->db->aLimit[SQLITE_LIMIT_FUNCTION_ARG] ){
     sqlite3ErrorMsg(pParse, "too many arguments on function %T", &yymsp[-4].minor.yy0);
@@ -2938,18 +2938,18 @@ static void yy_reduce(
     yygotominor.yy118.pExpr->flags |= EP_Distinct;
   }
 }
-#line 2939 "lemon_sql_parse.c"
+#line 2942 "lemon_sql_parse.c"
         break;
       case 198: /* expr ::= ID LP STAR RP */
-#line 804 "lemon_sql_parse.y"
+#line 807 "lemon_sql_parse.y"
 {
   yygotominor.yy118.pExpr = sqlite3ExprFunction(pParse, 0, &yymsp[-3].minor.yy0);
   spanSet(&yygotominor.yy118,&yymsp[-3].minor.yy0,&yymsp[0].minor.yy0);
 }
-#line 2947 "lemon_sql_parse.c"
+#line 2950 "lemon_sql_parse.c"
         break;
       case 199: /* term ::= CTIME_KW */
-#line 808 "lemon_sql_parse.y"
+#line 811 "lemon_sql_parse.y"
 {
   /* The CURRENT_TIME, CURRENT_DATE, and CURRENT_TIMESTAMP values are
   ** treated as functions that return constants */
@@ -2959,7 +2959,7 @@ static void yy_reduce(
   }
   spanSet(&yygotominor.yy118, &yymsp[0].minor.yy0, &yymsp[0].minor.yy0);
 }
-#line 2960 "lemon_sql_parse.c"
+#line 2963 "lemon_sql_parse.c"
         break;
       case 200: /* expr ::= expr AND expr */
       case 201: /* expr ::= expr OR expr */ yytestcase(yyruleno==201);
@@ -2969,24 +2969,24 @@ static void yy_reduce(
       case 205: /* expr ::= expr PLUS|MINUS expr */ yytestcase(yyruleno==205);
       case 206: /* expr ::= expr STAR|SLASH|REM expr */ yytestcase(yyruleno==206);
       case 207: /* expr ::= expr CONCAT expr */ yytestcase(yyruleno==207);
-#line 835 "lemon_sql_parse.y"
+#line 838 "lemon_sql_parse.y"
 {spanBinaryExpr(&yygotominor.yy118,pParse,yymsp[-1].major,&yymsp[-2].minor.yy118,&yymsp[0].minor.yy118);}
-#line 2972 "lemon_sql_parse.c"
+#line 2975 "lemon_sql_parse.c"
         break;
       case 208: /* likeop ::= LIKE_KW */
       case 210: /* likeop ::= MATCH */ yytestcase(yyruleno==210);
-#line 848 "lemon_sql_parse.y"
+#line 851 "lemon_sql_parse.y"
 {yygotominor.yy342.eOperator = yymsp[0].minor.yy0; yygotominor.yy342.not = 0;}
-#line 2978 "lemon_sql_parse.c"
+#line 2981 "lemon_sql_parse.c"
         break;
       case 209: /* likeop ::= NOT LIKE_KW */
       case 211: /* likeop ::= NOT MATCH */ yytestcase(yyruleno==211);
-#line 849 "lemon_sql_parse.y"
+#line 852 "lemon_sql_parse.y"
 {yygotominor.yy342.eOperator = yymsp[0].minor.yy0; yygotominor.yy342.not = 1;}
-#line 2984 "lemon_sql_parse.c"
+#line 2987 "lemon_sql_parse.c"
         break;
       case 212: /* expr ::= expr likeop expr */
-#line 852 "lemon_sql_parse.y"
+#line 855 "lemon_sql_parse.y"
 {
   ExprList *pList;
   pList = sqlite3ExprListAppend(pParse,0, yymsp[0].minor.yy118.pExpr);
@@ -2997,10 +2997,10 @@ static void yy_reduce(
   yygotominor.yy118.zEnd = yymsp[0].minor.yy118.zEnd;
   if( yygotominor.yy118.pExpr ) yygotominor.yy118.pExpr->flags |= EP_InfixFunc;
 }
-#line 2998 "lemon_sql_parse.c"
+#line 3001 "lemon_sql_parse.c"
         break;
       case 213: /* expr ::= expr likeop expr ESCAPE expr */
-#line 862 "lemon_sql_parse.y"
+#line 865 "lemon_sql_parse.y"
 {
   ExprList *pList;
   pList = sqlite3ExprListAppend(pParse,0, yymsp[-2].minor.yy118.pExpr);
@@ -3012,52 +3012,52 @@ static void yy_reduce(
   yygotominor.yy118.zEnd = yymsp[0].minor.yy118.zEnd;
   if( yygotominor.yy118.pExpr ) yygotominor.yy118.pExpr->flags |= EP_InfixFunc;
 }
-#line 3013 "lemon_sql_parse.c"
+#line 3016 "lemon_sql_parse.c"
         break;
       case 214: /* expr ::= expr ISNULL|NOTNULL */
-#line 890 "lemon_sql_parse.y"
+#line 893 "lemon_sql_parse.y"
 {spanUnaryPostfix(&yygotominor.yy118,pParse,yymsp[0].major,&yymsp[-1].minor.yy118,&yymsp[0].minor.yy0);}
-#line 3018 "lemon_sql_parse.c"
+#line 3021 "lemon_sql_parse.c"
         break;
       case 215: /* expr ::= expr NOT NULL */
-#line 891 "lemon_sql_parse.y"
+#line 894 "lemon_sql_parse.y"
 {spanUnaryPostfix(&yygotominor.yy118,pParse,TK_NOTNULL,&yymsp[-2].minor.yy118,&yymsp[0].minor.yy0);}
-#line 3023 "lemon_sql_parse.c"
+#line 3026 "lemon_sql_parse.c"
         break;
       case 216: /* expr ::= expr IS expr */
-#line 912 "lemon_sql_parse.y"
+#line 915 "lemon_sql_parse.y"
 {
   spanBinaryExpr(&yygotominor.yy118,pParse,TK_IS,&yymsp[-2].minor.yy118,&yymsp[0].minor.yy118);
   binaryToUnaryIfNull(pParse, yymsp[0].minor.yy118.pExpr, yygotominor.yy118.pExpr, TK_ISNULL);
 }
-#line 3031 "lemon_sql_parse.c"
+#line 3034 "lemon_sql_parse.c"
         break;
       case 217: /* expr ::= expr IS NOT expr */
-#line 916 "lemon_sql_parse.y"
+#line 919 "lemon_sql_parse.y"
 {
   spanBinaryExpr(&yygotominor.yy118,pParse,TK_ISNOT,&yymsp[-3].minor.yy118,&yymsp[0].minor.yy118);
   binaryToUnaryIfNull(pParse, yymsp[0].minor.yy118.pExpr, yygotominor.yy118.pExpr, TK_NOTNULL);
 }
-#line 3039 "lemon_sql_parse.c"
+#line 3042 "lemon_sql_parse.c"
         break;
       case 218: /* expr ::= NOT expr */
       case 219: /* expr ::= BITNOT expr */ yytestcase(yyruleno==219);
-#line 939 "lemon_sql_parse.y"
+#line 942 "lemon_sql_parse.y"
 {spanUnaryPrefix(&yygotominor.yy118,pParse,yymsp[-1].major,&yymsp[0].minor.yy118,&yymsp[-1].minor.yy0);}
-#line 3045 "lemon_sql_parse.c"
+#line 3048 "lemon_sql_parse.c"
         break;
       case 220: /* expr ::= MINUS expr */
-#line 942 "lemon_sql_parse.y"
+#line 945 "lemon_sql_parse.y"
 {spanUnaryPrefix(&yygotominor.yy118,pParse,TK_UMINUS,&yymsp[0].minor.yy118,&yymsp[-1].minor.yy0);}
-#line 3050 "lemon_sql_parse.c"
+#line 3053 "lemon_sql_parse.c"
         break;
       case 221: /* expr ::= PLUS expr */
-#line 944 "lemon_sql_parse.y"
+#line 947 "lemon_sql_parse.y"
 {spanUnaryPrefix(&yygotominor.yy118,pParse,TK_UPLUS,&yymsp[0].minor.yy118,&yymsp[-1].minor.yy0);}
-#line 3055 "lemon_sql_parse.c"
+#line 3058 "lemon_sql_parse.c"
         break;
       case 224: /* expr ::= expr between_op expr AND expr */
-#line 949 "lemon_sql_parse.y"
+#line 952 "lemon_sql_parse.y"
 {
   ExprList *pList = sqlite3ExprListAppend(pParse,0, yymsp[-2].minor.yy118.pExpr);
   pList = sqlite3ExprListAppend(pParse,pList, yymsp[0].minor.yy118.pExpr);
@@ -3071,10 +3071,10 @@ static void yy_reduce(
   yygotominor.yy118.zStart = yymsp[-4].minor.yy118.zStart;
   yygotominor.yy118.zEnd = yymsp[0].minor.yy118.zEnd;
 }
-#line 3072 "lemon_sql_parse.c"
+#line 3075 "lemon_sql_parse.c"
         break;
       case 227: /* expr ::= expr in_op LP exprlist RP */
-#line 966 "lemon_sql_parse.y"
+#line 969 "lemon_sql_parse.y"
 {
     if( yymsp[-1].minor.yy322==0 ){
       /* Expressions of the form
@@ -3100,10 +3100,10 @@ static void yy_reduce(
     yygotominor.yy118.zStart = yymsp[-4].minor.yy118.zStart;
     yygotominor.yy118.zEnd = &yymsp[0].minor.yy0.z[yymsp[0].minor.yy0.n];
   }
-#line 3101 "lemon_sql_parse.c"
+#line 3104 "lemon_sql_parse.c"
         break;
       case 228: /* expr ::= LP select RP */
-#line 991 "lemon_sql_parse.y"
+#line 994 "lemon_sql_parse.y"
 {
     yygotominor.yy118.pExpr = sqlite3PExpr(pParse, TK_SELECT, 0, 0, 0);
     if( yygotominor.yy118.pExpr ){
@@ -3116,10 +3116,10 @@ static void yy_reduce(
     yygotominor.yy118.zStart = yymsp[-2].minor.yy0.z;
     yygotominor.yy118.zEnd = &yymsp[0].minor.yy0.z[yymsp[0].minor.yy0.n];
   }
-#line 3117 "lemon_sql_parse.c"
+#line 3120 "lemon_sql_parse.c"
         break;
       case 229: /* expr ::= expr in_op LP select RP */
-#line 1003 "lemon_sql_parse.y"
+#line 1006 "lemon_sql_parse.y"
 {
     yygotominor.yy118.pExpr = sqlite3PExpr(pParse, TK_IN, yymsp[-4].minor.yy118.pExpr, 0, 0);
     if( yygotominor.yy118.pExpr ){
@@ -3133,10 +3133,10 @@ static void yy_reduce(
     yygotominor.yy118.zStart = yymsp[-4].minor.yy118.zStart;
     yygotominor.yy118.zEnd = &yymsp[0].minor.yy0.z[yymsp[0].minor.yy0.n];
   }
-#line 3134 "lemon_sql_parse.c"
+#line 3137 "lemon_sql_parse.c"
         break;
       case 230: /* expr ::= expr in_op nm dbnm */
-#line 1016 "lemon_sql_parse.y"
+#line 1019 "lemon_sql_parse.y"
 {
     SrcList *pSrc = sqlite3SrcListAppend(pParse->db, 0,&yymsp[-1].minor.yy0,&yymsp[0].minor.yy0);
     yygotominor.yy118.pExpr = sqlite3PExpr(pParse, TK_IN, yymsp[-3].minor.yy118.pExpr, 0, 0);
@@ -3151,10 +3151,10 @@ static void yy_reduce(
     yygotominor.yy118.zStart = yymsp[-3].minor.yy118.zStart;
     yygotominor.yy118.zEnd = yymsp[0].minor.yy0.z ? &yymsp[0].minor.yy0.z[yymsp[0].minor.yy0.n] : &yymsp[-1].minor.yy0.z[yymsp[-1].minor.yy0.n];
   }
-#line 3152 "lemon_sql_parse.c"
+#line 3155 "lemon_sql_parse.c"
         break;
       case 231: /* expr ::= EXISTS LP select RP */
-#line 1030 "lemon_sql_parse.y"
+#line 1033 "lemon_sql_parse.y"
 {
     Expr *p = yygotominor.yy118.pExpr = sqlite3PExpr(pParse, TK_EXISTS, 0, 0, 0);
     if( p ){
@@ -3167,10 +3167,10 @@ static void yy_reduce(
     yygotominor.yy118.zStart = yymsp[-3].minor.yy0.z;
     yygotominor.yy118.zEnd = &yymsp[0].minor.yy0.z[yymsp[0].minor.yy0.n];
   }
-#line 3168 "lemon_sql_parse.c"
+#line 3171 "lemon_sql_parse.c"
         break;
       case 232: /* expr ::= CASE case_operand case_exprlist case_else END */
-#line 1045 "lemon_sql_parse.y"
+#line 1048 "lemon_sql_parse.y"
 {
   yygotominor.yy118.pExpr = sqlite3PExpr(pParse, TK_CASE, yymsp[-3].minor.yy314, yymsp[-1].minor.yy314, 0);
   if( yygotominor.yy118.pExpr ){
@@ -3182,46 +3182,46 @@ static void yy_reduce(
   yygotominor.yy118.zStart = yymsp[-4].minor.yy0.z;
   yygotominor.yy118.zEnd = &yymsp[0].minor.yy0.z[yymsp[0].minor.yy0.n];
 }
-#line 3183 "lemon_sql_parse.c"
+#line 3186 "lemon_sql_parse.c"
         break;
       case 233: /* case_exprlist ::= case_exprlist WHEN expr THEN expr */
-#line 1058 "lemon_sql_parse.y"
+#line 1061 "lemon_sql_parse.y"
 {
   yygotominor.yy322 = sqlite3ExprListAppend(pParse,yymsp[-4].minor.yy322, yymsp[-2].minor.yy118.pExpr);
   yygotominor.yy322 = sqlite3ExprListAppend(pParse,yygotominor.yy322, yymsp[0].minor.yy118.pExpr);
 }
-#line 3191 "lemon_sql_parse.c"
+#line 3194 "lemon_sql_parse.c"
         break;
       case 234: /* case_exprlist ::= WHEN expr THEN expr */
-#line 1062 "lemon_sql_parse.y"
+#line 1065 "lemon_sql_parse.y"
 {
   yygotominor.yy322 = sqlite3ExprListAppend(pParse,0, yymsp[-2].minor.yy118.pExpr);
   yygotominor.yy322 = sqlite3ExprListAppend(pParse,yygotominor.yy322, yymsp[0].minor.yy118.pExpr);
 }
-#line 3199 "lemon_sql_parse.c"
+#line 3202 "lemon_sql_parse.c"
         break;
       case 243: /* cmd ::= createkw uniqueflag INDEX ifnotexists nm dbnm ON nm LP idxlist RP */
-#line 1091 "lemon_sql_parse.y"
+#line 1094 "lemon_sql_parse.y"
 {
   sqlite3CreateIndex(pParse, &yymsp[-6].minor.yy0, &yymsp[-5].minor.yy0, 
                      sqlite3SrcListAppend(pParse->db,0,&yymsp[-3].minor.yy0,0), yymsp[-1].minor.yy322, yymsp[-9].minor.yy4,
                       &yymsp[-10].minor.yy0, &yymsp[0].minor.yy0, SQLITE_SO_ASC, yymsp[-7].minor.yy4);
 }
-#line 3208 "lemon_sql_parse.c"
+#line 3211 "lemon_sql_parse.c"
         break;
       case 244: /* uniqueflag ::= UNIQUE */
       case 298: /* raisetype ::= ABORT */ yytestcase(yyruleno==298);
-#line 1098 "lemon_sql_parse.y"
+#line 1101 "lemon_sql_parse.y"
 {yygotominor.yy4 = OE_Abort;}
-#line 3214 "lemon_sql_parse.c"
+#line 3217 "lemon_sql_parse.c"
         break;
       case 245: /* uniqueflag ::= */
-#line 1099 "lemon_sql_parse.y"
+#line 1102 "lemon_sql_parse.y"
 {yygotominor.yy4 = OE_None;}
-#line 3219 "lemon_sql_parse.c"
+#line 3222 "lemon_sql_parse.c"
         break;
       case 248: /* idxlist ::= idxlist COMMA nm collate sortorder */
-#line 1108 "lemon_sql_parse.y"
+#line 1111 "lemon_sql_parse.y"
 {
   Expr *p = 0;
   if( yymsp[-1].minor.yy0.n>0 ){
@@ -3233,10 +3233,10 @@ static void yy_reduce(
   sqlite3ExprListCheckLength(pParse, yygotominor.yy322, "index");
   if( yygotominor.yy322 ) yygotominor.yy322->a[yygotominor.yy322->nExpr-1].sortOrder = (u8)yymsp[0].minor.yy4;
 }
-#line 3234 "lemon_sql_parse.c"
+#line 3237 "lemon_sql_parse.c"
         break;
       case 249: /* idxlist ::= nm collate sortorder */
-#line 1119 "lemon_sql_parse.y"
+#line 1122 "lemon_sql_parse.y"
 {
   Expr *p = 0;
   if( yymsp[-1].minor.yy0.n>0 ){
@@ -3248,180 +3248,180 @@ static void yy_reduce(
   sqlite3ExprListCheckLength(pParse, yygotominor.yy322, "index");
   if( yygotominor.yy322 ) yygotominor.yy322->a[yygotominor.yy322->nExpr-1].sortOrder = (u8)yymsp[0].minor.yy4;
 }
-#line 3249 "lemon_sql_parse.c"
+#line 3252 "lemon_sql_parse.c"
         break;
       case 250: /* collate ::= */
-#line 1132 "lemon_sql_parse.y"
+#line 1135 "lemon_sql_parse.y"
 {yygotominor.yy0.z = 0; yygotominor.yy0.n = 0;}
-#line 3254 "lemon_sql_parse.c"
+#line 3257 "lemon_sql_parse.c"
         break;
       case 252: /* cmd ::= DROP INDEX ifexists fullname */
-#line 1138 "lemon_sql_parse.y"
+#line 1141 "lemon_sql_parse.y"
 {sqlite3DropIndex(pParse, yymsp[0].minor.yy259, yymsp[-1].minor.yy4);}
-#line 3259 "lemon_sql_parse.c"
+#line 3262 "lemon_sql_parse.c"
         break;
       case 253: /* cmd ::= VACUUM */
       case 254: /* cmd ::= VACUUM nm */ yytestcase(yyruleno==254);
-#line 1144 "lemon_sql_parse.y"
+#line 1147 "lemon_sql_parse.y"
 {sqlite3Vacuum(pParse);}
-#line 3265 "lemon_sql_parse.c"
+#line 3268 "lemon_sql_parse.c"
         break;
       case 255: /* cmd ::= PRAGMA nm dbnm */
-#line 1152 "lemon_sql_parse.y"
+#line 1155 "lemon_sql_parse.y"
 {sqlite3Pragma(pParse,&yymsp[-1].minor.yy0,&yymsp[0].minor.yy0,0,0);}
-#line 3270 "lemon_sql_parse.c"
+#line 3273 "lemon_sql_parse.c"
         break;
       case 256: /* cmd ::= PRAGMA nm dbnm EQ nmnum */
-#line 1153 "lemon_sql_parse.y"
+#line 1156 "lemon_sql_parse.y"
 {sqlite3Pragma(pParse,&yymsp[-3].minor.yy0,&yymsp[-2].minor.yy0,&yymsp[0].minor.yy0,0);}
-#line 3275 "lemon_sql_parse.c"
+#line 3278 "lemon_sql_parse.c"
         break;
       case 257: /* cmd ::= PRAGMA nm dbnm LP nmnum RP */
-#line 1154 "lemon_sql_parse.y"
+#line 1157 "lemon_sql_parse.y"
 {sqlite3Pragma(pParse,&yymsp[-4].minor.yy0,&yymsp[-3].minor.yy0,&yymsp[-1].minor.yy0,0);}
-#line 3280 "lemon_sql_parse.c"
+#line 3283 "lemon_sql_parse.c"
         break;
       case 258: /* cmd ::= PRAGMA nm dbnm EQ minus_num */
-#line 1156 "lemon_sql_parse.y"
+#line 1159 "lemon_sql_parse.y"
 {sqlite3Pragma(pParse,&yymsp[-3].minor.yy0,&yymsp[-2].minor.yy0,&yymsp[0].minor.yy0,1);}
-#line 3285 "lemon_sql_parse.c"
+#line 3288 "lemon_sql_parse.c"
         break;
       case 259: /* cmd ::= PRAGMA nm dbnm LP minus_num RP */
-#line 1158 "lemon_sql_parse.y"
+#line 1161 "lemon_sql_parse.y"
 {sqlite3Pragma(pParse,&yymsp[-4].minor.yy0,&yymsp[-3].minor.yy0,&yymsp[-1].minor.yy0,1);}
-#line 3290 "lemon_sql_parse.c"
+#line 3293 "lemon_sql_parse.c"
         break;
       case 270: /* cmd ::= createkw trigger_decl BEGIN trigger_cmd_list END */
-#line 1176 "lemon_sql_parse.y"
+#line 1179 "lemon_sql_parse.y"
 {
   Token all;
   all.z = yymsp[-3].minor.yy0.z;
   all.n = (int)(yymsp[0].minor.yy0.z - yymsp[-3].minor.yy0.z) + yymsp[0].minor.yy0.n;
   sqlite3FinishTrigger(pParse, yymsp[-1].minor.yy203, &all);
 }
-#line 3300 "lemon_sql_parse.c"
+#line 3303 "lemon_sql_parse.c"
         break;
       case 271: /* trigger_decl ::= temp TRIGGER ifnotexists nm dbnm trigger_time trigger_event ON fullname foreach_clause when_clause */
-#line 1185 "lemon_sql_parse.y"
+#line 1188 "lemon_sql_parse.y"
 {
   sqlite3BeginTrigger(pParse, &yymsp[-7].minor.yy0, &yymsp[-6].minor.yy0, yymsp[-5].minor.yy4, yymsp[-4].minor.yy90.a, yymsp[-4].minor.yy90.b, yymsp[-2].minor.yy259, yymsp[0].minor.yy314, yymsp[-10].minor.yy4, yymsp[-8].minor.yy4);
   yygotominor.yy0 = (yymsp[-6].minor.yy0.n==0?yymsp[-7].minor.yy0:yymsp[-6].minor.yy0);
 }
-#line 3308 "lemon_sql_parse.c"
+#line 3311 "lemon_sql_parse.c"
         break;
       case 272: /* trigger_time ::= BEFORE */
       case 275: /* trigger_time ::= */ yytestcase(yyruleno==275);
-#line 1191 "lemon_sql_parse.y"
+#line 1194 "lemon_sql_parse.y"
 { yygotominor.yy4 = TK_BEFORE; }
-#line 3314 "lemon_sql_parse.c"
+#line 3317 "lemon_sql_parse.c"
         break;
       case 273: /* trigger_time ::= AFTER */
-#line 1192 "lemon_sql_parse.y"
+#line 1195 "lemon_sql_parse.y"
 { yygotominor.yy4 = TK_AFTER;  }
-#line 3319 "lemon_sql_parse.c"
+#line 3322 "lemon_sql_parse.c"
         break;
       case 274: /* trigger_time ::= INSTEAD OF */
-#line 1193 "lemon_sql_parse.y"
+#line 1196 "lemon_sql_parse.y"
 { yygotominor.yy4 = TK_INSTEAD;}
-#line 3324 "lemon_sql_parse.c"
+#line 3327 "lemon_sql_parse.c"
         break;
       case 276: /* trigger_event ::= DELETE|INSERT */
       case 277: /* trigger_event ::= UPDATE */ yytestcase(yyruleno==277);
-#line 1198 "lemon_sql_parse.y"
+#line 1201 "lemon_sql_parse.y"
 {yygotominor.yy90.a = yymsp[0].major; yygotominor.yy90.b = 0;}
-#line 3330 "lemon_sql_parse.c"
+#line 3333 "lemon_sql_parse.c"
         break;
       case 278: /* trigger_event ::= UPDATE OF inscollist */
-#line 1200 "lemon_sql_parse.y"
+#line 1203 "lemon_sql_parse.y"
 {yygotominor.yy90.a = TK_UPDATE; yygotominor.yy90.b = yymsp[0].minor.yy384;}
-#line 3335 "lemon_sql_parse.c"
+#line 3338 "lemon_sql_parse.c"
         break;
       case 281: /* when_clause ::= */
       case 303: /* key_opt ::= */ yytestcase(yyruleno==303);
-#line 1207 "lemon_sql_parse.y"
+#line 1210 "lemon_sql_parse.y"
 { yygotominor.yy314 = 0; }
-#line 3341 "lemon_sql_parse.c"
+#line 3344 "lemon_sql_parse.c"
         break;
       case 282: /* when_clause ::= WHEN expr */
       case 304: /* key_opt ::= KEY expr */ yytestcase(yyruleno==304);
-#line 1208 "lemon_sql_parse.y"
+#line 1211 "lemon_sql_parse.y"
 { yygotominor.yy314 = yymsp[0].minor.yy118.pExpr; }
-#line 3347 "lemon_sql_parse.c"
+#line 3350 "lemon_sql_parse.c"
         break;
       case 283: /* trigger_cmd_list ::= trigger_cmd_list trigger_cmd SEMI */
-#line 1212 "lemon_sql_parse.y"
+#line 1215 "lemon_sql_parse.y"
 {
   assert( yymsp[-2].minor.yy203!=0 );
   yymsp[-2].minor.yy203->pLast->pNext = yymsp[-1].minor.yy203;
   yymsp[-2].minor.yy203->pLast = yymsp[-1].minor.yy203;
   yygotominor.yy203 = yymsp[-2].minor.yy203;
 }
-#line 3357 "lemon_sql_parse.c"
+#line 3360 "lemon_sql_parse.c"
         break;
       case 284: /* trigger_cmd_list ::= trigger_cmd SEMI */
-#line 1218 "lemon_sql_parse.y"
+#line 1221 "lemon_sql_parse.y"
 { 
   assert( yymsp[-1].minor.yy203!=0 );
   yymsp[-1].minor.yy203->pLast = yymsp[-1].minor.yy203;
   yygotominor.yy203 = yymsp[-1].minor.yy203;
 }
-#line 3366 "lemon_sql_parse.c"
+#line 3369 "lemon_sql_parse.c"
         break;
       case 286: /* trnm ::= nm DOT nm */
-#line 1230 "lemon_sql_parse.y"
+#line 1233 "lemon_sql_parse.y"
 {
   yygotominor.yy0 = yymsp[0].minor.yy0;
   sqlite3ErrorMsg(pParse, 
         "qualified table names are not allowed on INSERT, UPDATE, and DELETE "
         "statements within triggers");
 }
-#line 3376 "lemon_sql_parse.c"
+#line 3379 "lemon_sql_parse.c"
         break;
       case 288: /* tridxby ::= INDEXED BY nm */
-#line 1242 "lemon_sql_parse.y"
+#line 1245 "lemon_sql_parse.y"
 {
   sqlite3ErrorMsg(pParse,
         "the INDEXED BY clause is not allowed on UPDATE or DELETE statements "
         "within triggers");
 }
-#line 3385 "lemon_sql_parse.c"
+#line 3388 "lemon_sql_parse.c"
         break;
       case 289: /* tridxby ::= NOT INDEXED */
-#line 1247 "lemon_sql_parse.y"
+#line 1250 "lemon_sql_parse.y"
 {
   sqlite3ErrorMsg(pParse,
         "the NOT INDEXED clause is not allowed on UPDATE or DELETE statements "
         "within triggers");
 }
-#line 3394 "lemon_sql_parse.c"
+#line 3397 "lemon_sql_parse.c"
         break;
       case 290: /* trigger_cmd ::= UPDATE orconf trnm tridxby SET setlist where_opt */
-#line 1260 "lemon_sql_parse.y"
+#line 1263 "lemon_sql_parse.y"
 { yygotominor.yy203 = sqlite3TriggerUpdateStep(pParse->db, &yymsp[-4].minor.yy0, yymsp[-1].minor.yy322, yymsp[0].minor.yy314, yymsp[-5].minor.yy210); }
-#line 3399 "lemon_sql_parse.c"
+#line 3402 "lemon_sql_parse.c"
         break;
       case 291: /* trigger_cmd ::= insert_cmd INTO trnm inscollist_opt VALUES LP itemlist RP */
-#line 1265 "lemon_sql_parse.y"
+#line 1268 "lemon_sql_parse.y"
 {yygotominor.yy203 = sqlite3TriggerInsertStep(pParse->db, &yymsp[-5].minor.yy0, yymsp[-4].minor.yy384, yymsp[-1].minor.yy322, 0, yymsp[-7].minor.yy210);}
-#line 3404 "lemon_sql_parse.c"
+#line 3407 "lemon_sql_parse.c"
         break;
       case 292: /* trigger_cmd ::= insert_cmd INTO trnm inscollist_opt select */
-#line 1268 "lemon_sql_parse.y"
+#line 1271 "lemon_sql_parse.y"
 {yygotominor.yy203 = sqlite3TriggerInsertStep(pParse->db, &yymsp[-2].minor.yy0, yymsp[-1].minor.yy384, 0, yymsp[0].minor.yy387, yymsp[-4].minor.yy210);}
-#line 3409 "lemon_sql_parse.c"
+#line 3412 "lemon_sql_parse.c"
         break;
       case 293: /* trigger_cmd ::= DELETE FROM trnm tridxby where_opt */
-#line 1272 "lemon_sql_parse.y"
+#line 1275 "lemon_sql_parse.y"
 {yygotominor.yy203 = sqlite3TriggerDeleteStep(pParse->db, &yymsp[-2].minor.yy0, yymsp[0].minor.yy314);}
-#line 3414 "lemon_sql_parse.c"
+#line 3417 "lemon_sql_parse.c"
         break;
       case 294: /* trigger_cmd ::= select */
-#line 1275 "lemon_sql_parse.y"
+#line 1278 "lemon_sql_parse.y"
 {yygotominor.yy203 = sqlite3TriggerSelectStep(pParse->db, yymsp[0].minor.yy387); }
-#line 3419 "lemon_sql_parse.c"
+#line 3422 "lemon_sql_parse.c"
         break;
       case 295: /* expr ::= RAISE LP IGNORE RP */
-#line 1278 "lemon_sql_parse.y"
+#line 1281 "lemon_sql_parse.y"
 {
   yygotominor.yy118.pExpr = sqlite3PExpr(pParse, TK_RAISE, 0, 0, 0); 
   if( yygotominor.yy118.pExpr ){
@@ -3430,10 +3430,10 @@ static void yy_reduce(
   yygotominor.yy118.zStart = yymsp[-3].minor.yy0.z;
   yygotominor.yy118.zEnd = &yymsp[0].minor.yy0.z[yymsp[0].minor.yy0.n];
 }
-#line 3431 "lemon_sql_parse.c"
+#line 3434 "lemon_sql_parse.c"
         break;
       case 296: /* expr ::= RAISE LP raisetype COMMA nm RP */
-#line 1286 "lemon_sql_parse.y"
+#line 1289 "lemon_sql_parse.y"
 {
   yygotominor.yy118.pExpr = sqlite3PExpr(pParse, TK_RAISE, 0, 0, &yymsp[-1].minor.yy0); 
   if( yygotominor.yy118.pExpr ) {
@@ -3442,109 +3442,109 @@ static void yy_reduce(
   yygotominor.yy118.zStart = yymsp[-5].minor.yy0.z;
   yygotominor.yy118.zEnd = &yymsp[0].minor.yy0.z[yymsp[0].minor.yy0.n];
 }
-#line 3443 "lemon_sql_parse.c"
+#line 3446 "lemon_sql_parse.c"
         break;
       case 297: /* raisetype ::= ROLLBACK */
-#line 1297 "lemon_sql_parse.y"
+#line 1300 "lemon_sql_parse.y"
 {yygotominor.yy4 = OE_Rollback;}
-#line 3448 "lemon_sql_parse.c"
+#line 3451 "lemon_sql_parse.c"
         break;
       case 299: /* raisetype ::= FAIL */
-#line 1299 "lemon_sql_parse.y"
+#line 1302 "lemon_sql_parse.y"
 {yygotominor.yy4 = OE_Fail;}
-#line 3453 "lemon_sql_parse.c"
+#line 3456 "lemon_sql_parse.c"
         break;
       case 300: /* cmd ::= DROP TRIGGER ifexists fullname */
-#line 1304 "lemon_sql_parse.y"
+#line 1307 "lemon_sql_parse.y"
 {
   sqlite3DropTrigger(pParse,yymsp[0].minor.yy259,yymsp[-1].minor.yy4);
 }
-#line 3460 "lemon_sql_parse.c"
+#line 3463 "lemon_sql_parse.c"
         break;
       case 301: /* cmd ::= ATTACH database_kw_opt expr AS expr key_opt */
-#line 1311 "lemon_sql_parse.y"
+#line 1314 "lemon_sql_parse.y"
 {
   sqlite3Attach(pParse, yymsp[-3].minor.yy118.pExpr, yymsp[-1].minor.yy118.pExpr, yymsp[0].minor.yy314);
 }
-#line 3467 "lemon_sql_parse.c"
+#line 3470 "lemon_sql_parse.c"
         break;
       case 302: /* cmd ::= DETACH database_kw_opt expr */
-#line 1314 "lemon_sql_parse.y"
+#line 1317 "lemon_sql_parse.y"
 {
   sqlite3Detach(pParse, yymsp[0].minor.yy118.pExpr);
 }
-#line 3474 "lemon_sql_parse.c"
+#line 3477 "lemon_sql_parse.c"
         break;
       case 307: /* cmd ::= REINDEX */
-#line 1329 "lemon_sql_parse.y"
+#line 1332 "lemon_sql_parse.y"
 {sqlite3Reindex(pParse, 0, 0);}
-#line 3479 "lemon_sql_parse.c"
+#line 3482 "lemon_sql_parse.c"
         break;
       case 308: /* cmd ::= REINDEX nm dbnm */
-#line 1330 "lemon_sql_parse.y"
+#line 1333 "lemon_sql_parse.y"
 {sqlite3Reindex(pParse, &yymsp[-1].minor.yy0, &yymsp[0].minor.yy0);}
-#line 3484 "lemon_sql_parse.c"
+#line 3487 "lemon_sql_parse.c"
         break;
       case 309: /* cmd ::= ANALYZE */
-#line 1335 "lemon_sql_parse.y"
+#line 1338 "lemon_sql_parse.y"
 {sqlite3Analyze(pParse, 0, 0);}
-#line 3489 "lemon_sql_parse.c"
+#line 3492 "lemon_sql_parse.c"
         break;
       case 310: /* cmd ::= ANALYZE nm dbnm */
-#line 1336 "lemon_sql_parse.y"
+#line 1339 "lemon_sql_parse.y"
 {sqlite3Analyze(pParse, &yymsp[-1].minor.yy0, &yymsp[0].minor.yy0);}
-#line 3494 "lemon_sql_parse.c"
+#line 3497 "lemon_sql_parse.c"
         break;
       case 311: /* cmd ::= ALTER TABLE fullname RENAME TO nm */
-#line 1341 "lemon_sql_parse.y"
+#line 1344 "lemon_sql_parse.y"
 {
   sqlite3AlterRenameTable(pParse,yymsp[-3].minor.yy259,&yymsp[0].minor.yy0);
 }
-#line 3501 "lemon_sql_parse.c"
+#line 3504 "lemon_sql_parse.c"
         break;
       case 312: /* cmd ::= ALTER TABLE add_column_fullname ADD kwcolumn_opt column */
-#line 1344 "lemon_sql_parse.y"
+#line 1347 "lemon_sql_parse.y"
 {
   sqlite3AlterFinishAddColumn(pParse, &yymsp[0].minor.yy0);
 }
-#line 3508 "lemon_sql_parse.c"
+#line 3511 "lemon_sql_parse.c"
         break;
       case 313: /* add_column_fullname ::= fullname */
-#line 1347 "lemon_sql_parse.y"
+#line 1350 "lemon_sql_parse.y"
 {
   pParse->db->lookaside.bEnabled = 0;
   sqlite3AlterBeginAddColumn(pParse, yymsp[0].minor.yy259);
 }
-#line 3516 "lemon_sql_parse.c"
+#line 3519 "lemon_sql_parse.c"
         break;
       case 316: /* cmd ::= create_vtab */
-#line 1357 "lemon_sql_parse.y"
+#line 1360 "lemon_sql_parse.y"
 {sqlite3VtabFinishParse(pParse,0);}
-#line 3521 "lemon_sql_parse.c"
+#line 3524 "lemon_sql_parse.c"
         break;
       case 317: /* cmd ::= create_vtab LP vtabarglist RP */
-#line 1358 "lemon_sql_parse.y"
+#line 1361 "lemon_sql_parse.y"
 {sqlite3VtabFinishParse(pParse,&yymsp[0].minor.yy0);}
-#line 3526 "lemon_sql_parse.c"
+#line 3529 "lemon_sql_parse.c"
         break;
       case 318: /* create_vtab ::= createkw VIRTUAL TABLE nm dbnm USING nm */
-#line 1359 "lemon_sql_parse.y"
+#line 1362 "lemon_sql_parse.y"
 {
     sqlite3VtabBeginParse(pParse, &yymsp[-3].minor.yy0, &yymsp[-2].minor.yy0, &yymsp[0].minor.yy0);
 }
-#line 3533 "lemon_sql_parse.c"
+#line 3536 "lemon_sql_parse.c"
         break;
       case 321: /* vtabarg ::= */
-#line 1364 "lemon_sql_parse.y"
+#line 1367 "lemon_sql_parse.y"
 {sqlite3VtabArgInit(pParse);}
-#line 3538 "lemon_sql_parse.c"
+#line 3541 "lemon_sql_parse.c"
         break;
       case 323: /* vtabargtoken ::= ANY */
       case 324: /* vtabargtoken ::= lp anylist RP */ yytestcase(yyruleno==324);
       case 325: /* lp ::= LP */ yytestcase(yyruleno==325);
-#line 1366 "lemon_sql_parse.y"
+#line 1369 "lemon_sql_parse.y"
 {sqlite3VtabArgExtend(pParse,&yymsp[0].minor.yy0);}
-#line 3545 "lemon_sql_parse.c"
+#line 3548 "lemon_sql_parse.c"
         break;
       default:
       /* (0) input ::= cmdlist */ yytestcase(yyruleno==0);
@@ -3651,7 +3651,7 @@ static void yy_syntax_error(
   UNUSED_PARAMETER(yymajor);  /* Silence some compiler warnings */
   assert( TOKEN.z[0] );  /* The tokenizer always gives us a token */
   sqlite3ErrorMsg(pParse, "near \"%T\": syntax error", &TOKEN);
-#line 3652 "lemon_sql_parse.c"
+#line 3655 "lemon_sql_parse.c"
   sqlite3ParserARG_STORE; /* Suppress warning about unused %extra_argument variable */
 }
 
