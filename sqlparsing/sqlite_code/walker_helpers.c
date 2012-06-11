@@ -28,6 +28,58 @@ void printExpression( Expr* pExpr, Parse *pParse /*for iAlias*/ )
     }
 }
 
+void printSrcList( SrcList* pList )
+{
+    /*
+struct SrcList {
+  i16 nSrc;        // Number of tables or subqueries in the FROM clause
+  i16 nAlloc;      // Number of entries allocated in a[] below
+
+  struct SrcList_item {
+    char *zDatabase;  // Name of database holding this table
+    char *zName;      // Name of the table
+    char *zAlias;     // The "B" part of a "A AS B" phrase.  zName is the "A"
+    Table *pTab;      // An SQL table corresponding to zName
+    Select *pSelect;  // A SELECT statement used in place of a table name
+    int addrFillSub;  // Address of subroutine to manifest a subquery
+    int regReturn;    // Register holding return address of addrFillSub
+    u8 jointype;      // Type of join between this table and the previous
+    u8 notIndexed;    // True if there is a NOT INDEXED clause
+    u8 isCorrelated;  // True if sub-query is correlated
+#ifndef SQLITE_OMIT_EXPLAIN
+    u8 iSelectId;     // If pSelect!=0, the id of the sub-select in EQP
+#endif
+    int iCursor;      // The VDBE cursor number used to access this table
+    Expr *pOn;        // The ON clause of a join
+    IdList *pUsing;   // The USING clause of a join
+    Bitmask colUsed;  // Bit N (1<<N) set if column N of pTab is used
+    char *zIndex;     // Identifier from "INDEXED BY <zIndex>" clause
+    Index *pIndex;    // Index structure corresponding to zIndex, if any
+  } a[1];             // One entry for each identifier on the list
+};
+     */
+
+    printf( "\t\t Begin printSrcList:\n");
+
+    int i = 0;
+
+    for( i = 0; i < pList->nSrc; i++ )
+    {
+        struct SrcList_item* item = (&( pList->a[i] ));
+
+        if ( item->pSelect )
+        {
+            RaiseBreakpointSignalOnlyWhenDebuggerExists();
+        }
+        else
+        {
+            printf( "\t\t\t table: %s\n", item->zName );
+        }
+    }
+
+    printf( "\t\t End printSrcList:\n");
+}
+
 
 
 
@@ -197,6 +249,9 @@ int walk_sqlite3SelectNew
 
     printf( "\t\t walking column list:\n");
     if( sqlite3WalkExprList  (pWalker, pEList) ) return WRC_Abort;
+
+    printf( "\t\t walking from clause:\n");
+    printSrcList( pSrc );
 
     printf( "\t\t walking where clause:\n");
     if( sqlite3WalkExpr      (pWalker, pWhere) ) return WRC_Abort;
