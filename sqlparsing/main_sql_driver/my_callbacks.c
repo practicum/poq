@@ -34,37 +34,50 @@ Expr *sqlite3Expr
 
 
 
-void sqlite3ExprDelete(sqlite3* db, Expr* e)
+
+// this gets called and we just do nothing
+void sqlite3ExplainBegin(Vdbe*v)
+{}
+
+// this gets called and we just do nothing
+void sqlite3ExplainSelect(Vdbe*v, Select*s)
+{}
+
+// this gets called and we just do nothing
+void sqlite3ExplainFinish(Vdbe*v)
+{}
+
+
+
+void *sqlite3DbMallocZero(sqlite3* db,int n)
 {
-    RaiseBreakpointSignalOnlyWhenDebuggerExists();
+    void *p = malloc(n);
+    if( p )
+    {
+        memset(p, 0, n);
+    }
+
+    return p;
 }
 
 
-void sqlite3SelectDelete(sqlite3* db, Select* sel)
+
+/*
+** Resize the block of memory pointed to by p to n bytes. If the
+** resize fails, set the mallocFailed flag in the connection object.
+*/
+void *sqlite3DbRealloc(sqlite3 *db, void *p, int n)
 {
-    RaiseBreakpointSignalOnlyWhenDebuggerExists();
-}
+    void *pNew = 0;
 
+    if( p==0 )
+    {
+        return malloc(n);
+    }
 
-void sqlite3ExprListDelete(sqlite3* db, ExprList* elist)
-{
-    RaiseBreakpointSignalOnlyWhenDebuggerExists();
-}
+    pNew = realloc(p, n);
 
-void sqlite3SrcListDelete(sqlite3* db, SrcList* slist)
-{
-    RaiseBreakpointSignalOnlyWhenDebuggerExists();
-}
-
-
-void sqlite3IdListDelete(sqlite3* db, IdList*idlist)
-{
-    RaiseBreakpointSignalOnlyWhenDebuggerExists();
-}
-
-void sqlite3DeleteTriggerStep(sqlite3* db, TriggerStep* trigstep)
-{
-    RaiseBreakpointSignalOnlyWhenDebuggerExists();
+    return pNew;
 }
 
 
@@ -95,101 +108,39 @@ void sqlite3BeginParse(Parse* p,int i1)
     RaiseBreakpointSignalOnlyWhenDebuggerExists();
 }
 
+// as long as there are NO PARSE ERRORS, then for each semicolon-delimited
+// statement, you get a call to 'sqlite3BeginParse' and 'sqlite3FinishCoding'
+// (all inside the single call to sqlite3RunParser)
 void sqlite3FinishCoding(Parse* p)
 {
     RaiseBreakpointSignalOnlyWhenDebuggerExists();
 }
 
-void sqlite3BeginTransaction(Parse* p,int i1)
-{
-    RaiseBreakpointSignalOnlyWhenDebuggerExists();
-}
 
-void sqlite3CommitTransaction(Parse* p)
-{
-    RaiseBreakpointSignalOnlyWhenDebuggerExists();
-}
 
-void sqlite3RollbackTransaction(Parse* p)
+void sqlite3ExprDelete(sqlite3* db, Expr* e)
 {
     RaiseBreakpointSignalOnlyWhenDebuggerExists();
 }
 
 
-void sqlite3StartTable(Parse* p,Token* tk,Token* tk2,int i1,int i2,int i3,int i4)
+void sqlite3SelectDelete(sqlite3* db, Select* sel)
 {
     RaiseBreakpointSignalOnlyWhenDebuggerExists();
 }
 
 
+void sqlite3ExprListDelete(sqlite3* db, ExprList* elist)
+{
+    RaiseBreakpointSignalOnlyWhenDebuggerExists();
+}
 
-void sqlite3EndTable(Parse* p,Token* tk,Token* tk2,Select* sel)
+void sqlite3SrcListDelete(sqlite3* db, SrcList* slist)
 {
     RaiseBreakpointSignalOnlyWhenDebuggerExists();
 }
 
 
-
-void sqlite3AddColumn(Parse* p,Token* tk)
-{
-    RaiseBreakpointSignalOnlyWhenDebuggerExists();
-}
-
-void sqlite3AddColumnType(Parse* p,Token* tk)
-{
-    RaiseBreakpointSignalOnlyWhenDebuggerExists();
-}
-
-
-
-void sqlite3AddDefaultValue(Parse* p,ExprSpan* espan)
-{
-    RaiseBreakpointSignalOnlyWhenDebuggerExists();
-}
-
-void sqlite3AddNotNull(Parse* p,int i1)
-{
-    RaiseBreakpointSignalOnlyWhenDebuggerExists();
-}
-
-void sqlite3AddPrimaryKey(Parse* p, ExprList* elist,int i1,int i2,int i3)
-{
-    RaiseBreakpointSignalOnlyWhenDebuggerExists();
-}
-
-
-void sqlite3AddCheckConstraint(Parse* p, Expr* e)
-{
-    RaiseBreakpointSignalOnlyWhenDebuggerExists();
-}
-
-void sqlite3CreateForeignKey(Parse* p, ExprList* elist, Token* tk, ExprList* elist2,int i1)
-{
-    RaiseBreakpointSignalOnlyWhenDebuggerExists();
-}
-
-void sqlite3DeferForeignKey(Parse* p,int i1)
-{
-    RaiseBreakpointSignalOnlyWhenDebuggerExists();
-}
-
-void sqlite3AddCollateType(Parse* p, Token* tk)
-{
-    RaiseBreakpointSignalOnlyWhenDebuggerExists();
-}
-
-
-
-
-void sqlite3DropTable(Parse* p, SrcList* slist,int i1,int i2)
-{
-    RaiseBreakpointSignalOnlyWhenDebuggerExists();
-}
-
-void sqlite3CreateView(Parse* p,Token* tk,Token* tk2,Token* tk3,Select* sel,int i1,int i2)
-{
-    RaiseBreakpointSignalOnlyWhenDebuggerExists();
-}
 
 
 void sqlite3ExprListSetName(Parse* p,ExprList* elist,Token* tk,int i1)
@@ -204,46 +155,12 @@ void sqlite3ExprListSetSpan(Parse* p,ExprList* elist,ExprSpan* espan)
 
 
 
-void *sqlite3DbMallocZero(sqlite3* db,int n)
-{
-    void *p = malloc(n);
-    if( p ){
-        memset(p, 0, n);
-    }
-
-    //RaiseBreakpointSignalOnlyWhenDebuggerExists();
-    return p;
-}
-
-
-
-
-void sqlite3DeleteFrom(Parse* p, SrcList* slist, Expr* e)
-{
-    RaiseBreakpointSignalOnlyWhenDebuggerExists();
-}
-
-/// we would only need to implement this if we want to support INDEXED BY or NOT INDEXED
-void sqlite3SrcListIndexedBy(Parse *p, SrcList *slist, Token *tk)
-{
-    if ( tk->z != 0 )
-    {
-        assert( ! "we do not support the INDEXED keyword");
-        RaiseBreakpointSignalOnlyWhenDebuggerExists();// verify that tk->z is NULL, otherwise raise!
-    }
-}
-
 void sqlite3ExprListCheckLength(Parse* p, ExprList* elist, const char* str)
 {
     RaiseBreakpointSignalOnlyWhenDebuggerExists();
 }
 
 
-
-void sqlite3Insert(Parse* p, SrcList* slist, ExprList* elist, Select* sel, IdList* idlist,int i1)
-{
-    RaiseBreakpointSignalOnlyWhenDebuggerExists();
-}
 
 
 void sqlite3ExprAssignVarNumber(Parse* p, Expr* e)
@@ -258,134 +175,6 @@ void sqlite3ExprSetHeight(Parse *pParse, Expr *p)
 }
 
 
-void sqlite3DropIndex(Parse* p, SrcList* slist,int i1)
-{
-    RaiseBreakpointSignalOnlyWhenDebuggerExists();
-}
-
-void sqlite3Vacuum(Parse* p)
-{
-    RaiseBreakpointSignalOnlyWhenDebuggerExists();
-}
-
-void sqlite3Pragma(Parse* p,Token* tk,Token* tk2,Token* tk3,int i1)
-{
-    RaiseBreakpointSignalOnlyWhenDebuggerExists();
-}
-
-
-void sqlite3FinishTrigger(Parse* p, TriggerStep* trigstep, Token* tk)
-{
-    RaiseBreakpointSignalOnlyWhenDebuggerExists();
-}
-
-
-void sqlite3DropTrigger(Parse* p, SrcList* slist,int i1)
-{
-    RaiseBreakpointSignalOnlyWhenDebuggerExists();
-}
-
-void sqlite3Attach(Parse* p, Expr* e, Expr* e2, Expr* e3)
-{
-    RaiseBreakpointSignalOnlyWhenDebuggerExists();
-}
-
-void sqlite3Detach(Parse* p, Expr* e)
-{
-    RaiseBreakpointSignalOnlyWhenDebuggerExists();
-}
-
-
-
-void sqlite3Reindex(Parse* p, Token* tk, Token* tk2)
-{
-    RaiseBreakpointSignalOnlyWhenDebuggerExists();
-}
-
-
-
-void sqlite3Analyze(Parse* p, Token* tk, Token* tk2)
-{
-    RaiseBreakpointSignalOnlyWhenDebuggerExists();
-}
-
-void sqlite3AlterRenameTable(Parse* p, SrcList* slist, Token* tk)
-{
-    RaiseBreakpointSignalOnlyWhenDebuggerExists();
-}
-
-void sqlite3AlterFinishAddColumn(Parse *p, Token *tk)
-{
-    RaiseBreakpointSignalOnlyWhenDebuggerExists();
-}
-
-void sqlite3AlterBeginAddColumn(Parse *p, SrcList *slist)
-{
-    RaiseBreakpointSignalOnlyWhenDebuggerExists();
-}
-
-void sqlite3VtabFinishParse(Parse* p, Token* tk)
-{
-    RaiseBreakpointSignalOnlyWhenDebuggerExists();
-}
-
-
-
-void sqlite3VtabBeginParse(Parse* p, Token* tk, Token* tk2, Token* tk3)
-{
-    RaiseBreakpointSignalOnlyWhenDebuggerExists();
-}
-
-void sqlite3VtabArgInit(Parse* p)
-{
-    RaiseBreakpointSignalOnlyWhenDebuggerExists();
-}
-
-void sqlite3VtabArgExtend(Parse* p, Token* tk)
-{
-    RaiseBreakpointSignalOnlyWhenDebuggerExists();
-}
-
-
-
-
-void sqlite3ExplainBegin(Vdbe*v)
-{
-    RaiseBreakpointSignalOnlyWhenDebuggerExists();
-}
-
-void sqlite3ExplainSelect(Vdbe*v, Select*s)
-{
-    RaiseBreakpointSignalOnlyWhenDebuggerExists();
-}
-
-void sqlite3ExplainFinish(Vdbe*v)
-{
-    RaiseBreakpointSignalOnlyWhenDebuggerExists();
-}
-
-
-
-
-TriggerStep *sqlite3TriggerUpdateStep(sqlite3* db,Token* tk,ExprList* elist, Expr* e, u8 val)
-{
-    RaiseBreakpointSignalOnlyWhenDebuggerExists();
-    return NULL;
-}
-
-
-
-TriggerStep *sqlite3TriggerDeleteStep(sqlite3* db,Token* tk, Expr* e)
-{
-    RaiseBreakpointSignalOnlyWhenDebuggerExists();
-    return NULL;
-}
-
-TriggerStep *sqlite3TriggerSelectStep(sqlite3* db,Select* s)
-{
-    RaiseBreakpointSignalOnlyWhenDebuggerExists();
-    return NULL;
-}
 
 Expr *sqlite3PExpr(Parse* p,int i1, Expr* e, Expr* e2, const Token* tk)
 {
@@ -393,24 +182,6 @@ Expr *sqlite3PExpr(Parse* p,int i1, Expr* e, Expr* e2, const Token* tk)
     return NULL;
 }
 
-
-/*
-** Resize the block of memory pointed to by p to n bytes. If the
-** resize fails, set the mallocFailed flag in the connection object.
-*/
-void *sqlite3DbRealloc(sqlite3 *db, void *p, int n)
-{
-    void *pNew = 0;
-
-    if( p==0 )
-    {
-        return malloc(n);
-    }
-
-    pNew = realloc(p, n);
-
-    return pNew;
-}
 
 
 
@@ -475,13 +246,17 @@ ExprList *sqlite3ExprListAppend(
 }
 
 
-
+/// i initially thought that sqlite only used an IdList for INSERT. but apparently it can be for:  /* The USING clause of a join */
 IdList *sqlite3IdListAppend(sqlite3* db, IdList* idlist, Token* tk)
 {
     RaiseBreakpointSignalOnlyWhenDebuggerExists();
     return NULL;
 }
 
+void sqlite3IdListDelete(sqlite3* db, IdList*idlist)
+{
+    RaiseBreakpointSignalOnlyWhenDebuggerExists();
+}
 
 
 
@@ -508,11 +283,6 @@ Expr *sqlite3ExprFunction(Parse* p,ExprList* elist, Token* tk)
 }
 
 
-
-
-
-
-
 int sqlite3JoinType(Parse* p, Token* tk, Token* tk2, Token* tk3)
 {
     RaiseBreakpointSignalOnlyWhenDebuggerExists();
@@ -520,14 +290,6 @@ int sqlite3JoinType(Parse* p, Token* tk, Token* tk2, Token* tk3)
 }
 
 
-
-
-
-Index *sqlite3CreateIndex(Parse* p,Token* tk,Token* tk2,SrcList* slist,ExprList* elist,int i1,Token* tk3,Token* tk4, int i2, int i3)
-{
-    RaiseBreakpointSignalOnlyWhenDebuggerExists();
-    return NULL;
-}
 
 
 Select *sqlite3SelectNew(
@@ -810,23 +572,6 @@ SrcList *sqlite3SrcListAppendFromTerm
 
 
 
-TriggerStep *sqlite3TriggerInsertStep(sqlite3* db,Token* tk, IdList* idlist, ExprList*elist,Select*s,u8 val)
-{
-    RaiseBreakpointSignalOnlyWhenDebuggerExists();
-    return NULL;
-}
-
-
-void sqlite3BeginTrigger(Parse*p, Token*tk1,Token*tk2,int i1,int i2,IdList* idlist,SrcList* slist, Expr*e,int i3, int i4)
-{
-    RaiseBreakpointSignalOnlyWhenDebuggerExists();
-}
-
-void sqlite3Savepoint(Parse*p, int i1, Token* tk)
-{
-    RaiseBreakpointSignalOnlyWhenDebuggerExists();
-}
-
 int sqlite3Select(Parse*p, Select*s, SelectDest*sd)
 {
     RaiseBreakpointSignalOnlyWhenDebuggerExists();
@@ -880,11 +625,6 @@ void sqlite3SrcListShiftJoinType(SrcList *p)
     }
 }
 
-
-void sqlite3Update(Parse*p, SrcList*slist, ExprList*elist, Expr*e, int i1)
-{
-    RaiseBreakpointSignalOnlyWhenDebuggerExists();
-}
 
 
 
