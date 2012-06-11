@@ -1,5 +1,11 @@
-#include "tokenize.c"
-
+#include "run_parser_function.h"
+#include "tokenize.h"
+#include "generated_parser/extra_tokens.h"
+#include "generated_parser/lemon_sql_parse.h"
+#include "callbacks.h"
+#include <stdlib.h>
+#include <assert.h>
+#include <stdio.h>
 
 /*
 ** Run the parser on the given SQL string.  The parser structure is passed in.

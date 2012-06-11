@@ -61,7 +61,7 @@
 /*
 ** Make yytestcase() the same as testcase()
 */
-#define yytestcase(X) testcase(X)
+#define yytestcase(X)
 
 /*
 ** An instance of this structure holds information about the

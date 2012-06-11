@@ -91,27 +91,6 @@ typedef struct Btree Btree;
 
 
 
-/*
-** The testcase() macro is used to aid in coverage testing.  When 
-** doing coverage testing, the condition inside the argument to
-** testcase() must be evaluated both true and false in order to
-** get full branch coverage.  The testcase() macro is inserted
-** to help ensure adequate test coverage in places where simple
-** condition/decision coverage is inadequate.  For example, testcase()
-** can be used to make sure boundary values are tested.  For
-** bitmask tests, testcase() can be used to make sure each bit
-** is significant and used at least once.  On switch statements
-** where multiple cases go to the same block of code, testcase()
-** can insure that all cases are evaluated.
-**
-*/
-#ifdef SQLITE_COVERAGE_TEST
-  void sqlite3Coverage(int);
-# define testcase(X)  if( X ){ sqlite3Coverage(__LINE__); }
-#else
-# define testcase(X)
-#endif
-
 
 /*
 ** The following macros are used to suppress compiler warnings and to

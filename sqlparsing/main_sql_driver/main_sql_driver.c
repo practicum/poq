@@ -12,7 +12,7 @@
 #include "my_callbacks.c"
 #include "sqlite_code/hodgepodge_borrowed_needs_reorganization.c"
 
-#include "run_parser_function.c"
+#include "run_parser_function.h"
 
 /*
   Constant tokens for values 0 and 1.
