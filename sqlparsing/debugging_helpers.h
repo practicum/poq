@@ -1,0 +1,7 @@
+#ifndef PRACTICUM_PROOF_PROJECT_DEBUGGING
+#define PRACTICUM_PROOF_PROJECT_DEBUGGING
+
+void RaiseBreakpointSignalOnlyWhenDebuggerExists();
+
+
+#endif // #ifndef PRACTICUM_PROOF_PROJECT_DEBUGGING

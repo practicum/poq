@@ -1,5 +1,4 @@
 #include <stdarg.h> // for va_start
-#include  <signal.h>      // for SIGTRAP
 #include "callbacks.h"
 #include "walker_helpers.h"
 
@@ -23,49 +22,46 @@ Expr *sqlite3Expr
  );
 
 
-void DebugHelperSilliness()
-{
-    raise(SIGTRAP);
-}
-
 
 
 void sqlite3ExprDelete(sqlite3* db, Expr* e)
 {
-    DebugHelperSilliness();
+    RaiseBreakpointSignalOnlyWhenDebuggerExists();
 }
 
 
 void sqlite3SelectDelete(sqlite3* db, Select* sel)
 {
-    DebugHelperSilliness();
+    RaiseBreakpointSignalOnlyWhenDebuggerExists();
 }
 
 
 void sqlite3ExprListDelete(sqlite3* db, ExprList* elist)
 {
-    DebugHelperSilliness();
+    RaiseBreakpointSignalOnlyWhenDebuggerExists();
 }
 
 void sqlite3SrcListDelete(sqlite3* db, SrcList* slist)
 {
-    DebugHelperSilliness();
+    RaiseBreakpointSignalOnlyWhenDebuggerExists();
 }
 
 
 void sqlite3IdListDelete(sqlite3* db, IdList*idlist)
 {
-    DebugHelperSilliness();
+    RaiseBreakpointSignalOnlyWhenDebuggerExists();
 }
 
 void sqlite3DeleteTriggerStep(sqlite3* db, TriggerStep* trigstep)
 {
-    DebugHelperSilliness();
+    RaiseBreakpointSignalOnlyWhenDebuggerExists();
 }
 
 
 void sqlite3ErrorMsg(Parse* p, const char* str, ...)
 {
+    p->rc = 1;
+    printf( "  sqlite3ErrorMsg called!\n");
     va_list vl;
     va_start(vl, str);
 
@@ -75,11 +71,9 @@ void sqlite3ErrorMsg(Parse* p, const char* str, ...)
     for (i=0;i<   1   ;i++)
     {
         Token* val=va_arg(vl,Token*);
-        DebugHelperSilliness();
+        printf( "  sqlite3ErrorMsg problem token: \"%s\"\n", val->z );
     }
     va_end(vl);
-
-    DebugHelperSilliness();
 }
 
 /// the integer is a sqlite flag we do not need.
@@ -88,90 +82,90 @@ void sqlite3BeginParse(Parse* p,int i1)
 {
     p->nVar = 0;
     p->explain = 0;
-    DebugHelperSilliness();
+    RaiseBreakpointSignalOnlyWhenDebuggerExists();
 }
 
 void sqlite3FinishCoding(Parse* p)
 {
-    DebugHelperSilliness();
+    RaiseBreakpointSignalOnlyWhenDebuggerExists();
 }
 
 void sqlite3BeginTransaction(Parse* p,int i1)
 {
-    DebugHelperSilliness();
+    RaiseBreakpointSignalOnlyWhenDebuggerExists();
 }
 
 void sqlite3CommitTransaction(Parse* p)
 {
-    DebugHelperSilliness();
+    RaiseBreakpointSignalOnlyWhenDebuggerExists();
 }
 
 void sqlite3RollbackTransaction(Parse* p)
 {
-    DebugHelperSilliness();
+    RaiseBreakpointSignalOnlyWhenDebuggerExists();
 }
 
 
 void sqlite3StartTable(Parse* p,Token* tk,Token* tk2,int i1,int i2,int i3,int i4)
 {
-    DebugHelperSilliness();
+    RaiseBreakpointSignalOnlyWhenDebuggerExists();
 }
 
 
 
 void sqlite3EndTable(Parse* p,Token* tk,Token* tk2,Select* sel)
 {
-    DebugHelperSilliness();
+    RaiseBreakpointSignalOnlyWhenDebuggerExists();
 }
 
 
 
 void sqlite3AddColumn(Parse* p,Token* tk)
 {
-    DebugHelperSilliness();
+    RaiseBreakpointSignalOnlyWhenDebuggerExists();
 }
 
 void sqlite3AddColumnType(Parse* p,Token* tk)
 {
-    DebugHelperSilliness();
+    RaiseBreakpointSignalOnlyWhenDebuggerExists();
 }
 
 
 
 void sqlite3AddDefaultValue(Parse* p,ExprSpan* espan)
 {
-    DebugHelperSilliness();
+    RaiseBreakpointSignalOnlyWhenDebuggerExists();
 }
 
 void sqlite3AddNotNull(Parse* p,int i1)
 {
-    DebugHelperSilliness();
+    RaiseBreakpointSignalOnlyWhenDebuggerExists();
 }
 
 void sqlite3AddPrimaryKey(Parse* p, ExprList* elist,int i1,int i2,int i3)
 {
-    DebugHelperSilliness();
+    RaiseBreakpointSignalOnlyWhenDebuggerExists();
 }
 
 
 void sqlite3AddCheckConstraint(Parse* p, Expr* e)
 {
-    DebugHelperSilliness();
+    RaiseBreakpointSignalOnlyWhenDebuggerExists();
 }
 
 void sqlite3CreateForeignKey(Parse* p, ExprList* elist, Token* tk, ExprList* elist2,int i1)
 {
-    DebugHelperSilliness();
+    RaiseBreakpointSignalOnlyWhenDebuggerExists();
 }
 
 void sqlite3DeferForeignKey(Parse* p,int i1)
 {
-    DebugHelperSilliness();
+    RaiseBreakpointSignalOnlyWhenDebuggerExists();
 }
 
 void sqlite3AddCollateType(Parse* p, Token* tk)
 {
-    DebugHelperSilliness();
+    RaiseBreakpointSignalOnlyWhenDebuggerExists();
 }
 
 
@@ -179,23 +173,23 @@ void sqlite3AddCollateType(Parse* p, Token* tk)
 
 void sqlite3DropTable(Parse* p, SrcList* slist,int i1,int i2)
 {
-    DebugHelperSilliness();
+    RaiseBreakpointSignalOnlyWhenDebuggerExists();
 }
 
 void sqlite3CreateView(Parse* p,Token* tk,Token* tk2,Token* tk3,Select* sel,int i1,int i2)
 {
-    DebugHelperSilliness();
+    RaiseBreakpointSignalOnlyWhenDebuggerExists();
 }
 
 
 void sqlite3ExprListSetName(Parse* p,ExprList* elist,Token* tk,int i1)
 {
-    DebugHelperSilliness();
+    RaiseBreakpointSignalOnlyWhenDebuggerExists();
 }
 
 void sqlite3ExprListSetSpan(Parse* p,ExprList* elist,ExprSpan* espan)
 {
-    DebugHelperSilliness();
+    RaiseBreakpointSignalOnlyWhenDebuggerExists();
 }
 
 
@@ -207,7 +201,7 @@ void *sqlite3DbMallocZero(sqlite3* db,int n)
         memset(p, 0, n);
     }
 
-    //DebugHelperSilliness();
+    //RaiseBreakpointSignalOnlyWhenDebuggerExists();
     return p;
 }
 
@@ -216,7 +210,7 @@ void *sqlite3DbMallocZero(sqlite3* db,int n)
 
 void sqlite3DeleteFrom(Parse* p, SrcList* slist, Expr* e)
 {
-    DebugHelperSilliness();
+    RaiseBreakpointSignalOnlyWhenDebuggerExists();
 }
 
 /// we would only need to implement this if we want to support INDEXED BY or NOT INDEXED
@@ -225,121 +219,121 @@ void sqlite3SrcListIndexedBy(Parse *p, SrcList *slist, Token *tk)
     if ( tk->z != 0 )
     {
         assert( ! "we do not support the INDEXED keyword");
-        DebugHelperSilliness();// verify that tk->z is NULL, otherwise raise!
+        RaiseBreakpointSignalOnlyWhenDebuggerExists();// verify that tk->z is NULL, otherwise raise!
     }
 }
 
 void sqlite3ExprListCheckLength(Parse* p, ExprList* elist, const char* str)
 {
-    DebugHelperSilliness();
+    RaiseBreakpointSignalOnlyWhenDebuggerExists();
 }
 
 
 
 void sqlite3Insert(Parse* p, SrcList* slist, ExprList* elist, Select* sel, IdList* idlist,int i1)
 {
-    DebugHelperSilliness();
+    RaiseBreakpointSignalOnlyWhenDebuggerExists();
 }
 
 
 void sqlite3ExprAssignVarNumber(Parse* p, Expr* e)
 {
-    DebugHelperSilliness();
+    RaiseBreakpointSignalOnlyWhenDebuggerExists();
 }
 
 
 void sqlite3ExprSetHeight(Parse *pParse, Expr *p)
 {
-    DebugHelperSilliness();
+    RaiseBreakpointSignalOnlyWhenDebuggerExists();
 }
 
 
 void sqlite3DropIndex(Parse* p, SrcList* slist,int i1)
 {
-    DebugHelperSilliness();
+    RaiseBreakpointSignalOnlyWhenDebuggerExists();
 }
 
 void sqlite3Vacuum(Parse* p)
 {
-    DebugHelperSilliness();
+    RaiseBreakpointSignalOnlyWhenDebuggerExists();
 }
 
 void sqlite3Pragma(Parse* p,Token* tk,Token* tk2,Token* tk3,int i1)
 {
-    DebugHelperSilliness();
+    RaiseBreakpointSignalOnlyWhenDebuggerExists();
 }
 
 
 void sqlite3FinishTrigger(Parse* p, TriggerStep* trigstep, Token* tk)
 {
-    DebugHelperSilliness();
+    RaiseBreakpointSignalOnlyWhenDebuggerExists();
 }
 
 
 void sqlite3DropTrigger(Parse* p, SrcList* slist,int i1)
 {
-    DebugHelperSilliness();
+    RaiseBreakpointSignalOnlyWhenDebuggerExists();
 }
 
 void sqlite3Attach(Parse* p, Expr* e, Expr* e2, Expr* e3)
 {
-    DebugHelperSilliness();
+    RaiseBreakpointSignalOnlyWhenDebuggerExists();
 }
 
 void sqlite3Detach(Parse* p, Expr* e)
 {
-    DebugHelperSilliness();
+    RaiseBreakpointSignalOnlyWhenDebuggerExists();
 }
 
 
 
 void sqlite3Reindex(Parse* p, Token* tk, Token* tk2)
 {
-    DebugHelperSilliness();
+    RaiseBreakpointSignalOnlyWhenDebuggerExists();
 }
 
 
 
 void sqlite3Analyze(Parse* p, Token* tk, Token* tk2)
 {
-    DebugHelperSilliness();
+    RaiseBreakpointSignalOnlyWhenDebuggerExists();
 }
 
 void sqlite3AlterRenameTable(Parse* p, SrcList* slist, Token* tk)
 {
-    DebugHelperSilliness();
+    RaiseBreakpointSignalOnlyWhenDebuggerExists();
 }
 
 void sqlite3AlterFinishAddColumn(Parse *p, Token *tk)
 {
-    DebugHelperSilliness();
+    RaiseBreakpointSignalOnlyWhenDebuggerExists();
 }
 
 void sqlite3AlterBeginAddColumn(Parse *p, SrcList *slist)
 {
-    DebugHelperSilliness();
+    RaiseBreakpointSignalOnlyWhenDebuggerExists();
 }
 
 void sqlite3VtabFinishParse(Parse* p, Token* tk)
 {
-    DebugHelperSilliness();
+    RaiseBreakpointSignalOnlyWhenDebuggerExists();
 }
 
 
 
 void sqlite3VtabBeginParse(Parse* p, Token* tk, Token* tk2, Token* tk3)
 {
-    DebugHelperSilliness();
+    RaiseBreakpointSignalOnlyWhenDebuggerExists();
 }
 
 void sqlite3VtabArgInit(Parse* p)
 {
-    DebugHelperSilliness();
+    RaiseBreakpointSignalOnlyWhenDebuggerExists();
 }
 
 void sqlite3VtabArgExtend(Parse* p, Token* tk)
 {
-    DebugHelperSilliness();
+    RaiseBreakpointSignalOnlyWhenDebuggerExists();
 }
 
 
@@ -347,17 +341,17 @@ void sqlite3VtabArgExtend(Parse* p, Token* tk)
 
 void sqlite3ExplainBegin(Vdbe*v)
 {
-    DebugHelperSilliness();
+    RaiseBreakpointSignalOnlyWhenDebuggerExists();
 }
 
 void sqlite3ExplainSelect(Vdbe*v, Select*s)
 {
-    DebugHelperSilliness();
+    RaiseBreakpointSignalOnlyWhenDebuggerExists();
 }
 
 void sqlite3ExplainFinish(Vdbe*v)
 {
-    DebugHelperSilliness();
+    RaiseBreakpointSignalOnlyWhenDebuggerExists();
 }
 
 
@@ -365,7 +359,7 @@ void sqlite3ExplainFinish(Vdbe*v)
 
 TriggerStep *sqlite3TriggerUpdateStep(sqlite3* db,Token* tk,ExprList* elist, Expr* e, u8 val)
 {
-    DebugHelperSilliness();
+    RaiseBreakpointSignalOnlyWhenDebuggerExists();
     return NULL;
 }
 
@@ -373,19 +367,19 @@ TriggerStep *sqlite3TriggerUpdateStep(sqlite3* db,Token* tk,ExprList* elist, Exp
 
 TriggerStep *sqlite3TriggerDeleteStep(sqlite3* db,Token* tk, Expr* e)
 {
-    DebugHelperSilliness();
+    RaiseBreakpointSignalOnlyWhenDebuggerExists();
     return NULL;
 }
 
 TriggerStep *sqlite3TriggerSelectStep(sqlite3* db,Select* s)
 {
-    DebugHelperSilliness();
+    RaiseBreakpointSignalOnlyWhenDebuggerExists();
     return NULL;
 }
 
 Expr *sqlite3PExpr(Parse* p,int i1, Expr* e, Expr* e2, const Token* tk)
 {
-    DebugHelperSilliness();
+    RaiseBreakpointSignalOnlyWhenDebuggerExists();
     return NULL;
 }
 
@@ -424,7 +418,7 @@ ExprList *sqlite3ExprListAppend(
   Expr *pExpr             /* Expression to be appended. Might be NULL */
 )
 {
-    DebugHelperSilliness();
+    RaiseBreakpointSignalOnlyWhenDebuggerExists();
     sqlite3 *db = 0;
 
     // we want to append to pList, but pList is null so create it
@@ -474,7 +468,7 @@ ExprList *sqlite3ExprListAppend(
 
 IdList *sqlite3IdListAppend(sqlite3* db, IdList* idlist, Token* tk)
 {
-    DebugHelperSilliness();
+    RaiseBreakpointSignalOnlyWhenDebuggerExists();
     return NULL;
 }
 
@@ -485,21 +479,21 @@ IdList *sqlite3IdListAppend(sqlite3* db, IdList* idlist, Token* tk)
 
 int sqlite3GetInt32(const char *str,int *ip)
 {
-    DebugHelperSilliness();
+    RaiseBreakpointSignalOnlyWhenDebuggerExists();
     return -1;
 }
 
 
 Expr *sqlite3ExprSetCollByToken(Parse *pParse, Expr* e, Token* tk)
 {
-    DebugHelperSilliness();
+    RaiseBreakpointSignalOnlyWhenDebuggerExists();
     return NULL;
 }
 
 
 Expr *sqlite3ExprFunction(Parse* p,ExprList* elist, Token* tk)
 {
-    DebugHelperSilliness();
+    RaiseBreakpointSignalOnlyWhenDebuggerExists();
     return NULL;
 }
 
@@ -511,7 +505,7 @@ Expr *sqlite3ExprFunction(Parse* p,ExprList* elist, Token* tk)
 
 int sqlite3JoinType(Parse* p, Token* tk, Token* tk2, Token* tk3)
 {
-    DebugHelperSilliness();
+    RaiseBreakpointSignalOnlyWhenDebuggerExists();
     return -1;
 }
 
@@ -521,35 +515,8 @@ int sqlite3JoinType(Parse* p, Token* tk, Token* tk2, Token* tk3)
 
 Index *sqlite3CreateIndex(Parse* p,Token* tk,Token* tk2,SrcList* slist,ExprList* elist,int i1,Token* tk3,Token* tk4, int i2, int i3)
 {
-    DebugHelperSilliness();
+    RaiseBreakpointSignalOnlyWhenDebuggerExists();
     return NULL;
-}
-
-
-void printExpressionList( ExprList* pEList, Parse *pParse /*for iAlias*/ )
-{
-    printf( "\t\t printExpressionList:\n");
-
-    int i = 0;
-    for( i = 0; i < pEList->nExpr; i++ )
-    {
-        /*
-          struct ExprList_item {
-          Expr *pExpr;           // The list of expressions
-          char *zName;           // Token associated with this expression
-          char *zSpan;           // Original text of the expression
-          u8 sortOrder;          // 1 for DESC or 0 for ASC
-          u8 done;               // A flag to indicate when processing is finished
-          u16 iOrderByCol;       // For ORDER BY, column number in result set
-          u16 iAlias;            // Index into Parse.aAlias[] for zName
-          }
-         */
-        struct ExprList_item* item = (&( pEList->a[i] ));
-
-        printf("\t\t\t original text: %s\n", item->zSpan );
-        printf("\t\t\t    token text: %s\n", item->zSpan );
-    }
-
 }
 
 
@@ -566,7 +533,7 @@ Select *sqlite3SelectNew(
   Expr *pOffset         /* OFFSET value.  NULL means no offset */
 )
 {
-    DebugHelperSilliness();
+    RaiseBreakpointSignalOnlyWhenDebuggerExists();
 
     assert( !pOffset || pLimit ); /* OFFSET implies LIMIT */
     assert( pOffset==0 || pLimit!=0 );
@@ -585,9 +552,6 @@ Select *sqlite3SelectNew(
 
     //pNew->selFlags = isDistinct ? SF_Distinct : 0;
     //pNew->op = TK_SELECT;
-
-    // initial "test printer" to see if i was anywhere near obtaining info that i want. so far so good!
-    printExpressionList( pEList, pParse );
 
     walk_sqlite3SelectNew
         ( pParse,
@@ -653,7 +617,7 @@ SrcList *sqlite3SrcListEnlarge
 
         if( pNew==0 )
         {
-            raise(SIGTRAP);
+            assert( ! "malloc failed" );
             //            assert( 0->mallocFailed ); // 0 was db
             return pSrc;
         }
@@ -724,7 +688,7 @@ SrcList *sqlite3SrcListAppend
   Token *pDatabase    /* Database of the table */
 )
 {
-    DebugHelperSilliness();
+    RaiseBreakpointSignalOnlyWhenDebuggerExists();
     struct SrcList_item *pItem;
     assert( pDatabase==0 || pTable!=0 );  /* Cannot have C without B */
 
@@ -793,13 +757,13 @@ SrcList *sqlite3SrcListAppendFromTerm
  IdList *pUsing          /* The USING clause of a join */
 )
 {
-    DebugHelperSilliness();
+    RaiseBreakpointSignalOnlyWhenDebuggerExists();
     struct SrcList_item *pItem;
 
     if( !p && (pOn || pUsing) )
     {
-        printf("a JOIN clause is required before %s", (pOn ? "ON" : "USING") );
-        raise(SIGTRAP);
+        printf("  a JOIN clause is required before %s", (pOn ? "ON" : "USING") );
+        assert( ! "disallowed ON/USING" );
         goto append_from_error;
     }
 
@@ -807,7 +771,7 @@ SrcList *sqlite3SrcListAppendFromTerm
 
     if( p==0 || NEVER(p->nSrc==0) )
     {
-        raise(SIGTRAP);
+        assert( ! "refer to source code" );
         goto append_from_error;
     }
 
@@ -838,24 +802,24 @@ SrcList *sqlite3SrcListAppendFromTerm
 
 TriggerStep *sqlite3TriggerInsertStep(sqlite3* db,Token* tk, IdList* idlist, ExprList*elist,Select*s,u8 val)
 {
-    DebugHelperSilliness();
+    RaiseBreakpointSignalOnlyWhenDebuggerExists();
     return NULL;
 }
 
 
 void sqlite3BeginTrigger(Parse*p, Token*tk1,Token*tk2,int i1,int i2,IdList* idlist,SrcList* slist, Expr*e,int i3, int i4)
 {
-    DebugHelperSilliness();
+    RaiseBreakpointSignalOnlyWhenDebuggerExists();
 }
 
 void sqlite3Savepoint(Parse*p, int i1, Token* tk)
 {
-    DebugHelperSilliness();
+    RaiseBreakpointSignalOnlyWhenDebuggerExists();
 }
 
 int sqlite3Select(Parse*p, Select*s, SelectDest*sd)
 {
-    DebugHelperSilliness();
+    RaiseBreakpointSignalOnlyWhenDebuggerExists();
     return -1;
 }
 
@@ -871,7 +835,7 @@ Expr *sqlite3Expr
     Token x;
     x.z = zToken;
     x.n = zToken ? sqlite3Strlen30(zToken) : 0;
-    DebugHelperSilliness();
+    RaiseBreakpointSignalOnlyWhenDebuggerExists();
     return sqlite3ExprAlloc(db, op, &x, 0);
 }
 
@@ -909,7 +873,7 @@ void sqlite3SrcListShiftJoinType(SrcList *p)
 
 void sqlite3Update(Parse*p, SrcList*slist, ExprList*elist, Expr*e, int i1)
 {
-    DebugHelperSilliness();
+    RaiseBreakpointSignalOnlyWhenDebuggerExists();
 }
 
 

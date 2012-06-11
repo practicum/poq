@@ -1,14 +1,34 @@
 
 #include "walker_helpers.h"
 
+#include "debugging_helpers.h"
 #include "callbacks.h"
 #include <stdlib.h>
 #include <string.h>
 #include <assert.h>
+#include <stdio.h>
 
 #define WRC_Continue    0   /* Continue down into children */
 #define WRC_Prune       1   /* Omit children but continue walking siblings */
 #define WRC_Abort       2   /* Abandon the tree walk */
+
+
+
+void printExpression( Expr* pExpr, Parse *pParse /*for iAlias*/ )
+{
+    printf( "\t\t printExpression:\n");
+
+    if( pExpr->flags & EP_IntValue )
+    {
+        printf( "\t\t\t expression: %d\n", (int) pExpr->u.iValue );
+    }
+    else
+    {
+        printf( "\t\t\t expression: %s\n", pExpr->u.zToken );
+    }
+}
+
+
 
 
 //////////// can we remove??
@@ -19,20 +39,24 @@
 ** and on any subqueries further down in the tree.  Return
 ** WRC_Abort or WRC_Continue;
 */
-int sqlite3WalkSelectFrom(Walker *pWalker, Select *p){
-  SrcList *pSrc;
-  int i;
-  struct SrcList_item *pItem;
+int sqlite3WalkSelectFrom(Walker *pWalker, Select *p)
+{
+    SrcList *pSrc;
+    int i;
+    struct SrcList_item *pItem;
 
-  pSrc = p->pSrc;
-  if( ALWAYS(pSrc) ){
-    for(i=pSrc->nSrc, pItem=pSrc->a; i>0; i--, pItem++){
-      if( sqlite3WalkSelect(pWalker, pItem->pSelect) ){
-        return WRC_Abort;
-      }
+    pSrc = p->pSrc;
+    if( ALWAYS(pSrc) )
+    {
+        for(i=pSrc->nSrc, pItem=pSrc->a; i>0; i--, pItem++)
+        {
+            if( sqlite3WalkSelect(pWalker, pItem->pSelect) )
+            {
+                return WRC_Abort;
+            }
+        }
     }
-  }
-  return WRC_Continue;
+    return WRC_Continue;
 }
 
 //////////// can we remove??
@@ -47,18 +71,22 @@ int sqlite3WalkSelectFrom(Walker *pWalker, Select *p){
 ** If the Walker does not have an xSelectCallback() then this routine
 ** is a no-op returning WRC_Continue.
 */
-int sqlite3WalkSelect(Walker *pWalker, Select *p){
-  int rc;
-  if( p==0 || pWalker->xSelectCallback==0 ) return WRC_Continue;
-  rc = WRC_Continue;
-  while( p  ){
-    rc = pWalker->xSelectCallback(pWalker, p);
-    if( rc ) break;
-    if( sqlite3WalkSelectExpr(pWalker, p) ) return WRC_Abort;
-    if( sqlite3WalkSelectFrom(pWalker, p) ) return WRC_Abort;
-    p = p->pPrior;
-  }
-  return rc & WRC_Abort;
+int sqlite3WalkSelect(Walker *pWalker, Select *p)
+{
+    int rc;
+    //if( p==0 || pWalker->xSelectCallback==0 ) return WRC_Continue;
+    if( p==0 ) return WRC_Continue; /////////////////////////////////////////// FIXME
+
+    rc = WRC_Continue;
+    while( p  )
+    {
+        //rc = pWalker->xSelectCallback(pWalker, p); /////////////////////////////////////////// FIXME
+        if( rc ) break;
+        if( sqlite3WalkSelectExpr(pWalker, p) ) return WRC_Abort;
+        if( sqlite3WalkSelectFrom(pWalker, p) ) return WRC_Abort;
+        p = p->pPrior;
+    }
+    return rc & WRC_Abort;
 }
 
 
@@ -82,42 +110,51 @@ int sqlite3WalkSelect(Walker *pWalker, Select *p){
 ** The return value from this routine is WRC_Abort to abandon the tree walk
 ** and WRC_Continue to continue.
 */
-int sqlite3WalkExpr(Walker *pWalker, Expr *pExpr){
-  int rc;
-  if( pExpr==0 ) return WRC_Continue;
-  testcase( ExprHasProperty(pExpr, EP_TokenOnly) );
-  testcase( ExprHasProperty(pExpr, EP_Reduced) );
-  rc = pWalker->xExprCallback(pWalker, pExpr);
-  if( rc==WRC_Continue
-              && !ExprHasAnyProperty(pExpr,EP_TokenOnly) ){
-    if( sqlite3WalkExpr(pWalker, pExpr->pLeft) ) return WRC_Abort;
-    if( sqlite3WalkExpr(pWalker, pExpr->pRight) ) return WRC_Abort;
+int sqlite3WalkExpr(Walker *pWalker, Expr * const pExpr)
+{
+    int rc;
+    if( pExpr==0 ) return WRC_Continue;
 
-    if( ExprHasProperty(pExpr, EP_xIsSelect) )
+    rc = WRC_Continue;
+    //rc = pWalker->xExprCallback(pWalker, pExpr); ////////////////////////////////////////////////// FIXME
+    printExpression( pExpr, 0 );
+
+    if( rc==WRC_Continue
+        && !ExprHasAnyProperty(pExpr,EP_TokenOnly) ) // ExprHasAnyProperty is a macro in 'callbacks.h'
     {
-      if( sqlite3WalkSelect(pWalker, pExpr->x.pSelect) ) return WRC_Abort;
+        if( sqlite3WalkExpr(pWalker, pExpr->pLeft) ) return WRC_Abort;
+        if( sqlite3WalkExpr(pWalker, pExpr->pRight) ) return WRC_Abort;
+
+        if( ExprHasProperty(pExpr, EP_xIsSelect) ) // ExprHasProperty is a macro in 'callbacks.h'
+        {
+            RaiseBreakpointSignalOnlyWhenDebuggerExists();
+            if( sqlite3WalkSelect(pWalker, pExpr->x.pSelect) ) return WRC_Abort;
+        }
+        else
+        {
+            if( sqlite3WalkExprList(pWalker, pExpr->x.pList) ) return WRC_Abort;
+        }
     }
-    else
-    {
-      if( sqlite3WalkExprList(pWalker, pExpr->x.pList) ) return WRC_Abort;
-    }
-  }
-  return rc & WRC_Abort;
+    return rc & WRC_Abort;
 }
 
 /*
 ** Call sqlite3WalkExpr() for every expression in list p or until
 ** an abort request is seen.
 */
-int sqlite3WalkExprList(Walker *pWalker, ExprList *p){
-  int i;
-  struct ExprList_item *pItem;
-  if( p ){
-    for(i=p->nExpr, pItem=p->a; i>0; i--, pItem++){
-      if( sqlite3WalkExpr(pWalker, pItem->pExpr) ) return WRC_Abort;
+int sqlite3WalkExprList(Walker *pWalker, ExprList *p)
+{
+    int i;
+    struct ExprList_item *pItem;
+
+    if( p )
+    {
+        for(i=p->nExpr, pItem=p->a; i>0; i--, pItem++)
+        {
+            if( sqlite3WalkExpr(pWalker, pItem->pExpr) ) return WRC_Abort;
+        }
     }
-  }
-  return WRC_Continue;
+    return WRC_Continue;
 }
 
 /*
@@ -154,15 +191,31 @@ int walk_sqlite3SelectNew
   Expr *pOffset         /* OFFSET value.  NULL means no offset */
 )
 {
+    // IMPORTANT:  so far we are not doing anything with 'pSrc' (the FROM clause)
+    // IMPORTANT:  so far we are not doing anything with the 'isDistinct' parameter!
     Walker* pWalker = 0;
 
-    if( sqlite3WalkExprList(pWalker, pEList) ) return WRC_Abort;
-    if( sqlite3WalkExpr(pWalker, pWhere) ) return WRC_Abort;
-    if( sqlite3WalkExprList(pWalker, pGroupBy) ) return WRC_Abort;
-    if( sqlite3WalkExpr(pWalker, pHaving) ) return WRC_Abort;
-    if( sqlite3WalkExprList(pWalker, pOrderBy) ) return WRC_Abort;
-    if( sqlite3WalkExpr(pWalker, pLimit) ) return WRC_Abort;
-    if( sqlite3WalkExpr(pWalker, pOffset) ) return WRC_Abort;
+    printf( "\t\t walking column list:\n");
+    if( sqlite3WalkExprList  (pWalker, pEList) ) return WRC_Abort;
+
+    printf( "\t\t walking where clause:\n");
+    if( sqlite3WalkExpr      (pWalker, pWhere) ) return WRC_Abort;
+
+    printf( "\t\t walking group by clause:\n");
+    if( sqlite3WalkExprList  (pWalker, pGroupBy) ) return WRC_Abort;
+
+    printf( "\t\t walking having clause:\n");
+    if( sqlite3WalkExpr      (pWalker, pHaving) ) return WRC_Abort;
+
+    printf( "\t\t walking order by clause:\n");
+    if( sqlite3WalkExprList  (pWalker, pOrderBy) ) return WRC_Abort;
+
+    printf( "\t\t walking LIMIT clause:\n");
+    if( sqlite3WalkExpr      (pWalker, pLimit) ) return WRC_Abort;
+
+    printf( "\t\t walking OFFSET clause:\n");
+    if( sqlite3WalkExpr      (pWalker, pOffset) ) return WRC_Abort;
+
     return WRC_Continue;
 }
 

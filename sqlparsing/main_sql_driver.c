@@ -47,7 +47,7 @@ int parse_one_string( const char *zSql )
     }
     else
     {
-        printf("parsing: %s\n", zSql );
+        printf("\nparsing: %s\n", zSql );
         memset(pParse, 0, sizeof(*pParse));
 
         sqlite3RunParser(pParse, zSql, &zErrMsg);
@@ -56,11 +56,11 @@ int parse_one_string( const char *zSql )
 
         if ( rc == 0 )
         {
-            printf("\tresult: happy parse\n");
+            printf("result: success\n");
         }
         else
         {
-            printf("\tresult: oops\n");
+            printf("result: oops\n");
         }
     }
 
@@ -71,11 +71,35 @@ int parse_one_string( const char *zSql )
 
 int main()
 {
+    /*
+      So far, it seems to be the case that for each string that we pass to
+      sqlite3RunParser, we _ALWAYS_ get one (or more) call(s) to
+      'sqlite3BeginParse'. (We get one per semicolon-delimited statement.)
+
+      Then, depending on whether we SUCCEED at PARSING A VALID statement, we
+      _either_ get a call to 'sqlite3FinishCoding' _or_ a call to
+      sqlite3BeginParse.
+
+      (at some point, clearly, i will need certainty about these supposed
+      guarantees)
+    */
+
     const char *one = "select * from lic.LoggableEvent;";
-    const char *two = "selectx * from lic.LoggableEvent;";
+
+    // for each semicolon-delimited statement, you get a call to
+    // 'sqlite3BeginParse' and 'sqlite3FinishCoding' (all inside the single call
+    // to sqlite3RunParser)
+    const char *two = "select * from lic.LoggableEvent;select * from lic.LoggableEvent;";
+
     const char *three = "select * from; lic.LoggableEvent;";
+    const char *four = "select 1!!2 from lic.LoggableEvent;";
+    const char *five = "selectx * from lic.LoggableEvent;";
 
     parse_one_string( one );
     parse_one_string( two );
     parse_one_string( three );
+    parse_one_string( four );
+    parse_one_string( five );
+
+    printf( "\n" );
 }

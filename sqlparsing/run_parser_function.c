@@ -62,7 +62,7 @@ int sqlite3RunParser(Parse *pParse, const char *zSql, char **pzErrMsg)
             {
                 // this will happen if you use invalid tokens. for example: this is ok --> "!=" but this is not --> "!!"
                 pParse->rc = -1;
-                printf("unrecognized token: %s\n", pParse->sLastToken.z );
+                printf("  unrecognized token: %s\n", pParse->sLastToken.z );
                 nErr++;
                 goto abort_parse;
             }
