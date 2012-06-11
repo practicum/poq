@@ -12,7 +12,7 @@
 
 
 
-// forward declared prototype
+// forward declared prototype (implemented in hodgepodge_borrowed_needs_reorganization.c)
 Expr *sqlite3ExprAlloc(
   sqlite3 *db,            /* Handle for sqlite3DbMallocZero() (may be null) */
   int op,                 /* Expression opcode */
@@ -21,16 +21,7 @@ Expr *sqlite3ExprAlloc(
 );
 
 // forward declared prototype
-char *sqlite3NameFromToken(sqlite3 *db, Token *pName);
-
-// forward declared prototype
-Expr *sqlite3Expr
-(
- sqlite3*db,
- int op, // expression opcode
- const char* zToken // possibly NULL token
-);
-
+char *sqlite3NameFromToken(sqlite3 *db, Token *pName);// implemented in hodgepodge_borrowed_needs_reorganization.c
 
 
 
@@ -118,26 +109,47 @@ void sqlite3FinishCoding(Parse* p)
 
 
 
-void sqlite3ExprDelete(sqlite3* db, Expr* e)
+/// there are other callbacks beginning with 'sqlite3Expr', but this is the one with the shortest name.
+/// "allocate a new expression node from a zero-terminated token that has already been dequoted."
+Expr *sqlite3Expr
+(
+ sqlite3*db,
+ int op, // expression opcode
+ const char* zToken // possibly NULL token
+)
 {
-    RaiseBreakpointSignalOnlyWhenDebuggerExists();
+    Token x;
+    x.z = zToken;
+    x.n = zToken ? sqlite3Strlen30(zToken) : 0;
+    //RaiseBreakpointSignalOnlyWhenDebuggerExists();
+    return sqlite3ExprAlloc(db, op, &x, 0);
 }
 
+
+
+void sqlite3ExprDelete(sqlite3* db, Expr* e)
+{
+    //RaiseBreakpointSignalOnlyWhenDebuggerExists();// this function is to avoid memory leaks. that's the least of my concern right now.
+}
 
 void sqlite3SelectDelete(sqlite3* db, Select* sel)
 {
-    RaiseBreakpointSignalOnlyWhenDebuggerExists();
+    //RaiseBreakpointSignalOnlyWhenDebuggerExists();// this function is to avoid memory leaks. that's the least of my concern right now.
 }
-
 
 void sqlite3ExprListDelete(sqlite3* db, ExprList* elist)
 {
-    RaiseBreakpointSignalOnlyWhenDebuggerExists();
+    //RaiseBreakpointSignalOnlyWhenDebuggerExists();// this function is to avoid memory leaks. that's the least of my concern right now.
 }
 
 void sqlite3SrcListDelete(sqlite3* db, SrcList* slist)
 {
-    RaiseBreakpointSignalOnlyWhenDebuggerExists();
+    //RaiseBreakpointSignalOnlyWhenDebuggerExists();// this function is to avoid memory leaks. that's the least of my concern right now.
+}
+
+void sqlite3IdListDelete(sqlite3* db, IdList*idlist)
+{
+    //RaiseBreakpointSignalOnlyWhenDebuggerExists();// this function is to avoid memory leaks. that's the least of my concern right now.
 }
 
 
@@ -175,11 +187,76 @@ void sqlite3ExprSetHeight(Parse *pParse, Expr *p)
 }
 
 
-
-Expr *sqlite3PExpr(Parse* p,int i1, Expr* e, Expr* e2, const Token* tk)
+/*
+** Attach subtrees pLeft and pRight to the Expr node pRoot.
+**
+** If pRoot==NULL that means that a memory allocation error has occurred.
+** In that case, delete the subtrees pLeft and pRight.
+*/
+void sqlite3ExprAttachSubtrees
+(
+ sqlite3 *db,
+ Expr *pRoot,
+ Expr *pLeft,
+ Expr *pRight
+)
 {
-    RaiseBreakpointSignalOnlyWhenDebuggerExists();
-    return NULL;
+    if( pRoot==0 )
+    {
+        assert( ! "root is NULL and that should not happen here");
+    }
+    else
+    {
+        if( pRight )
+        {
+            pRoot->pRight = pRight;
+            if( pRight->flags & EP_ExpCollate )
+            {
+                pRoot->flags |= EP_ExpCollate;
+                pRoot->pColl = pRight->pColl;
+            }
+        }
+        if( pLeft )
+        {
+            pRoot->pLeft = pLeft;
+            if( pLeft->flags & EP_ExpCollate )
+            {
+                pRoot->flags |= EP_ExpCollate;
+                pRoot->pColl = pLeft->pColl;
+            }
+        }
+
+        // we won't worry about enforcing any maximum height for now
+        //exprSetHeight(pRoot);
+    }
+}
+
+
+/*
+** Allocate a Expr node which joins as many as two subtrees.
+**
+** One or both of the subtrees can be NULL.  Return a pointer to the new
+** Expr node.  Or, if an OOM error occurs, set pParse->db->mallocFailed,
+** free the subtrees and return NULL.
+*/
+Expr *sqlite3PExpr
+(
+ Parse *pParse,          /* Parsing context */
+ int op,                 /* Expression opcode */
+ Expr *pLeft,            /* Left operand */
+ Expr *pRight,           /* Right operand */
+ const Token *pToken     /* Argument token */
+)
+{
+    Expr *p = sqlite3ExprAlloc(pParse->db, op, pToken, 1);
+    sqlite3ExprAttachSubtrees(pParse->db, p, pLeft, pRight);
+
+    if( p )
+    {
+        // we won't worry about enforcing any maximum height for now
+        //sqlite3ExprCheckHeight(pParse, p->nHeight);
+    }
+    return p;
 }
 
 
@@ -199,7 +276,7 @@ ExprList *sqlite3ExprListAppend(
   Expr *pExpr             /* Expression to be appended. Might be NULL */
 )
 {
-    RaiseBreakpointSignalOnlyWhenDebuggerExists();
+    //RaiseBreakpointSignalOnlyWhenDebuggerExists();
     sqlite3 *db = 0;
 
     // we want to append to pList, but pList is null so create it
@@ -253,11 +330,6 @@ IdList *sqlite3IdListAppend(sqlite3* db, IdList* idlist, Token* tk)
     return NULL;
 }
 
-void sqlite3IdListDelete(sqlite3* db, IdList*idlist)
-{
-    RaiseBreakpointSignalOnlyWhenDebuggerExists();
-}
-
 
 
 
@@ -282,12 +354,6 @@ Expr *sqlite3ExprFunction(Parse* p,ExprList* elist, Token* tk)
     return NULL;
 }
 
-
-int sqlite3JoinType(Parse* p, Token* tk, Token* tk2, Token* tk3)
-{
-    RaiseBreakpointSignalOnlyWhenDebuggerExists();
-    return -1;
-}
 
 
 
@@ -460,7 +526,7 @@ SrcList *sqlite3SrcListAppend
   Token *pDatabase    /* Database of the table */
 )
 {
-    RaiseBreakpointSignalOnlyWhenDebuggerExists();
+    //RaiseBreakpointSignalOnlyWhenDebuggerExists();
     struct SrcList_item *pItem;
     assert( pDatabase==0 || pTable!=0 );  /* Cannot have C without B */
 
@@ -529,7 +595,7 @@ SrcList *sqlite3SrcListAppendFromTerm
  IdList *pUsing          /* The USING clause of a join */
 )
 {
-    RaiseBreakpointSignalOnlyWhenDebuggerExists();
+    //RaiseBreakpointSignalOnlyWhenDebuggerExists();
     struct SrcList_item *pItem;
 
     if( !p && (pOn || pUsing) )
@@ -578,22 +644,6 @@ int sqlite3Select(Parse*p, Select*s, SelectDest*sd)
     return -1;
 }
 
-/// there are other callbacks beginning with 'sqlite3Expr', but this is the one with the shortest name.
-/// "allocate a new expression node from a zero-terminated token that has already been dequoted."
-Expr *sqlite3Expr
-(
- sqlite3*db,
- int op, // expression opcode
- const char* zToken // possibly NULL token
-)
-{
-    Token x;
-    x.z = zToken;
-    x.n = zToken ? sqlite3Strlen30(zToken) : 0;
-    RaiseBreakpointSignalOnlyWhenDebuggerExists();
-    return sqlite3ExprAlloc(db, op, &x, 0);
-}
-
 
 /// we probably do not need this??  sqlite does this shifting for some reason. in the 'proof' project we probably don't care...
 /*
@@ -625,6 +675,11 @@ void sqlite3SrcListShiftJoinType(SrcList *p)
     }
 }
 
+int sqlite3JoinType(Parse* p, Token* tk, Token* tk2, Token* tk3)
+{
+    RaiseBreakpointSignalOnlyWhenDebuggerExists();
+    return -1;
+}
 
 
 
