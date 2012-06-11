@@ -1,3 +1,5 @@
+#ifndef BORROWED_SQLITE_CODE_KEYWORD_HASH
+#define BORROWED_SQLITE_CODE_KEYWORD_HASH
 
 #include <string.h>
 
@@ -311,3 +313,5 @@ int sqlite3KeywordCode(const unsigned char *z, int n){
   return keywordCode((char*)z, n);
 }
 #define SQLITE_N_KEYWORD 121
+
+#endif // #ifndef BORROWED_SQLITE_CODE_KEYWORD_HASH
