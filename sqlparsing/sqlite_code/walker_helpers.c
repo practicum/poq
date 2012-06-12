@@ -73,6 +73,17 @@ struct SrcList {
         }
         else
         {
+            /*
+              #define JT_INNER     0x0001    // Any kind of inner or cross join
+              #define JT_CROSS     0x0002    // Explicit use of the CROSS keyword
+              #define JT_NATURAL   0x0004    // True for a "natural" join
+              #define JT_LEFT      0x0008    // Left outer join
+              #define JT_RIGHT     0x0010    // Right outer join
+              #define JT_OUTER     0x0020    // The "OUTER" keyword is present
+              #define JT_ERROR     0x0040    // unknown or unsupported join type
+            */
+
+            printf( "\t\t\t join type: 0x%x\n", (int) item->jointype );
             printf( "\t\t\t table: %s\n", item->zName );
         }
     }

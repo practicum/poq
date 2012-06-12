@@ -90,6 +90,8 @@ int main()
 
     const char *eight = "select 23 from lic.LoggableEvent where (level > (2 + user_level)) and (event_date > now() );";
 
+    const char *nine = "select le.event_id, eu.user_name from LoggableEvent le left outer join EventUser eu on le.event_id = eu.event_id;";
+
     parse_one_string( one );
     parse_one_string( two );
     parse_one_string( three );
@@ -99,6 +101,8 @@ int main()
     parse_one_string( six );
     parse_one_string( seven );
     parse_one_string( eight );
+
+    parse_one_string( nine );
 
     printf( "\n" );
 }
