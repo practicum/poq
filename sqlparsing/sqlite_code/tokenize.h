@@ -20,7 +20,7 @@
 */
 
 
-
+# define charMap(X) sqlite3UpperToLower[(unsigned char)X]
 
 /*
 ** Return the length of the token that begins at z[0].

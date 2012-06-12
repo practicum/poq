@@ -19,6 +19,7 @@
 #include <stdlib.h>
 #include "generated_parser/lemon_sql_parse.h"
 #include "generated_parser/extra_tokens.h"
+#include "keywordhash.h"
 
 extern const unsigned char sqlite3CtypeMap[256]; // implementation in global.c
 

@@ -7,6 +7,7 @@ sources = [
     '../sqlparsing/sqlite_code/walker_helpers.c',
     '../sqlparsing/sqlite_code/global.c',
     '../sqlparsing/sqlite_code/tokenize.c',
+    '../sqlparsing/sqlite_code/keywordhash.c',
 
     '../sqlparsing/utils/debugging_helpers.c',
     '../sqlparsing/utils/compiler_tests_experiments.c',

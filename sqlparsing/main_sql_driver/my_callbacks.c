@@ -10,7 +10,9 @@
 #include "generated_parser/lemon_sql_parse.h"
 #include <assert.h>
 
+#include "keywordhash.h"
 
+#define ArraySize(X)    ((int)(sizeof(X)/sizeof(X[0])))
 
 // forward declared prototype (implemented in hodgepodge_borrowed_needs_reorganization.c)
 Expr *sqlite3ExprAlloc(
@@ -153,7 +155,7 @@ void sqlite3IdListDelete(sqlite3* db, IdList*idlist)
 }
 
 
-
+///////////// BEGIN SECTION: "Uncertainty Zone" -- i don't know whether i will _NEED_ to implement these or not...
 
 void sqlite3ExprListSetName(Parse* p,ExprList* elist,Token* tk,int i1)
 {
@@ -162,29 +164,25 @@ void sqlite3ExprListSetName(Parse* p,ExprList* elist,Token* tk,int i1)
 
 void sqlite3ExprListSetSpan(Parse* p,ExprList* elist,ExprSpan* espan)
 {
-    RaiseBreakpointSignalOnlyWhenDebuggerExists();
+    RaiseBreakpointSignalOnlyWhenDebuggerExists(); // this does get called quite often
 }
-
-
 
 void sqlite3ExprListCheckLength(Parse* p, ExprList* elist, const char* str)
 {
     RaiseBreakpointSignalOnlyWhenDebuggerExists();
 }
 
-
-
-
 void sqlite3ExprAssignVarNumber(Parse* p, Expr* e)
 {
     RaiseBreakpointSignalOnlyWhenDebuggerExists();
 }
 
-
 void sqlite3ExprSetHeight(Parse *pParse, Expr *p)
 {
     RaiseBreakpointSignalOnlyWhenDebuggerExists();
 }
+
+///////////// END   SECTION: "Uncertainty Zone" -- i don't know whether i will _NEED_ to implement these or not...
 
 
 /*
@@ -777,11 +775,87 @@ void sqlite3SrcListShiftJoinType(SrcList *p)
     }
 }
 
-int sqlite3JoinType(Parse* p, Token* tk, Token* tk2, Token* tk3)
-{
-    RaiseBreakpointSignalOnlyWhenDebuggerExists();
-    return -1;
-}
 
+/*
+** Given 1 to 3 identifiers preceeding the JOIN keyword, determine the
+** type of join.  Return an integer constant that expresses that type
+** in terms of the following bit values:
+**
+**     JT_INNER
+**     JT_CROSS
+**     JT_OUTER
+**     JT_NATURAL
+**     JT_LEFT
+**     JT_RIGHT
+**
+** A full outer join is the combination of JT_LEFT and JT_RIGHT.
+**
+** If an illegal or unsupported join type is seen, then still return
+** a join type, but put an error in the pParse structure.
+*/
+int sqlite3JoinType(Parse *pParse, Token *pA, Token *pB, Token *pC)
+{
+    int jointype = 0;
+    Token *apAll[3];
+    Token *p;
+    /*   0123456789 123456789 123456789 123 */
+    static const char zKeyText[] = "naturaleftouterightfullinnercross";
+    static const struct {
+        u8 i;        /* Beginning of keyword text in zKeyText[] */
+        u8 nChar;    /* Length of the keyword in characters */
+        u8 code;     /* Join type mask */
+    } aKeyword[] = {
+        /* natural */ { 0,  7, JT_NATURAL                },
+        /* left    */ { 6,  4, JT_LEFT|JT_OUTER          },
+        /* outer   */ { 10, 5, JT_OUTER                  },
+        /* right   */ { 14, 5, JT_RIGHT|JT_OUTER         },
+        /* full    */ { 19, 4, JT_LEFT|JT_RIGHT|JT_OUTER },
+        /* inner   */ { 23, 5, JT_INNER                  },
+        /* cross   */ { 28, 5, JT_INNER|JT_CROSS         },
+    };
+
+    int i, j;
+    apAll[0] = pA;
+    apAll[1] = pB;
+    apAll[2] = pC;
+
+    for(i=0; i<3 && apAll[i]; i++)
+    {
+        p = apAll[i];
+        for(j=0; j<ArraySize(aKeyword); j++){
+            if( p->n==aKeyword[j].nChar
+                && sqlite3StrNICmp((char*)p->z, &zKeyText[aKeyword[j].i], p->n)==0 ){
+                jointype |= aKeyword[j].code;
+                break;
+            }
+        }
+
+        if( j>=ArraySize(aKeyword) ){
+            jointype |= JT_ERROR;
+            break;
+        }
+    }
+
+    if(
+       (jointype & (JT_INNER|JT_OUTER))==(JT_INNER|JT_OUTER) ||
+       (jointype & JT_ERROR)!=0
+       )
+    {
+        const char *zSp = " ";
+        assert( pB!=0 );
+        if( pC==0 ){ zSp++; }
+
+        sqlite3ErrorMsg(pParse, "unknown or unsupported join type");
+
+        jointype = JT_INNER;
+    }
+    else if( (jointype & JT_OUTER)!=0
+              && (jointype & (JT_LEFT|JT_RIGHT))!=JT_LEFT )
+    {
+        sqlite3ErrorMsg(pParse, "RIGHT and FULL OUTER JOINs are not currently supported");
+        jointype = JT_INNER;
+    }
+    return jointype;
+}
 
 
