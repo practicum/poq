@@ -385,10 +385,28 @@ Expr *sqlite3ExprSetCollByToken(Parse *pParse, Expr* e, Token* tk)
 }
 
 
-Expr *sqlite3ExprFunction(Parse* p,ExprList* elist, Token* tk)
+
+/*
+** Construct a new expression node for a function with multiple
+** arguments.
+*/
+Expr *sqlite3ExprFunction(Parse *pParse, ExprList *pList, Token *pToken)
 {
-    RaiseBreakpointSignalOnlyWhenDebuggerExists();
-    return NULL;
+    Expr *pNew;
+
+    assert( pToken );
+    pNew = sqlite3ExprAlloc(0 /*db*/, TK_FUNCTION, pToken, 1);
+    if( pNew==0 )
+    {
+        sqlite3ExprListDelete(0 /*db*/, pList); /* Avoid memory leak when malloc fails */
+        return 0;
+    }
+    pNew->x.pList = pList;
+    assert( !ExprHasProperty(pNew, EP_xIsSelect) );
+
+    // we don't care about height for now
+    //sqlite3ExprSetHeight(pParse, pNew);
+    return pNew;
 }
 
 

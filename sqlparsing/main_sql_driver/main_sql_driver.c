@@ -88,13 +88,17 @@ int main()
     const char *six = "select event_id from lic.LoggableEvent where level > user_level;";
     const char *seven = "select event_id from lic.LoggableEvent where level > user_level order by event_id desc, user_level asc;";
 
+    const char *eight = "select 23 from lic.LoggableEvent where (level > (2 + user_level)) and (event_date > now() );";
+
     parse_one_string( one );
     parse_one_string( two );
     parse_one_string( three );
     parse_one_string( four );
     parse_one_string( five );
+
     parse_one_string( six );
     parse_one_string( seven );
+    parse_one_string( eight );
 
     printf( "\n" );
 }

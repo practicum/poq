@@ -5,6 +5,7 @@
 #define TK_ISNOT                          146
 #define TK_ILLEGAL                        148
 #define TK_SPACE                          149
+#define TK_FUNCTION                       151
 #define TK_COLUMN                         152
 #define TK_CONST_FUNC                     155
 #define TK_UMINUS                         156
