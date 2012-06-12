@@ -333,11 +333,48 @@ IdList *sqlite3IdListAppend(sqlite3* db, IdList* idlist, Token* tk)
 
 
 
-
-int sqlite3GetInt32(const char *str,int *ip)
+/*
+** If zNum represents an integer that will fit in 32-bits, then set
+** *pValue to that integer and return true.  Otherwise return false.
+**
+** Any non-numeric characters that following zNum are ignored.
+** This is different from sqlite3Atoi64() which requires the
+** input number to be zero-terminated.
+*/
+int sqlite3GetInt32(const char *zNum, int *pValue)
 {
-    RaiseBreakpointSignalOnlyWhenDebuggerExists();
-    return -1;
+    sqlite_int64 v = 0;
+    int i, c;
+    int neg = 0;
+    if( zNum[0]=='-' ){
+        neg = 1;
+        zNum++;
+    }else if( zNum[0]=='+' ){
+        zNum++;
+    }
+    while( zNum[0]=='0' ) zNum++;
+    for(i=0; i<11 && (c = zNum[i] - '0')>=0 && c<=9; i++){
+        v = v*10 + c;
+    }
+
+    /* The longest decimal representation of a 32 bit integer is 10 digits:
+    **
+    **             1234567890
+    **     2^31 -> 2147483648
+    */
+
+    if( i>10 ){
+        return 0;
+    }
+
+    if( v-neg>2147483647 ){
+        return 0;
+    }
+    if( neg ){
+        v = -v;
+    }
+    *pValue = (int)v;
+    return 1;
 }
 
 
@@ -637,11 +674,72 @@ SrcList *sqlite3SrcListAppendFromTerm
 
 
 
+/*
+sqlite uses this function in order to generate code for the SELECT statement
+given in the p argument.
 
-int sqlite3Select(Parse*p, Select*s, SelectDest*sd)
+We do not actually want to generate any vdbe byte code, so it seems appropriate
+to leave this callback empty for our purposes.
+
+The only thing that might be of interest to us is the value of pDest->eDest:
+
+The results are distributed in various ways depending on the
+contents of the SelectDest structure pointed to by argument pDest
+as follows:
+
+    pDest->eDest    Result
+    ------------    -------------------------------------------
+    SRT_Output      Generate a row of output (using the OP_ResultRow
+                    opcode) for each row in the result set.
+
+    SRT_Mem         Only valid if the result is a single column.
+                    Store the first column of the first result row
+                    in register pDest->iParm then abandon the rest
+                    of the query.  This destination implies "LIMIT 1".
+
+    SRT_Set         The result must be a single column.  Store each
+                    row of result as the key in table pDest->iParm.
+                    Apply the affinity pDest->affinity before storing
+                    results.  Used to implement "IN (SELECT ...)".
+
+    SRT_Union       Store results as a key in a temporary table pDest->iParm.
+
+    SRT_Except      Remove results from the temporary table pDest->iParm.
+
+    SRT_Table       Store results in temporary table pDest->iParm.
+                    This is like SRT_EphemTab except that the table
+                    is assumed to already be open.
+
+    SRT_EphemTab    Create an temporary table pDest->iParm and store
+                    the result there. The cursor is left open after
+                    returning.  This is like SRT_Table except that
+                    this destination uses OP_OpenEphemeral to create
+                    the table first.
+
+    SRT_Coroutine   Generate a co-routine that returns a new row of
+                    results each time it is invoked.  The entry point
+                    of the co-routine is stored in register pDest->iParm.
+
+    SRT_Exists      Store a 1 in memory cell pDest->iParm if the result
+                    set is not empty.
+
+    SRT_Discard     Throw the results away.  This is used by SELECT
+                    statements within triggers whose only purpose is
+                    the side-effects of functions.
+
+This routine returns the number of errors.
+
+
+*/
+int sqlite3Select
+(
+  Parse *pParse,         /* The parser context */
+  Select *p,             /* The SELECT statement being coded. */
+  SelectDest *pDest      /* What to do with the query results */
+)
 {
-    RaiseBreakpointSignalOnlyWhenDebuggerExists();
-    return -1;
+    //RaiseBreakpointSignalOnlyWhenDebuggerExists();
+    return 0; // this function is supposed to return the number of errors.
 }
 
 
