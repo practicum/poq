@@ -369,3 +369,21 @@ void sqlite3Update(Parse*p, SrcList*slist, ExprList*elist, Expr*e, int i1)
     printf( "not implemented: sqlite3Update\n" );
     abort();
 }
+
+
+Expr *sqlite3ExprSetCollByToken(Parse *pParse, Expr* e, Token* tk)
+{
+    assert( ! "not implemented: sqlite3ExprSetCollByToken" );
+    printf( "not implemented: sqlite3ExprSetCollByToken\n" );
+    abort();
+}
+
+
+/// i initially thought that sqlite only used an IdList for INSERT. but apparently it can be for:  /* The USING clause of a join */
+IdList *sqlite3IdListAppend(sqlite3* db, IdList* idlist, Token* tk)
+{
+    assert( ! "not implemented: sqlite3IdListAppend" );
+    printf( "not implemented: sqlite3IdListAppend\n" );
+    abort();
+}
+

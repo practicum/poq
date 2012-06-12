@@ -323,14 +323,6 @@ ExprList *sqlite3ExprListAppend(
 }
 
 
-/// i initially thought that sqlite only used an IdList for INSERT. but apparently it can be for:  /* The USING clause of a join */
-IdList *sqlite3IdListAppend(sqlite3* db, IdList* idlist, Token* tk)
-{
-    RaiseBreakpointSignalOnlyWhenDebuggerExists();
-    return NULL;
-}
-
-
 
 
 /*
@@ -377,12 +369,6 @@ int sqlite3GetInt32(const char *zNum, int *pValue)
     return 1;
 }
 
-
-Expr *sqlite3ExprSetCollByToken(Parse *pParse, Expr* e, Token* tk)
-{
-    RaiseBreakpointSignalOnlyWhenDebuggerExists();
-    return NULL;
-}
 
 
 
