@@ -23,10 +23,20 @@ translationOf: (TypeOne) -> TypeTwo =
 		ELSIF is_yellow(x) THEN amarillo
 		ELSE azul ENDIF;
 
+numValOf: (TypeOne) -> REAL =
+	LAMBDA (x:TypeOne):
+		IF is_red(x) THEN 0
+		ELSIF is_yellow(x) THEN 2
+		ELSE 4 ENDIF; % this last case is for blue
 
 MakeThreeItem_TOL: (TypeOne, TypeOne, TypeOne) -> TypeOneList =
 	LAMBDA (x:TypeOne, y:TypeOne, z:TypeOne):
 		cons_toL( x, cons_toL( y, (cons_toL( z , empty_toL ) ) ) );
+
+MakeTwoItem_TOL: (TypeOne, TypeOne) -> TypeOneList =
+	LAMBDA (x:TypeOne, y:TypeOne):
+		cons_toL( x, cons_toL( y, empty_toL ) );
+
 
 MapFrom_toL_2_ttL : TypeOneList -> TypeTwoList;
 
@@ -36,6 +46,18 @@ ASSERT FORALL (x0 : TypeOne, toL0 : TypeOneList):
   PATTERN (MapFrom_toL_2_ttL( cons_toL(x0, toL0) )):
   MapFrom_toL_2_ttL( cons_toL(x0, toL0) ) =
 	cons_ttL( translationOf(x0), MapFrom_toL_2_ttL( toL0 ) );
+
+Reduce_toL_2_REALSum : (TypeOneList, REAL) -> REAL;
+
+ASSERT FORALL (x0: REAL):
+  Reduce_toL_2_REALSum(empty_toL, x0) = x0;
+
+ASSERT FORALL (x0: TypeOne, base_case: REAL, l: TypeOneList):
+  Reduce_toL_2_REALSum( cons_toL( x0, l ), base_case ) =
+	numValOf( x0 ) + Reduce_toL_2_REALSum( l, base_case );
+
+
+
 
 
 MakeThreeItemTranslation_TTL: (TypeOne, TypeOne, TypeOne) -> TypeTwoList =
@@ -56,7 +78,12 @@ q1z : TypeOne;
 
 %CHECKSAT head_ttL( MakeThreeItemTranslation_TTL( q1x, q1y, q1z ) ) = amarillo;
 
-CHECKSAT head_ttL( MapFrom_toL_2_ttL( MakeThreeItem_TOL( q1x, q1y, q1z ) ) ) = azul;
-COUNTERMODEL;  %the presence of absence of COUNTERMODEL here is (for better or worse) apparently needed, although i don't yet know why
+%CHECKSAT head_ttL( MapFrom_toL_2_ttL( MakeThreeItem_TOL( q1x, q1y, q1z ) ) ) = azul;
+%COUNTERMODEL;  %the presence of absence of COUNTERMODEL here is (for better or worse) apparently needed, although i don't yet know why
+
+%CHECKSAT Reduce_toL_2_REALSum( MakeTwoItem_TOL( q1x, q1y ), 0 ) = 6; % choose yellow and blue
+%CHECKSAT Reduce_toL_2_REALSum( MakeTwoItem_TOL( q1x, q1y ), 0 ) = 4; % one answer is red and blue
+CHECKSAT Reduce_toL_2_REALSum( MakeTwoItem_TOL( q1x, q1y ), 0 ) = 4 AND q1x = q1y; % answer is yellow,yellow
+COUNTERMODEL;
 
 
