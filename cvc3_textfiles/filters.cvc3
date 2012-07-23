@@ -1,0 +1,54 @@
+
+%TypeOne : TYPE;
+DATATYPE
+  TypeOne = red | yellow | blue
+END;
+
+
+DATATYPE
+  TypeOneList = empty_toL | cons_toL (head_toL: TypeOne, tail_toL: TypeOneList)
+END;
+
+
+%TOL_FilterFunctionType : TYPE = TypeOneList -> TypeOneList;
+%FilterFunction_toL_itemsRed : TOL_FilterFunctionType;
+
+FilterFunction_toL_itemsRed : TypeOneList -> TypeOneList;
+
+ASSERT FilterFunction_toL_itemsRed(empty_toL) = empty_toL;
+
+ASSERT FORALL (x0 : TypeOne, toL0 : TypeOneList):
+  PATTERN (FilterFunction_toL_itemsRed( cons_toL(x0, toL0) )):
+  FilterFunction_toL_itemsRed( cons_toL(x0, toL0) ) =
+  IF x0 = red THEN cons_toL( x0, FilterFunction_toL_itemsRed( toL0 ) )
+		   ELSE FilterFunction_toL_itemsRed( toL0 ) ENDIF;
+
+
+
+MakeThreeItem_TOL: (TypeOne, TypeOne, TypeOne) -> TypeOneList =
+	LAMBDA (x:TypeOne, y:TypeOne, z:TypeOne):
+		cons_toL( x, cons_toL( y, (cons_toL( z , empty_toL ) ) ) );
+
+
+% CVC3 doesn't allow function args to be BOOLEAN, but the function return type *can* be boolean
+HeadIsBlue: TypeOneList -> BOOLEAN =
+	LAMBDA (l:TypeOneList):
+		head_toL( l ) = blue;
+
+
+
+q1x : TypeOne;
+q1y : TypeOne;
+q1z : TypeOne;
+
+
+%QUERY HeadIsBlue( MakeThreeItem_TOL( q1z, q1x, q1y ) ); % asserts *validity*, meaning the statement ALWAYS HOLDS!
+%COUNTERMODEL; % of course there is a counter-model; one example is when q1z is 'red'
+
+%QUERY NOT HeadIsBlue( MakeThreeItem_TOL( q1z, q1x, q1y ) ); % asserts *validity*, meaning the statement ALWAYS HOLDS!
+%COUNTERMODEL; % of course there is a counter-model; one example is when q1z is 'blue'
+
+QUERY NOT HeadIsBlue( FilterFunction_toL_itemsRed( MakeThreeItem_TOL( q1z, q1x, q1y ) ) );
+
+
+
