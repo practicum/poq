@@ -1,0 +1,62 @@
+
+
+DATATYPE
+  TypeOne = red | yellow | blue
+END;
+
+DATATYPE
+  TypeTwo = rojo | amarillo | azul
+END;
+
+DATATYPE
+  TypeOneList = empty_toL | cons_toL (head_toL: TypeOne, tail_toL: TypeOneList)
+END;
+
+DATATYPE
+  TypeTwoList = empty_ttL | cons_ttL (head_ttL: TypeTwo, tail_ttL: TypeTwoList)
+END;
+
+
+translationOf: (TypeOne) -> TypeTwo =
+	LAMBDA (x:TypeOne):
+		IF is_red(x) THEN rojo
+		ELSIF is_yellow(x) THEN amarillo
+		ELSE azul ENDIF;
+
+
+MakeThreeItem_TOL: (TypeOne, TypeOne, TypeOne) -> TypeOneList =
+	LAMBDA (x:TypeOne, y:TypeOne, z:TypeOne):
+		cons_toL( x, cons_toL( y, (cons_toL( z , empty_toL ) ) ) );
+
+MapFrom_toL_2_ttL : TypeOneList -> TypeTwoList;
+
+ASSERT MapFrom_toL_2_ttL(empty_toL) = empty_ttL;
+
+ASSERT FORALL (x0 : TypeOne, toL0 : TypeOneList):
+  PATTERN (MapFrom_toL_2_ttL( cons_toL(x0, toL0) )):
+  MapFrom_toL_2_ttL( cons_toL(x0, toL0) ) =
+	cons_ttL( translationOf(x0), MapFrom_toL_2_ttL( toL0 ) );
+
+
+MakeThreeItemTranslation_TTL: (TypeOne, TypeOne, TypeOne) -> TypeTwoList =
+	LAMBDA (x:TypeOne, y:TypeOne, z:TypeOne):
+		cons_ttL( translationOf(x), cons_ttL( translationOf(y), (cons_ttL( translationOf(z) , empty_ttL ) ) ) );
+
+
+
+
+q1x : TypeOne;
+q1y : TypeOne;
+q1z : TypeOne;
+
+% the following query should be valid
+%QUERY head_ttL( MapFrom_toL_2_ttL( MakeThreeItem_TOL( q1x, q1y, q1z ) ) ) = amarillo
+%	OR head_ttL( MapFrom_toL_2_ttL( MakeThreeItem_TOL( q1x, q1y, q1z ) ) ) = rojo
+%	OR head_ttL( MapFrom_toL_2_ttL( MakeThreeItem_TOL( q1x, q1y, q1z ) ) ) = azul;
+
+%CHECKSAT head_ttL( MakeThreeItemTranslation_TTL( q1x, q1y, q1z ) ) = amarillo;
+
+CHECKSAT head_ttL( MapFrom_toL_2_ttL( MakeThreeItem_TOL( q1x, q1y, q1z ) ) ) = azul;
+COUNTERMODEL;  %the presence of absence of COUNTERMODEL here is (for better or worse) apparently needed, although i don't yet know why
+
+
