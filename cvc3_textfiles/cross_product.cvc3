@@ -1,0 +1,96 @@
+
+DATATYPE
+  TypeOne = red | yellow | blue
+END;
+
+DATATYPE
+  TypeTwo = rojo | amarillo | azul
+END;
+
+DATATYPE
+  TypeOneList = empty_toL | cons_toL (head_toL: TypeOne, tail_toL: TypeOneList)
+END;
+
+DATATYPE
+  TypeTwoList = empty_ttL | cons_ttL (head_ttL: TypeTwo, tail_ttL: TypeTwoList)
+END;
+
+TypeOneTypeTwoTuple: TYPE = [ TypeOne, TypeTwo ];
+
+DATATYPE
+  CrossTupleList = empty_ctL | cons_ctL (head_ctL: TypeOneTypeTwoTuple, tail_ctL: CrossTupleList)
+END;
+
+
+MakeThreeItem_TOL: (TypeOne, TypeOne, TypeOne) -> TypeOneList =
+	LAMBDA (x:TypeOne, y:TypeOne, z:TypeOne):
+		cons_toL( x, cons_toL( y, (cons_toL( z , empty_toL ) ) ) );
+
+MakeTwoItem_TTL: (TypeTwo, TypeTwo) -> TypeTwoList =
+	LAMBDA (x:TypeTwo, y:TypeTwo):
+		cons_ttL( x, cons_ttL( y, empty_ttL ) );
+
+
+Cross_toL_with_ttL : (TypeOneList, TypeTwoList) -> CrossTupleList;
+
+% note the large number of arguments here. need to document.
+Cross_singleton_with_list : (TypeOne, TypeOneList, TypeTwoList, TypeTwoList) -> CrossTupleList;
+
+
+ASSERT FORALL (x0: TypeTwoList):
+  PATTERN (Cross_toL_with_ttL(empty_toL, x0)):
+  Cross_toL_with_ttL(empty_toL, x0) = empty_ctL;
+
+ASSERT FORALL (x0: TypeOneList):
+  PATTERN (Cross_toL_with_ttL(x0, empty_ttL)):
+  Cross_toL_with_ttL(x0, empty_ttL) = empty_ctL;
+
+ASSERT FORALL (x0: TypeOne, x1: TypeOneList, x2: TypeTwo, x3: TypeTwoList):
+  PATTERN (Cross_toL_with_ttL(cons_toL(x0, x1), cons_ttL(x2, x3))):
+  Cross_toL_with_ttL(cons_toL(x0, x1), cons_ttL(x2, x3)) =
+	Cross_singleton_with_list(x0,x1,cons_ttL(x2, x3), cons_ttL(x2,x3));
+
+ASSERT FORALL (x0: TypeOne, x1: TypeOneList, x2: TypeTwoList):
+  PATTERN (Cross_singleton_with_list(x0,x1,empty_ttL,x2)):
+  Cross_singleton_with_list(x0,x1,empty_ttL,x2) = Cross_toL_with_ttL(x1, x2);
+
+ASSERT FORALL (x0: TypeOne, x1: TypeOneList, x2: TypeTwo, x3: TypeTwoList, x4: TypeTwoList):
+  PATTERN (Cross_singleton_with_list(x0,x1,cons_ttL(x2,x3),x4)):
+  LET tuple0 = ( x0, x2 ) IN % tuple syntax is confusing with [] and (). [] makes a tuple TYPE, and () makes a tuple OBJECT
+  Cross_singleton_with_list(x0,x1,cons_ttL(x2,x3),x4) = cons_ctL( tuple0 ,Cross_singleton_with_list(x0,x1,x3,x4) );
+
+
+a : TypeOne;
+b : TypeOne;
+c : TypeOne;
+
+AA : TypeTwo;
+BB : TypeTwo;
+CC : TypeTwo;
+
+list_1 : TypeOneList = MakeThreeItem_TOL( a, b, c );
+
+list_2 : TypeTwoList = MakeTwoItem_TTL( AA, BB );
+
+cross_i : CrossTupleList = Cross_toL_with_ttL( list_1, list_2 );
+
+cross_j : CrossTupleList = Cross_toL_with_ttL( cons_toL(a, empty_toL), cons_ttL(CC, empty_ttL) );
+
+explicit_tuple_list : CrossTupleList = cons_ctL( (a,CC) , empty_ctL);
+
+cross_k : CrossTupleList = Cross_toL_with_ttL( cons_toL(red, empty_toL), cons_ttL(azul, empty_ttL) );
+
+explicit_tuple_list_2 : CrossTupleList = cons_ctL( (red,azul) , empty_ctL);
+
+
+%PRINT cross_i; % prints the 'expanded definition' but not a 'model' of what such an entity would look like
+
+QUERY explicit_tuple_list = cross_j; % this is valid.
+QUERY explicit_tuple_list_2 = cross_k; % this is valid.
+
+some_a : TypeOne;
+some_CC : TypeTwo;
+
+%CHECKSAT cons_ctL( (some_a,some_CC) ,empty_ctL) = cross_k;
+%COUNTERMODEL;
+
