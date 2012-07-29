@@ -1,0 +1,2 @@
+
+?- write('        ~~~~ hello!! this line is coming from the .plrc file!').
