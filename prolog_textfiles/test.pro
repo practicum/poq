@@ -46,17 +46,25 @@ SELECT -star-
 
 */
 
+is_good(good).
 
 passes_test_two( student_x_scores(student(SID1,_NAME),scores(SID2,_CID,_POINTS)) ) :-
 	SID1 = SID2.
 
+passes_test_three( student_x_scores(student(_SID1,_NAME),scores(_SID2,_CID,POINTS)) ) :-
+	is_good(POINTS).
 
 filter_two([],[]).
 filter_two([X0|X1],[X0|Y])  :- passes_test_two(X0),   filter_two(X1,Y).
 filter_two([X0|X1],Y)  :- \+passes_test_two(X0),   filter_two(X1,Y).
 
+filter_three([],[]).
+filter_three([X0|X1],[X0|Y])  :- passes_test_three(X0),   filter_three(X1,Y).
+filter_three([X0|X1],Y)  :- \+passes_test_three(X0),   filter_three(X1,Y).
 
-myselect(RA,RB,F1) :- crossx(RA,RB,RARB), filter_two(RARB,F1).
+
+
+myselect(RA,RB,F2) :- crossx(RA,RB,RARB), filter_two(RARB,F1), filter_three(F1,F2).
 
 /*
 sample execution:
