@@ -65,10 +65,16 @@ filter_two([X0|X1],[X0|Y])  :- passes_test_three(X0),   filter_two(X1,Y).
 filter_two([X0|X1],Y)  :- \+passes_test_three(X0),   filter_two(X1,Y).
 
 
-myselect(RA,RB,F1) :- crossx(RA,RB,RARB), filter_two(RARB,F1).
+short_enough(L) :-  length(L,X), X < 4, X > 0.
+
+myselect(RA,RB,F1) :- short_enough(RA), short_enough(RB), crossx(RA,RB,RARB), filter_two(RARB,F1).
 
 /*
 sample execution:
+
+?- myselect([[a,1],[b,2],[c|X]],[[n,g],[a,h],[c,i]],[[a, 1, a, h], [c, 3, c, i]]).
+X = 3 .
+
 
 ?- myselect([[a,1],[b,2],[c,3]],[[m,f],[n,g],[a,h],[c,i]],F).
 F = [[a, 1, a, h], [c, 3, c, i]] .
