@@ -23,6 +23,20 @@ scores(_SID,_CID,_POINTS).
 
 student_x_scores(student(_SID1,_NAME),scores(_SID2,_CID,_POINTS)). % :- student(SID1,NAME), scores(SID2,CID,POINTS).
 
+/* t is the empty mapping, from library assoc */
+no_dupe_sid(L,LOUT) :- rec_remove_sid(L,t,LOUT).
+
+rec_remove_sid([],_ASSOC,[]).
+
+rec_remove_sid([student(LH_SID,_NAME)|LT],MAP,OUT) :-
+	get_assoc(LH_SID,MAP,_EXISTSVAL), rec_remove_sid(LT,MAP,OUT).
+
+rec_remove_sid([student(LH_SID,NAME)|LT],MAP,[student(LH_SID,NAME)|REST]) :-
+	\+get_assoc(LH_SID,MAP,_EXISTSVAL), put_assoc(LH_SID,MAP,inmap,MAP2), rec_remove_sid(LT,MAP2,REST).
+
+
+
+
 crossx([],_L2,[]).
 crossx(_L1,[],[]).
 crossx([L1H|L1T],[L2H|L2T],OUT) :- crosswsingle(L1H,L1T,[L2H|L2T],[L2H|L2T],OUT).
@@ -74,6 +88,13 @@ X = [student(_G470, _G471)],
 Y = [scores(_G470, _G474, _G475)],
 Z = [student_x_scores(student(_G470, _G471), scores(_G470, _G474, _G475))],
 N = 1 .
+
+?- length(X,3),length(Y,1),no_dupe_sid(X,PKX),X=PKX,length(Z,N),N<5,myselect(X,Y,Z).
+X = [student(_G1009, _G1010), student(_G1009, _G1025), student(_G1009, _G1064)],
+Y = [scores(_G1009, _G1181, good)],
+PKX = [student(_G1009, _G1010), student(_G1009, _G1025), student(_G1009, _G1064)],
+Z = [student_x_scores(student(_G1009, _G1010), scores(_G1009, _G1181, good)), student_x_scores(student(_G1009, _G1025), scores(_G1009, _G1181, good)), student_x_scores(student(_G1009, _G1064), scores(_G1009, _G1181, good))],
+N = 3 .
 
 
 */
