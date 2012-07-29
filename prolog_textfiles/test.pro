@@ -73,6 +73,16 @@ sample execution:
 ?- myselect([[a,1],[b,2],[c|X]],[[n,g],[a,h],[c,i]],[[a, 1, a, h], [c, 3, c, i]]).
 X = 3 .
 
+?- myselect([[a,1],[b,2],[c|X]],[[n,g],[Y,h],[c,i]],[[a, 1, a, h], [c, 3, c, i]]).
+X = 3,
+Y = a .
+
+?- myselect([[X,Y],[b,2],[W,Z]],[[n,g],[a,h],[c,i]],[[a, 1, a, h], [c, 3, c, i]]).
+X = a,
+Y = 1,
+W = c,
+Z = 3 .
+
 
 ?- myselect([[a,1],[b,2],[c,3]],[[m,f],[n,g],[a,h],[c,i]],F).
 F = [[a, 1, a, h], [c, 3, c, i]] .
