@@ -85,6 +85,9 @@ remove_duplicates(L,LOUT) :- rec_remove(L,t,LOUT).
 rec_remove([],_ASSOC,[]).
 rec_remove([LH|LT],MAP,OUT)       :- get_assoc(LH,MAP,_EXISTSVAL), rec_remove(LT,MAP,OUT).
 rec_remove([LH|LT],MAP,[LH|REST]) :- \+get_assoc(LH,MAP,_EXISTSVAL), put_assoc(LH,MAP,inmap,MAP2), rec_remove(LT,MAP2,REST).
+	% possible alternative way to state 'non-member in map':
+	%del_assoc(LH,MAP,_EXISTSVAL,WO_MAP),WO_MAP = MAP, put_assoc(LH,MAP,inmap,MAP2), rec_remove(LT,MAP2,REST).
+
 
 /*
 SELECT -star-
