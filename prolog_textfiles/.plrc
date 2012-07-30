@@ -1,2 +1,20 @@
 
 ?- write('        ~~~~ hello!! this line is coming from the .plrc file!').
+
+
+:- expand_file_name("~/.pl-history", [File|_]),
+         ( exists_file(File)
+         -> rl_read_history(File)
+         ; true
+         ).
+
+rl_write_history :-
+         expand_file_name("~/.pl-history", [File|_]),
+         rl_write_history(File).
+
+:- at_halt(rl_write_history).
+
+
+
+?- [test].
+
