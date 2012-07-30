@@ -124,6 +124,8 @@ filter_three([X0|X1],Y)  :- \+passes_test_three(X0),   filter_three(X1,Y).
 
 myselect(RA,RB,F2) :- crossx(RA,RB,RARB), filter_two(RARB,F1), filter_three(F1,F2).
 
+size_0_to_5(LIST) :- length(LIST,0);length(LIST,1);length(LIST,2);length(LIST,3);length(LIST,4);length(LIST,5).
+
 /*
 sample execution:
 
@@ -133,12 +135,11 @@ Y = [scores(_G470, _G474, _G475)],
 Z = [student_x_scores(student(_G470, _G471), scores(_G470, _G474, _G475))],
 N = 1 .
 
-?- length(X,3),length(Y,1),no_dupe_sid(X,PKX),X=PKX,length(Z,N),N<5,myselect(X,Y,Z).
-X = [student(_G1009, _G1010), student(_G1009, _G1025), student(_G1009, _G1064)],
-Y = [scores(_G1009, _G1181, good)],
-PKX = [student(_G1009, _G1010), student(_G1009, _G1025), student(_G1009, _G1064)],
-Z = [student_x_scores(student(_G1009, _G1010), scores(_G1009, _G1181, good)), student_x_scores(student(_G1009, _G1025), scores(_G1009, _G1181, good)), student_x_scores(student(_G1009, _G1064), scores(_G1009, _G1181, good))],
-N = 3 .
+?- length(X,3),length(Y,1),no_dupe_sid(X,PKX),X=PKX,size_0_to_5(Z),myselect(X,Y,Z).
+X = [student(0, _G42), student(1, _G57), student(2, _G78)],
+Y = [scores(0, _G129, good)],
+PKX = [student(0, _G42), student(1, _G57), student(2, _G78)],
+Z = [student_x_scores(student(0, _G42), scores(0, _G129, good))] .
 
 
 % need to figure out why the first one is consistently 'false' although the second one (same thing, essentially) is satisfiable.
