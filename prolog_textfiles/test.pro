@@ -14,6 +14,27 @@ redux(red,0).
 redux(blue,2).
 redux(yellow,4).
 
+/*
+  ... still not clear on 'is' versus '=:=' ...
+
+?- 3 is 4 - 1.
+true.
+
+?- 3 = 4-1.
+false.
+
+?- 3 == 4-1.
+false.
+
+?- 3 =:= 4-1.
+true.
+
+?- X =:= 4-1.
+ERROR: =:=/2: Arguments are not sufficiently instantiated
+?- 4-1 =:= X.
+ERROR: =:=/2: Arguments are not sufficiently instantiated
+
+*/
 reducex([],0). /* :- integer(0).*/
 reducex([X0|X1],N) :- reducex(X1,M), redux(X0,P),  N is M + P.
 
@@ -62,6 +83,13 @@ SELECT -star-
 
 is_good(good).
 
+/*
+  Note: i tried changing to using '==' chosen from listing: http://www.lix.polytechnique.fr/~liberti/public/computing/prog/prolog/prolog-tutorial.html#expr , ... but it made prolog no longer able to 'solve' some of my queries...
+
+ == means 'identical'. it is NOT TRUE that 3 == 4 - 1.
+
+  ... i am still not clear why i cannot 'get away with' using == here.
+*/
 passes_test_two( student_x_scores(student(SID1,_NAME),scores(SID2,_CID,_POINTS)) ) :-
 	SID1 = SID2.
 
