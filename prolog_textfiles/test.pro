@@ -3,6 +3,19 @@ use_module(library(assoc)).
 
 hello_world :- write('Hello World!').
 
+forcenat(0).
+forcenat(1).
+forcenat(2).
+forcenat(3).
+forcenat(4).
+forcenat(5).
+forcenat(6).
+forcenat(7).
+forcenat(8).
+forcenat(9).
+forcenat(10).
+%forcenat(N) :- forcenat(M), N is M + 1. % we need to avoid this for now. too much infinite looping!
+
 mappingx(red,rojo).
 mappingx(yellow,amarillo).
 mappingx(blue,azul).
@@ -39,10 +52,10 @@ reducex([],0). /* :- integer(0).*/
 reducex([X0|X1],N) :- reducex(X1,M), redux(X0,P),  N is M + P.
 
 
-student(_SID,_NAME).
-scores(_SID,_CID,_POINTS).
+student(SID,_NAME) :- forcenat(SID).
+scores(SID,_CID,_POINTS) :- forcenat(SID).
 
-student_x_scores(student(_SID1,_NAME),scores(_SID2,_CID,_POINTS)). % :- student(SID1,NAME), scores(SID2,CID,POINTS).
+student_x_scores(student(SID1,_NAME),scores(SID2,_CID,_POINTS)) :- forcenat(SID1), forcenat(SID2).
 
 /* t is the empty mapping, from library assoc */
 no_dupe_sid(L,LOUT) :- rec_remove_sid(L,t,LOUT).
@@ -50,10 +63,10 @@ no_dupe_sid(L,LOUT) :- rec_remove_sid(L,t,LOUT).
 rec_remove_sid([],_ASSOC,[]).
 
 rec_remove_sid([student(LH_SID,_NAME)|LT],MAP,OUT) :-
-	get_assoc(LH_SID,MAP,_EXISTSVAL), rec_remove_sid(LT,MAP,OUT).
+	forcenat(LH_SID), get_assoc(LH_SID,MAP,_EXISTSVAL), rec_remove_sid(LT,MAP,OUT).
 
 rec_remove_sid([student(LH_SID,NAME)|LT],MAP,[student(LH_SID,NAME)|REST]) :-
-	\+get_assoc(LH_SID,MAP,_EXISTSVAL), put_assoc(LH_SID,MAP,inmap,MAP2), rec_remove_sid(LT,MAP2,REST).
+	forcenat(LH_SID), \+get_assoc(LH_SID,MAP,_EXISTSVAL), put_assoc(LH_SID,MAP,inmap,MAP2), rec_remove_sid(LT,MAP2,REST).
 
 
 
@@ -91,10 +104,10 @@ is_good(good).
   ... i am still not clear why i cannot 'get away with' using == here.
 */
 passes_test_two( student_x_scores(student(SID1,_NAME),scores(SID2,_CID,_POINTS)) ) :-
-	SID1 = SID2.
+	forcenat(SID1), forcenat(SID1), SID1 = SID2.
 
-passes_test_three( student_x_scores(student(_SID1,_NAME),scores(_SID2,_CID,POINTS)) ) :-
-	is_good(POINTS).
+passes_test_three( student_x_scores(student(SID1,_NAME),scores(SID2,_CID,POINTS)) ) :-
+	forcenat(SID1), forcenat(SID2), is_good(POINTS).
 
 filter_two([],[]).
 filter_two([X0|X1],[X0|Y])  :- passes_test_two(X0),   filter_two(X1,Y).
