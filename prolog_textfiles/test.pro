@@ -144,7 +144,8 @@ Z = [student_x_scores(student(0, _G42), scores(0, _G129, good))] .
 
 % need to figure out why the first one is consistently 'false' although the second one (same thing, essentially) is satisfiable.
 
-?- length(X,3),length(Y,1),length(Z,0),myselect(X,Y,Z).false.
+?- length(X,3),length(Y,1),length(Z,0),myselect(X,Y,Z).
+  false.
 
 ?- length([student(a,k),student(b,l),student(c,m)],3),length([scores(a,sp,bad)],1),length(Z,0),myselect([student(a,k),student(b,l),student(c,m)],[scores(a,sp,bad)],Z).
 Z = [] .
