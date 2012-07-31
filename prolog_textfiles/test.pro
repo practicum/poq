@@ -1,5 +1,5 @@
-use_module(library(lists)).
-use_module(library(assoc)).
+:- use_module(library(lists)).
+:- use_module(library(assoc)).
 
 hello_world :- write('Hello World!').
 
@@ -80,7 +80,7 @@ crosswsingle(SNG,LA,[LB1H|LB1T],LB2,[student_x_scores(SNG,LB1H)|O1]) :-
 	crosswsingle(SNG,LA,LB1T,LB2,O1).
 
 /* t is the empty mapping, from library assoc */
-remove_duplicates(L,LOUT) :- rec_remove(L,t,LOUT).
+remove_duplicatesx(L,LOUT) :- rec_remove(L,t,LOUT).
 
 rec_remove([],_ASSOC,[]).
 rec_remove([LH|LT],MAP,OUT)       :- get_assoc(LH,MAP,_EXISTSVAL), rec_remove(LT,MAP,OUT).
