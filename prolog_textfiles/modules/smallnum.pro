@@ -20,29 +20,68 @@ rev([Head|List1], List2, List3) :-
 */
 
 :- module(smallnum,
-	  [forcenat/1,
-	   size_0_to_5/1,
-	   size_1_to_5/1,
-	   size_1_to_3/1]).
+          [small1/1,
+           small2/1,
+           size_0_to_1/1,
+           size_0_to_2/1,
+           size_0_to_3/1,
+           size_0_to_4/1,
+           size_0_to_5/1,
+           size_0_to_6/1,
+           size_0_to_7/1,
+           size_0_to_8/1,
+           size_0_to_9/1,
+           size_0_to_10/1,
+           size_0_to_11/1,
+           size_0_to_12/1,
+           size_1_to_2/1,
+           size_1_to_3/1,
+           size_1_to_4/1,
+           size_1_to_5/1,
+           size_1_to_6/1]).
 
 
-forcenat(0).
-forcenat(1).
-forcenat(2).
-forcenat(3).
-forcenat(4).
-forcenat(5).
-forcenat(6).
-forcenat(7).
-forcenat(8).
-forcenat(9).
-forcenat(10).
-%forcenat(N) :- forcenat(M), N is M + 1. % we need to avoid this for now. too much infinite looping!
+small1(0).
+small1(1).
+small1(2).
 
+small2(0).
+small2(1).
+small2(2).
+small2(3).
+small2(4).
+small2(5).
+small2(6).
+small2(7).
+small2(8).
+small2(9).
+small2(10).
 
+size_0_to_1(LIST) :- length(LIST,0);length(LIST,1).
+size_0_to_2(LIST) :- length(LIST,0);length(LIST,1);length(LIST,2).
+size_0_to_3(LIST) :- length(LIST,0);length(LIST,1);length(LIST,2);length(LIST,3).
+size_0_to_4(LIST) :- length(LIST,0);length(LIST,1);length(LIST,2);length(LIST,3);length(LIST,4).
 size_0_to_5(LIST) :- length(LIST,0);length(LIST,1);length(LIST,2);length(LIST,3);length(LIST,4);length(LIST,5).
+size_0_to_6(LIST) :- length(LIST,0);length(LIST,1);length(LIST,2);length(LIST,3);length(LIST,4);length(LIST,5);
+                     length(LIST,6).
+size_0_to_7(LIST) :- length(LIST,0);length(LIST,1);length(LIST,2);length(LIST,3);length(LIST,4);length(LIST,5);
+                     length(LIST,6);length(LIST,7).
+size_0_to_8(LIST) :- length(LIST,0);length(LIST,1);length(LIST,2);length(LIST,3);length(LIST,4);length(LIST,5);
+                     length(LIST,6);length(LIST,7);length(LIST,8).
+size_0_to_9(LIST) :- length(LIST,0);length(LIST,1);length(LIST,2);length(LIST,3);length(LIST,4);length(LIST,5);
+                     length(LIST,6);length(LIST,7);length(LIST,8);length(LIST,9).
+size_0_to_10(LIST) :- length(LIST,0);length(LIST,1);length(LIST,2);length(LIST,3);length(LIST,4);length(LIST,5);
+                      length(LIST,6);length(LIST,7);length(LIST,8);length(LIST,9);length(LIST,10).
+size_0_to_11(LIST) :- length(LIST,0);length(LIST,1);length(LIST,2);length(LIST,3);length(LIST,4);length(LIST,5);
+                      length(LIST,6);length(LIST,7);length(LIST,8);length(LIST,9);length(LIST,10);length(LIST,11).
+size_0_to_12(LIST) :- length(LIST,0);length(LIST,1);length(LIST,2);length(LIST,3);length(LIST,4);length(LIST,5);
+                      length(LIST,6);length(LIST,7);length(LIST,8);length(LIST,9);length(LIST,10);length(LIST,11);length(LIST,12).
 
-size_1_to_5(LIST) :- length(LIST,1);length(LIST,2);length(LIST,3);length(LIST,4);length(LIST,5).
-
-
+size_1_to_2(LIST) :- length(LIST,1);length(LIST,2).
 size_1_to_3(LIST) :- length(LIST,1);length(LIST,2);length(LIST,3).
+size_1_to_4(LIST) :- length(LIST,1);length(LIST,2);length(LIST,3);length(LIST,4).
+size_1_to_5(LIST) :- length(LIST,1);length(LIST,2);length(LIST,3);length(LIST,4);length(LIST,5).
+size_1_to_6(LIST) :- length(LIST,1);length(LIST,2);length(LIST,3);length(LIST,4);length(LIST,5);length(LIST,6).
+
+
+
