@@ -1,20 +1,9 @@
 :- use_module(library(lists)).
 :- use_module(library(assoc)).
 
-hello_world :- write('Hello World!').
+:- use_module(modules/smallnum).
 
-forcenat(0).
-forcenat(1).
-forcenat(2).
-forcenat(3).
-forcenat(4).
-forcenat(5).
-forcenat(6).
-forcenat(7).
-forcenat(8).
-forcenat(9).
-forcenat(10).
-%forcenat(N) :- forcenat(M), N is M + 1. % we need to avoid this for now. too much infinite looping!
+hello_world :- write('Hello World!').
 
 mappingx(red,rojo).
 mappingx(yellow,amarillo).
@@ -124,7 +113,7 @@ filter_three([X0|X1],Y)  :- \+passes_test_three(X0),   filter_three(X1,Y).
 
 myselect(RA,RB,F2) :- crossx(RA,RB,RARB), filter_two(RARB,F1), filter_three(F1,F2).
 
-size_0_to_5(LIST) :- length(LIST,0);length(LIST,1);length(LIST,2);length(LIST,3);length(LIST,4);length(LIST,5).
+
 
 /*
 sample execution:
