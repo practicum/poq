@@ -41,10 +41,10 @@ reducex([],0). /* :- integer(0).*/
 reducex([X0|X1],N) :- reducex(X1,M), redux(X0,P),  N is M + P.
 
 
-student(SID,_NAME) :- forcenat(SID).
-scores(SID,_CID,_POINTS) :- forcenat(SID).
+student(SID,_NAME) :- small1(SID).
+scores(SID,_CID,_POINTS) :- small1(SID).
 
-student_x_scores(student(SID1,_NAME),scores(SID2,_CID,_POINTS)) :- forcenat(SID1), forcenat(SID2).
+student_x_scores(student(SID1,_NAME),scores(SID2,_CID,_POINTS)) :- small1(SID1), small1(SID2).
 
 /* t is the empty mapping, from library assoc */
 no_dupe_sid(L,LOUT) :- rec_remove_sid(L,t,LOUT).
@@ -52,17 +52,17 @@ no_dupe_sid(L,LOUT) :- rec_remove_sid(L,t,LOUT).
 rec_remove_sid([],_ASSOC,[]).
 
 rec_remove_sid([student(LH_SID,_NAME)|LT],MAP,OUT) :-
-	forcenat(LH_SID), get_assoc(LH_SID,MAP,_EXISTSVAL), rec_remove_sid(LT,MAP,OUT).
+	small1(LH_SID), get_assoc(LH_SID,MAP,_EXISTSVAL), rec_remove_sid(LT,MAP,OUT).
 
 rec_remove_sid([student(LH_SID,NAME)|LT],MAP,[student(LH_SID,NAME)|REST]) :-
-	forcenat(LH_SID), \+get_assoc(LH_SID,MAP,_EXISTSVAL), put_assoc(LH_SID,MAP,inmap,MAP2), rec_remove_sid(LT,MAP2,REST).
+	small1(LH_SID), \+get_assoc(LH_SID,MAP,_EXISTSVAL), put_assoc(LH_SID,MAP,inmap,MAP2), rec_remove_sid(LT,MAP2,REST).
 
 
 
 
-crossx([],_L2,[]).
-crossx(L1,[],[]) :- L1 \= [].
-crossx([L1H|L1T],[L2H|L2T],OUT) :- crosswsingle(L1H,L1T,[L2H|L2T],[L2H|L2T],OUT).
+crossx([],L2,[]) :- size_0_to_12(L2).
+crossx(L1,[],[]) :- L1 \= [], size_0_to_12(L1).
+crossx([L1H|L1T],[L2H|L2T],OUT) :- size_0_to_12(L1T),size_0_to_12(L2T),crosswsingle(L1H,L1T,[L2H|L2T],[L2H|L2T],OUT).
 
 crosswsingle(_SNG,LA,[],LB2,OUT) :- crossx(LA,LB2,OUT).
 crosswsingle(SNG,LA,[LB1H|LB1T],LB2,[student_x_scores(SNG,LB1H)|O1]) :-
@@ -96,22 +96,22 @@ is_good(good).
   ... i am still not clear why i cannot 'get away with' using == here.
 */
 passes_test_two( student_x_scores(student(SID1,_NAME),scores(SID2,_CID,_POINTS)) ) :-
-	forcenat(SID1), forcenat(SID1), SID1 = SID2.
+	small1(SID1), small1(SID1), SID1 = SID2.
 
 passes_test_three( student_x_scores(student(SID1,_NAME),scores(SID2,_CID,POINTS)) ) :-
-	forcenat(SID1), forcenat(SID2), is_good(POINTS).
+	small1(SID1), small1(SID2), is_good(POINTS).
 
 filter_two([],[]).
-filter_two([X0|X1],[X0|Y])  :- passes_test_two(X0),   filter_two(X1,Y).
-filter_two([X0|X1],Y)  :- \+passes_test_two(X0),   filter_two(X1,Y).
+filter_two([X0|X1],[X0|Y])  :- size_0_to_3(X1),passes_test_two(X0),   filter_two(X1,Y).
+filter_two([X0|X1],Y)  :- size_0_to_3(X1), \+passes_test_two(X0),   filter_two(X1,Y).
 
 filter_three([],[]).
-filter_three([X0|X1],[X0|Y])  :- passes_test_three(X0),   filter_three(X1,Y).
-filter_three([X0|X1],Y)  :- \+passes_test_three(X0),   filter_three(X1,Y).
+filter_three([X0|X1],[X0|Y])  :- size_0_to_2(X1),passes_test_three(X0),   filter_three(X1,Y).
+filter_three([X0|X1],Y)  :- size_0_to_2(X1),\+passes_test_three(X0),   filter_three(X1,Y).
 
 
 
-myselect(RA,RB,F2) :- crossx(RA,RB,RARB), filter_two(RARB,F1), filter_three(F1,F2).
+myselect(RA,RB,F2) :- filter_two(RARB,F1), filter_three(F1,F2), crossx(RA,RB,RARB).
 
 
 
@@ -124,7 +124,7 @@ Y = [scores(_G470, _G474, _G475)],
 Z = [student_x_scores(student(_G470, _G471), scores(_G470, _G474, _G475))],
 N = 1 .
 
-?- length(X,3),length(Y,1),no_dupe_sid(X,PKX),X=PKX,size_0_to_5(Z),myselect(X,Y,Z).
+?- length(X,3),length(Y,1),no_dupe_sid(X,PKX),X=PKX,size_0_to_12(Z),myselect(X,Y,Z).
 X = [student(0, _G42), student(1, _G57), student(2, _G78)],
 Y = [scores(0, _G129, good)],
 PKX = [student(0, _G42), student(1, _G57), student(2, _G78)],
