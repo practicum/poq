@@ -61,7 +61,7 @@ rec_remove_sid([student(LH_SID,NAME)|LT],MAP,[student(LH_SID,NAME)|REST]) :-
 
 
 crossx([],_L2,[]).
-crossx(_L1,[],[]).
+crossx(L1,[],[]) :- L1 \= [].
 crossx([L1H|L1T],[L2H|L2T],OUT) :- crosswsingle(L1H,L1T,[L2H|L2T],[L2H|L2T],OUT).
 
 crosswsingle(_SNG,LA,[],LB2,OUT) :- crossx(LA,LB2,OUT).
