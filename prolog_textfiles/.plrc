@@ -16,5 +16,5 @@ rl_write_history :-
 
 
 
-?- [test].
+?- [course_test].
 
