@@ -10,7 +10,7 @@
 -- #
 -- #############################################################################################
 
-drop table yourdbnamehere98765.PayingMembers;
+drop table yourdbnamehere98765.PayingMember;
 drop table yourdbnamehere98765.InvitedGuest;
 drop table yourdbnamehere98765.PersonalData;
 drop table yourdbnamehere98765.AmenitiesAccessType;

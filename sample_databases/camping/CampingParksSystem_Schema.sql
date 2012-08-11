@@ -1,7 +1,7 @@
 
 
 
-CREATE TABLE IF NOT EXISTS PayingMembers
+CREATE TABLE IF NOT EXISTS PayingMember
 (
     paying_member_id bigint unsigned NOT NULL UNIQUE auto_increment,
 
@@ -28,9 +28,9 @@ CREATE TABLE IF NOT EXISTS InvitedGuest
 (
     guest_id bigint unsigned NOT NULL UNIQUE auto_increment,
     -- The name "guest_email" is used so that no one will be misled
-    -- into thinking that "member_email" (from the PayingMembers
+    -- into thinking that "member_email" (from the PayingMember
     -- table) is a foreign key into InvitedGuest, or vice versa.  If
-    -- the PayingMembers table and the InvitedGuest each had a column
+    -- the PayingMember table and the InvitedGuest each had a column
     -- identically named "email_address", then it would misleadingly
     -- indicate that they key into the same data or share some
     -- overlapping purpose.
