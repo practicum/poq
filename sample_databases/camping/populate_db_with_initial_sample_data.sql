@@ -1611,8 +1611,8 @@ INSERT INTO `VehicleRegistration` VALUES
 
 INSERT INTO `PayingMember` VALUES
                 (1,'abcd','5cf7c8e',1)
-        ,        (2,'jones','151863',1)
-        ,        (3,'kelly','366957',1)
+        ,        (2,'johns','151863',1)
+        ,        (3,'kellie','366957',1)
         ,        (4,'customer1234567@customer1234567bhgsde.com.fake','491736',1)
         ,        (5,'anomaly@abnormalbhgsde.com.fake','910094',1)
         ,        (6,'alice@bhgsde.com.fake','265257',6)
@@ -10394,8 +10394,8 @@ INSERT INTO `Vehicle` VALUES
 
 
 INSERT INTO `VehicleTraits` VALUES
-                 (1,6,'VIN','559397705432')
-        ,        (2,6,'LicensePlate','B3T630')
+                 (1,6,'Year','1980')
+        ,        (2,6,'ColorCode','blue')
         ,        (4,2,'VIN','484983151863')
         ,        (5,2,'LicensePlate','B8T553')
         ,        (7,3,'LicensePlate','B9X318')

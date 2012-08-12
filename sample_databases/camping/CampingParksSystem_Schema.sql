@@ -128,7 +128,7 @@ CREATE TABLE IF NOT EXISTS Purchase
     purchase_id bigint unsigned NOT NULL UNIQUE auto_increment,
     barcode_string varchar(255) NOT NULL ,
     purchase_date DATETIME NOT NULL DEFAULT 0,
-    purchased_copies_qty int NOT NULL DEFAULT 0,
+    purchased_spaces_qty int NOT NULL DEFAULT 0,
     canceled TINYINT(1) NOT NULL DEFAULT 0
                                 --
                                 -- NOTE THE DIFFERENCE BETWEEN CANCELING A Purchase AND CANCELING A BarcodeMemberJoin :

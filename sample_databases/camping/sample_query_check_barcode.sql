@@ -1,9 +1,10 @@
 
 -- given a barcode, we use this query to find out whether it is a
 -- full-membership barcode or a trial membership barcode, and we also
--- find out how many vehicles it supports and for which amenities
--- access level.  We might also discover that the barcode is no known
--- in the system at all.
+-- find out which amenities access level is associated with this
+-- barcode and (in the full-membership case) how many purchase
+-- transactions took place for this barcode.  We might also discover
+-- that the barcode is not known in the system at all.
 
 SELECT
       cnt
