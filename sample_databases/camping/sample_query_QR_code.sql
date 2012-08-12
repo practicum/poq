@@ -82,3 +82,15 @@ ON
     member.personal_data_id = pd.personal_data_id
 
 ;
+
+
+-- target assertions we would like to verify:
+
+-- result count MUST BE 1 or 0
+
+-- Discussion: if this query ever returns MORE THAN ONE ROW, then we
+-- could potentially end up storing TOO MANY vehicle traits in the QR
+-- code sticker (because of a later join not shown here).  However,
+-- even in the case of "too many vehicle traits" that I just
+-- mentioned... we will still be GUARANTEED to store traits ONLY of
+-- the CORRECT VEHICLE. There will just be duplicates.
