@@ -1,5 +1,9 @@
 
-In software development, you never just choose an implementation language -- what you really choose is a language *and* the toolkits and packages accompanying it.
+-- may need to introduce 'what is SQL' somewhere up here early on. it would interrupt the flow later on, but i need to be sure the reader understands my definitions of 'imperative SQL' versus 'relational SQL'.  Also, I need to explain why i exclude imperative SQL.  I feel it is justified since...
+
+
+
+In software development, you never just choose an implementation language alone -- what you really choose is a language *and* the tools and packages accompanying it.
 
 In other words, the availability of tools supporting an implementation language are an influential factor when software developers select a language.
 
@@ -14,6 +18,46 @@ To best improve the effeciency of a project, developers need to reduce the time 
 For a ubiquitous programming language like Java, it is common to find a wide range of supporting tools covering all aspects of product development.  For Java, one easily finds several options in each of the following categories: debugging environments, testing frameworks, static analysis tools, fuzzers, automated refactoring tools, documentation generators, visualization kits, internationalization packages, syntax highlighters, cross-referencers, and -- of particular relevance to this current paper -- formal verification tools. [javatools] [ESC/Java]
 
 With proper use of the relevant tools during each phase of development, a tool-assisted Java project can be completed much more efficiently than a project using nothing more than raw Java source code and a compiler. Additionally, if tool usage also includes various automated tools, we expect a reduction in errors due to the elimination of certain opportunities for typographical errors or manual copy-and-paste errors.
+
+In the realm of relational database systems, the SQL language is quite easily the single most ubiquitous coding language in existence.
+
+ERD modeling and DDL script generation
+
+comparing and synchronizing the content and structure of database tables
+
+auditing permissions on database tables and other objects in the database
+
+performance tuning and performance monitoring tools
+
+
+In general, we find a very rich set of tools for the administration of a relational database installation, and comparatively few tools supporting the act of writing SQL code and debuggging it.
+
+There is a further caveat for tabulating the number of SQL debugging tools currently available: many tools described as SQL debugging tools only target the imperative programming portions of the language, and do not cover debugging of purely relational statements.
+
+(do i have to explain and flesh out precisely what i mean by 'imperative portions' versus relational?)
+
+Only very recently has there been a surge of interest in tools to support SQL coding. (mention: Quest Code Tester for Oracle, Qex, Leslie Van Exel's work.)
+
+--  can i create an APPENDIX with cases of tools/rdbms's that DO help with sql coding? is an appendix ok for that?
+
+POQ was created to further the research trend towards devising better quality assurance mechanisms for programs written in SQL.
+
+How can we create tools that allow a SQL coder to efficiently produce working SQL code and have confidence that this code runs correctly on all input parameters and all content-states (better word) of the database, not just on a limited test dataset?
+
+
+
+
+
+
+design by contract
+
+debugging
+
+testing
+
+documentation
+
+refactoring
 
 
 
