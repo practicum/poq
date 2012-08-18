@@ -1,0 +1,18 @@
+
+In software development, you never just choose an implementation language -- what you really choose is a language *and* the toolkits and packages accompanying it.
+
+In other words, the availability of tools supporting an implementation language are an influential factor when software developers select a language.
+
+The selection of a specific language will obviously impact the project tasks that involve writing code.  In fact, the chosen language will completely and unambiguously define what statements can be written during these tasks.
+
+However, writing code is only a small part of the total work done on any software project.  Other important development activities include generating specifications, planning system architecture, generating test plans, testing, debugging, creating documentation, version control, and configuration management.  Also: code writing will always occur less frequently than code reading, because each line of code will be read more times than it will be written.**
+
+Time spent writing code is dwarfed (offensive word?) by other activities, and Amdahl's law reminds us that the efficiencies gained by speeding up code-writing are limited by the small proportion of the project that actually depends on code-writing.
+
+To best improve the effeciency of a project, developers need to reduce the time required for all the non code-writing tasks, too.  This is why tool support is essential.
+
+
+
+
+
+
