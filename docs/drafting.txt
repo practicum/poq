@@ -3,15 +3,22 @@ In software development, you never just choose an implementation language -- wha
 
 In other words, the availability of tools supporting an implementation language are an influential factor when software developers select a language.
 
-The selection of a specific language will obviously impact the project tasks that involve writing code.  In fact, the chosen language will completely and unambiguously define what statements can be written during these tasks.
+The language choice will obviously impact development tasks that involve writing code.  In fact, the chosen language will completely and unambiguously define what statements can be written during fulfillment of these tasks.
 
 However, writing code is only a small part of the total work done on any software project.  Other important development activities include generating specifications, planning system architecture, generating test plans, testing, debugging, creating documentation, version control, and configuration management.  Also: code writing will always occur less frequently than code reading, because each line of code will be read more times than it will be written.**
 
 Time spent writing code is dwarfed (offensive word?) by other activities, and Amdahl's law reminds us that the efficiencies gained by speeding up code-writing are limited by the small proportion of the project that actually depends on code-writing.
 
-To best improve the effeciency of a project, developers need to reduce the time required for all the non code-writing tasks, too.  This is why tool support is essential.
+To best improve the effeciency of a project, developers need to reduce the time required for all the non code-writing tasks.  This is why tool support is essential.
+
+For a ubiquitous programming language like Java, it is common to find a wide range of supporting tools covering all aspects of product development.  For Java, one easily finds several options in each of the following categories: debugging environments, testing frameworks, static analysis tools, fuzzers, automated refactoring tools, documentation generators, visualization kits, internationalization packages, syntax highlighters, cross-referencers, and -- of particular relevance to this current paper -- formal verification tools. [javatools] [ESC/Java]
+
+With proper use of the relevant tools during each phase of development, a tool-assisted Java project can be completed much more efficiently than a project using nothing more than raw Java source code and a compiler. Additionally, if tool usage also includes various automated tools, we expect a reduction in errors due to the elimination of certain opportunities for typographical errors or manual copy-and-paste errors.
 
 
+
+
+[javatools] http://community.java.net/community/javatools
 
 
 
