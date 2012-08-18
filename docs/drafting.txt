@@ -44,20 +44,28 @@ POQ was created to further the research trend towards devising better quality as
 
 How can we create tools that allow a SQL coder to efficiently produce working SQL code and have confidence that this code runs correctly on all input parameters and all content-states (better word) of the database, not just on a limited test dataset?
 
+Consider: testing, debugging, static analysis.
+
+Formal verification.  For most programs written in languages like C, Java, C#, Python, etc, it is still considered infeasible (or prohibitively costly) to formally verify all statements in the program.  However, for relational SQL statements, the task is not as difficult.
+
+Formal verification as commonly used today is based on first-order logic.  Much of the work in verifying statements in today's imperative languages and object oriented languages is due to the 'transformation step' (better word) of finding a suitable first-order theory that represents the programming language statements.  In the case of relational SQL, however, we already have a fully developed mathematical theory of relational calculus that is expressible (able?) in first-order logic. (relational calculus? relational algebra?)  Therefore, the 'transformation step' that is the challenge in other verification settings is completely absent in a setting where the goal is to verify relational SQL.  (okay... so i MUST MENTION somewhere about the places where SQL falls short of true mathematical relational concepts)
+
+Other ways to 'spin' here:
+
+    design by contract - this is the key way we typically relate formal verification to our dev process.
+
+    debugging - explain how, in some sense, formal verification of relational SQL might be the closest thing to 'debugging SQL', since the notion of 'stepping through' doesnt really hold up in relational SQL. (rather, sql statements have 'all-at-once' qualities)
+
+    testing - Qex is an example of how this approach supports testing
+
+    documentation - notations that express ASSUMPTIONS about the code are ALWAYS valuable documentation for future devs/maintainers
+
+    refactoring - refactoring can always be done with greater confidence in the presence of some type of test(s). POQ provides this.
 
 
+So, the initial goal behind POQ was to aide the work of the everyday SQL coder.  Nonetheless, because the fulfillment of this goal led to an application of formal verification methods, it bears mentioning the added benefits that formal verification bring to any project.
 
-
-
-design by contract
-
-debugging
-
-testing
-
-documentation
-
-refactoring
+safety-critical, lower bugfix costs, bla bla bla
 
 
 
