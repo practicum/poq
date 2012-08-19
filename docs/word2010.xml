@@ -2350,7 +2350,164 @@
 <w:t>And a paragraph begins…</w:t>
 </w:r>
 </w:p>
-<w:p w:rsidR="00235288" w:rsidRPr="00235288" w:rsidRDefault="00235288" w:rsidP="00235288">
+<w:p w:rsidR="00235288" w:rsidRDefault="00235288" w:rsidP="00235288">
+<w:pPr>
+<w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
+<w:contextualSpacing/>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+</w:pPr>
+</w:p>
+<w:p w:rsidR="00573350" w:rsidRDefault="00573350" w:rsidP="00235288">
+<w:pPr>
+<w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
+<w:contextualSpacing/>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+</w:pPr>
+<w:r>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve">Testing inline math formulas: </w:t>
+</w:r>
+<w:proofErr w:type="spellStart"/>
+<w:r w:rsidRPr="00573350">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>Lore</w:t>
+</w:r>
+<w:bookmarkStart w:id="0" w:name="_GoBack"/>
+<w:bookmarkEnd w:id="0"/>
+<w:r w:rsidRPr="00573350">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>m</w:t>
+</w:r>
+<w:proofErr w:type="spellEnd"/>
+<w:r w:rsidRPr="00573350">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve"> </w:t>
+</w:r>
+<w:proofErr w:type="spellStart"/>
+<w:r w:rsidRPr="00573350">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>ipsum</w:t>
+</w:r>
+<w:proofErr w:type="spellEnd"/>
+<w:r w:rsidRPr="00573350">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve"> dolor sit </w:t>
+</w:r>
+<w:proofErr w:type="spellStart"/>
+<w:r w:rsidRPr="00573350">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>amet</w:t>
+</w:r>
+<w:proofErr w:type="spellEnd"/>
+<w:r w:rsidRPr="00573350">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve"> </w:t>
+</w:r>
+<m:oMath>
+<m:r>
+<w:rPr>
+<w:rFonts w:ascii="Cambria Math" w:hAnsi="Cambria Math" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<m:t>
+α⊨φ</m:t>
+</m:r>
+</m:oMath>
+<w:r w:rsidRPr="00573350">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve"> alpha satisfies phi</w:t>
+</w:r>
+<w:r>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve">. </w:t>
+</w:r>
+<w:proofErr w:type="gramStart"/>
+<w:r>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>ok</w:t>
+</w:r>
+<w:proofErr w:type="gramEnd"/>
+<w:r>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve">. </w:t>
+</w:r>
+<w:proofErr w:type="gramStart"/>
+<w:r>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>this</w:t>
+</w:r>
+<w:proofErr w:type="gramEnd"/>
+<w:r>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve"> came from something imported using TeX2Word.</w:t>
+</w:r>
+</w:p>
+<w:p w:rsidR="00573350" w:rsidRPr="00235288" w:rsidRDefault="00573350" w:rsidP="00235288">
 <w:pPr>
 <w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
 <w:contextualSpacing/>
@@ -2525,6 +2682,7 @@
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
+<w:lastRenderedPageBreak/>
 <w:t>The language choice will obviously impact development tasks that involve writing code.  In fact, the chosen language will completely and unambiguously define what statements can be written during fulfillment of these tasks.</w:t>
 </w:r>
 </w:p>
@@ -2744,6 +2902,7 @@
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
+<w:lastRenderedPageBreak/>
 <w:t>referencers</w:t>
 </w:r>
 <w:proofErr w:type="spellEnd"/>
@@ -2803,7 +2962,6 @@
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:lastRenderedPageBreak/>
 <w:t>With proper use of the relevant tools during each phase of development, a tool-assisted Java project can be completed much more efficiently than a project using nothing more than raw Java source code and a compiler. Additionally, if tool usage also includes various automated tools, we expect a reduction in errors due to the elimination of certain opportunities for typographical errors or manual copy-and-paste errors.</w:t>
 </w:r>
 </w:p>
@@ -3025,6 +3183,7 @@
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
+<w:lastRenderedPageBreak/>
 <w:t xml:space="preserve">In general, we find a very rich set of tools for the administration of a relational database installation, and comparatively few tools supporting the act of writing SQL code and </w:t>
 </w:r>
 <w:proofErr w:type="spellStart"/>
@@ -3073,7 +3232,6 @@
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:lastRenderedPageBreak/>
 <w:t>There is a further caveat for tabulating the number of SQL debugging tools currently available: many tools described as SQL debugging tools only target the imperative programming portions of the language, and do not cover debugging of purely relational statements.</w:t>
 </w:r>
 </w:p>
@@ -3360,6 +3518,7 @@
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
+<w:lastRenderedPageBreak/>
 <w:t>How can we create tools that allow a SQL coder to efficiently produce working SQL code and have confidence that this code runs correctly on all input parameters and all content-states (better word) of the database, not just on a limited test dataset?</w:t>
 </w:r>
 </w:p>
@@ -3421,7 +3580,6 @@
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:lastRenderedPageBreak/>
 <w:t>Formal verification.</w:t>
 </w:r>
 <w:proofErr w:type="gramEnd"/>
@@ -3641,7 +3799,6 @@
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:lastRenderedPageBreak/>
 <w:t xml:space="preserve">    debugging - explain how, in some sense, formal verification of relational SQL might be the closest thing to 'debugging SQL', since the notion of 'stepping through' </w:t>
 </w:r>
 <w:proofErr w:type="spellStart"/>
@@ -4102,7 +4259,6 @@
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:lastRenderedPageBreak/>
 <w:t>[</w:t>
 </w:r>
 <w:proofErr w:type="spellStart"/>
@@ -4158,8 +4314,6 @@
 <w:szCs w:val="24"/>
 </w:rPr>
 </w:pPr>
-<w:bookmarkStart w:id="0" w:name="_GoBack"/>
-<w:bookmarkEnd w:id="0"/>
 <w:r>
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
@@ -4490,15 +4644,7 @@
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t>APPENDI</w:t>
-</w:r>
-<w:r>
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-<w:t>X A</w:t>
+<w:t>APPENDIX A</w:t>
 </w:r>
 </w:p>
 <w:p w:rsidR="00F23974" w:rsidRDefault="00FC15BE" w:rsidP="00FC15BE">
@@ -4911,14 +5057,14 @@
 </w:rPr>
 <w:fldChar w:fldCharType="separate"/>
 </w:r>
-<w:r w:rsidR="00137987">
+<w:r w:rsidR="00573350">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:noProof/>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t>7</w:t>
+<w:t>1</w:t>
 </w:r>
 <w:r w:rsidRPr="00952998">
 <w:rPr>
@@ -4971,7 +5117,7 @@
 </w:rPr>
 <w:fldChar w:fldCharType="separate"/>
 </w:r>
-<w:r w:rsidR="00137987">
+<w:r w:rsidR="00573350">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:noProof/>
@@ -5396,6 +5542,7 @@
 <w:rsid w:val="0045524B"/>
 <w:rsid w:val="00476BE6"/>
 <w:rsid w:val="00521633"/>
+<w:rsid w:val="00573350"/>
 <w:rsid w:val="005B2124"/>
 <w:rsid w:val="006129F8"/>
 <w:rsid w:val="00767191"/>
@@ -5626,7 +5773,6 @@
 <w:style w:type="character" w:default="1" w:styleId="DefaultParagraphFont">
 <w:name w:val="Default Paragraph Font"/>
 <w:uiPriority w:val="1"/>
-<w:semiHidden/>
 <w:unhideWhenUsed/>
 </w:style>
 <w:style w:type="table" w:default="1" w:styleId="TableNormal">
@@ -5891,7 +6037,6 @@
 <w:style w:type="character" w:default="1" w:styleId="DefaultParagraphFont">
 <w:name w:val="Default Paragraph Font"/>
 <w:uiPriority w:val="1"/>
-<w:semiHidden/>
 <w:unhideWhenUsed/>
 </w:style>
 <w:style w:type="table" w:default="1" w:styleId="TableNormal">
@@ -6001,7 +6146,7 @@
 </pkg:part>
 <pkg:part pkg:name="/customXml/itemProps1.xml" pkg:contentType="application/vnd.openxmlformats-officedocument.customXmlProperties+xml" pkg:padding="32">
 <pkg:xmlData pkg:originalXmlStandalone="no">
-<ds:datastoreItem ds:itemID="{65FD1512-A2D0-43AB-9B60-2FDE6FA1DEB6}" xmlns:ds="http://schemas.openxmlformats.org/officeDocument/2006/customXml">
+<ds:datastoreItem ds:itemID="{B22FAA72-8C2E-4629-9A09-B37138EDDC5B}" xmlns:ds="http://schemas.openxmlformats.org/officeDocument/2006/customXml">
 <ds:schemaRefs>
 <ds:schemaRef ds:uri="http://schemas.openxmlformats.org/officeDocument/2006/bibliography"/>
 </ds:schemaRefs>
@@ -6025,11 +6170,11 @@ Someone</dc:creator>
 <cp:lastModifiedBy>
 Someone</cp:lastModifiedBy>
 <cp:revision>
-2</cp:revision>
+3</cp:revision>
 <dcterms:created xsi:type="dcterms:W3CDTF">
 2012-08-19T03:41:00Z</dcterms:created>
 <dcterms:modified xsi:type="dcterms:W3CDTF">
-2012-08-19T03:41:00Z</dcterms:modified>
+2012-08-18T21:02:00Z</dcterms:modified>
 </cp:coreProperties>
 </pkg:xmlData>
 </pkg:part>
@@ -6057,6 +6202,13 @@ Someone</cp:lastModifiedBy>
 <w:pitch w:val="variable"/>
 <w:sig w:usb0="61002A87" w:usb1="80000000" w:usb2="00000008" w:usb3="00000000" w:csb0="000101FF" w:csb1="00000000"/>
 </w:font>
+<w:font w:name="Cambria Math">
+<w:panose1 w:val="02040503050406030204"/>
+<w:charset w:val="00"/>
+<w:family w:val="roman"/>
+<w:pitch w:val="variable"/>
+<w:sig w:usb0="E00002FF" w:usb1="420024FF" w:usb2="00000000" w:usb3="00000000" w:csb0="0000019F" w:csb1="00000000"/>
+</w:font>
 <w:font w:name="Cambria">
 <w:panose1 w:val="02040503050406030204"/>
 <w:charset w:val="00"/>
@@ -6081,19 +6233,19 @@ Someone</cp:lastModifiedBy>
 <Template>
 Normal.dotm</Template>
 <TotalTime>
-1</TotalTime>
+4</TotalTime>
 <Pages>
 21</Pages>
 <Words>
-1364</Words>
+1385</Words>
 <Characters>
-7777</Characters>
+7895</Characters>
 <Application>
 Microsoft Office Word</Application>
 <DocSecurity>
 0</DocSecurity>
 <Lines>
-64</Lines>
+65</Lines>
 <Paragraphs>
 18</Paragraphs>
 <ScaleCrop>
@@ -6119,7 +6271,7 @@ Title</vt:lpstr>
 <LinksUpToDate>
 false</LinksUpToDate>
 <CharactersWithSpaces>
-9123</CharactersWithSpaces>
+9262</CharactersWithSpaces>
 <SharedDoc>
 false</SharedDoc>
 <HyperlinksChanged>
