@@ -13,18 +13,19 @@
 <pkg:part pkg:name="/word/_rels/document.xml.rels" pkg:contentType="application/vnd.openxmlformats-package.relationships+xml" pkg:padding="256">
 <pkg:xmlData>
 <Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships">
-<Relationship Id="rId8" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/footer" Target="footer1.xml"/>
-<Relationship Id="rId3" Type="http://schemas.microsoft.com/office/2007/relationships/stylesWithEffects" Target="stylesWithEffects.xml"/>
-<Relationship Id="rId7" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/endnotes" Target="endnotes.xml"/>
-<Relationship Id="rId12" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/theme" Target="theme/theme1.xml"/>
-<Relationship Id="rId2" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/styles" Target="styles.xml"/>
+<Relationship Id="rId8" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/endnotes" Target="endnotes.xml"/>
+<Relationship Id="rId13" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/theme" Target="theme/theme1.xml"/>
+<Relationship Id="rId3" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/styles" Target="styles.xml"/>
+<Relationship Id="rId7" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/footnotes" Target="footnotes.xml"/>
+<Relationship Id="rId12" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/fontTable" Target="fontTable.xml"/>
+<Relationship Id="rId2" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/numbering" Target="numbering.xml"/>
 <Relationship Id="rId1" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/customXml" Target="../customXml/item1.xml"/>
-<Relationship Id="rId6" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/footnotes" Target="footnotes.xml"/>
-<Relationship Id="rId11" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/fontTable" Target="fontTable.xml"/>
-<Relationship Id="rId5" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/webSettings" Target="webSettings.xml"/>
-<Relationship Id="rId10" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/footer" Target="footer3.xml"/>
-<Relationship Id="rId4" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/settings" Target="settings.xml"/>
-<Relationship Id="rId9" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/footer" Target="footer2.xml"/>
+<Relationship Id="rId6" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/webSettings" Target="webSettings.xml"/>
+<Relationship Id="rId11" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/footer" Target="footer3.xml"/>
+<Relationship Id="rId5" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/settings" Target="settings.xml"/>
+<Relationship Id="rId10" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/footer" Target="footer2.xml"/>
+<Relationship Id="rId4" Type="http://schemas.microsoft.com/office/2007/relationships/stylesWithEffects" Target="stylesWithEffects.xml"/>
+<Relationship Id="rId9" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/footer" Target="footer1.xml"/>
 </Relationships>
 </pkg:xmlData>
 </pkg:part>
@@ -88,7 +89,7 @@
 <w:t>ABSTRACT</w:t>
 </w:r>
 </w:p>
-<w:p w:rsidR="00C03184" w:rsidRDefault="00C03184" w:rsidP="001C251F">
+<w:p w:rsidR="00C03184" w:rsidRDefault="00695037" w:rsidP="001C251F">
 <w:pPr>
 <w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
 <w:contextualSpacing/>
@@ -105,7 +106,7 @@
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t>TITLE OF STUFF YEAH HERE IT IS RIGHT HERE</w:t>
+<w:t>FULL COMPLETE CORRECT TITLE OF THESIS GOES HERE</w:t>
 </w:r>
 </w:p>
 <w:p w:rsidR="00C03184" w:rsidRDefault="00C03184" w:rsidP="001C251F">
@@ -185,7 +186,14 @@
 <w:szCs w:val="24"/>
 </w:rPr>
 <w:tab/>
-<w:t>This is an abstract. What a wonderful summary it is.  It is so good that it describes the essence of what you would learn by reading the whole paper, yet it also entices you and convinces you that the rest of the paper is worth reading, even in all its length.</w:t>
+</w:r>
+<w:r w:rsidR="00C94A53" w:rsidRPr="00C94A53">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec feugiat felis non augue aliquam sed consequat ligula adipiscing. Pellentesque eleifend iaculis consectetur. Vestibulum blandit varius magna eleifend gravida. Pellentesque iaculis dapibus lectus in suscipit. Aliquam laoreet tempus fringilla. Nulla gravida ultricies diam in auctor. </w:t>
 </w:r>
 <w:r w:rsidR="000A517E">
 <w:rPr>
@@ -193,25 +201,7 @@
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t xml:space="preserve"> No more than 150 words!  (</w:t>
-</w:r>
-<w:proofErr w:type="gramStart"/>
-<w:r w:rsidR="000A517E">
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-<w:t>note</w:t>
-</w:r>
-<w:proofErr w:type="gramEnd"/>
-<w:r w:rsidR="000A517E">
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-<w:t>: that is WORDS, not chars—don't confuse this with tweets)</w:t>
+<w:t xml:space="preserve"> No more than 150 words!  (note: that is WORDS, not chars—don't confuse this with tweets)</w:t>
 </w:r>
 <w:r w:rsidR="002A098B">
 <w:rPr>
@@ -1297,18 +1287,8 @@
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t xml:space="preserve">Arthur </w:t>
+<w:t>Arthur Gittleman</w:t>
 </w:r>
-<w:proofErr w:type="spellStart"/>
-<w:r w:rsidRPr="002646FF">
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-<w:t>Gittleman</w:t>
-</w:r>
-<w:proofErr w:type="spellEnd"/>
 <w:r w:rsidR="00871B48" w:rsidRPr="00871B48">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
@@ -1564,41 +1544,13 @@
 <w:szCs w:val="24"/>
 </w:rPr>
 </w:pPr>
-<w:proofErr w:type="spellStart"/>
 <w:r>
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t>Burkhard</w:t>
-</w:r>
-<w:proofErr w:type="spellEnd"/>
-<w:r>
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-<w:t xml:space="preserve"> </w:t>
-</w:r>
-<w:proofErr w:type="spellStart"/>
-<w:r>
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-<w:t>Englert</w:t>
-</w:r>
-<w:proofErr w:type="spellEnd"/>
-<w:r>
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-<w:t>, Ph.D.</w:t>
+<w:t>Burkhard Englert, Ph.D.</w:t>
 </w:r>
 </w:p>
 <w:p w:rsidR="00871B48" w:rsidRPr="00871B48" w:rsidRDefault="006129F8" w:rsidP="00DE230C">
@@ -1760,7 +1712,7 @@
 <w:szCs w:val="24"/>
 </w:rPr>
 <w:tab/>
-<w:t>Other formatting is whatever is 'normal' for most of this darned thing.</w:t>
+<w:t>Other formatting is whatever is 'normal' for most of this thing.</w:t>
 </w:r>
 <w:r>
 <w:rPr>
@@ -1847,57 +1799,18 @@
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t xml:space="preserve"> wll</w:t>
-</w:r>
-</w:p>
-<w:p w:rsidR="00F53FC1" w:rsidRDefault="00F53FC1" w:rsidP="00EA77A9">
-<w:pPr>
-<w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
-<w:contextualSpacing/>
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-</w:pPr>
-<w:r w:rsidRPr="00F53FC1">
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-<w:t xml:space="preserve">Hello. </w:t>
-</w:r>
-<w:proofErr w:type="gramStart"/>
-<w:r w:rsidRPr="00F53FC1">
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-<w:t>Only a test.</w:t>
-</w:r>
-<w:proofErr w:type="gramEnd"/>
-<w:r w:rsidRPr="00F53FC1">
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
 <w:t xml:space="preserve"> </w:t>
 </w:r>
-<w:proofErr w:type="gramStart"/>
-<w:r w:rsidRPr="00F53FC1">
+<w:r w:rsidR="00477F42">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t>Right?</w:t>
+<w:t>tbd.</w:t>
 </w:r>
-<w:proofErr w:type="gramEnd"/>
 </w:p>
-<w:p w:rsidR="00476BE6" w:rsidRDefault="00EA77A9" w:rsidP="00EA77A9">
+<w:p w:rsidR="00476BE6" w:rsidRDefault="00F53FC1" w:rsidP="00EA77A9">
 <w:pPr>
 <w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
 <w:contextualSpacing/>
@@ -1907,31 +1820,13 @@
 <w:szCs w:val="24"/>
 </w:rPr>
 </w:pPr>
-<w:r>
+<w:r w:rsidRPr="00F53FC1">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:tab/>
-</w:r>
-<w:proofErr w:type="gramStart"/>
-<w:r>
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-<w:t>Consistent indent.</w:t>
-</w:r>
-<w:proofErr w:type="gramEnd"/>
-<w:r>
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-<w:t xml:space="preserve"> Yay!</w:t>
+<w:t>Hello.</w:t>
 </w:r>
 </w:p>
 <w:p w:rsidR="001A699F" w:rsidRDefault="00476BE6" w:rsidP="00476BE6">
@@ -2009,7 +1904,6 @@
 <w:szCs w:val="24"/>
 </w:rPr>
 </w:pPr>
-<w:proofErr w:type="gramStart"/>
 <w:r>
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
@@ -2018,7 +1912,6 @@
 </w:rPr>
 <w:t>stuff</w:t>
 </w:r>
-<w:proofErr w:type="gramEnd"/>
 </w:p>
 <w:p w:rsidR="00C41BC4" w:rsidRDefault="007B1266" w:rsidP="007B1266">
 <w:pPr>
@@ -2245,7 +2138,7 @@
 <w:szCs w:val="24"/>
 </w:rPr>
 <w:sectPr w:rsidR="007B1266" w:rsidSect="00E24FAB">
-<w:footerReference w:type="default" r:id="rId8"/>
+<w:footerReference w:type="default" r:id="rId9"/>
 <w:pgSz w:w="12240" w:h="15840"/>
 <w:pgMar w:top="1440" w:right="1440" w:bottom="1440" w:left="2160" w:header="720" w:footer="1440" w:gutter="0"/>
 <w:pgNumType w:fmt="lowerRoman" w:start="3"/>
@@ -2310,7 +2203,7 @@
 <w:t>CHAPTER 1</w:t>
 </w:r>
 </w:p>
-<w:p w:rsidR="00476BE6" w:rsidRDefault="00476BE6" w:rsidP="00476BE6">
+<w:p w:rsidR="00476BE6" w:rsidRDefault="009E657F" w:rsidP="00476BE6">
 <w:pPr>
 <w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
 <w:contextualSpacing/>
@@ -2327,10 +2220,10 @@
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t>SOME PITHY NAME OF THIS</w:t>
+<w:t>INTRODUCTION</w:t>
 </w:r>
 </w:p>
-<w:p w:rsidR="00953414" w:rsidRDefault="00476BE6" w:rsidP="00476BE6">
+<w:p w:rsidR="00953414" w:rsidRDefault="00476BE6" w:rsidP="0046416B">
 <w:pPr>
 <w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
 <w:contextualSpacing/>
@@ -2350,7 +2243,7 @@
 <w:t>And a paragraph begins…</w:t>
 </w:r>
 </w:p>
-<w:p w:rsidR="00235288" w:rsidRDefault="00235288" w:rsidP="00235288">
+<w:p w:rsidR="00235288" w:rsidRDefault="00235288" w:rsidP="000E063A">
 <w:pPr>
 <w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
 <w:contextualSpacing/>
@@ -2361,7 +2254,7 @@
 </w:rPr>
 </w:pPr>
 </w:p>
-<w:p w:rsidR="00573350" w:rsidRDefault="00573350" w:rsidP="00235288">
+<w:p w:rsidR="00573350" w:rsidRDefault="00573350" w:rsidP="000E063A">
 <w:pPr>
 <w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
 <w:contextualSpacing/>
@@ -2379,69 +2272,13 @@
 </w:rPr>
 <w:t xml:space="preserve">Testing inline math formulas: </w:t>
 </w:r>
-<w:proofErr w:type="spellStart"/>
 <w:r w:rsidRPr="00573350">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t>Lore</w:t>
-</w:r>
-<w:bookmarkStart w:id="0" w:name="_GoBack"/>
-<w:bookmarkEnd w:id="0"/>
-<w:r w:rsidRPr="00573350">
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-<w:t>m</w:t>
-</w:r>
-<w:proofErr w:type="spellEnd"/>
-<w:r w:rsidRPr="00573350">
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-<w:t xml:space="preserve"> </w:t>
-</w:r>
-<w:proofErr w:type="spellStart"/>
-<w:r w:rsidRPr="00573350">
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-<w:t>ipsum</w:t>
-</w:r>
-<w:proofErr w:type="spellEnd"/>
-<w:r w:rsidRPr="00573350">
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-<w:t xml:space="preserve"> dolor sit </w:t>
-</w:r>
-<w:proofErr w:type="spellStart"/>
-<w:r w:rsidRPr="00573350">
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-<w:t>amet</w:t>
-</w:r>
-<w:proofErr w:type="spellEnd"/>
-<w:r w:rsidRPr="00573350">
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-<w:t xml:space="preserve"> </w:t>
+<w:t xml:space="preserve">Lorem ipsum dolor sit amet </w:t>
 </w:r>
 <m:oMath>
 <m:r>
@@ -2468,46 +2305,142 @@
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t xml:space="preserve">. </w:t>
+<w:t>. ok. this came from something imported using TeX2Word.</w:t>
 </w:r>
-<w:proofErr w:type="gramStart"/>
+</w:p>
+<w:p w:rsidR="00573350" w:rsidRDefault="00573350" w:rsidP="000E063A">
+<w:pPr>
+<w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
+<w:contextualSpacing/>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+</w:pPr>
+</w:p>
+<w:p w:rsidR="008F12D3" w:rsidRDefault="00412E3C" w:rsidP="000E063A">
+<w:pPr>
+<w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
+<w:contextualSpacing/>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+<w:u w:val="single"/>
+</w:rPr>
+</w:pPr>
+<w:r w:rsidRPr="00412E3C">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+<w:u w:val="single"/>
+</w:rPr>
+<w:t xml:space="preserve">SQL:  </w:t>
+</w:r>
+<w:r w:rsidR="002C4E24">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+<w:u w:val="single"/>
+</w:rPr>
+<w:t>Declarative Programming of Relational Expressions</w:t>
+</w:r>
+</w:p>
+<w:p w:rsidR="002C4E24" w:rsidRPr="00235288" w:rsidRDefault="002C4E24" w:rsidP="000E063A">
+<w:pPr>
+<w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
+<w:contextualSpacing/>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+</w:pPr>
+</w:p>
+<w:p w:rsidR="00235288" w:rsidRDefault="00235288" w:rsidP="000E063A">
+<w:pPr>
+<w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
+<w:contextualSpacing/>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+</w:pPr>
+<w:r w:rsidRPr="00235288">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>-- need to introduce 'what is SQ</w:t>
+</w:r>
+<w:r w:rsidR="00896CED">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve">L'.  </w:t>
+</w:r>
+<w:r w:rsidR="002C4E24">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>I</w:t>
+</w:r>
+<w:r w:rsidRPr="00235288">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve"> need to be sure the reader understands my definitions of 'imperative SQL' versus 'relational SQL'.  Also, I need to explain why i exclude imperative SQL.  I feel it is justified since...</w:t>
+</w:r>
+</w:p>
+<w:p w:rsidR="00501E81" w:rsidRDefault="00501E81" w:rsidP="000E063A">
+<w:pPr>
+<w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
+<w:contextualSpacing/>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+</w:pPr>
+</w:p>
+<w:p w:rsidR="00501E81" w:rsidRPr="00501E81" w:rsidRDefault="00501E81" w:rsidP="000E063A">
+<w:pPr>
+<w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+</w:pPr>
+<w:r w:rsidRPr="00501E81">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>-</w:t>
+</w:r>
 <w:r>
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t>ok</w:t>
-</w:r>
-<w:proofErr w:type="gramEnd"/>
-<w:r>
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-<w:t xml:space="preserve">. </w:t>
-</w:r>
-<w:proofErr w:type="gramStart"/>
-<w:r>
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-<w:t>this</w:t>
-</w:r>
-<w:proofErr w:type="gramEnd"/>
-<w:r>
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-<w:t xml:space="preserve"> came from something imported using TeX2Word.</w:t>
+<w:t>- ANOTHER thing I now realize I want to cover early on (up here). similar to prior point: besides differentiating 'imperative SQL' and 'relational SQL', I need to emphasize the mathematical underpinnings of relational SQL.  this, too, will be a theme that gets carried forward and needs to be near the front.</w:t>
 </w:r>
 </w:p>
-<w:p w:rsidR="00573350" w:rsidRPr="00235288" w:rsidRDefault="00573350" w:rsidP="00235288">
+<w:p w:rsidR="00235288" w:rsidRDefault="00235288" w:rsidP="000E063A">
 <w:pPr>
 <w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
 <w:contextualSpacing/>
@@ -2518,7 +2451,7 @@
 </w:rPr>
 </w:pPr>
 </w:p>
-<w:p w:rsidR="00235288" w:rsidRPr="00235288" w:rsidRDefault="00235288" w:rsidP="00235288">
+<w:p w:rsidR="008823CF" w:rsidRPr="008823CF" w:rsidRDefault="008823CF" w:rsidP="000E063A">
 <w:pPr>
 <w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
 <w:contextualSpacing/>
@@ -2526,147 +2459,20 @@
 <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
+<w:u w:val="single"/>
 </w:rPr>
 </w:pPr>
-<w:r w:rsidRPr="00235288">
+<w:r w:rsidRPr="008823CF">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
+<w:u w:val="single"/>
 </w:rPr>
-<w:t xml:space="preserve">-- may need to introduce 'what is SQL' somewhere up here early on. </w:t>
-</w:r>
-<w:proofErr w:type="gramStart"/>
-<w:r w:rsidRPr="00235288">
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-<w:t>it</w:t>
-</w:r>
-<w:proofErr w:type="gramEnd"/>
-<w:r w:rsidRPr="00235288">
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-<w:t xml:space="preserve"> would interrupt the flow later on, but i need to be sure the reader understands my definitions of 'imperative SQL' versus 'relational SQL'.  Also, I need to explain why i exclude imperative SQL.  I feel it is justified since...</w:t>
+<w:t>The Importance of Tools:  Efficiency and Quality</w:t>
 </w:r>
 </w:p>
-<w:p w:rsidR="00235288" w:rsidRPr="00235288" w:rsidRDefault="00235288" w:rsidP="00235288">
-<w:pPr>
-<w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
-<w:contextualSpacing/>
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-</w:pPr>
-</w:p>
-<w:p w:rsidR="00235288" w:rsidRPr="00235288" w:rsidRDefault="00235288" w:rsidP="00235288">
-<w:pPr>
-<w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
-<w:contextualSpacing/>
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-</w:pPr>
-</w:p>
-<w:p w:rsidR="00235288" w:rsidRPr="00235288" w:rsidRDefault="00235288" w:rsidP="00235288">
-<w:pPr>
-<w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
-<w:contextualSpacing/>
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-</w:pPr>
-</w:p>
-<w:p w:rsidR="00235288" w:rsidRPr="00235288" w:rsidRDefault="00235288" w:rsidP="00235288">
-<w:pPr>
-<w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
-<w:contextualSpacing/>
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-</w:pPr>
-<w:r w:rsidRPr="00235288">
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-<w:t>In software development, you never just choose an implementation language alone -- what you really choose is a language *and* the tools and packages accompanying it.</w:t>
-</w:r>
-</w:p>
-<w:p w:rsidR="00235288" w:rsidRPr="00235288" w:rsidRDefault="00235288" w:rsidP="00235288">
-<w:pPr>
-<w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
-<w:contextualSpacing/>
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-</w:pPr>
-</w:p>
-<w:p w:rsidR="00235288" w:rsidRPr="00235288" w:rsidRDefault="00235288" w:rsidP="00235288">
-<w:pPr>
-<w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
-<w:contextualSpacing/>
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-</w:pPr>
-<w:r w:rsidRPr="00235288">
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-<w:t xml:space="preserve">In other words, the availability of tools supporting an implementation language </w:t>
-</w:r>
-<w:proofErr w:type="gramStart"/>
-<w:r w:rsidRPr="00235288">
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-<w:t>are</w:t>
-</w:r>
-<w:proofErr w:type="gramEnd"/>
-<w:r w:rsidRPr="00235288">
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-<w:t xml:space="preserve"> an influential factor when software developers select a language.</w:t>
-</w:r>
-</w:p>
-<w:p w:rsidR="00235288" w:rsidRPr="00235288" w:rsidRDefault="00235288" w:rsidP="00235288">
-<w:pPr>
-<w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
-<w:contextualSpacing/>
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-</w:pPr>
-</w:p>
-<w:p w:rsidR="00235288" w:rsidRPr="00235288" w:rsidRDefault="00235288" w:rsidP="00235288">
+<w:p w:rsidR="00235288" w:rsidRPr="00235288" w:rsidRDefault="00235288" w:rsidP="000E063A">
 <w:pPr>
 <w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
 <w:contextualSpacing/>
@@ -2683,10 +2489,43 @@
 <w:szCs w:val="24"/>
 </w:rPr>
 <w:lastRenderedPageBreak/>
-<w:t>The language choice will obviously impact development tasks that involve writing code.  In fact, the chosen language will completely and unambiguously define what statements can be written during fulfillment of these tasks.</w:t>
+<w:t>In software development, you never just choose an implementation language alone</w:t>
+</w:r>
+<w:r w:rsidR="00EA293A">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>—</w:t>
+</w:r>
+<w:r w:rsidRPr="00235288">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve">what you really choose is a language </w:t>
+</w:r>
+<w:r w:rsidR="00EA293A" w:rsidRPr="00EA293A">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:i/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>and</w:t>
+</w:r>
+<w:r w:rsidRPr="00235288">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve"> the tools and packages accompanying it.</w:t>
 </w:r>
 </w:p>
-<w:p w:rsidR="00235288" w:rsidRPr="00235288" w:rsidRDefault="00235288" w:rsidP="00235288">
+<w:p w:rsidR="00235288" w:rsidRPr="00235288" w:rsidRDefault="00235288" w:rsidP="000E063A">
 <w:pPr>
 <w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
 <w:contextualSpacing/>
@@ -2697,55 +2536,7 @@
 </w:rPr>
 </w:pPr>
 </w:p>
-<w:p w:rsidR="00235288" w:rsidRPr="00235288" w:rsidRDefault="00235288" w:rsidP="00235288">
-<w:pPr>
-<w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
-<w:contextualSpacing/>
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-</w:pPr>
-<w:r w:rsidRPr="00235288">
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-<w:t xml:space="preserve">However, writing code is only a small part of the total work done on any software project.  Other important development activities include generating specifications, planning system architecture, generating test plans, testing, debugging, </w:t>
-</w:r>
-<w:proofErr w:type="gramStart"/>
-<w:r w:rsidRPr="00235288">
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-<w:t>creating</w:t>
-</w:r>
-<w:proofErr w:type="gramEnd"/>
-<w:r w:rsidRPr="00235288">
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-<w:t xml:space="preserve"> documentation, version control, and configuration management.  Also: code writing will always occur less frequently than code reading, because each line of code will be read more times than it will be written.**</w:t>
-</w:r>
-</w:p>
-<w:p w:rsidR="00235288" w:rsidRPr="00235288" w:rsidRDefault="00235288" w:rsidP="00235288">
-<w:pPr>
-<w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
-<w:contextualSpacing/>
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-</w:pPr>
-</w:p>
-<w:p w:rsidR="00235288" w:rsidRPr="00235288" w:rsidRDefault="00235288" w:rsidP="00235288">
+<w:p w:rsidR="00235288" w:rsidRPr="00235288" w:rsidRDefault="00235288" w:rsidP="000E063A">
 <w:pPr>
 <w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
 <w:contextualSpacing/>
@@ -2761,28 +2552,26 @@
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t xml:space="preserve">Time spent writing code is dwarfed (offensive word?) by other </w:t>
+<w:t>In other words, the availab</w:t>
 </w:r>
-<w:proofErr w:type="gramStart"/>
+<w:r w:rsidR="00BD0F81">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>le</w:t>
+</w:r>
 <w:r w:rsidRPr="00235288">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t>activities,</w:t>
-</w:r>
-<w:proofErr w:type="gramEnd"/>
-<w:r w:rsidRPr="00235288">
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-<w:t xml:space="preserve"> and Amdahl's law reminds us that the efficiencies gained by speeding up code-writing are limited by the small proportion of the project that actually depends on code-writing.</w:t>
+<w:t xml:space="preserve"> tools supporting an implementation language are an influential factor when software developers select a language.</w:t>
 </w:r>
 </w:p>
-<w:p w:rsidR="00235288" w:rsidRPr="00235288" w:rsidRDefault="00235288" w:rsidP="00235288">
+<w:p w:rsidR="00235288" w:rsidRPr="00235288" w:rsidRDefault="00235288" w:rsidP="000E063A">
 <w:pPr>
 <w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
 <w:contextualSpacing/>
@@ -2793,7 +2582,7 @@
 </w:rPr>
 </w:pPr>
 </w:p>
-<w:p w:rsidR="00235288" w:rsidRPr="00235288" w:rsidRDefault="00235288" w:rsidP="00235288">
+<w:p w:rsidR="00235288" w:rsidRPr="00235288" w:rsidRDefault="00235288" w:rsidP="000E063A">
 <w:pPr>
 <w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
 <w:contextualSpacing/>
@@ -2803,6 +2592,182 @@
 <w:szCs w:val="24"/>
 </w:rPr>
 </w:pPr>
+<w:r w:rsidRPr="00235288">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve">The language choice </w:t>
+</w:r>
+<w:r w:rsidR="00BD0F81">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>(</w:t>
+</w:r>
+<w:r w:rsidRPr="00235288">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>obviously</w:t>
+</w:r>
+<w:r w:rsidR="00BD0F81">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>)</w:t>
+</w:r>
+<w:r w:rsidRPr="00235288">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve"> impact</w:t>
+</w:r>
+<w:r w:rsidR="00BD0F81">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>s</w:t>
+</w:r>
+<w:r w:rsidRPr="00235288">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve"> development tasks that involve writing code.  In fact, the chosen language will completely and unambiguously define what statements can be written during fulfillment of these tasks.</w:t>
+</w:r>
+<w:r w:rsidR="001A5B4C">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve">  </w:t>
+</w:r>
+<w:r w:rsidRPr="00235288">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>However, writing code is only a small part of the total work done on any software project.  Other important development activities include generating specifications, planning system architecture, generating test plan</w:t>
+</w:r>
+<w:r w:rsidR="00844E63">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve">s, testing, debugging, creating </w:t>
+</w:r>
+<w:r w:rsidRPr="00235288">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve">documentation, version control, and configuration management.  Also: code </w:t>
+</w:r>
+<w:r w:rsidRPr="00844E63">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:i/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>writing</w:t>
+</w:r>
+<w:r w:rsidRPr="00235288">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve"> will always occur less frequently than code </w:t>
+</w:r>
+<w:r w:rsidRPr="00844E63">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:i/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>reading</w:t>
+</w:r>
+<w:r w:rsidRPr="00235288">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>, because each line of code will be read more times than it will be written.**</w:t>
+</w:r>
+</w:p>
+<w:p w:rsidR="00235288" w:rsidRPr="00235288" w:rsidRDefault="00235288" w:rsidP="000E063A">
+<w:pPr>
+<w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
+<w:contextualSpacing/>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+</w:pPr>
+</w:p>
+<w:p w:rsidR="00235288" w:rsidRPr="00235288" w:rsidRDefault="00235288" w:rsidP="000E063A">
+<w:pPr>
+<w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
+<w:contextualSpacing/>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+</w:pPr>
+<w:r w:rsidRPr="00235288">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve">Time spent writing code is </w:t>
+</w:r>
+<w:r w:rsidR="003C6C13">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>minimal in comparison to time spent on other activities, and Amdahl's L</w:t>
+</w:r>
+<w:r w:rsidRPr="00235288">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>aw reminds us that the efficiencies gained by speeding up code-writing are limited by the small proportion of the project that actually depends on code-writing.</w:t>
+</w:r>
+<w:r w:rsidR="003C6C13">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve">  </w:t>
+</w:r>
 <w:r w:rsidRPr="00235288">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
@@ -2811,44 +2776,24 @@
 </w:rPr>
 <w:t xml:space="preserve">To best improve the </w:t>
 </w:r>
-<w:proofErr w:type="spellStart"/>
-<w:r w:rsidRPr="00235288">
+<w:r w:rsidR="003C6C13" w:rsidRPr="00235288">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t>effeciency</w:t>
+<w:t>efficiency</w:t>
 </w:r>
-<w:proofErr w:type="spellEnd"/>
 <w:r w:rsidRPr="00235288">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t xml:space="preserve"> of a project, developers need to reduce the time required for all the </w:t>
-</w:r>
-<w:proofErr w:type="spellStart"/>
-<w:r w:rsidRPr="00235288">
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-<w:t>non code</w:t>
-</w:r>
-<w:proofErr w:type="spellEnd"/>
-<w:r w:rsidRPr="00235288">
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-<w:t>-writing tasks.  This is why tool support is essential.</w:t>
+<w:t xml:space="preserve"> of a project, developers need to reduce the time required for all the non code-writing tasks.  This is why tool support is essential.</w:t>
 </w:r>
 </w:p>
-<w:p w:rsidR="00235288" w:rsidRPr="00235288" w:rsidRDefault="00235288" w:rsidP="00235288">
+<w:p w:rsidR="00235288" w:rsidRPr="00235288" w:rsidRDefault="00235288" w:rsidP="000E063A">
 <w:pPr>
 <w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
 <w:contextualSpacing/>
@@ -2859,7 +2804,7 @@
 </w:rPr>
 </w:pPr>
 </w:p>
-<w:p w:rsidR="00235288" w:rsidRPr="00235288" w:rsidRDefault="00235288" w:rsidP="00235288">
+<w:p w:rsidR="00235288" w:rsidRPr="00235288" w:rsidRDefault="00235288" w:rsidP="000E063A">
 <w:pPr>
 <w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
 <w:contextualSpacing/>
@@ -2875,27 +2820,8 @@
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t xml:space="preserve">For a ubiquitous programming language like Java, it is common to find a wide range of supporting tools covering all aspects of product development.  For Java, one easily finds several options in each of the following categories: debugging environments, testing frameworks, static analysis tools, </w:t>
+<w:t xml:space="preserve">For a ubiquitous programming language like Java, it is common to find a wide range of supporting tools covering all aspects of product development.  For Java, one easily finds </w:t>
 </w:r>
-<w:proofErr w:type="spellStart"/>
-<w:r w:rsidRPr="00235288">
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-<w:t>fuzzers</w:t>
-</w:r>
-<w:proofErr w:type="spellEnd"/>
-<w:r w:rsidRPr="00235288">
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-<w:t>, automated refactoring tools, documentation generators, visualization kits, internationalization packages, syntax highlighters, cross-</w:t>
-</w:r>
-<w:proofErr w:type="spellStart"/>
 <w:r w:rsidRPr="00235288">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
@@ -2903,39 +2829,74 @@
 <w:szCs w:val="24"/>
 </w:rPr>
 <w:lastRenderedPageBreak/>
-<w:t>referencers</w:t>
+<w:t xml:space="preserve">several </w:t>
 </w:r>
-<w:proofErr w:type="spellEnd"/>
+<w:r w:rsidR="003C6C13">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve">tool choices </w:t>
+</w:r>
 <w:r w:rsidRPr="00235288">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t>, and -- of particular relevance to this current paper -- formal verification tools. [</w:t>
+<w:t>in each of the following categories: debugging environments, testing frameworks, static analysis tools, fuzzers, automated refactoring tools, documentation generators, visualization kits, internationalization packages, syntax highlighters, cross-referencers, and</w:t>
 </w:r>
-<w:proofErr w:type="spellStart"/>
-<w:proofErr w:type="gramStart"/>
+<w:r w:rsidR="003C6C13">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>—</w:t>
+</w:r>
 <w:r w:rsidRPr="00235288">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t>javatools</w:t>
+<w:t>of particular relevance to this current paper</w:t>
 </w:r>
-<w:proofErr w:type="spellEnd"/>
-<w:proofErr w:type="gramEnd"/>
+<w:r w:rsidR="003C6C13">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>—</w:t>
+</w:r>
 <w:r w:rsidRPr="00235288">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t>] [ESC/Java]</w:t>
+<w:t>formal</w:t>
+</w:r>
+<w:r w:rsidR="003C6C13">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve"> </w:t>
+</w:r>
+<w:r w:rsidRPr="00235288">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>verification tools. [javatools] [ESC/Java]</w:t>
 </w:r>
 </w:p>
-<w:p w:rsidR="00235288" w:rsidRPr="00235288" w:rsidRDefault="00235288" w:rsidP="00235288">
+<w:p w:rsidR="00235288" w:rsidRPr="00235288" w:rsidRDefault="00235288" w:rsidP="000E063A">
 <w:pPr>
 <w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
 <w:contextualSpacing/>
@@ -2946,7 +2907,7 @@
 </w:rPr>
 </w:pPr>
 </w:p>
-<w:p w:rsidR="00235288" w:rsidRPr="00235288" w:rsidRDefault="00235288" w:rsidP="00235288">
+<w:p w:rsidR="00235288" w:rsidRPr="00235288" w:rsidRDefault="00235288" w:rsidP="000E063A">
 <w:pPr>
 <w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
 <w:contextualSpacing/>
@@ -2962,10 +2923,42 @@
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t>With proper use of the relevant tools during each phase of development, a tool-assisted Java project can be completed much more efficiently than a project using nothing more than raw Java source code and a compiler. Additionally, if tool usage also includes various automated tools, we expect a reduction in errors due to the elimination of certain opportunities for typographical errors or manual copy-and-paste errors.</w:t>
+<w:t xml:space="preserve">With proper use of the relevant tools during each phase of development, a tool-assisted Java project can be completed much more efficiently than a project using nothing more than raw Java source code and a compiler. Additionally, if tool usage also includes various automated tools, we expect a reduction in errors </w:t>
+</w:r>
+<w:r w:rsidR="005F064D">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve">as the automation will eliminate </w:t>
+</w:r>
+<w:r w:rsidRPr="00235288">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve">opportunities for typographical errors </w:t>
+</w:r>
+<w:r w:rsidR="005F064D">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>and other</w:t>
+</w:r>
+<w:r w:rsidRPr="00235288">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve"> manual copy-and-paste errors.</w:t>
 </w:r>
 </w:p>
-<w:p w:rsidR="00235288" w:rsidRPr="00235288" w:rsidRDefault="00235288" w:rsidP="00235288">
+<w:p w:rsidR="00235288" w:rsidRPr="00235288" w:rsidRDefault="00235288" w:rsidP="000E063A">
 <w:pPr>
 <w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
 <w:contextualSpacing/>
@@ -2976,7 +2969,7 @@
 </w:rPr>
 </w:pPr>
 </w:p>
-<w:p w:rsidR="00235288" w:rsidRPr="00235288" w:rsidRDefault="00235288" w:rsidP="00235288">
+<w:p w:rsidR="00235288" w:rsidRPr="00235288" w:rsidRDefault="00235288" w:rsidP="000E063A">
 <w:pPr>
 <w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
 <w:contextualSpacing/>
@@ -2994,8 +2987,33 @@
 </w:rPr>
 <w:t>In the realm of relational database systems, the SQL language is quite easily the single most ubiquitous coding language in existence.</w:t>
 </w:r>
+<w:r w:rsidR="004F59DE">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve">  The popularity of SQL in the relational database world is equal to or greater than the popularity of Java in the object-oriented sector.  Likewise, an abundance of tools exist for SQL just as is the case with Java.  However, the </w:t>
+</w:r>
+<w:r w:rsidR="004F59DE" w:rsidRPr="004F59DE">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:i/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>character</w:t>
+</w:r>
+<w:r w:rsidR="004F59DE">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve"> of tools available for SQL differs greatly from that of Java tools.</w:t>
+</w:r>
 </w:p>
-<w:p w:rsidR="00235288" w:rsidRPr="00235288" w:rsidRDefault="00235288" w:rsidP="00235288">
+<w:p w:rsidR="00235288" w:rsidRPr="00235288" w:rsidRDefault="00235288" w:rsidP="000E063A">
 <w:pPr>
 <w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
 <w:contextualSpacing/>
@@ -3006,7 +3024,7 @@
 </w:rPr>
 </w:pPr>
 </w:p>
-<w:p w:rsidR="00235288" w:rsidRPr="00235288" w:rsidRDefault="00235288" w:rsidP="00235288">
+<w:p w:rsidR="00235288" w:rsidRPr="00235288" w:rsidRDefault="00235288" w:rsidP="000E063A">
 <w:pPr>
 <w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
 <w:contextualSpacing/>
@@ -3025,7 +3043,7 @@
 <w:t>ERD modeling and DDL script generation</w:t>
 </w:r>
 </w:p>
-<w:p w:rsidR="00235288" w:rsidRPr="00235288" w:rsidRDefault="00235288" w:rsidP="00235288">
+<w:p w:rsidR="00235288" w:rsidRPr="00235288" w:rsidRDefault="00235288" w:rsidP="000E063A">
 <w:pPr>
 <w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
 <w:contextualSpacing/>
@@ -3035,37 +3053,35 @@
 <w:szCs w:val="24"/>
 </w:rPr>
 </w:pPr>
-</w:p>
-<w:p w:rsidR="00235288" w:rsidRPr="00235288" w:rsidRDefault="00235288" w:rsidP="00235288">
-<w:pPr>
-<w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
-<w:contextualSpacing/>
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-</w:pPr>
-<w:proofErr w:type="gramStart"/>
 <w:r w:rsidRPr="00235288">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t>comparing</w:t>
+<w:t>comparing and synchronizing the content and structure of database tables</w:t>
 </w:r>
-<w:proofErr w:type="gramEnd"/>
+</w:p>
+<w:p w:rsidR="00235288" w:rsidRPr="00235288" w:rsidRDefault="00235288" w:rsidP="000E063A">
+<w:pPr>
+<w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
+<w:contextualSpacing/>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+</w:pPr>
 <w:r w:rsidRPr="00235288">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t xml:space="preserve"> and synchronizing the content and structure of database tables</w:t>
+<w:t>auditing permissions on database tables and other objects in the database</w:t>
 </w:r>
 </w:p>
-<w:p w:rsidR="00235288" w:rsidRPr="00235288" w:rsidRDefault="00235288" w:rsidP="00235288">
+<w:p w:rsidR="00235288" w:rsidRPr="00235288" w:rsidRDefault="00235288" w:rsidP="000E063A">
 <w:pPr>
 <w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
 <w:contextualSpacing/>
@@ -3075,37 +3091,16 @@
 <w:szCs w:val="24"/>
 </w:rPr>
 </w:pPr>
-</w:p>
-<w:p w:rsidR="00235288" w:rsidRPr="00235288" w:rsidRDefault="00235288" w:rsidP="00235288">
-<w:pPr>
-<w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
-<w:contextualSpacing/>
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-</w:pPr>
-<w:proofErr w:type="gramStart"/>
 <w:r w:rsidRPr="00235288">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t>auditing</w:t>
-</w:r>
-<w:proofErr w:type="gramEnd"/>
-<w:r w:rsidRPr="00235288">
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-<w:t xml:space="preserve"> permissions on database tables and other objects in the database</w:t>
+<w:t>performance tuning and performance monitoring tools</w:t>
 </w:r>
 </w:p>
-<w:p w:rsidR="00235288" w:rsidRPr="00235288" w:rsidRDefault="00235288" w:rsidP="00235288">
+<w:p w:rsidR="00235288" w:rsidRPr="00235288" w:rsidRDefault="00235288" w:rsidP="000E063A">
 <w:pPr>
 <w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
 <w:contextualSpacing/>
@@ -3116,58 +3111,7 @@
 </w:rPr>
 </w:pPr>
 </w:p>
-<w:p w:rsidR="00235288" w:rsidRPr="00235288" w:rsidRDefault="00235288" w:rsidP="00235288">
-<w:pPr>
-<w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
-<w:contextualSpacing/>
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-</w:pPr>
-<w:proofErr w:type="gramStart"/>
-<w:r w:rsidRPr="00235288">
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-<w:t>performance</w:t>
-</w:r>
-<w:proofErr w:type="gramEnd"/>
-<w:r w:rsidRPr="00235288">
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-<w:t xml:space="preserve"> tuning and performance monitoring tools</w:t>
-</w:r>
-</w:p>
-<w:p w:rsidR="00235288" w:rsidRPr="00235288" w:rsidRDefault="00235288" w:rsidP="00235288">
-<w:pPr>
-<w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
-<w:contextualSpacing/>
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-</w:pPr>
-</w:p>
-<w:p w:rsidR="00235288" w:rsidRPr="00235288" w:rsidRDefault="00235288" w:rsidP="00235288">
-<w:pPr>
-<w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
-<w:contextualSpacing/>
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-</w:pPr>
-</w:p>
-<w:p w:rsidR="00235288" w:rsidRPr="00235288" w:rsidRDefault="00235288" w:rsidP="00235288">
+<w:p w:rsidR="00235288" w:rsidRPr="00235288" w:rsidRDefault="00235288" w:rsidP="000E063A">
 <w:pPr>
 <w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
 <w:contextualSpacing/>
@@ -3184,18 +3128,32 @@
 <w:szCs w:val="24"/>
 </w:rPr>
 <w:lastRenderedPageBreak/>
-<w:t xml:space="preserve">In general, we find a very rich set of tools for the administration of a relational database installation, and comparatively few tools supporting the act of writing SQL code and </w:t>
+<w:t xml:space="preserve">In general, we find a very rich set of tools for the administration of a relational database </w:t>
 </w:r>
-<w:proofErr w:type="spellStart"/>
+<w:r w:rsidR="00C165C2">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>system</w:t>
+</w:r>
 <w:r w:rsidRPr="00235288">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t>debuggging</w:t>
+<w:t xml:space="preserve">, and comparatively few tools supporting the act of writing SQL code and </w:t>
 </w:r>
-<w:proofErr w:type="spellEnd"/>
+<w:r w:rsidR="00C165C2" w:rsidRPr="00235288">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>debugging</w:t>
+</w:r>
 <w:r w:rsidRPr="00235288">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
@@ -3205,7 +3163,7 @@
 <w:t xml:space="preserve"> it.</w:t>
 </w:r>
 </w:p>
-<w:p w:rsidR="00235288" w:rsidRPr="00235288" w:rsidRDefault="00235288" w:rsidP="00235288">
+<w:p w:rsidR="00235288" w:rsidRPr="00235288" w:rsidRDefault="00235288" w:rsidP="000E063A">
 <w:pPr>
 <w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
 <w:contextualSpacing/>
@@ -3216,7 +3174,7 @@
 </w:rPr>
 </w:pPr>
 </w:p>
-<w:p w:rsidR="00235288" w:rsidRPr="00235288" w:rsidRDefault="00235288" w:rsidP="00235288">
+<w:p w:rsidR="00235288" w:rsidRPr="00235288" w:rsidRDefault="00235288" w:rsidP="000E063A">
 <w:pPr>
 <w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
 <w:contextualSpacing/>
@@ -3234,28 +3192,14 @@
 </w:rPr>
 <w:t>There is a further caveat for tabulating the number of SQL debugging tools currently available: many tools described as SQL debugging tools only target the imperative programming portions of the language, and do not cover debugging of purely relational statements.</w:t>
 </w:r>
-</w:p>
-<w:p w:rsidR="00235288" w:rsidRPr="00235288" w:rsidRDefault="00235288" w:rsidP="00235288">
-<w:pPr>
-<w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
-<w:contextualSpacing/>
+<w:r w:rsidR="00C165C2">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-</w:pPr>
-</w:p>
-<w:p w:rsidR="00235288" w:rsidRPr="00235288" w:rsidRDefault="00235288" w:rsidP="00235288">
-<w:pPr>
-<w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
-<w:contextualSpacing/>
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-</w:pPr>
+<w:t xml:space="preserve">  </w:t>
+</w:r>
 <w:r w:rsidRPr="00235288">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
@@ -3264,26 +3208,24 @@
 </w:rPr>
 <w:t>(</w:t>
 </w:r>
-<w:proofErr w:type="gramStart"/>
-<w:r w:rsidRPr="00235288">
+<w:r w:rsidR="00C165C2">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t>do</w:t>
+<w:t>note that I had a placeholder above for introducing the concepts of 'imperative SQL' versus 'procedural SQL' so that I would be free to use the terms by this point in the document</w:t>
 </w:r>
-<w:proofErr w:type="gramEnd"/>
 <w:r w:rsidRPr="00235288">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t xml:space="preserve"> i have to explain and flesh out precisely what i mean by 'imperative portions' versus relational?)</w:t>
+<w:t>)</w:t>
 </w:r>
 </w:p>
-<w:p w:rsidR="00235288" w:rsidRPr="00235288" w:rsidRDefault="00235288" w:rsidP="00235288">
+<w:p w:rsidR="00235288" w:rsidRPr="00235288" w:rsidRDefault="00235288" w:rsidP="000E063A">
 <w:pPr>
 <w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
 <w:contextualSpacing/>
@@ -3294,185 +3236,7 @@
 </w:rPr>
 </w:pPr>
 </w:p>
-<w:p w:rsidR="00235288" w:rsidRPr="00235288" w:rsidRDefault="00235288" w:rsidP="00235288">
-<w:pPr>
-<w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
-<w:contextualSpacing/>
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-</w:pPr>
-<w:r w:rsidRPr="00235288">
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-<w:t>Only very recently has there been a surge of interest in tools to support SQL coding. (</w:t>
-</w:r>
-<w:proofErr w:type="gramStart"/>
-<w:r w:rsidRPr="00235288">
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-<w:t>mention</w:t>
-</w:r>
-<w:proofErr w:type="gramEnd"/>
-<w:r w:rsidRPr="00235288">
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-<w:t xml:space="preserve">: Quest Code Tester for Oracle, </w:t>
-</w:r>
-<w:proofErr w:type="spellStart"/>
-<w:r w:rsidRPr="00235288">
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-<w:t>Qex</w:t>
-</w:r>
-<w:proofErr w:type="spellEnd"/>
-<w:r w:rsidRPr="00235288">
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-<w:t xml:space="preserve">, Leslie Van </w:t>
-</w:r>
-<w:proofErr w:type="spellStart"/>
-<w:r w:rsidRPr="00235288">
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-<w:t>Exel's</w:t>
-</w:r>
-<w:proofErr w:type="spellEnd"/>
-<w:r w:rsidRPr="00235288">
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-<w:t xml:space="preserve"> work.)</w:t>
-</w:r>
-</w:p>
-<w:p w:rsidR="00235288" w:rsidRPr="00235288" w:rsidRDefault="00235288" w:rsidP="00235288">
-<w:pPr>
-<w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
-<w:contextualSpacing/>
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-</w:pPr>
-</w:p>
-<w:p w:rsidR="00235288" w:rsidRPr="00235288" w:rsidRDefault="00235288" w:rsidP="00235288">
-<w:pPr>
-<w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
-<w:contextualSpacing/>
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-</w:pPr>
-<w:proofErr w:type="gramStart"/>
-<w:r w:rsidRPr="00235288">
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-<w:t>--  can</w:t>
-</w:r>
-<w:proofErr w:type="gramEnd"/>
-<w:r w:rsidRPr="00235288">
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-<w:t xml:space="preserve"> i create an APPENDIX with cases of tools/</w:t>
-</w:r>
-<w:proofErr w:type="spellStart"/>
-<w:r w:rsidRPr="00235288">
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-<w:t>rdbms's</w:t>
-</w:r>
-<w:proofErr w:type="spellEnd"/>
-<w:r w:rsidRPr="00235288">
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-<w:t xml:space="preserve"> that DO help with </w:t>
-</w:r>
-<w:proofErr w:type="spellStart"/>
-<w:r w:rsidRPr="00235288">
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-<w:t>sql</w:t>
-</w:r>
-<w:proofErr w:type="spellEnd"/>
-<w:r w:rsidRPr="00235288">
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-<w:t xml:space="preserve"> coding? </w:t>
-</w:r>
-<w:proofErr w:type="gramStart"/>
-<w:r w:rsidRPr="00235288">
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-<w:t>is</w:t>
-</w:r>
-<w:proofErr w:type="gramEnd"/>
-<w:r w:rsidRPr="00235288">
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-<w:t xml:space="preserve"> an appendix ok for that?</w:t>
-</w:r>
-</w:p>
-<w:p w:rsidR="00235288" w:rsidRPr="00235288" w:rsidRDefault="00235288" w:rsidP="00235288">
-<w:pPr>
-<w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
-<w:contextualSpacing/>
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-</w:pPr>
-</w:p>
-<w:p w:rsidR="00235288" w:rsidRPr="00235288" w:rsidRDefault="00235288" w:rsidP="00235288">
+<w:p w:rsidR="00235288" w:rsidRPr="00235288" w:rsidRDefault="00235288" w:rsidP="000E063A">
 <w:pPr>
 <w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
 <w:contextualSpacing/>
@@ -3488,10 +3252,44 @@
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t>POQ was created to further the research trend towards devising better quality assurance mechanisms for programs written in SQL.</w:t>
+<w:t>Only very recently has there been a surge of interest in tools to support SQL coding. (mention: Quest Code Tester for Oracle, Qex, Leslie Van Exel's work.)</w:t>
+</w:r>
+<w:r w:rsidR="00C165C2">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>. Also refer to Appendix NN for a listing of other current resources supporting quality SQL coding. (</w:t>
+</w:r>
+<w:r w:rsidR="00C165C2" w:rsidRPr="00C165C2">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:b/>
+<w:i/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>can</w:t>
+</w:r>
+<w:r w:rsidRPr="00235288">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve"> i create an APPENDIX with cases of tools/rdbms's that DO help with sql coding? is an appendix ok for that?</w:t>
+</w:r>
+<w:r w:rsidR="00C165C2">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>)</w:t>
 </w:r>
 </w:p>
-<w:p w:rsidR="00235288" w:rsidRPr="00235288" w:rsidRDefault="00235288" w:rsidP="00235288">
+<w:p w:rsidR="00235288" w:rsidRPr="00235288" w:rsidRDefault="00235288" w:rsidP="000E063A">
 <w:pPr>
 <w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
 <w:contextualSpacing/>
@@ -3502,7 +3300,7 @@
 </w:rPr>
 </w:pPr>
 </w:p>
-<w:p w:rsidR="00235288" w:rsidRPr="00235288" w:rsidRDefault="00235288" w:rsidP="00235288">
+<w:p w:rsidR="00235288" w:rsidRPr="00235288" w:rsidRDefault="00235288" w:rsidP="000E063A">
 <w:pPr>
 <w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
 <w:contextualSpacing/>
@@ -3518,11 +3316,26 @@
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:lastRenderedPageBreak/>
-<w:t>How can we create tools that allow a SQL coder to efficiently produce working SQL code and have confidence that this code runs correctly on all input parameters and all content-states (better word) of the database, not just on a limited test dataset?</w:t>
+<w:t xml:space="preserve">POQ was created to further </w:t>
+</w:r>
+<w:r w:rsidR="00C165C2">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve">the recent developments in </w:t>
+</w:r>
+<w:r w:rsidRPr="00235288">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>better quality assurance mechanisms for programs written in SQL.</w:t>
 </w:r>
 </w:p>
-<w:p w:rsidR="00235288" w:rsidRPr="00235288" w:rsidRDefault="00235288" w:rsidP="00235288">
+<w:p w:rsidR="00235288" w:rsidRPr="00235288" w:rsidRDefault="00235288" w:rsidP="000E063A">
 <w:pPr>
 <w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
 <w:contextualSpacing/>
@@ -3533,7 +3346,85 @@
 </w:rPr>
 </w:pPr>
 </w:p>
-<w:p w:rsidR="00235288" w:rsidRPr="00235288" w:rsidRDefault="00235288" w:rsidP="00235288">
+<w:p w:rsidR="00235288" w:rsidRPr="00235288" w:rsidRDefault="00235288" w:rsidP="000E063A">
+<w:pPr>
+<w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
+<w:contextualSpacing/>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+</w:pPr>
+<w:r w:rsidRPr="00235288">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>How can we create tools that</w:t>
+</w:r>
+<w:r w:rsidR="00ED2705">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>: a.)</w:t>
+</w:r>
+<w:r w:rsidRPr="00235288">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve"> allow a SQL coder to efficiently produce working SQL code</w:t>
+</w:r>
+<w:r w:rsidR="00ED2705">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>?</w:t>
+</w:r>
+<w:r w:rsidRPr="00235288">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve"> and</w:t>
+</w:r>
+<w:r w:rsidR="00ED2705">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve"> b.)</w:t>
+</w:r>
+<w:r w:rsidRPr="00235288">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve"> have confidence that this code runs correctly on all input parameters and all content-states (better word) of the database, not just on a limited test dataset?</w:t>
+</w:r>
+</w:p>
+<w:p w:rsidR="00235288" w:rsidRPr="00235288" w:rsidRDefault="00235288" w:rsidP="000E063A">
+<w:pPr>
+<w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
+<w:contextualSpacing/>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+</w:pPr>
+</w:p>
+<w:p w:rsidR="00235288" w:rsidRPr="00235288" w:rsidRDefault="00235288" w:rsidP="000E063A">
 <w:pPr>
 <w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
 <w:contextualSpacing/>
@@ -3552,7 +3443,7 @@
 <w:t>Consider: testing, debugging, static analysis.</w:t>
 </w:r>
 </w:p>
-<w:p w:rsidR="00235288" w:rsidRPr="00235288" w:rsidRDefault="00235288" w:rsidP="00235288">
+<w:p w:rsidR="00235288" w:rsidRPr="00235288" w:rsidRDefault="00235288" w:rsidP="000E063A">
 <w:pPr>
 <w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
 <w:contextualSpacing/>
@@ -3563,65 +3454,7 @@
 </w:rPr>
 </w:pPr>
 </w:p>
-<w:p w:rsidR="00235288" w:rsidRPr="00235288" w:rsidRDefault="00235288" w:rsidP="00235288">
-<w:pPr>
-<w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
-<w:contextualSpacing/>
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-</w:pPr>
-<w:proofErr w:type="gramStart"/>
-<w:r w:rsidRPr="00235288">
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-<w:t>Formal verification.</w:t>
-</w:r>
-<w:proofErr w:type="gramEnd"/>
-<w:r w:rsidRPr="00235288">
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-<w:t xml:space="preserve">  For most programs written in languages like C, Java, C#, Python, </w:t>
-</w:r>
-<w:proofErr w:type="spellStart"/>
-<w:r w:rsidRPr="00235288">
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-<w:t>etc</w:t>
-</w:r>
-<w:proofErr w:type="spellEnd"/>
-<w:r w:rsidRPr="00235288">
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-<w:t>, it is still considered infeasible (or prohibitively costly) to formally verify all statements in the program.  However, for relational SQL statements, the task is not as difficult.</w:t>
-</w:r>
-</w:p>
-<w:p w:rsidR="00235288" w:rsidRPr="00235288" w:rsidRDefault="00235288" w:rsidP="00235288">
-<w:pPr>
-<w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
-<w:contextualSpacing/>
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-</w:pPr>
-</w:p>
-<w:p w:rsidR="00235288" w:rsidRPr="00235288" w:rsidRDefault="00235288" w:rsidP="00235288">
+<w:p w:rsidR="00235288" w:rsidRDefault="00235288" w:rsidP="000E063A">
 <w:pPr>
 <w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
 <w:contextualSpacing/>
@@ -3637,46 +3470,58 @@
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t>Formal verification as commonly used today is based on first-order logic.  Much of the work in verifying statements in today's imperative languages and object oriented languages is due to the 'transformation step' (better word) of finding a suitable first-order theory that represents the programming language statements.  In the case of relational SQL, however, we already have a fully developed mathematical theory of relational calculus that is expressible (able?) in first-order logic. (</w:t>
+<w:t xml:space="preserve">Formal verification.  For most programs written in languages like C, Java, C#, Python, </w:t>
 </w:r>
-<w:proofErr w:type="gramStart"/>
+<w:r w:rsidR="00ED2705">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>and so on</w:t>
+</w:r>
 <w:r w:rsidRPr="00235288">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t>relational</w:t>
+<w:t xml:space="preserve">, it </w:t>
 </w:r>
-<w:proofErr w:type="gramEnd"/>
+<w:r w:rsidR="00ED2705">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>is still considered infeasible or prohibitively costly</w:t>
+</w:r>
 <w:r w:rsidRPr="00235288">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t xml:space="preserve"> calculus? relational algebra?)  Therefore, the 'transformation step' that is the challenge in other verification settings is completely absent in a setting where the goal is to verify relational SQL.  (</w:t>
+<w:t xml:space="preserve"> to formally verify all statements in the program.  </w:t>
 </w:r>
-<w:proofErr w:type="gramStart"/>
-<w:r w:rsidRPr="00235288">
+<w:r w:rsidR="00ED2705">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t>okay</w:t>
+<w:t xml:space="preserve">The question of whether it is equally infeasible to verify all SQL statements in a program has not been widely addressed.  The mathematical basis for the SQL language offers tantalizing </w:t>
 </w:r>
-<w:proofErr w:type="gramEnd"/>
-<w:r w:rsidRPr="00235288">
+<w:r w:rsidR="00B242B7">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t>... so i MUST MENTION somewhere about the places where SQL falls short of true mathematical relational concepts)</w:t>
+<w:t xml:space="preserve">hints that verification could apply to SQL more easily than it applies to C-like languages.  </w:t>
 </w:r>
 </w:p>
-<w:p w:rsidR="00235288" w:rsidRPr="00235288" w:rsidRDefault="00235288" w:rsidP="00235288">
+<w:p w:rsidR="00B242B7" w:rsidRDefault="00B242B7" w:rsidP="000E063A">
 <w:pPr>
 <w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
 <w:contextualSpacing/>
@@ -3687,7 +3532,37 @@
 </w:rPr>
 </w:pPr>
 </w:p>
-<w:p w:rsidR="00235288" w:rsidRPr="00235288" w:rsidRDefault="00235288" w:rsidP="00235288">
+<w:p w:rsidR="004252A5" w:rsidRDefault="004252A5" w:rsidP="000E063A">
+<w:pPr>
+<w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
+<w:contextualSpacing/>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+</w:pPr>
+<w:r>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>The case for verification of SQL:</w:t>
+</w:r>
+</w:p>
+<w:p w:rsidR="004252A5" w:rsidRPr="00235288" w:rsidRDefault="004252A5" w:rsidP="000E063A">
+<w:pPr>
+<w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
+<w:contextualSpacing/>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+</w:pPr>
+</w:p>
+<w:p w:rsidR="00235288" w:rsidRPr="00235288" w:rsidRDefault="00235288" w:rsidP="000E063A">
 <w:pPr>
 <w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
 <w:contextualSpacing/>
@@ -3703,10 +3578,73 @@
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
+<w:t xml:space="preserve">Formal verification as commonly used today is based on first-order logic.  Much of the work in verifying statements in today's </w:t>
+</w:r>
+<w:r w:rsidR="008B4BCF">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>imperative languages and object-</w:t>
+</w:r>
+<w:r w:rsidRPr="00235288">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>oriented languages is due to the 'transformation step' (better word) of finding a suitable first-order theory that represents the programming language statements.  In the case of relational SQL, however, we already have a fully developed mathematical theory of relational calculus that is expressible</w:t>
+</w:r>
+<w:r w:rsidR="0046416B">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve"> </w:t>
+</w:r>
+<w:r w:rsidRPr="00235288">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>in first-order logic. (relational calculus? relational algebra?)  Therefore, the 'transformation step' that is the challenge in other verification settings is completely absent in a setting where the goal is to verify relational SQL.  (okay... so i MUST MENTION somewhere about the places where SQL falls short of true mathematical relational concepts)</w:t>
+</w:r>
+</w:p>
+<w:p w:rsidR="00235288" w:rsidRPr="00235288" w:rsidRDefault="00235288" w:rsidP="000E063A">
+<w:pPr>
+<w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
+<w:contextualSpacing/>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+</w:pPr>
+</w:p>
+<w:p w:rsidR="00235288" w:rsidRPr="00235288" w:rsidRDefault="00235288" w:rsidP="000E063A">
+<w:pPr>
+<w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
+<w:contextualSpacing/>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+</w:pPr>
+<w:r w:rsidRPr="00235288">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:lastRenderedPageBreak/>
 <w:t>Other ways to 'spin' here:</w:t>
 </w:r>
 </w:p>
-<w:p w:rsidR="00235288" w:rsidRPr="00235288" w:rsidRDefault="00235288" w:rsidP="00235288">
+<w:p w:rsidR="00235288" w:rsidRPr="00235288" w:rsidRDefault="00235288" w:rsidP="000E063A">
 <w:pPr>
 <w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
 <w:contextualSpacing/>
@@ -3717,7 +3655,7 @@
 </w:rPr>
 </w:pPr>
 </w:p>
-<w:p w:rsidR="00235288" w:rsidRPr="00235288" w:rsidRDefault="00235288" w:rsidP="00235288">
+<w:p w:rsidR="00235288" w:rsidRPr="00235288" w:rsidRDefault="00235288" w:rsidP="000E063A">
 <w:pPr>
 <w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
 <w:contextualSpacing/>
@@ -3733,46 +3671,10 @@
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t xml:space="preserve">    </w:t>
-</w:r>
-<w:proofErr w:type="gramStart"/>
-<w:r w:rsidRPr="00235288">
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-<w:t>design</w:t>
-</w:r>
-<w:proofErr w:type="gramEnd"/>
-<w:r w:rsidRPr="00235288">
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-<w:t xml:space="preserve"> by contract - this is the key way we typically relate formal verification to our </w:t>
-</w:r>
-<w:proofErr w:type="spellStart"/>
-<w:r w:rsidRPr="00235288">
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-<w:t>dev</w:t>
-</w:r>
-<w:proofErr w:type="spellEnd"/>
-<w:r w:rsidRPr="00235288">
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-<w:t xml:space="preserve"> process.</w:t>
+<w:t xml:space="preserve">    design by contract - this is the key way we typically relate formal verification to our dev process.</w:t>
 </w:r>
 </w:p>
-<w:p w:rsidR="00235288" w:rsidRPr="00235288" w:rsidRDefault="00235288" w:rsidP="00235288">
+<w:p w:rsidR="00235288" w:rsidRPr="00235288" w:rsidRDefault="00235288" w:rsidP="000E063A">
 <w:pPr>
 <w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
 <w:contextualSpacing/>
@@ -3783,7 +3685,7 @@
 </w:rPr>
 </w:pPr>
 </w:p>
-<w:p w:rsidR="00235288" w:rsidRPr="00235288" w:rsidRDefault="00235288" w:rsidP="00235288">
+<w:p w:rsidR="00235288" w:rsidRPr="00235288" w:rsidRDefault="00235288" w:rsidP="000E063A">
 <w:pPr>
 <w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
 <w:contextualSpacing/>
@@ -3801,62 +3703,24 @@
 </w:rPr>
 <w:t xml:space="preserve">    debugging - explain how, in some sense, formal verification of relational SQL might be the closest thing to 'debugging SQL', since the notion of 'stepping through' </w:t>
 </w:r>
-<w:proofErr w:type="spellStart"/>
-<w:r w:rsidRPr="00235288">
+<w:r w:rsidR="0046416B">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t>doesnt</w:t>
+<w:t>does not</w:t>
 </w:r>
-<w:proofErr w:type="spellEnd"/>
 <w:r w:rsidRPr="00235288">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t xml:space="preserve"> really hold up in relational SQL. (</w:t>
-</w:r>
-<w:proofErr w:type="gramStart"/>
-<w:r w:rsidRPr="00235288">
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-<w:t>rather</w:t>
-</w:r>
-<w:proofErr w:type="gramEnd"/>
-<w:r w:rsidRPr="00235288">
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-<w:t xml:space="preserve">, </w:t>
-</w:r>
-<w:proofErr w:type="spellStart"/>
-<w:r w:rsidRPr="00235288">
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-<w:t>sql</w:t>
-</w:r>
-<w:proofErr w:type="spellEnd"/>
-<w:r w:rsidRPr="00235288">
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-<w:t xml:space="preserve"> statements have 'all-at-once' qualities)</w:t>
+<w:t xml:space="preserve"> really hold up in relational SQL. (rather, sql statements have 'all-at-once' qualities)</w:t>
 </w:r>
 </w:p>
-<w:p w:rsidR="00235288" w:rsidRPr="00235288" w:rsidRDefault="00235288" w:rsidP="00235288">
+<w:p w:rsidR="00235288" w:rsidRPr="00235288" w:rsidRDefault="00235288" w:rsidP="000E063A">
 <w:pPr>
 <w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
 <w:contextualSpacing/>
@@ -3867,7 +3731,7 @@
 </w:rPr>
 </w:pPr>
 </w:p>
-<w:p w:rsidR="00235288" w:rsidRPr="00235288" w:rsidRDefault="00235288" w:rsidP="00235288">
+<w:p w:rsidR="00235288" w:rsidRPr="00235288" w:rsidRDefault="00235288" w:rsidP="000E063A">
 <w:pPr>
 <w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
 <w:contextualSpacing/>
@@ -3883,46 +3747,10 @@
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t xml:space="preserve">    </w:t>
-</w:r>
-<w:proofErr w:type="gramStart"/>
-<w:r w:rsidRPr="00235288">
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-<w:t>testing</w:t>
-</w:r>
-<w:proofErr w:type="gramEnd"/>
-<w:r w:rsidRPr="00235288">
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-<w:t xml:space="preserve"> - </w:t>
-</w:r>
-<w:proofErr w:type="spellStart"/>
-<w:r w:rsidRPr="00235288">
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-<w:t>Qex</w:t>
-</w:r>
-<w:proofErr w:type="spellEnd"/>
-<w:r w:rsidRPr="00235288">
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-<w:t xml:space="preserve"> is an example of how this approach supports testing</w:t>
+<w:t xml:space="preserve">    testing - Qex is an example of how this approach supports testing</w:t>
 </w:r>
 </w:p>
-<w:p w:rsidR="00235288" w:rsidRPr="00235288" w:rsidRDefault="00235288" w:rsidP="00235288">
+<w:p w:rsidR="00235288" w:rsidRPr="00235288" w:rsidRDefault="00235288" w:rsidP="000E063A">
 <w:pPr>
 <w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
 <w:contextualSpacing/>
@@ -3933,7 +3761,7 @@
 </w:rPr>
 </w:pPr>
 </w:p>
-<w:p w:rsidR="00235288" w:rsidRPr="00235288" w:rsidRDefault="00235288" w:rsidP="00235288">
+<w:p w:rsidR="00235288" w:rsidRPr="00235288" w:rsidRDefault="00235288" w:rsidP="000E063A">
 <w:pPr>
 <w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
 <w:contextualSpacing/>
@@ -3949,46 +3777,10 @@
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t xml:space="preserve">    </w:t>
-</w:r>
-<w:proofErr w:type="gramStart"/>
-<w:r w:rsidRPr="00235288">
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-<w:t>documentation</w:t>
-</w:r>
-<w:proofErr w:type="gramEnd"/>
-<w:r w:rsidRPr="00235288">
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-<w:t xml:space="preserve"> - notations that express ASSUMPTIONS about the code are ALWAYS valuable documentation for future </w:t>
-</w:r>
-<w:proofErr w:type="spellStart"/>
-<w:r w:rsidRPr="00235288">
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-<w:t>devs</w:t>
-</w:r>
-<w:proofErr w:type="spellEnd"/>
-<w:r w:rsidRPr="00235288">
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-<w:t>/maintainers</w:t>
+<w:t xml:space="preserve">    documentation - notations that express ASSUMPTIONS about the code are ALWAYS valuable documentation for future devs/maintainers</w:t>
 </w:r>
 </w:p>
-<w:p w:rsidR="00235288" w:rsidRPr="00235288" w:rsidRDefault="00235288" w:rsidP="00235288">
+<w:p w:rsidR="00235288" w:rsidRPr="00235288" w:rsidRDefault="00235288" w:rsidP="000E063A">
 <w:pPr>
 <w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
 <w:contextualSpacing/>
@@ -3999,7 +3791,7 @@
 </w:rPr>
 </w:pPr>
 </w:p>
-<w:p w:rsidR="00235288" w:rsidRPr="00235288" w:rsidRDefault="00235288" w:rsidP="00235288">
+<w:p w:rsidR="00235288" w:rsidRPr="00235288" w:rsidRDefault="00235288" w:rsidP="000E063A">
 <w:pPr>
 <w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
 <w:contextualSpacing/>
@@ -4015,28 +3807,10 @@
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t xml:space="preserve">    </w:t>
-</w:r>
-<w:proofErr w:type="gramStart"/>
-<w:r w:rsidRPr="00235288">
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-<w:t>refactoring</w:t>
-</w:r>
-<w:proofErr w:type="gramEnd"/>
-<w:r w:rsidRPr="00235288">
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-<w:t xml:space="preserve"> - refactoring can always be done with greater confidence in the presence of some type of test(s). POQ provides this.</w:t>
+<w:t xml:space="preserve">    refactoring - refactoring can always be done with greater confidence in the presence of some type of test(s). POQ provides this.</w:t>
 </w:r>
 </w:p>
-<w:p w:rsidR="00235288" w:rsidRPr="00235288" w:rsidRDefault="00235288" w:rsidP="00235288">
+<w:p w:rsidR="00235288" w:rsidRPr="00235288" w:rsidRDefault="00235288" w:rsidP="000E063A">
 <w:pPr>
 <w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
 <w:contextualSpacing/>
@@ -4047,7 +3821,7 @@
 </w:rPr>
 </w:pPr>
 </w:p>
-<w:p w:rsidR="00235288" w:rsidRPr="00235288" w:rsidRDefault="00235288" w:rsidP="00235288">
+<w:p w:rsidR="00235288" w:rsidRPr="00235288" w:rsidRDefault="00235288" w:rsidP="000E063A">
 <w:pPr>
 <w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
 <w:contextualSpacing/>
@@ -4058,7 +3832,7 @@
 </w:rPr>
 </w:pPr>
 </w:p>
-<w:p w:rsidR="00235288" w:rsidRPr="00235288" w:rsidRDefault="00235288" w:rsidP="00235288">
+<w:p w:rsidR="00235288" w:rsidRPr="00235288" w:rsidRDefault="00235288" w:rsidP="000E063A">
 <w:pPr>
 <w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
 <w:contextualSpacing/>
@@ -4076,26 +3850,72 @@
 </w:rPr>
 <w:t xml:space="preserve">So, the initial goal behind POQ was to </w:t>
 </w:r>
-<w:proofErr w:type="spellStart"/>
-<w:r w:rsidRPr="00235288">
+<w:r w:rsidR="0046416B" w:rsidRPr="00235288">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t>aide</w:t>
+<w:t>aid</w:t>
 </w:r>
-<w:proofErr w:type="spellEnd"/>
 <w:r w:rsidRPr="00235288">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t xml:space="preserve"> the work of the everyday SQL coder.  Nonetheless, because the fulfillment of this goal led to an application of formal verification methods, it bears mentioning the added benefits that formal verification bring to any project.</w:t>
+<w:t xml:space="preserve"> the work of the everyday SQL coder.  Nonetheless, </w:t>
+</w:r>
+<w:r w:rsidR="00285483">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>pursuing this</w:t>
+</w:r>
+<w:r w:rsidRPr="00235288">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve"> goal led to an application of formal verification methods</w:t>
+</w:r>
+<w:r w:rsidR="00285483">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>.  Therefore</w:t>
+</w:r>
+<w:r w:rsidRPr="00235288">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>, it bears mentioning the added benefits that formal verification bring</w:t>
+</w:r>
+<w:r w:rsidR="00285483">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>s</w:t>
+</w:r>
+<w:r w:rsidRPr="00235288">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve"> to any project.</w:t>
 </w:r>
 </w:p>
-<w:p w:rsidR="00235288" w:rsidRPr="00235288" w:rsidRDefault="00235288" w:rsidP="00235288">
+<w:p w:rsidR="00235288" w:rsidRPr="00235288" w:rsidRDefault="00235288" w:rsidP="000E063A">
 <w:pPr>
 <w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
 <w:contextualSpacing/>
@@ -4106,7 +3926,7 @@
 </w:rPr>
 </w:pPr>
 </w:p>
-<w:p w:rsidR="00235288" w:rsidRPr="00235288" w:rsidRDefault="00235288" w:rsidP="00235288">
+<w:p w:rsidR="00235288" w:rsidRPr="00235288" w:rsidRDefault="00235288" w:rsidP="000E063A">
 <w:pPr>
 <w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
 <w:contextualSpacing/>
@@ -4116,53 +3936,69 @@
 <w:szCs w:val="24"/>
 </w:rPr>
 </w:pPr>
-<w:proofErr w:type="gramStart"/>
 <w:r w:rsidRPr="00235288">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t>safety-critical</w:t>
+<w:lastRenderedPageBreak/>
+<w:t>safety-critical, lower bugfix costs, bla bla bla</w:t>
 </w:r>
-<w:proofErr w:type="gramEnd"/>
-<w:r w:rsidRPr="00235288">
+</w:p>
+<w:p w:rsidR="00235288" w:rsidRDefault="00235288" w:rsidP="000E063A">
+<w:pPr>
+<w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
+<w:contextualSpacing/>
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t xml:space="preserve">, lower </w:t>
+</w:pPr>
+</w:p>
+<w:p w:rsidR="00137CE1" w:rsidRPr="00137CE1" w:rsidRDefault="00137CE1" w:rsidP="000E063A">
+<w:pPr>
+<w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
+<w:contextualSpacing/>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+<w:u w:val="single"/>
+</w:rPr>
+</w:pPr>
+<w:r w:rsidRPr="00137CE1">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+<w:u w:val="single"/>
+</w:rPr>
+<w:t>Goal (or better sub-section name here)</w:t>
 </w:r>
-<w:proofErr w:type="spellStart"/>
-<w:r w:rsidRPr="00235288">
+</w:p>
+<w:p w:rsidR="00235288" w:rsidRPr="00235288" w:rsidRDefault="00137CE1" w:rsidP="000E063A">
+<w:pPr>
+<w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
+<w:contextualSpacing/>
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t>bugfix</w:t>
-</w:r>
-<w:proofErr w:type="spellEnd"/>
-<w:r w:rsidRPr="00235288">
+</w:pPr>
+<w:r>
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t xml:space="preserve"> costs, </w:t>
+<w:t>Before I close this introductory chapter, I want to give a very clear picture of what this assertion-checker does in CONCRETE terms, with at least one small 'teaser' example.</w:t>
 </w:r>
-<w:proofErr w:type="spellStart"/>
-<w:r w:rsidRPr="00235288">
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-<w:t>bla</w:t>
-</w:r>
-<w:proofErr w:type="spellEnd"/>
-<w:r w:rsidRPr="00235288">
+<w:bookmarkStart w:id="0" w:name="_GoBack"/>
+<w:bookmarkEnd w:id="0"/>
+<w:r>
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
@@ -4170,17 +4006,190 @@
 </w:rPr>
 <w:t xml:space="preserve"> </w:t>
 </w:r>
-<w:proofErr w:type="spellStart"/>
+</w:p>
+<w:p w:rsidR="00235288" w:rsidRPr="00235288" w:rsidRDefault="00235288" w:rsidP="000E063A">
+<w:pPr>
+<w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
+<w:contextualSpacing/>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+</w:pPr>
+</w:p>
+<w:p w:rsidR="00235288" w:rsidRPr="00235288" w:rsidRDefault="00235288" w:rsidP="000E063A">
+<w:pPr>
+<w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
+<w:contextualSpacing/>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+</w:pPr>
+</w:p>
+<w:p w:rsidR="002523D9" w:rsidRDefault="00235288" w:rsidP="000E063A">
+<w:pPr>
+<w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
+<w:contextualSpacing/>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+</w:pPr>
 <w:r w:rsidRPr="00235288">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t>bla</w:t>
+<w:t>[javatools] http://community.java.net/community/javatools</w:t>
 </w:r>
-<w:proofErr w:type="spellEnd"/>
-<w:r w:rsidRPr="00235288">
+</w:p>
+<w:p w:rsidR="002523D9" w:rsidRDefault="002523D9" w:rsidP="002523D9">
+<w:pPr>
+<w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
+<w:contextualSpacing/>
+<w:jc w:val="center"/>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+</w:pPr>
+<w:r>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:br w:type="page"/>
+</w:r>
+</w:p>
+<w:p w:rsidR="002523D9" w:rsidRDefault="002523D9" w:rsidP="002523D9">
+<w:pPr>
+<w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
+<w:contextualSpacing/>
+<w:jc w:val="center"/>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+</w:pPr>
+</w:p>
+<w:p w:rsidR="002523D9" w:rsidRDefault="002523D9" w:rsidP="002523D9">
+<w:pPr>
+<w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
+<w:contextualSpacing/>
+<w:jc w:val="center"/>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+</w:pPr>
+</w:p>
+<w:p w:rsidR="002523D9" w:rsidRDefault="002523D9" w:rsidP="002523D9">
+<w:pPr>
+<w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
+<w:contextualSpacing/>
+<w:jc w:val="center"/>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+</w:pPr>
+<w:r>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>CHAPTER 2</w:t>
+</w:r>
+</w:p>
+<w:p w:rsidR="002523D9" w:rsidRDefault="002523D9" w:rsidP="002523D9">
+<w:pPr>
+<w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
+<w:contextualSpacing/>
+<w:jc w:val="center"/>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+</w:pPr>
+<w:r>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>RELATED WORK</w:t>
+</w:r>
+</w:p>
+<w:p w:rsidR="002523D9" w:rsidRDefault="002523D9" w:rsidP="002523D9">
+<w:pPr>
+<w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
+<w:contextualSpacing/>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+</w:pPr>
+<w:r>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:tab/>
+<w:t>And a paragraph begins…</w:t>
+</w:r>
+</w:p>
+<w:p w:rsidR="002523D9" w:rsidRDefault="002523D9" w:rsidP="002523D9">
+<w:pPr>
+<w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
+<w:contextualSpacing/>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+</w:pPr>
+</w:p>
+<w:p w:rsidR="009E2084" w:rsidRPr="009E2084" w:rsidRDefault="009E2084" w:rsidP="009E2084">
+<w:pPr>
+<w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
+<w:contextualSpacing/>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+</w:pPr>
+<w:r w:rsidRPr="009E2084">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve">Some of the most closely-related work is similar to my work "in spirit", because the goal is to automate and </w:t>
+</w:r>
+<w:r w:rsidRPr="009E2084">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>axiomatize</w:t>
+</w:r>
+<w:r>
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
@@ -4188,18 +4197,48 @@
 </w:rPr>
 <w:t xml:space="preserve"> </w:t>
 </w:r>
-<w:proofErr w:type="spellStart"/>
-<w:r w:rsidRPr="00235288">
+<w:r w:rsidRPr="009E2084">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t>bla</w:t>
+<w:t>methods of bug detection. However, the key difference is that these other projects mostly target the detection of bugs inside the query execution engine of a DBMS</w:t>
 </w:r>
-<w:proofErr w:type="spellEnd"/>
+<w:r w:rsidR="00741439">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>—</w:t>
+</w:r>
+<w:r w:rsidRPr="009E2084">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>not</w:t>
+</w:r>
+<w:r w:rsidR="00741439">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve"> </w:t>
+</w:r>
+<w:r w:rsidRPr="009E2084">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve"> bugs in the SQL code.</w:t>
+</w:r>
 </w:p>
-<w:p w:rsidR="00235288" w:rsidRPr="00235288" w:rsidRDefault="00235288" w:rsidP="00235288">
+<w:p w:rsidR="009E2084" w:rsidRPr="009E2084" w:rsidRDefault="009E2084" w:rsidP="009E2084">
 <w:pPr>
 <w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
 <w:contextualSpacing/>
@@ -4210,7 +4249,26 @@
 </w:rPr>
 </w:pPr>
 </w:p>
-<w:p w:rsidR="00235288" w:rsidRPr="00235288" w:rsidRDefault="00235288" w:rsidP="00235288">
+<w:p w:rsidR="009E2084" w:rsidRPr="009E2084" w:rsidRDefault="009E2084" w:rsidP="009E2084">
+<w:pPr>
+<w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
+<w:contextualSpacing/>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+</w:pPr>
+<w:r w:rsidRPr="009E2084">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve">"Query-Aware Test Generation Using a Relational Constraint Solver."  http://dx.doi.org/10.1109/ASE.2008.34  </w:t>
+</w:r>
+</w:p>
+<w:p w:rsidR="009E2084" w:rsidRPr="009E2084" w:rsidRDefault="009E2084" w:rsidP="009E2084">
 <w:pPr>
 <w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
 <w:contextualSpacing/>
@@ -4221,7 +4279,26 @@
 </w:rPr>
 </w:pPr>
 </w:p>
-<w:p w:rsidR="00235288" w:rsidRPr="00235288" w:rsidRDefault="00235288" w:rsidP="00235288">
+<w:p w:rsidR="009E2084" w:rsidRPr="009E2084" w:rsidRDefault="009E2084" w:rsidP="009E2084">
+<w:pPr>
+<w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
+<w:contextualSpacing/>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+</w:pPr>
+<w:r w:rsidRPr="009E2084">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>Qex. (http://research.microsoft.com/en-us/projects/qex/) this is by far the most closely-related work to my own.  However, it still differs in key aspects.  Qex is intended to create "unit tests" for queries, with an assumption that the query is working properly right now, but that it might break in the future.  Also, Qex still executes the query on actual data in order to decide whether the query behaved properly or not.  My work aims to perform checking of assumptions on queries that are NOT KNOWN and NOT ASSUMED to behave as intended, and my work intends to do this checking statically, without executing the SQL code on any actual DBMS.</w:t>
+</w:r>
+</w:p>
+<w:p w:rsidR="009E2084" w:rsidRPr="009E2084" w:rsidRDefault="009E2084" w:rsidP="009E2084">
 <w:pPr>
 <w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
 <w:contextualSpacing/>
@@ -4232,7 +4309,138 @@
 </w:rPr>
 </w:pPr>
 </w:p>
-<w:p w:rsidR="00235288" w:rsidRPr="00235288" w:rsidRDefault="00235288" w:rsidP="00235288">
+<w:p w:rsidR="00D83668" w:rsidRDefault="009E2084" w:rsidP="009E2084">
+<w:pPr>
+<w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
+<w:contextualSpacing/>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+</w:pPr>
+<w:r w:rsidRPr="009E2084">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve">"Mini Repros" - ( http://doi.acm.org/10.1145/1739041.1739088 ), when there is a query that provokes a bug, the "mini repro" approach is an automated way to reduce the problematic query down to its essential core for easier and quicker bug reproduction.    </w:t>
+</w:r>
+</w:p>
+<w:p w:rsidR="00F116C8" w:rsidRDefault="00D83668" w:rsidP="00F116C8">
+<w:pPr>
+<w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
+<w:contextualSpacing/>
+<w:jc w:val="center"/>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+</w:pPr>
+<w:r>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:br w:type="page"/>
+</w:r>
+</w:p>
+<w:p w:rsidR="00F116C8" w:rsidRDefault="00F116C8" w:rsidP="00F116C8">
+<w:pPr>
+<w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
+<w:contextualSpacing/>
+<w:jc w:val="center"/>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+</w:pPr>
+</w:p>
+<w:p w:rsidR="00F116C8" w:rsidRDefault="00F116C8" w:rsidP="00F116C8">
+<w:pPr>
+<w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
+<w:contextualSpacing/>
+<w:jc w:val="center"/>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+</w:pPr>
+</w:p>
+<w:p w:rsidR="00F116C8" w:rsidRDefault="00F116C8" w:rsidP="00F116C8">
+<w:pPr>
+<w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
+<w:contextualSpacing/>
+<w:jc w:val="center"/>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+</w:pPr>
+<w:r>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve">CHAPTER </w:t>
+</w:r>
+<w:r w:rsidR="002523D9">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>3</w:t>
+</w:r>
+</w:p>
+<w:p w:rsidR="00F116C8" w:rsidRDefault="008D11CA" w:rsidP="00F116C8">
+<w:pPr>
+<w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
+<w:contextualSpacing/>
+<w:jc w:val="center"/>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+</w:pPr>
+<w:r>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>DESIGNING THE POQ TOOL</w:t>
+</w:r>
+</w:p>
+<w:p w:rsidR="00F116C8" w:rsidRDefault="00F116C8" w:rsidP="00F116C8">
+<w:pPr>
+<w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
+<w:contextualSpacing/>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+</w:pPr>
+<w:r>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:tab/>
+<w:t>And a paragraph begins…</w:t>
+</w:r>
+</w:p>
+<w:p w:rsidR="00F116C8" w:rsidRDefault="00F116C8" w:rsidP="00F116C8">
 <w:pPr>
 <w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
 <w:contextualSpacing/>
@@ -4243,7 +4451,28 @@
 </w:rPr>
 </w:pPr>
 </w:p>
-<w:p w:rsidR="00235288" w:rsidRPr="00235288" w:rsidRDefault="00235288" w:rsidP="00235288">
+<w:p w:rsidR="0004249E" w:rsidRPr="0004249E" w:rsidRDefault="0004249E" w:rsidP="00F116C8">
+<w:pPr>
+<w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
+<w:contextualSpacing/>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+<w:u w:val="single"/>
+</w:rPr>
+</w:pPr>
+<w:r w:rsidRPr="0004249E">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+<w:u w:val="single"/>
+</w:rPr>
+<w:t>Preliminary Concerns</w:t>
+</w:r>
+</w:p>
+<w:p w:rsidR="00235288" w:rsidRDefault="00C52439" w:rsidP="000E063A">
 <w:pPr>
 <w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
 <w:contextualSpacing/>
@@ -4253,7 +4482,183 @@
 <w:szCs w:val="24"/>
 </w:rPr>
 </w:pPr>
-<w:r w:rsidRPr="00235288">
+<w:r>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>For consideration: SMT solvers. Problems: quantifier instantiation. triggers. perhaps too tailored towards SMT-LIB benchmarks, therefore not general enough.  Qex demonstrates successful use of Z3 to this problem, but: they mention programmatic API, Bjorner, etc (they had 'secret weapons' helping them). (Also: Qex has not been included in Visual Studio yet.)</w:t>
+</w:r>
+</w:p>
+<w:p w:rsidR="00C52439" w:rsidRDefault="00C52439" w:rsidP="000E063A">
+<w:pPr>
+<w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
+<w:contextualSpacing/>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+</w:pPr>
+</w:p>
+<w:p w:rsidR="00C52439" w:rsidRDefault="00C52439" w:rsidP="000E063A">
+<w:pPr>
+<w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
+<w:contextualSpacing/>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+</w:pPr>
+<w:r>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>Enter: Prolog and resolution/unification.</w:t>
+</w:r>
+</w:p>
+<w:p w:rsidR="00C82938" w:rsidRDefault="00C82938" w:rsidP="000E063A">
+<w:pPr>
+<w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
+<w:contextualSpacing/>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+</w:pPr>
+<w:r>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>pluses: 'field tested' in a variety of differing applications. variables in rules/clauses are implicitly universally quantified (in other words, virtually no trouble at all with quantifiers).  properties of SLD resolution. history in ATP world.</w:t>
+</w:r>
+</w:p>
+<w:p w:rsidR="00C82938" w:rsidRDefault="00C82938" w:rsidP="000E063A">
+<w:pPr>
+<w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
+<w:contextualSpacing/>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+</w:pPr>
+</w:p>
+<w:p w:rsidR="00C82938" w:rsidRDefault="00C82938" w:rsidP="000E063A">
+<w:pPr>
+<w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
+<w:contextualSpacing/>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+</w:pPr>
+<w:r>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve">Challenges in prolog: </w:t>
+</w:r>
+</w:p>
+<w:p w:rsidR="00C82938" w:rsidRDefault="00C82938" w:rsidP="00C82938">
+<w:pPr>
+<w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+</w:pPr>
+<w:r w:rsidRPr="00C82938">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>-</w:t>
+</w:r>
+<w:r>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve"> </w:t>
+</w:r>
+<w:r w:rsidRPr="00C82938">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>un</w:t>
+</w:r>
+<w:r>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>sound unification</w:t>
+</w:r>
+</w:p>
+<w:p w:rsidR="00C82938" w:rsidRDefault="00C82938" w:rsidP="00C82938">
+<w:pPr>
+<w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+</w:pPr>
+<w:r>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>- depth first search (infinite paths)</w:t>
+</w:r>
+</w:p>
+<w:p w:rsidR="00C82938" w:rsidRPr="00C82938" w:rsidRDefault="00C82938" w:rsidP="00C82938">
+<w:pPr>
+<w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+</w:pPr>
+<w:r>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>- doesn't work for non-horn clauses</w:t>
+</w:r>
+</w:p>
+<w:p w:rsidR="00C82938" w:rsidRDefault="00C82938" w:rsidP="000E063A">
+<w:pPr>
+<w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
+<w:contextualSpacing/>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+</w:pPr>
+<w:r>
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
@@ -4261,28 +4666,89 @@
 </w:rPr>
 <w:t>[</w:t>
 </w:r>
-<w:proofErr w:type="spellStart"/>
-<w:proofErr w:type="gramStart"/>
-<w:r w:rsidRPr="00235288">
+<w:r w:rsidRPr="00C82938">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t>javatools</w:t>
+<w:t>http://www.ai.sri.com/~stickel/pttp.html</w:t>
 </w:r>
-<w:proofErr w:type="spellEnd"/>
-<w:proofErr w:type="gramEnd"/>
-<w:r w:rsidRPr="00235288">
+<w:r>
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t>] http://community.java.net/community/javatools</w:t>
+<w:t>]</w:t>
 </w:r>
 </w:p>
-<w:p w:rsidR="00235288" w:rsidRPr="00235288" w:rsidRDefault="00235288" w:rsidP="00235288">
+<w:p w:rsidR="00C82938" w:rsidRDefault="00C82938" w:rsidP="000E063A">
+<w:pPr>
+<w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
+<w:contextualSpacing/>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+</w:pPr>
+<w:r>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve">we can address unsound unification by using </w:t>
+</w:r>
+<w:r w:rsidR="0068682D">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>a flag to reenable the occurs check.</w:t>
+</w:r>
+</w:p>
+<w:p w:rsidR="0068682D" w:rsidRDefault="0068682D" w:rsidP="000E063A">
+<w:pPr>
+<w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
+<w:contextualSpacing/>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+</w:pPr>
+<w:r>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>we can address the infinite search tree paths by: (list my strategies and explain them)</w:t>
+</w:r>
+</w:p>
+<w:p w:rsidR="0068682D" w:rsidRDefault="0068682D" w:rsidP="000E063A">
+<w:pPr>
+<w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
+<w:contextualSpacing/>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+</w:pPr>
+<w:r>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>as for 'non-horn clauses' – we do not need any, so that's fine.</w:t>
+</w:r>
+</w:p>
+<w:p w:rsidR="00C82938" w:rsidRPr="00235288" w:rsidRDefault="00C82938" w:rsidP="000E063A">
 <w:pPr>
 <w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
 <w:contextualSpacing/>
@@ -4293,7 +4759,28 @@
 </w:rPr>
 </w:pPr>
 </w:p>
-<w:p w:rsidR="00235288" w:rsidRPr="00235288" w:rsidRDefault="00235288" w:rsidP="00235288">
+<w:p w:rsidR="00235288" w:rsidRPr="00B32CC6" w:rsidRDefault="00B32CC6" w:rsidP="000E063A">
+<w:pPr>
+<w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
+<w:contextualSpacing/>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+<w:u w:val="single"/>
+</w:rPr>
+</w:pPr>
+<w:r w:rsidRPr="00B32CC6">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+<w:u w:val="single"/>
+</w:rPr>
+<w:t>Implementation</w:t>
+</w:r>
+</w:p>
+<w:p w:rsidR="00B32CC6" w:rsidRPr="00235288" w:rsidRDefault="00B32CC6" w:rsidP="000E063A">
 <w:pPr>
 <w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
 <w:contextualSpacing/>
@@ -4303,8 +4790,16 @@
 <w:szCs w:val="24"/>
 </w:rPr>
 </w:pPr>
+<w:r>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>domains. table variables. null values. operations</w:t>
+</w:r>
 </w:p>
-<w:p w:rsidR="00FC15BE" w:rsidRDefault="00953414" w:rsidP="00235288">
+<w:p w:rsidR="00FC15BE" w:rsidRDefault="00953414" w:rsidP="000E063A">
 <w:pPr>
 <w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
 <w:contextualSpacing/>
@@ -4949,7 +5444,7 @@
 <w:szCs w:val="24"/>
 </w:rPr>
 <w:sectPr w:rsidR="00004586" w:rsidSect="00952998">
-<w:footerReference w:type="default" r:id="rId9"/>
+<w:footerReference w:type="default" r:id="rId10"/>
 <w:pgSz w:w="12240" w:h="15840"/>
 <w:pgMar w:top="1440" w:right="1440" w:bottom="1440" w:left="2160" w:header="720" w:footer="1440" w:gutter="0"/>
 <w:pgNumType w:start="1"/>
@@ -4972,24 +5467,7 @@
 <w:szCs w:val="24"/>
 </w:rPr>
 <w:tab/>
-</w:r>
-<w:proofErr w:type="gramStart"/>
-<w:r>
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-<w:t>second</w:t>
-</w:r>
-<w:proofErr w:type="gramEnd"/>
-<w:r>
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-<w:t xml:space="preserve"> line</w:t>
+<w:t>second line</w:t>
 </w:r>
 </w:p>
 <w:p w:rsidR="00F23974" w:rsidRPr="00F53FC1" w:rsidRDefault="00F23974" w:rsidP="00F23974">
@@ -5008,7 +5486,7 @@
 </w:pPr>
 </w:p>
 <w:sectPr w:rsidR="00F23974" w:rsidRPr="00F53FC1" w:rsidSect="00952998">
-<w:footerReference w:type="default" r:id="rId10"/>
+<w:footerReference w:type="default" r:id="rId11"/>
 <w:pgSz w:w="12240" w:h="15840"/>
 <w:pgMar w:top="1440" w:right="1440" w:bottom="1440" w:left="2160" w:header="720" w:footer="1440" w:gutter="0"/>
 <w:pgNumType w:start="1"/>
@@ -5057,14 +5535,14 @@
 </w:rPr>
 <w:fldChar w:fldCharType="separate"/>
 </w:r>
-<w:r w:rsidR="00573350">
+<w:r w:rsidR="00137CE1">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:noProof/>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t>1</w:t>
+<w:t>7</w:t>
 </w:r>
 <w:r w:rsidRPr="00952998">
 <w:rPr>
@@ -5117,7 +5595,7 @@
 </w:rPr>
 <w:fldChar w:fldCharType="separate"/>
 </w:r>
-<w:r w:rsidR="00573350">
+<w:r w:rsidR="00182380">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:noProof/>
@@ -5165,6 +5643,23 @@
 </w:endnotes>
 </pkg:xmlData>
 </pkg:part>
+<pkg:part pkg:name="/word/footer3.xml" pkg:contentType="application/vnd.openxmlformats-officedocument.wordprocessingml.footer+xml">
+<pkg:xmlData>
+<w:ftr mc:Ignorable="w14 wp14" xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" xmlns:m="http://schemas.openxmlformats.org/officeDocument/2006/math" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:wp14="http://schemas.microsoft.com/office/word/2010/wordprocessingDrawing" xmlns:wp="http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing" xmlns:w10="urn:schemas-microsoft-com:office:word" xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main" xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml" xmlns:wpg="http://schemas.microsoft.com/office/word/2010/wordprocessingGroup" xmlns:wpi="http://schemas.microsoft.com/office/word/2010/wordprocessingInk" xmlns:wne="http://schemas.microsoft.com/office/word/2006/wordml" xmlns:wps="http://schemas.microsoft.com/office/word/2010/wordprocessingShape">
+<w:p w:rsidR="003525D2" w:rsidRPr="00F53FC1" w:rsidRDefault="003525D2" w:rsidP="00F53FC1">
+<w:pPr>
+<w:pStyle w:val="Footer"/>
+<w:jc w:val="center"/>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+</w:pPr>
+</w:p>
+</w:ftr>
+</pkg:xmlData>
+</pkg:part>
 <pkg:part pkg:name="/word/footnotes.xml" pkg:contentType="application/vnd.openxmlformats-officedocument.wordprocessingml.footnotes+xml">
 <pkg:xmlData>
 <w:footnotes mc:Ignorable="w14 wp14" xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" xmlns:m="http://schemas.openxmlformats.org/officeDocument/2006/math" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:wp14="http://schemas.microsoft.com/office/word/2010/wordprocessingDrawing" xmlns:wp="http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing" xmlns:w10="urn:schemas-microsoft-com:office:word" xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main" xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml" xmlns:wpg="http://schemas.microsoft.com/office/word/2010/wordprocessingGroup" xmlns:wpi="http://schemas.microsoft.com/office/word/2010/wordprocessingInk" xmlns:wne="http://schemas.microsoft.com/office/word/2006/wordml" xmlns:wps="http://schemas.microsoft.com/office/word/2010/wordprocessingShape">
@@ -5189,23 +5684,6 @@
 </w:p>
 </w:footnote>
 </w:footnotes>
-</pkg:xmlData>
-</pkg:part>
-<pkg:part pkg:name="/word/footer3.xml" pkg:contentType="application/vnd.openxmlformats-officedocument.wordprocessingml.footer+xml">
-<pkg:xmlData>
-<w:ftr mc:Ignorable="w14 wp14" xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" xmlns:m="http://schemas.openxmlformats.org/officeDocument/2006/math" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:wp14="http://schemas.microsoft.com/office/word/2010/wordprocessingDrawing" xmlns:wp="http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing" xmlns:w10="urn:schemas-microsoft-com:office:word" xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main" xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml" xmlns:wpg="http://schemas.microsoft.com/office/word/2010/wordprocessingGroup" xmlns:wpi="http://schemas.microsoft.com/office/word/2010/wordprocessingInk" xmlns:wne="http://schemas.microsoft.com/office/word/2006/wordml" xmlns:wps="http://schemas.microsoft.com/office/word/2010/wordprocessingShape">
-<w:p w:rsidR="003525D2" w:rsidRPr="00F53FC1" w:rsidRDefault="003525D2" w:rsidP="00F53FC1">
-<w:pPr>
-<w:pStyle w:val="Footer"/>
-<w:jc w:val="center"/>
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-</w:pPr>
-</w:p>
-</w:ftr>
 </pkg:xmlData>
 </pkg:part>
 <pkg:part pkg:name="/word/theme/theme1.xml" pkg:contentType="application/vnd.openxmlformats-officedocument.theme+xml">
@@ -5498,7 +5976,6 @@
 <pkg:xmlData>
 <w:settings mc:Ignorable="w14" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" xmlns:m="http://schemas.openxmlformats.org/officeDocument/2006/math" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w10="urn:schemas-microsoft-com:office:word" xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main" xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml" xmlns:sl="http://schemas.openxmlformats.org/schemaLibrary/2006/main">
 <w:zoom w:percent="100"/>
-<w:proofState w:spelling="clean" w:grammar="clean"/>
 <w:defaultTabStop w:val="360"/>
 <w:characterSpacingControl w:val="doNotCompress"/>
 <w:footnotePr>
@@ -5521,66 +5998,111 @@
 <w:rsidRoot w:val="00F53FC1"/>
 <w:rsid w:val="00004586"/>
 <w:rsid w:val="000256EA"/>
+<w:rsid w:val="00035ADA"/>
+<w:rsid w:val="0004249E"/>
 <w:rsid w:val="000A517E"/>
+<w:rsid w:val="000A7D0E"/>
+<w:rsid w:val="000E063A"/>
 <w:rsid w:val="000E6BB9"/>
 <w:rsid w:val="00137987"/>
+<w:rsid w:val="00137CE1"/>
 <w:rsid w:val="00161875"/>
+<w:rsid w:val="00182380"/>
 <w:rsid w:val="00185D78"/>
 <w:rsid w:val="001A457F"/>
+<w:rsid w:val="001A5B4C"/>
 <w:rsid w:val="001A699F"/>
 <w:rsid w:val="001C251F"/>
 <w:rsid w:val="00235288"/>
+<w:rsid w:val="002523D9"/>
 <w:rsid w:val="00253C98"/>
 <w:rsid w:val="002646FF"/>
+<w:rsid w:val="00285483"/>
 <w:rsid w:val="002907F7"/>
 <w:rsid w:val="002A098B"/>
+<w:rsid w:val="002C4E24"/>
 <w:rsid w:val="003157ED"/>
 <w:rsid w:val="003525D2"/>
 <w:rsid w:val="00384BF9"/>
 <w:rsid w:val="00386A3C"/>
+<w:rsid w:val="003C6C13"/>
+<w:rsid w:val="00412E3C"/>
 <w:rsid w:val="004213E9"/>
+<w:rsid w:val="004252A5"/>
 <w:rsid w:val="0045524B"/>
+<w:rsid w:val="0046416B"/>
 <w:rsid w:val="00476BE6"/>
+<w:rsid w:val="00477F42"/>
+<w:rsid w:val="004F3CA9"/>
+<w:rsid w:val="004F59DE"/>
+<w:rsid w:val="00501E81"/>
 <w:rsid w:val="00521633"/>
 <w:rsid w:val="00573350"/>
 <w:rsid w:val="005B2124"/>
+<w:rsid w:val="005F064D"/>
 <w:rsid w:val="006129F8"/>
+<w:rsid w:val="0068682D"/>
+<w:rsid w:val="00695037"/>
+<w:rsid w:val="00741439"/>
 <w:rsid w:val="00767191"/>
 <w:rsid w:val="00777C47"/>
 <w:rsid w:val="007B1266"/>
 <w:rsid w:val="007C701F"/>
 <w:rsid w:val="007D4EA8"/>
 <w:rsid w:val="00841688"/>
+<w:rsid w:val="00844E63"/>
 <w:rsid w:val="00871B48"/>
+<w:rsid w:val="008823CF"/>
+<w:rsid w:val="00896CED"/>
+<w:rsid w:val="008B4BCF"/>
+<w:rsid w:val="008D11CA"/>
+<w:rsid w:val="008F12D3"/>
 <w:rsid w:val="00914A92"/>
 <w:rsid w:val="0094063E"/>
 <w:rsid w:val="00952998"/>
 <w:rsid w:val="00953414"/>
 <w:rsid w:val="009907F9"/>
+<w:rsid w:val="009A6439"/>
+<w:rsid w:val="009E2084"/>
+<w:rsid w:val="009E657F"/>
 <w:rsid w:val="00A10CBF"/>
 <w:rsid w:val="00A71402"/>
 <w:rsid w:val="00AB4F0D"/>
+<w:rsid w:val="00B242B7"/>
+<w:rsid w:val="00B32CC6"/>
 <w:rsid w:val="00B33C49"/>
 <w:rsid w:val="00B37526"/>
 <w:rsid w:val="00B807BE"/>
+<w:rsid w:val="00BD0F81"/>
 <w:rsid w:val="00BD6EE8"/>
 <w:rsid w:val="00C03184"/>
+<w:rsid w:val="00C165C2"/>
 <w:rsid w:val="00C41BC4"/>
+<w:rsid w:val="00C52439"/>
 <w:rsid w:val="00C72532"/>
+<w:rsid w:val="00C82938"/>
 <w:rsid w:val="00C8588E"/>
+<w:rsid w:val="00C94A53"/>
+<w:rsid w:val="00CC6492"/>
+<w:rsid w:val="00CF2D27"/>
 <w:rsid w:val="00D039A2"/>
 <w:rsid w:val="00D26F00"/>
 <w:rsid w:val="00D3220E"/>
 <w:rsid w:val="00D61268"/>
+<w:rsid w:val="00D83668"/>
 <w:rsid w:val="00DE230C"/>
 <w:rsid w:val="00E13B95"/>
 <w:rsid w:val="00E15070"/>
 <w:rsid w:val="00E24FAB"/>
+<w:rsid w:val="00EA293A"/>
 <w:rsid w:val="00EA77A9"/>
 <w:rsid w:val="00EB1C70"/>
+<w:rsid w:val="00ED2705"/>
+<w:rsid w:val="00F116C8"/>
 <w:rsid w:val="00F23974"/>
 <w:rsid w:val="00F53FC1"/>
 <w:rsid w:val="00F5687A"/>
+<w:rsid w:val="00F720B3"/>
 <w:rsid w:val="00FC15BE"/>
 </w:rsids>
 <m:mathPr>
@@ -5607,270 +6129,6 @@
 <w:decimalSymbol w:val="."/>
 <w:listSeparator w:val=","/>
 </w:settings>
-</pkg:xmlData>
-</pkg:part>
-<pkg:part pkg:name="/word/stylesWithEffects.xml" pkg:contentType="application/vnd.ms-word.stylesWithEffects+xml">
-<pkg:xmlData>
-<w:styles mc:Ignorable="w14 wp14" xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" xmlns:m="http://schemas.openxmlformats.org/officeDocument/2006/math" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:wp14="http://schemas.microsoft.com/office/word/2010/wordprocessingDrawing" xmlns:wp="http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing" xmlns:w10="urn:schemas-microsoft-com:office:word" xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main" xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml" xmlns:wpg="http://schemas.microsoft.com/office/word/2010/wordprocessingGroup" xmlns:wpi="http://schemas.microsoft.com/office/word/2010/wordprocessingInk" xmlns:wne="http://schemas.microsoft.com/office/word/2006/wordml" xmlns:wps="http://schemas.microsoft.com/office/word/2010/wordprocessingShape">
-<w:docDefaults>
-<w:rPrDefault>
-<w:rPr>
-<w:rFonts w:asciiTheme="minorHAnsi" w:eastAsiaTheme="minorHAnsi" w:hAnsiTheme="minorHAnsi" w:cstheme="minorBidi"/>
-<w:sz w:val="22"/>
-<w:szCs w:val="22"/>
-<w:lang w:val="en-US" w:eastAsia="en-US" w:bidi="ar-SA"/>
-</w:rPr>
-</w:rPrDefault>
-<w:pPrDefault>
-<w:pPr>
-<w:spacing w:after="200" w:line="276" w:lineRule="auto"/>
-</w:pPr>
-</w:pPrDefault>
-</w:docDefaults>
-<w:latentStyles w:defLockedState="0" w:defUIPriority="99" w:defSemiHidden="1" w:defUnhideWhenUsed="1" w:defQFormat="0" w:count="267">
-<w:lsdException w:name="Normal" w:semiHidden="0" w:uiPriority="0" w:unhideWhenUsed="0" w:qFormat="1"/>
-<w:lsdException w:name="heading 1" w:semiHidden="0" w:uiPriority="9" w:unhideWhenUsed="0" w:qFormat="1"/>
-<w:lsdException w:name="heading 2" w:uiPriority="9" w:qFormat="1"/>
-<w:lsdException w:name="heading 3" w:uiPriority="9" w:qFormat="1"/>
-<w:lsdException w:name="heading 4" w:uiPriority="9" w:qFormat="1"/>
-<w:lsdException w:name="heading 5" w:uiPriority="9" w:qFormat="1"/>
-<w:lsdException w:name="heading 6" w:uiPriority="9" w:qFormat="1"/>
-<w:lsdException w:name="heading 7" w:uiPriority="9" w:qFormat="1"/>
-<w:lsdException w:name="heading 8" w:uiPriority="9" w:qFormat="1"/>
-<w:lsdException w:name="heading 9" w:uiPriority="9" w:qFormat="1"/>
-<w:lsdException w:name="toc 1" w:uiPriority="39"/>
-<w:lsdException w:name="toc 2" w:uiPriority="39"/>
-<w:lsdException w:name="toc 3" w:uiPriority="39"/>
-<w:lsdException w:name="toc 4" w:uiPriority="39"/>
-<w:lsdException w:name="toc 5" w:uiPriority="39"/>
-<w:lsdException w:name="toc 6" w:uiPriority="39"/>
-<w:lsdException w:name="toc 7" w:uiPriority="39"/>
-<w:lsdException w:name="toc 8" w:uiPriority="39"/>
-<w:lsdException w:name="toc 9" w:uiPriority="39"/>
-<w:lsdException w:name="caption" w:uiPriority="35" w:qFormat="1"/>
-<w:lsdException w:name="Title" w:semiHidden="0" w:uiPriority="10" w:unhideWhenUsed="0" w:qFormat="1"/>
-<w:lsdException w:name="Default Paragraph Font" w:uiPriority="1"/>
-<w:lsdException w:name="Subtitle" w:semiHidden="0" w:uiPriority="11" w:unhideWhenUsed="0" w:qFormat="1"/>
-<w:lsdException w:name="Strong" w:semiHidden="0" w:uiPriority="22" w:unhideWhenUsed="0" w:qFormat="1"/>
-<w:lsdException w:name="Emphasis" w:semiHidden="0" w:uiPriority="20" w:unhideWhenUsed="0" w:qFormat="1"/>
-<w:lsdException w:name="Table Grid" w:semiHidden="0" w:uiPriority="59" w:unhideWhenUsed="0"/>
-<w:lsdException w:name="Placeholder Text" w:unhideWhenUsed="0"/>
-<w:lsdException w:name="No Spacing" w:semiHidden="0" w:uiPriority="1" w:unhideWhenUsed="0" w:qFormat="1"/>
-<w:lsdException w:name="Light Shading" w:semiHidden="0" w:uiPriority="60" w:unhideWhenUsed="0"/>
-<w:lsdException w:name="Light List" w:semiHidden="0" w:uiPriority="61" w:unhideWhenUsed="0"/>
-<w:lsdException w:name="Light Grid" w:semiHidden="0" w:uiPriority="62" w:unhideWhenUsed="0"/>
-<w:lsdException w:name="Medium Shading 1" w:semiHidden="0" w:uiPriority="63" w:unhideWhenUsed="0"/>
-<w:lsdException w:name="Medium Shading 2" w:semiHidden="0" w:uiPriority="64" w:unhideWhenUsed="0"/>
-<w:lsdException w:name="Medium List 1" w:semiHidden="0" w:uiPriority="65" w:unhideWhenUsed="0"/>
-<w:lsdException w:name="Medium List 2" w:semiHidden="0" w:uiPriority="66" w:unhideWhenUsed="0"/>
-<w:lsdException w:name="Medium Grid 1" w:semiHidden="0" w:uiPriority="67" w:unhideWhenUsed="0"/>
-<w:lsdException w:name="Medium Grid 2" w:semiHidden="0" w:uiPriority="68" w:unhideWhenUsed="0"/>
-<w:lsdException w:name="Medium Grid 3" w:semiHidden="0" w:uiPriority="69" w:unhideWhenUsed="0"/>
-<w:lsdException w:name="Dark List" w:semiHidden="0" w:uiPriority="70" w:unhideWhenUsed="0"/>
-<w:lsdException w:name="Colorful Shading" w:semiHidden="0" w:uiPriority="71" w:unhideWhenUsed="0"/>
-<w:lsdException w:name="Colorful List" w:semiHidden="0" w:uiPriority="72" w:unhideWhenUsed="0"/>
-<w:lsdException w:name="Colorful Grid" w:semiHidden="0" w:uiPriority="73" w:unhideWhenUsed="0"/>
-<w:lsdException w:name="Light Shading Accent 1" w:semiHidden="0" w:uiPriority="60" w:unhideWhenUsed="0"/>
-<w:lsdException w:name="Light List Accent 1" w:semiHidden="0" w:uiPriority="61" w:unhideWhenUsed="0"/>
-<w:lsdException w:name="Light Grid Accent 1" w:semiHidden="0" w:uiPriority="62" w:unhideWhenUsed="0"/>
-<w:lsdException w:name="Medium Shading 1 Accent 1" w:semiHidden="0" w:uiPriority="63" w:unhideWhenUsed="0"/>
-<w:lsdException w:name="Medium Shading 2 Accent 1" w:semiHidden="0" w:uiPriority="64" w:unhideWhenUsed="0"/>
-<w:lsdException w:name="Medium List 1 Accent 1" w:semiHidden="0" w:uiPriority="65" w:unhideWhenUsed="0"/>
-<w:lsdException w:name="Revision" w:unhideWhenUsed="0"/>
-<w:lsdException w:name="List Paragraph" w:semiHidden="0" w:uiPriority="34" w:unhideWhenUsed="0" w:qFormat="1"/>
-<w:lsdException w:name="Quote" w:semiHidden="0" w:uiPriority="29" w:unhideWhenUsed="0" w:qFormat="1"/>
-<w:lsdException w:name="Intense Quote" w:semiHidden="0" w:uiPriority="30" w:unhideWhenUsed="0" w:qFormat="1"/>
-<w:lsdException w:name="Medium List 2 Accent 1" w:semiHidden="0" w:uiPriority="66" w:unhideWhenUsed="0"/>
-<w:lsdException w:name="Medium Grid 1 Accent 1" w:semiHidden="0" w:uiPriority="67" w:unhideWhenUsed="0"/>
-<w:lsdException w:name="Medium Grid 2 Accent 1" w:semiHidden="0" w:uiPriority="68" w:unhideWhenUsed="0"/>
-<w:lsdException w:name="Medium Grid 3 Accent 1" w:semiHidden="0" w:uiPriority="69" w:unhideWhenUsed="0"/>
-<w:lsdException w:name="Dark List Accent 1" w:semiHidden="0" w:uiPriority="70" w:unhideWhenUsed="0"/>
-<w:lsdException w:name="Colorful Shading Accent 1" w:semiHidden="0" w:uiPriority="71" w:unhideWhenUsed="0"/>
-<w:lsdException w:name="Colorful List Accent 1" w:semiHidden="0" w:uiPriority="72" w:unhideWhenUsed="0"/>
-<w:lsdException w:name="Colorful Grid Accent 1" w:semiHidden="0" w:uiPriority="73" w:unhideWhenUsed="0"/>
-<w:lsdException w:name="Light Shading Accent 2" w:semiHidden="0" w:uiPriority="60" w:unhideWhenUsed="0"/>
-<w:lsdException w:name="Light List Accent 2" w:semiHidden="0" w:uiPriority="61" w:unhideWhenUsed="0"/>
-<w:lsdException w:name="Light Grid Accent 2" w:semiHidden="0" w:uiPriority="62" w:unhideWhenUsed="0"/>
-<w:lsdException w:name="Medium Shading 1 Accent 2" w:semiHidden="0" w:uiPriority="63" w:unhideWhenUsed="0"/>
-<w:lsdException w:name="Medium Shading 2 Accent 2" w:semiHidden="0" w:uiPriority="64" w:unhideWhenUsed="0"/>
-<w:lsdException w:name="Medium List 1 Accent 2" w:semiHidden="0" w:uiPriority="65" w:unhideWhenUsed="0"/>
-<w:lsdException w:name="Medium List 2 Accent 2" w:semiHidden="0" w:uiPriority="66" w:unhideWhenUsed="0"/>
-<w:lsdException w:name="Medium Grid 1 Accent 2" w:semiHidden="0" w:uiPriority="67" w:unhideWhenUsed="0"/>
-<w:lsdException w:name="Medium Grid 2 Accent 2" w:semiHidden="0" w:uiPriority="68" w:unhideWhenUsed="0"/>
-<w:lsdException w:name="Medium Grid 3 Accent 2" w:semiHidden="0" w:uiPriority="69" w:unhideWhenUsed="0"/>
-<w:lsdException w:name="Dark List Accent 2" w:semiHidden="0" w:uiPriority="70" w:unhideWhenUsed="0"/>
-<w:lsdException w:name="Colorful Shading Accent 2" w:semiHidden="0" w:uiPriority="71" w:unhideWhenUsed="0"/>
-<w:lsdException w:name="Colorful List Accent 2" w:semiHidden="0" w:uiPriority="72" w:unhideWhenUsed="0"/>
-<w:lsdException w:name="Colorful Grid Accent 2" w:semiHidden="0" w:uiPriority="73" w:unhideWhenUsed="0"/>
-<w:lsdException w:name="Light Shading Accent 3" w:semiHidden="0" w:uiPriority="60" w:unhideWhenUsed="0"/>
-<w:lsdException w:name="Light List Accent 3" w:semiHidden="0" w:uiPriority="61" w:unhideWhenUsed="0"/>
-<w:lsdException w:name="Light Grid Accent 3" w:semiHidden="0" w:uiPriority="62" w:unhideWhenUsed="0"/>
-<w:lsdException w:name="Medium Shading 1 Accent 3" w:semiHidden="0" w:uiPriority="63" w:unhideWhenUsed="0"/>
-<w:lsdException w:name="Medium Shading 2 Accent 3" w:semiHidden="0" w:uiPriority="64" w:unhideWhenUsed="0"/>
-<w:lsdException w:name="Medium List 1 Accent 3" w:semiHidden="0" w:uiPriority="65" w:unhideWhenUsed="0"/>
-<w:lsdException w:name="Medium List 2 Accent 3" w:semiHidden="0" w:uiPriority="66" w:unhideWhenUsed="0"/>
-<w:lsdException w:name="Medium Grid 1 Accent 3" w:semiHidden="0" w:uiPriority="67" w:unhideWhenUsed="0"/>
-<w:lsdException w:name="Medium Grid 2 Accent 3" w:semiHidden="0" w:uiPriority="68" w:unhideWhenUsed="0"/>
-<w:lsdException w:name="Medium Grid 3 Accent 3" w:semiHidden="0" w:uiPriority="69" w:unhideWhenUsed="0"/>
-<w:lsdException w:name="Dark List Accent 3" w:semiHidden="0" w:uiPriority="70" w:unhideWhenUsed="0"/>
-<w:lsdException w:name="Colorful Shading Accent 3" w:semiHidden="0" w:uiPriority="71" w:unhideWhenUsed="0"/>
-<w:lsdException w:name="Colorful List Accent 3" w:semiHidden="0" w:uiPriority="72" w:unhideWhenUsed="0"/>
-<w:lsdException w:name="Colorful Grid Accent 3" w:semiHidden="0" w:uiPriority="73" w:unhideWhenUsed="0"/>
-<w:lsdException w:name="Light Shading Accent 4" w:semiHidden="0" w:uiPriority="60" w:unhideWhenUsed="0"/>
-<w:lsdException w:name="Light List Accent 4" w:semiHidden="0" w:uiPriority="61" w:unhideWhenUsed="0"/>
-<w:lsdException w:name="Light Grid Accent 4" w:semiHidden="0" w:uiPriority="62" w:unhideWhenUsed="0"/>
-<w:lsdException w:name="Medium Shading 1 Accent 4" w:semiHidden="0" w:uiPriority="63" w:unhideWhenUsed="0"/>
-<w:lsdException w:name="Medium Shading 2 Accent 4" w:semiHidden="0" w:uiPriority="64" w:unhideWhenUsed="0"/>
-<w:lsdException w:name="Medium List 1 Accent 4" w:semiHidden="0" w:uiPriority="65" w:unhideWhenUsed="0"/>
-<w:lsdException w:name="Medium List 2 Accent 4" w:semiHidden="0" w:uiPriority="66" w:unhideWhenUsed="0"/>
-<w:lsdException w:name="Medium Grid 1 Accent 4" w:semiHidden="0" w:uiPriority="67" w:unhideWhenUsed="0"/>
-<w:lsdException w:name="Medium Grid 2 Accent 4" w:semiHidden="0" w:uiPriority="68" w:unhideWhenUsed="0"/>
-<w:lsdException w:name="Medium Grid 3 Accent 4" w:semiHidden="0" w:uiPriority="69" w:unhideWhenUsed="0"/>
-<w:lsdException w:name="Dark List Accent 4" w:semiHidden="0" w:uiPriority="70" w:unhideWhenUsed="0"/>
-<w:lsdException w:name="Colorful Shading Accent 4" w:semiHidden="0" w:uiPriority="71" w:unhideWhenUsed="0"/>
-<w:lsdException w:name="Colorful List Accent 4" w:semiHidden="0" w:uiPriority="72" w:unhideWhenUsed="0"/>
-<w:lsdException w:name="Colorful Grid Accent 4" w:semiHidden="0" w:uiPriority="73" w:unhideWhenUsed="0"/>
-<w:lsdException w:name="Light Shading Accent 5" w:semiHidden="0" w:uiPriority="60" w:unhideWhenUsed="0"/>
-<w:lsdException w:name="Light List Accent 5" w:semiHidden="0" w:uiPriority="61" w:unhideWhenUsed="0"/>
-<w:lsdException w:name="Light Grid Accent 5" w:semiHidden="0" w:uiPriority="62" w:unhideWhenUsed="0"/>
-<w:lsdException w:name="Medium Shading 1 Accent 5" w:semiHidden="0" w:uiPriority="63" w:unhideWhenUsed="0"/>
-<w:lsdException w:name="Medium Shading 2 Accent 5" w:semiHidden="0" w:uiPriority="64" w:unhideWhenUsed="0"/>
-<w:lsdException w:name="Medium List 1 Accent 5" w:semiHidden="0" w:uiPriority="65" w:unhideWhenUsed="0"/>
-<w:lsdException w:name="Medium List 2 Accent 5" w:semiHidden="0" w:uiPriority="66" w:unhideWhenUsed="0"/>
-<w:lsdException w:name="Medium Grid 1 Accent 5" w:semiHidden="0" w:uiPriority="67" w:unhideWhenUsed="0"/>
-<w:lsdException w:name="Medium Grid 2 Accent 5" w:semiHidden="0" w:uiPriority="68" w:unhideWhenUsed="0"/>
-<w:lsdException w:name="Medium Grid 3 Accent 5" w:semiHidden="0" w:uiPriority="69" w:unhideWhenUsed="0"/>
-<w:lsdException w:name="Dark List Accent 5" w:semiHidden="0" w:uiPriority="70" w:unhideWhenUsed="0"/>
-<w:lsdException w:name="Colorful Shading Accent 5" w:semiHidden="0" w:uiPriority="71" w:unhideWhenUsed="0"/>
-<w:lsdException w:name="Colorful List Accent 5" w:semiHidden="0" w:uiPriority="72" w:unhideWhenUsed="0"/>
-<w:lsdException w:name="Colorful Grid Accent 5" w:semiHidden="0" w:uiPriority="73" w:unhideWhenUsed="0"/>
-<w:lsdException w:name="Light Shading Accent 6" w:semiHidden="0" w:uiPriority="60" w:unhideWhenUsed="0"/>
-<w:lsdException w:name="Light List Accent 6" w:semiHidden="0" w:uiPriority="61" w:unhideWhenUsed="0"/>
-<w:lsdException w:name="Light Grid Accent 6" w:semiHidden="0" w:uiPriority="62" w:unhideWhenUsed="0"/>
-<w:lsdException w:name="Medium Shading 1 Accent 6" w:semiHidden="0" w:uiPriority="63" w:unhideWhenUsed="0"/>
-<w:lsdException w:name="Medium Shading 2 Accent 6" w:semiHidden="0" w:uiPriority="64" w:unhideWhenUsed="0"/>
-<w:lsdException w:name="Medium List 1 Accent 6" w:semiHidden="0" w:uiPriority="65" w:unhideWhenUsed="0"/>
-<w:lsdException w:name="Medium List 2 Accent 6" w:semiHidden="0" w:uiPriority="66" w:unhideWhenUsed="0"/>
-<w:lsdException w:name="Medium Grid 1 Accent 6" w:semiHidden="0" w:uiPriority="67" w:unhideWhenUsed="0"/>
-<w:lsdException w:name="Medium Grid 2 Accent 6" w:semiHidden="0" w:uiPriority="68" w:unhideWhenUsed="0"/>
-<w:lsdException w:name="Medium Grid 3 Accent 6" w:semiHidden="0" w:uiPriority="69" w:unhideWhenUsed="0"/>
-<w:lsdException w:name="Dark List Accent 6" w:semiHidden="0" w:uiPriority="70" w:unhideWhenUsed="0"/>
-<w:lsdException w:name="Colorful Shading Accent 6" w:semiHidden="0" w:uiPriority="71" w:unhideWhenUsed="0"/>
-<w:lsdException w:name="Colorful List Accent 6" w:semiHidden="0" w:uiPriority="72" w:unhideWhenUsed="0"/>
-<w:lsdException w:name="Colorful Grid Accent 6" w:semiHidden="0" w:uiPriority="73" w:unhideWhenUsed="0"/>
-<w:lsdException w:name="Subtle Emphasis" w:semiHidden="0" w:uiPriority="19" w:unhideWhenUsed="0" w:qFormat="1"/>
-<w:lsdException w:name="Intense Emphasis" w:semiHidden="0" w:uiPriority="21" w:unhideWhenUsed="0" w:qFormat="1"/>
-<w:lsdException w:name="Subtle Reference" w:semiHidden="0" w:uiPriority="31" w:unhideWhenUsed="0" w:qFormat="1"/>
-<w:lsdException w:name="Intense Reference" w:semiHidden="0" w:uiPriority="32" w:unhideWhenUsed="0" w:qFormat="1"/>
-<w:lsdException w:name="Book Title" w:semiHidden="0" w:uiPriority="33" w:unhideWhenUsed="0" w:qFormat="1"/>
-<w:lsdException w:name="Bibliography" w:uiPriority="37"/>
-<w:lsdException w:name="TOC Heading" w:uiPriority="39" w:qFormat="1"/>
-</w:latentStyles>
-<w:style w:type="paragraph" w:default="1" w:styleId="Normal">
-<w:name w:val="Normal"/>
-<w:qFormat/>
-</w:style>
-<w:style w:type="character" w:default="1" w:styleId="DefaultParagraphFont">
-<w:name w:val="Default Paragraph Font"/>
-<w:uiPriority w:val="1"/>
-<w:unhideWhenUsed/>
-</w:style>
-<w:style w:type="table" w:default="1" w:styleId="TableNormal">
-<w:name w:val="Normal Table"/>
-<w:uiPriority w:val="99"/>
-<w:semiHidden/>
-<w:unhideWhenUsed/>
-<w:tblPr>
-<w:tblInd w:w="0" w:type="dxa"/>
-<w:tblCellMar>
-<w:top w:w="0" w:type="dxa"/>
-<w:left w:w="108" w:type="dxa"/>
-<w:bottom w:w="0" w:type="dxa"/>
-<w:right w:w="108" w:type="dxa"/>
-</w:tblCellMar>
-</w:tblPr>
-</w:style>
-<w:style w:type="numbering" w:default="1" w:styleId="NoList">
-<w:name w:val="No List"/>
-<w:uiPriority w:val="99"/>
-<w:semiHidden/>
-<w:unhideWhenUsed/>
-</w:style>
-<w:style w:type="paragraph" w:styleId="Header">
-<w:name w:val="header"/>
-<w:basedOn w:val="Normal"/>
-<w:link w:val="HeaderChar"/>
-<w:uiPriority w:val="99"/>
-<w:unhideWhenUsed/>
-<w:rsid w:val="00F53FC1"/>
-<w:pPr>
-<w:tabs>
-<w:tab w:val="center" w:pos="4680"/>
-<w:tab w:val="right" w:pos="9360"/>
-</w:tabs>
-<w:spacing w:after="0" w:line="240" w:lineRule="auto"/>
-</w:pPr>
-</w:style>
-<w:style w:type="character" w:customStyle="1" w:styleId="HeaderChar">
-<w:name w:val="Header Char"/>
-<w:basedOn w:val="DefaultParagraphFont"/>
-<w:link w:val="Header"/>
-<w:uiPriority w:val="99"/>
-<w:rsid w:val="00F53FC1"/>
-</w:style>
-<w:style w:type="paragraph" w:styleId="Footer">
-<w:name w:val="footer"/>
-<w:basedOn w:val="Normal"/>
-<w:link w:val="FooterChar"/>
-<w:uiPriority w:val="99"/>
-<w:unhideWhenUsed/>
-<w:rsid w:val="00F53FC1"/>
-<w:pPr>
-<w:tabs>
-<w:tab w:val="center" w:pos="4680"/>
-<w:tab w:val="right" w:pos="9360"/>
-</w:tabs>
-<w:spacing w:after="0" w:line="240" w:lineRule="auto"/>
-</w:pPr>
-</w:style>
-<w:style w:type="character" w:customStyle="1" w:styleId="FooterChar">
-<w:name w:val="Footer Char"/>
-<w:basedOn w:val="DefaultParagraphFont"/>
-<w:link w:val="Footer"/>
-<w:uiPriority w:val="99"/>
-<w:rsid w:val="00F53FC1"/>
-</w:style>
-<w:style w:type="paragraph" w:styleId="BalloonText">
-<w:name w:val="Balloon Text"/>
-<w:basedOn w:val="Normal"/>
-<w:link w:val="BalloonTextChar"/>
-<w:uiPriority w:val="99"/>
-<w:semiHidden/>
-<w:unhideWhenUsed/>
-<w:rsid w:val="00F53FC1"/>
-<w:pPr>
-<w:spacing w:after="0" w:line="240" w:lineRule="auto"/>
-</w:pPr>
-<w:rPr>
-<w:rFonts w:ascii="Tahoma" w:hAnsi="Tahoma" w:cs="Tahoma"/>
-<w:sz w:val="16"/>
-<w:szCs w:val="16"/>
-</w:rPr>
-</w:style>
-<w:style w:type="character" w:customStyle="1" w:styleId="BalloonTextChar">
-<w:name w:val="Balloon Text Char"/>
-<w:basedOn w:val="DefaultParagraphFont"/>
-<w:link w:val="BalloonText"/>
-<w:uiPriority w:val="99"/>
-<w:semiHidden/>
-<w:rsid w:val="00F53FC1"/>
-<w:rPr>
-<w:rFonts w:ascii="Tahoma" w:hAnsi="Tahoma" w:cs="Tahoma"/>
-<w:sz w:val="16"/>
-<w:szCs w:val="16"/>
-</w:rPr>
-</w:style>
-</w:styles>
 </pkg:xmlData>
 </pkg:part>
 <pkg:part pkg:name="/word/styles.xml" pkg:contentType="application/vnd.openxmlformats-officedocument.wordprocessingml.styles+xml">
@@ -6037,6 +6295,7 @@
 <w:style w:type="character" w:default="1" w:styleId="DefaultParagraphFont">
 <w:name w:val="Default Paragraph Font"/>
 <w:uiPriority w:val="1"/>
+<w:semiHidden/>
 <w:unhideWhenUsed/>
 </w:style>
 <w:style w:type="table" w:default="1" w:styleId="TableNormal">
@@ -6134,7 +6393,308 @@
 <w:szCs w:val="16"/>
 </w:rPr>
 </w:style>
+<w:style w:type="paragraph" w:styleId="ListParagraph">
+<w:name w:val="List Paragraph"/>
+<w:basedOn w:val="Normal"/>
+<w:uiPriority w:val="34"/>
+<w:qFormat/>
+<w:rsid w:val="00501E81"/>
+<w:pPr>
+<w:ind w:left="720"/>
+<w:contextualSpacing/>
+</w:pPr>
+</w:style>
 </w:styles>
+</pkg:xmlData>
+</pkg:part>
+<pkg:part pkg:name="/word/numbering.xml" pkg:contentType="application/vnd.openxmlformats-officedocument.wordprocessingml.numbering+xml">
+<pkg:xmlData>
+<w:numbering mc:Ignorable="w14 wp14" xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" xmlns:m="http://schemas.openxmlformats.org/officeDocument/2006/math" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:wp14="http://schemas.microsoft.com/office/word/2010/wordprocessingDrawing" xmlns:wp="http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing" xmlns:w10="urn:schemas-microsoft-com:office:word" xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main" xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml" xmlns:wpg="http://schemas.microsoft.com/office/word/2010/wordprocessingGroup" xmlns:wpi="http://schemas.microsoft.com/office/word/2010/wordprocessingInk" xmlns:wne="http://schemas.microsoft.com/office/word/2006/wordml" xmlns:wps="http://schemas.microsoft.com/office/word/2010/wordprocessingShape">
+<w:abstractNum w:abstractNumId="0">
+<w:nsid w:val="49F575AA"/>
+<w:multiLevelType w:val="hybridMultilevel"/>
+<w:tmpl w:val="869CA9C4"/>
+<w:lvl w:ilvl="0" w:tplc="B5680502">
+<w:numFmt w:val="bullet"/>
+<w:lvlText w:val="-"/>
+<w:lvlJc w:val="left"/>
+<w:pPr>
+<w:ind w:left="720" w:hanging="360"/>
+</w:pPr>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorHAnsi" w:hAnsi="Times New Roman" w:cs="Times New Roman" w:hint="default"/>
+</w:rPr>
+</w:lvl>
+<w:lvl w:ilvl="1" w:tplc="04090003" w:tentative="1">
+<w:start w:val="1"/>
+<w:numFmt w:val="bullet"/>
+<w:lvlText w:val="o"/>
+<w:lvlJc w:val="left"/>
+<w:pPr>
+<w:ind w:left="1440" w:hanging="360"/>
+</w:pPr>
+<w:rPr>
+<w:rFonts w:ascii="Courier New" w:hAnsi="Courier New" w:cs="Courier New" w:hint="default"/>
+</w:rPr>
+</w:lvl>
+<w:lvl w:ilvl="2" w:tplc="04090005" w:tentative="1">
+<w:start w:val="1"/>
+<w:numFmt w:val="bullet"/>
+<w:lvlText w:val=""/>
+<w:lvlJc w:val="left"/>
+<w:pPr>
+<w:ind w:left="2160" w:hanging="360"/>
+</w:pPr>
+<w:rPr>
+<w:rFonts w:ascii="Wingdings" w:hAnsi="Wingdings" w:hint="default"/>
+</w:rPr>
+</w:lvl>
+<w:lvl w:ilvl="3" w:tplc="04090001" w:tentative="1">
+<w:start w:val="1"/>
+<w:numFmt w:val="bullet"/>
+<w:lvlText w:val=""/>
+<w:lvlJc w:val="left"/>
+<w:pPr>
+<w:ind w:left="2880" w:hanging="360"/>
+</w:pPr>
+<w:rPr>
+<w:rFonts w:ascii="Symbol" w:hAnsi="Symbol" w:hint="default"/>
+</w:rPr>
+</w:lvl>
+<w:lvl w:ilvl="4" w:tplc="04090003" w:tentative="1">
+<w:start w:val="1"/>
+<w:numFmt w:val="bullet"/>
+<w:lvlText w:val="o"/>
+<w:lvlJc w:val="left"/>
+<w:pPr>
+<w:ind w:left="3600" w:hanging="360"/>
+</w:pPr>
+<w:rPr>
+<w:rFonts w:ascii="Courier New" w:hAnsi="Courier New" w:cs="Courier New" w:hint="default"/>
+</w:rPr>
+</w:lvl>
+<w:lvl w:ilvl="5" w:tplc="04090005" w:tentative="1">
+<w:start w:val="1"/>
+<w:numFmt w:val="bullet"/>
+<w:lvlText w:val=""/>
+<w:lvlJc w:val="left"/>
+<w:pPr>
+<w:ind w:left="4320" w:hanging="360"/>
+</w:pPr>
+<w:rPr>
+<w:rFonts w:ascii="Wingdings" w:hAnsi="Wingdings" w:hint="default"/>
+</w:rPr>
+</w:lvl>
+<w:lvl w:ilvl="6" w:tplc="04090001" w:tentative="1">
+<w:start w:val="1"/>
+<w:numFmt w:val="bullet"/>
+<w:lvlText w:val=""/>
+<w:lvlJc w:val="left"/>
+<w:pPr>
+<w:ind w:left="5040" w:hanging="360"/>
+</w:pPr>
+<w:rPr>
+<w:rFonts w:ascii="Symbol" w:hAnsi="Symbol" w:hint="default"/>
+</w:rPr>
+</w:lvl>
+<w:lvl w:ilvl="7" w:tplc="04090003" w:tentative="1">
+<w:start w:val="1"/>
+<w:numFmt w:val="bullet"/>
+<w:lvlText w:val="o"/>
+<w:lvlJc w:val="left"/>
+<w:pPr>
+<w:ind w:left="5760" w:hanging="360"/>
+</w:pPr>
+<w:rPr>
+<w:rFonts w:ascii="Courier New" w:hAnsi="Courier New" w:cs="Courier New" w:hint="default"/>
+</w:rPr>
+</w:lvl>
+<w:lvl w:ilvl="8" w:tplc="04090005" w:tentative="1">
+<w:start w:val="1"/>
+<w:numFmt w:val="bullet"/>
+<w:lvlText w:val=""/>
+<w:lvlJc w:val="left"/>
+<w:pPr>
+<w:ind w:left="6480" w:hanging="360"/>
+</w:pPr>
+<w:rPr>
+<w:rFonts w:ascii="Wingdings" w:hAnsi="Wingdings" w:hint="default"/>
+</w:rPr>
+</w:lvl>
+</w:abstractNum>
+<w:abstractNum w:abstractNumId="1">
+<w:nsid w:val="677A7D2A"/>
+<w:multiLevelType w:val="hybridMultilevel"/>
+<w:tmpl w:val="C880518A"/>
+<w:lvl w:ilvl="0" w:tplc="BC48B630">
+<w:numFmt w:val="bullet"/>
+<w:lvlText w:val=""/>
+<w:lvlJc w:val="left"/>
+<w:pPr>
+<w:ind w:left="720" w:hanging="360"/>
+</w:pPr>
+<w:rPr>
+<w:rFonts w:ascii="Wingdings" w:eastAsiaTheme="minorHAnsi" w:hAnsi="Wingdings" w:cs="Times New Roman" w:hint="default"/>
+</w:rPr>
+</w:lvl>
+<w:lvl w:ilvl="1" w:tplc="04090003" w:tentative="1">
+<w:start w:val="1"/>
+<w:numFmt w:val="bullet"/>
+<w:lvlText w:val="o"/>
+<w:lvlJc w:val="left"/>
+<w:pPr>
+<w:ind w:left="1440" w:hanging="360"/>
+</w:pPr>
+<w:rPr>
+<w:rFonts w:ascii="Courier New" w:hAnsi="Courier New" w:cs="Courier New" w:hint="default"/>
+</w:rPr>
+</w:lvl>
+<w:lvl w:ilvl="2" w:tplc="04090005" w:tentative="1">
+<w:start w:val="1"/>
+<w:numFmt w:val="bullet"/>
+<w:lvlText w:val=""/>
+<w:lvlJc w:val="left"/>
+<w:pPr>
+<w:ind w:left="2160" w:hanging="360"/>
+</w:pPr>
+<w:rPr>
+<w:rFonts w:ascii="Wingdings" w:hAnsi="Wingdings" w:hint="default"/>
+</w:rPr>
+</w:lvl>
+<w:lvl w:ilvl="3" w:tplc="04090001" w:tentative="1">
+<w:start w:val="1"/>
+<w:numFmt w:val="bullet"/>
+<w:lvlText w:val=""/>
+<w:lvlJc w:val="left"/>
+<w:pPr>
+<w:ind w:left="2880" w:hanging="360"/>
+</w:pPr>
+<w:rPr>
+<w:rFonts w:ascii="Symbol" w:hAnsi="Symbol" w:hint="default"/>
+</w:rPr>
+</w:lvl>
+<w:lvl w:ilvl="4" w:tplc="04090003" w:tentative="1">
+<w:start w:val="1"/>
+<w:numFmt w:val="bullet"/>
+<w:lvlText w:val="o"/>
+<w:lvlJc w:val="left"/>
+<w:pPr>
+<w:ind w:left="3600" w:hanging="360"/>
+</w:pPr>
+<w:rPr>
+<w:rFonts w:ascii="Courier New" w:hAnsi="Courier New" w:cs="Courier New" w:hint="default"/>
+</w:rPr>
+</w:lvl>
+<w:lvl w:ilvl="5" w:tplc="04090005" w:tentative="1">
+<w:start w:val="1"/>
+<w:numFmt w:val="bullet"/>
+<w:lvlText w:val=""/>
+<w:lvlJc w:val="left"/>
+<w:pPr>
+<w:ind w:left="4320" w:hanging="360"/>
+</w:pPr>
+<w:rPr>
+<w:rFonts w:ascii="Wingdings" w:hAnsi="Wingdings" w:hint="default"/>
+</w:rPr>
+</w:lvl>
+<w:lvl w:ilvl="6" w:tplc="04090001" w:tentative="1">
+<w:start w:val="1"/>
+<w:numFmt w:val="bullet"/>
+<w:lvlText w:val=""/>
+<w:lvlJc w:val="left"/>
+<w:pPr>
+<w:ind w:left="5040" w:hanging="360"/>
+</w:pPr>
+<w:rPr>
+<w:rFonts w:ascii="Symbol" w:hAnsi="Symbol" w:hint="default"/>
+</w:rPr>
+</w:lvl>
+<w:lvl w:ilvl="7" w:tplc="04090003" w:tentative="1">
+<w:start w:val="1"/>
+<w:numFmt w:val="bullet"/>
+<w:lvlText w:val="o"/>
+<w:lvlJc w:val="left"/>
+<w:pPr>
+<w:ind w:left="5760" w:hanging="360"/>
+</w:pPr>
+<w:rPr>
+<w:rFonts w:ascii="Courier New" w:hAnsi="Courier New" w:cs="Courier New" w:hint="default"/>
+</w:rPr>
+</w:lvl>
+<w:lvl w:ilvl="8" w:tplc="04090005" w:tentative="1">
+<w:start w:val="1"/>
+<w:numFmt w:val="bullet"/>
+<w:lvlText w:val=""/>
+<w:lvlJc w:val="left"/>
+<w:pPr>
+<w:ind w:left="6480" w:hanging="360"/>
+</w:pPr>
+<w:rPr>
+<w:rFonts w:ascii="Wingdings" w:hAnsi="Wingdings" w:hint="default"/>
+</w:rPr>
+</w:lvl>
+</w:abstractNum>
+<w:num w:numId="1">
+<w:abstractNumId w:val="1"/>
+</w:num>
+<w:num w:numId="2">
+<w:abstractNumId w:val="0"/>
+</w:num>
+</w:numbering>
+</pkg:xmlData>
+</pkg:part>
+<pkg:part pkg:name="/docProps/app.xml" pkg:contentType="application/vnd.openxmlformats-officedocument.extended-properties+xml" pkg:padding="256">
+<pkg:xmlData>
+<Properties xmlns="http://schemas.openxmlformats.org/officeDocument/2006/extended-properties" xmlns:vt="http://schemas.openxmlformats.org/officeDocument/2006/docPropsVTypes">
+<Template>
+Normal.dotm</Template>
+<TotalTime>
+132</TotalTime>
+<Pages>
+25</Pages>
+<Words>
+1962</Words>
+<Characters>
+11186</Characters>
+<Application>
+Microsoft Office Word</Application>
+<DocSecurity>
+0</DocSecurity>
+<Lines>
+93</Lines>
+<Paragraphs>
+26</Paragraphs>
+<ScaleCrop>
+false</ScaleCrop>
+<HeadingPairs>
+<vt:vector size="2" baseType="variant">
+<vt:variant>
+<vt:lpstr>
+Title</vt:lpstr>
+</vt:variant>
+<vt:variant>
+<vt:i4>
+1</vt:i4>
+</vt:variant>
+</vt:vector>
+</HeadingPairs>
+<TitlesOfParts>
+<vt:vector size="1" baseType="lpstr">
+<vt:lpstr/>
+</vt:vector>
+</TitlesOfParts>
+<Company/>
+<LinksUpToDate>
+false</LinksUpToDate>
+<CharactersWithSpaces>
+13122</CharactersWithSpaces>
+<SharedDoc>
+false</SharedDoc>
+<HyperlinksChanged>
+false</HyperlinksChanged>
+<AppVersion>
+14.0000</AppVersion>
+</Properties>
 </pkg:xmlData>
 </pkg:part>
 <pkg:part pkg:name="/customXml/_rels/item1.xml.rels" pkg:contentType="application/vnd.openxmlformats-package.relationships+xml" pkg:padding="256">
@@ -6146,7 +6706,7 @@
 </pkg:part>
 <pkg:part pkg:name="/customXml/itemProps1.xml" pkg:contentType="application/vnd.openxmlformats-officedocument.customXmlProperties+xml" pkg:padding="32">
 <pkg:xmlData pkg:originalXmlStandalone="no">
-<ds:datastoreItem ds:itemID="{B22FAA72-8C2E-4629-9A09-B37138EDDC5B}" xmlns:ds="http://schemas.openxmlformats.org/officeDocument/2006/customXml">
+<ds:datastoreItem ds:itemID="{D6FEFCCD-78B5-4C0A-89D5-B4FEC6C7B841}" xmlns:ds="http://schemas.openxmlformats.org/officeDocument/2006/customXml">
 <ds:schemaRefs>
 <ds:schemaRef ds:uri="http://schemas.openxmlformats.org/officeDocument/2006/bibliography"/>
 </ds:schemaRefs>
@@ -6158,29 +6718,16 @@
 <b:Sources SelectedStyle="\APA.XSL" StyleName="APA" xmlns:b="http://schemas.openxmlformats.org/officeDocument/2006/bibliography" xmlns="http://schemas.openxmlformats.org/officeDocument/2006/bibliography"/>
 </pkg:xmlData>
 </pkg:part>
-<pkg:part pkg:name="/docProps/core.xml" pkg:contentType="application/vnd.openxmlformats-package.core-properties+xml" pkg:padding="256">
-<pkg:xmlData>
-<cp:coreProperties xmlns:cp="http://schemas.openxmlformats.org/package/2006/metadata/core-properties" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:dcmitype="http://purl.org/dc/dcmitype/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-<dc:title/>
-<dc:subject/>
-<dc:creator>
-Someone</dc:creator>
-<cp:keywords/>
-<dc:description/>
-<cp:lastModifiedBy>
-Someone</cp:lastModifiedBy>
-<cp:revision>
-3</cp:revision>
-<dcterms:created xsi:type="dcterms:W3CDTF">
-2012-08-19T03:41:00Z</dcterms:created>
-<dcterms:modified xsi:type="dcterms:W3CDTF">
-2012-08-18T21:02:00Z</dcterms:modified>
-</cp:coreProperties>
-</pkg:xmlData>
-</pkg:part>
 <pkg:part pkg:name="/word/fontTable.xml" pkg:contentType="application/vnd.openxmlformats-officedocument.wordprocessingml.fontTable+xml">
 <pkg:xmlData>
 <w:fonts mc:Ignorable="w14" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main" xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml">
+<w:font w:name="Times New Roman">
+<w:panose1 w:val="02020603050405020304"/>
+<w:charset w:val="00"/>
+<w:family w:val="roman"/>
+<w:pitch w:val="variable"/>
+<w:sig w:usb0="20002A87" w:usb1="80000000" w:usb2="00000008" w:usb3="00000000" w:csb0="000001FF" w:csb1="00000000"/>
+</w:font>
 <w:font w:name="Calibri">
 <w:panose1 w:val="020F0502020204030204"/>
 <w:charset w:val="00"/>
@@ -6188,12 +6735,26 @@ Someone</cp:lastModifiedBy>
 <w:pitch w:val="variable"/>
 <w:sig w:usb0="E10002FF" w:usb1="4000ACFF" w:usb2="00000009" w:usb3="00000000" w:csb0="0000019F" w:csb1="00000000"/>
 </w:font>
-<w:font w:name="Times New Roman">
-<w:panose1 w:val="02020603050405020304"/>
+<w:font w:name="Courier New">
+<w:panose1 w:val="02070309020205020404"/>
 <w:charset w:val="00"/>
+<w:family w:val="modern"/>
+<w:pitch w:val="fixed"/>
+<w:sig w:usb0="20002A87" w:usb1="80000000" w:usb2="00000008" w:usb3="00000000" w:csb0="000001FF" w:csb1="00000000"/>
+</w:font>
+<w:font w:name="Wingdings">
+<w:panose1 w:val="05000000000000000000"/>
+<w:charset w:val="02"/>
+<w:family w:val="auto"/>
+<w:pitch w:val="variable"/>
+<w:sig w:usb0="00000000" w:usb1="10000000" w:usb2="00000000" w:usb3="00000000" w:csb0="80000000" w:csb1="00000000"/>
+</w:font>
+<w:font w:name="Symbol">
+<w:panose1 w:val="05050102010706020507"/>
+<w:charset w:val="02"/>
 <w:family w:val="roman"/>
 <w:pitch w:val="variable"/>
-<w:sig w:usb0="20002A87" w:usb1="80000000" w:usb2="00000008" w:usb3="00000000" w:csb0="000001FF" w:csb1="00000000"/>
+<w:sig w:usb0="00000000" w:usb1="10000000" w:usb2="00000000" w:usb3="00000000" w:csb0="80000000" w:csb1="00000000"/>
 </w:font>
 <w:font w:name="Tahoma">
 <w:panose1 w:val="020B0604030504040204"/>
@@ -6227,58 +6788,300 @@ Someone</cp:lastModifiedBy>
 </w:webSettings>
 </pkg:xmlData>
 </pkg:part>
-<pkg:part pkg:name="/docProps/app.xml" pkg:contentType="application/vnd.openxmlformats-officedocument.extended-properties+xml" pkg:padding="256">
+<pkg:part pkg:name="/word/stylesWithEffects.xml" pkg:contentType="application/vnd.ms-word.stylesWithEffects+xml">
 <pkg:xmlData>
-<Properties xmlns="http://schemas.openxmlformats.org/officeDocument/2006/extended-properties" xmlns:vt="http://schemas.openxmlformats.org/officeDocument/2006/docPropsVTypes">
-<Template>
-Normal.dotm</Template>
-<TotalTime>
-4</TotalTime>
-<Pages>
-21</Pages>
-<Words>
-1385</Words>
-<Characters>
-7895</Characters>
-<Application>
-Microsoft Office Word</Application>
-<DocSecurity>
-0</DocSecurity>
-<Lines>
-65</Lines>
-<Paragraphs>
-18</Paragraphs>
-<ScaleCrop>
-false</ScaleCrop>
-<HeadingPairs>
-<vt:vector size="2" baseType="variant">
-<vt:variant>
-<vt:lpstr>
-Title</vt:lpstr>
-</vt:variant>
-<vt:variant>
-<vt:i4>
-1</vt:i4>
-</vt:variant>
-</vt:vector>
-</HeadingPairs>
-<TitlesOfParts>
-<vt:vector size="1" baseType="lpstr">
-<vt:lpstr/>
-</vt:vector>
-</TitlesOfParts>
-<Company/>
-<LinksUpToDate>
-false</LinksUpToDate>
-<CharactersWithSpaces>
-9262</CharactersWithSpaces>
-<SharedDoc>
-false</SharedDoc>
-<HyperlinksChanged>
-false</HyperlinksChanged>
-<AppVersion>
-14.0000</AppVersion>
-</Properties>
+<w:styles mc:Ignorable="w14 wp14" xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" xmlns:m="http://schemas.openxmlformats.org/officeDocument/2006/math" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:wp14="http://schemas.microsoft.com/office/word/2010/wordprocessingDrawing" xmlns:wp="http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing" xmlns:w10="urn:schemas-microsoft-com:office:word" xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main" xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml" xmlns:wpg="http://schemas.microsoft.com/office/word/2010/wordprocessingGroup" xmlns:wpi="http://schemas.microsoft.com/office/word/2010/wordprocessingInk" xmlns:wne="http://schemas.microsoft.com/office/word/2006/wordml" xmlns:wps="http://schemas.microsoft.com/office/word/2010/wordprocessingShape">
+<w:docDefaults>
+<w:rPrDefault>
+<w:rPr>
+<w:rFonts w:asciiTheme="minorHAnsi" w:eastAsiaTheme="minorHAnsi" w:hAnsiTheme="minorHAnsi" w:cstheme="minorBidi"/>
+<w:sz w:val="22"/>
+<w:szCs w:val="22"/>
+<w:lang w:val="en-US" w:eastAsia="en-US" w:bidi="ar-SA"/>
+</w:rPr>
+</w:rPrDefault>
+<w:pPrDefault>
+<w:pPr>
+<w:spacing w:after="200" w:line="276" w:lineRule="auto"/>
+</w:pPr>
+</w:pPrDefault>
+</w:docDefaults>
+<w:latentStyles w:defLockedState="0" w:defUIPriority="99" w:defSemiHidden="1" w:defUnhideWhenUsed="1" w:defQFormat="0" w:count="267">
+<w:lsdException w:name="Normal" w:semiHidden="0" w:uiPriority="0" w:unhideWhenUsed="0" w:qFormat="1"/>
+<w:lsdException w:name="heading 1" w:semiHidden="0" w:uiPriority="9" w:unhideWhenUsed="0" w:qFormat="1"/>
+<w:lsdException w:name="heading 2" w:uiPriority="9" w:qFormat="1"/>
+<w:lsdException w:name="heading 3" w:uiPriority="9" w:qFormat="1"/>
+<w:lsdException w:name="heading 4" w:uiPriority="9" w:qFormat="1"/>
+<w:lsdException w:name="heading 5" w:uiPriority="9" w:qFormat="1"/>
+<w:lsdException w:name="heading 6" w:uiPriority="9" w:qFormat="1"/>
+<w:lsdException w:name="heading 7" w:uiPriority="9" w:qFormat="1"/>
+<w:lsdException w:name="heading 8" w:uiPriority="9" w:qFormat="1"/>
+<w:lsdException w:name="heading 9" w:uiPriority="9" w:qFormat="1"/>
+<w:lsdException w:name="toc 1" w:uiPriority="39"/>
+<w:lsdException w:name="toc 2" w:uiPriority="39"/>
+<w:lsdException w:name="toc 3" w:uiPriority="39"/>
+<w:lsdException w:name="toc 4" w:uiPriority="39"/>
+<w:lsdException w:name="toc 5" w:uiPriority="39"/>
+<w:lsdException w:name="toc 6" w:uiPriority="39"/>
+<w:lsdException w:name="toc 7" w:uiPriority="39"/>
+<w:lsdException w:name="toc 8" w:uiPriority="39"/>
+<w:lsdException w:name="toc 9" w:uiPriority="39"/>
+<w:lsdException w:name="caption" w:uiPriority="35" w:qFormat="1"/>
+<w:lsdException w:name="Title" w:semiHidden="0" w:uiPriority="10" w:unhideWhenUsed="0" w:qFormat="1"/>
+<w:lsdException w:name="Default Paragraph Font" w:uiPriority="1"/>
+<w:lsdException w:name="Subtitle" w:semiHidden="0" w:uiPriority="11" w:unhideWhenUsed="0" w:qFormat="1"/>
+<w:lsdException w:name="Strong" w:semiHidden="0" w:uiPriority="22" w:unhideWhenUsed="0" w:qFormat="1"/>
+<w:lsdException w:name="Emphasis" w:semiHidden="0" w:uiPriority="20" w:unhideWhenUsed="0" w:qFormat="1"/>
+<w:lsdException w:name="Table Grid" w:semiHidden="0" w:uiPriority="59" w:unhideWhenUsed="0"/>
+<w:lsdException w:name="Placeholder Text" w:unhideWhenUsed="0"/>
+<w:lsdException w:name="No Spacing" w:semiHidden="0" w:uiPriority="1" w:unhideWhenUsed="0" w:qFormat="1"/>
+<w:lsdException w:name="Light Shading" w:semiHidden="0" w:uiPriority="60" w:unhideWhenUsed="0"/>
+<w:lsdException w:name="Light List" w:semiHidden="0" w:uiPriority="61" w:unhideWhenUsed="0"/>
+<w:lsdException w:name="Light Grid" w:semiHidden="0" w:uiPriority="62" w:unhideWhenUsed="0"/>
+<w:lsdException w:name="Medium Shading 1" w:semiHidden="0" w:uiPriority="63" w:unhideWhenUsed="0"/>
+<w:lsdException w:name="Medium Shading 2" w:semiHidden="0" w:uiPriority="64" w:unhideWhenUsed="0"/>
+<w:lsdException w:name="Medium List 1" w:semiHidden="0" w:uiPriority="65" w:unhideWhenUsed="0"/>
+<w:lsdException w:name="Medium List 2" w:semiHidden="0" w:uiPriority="66" w:unhideWhenUsed="0"/>
+<w:lsdException w:name="Medium Grid 1" w:semiHidden="0" w:uiPriority="67" w:unhideWhenUsed="0"/>
+<w:lsdException w:name="Medium Grid 2" w:semiHidden="0" w:uiPriority="68" w:unhideWhenUsed="0"/>
+<w:lsdException w:name="Medium Grid 3" w:semiHidden="0" w:uiPriority="69" w:unhideWhenUsed="0"/>
+<w:lsdException w:name="Dark List" w:semiHidden="0" w:uiPriority="70" w:unhideWhenUsed="0"/>
+<w:lsdException w:name="Colorful Shading" w:semiHidden="0" w:uiPriority="71" w:unhideWhenUsed="0"/>
+<w:lsdException w:name="Colorful List" w:semiHidden="0" w:uiPriority="72" w:unhideWhenUsed="0"/>
+<w:lsdException w:name="Colorful Grid" w:semiHidden="0" w:uiPriority="73" w:unhideWhenUsed="0"/>
+<w:lsdException w:name="Light Shading Accent 1" w:semiHidden="0" w:uiPriority="60" w:unhideWhenUsed="0"/>
+<w:lsdException w:name="Light List Accent 1" w:semiHidden="0" w:uiPriority="61" w:unhideWhenUsed="0"/>
+<w:lsdException w:name="Light Grid Accent 1" w:semiHidden="0" w:uiPriority="62" w:unhideWhenUsed="0"/>
+<w:lsdException w:name="Medium Shading 1 Accent 1" w:semiHidden="0" w:uiPriority="63" w:unhideWhenUsed="0"/>
+<w:lsdException w:name="Medium Shading 2 Accent 1" w:semiHidden="0" w:uiPriority="64" w:unhideWhenUsed="0"/>
+<w:lsdException w:name="Medium List 1 Accent 1" w:semiHidden="0" w:uiPriority="65" w:unhideWhenUsed="0"/>
+<w:lsdException w:name="Revision" w:unhideWhenUsed="0"/>
+<w:lsdException w:name="List Paragraph" w:semiHidden="0" w:uiPriority="34" w:unhideWhenUsed="0" w:qFormat="1"/>
+<w:lsdException w:name="Quote" w:semiHidden="0" w:uiPriority="29" w:unhideWhenUsed="0" w:qFormat="1"/>
+<w:lsdException w:name="Intense Quote" w:semiHidden="0" w:uiPriority="30" w:unhideWhenUsed="0" w:qFormat="1"/>
+<w:lsdException w:name="Medium List 2 Accent 1" w:semiHidden="0" w:uiPriority="66" w:unhideWhenUsed="0"/>
+<w:lsdException w:name="Medium Grid 1 Accent 1" w:semiHidden="0" w:uiPriority="67" w:unhideWhenUsed="0"/>
+<w:lsdException w:name="Medium Grid 2 Accent 1" w:semiHidden="0" w:uiPriority="68" w:unhideWhenUsed="0"/>
+<w:lsdException w:name="Medium Grid 3 Accent 1" w:semiHidden="0" w:uiPriority="69" w:unhideWhenUsed="0"/>
+<w:lsdException w:name="Dark List Accent 1" w:semiHidden="0" w:uiPriority="70" w:unhideWhenUsed="0"/>
+<w:lsdException w:name="Colorful Shading Accent 1" w:semiHidden="0" w:uiPriority="71" w:unhideWhenUsed="0"/>
+<w:lsdException w:name="Colorful List Accent 1" w:semiHidden="0" w:uiPriority="72" w:unhideWhenUsed="0"/>
+<w:lsdException w:name="Colorful Grid Accent 1" w:semiHidden="0" w:uiPriority="73" w:unhideWhenUsed="0"/>
+<w:lsdException w:name="Light Shading Accent 2" w:semiHidden="0" w:uiPriority="60" w:unhideWhenUsed="0"/>
+<w:lsdException w:name="Light List Accent 2" w:semiHidden="0" w:uiPriority="61" w:unhideWhenUsed="0"/>
+<w:lsdException w:name="Light Grid Accent 2" w:semiHidden="0" w:uiPriority="62" w:unhideWhenUsed="0"/>
+<w:lsdException w:name="Medium Shading 1 Accent 2" w:semiHidden="0" w:uiPriority="63" w:unhideWhenUsed="0"/>
+<w:lsdException w:name="Medium Shading 2 Accent 2" w:semiHidden="0" w:uiPriority="64" w:unhideWhenUsed="0"/>
+<w:lsdException w:name="Medium List 1 Accent 2" w:semiHidden="0" w:uiPriority="65" w:unhideWhenUsed="0"/>
+<w:lsdException w:name="Medium List 2 Accent 2" w:semiHidden="0" w:uiPriority="66" w:unhideWhenUsed="0"/>
+<w:lsdException w:name="Medium Grid 1 Accent 2" w:semiHidden="0" w:uiPriority="67" w:unhideWhenUsed="0"/>
+<w:lsdException w:name="Medium Grid 2 Accent 2" w:semiHidden="0" w:uiPriority="68" w:unhideWhenUsed="0"/>
+<w:lsdException w:name="Medium Grid 3 Accent 2" w:semiHidden="0" w:uiPriority="69" w:unhideWhenUsed="0"/>
+<w:lsdException w:name="Dark List Accent 2" w:semiHidden="0" w:uiPriority="70" w:unhideWhenUsed="0"/>
+<w:lsdException w:name="Colorful Shading Accent 2" w:semiHidden="0" w:uiPriority="71" w:unhideWhenUsed="0"/>
+<w:lsdException w:name="Colorful List Accent 2" w:semiHidden="0" w:uiPriority="72" w:unhideWhenUsed="0"/>
+<w:lsdException w:name="Colorful Grid Accent 2" w:semiHidden="0" w:uiPriority="73" w:unhideWhenUsed="0"/>
+<w:lsdException w:name="Light Shading Accent 3" w:semiHidden="0" w:uiPriority="60" w:unhideWhenUsed="0"/>
+<w:lsdException w:name="Light List Accent 3" w:semiHidden="0" w:uiPriority="61" w:unhideWhenUsed="0"/>
+<w:lsdException w:name="Light Grid Accent 3" w:semiHidden="0" w:uiPriority="62" w:unhideWhenUsed="0"/>
+<w:lsdException w:name="Medium Shading 1 Accent 3" w:semiHidden="0" w:uiPriority="63" w:unhideWhenUsed="0"/>
+<w:lsdException w:name="Medium Shading 2 Accent 3" w:semiHidden="0" w:uiPriority="64" w:unhideWhenUsed="0"/>
+<w:lsdException w:name="Medium List 1 Accent 3" w:semiHidden="0" w:uiPriority="65" w:unhideWhenUsed="0"/>
+<w:lsdException w:name="Medium List 2 Accent 3" w:semiHidden="0" w:uiPriority="66" w:unhideWhenUsed="0"/>
+<w:lsdException w:name="Medium Grid 1 Accent 3" w:semiHidden="0" w:uiPriority="67" w:unhideWhenUsed="0"/>
+<w:lsdException w:name="Medium Grid 2 Accent 3" w:semiHidden="0" w:uiPriority="68" w:unhideWhenUsed="0"/>
+<w:lsdException w:name="Medium Grid 3 Accent 3" w:semiHidden="0" w:uiPriority="69" w:unhideWhenUsed="0"/>
+<w:lsdException w:name="Dark List Accent 3" w:semiHidden="0" w:uiPriority="70" w:unhideWhenUsed="0"/>
+<w:lsdException w:name="Colorful Shading Accent 3" w:semiHidden="0" w:uiPriority="71" w:unhideWhenUsed="0"/>
+<w:lsdException w:name="Colorful List Accent 3" w:semiHidden="0" w:uiPriority="72" w:unhideWhenUsed="0"/>
+<w:lsdException w:name="Colorful Grid Accent 3" w:semiHidden="0" w:uiPriority="73" w:unhideWhenUsed="0"/>
+<w:lsdException w:name="Light Shading Accent 4" w:semiHidden="0" w:uiPriority="60" w:unhideWhenUsed="0"/>
+<w:lsdException w:name="Light List Accent 4" w:semiHidden="0" w:uiPriority="61" w:unhideWhenUsed="0"/>
+<w:lsdException w:name="Light Grid Accent 4" w:semiHidden="0" w:uiPriority="62" w:unhideWhenUsed="0"/>
+<w:lsdException w:name="Medium Shading 1 Accent 4" w:semiHidden="0" w:uiPriority="63" w:unhideWhenUsed="0"/>
+<w:lsdException w:name="Medium Shading 2 Accent 4" w:semiHidden="0" w:uiPriority="64" w:unhideWhenUsed="0"/>
+<w:lsdException w:name="Medium List 1 Accent 4" w:semiHidden="0" w:uiPriority="65" w:unhideWhenUsed="0"/>
+<w:lsdException w:name="Medium List 2 Accent 4" w:semiHidden="0" w:uiPriority="66" w:unhideWhenUsed="0"/>
+<w:lsdException w:name="Medium Grid 1 Accent 4" w:semiHidden="0" w:uiPriority="67" w:unhideWhenUsed="0"/>
+<w:lsdException w:name="Medium Grid 2 Accent 4" w:semiHidden="0" w:uiPriority="68" w:unhideWhenUsed="0"/>
+<w:lsdException w:name="Medium Grid 3 Accent 4" w:semiHidden="0" w:uiPriority="69" w:unhideWhenUsed="0"/>
+<w:lsdException w:name="Dark List Accent 4" w:semiHidden="0" w:uiPriority="70" w:unhideWhenUsed="0"/>
+<w:lsdException w:name="Colorful Shading Accent 4" w:semiHidden="0" w:uiPriority="71" w:unhideWhenUsed="0"/>
+<w:lsdException w:name="Colorful List Accent 4" w:semiHidden="0" w:uiPriority="72" w:unhideWhenUsed="0"/>
+<w:lsdException w:name="Colorful Grid Accent 4" w:semiHidden="0" w:uiPriority="73" w:unhideWhenUsed="0"/>
+<w:lsdException w:name="Light Shading Accent 5" w:semiHidden="0" w:uiPriority="60" w:unhideWhenUsed="0"/>
+<w:lsdException w:name="Light List Accent 5" w:semiHidden="0" w:uiPriority="61" w:unhideWhenUsed="0"/>
+<w:lsdException w:name="Light Grid Accent 5" w:semiHidden="0" w:uiPriority="62" w:unhideWhenUsed="0"/>
+<w:lsdException w:name="Medium Shading 1 Accent 5" w:semiHidden="0" w:uiPriority="63" w:unhideWhenUsed="0"/>
+<w:lsdException w:name="Medium Shading 2 Accent 5" w:semiHidden="0" w:uiPriority="64" w:unhideWhenUsed="0"/>
+<w:lsdException w:name="Medium List 1 Accent 5" w:semiHidden="0" w:uiPriority="65" w:unhideWhenUsed="0"/>
+<w:lsdException w:name="Medium List 2 Accent 5" w:semiHidden="0" w:uiPriority="66" w:unhideWhenUsed="0"/>
+<w:lsdException w:name="Medium Grid 1 Accent 5" w:semiHidden="0" w:uiPriority="67" w:unhideWhenUsed="0"/>
+<w:lsdException w:name="Medium Grid 2 Accent 5" w:semiHidden="0" w:uiPriority="68" w:unhideWhenUsed="0"/>
+<w:lsdException w:name="Medium Grid 3 Accent 5" w:semiHidden="0" w:uiPriority="69" w:unhideWhenUsed="0"/>
+<w:lsdException w:name="Dark List Accent 5" w:semiHidden="0" w:uiPriority="70" w:unhideWhenUsed="0"/>
+<w:lsdException w:name="Colorful Shading Accent 5" w:semiHidden="0" w:uiPriority="71" w:unhideWhenUsed="0"/>
+<w:lsdException w:name="Colorful List Accent 5" w:semiHidden="0" w:uiPriority="72" w:unhideWhenUsed="0"/>
+<w:lsdException w:name="Colorful Grid Accent 5" w:semiHidden="0" w:uiPriority="73" w:unhideWhenUsed="0"/>
+<w:lsdException w:name="Light Shading Accent 6" w:semiHidden="0" w:uiPriority="60" w:unhideWhenUsed="0"/>
+<w:lsdException w:name="Light List Accent 6" w:semiHidden="0" w:uiPriority="61" w:unhideWhenUsed="0"/>
+<w:lsdException w:name="Light Grid Accent 6" w:semiHidden="0" w:uiPriority="62" w:unhideWhenUsed="0"/>
+<w:lsdException w:name="Medium Shading 1 Accent 6" w:semiHidden="0" w:uiPriority="63" w:unhideWhenUsed="0"/>
+<w:lsdException w:name="Medium Shading 2 Accent 6" w:semiHidden="0" w:uiPriority="64" w:unhideWhenUsed="0"/>
+<w:lsdException w:name="Medium List 1 Accent 6" w:semiHidden="0" w:uiPriority="65" w:unhideWhenUsed="0"/>
+<w:lsdException w:name="Medium List 2 Accent 6" w:semiHidden="0" w:uiPriority="66" w:unhideWhenUsed="0"/>
+<w:lsdException w:name="Medium Grid 1 Accent 6" w:semiHidden="0" w:uiPriority="67" w:unhideWhenUsed="0"/>
+<w:lsdException w:name="Medium Grid 2 Accent 6" w:semiHidden="0" w:uiPriority="68" w:unhideWhenUsed="0"/>
+<w:lsdException w:name="Medium Grid 3 Accent 6" w:semiHidden="0" w:uiPriority="69" w:unhideWhenUsed="0"/>
+<w:lsdException w:name="Dark List Accent 6" w:semiHidden="0" w:uiPriority="70" w:unhideWhenUsed="0"/>
+<w:lsdException w:name="Colorful Shading Accent 6" w:semiHidden="0" w:uiPriority="71" w:unhideWhenUsed="0"/>
+<w:lsdException w:name="Colorful List Accent 6" w:semiHidden="0" w:uiPriority="72" w:unhideWhenUsed="0"/>
+<w:lsdException w:name="Colorful Grid Accent 6" w:semiHidden="0" w:uiPriority="73" w:unhideWhenUsed="0"/>
+<w:lsdException w:name="Subtle Emphasis" w:semiHidden="0" w:uiPriority="19" w:unhideWhenUsed="0" w:qFormat="1"/>
+<w:lsdException w:name="Intense Emphasis" w:semiHidden="0" w:uiPriority="21" w:unhideWhenUsed="0" w:qFormat="1"/>
+<w:lsdException w:name="Subtle Reference" w:semiHidden="0" w:uiPriority="31" w:unhideWhenUsed="0" w:qFormat="1"/>
+<w:lsdException w:name="Intense Reference" w:semiHidden="0" w:uiPriority="32" w:unhideWhenUsed="0" w:qFormat="1"/>
+<w:lsdException w:name="Book Title" w:semiHidden="0" w:uiPriority="33" w:unhideWhenUsed="0" w:qFormat="1"/>
+<w:lsdException w:name="Bibliography" w:uiPriority="37"/>
+<w:lsdException w:name="TOC Heading" w:uiPriority="39" w:qFormat="1"/>
+</w:latentStyles>
+<w:style w:type="paragraph" w:default="1" w:styleId="Normal">
+<w:name w:val="Normal"/>
+<w:qFormat/>
+</w:style>
+<w:style w:type="character" w:default="1" w:styleId="DefaultParagraphFont">
+<w:name w:val="Default Paragraph Font"/>
+<w:uiPriority w:val="1"/>
+<w:semiHidden/>
+<w:unhideWhenUsed/>
+</w:style>
+<w:style w:type="table" w:default="1" w:styleId="TableNormal">
+<w:name w:val="Normal Table"/>
+<w:uiPriority w:val="99"/>
+<w:semiHidden/>
+<w:unhideWhenUsed/>
+<w:tblPr>
+<w:tblInd w:w="0" w:type="dxa"/>
+<w:tblCellMar>
+<w:top w:w="0" w:type="dxa"/>
+<w:left w:w="108" w:type="dxa"/>
+<w:bottom w:w="0" w:type="dxa"/>
+<w:right w:w="108" w:type="dxa"/>
+</w:tblCellMar>
+</w:tblPr>
+</w:style>
+<w:style w:type="numbering" w:default="1" w:styleId="NoList">
+<w:name w:val="No List"/>
+<w:uiPriority w:val="99"/>
+<w:semiHidden/>
+<w:unhideWhenUsed/>
+</w:style>
+<w:style w:type="paragraph" w:styleId="Header">
+<w:name w:val="header"/>
+<w:basedOn w:val="Normal"/>
+<w:link w:val="HeaderChar"/>
+<w:uiPriority w:val="99"/>
+<w:unhideWhenUsed/>
+<w:rsid w:val="00F53FC1"/>
+<w:pPr>
+<w:tabs>
+<w:tab w:val="center" w:pos="4680"/>
+<w:tab w:val="right" w:pos="9360"/>
+</w:tabs>
+<w:spacing w:after="0" w:line="240" w:lineRule="auto"/>
+</w:pPr>
+</w:style>
+<w:style w:type="character" w:customStyle="1" w:styleId="HeaderChar">
+<w:name w:val="Header Char"/>
+<w:basedOn w:val="DefaultParagraphFont"/>
+<w:link w:val="Header"/>
+<w:uiPriority w:val="99"/>
+<w:rsid w:val="00F53FC1"/>
+</w:style>
+<w:style w:type="paragraph" w:styleId="Footer">
+<w:name w:val="footer"/>
+<w:basedOn w:val="Normal"/>
+<w:link w:val="FooterChar"/>
+<w:uiPriority w:val="99"/>
+<w:unhideWhenUsed/>
+<w:rsid w:val="00F53FC1"/>
+<w:pPr>
+<w:tabs>
+<w:tab w:val="center" w:pos="4680"/>
+<w:tab w:val="right" w:pos="9360"/>
+</w:tabs>
+<w:spacing w:after="0" w:line="240" w:lineRule="auto"/>
+</w:pPr>
+</w:style>
+<w:style w:type="character" w:customStyle="1" w:styleId="FooterChar">
+<w:name w:val="Footer Char"/>
+<w:basedOn w:val="DefaultParagraphFont"/>
+<w:link w:val="Footer"/>
+<w:uiPriority w:val="99"/>
+<w:rsid w:val="00F53FC1"/>
+</w:style>
+<w:style w:type="paragraph" w:styleId="BalloonText">
+<w:name w:val="Balloon Text"/>
+<w:basedOn w:val="Normal"/>
+<w:link w:val="BalloonTextChar"/>
+<w:uiPriority w:val="99"/>
+<w:semiHidden/>
+<w:unhideWhenUsed/>
+<w:rsid w:val="00F53FC1"/>
+<w:pPr>
+<w:spacing w:after="0" w:line="240" w:lineRule="auto"/>
+</w:pPr>
+<w:rPr>
+<w:rFonts w:ascii="Tahoma" w:hAnsi="Tahoma" w:cs="Tahoma"/>
+<w:sz w:val="16"/>
+<w:szCs w:val="16"/>
+</w:rPr>
+</w:style>
+<w:style w:type="character" w:customStyle="1" w:styleId="BalloonTextChar">
+<w:name w:val="Balloon Text Char"/>
+<w:basedOn w:val="DefaultParagraphFont"/>
+<w:link w:val="BalloonText"/>
+<w:uiPriority w:val="99"/>
+<w:semiHidden/>
+<w:rsid w:val="00F53FC1"/>
+<w:rPr>
+<w:rFonts w:ascii="Tahoma" w:hAnsi="Tahoma" w:cs="Tahoma"/>
+<w:sz w:val="16"/>
+<w:szCs w:val="16"/>
+</w:rPr>
+</w:style>
+<w:style w:type="paragraph" w:styleId="ListParagraph">
+<w:name w:val="List Paragraph"/>
+<w:basedOn w:val="Normal"/>
+<w:uiPriority w:val="34"/>
+<w:qFormat/>
+<w:rsid w:val="00501E81"/>
+<w:pPr>
+<w:ind w:left="720"/>
+<w:contextualSpacing/>
+</w:pPr>
+</w:style>
+</w:styles>
+</pkg:xmlData>
+</pkg:part>
+<pkg:part pkg:name="/docProps/core.xml" pkg:contentType="application/vnd.openxmlformats-package.core-properties+xml" pkg:padding="256">
+<pkg:xmlData>
+<cp:coreProperties xmlns:cp="http://schemas.openxmlformats.org/package/2006/metadata/core-properties" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:dcmitype="http://purl.org/dc/dcmitype/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<dc:title/>
+<dc:subject/>
+<dc:creator>
+Someone</dc:creator>
+<cp:keywords/>
+<dc:description/>
+<cp:lastModifiedBy>
+Someone</cp:lastModifiedBy>
+<cp:revision>
+48</cp:revision>
+<dcterms:created xsi:type="dcterms:W3CDTF">
+2012-08-19T03:41:00Z</dcterms:created>
+<dcterms:modified xsi:type="dcterms:W3CDTF">
+2012-08-19T01:10:00Z</dcterms:modified>
+</cp:coreProperties>
 </pkg:xmlData>
 </pkg:part>
 </pkg:package>
