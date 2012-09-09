@@ -1,77 +1,40 @@
 
--- may need to introduce 'what is SQL' somewhere up here early on. it would interrupt the flow later on, but i need to be sure the reader understands my definitions of 'imperative SQL' versus 'relational SQL'.  Also, I need to explain why i exclude imperative SQL.  I feel it is justified since...
+
+applying the "hot, fast-growth" concepts from formal verification to the "underserved" area of SQL code.
+
+
+composing SQL queries is only beginning to receive attention that treats it as a software engineering exercise.
+
+(on the other hand, dbms design and management and profiling has received a lot of attention)
+
+tool support is crucial for accepting a programming language as being 'ready for prime time'.
+
+(again, we see tools for management but not for the coding.  perhaps this is why many applications exist where all the data is indeed stored and distributed and access-controlled via a DBMS, but rather than compose SQL code the main code is all done in Java or PHP or {other}, where chunks of data are pulled from the DBMS into arrays [using only the most trivially basic SQL], and then Java or PHP is manipulating these arrays.)
+
+perhaps an explanation of lack of tools: SQL defies "cross-over" effects -- stuff developed for other languages just does not apply!
+
+also perhaps an explanation: we mistake "declarative" as meaning "make only obvious and clear statements." (if that were indeed true, then no testing or debugging or quality assurance would be needed).  however, all programming languages are *unambiguous*, so we could similarly try to conclude that since what you type in any programming language means exactly what it is designed to mean in that language, then nothing should go wrong.  obviously this has not held true in any real life realm. also, even if programmers indeed managed to master the full logical entailments/consequences of evern line of code they write, we would still at LEAST need double-checking mechanisms just to weed out 'typos', like:
+
+if ( x = 0 )
+
+instead of 
+
+if ( x == 0 )
+
+assertions are a simple cross-check/sanity-check/double-check, consistency check.
+
+compare run-time assertions with statically provable assertions.  runtime assertions still require that we EXERCISE the code to be checked, and that we exercise it with as many different states as possible. static checking does not rely on that type of exercising.  also: how would one use run-time assertions on SQL? (no..  you actually could do it in a fairly straightforward way, but it isn't built in.)
+
+
+Quality assurance, debugging, and maintenance tools are all needed.
+
+
+Formal verification has been experiencing a steady growth and a stream of successes.  Based on FOL. Relational ___ based on FOL. Therefore, applying formal verification to assertions about a piece of relation SQL code is a natural fit.
+
+Another fact (which follows from the previous one, or is a corollary to it) is that a SQL query is side-effect free -- it is pure functional.  This is a common condition that is sought in code in any language whenever attempts at formal verification are to be made.
+
+It has been shown to work in (microsoft paper, alloy texas paper).  
 
 
 
-In software development, you never just choose an implementation language alone -- what you really choose is a language *and* the tools and packages accompanying it.
-
-In other words, the availability of tools supporting an implementation language are an influential factor when software developers select a language.
-
-The language choice will obviously impact development tasks that involve writing code.  In fact, the chosen language will completely and unambiguously define what statements can be written during fulfillment of these tasks.
-
-However, writing code is only a small part of the total work done on any software project.  Other important development activities include generating specifications, planning system architecture, generating test plans, testing, debugging, creating documentation, version control, and configuration management.  Also: code writing will always occur less frequently than code reading, because each line of code will be read more times than it will be written.**
-
-Time spent writing code is dwarfed (offensive word?) by other activities, and Amdahl's law reminds us that the efficiencies gained by speeding up code-writing are limited by the small proportion of the project that actually depends on code-writing.
-
-To best improve the effeciency of a project, developers need to reduce the time required for all the non code-writing tasks.  This is why tool support is essential.
-
-For a ubiquitous programming language like Java, it is common to find a wide range of supporting tools covering all aspects of product development.  For Java, one easily finds several options in each of the following categories: debugging environments, testing frameworks, static analysis tools, fuzzers, automated refactoring tools, documentation generators, visualization kits, internationalization packages, syntax highlighters, cross-referencers, and -- of particular relevance to this current paper -- formal verification tools. [javatools] [ESC/Java]
-
-With proper use of the relevant tools during each phase of development, a tool-assisted Java project can be completed much more efficiently than a project using nothing more than raw Java source code and a compiler. Additionally, if tool usage also includes various automated tools, we expect a reduction in errors due to the elimination of certain opportunities for typographical errors or manual copy-and-paste errors.
-
-In the realm of relational database systems, the SQL language is quite easily the single most ubiquitous coding language in existence.
-
-ERD modeling and DDL script generation
-
-comparing and synchronizing the content and structure of database tables
-
-auditing permissions on database tables and other objects in the database
-
-performance tuning and performance monitoring tools
-
-
-In general, we find a very rich set of tools for the administration of a relational database installation, and comparatively few tools supporting the act of writing SQL code and debuggging it.
-
-There is a further caveat for tabulating the number of SQL debugging tools currently available: many tools described as SQL debugging tools only target the imperative programming portions of the language, and do not cover debugging of purely relational statements.
-
-(do i have to explain and flesh out precisely what i mean by 'imperative portions' versus relational?)
-
-Only very recently has there been a surge of interest in tools to support SQL coding. (mention: Quest Code Tester for Oracle, Qex, Leslie Van Exel's work.)
-
---  can i create an APPENDIX with cases of tools/rdbms's that DO help with sql coding? is an appendix ok for that?
-
-POQ was created to further the research trend towards devising better quality assurance mechanisms for programs written in SQL.
-
-How can we create tools that allow a SQL coder to efficiently produce working SQL code and have confidence that this code runs correctly on all input parameters and all content-states (better word) of the database, not just on a limited test dataset?
-
-Consider: testing, debugging, static analysis.
-
-Formal verification.  For most programs written in languages like C, Java, C#, Python, etc, it is still considered infeasible (or prohibitively costly) to formally verify all statements in the program.  However, for relational SQL statements, the task is not as difficult.
-
-Formal verification as commonly used today is based on first-order logic.  Much of the work in verifying statements in today's imperative languages and object oriented languages is due to the 'transformation step' (better word) of finding a suitable first-order theory that represents the programming language statements.  In the case of relational SQL, however, we already have a fully developed mathematical theory of relational calculus that is expressible (able?) in first-order logic. (relational calculus? relational algebra?)  Therefore, the 'transformation step' that is the challenge in other verification settings is completely absent in a setting where the goal is to verify relational SQL.  (okay... so i MUST MENTION somewhere about the places where SQL falls short of true mathematical relational concepts)
-
-Other ways to 'spin' here:
-
-    design by contract - this is the key way we typically relate formal verification to our dev process.
-
-    debugging - explain how, in some sense, formal verification of relational SQL might be the closest thing to 'debugging SQL', since the notion of 'stepping through' doesnt really hold up in relational SQL. (rather, sql statements have 'all-at-once' qualities)
-
-    testing - Qex is an example of how this approach supports testing
-
-    documentation - notations that express ASSUMPTIONS about the code are ALWAYS valuable documentation for future devs/maintainers
-
-    refactoring - refactoring can always be done with greater confidence in the presence of some type of test(s). POQ provides this.
-
-
-So, the initial goal behind POQ was to aide the work of the everyday SQL coder.  Nonetheless, because the fulfillment of this goal led to an application of formal verification methods, it bears mentioning the added benefits that formal verification bring to any project.
-
-safety-critical, lower bugfix costs, bla bla bla
-
-
-
-
-[javatools] http://community.java.net/community/javatools
-
-
-
-
+preconditions in the POQ case are the constraints to the input tables?
