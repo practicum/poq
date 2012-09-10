@@ -123,3 +123,9 @@ GROUP BY
     , vreg.trial_period_id
 ;
 
+-- (the next lines came from a copy-and-paste without much consideration... please double-check)
+
+-- result count is 1 or 0
+-- for date (when trial), make sure date is not in the future
+-- check that error_if_not_one is really 1.  (or zero, if we didn't find anything)
+-- trial_period_id should be "1" for FULL_MEMBER_BARCODE, or greater than 1 otherwise
