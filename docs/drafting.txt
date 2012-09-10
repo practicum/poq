@@ -52,3 +52,4 @@ in my tool, are joins only allowed when one side of the join is a primary-key co
 
 microsoft paper and alloy paper show that formal verification of rSQL is successful. the new contribution here (mine) is to allow the query author to verify that the query conforms to a SPECIFICATION. (prior work was about generating and populating test databases and/or verifying the correctness of the query execution engine)
 
+double-check: in my listings of 'weaknesses/troublespots' of choosing prolog, did i mention that everything has to be expressed in Horn clause form?  (which is obviously fine. it is also similar to how the microsoft Z3 paper did it anyway)
