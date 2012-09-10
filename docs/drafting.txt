@@ -33,6 +33,12 @@ Formal verification has been experiencing a steady growth and a stream of succes
 
 Another fact (which follows from the previous one, or is a corollary to it) is that a SQL query is side-effect free -- it is pure functional.  This is a common condition that is sought in code in any language whenever attempts at formal verification are to be made.
 
+We can apply something like the Hoare deduction techniques but with while-loops and loop-invariants notably absent.  That is significant since inferring loop-invariants is still not a well-solved problem.
+
+We don't have procedure calls in rSQL.
+
+(do we have any aliasing issues at all?)
+
 It has been shown to work in (microsoft paper, alloy texas paper).
 
 
@@ -43,4 +49,6 @@ Hoare logic attempts to lead to a proof of correctness.  It does not serve to pr
 
 
 in my tool, are joins only allowed when one side of the join is a primary-key col? (non-null). otherwise... i think i will end up with NULL joining to NULL, which is bad.  how could i avoid that?
+
+microsoft paper and alloy paper show that formal verification of rSQL is successful. the new contribution here (mine) is to allow the query author to verify that the query conforms to a SPECIFICATION. (prior work was about generating and populating test databases and/or verifying the correctness of the query execution engine)
 
