@@ -11,8 +11,17 @@
            demoword/1,
            wordstr/1,
            demoguid/1,
-           guidtype/1]).
+           guidtype/1,
+           tinyint/1,
+           barcodeEnum/1]).
 
+% 'barcodeEnum' is clearly specific to the camping database whereas
+% inttype and strtype and guidtype are not.  Ideally, we would have
+% one module for general-purpose database types and a separate module
+% for things like 'barcodeEnum'.  However, in SWIPL this is either not
+% possible or else not 'discoverable', because I have not found a way
+% to do it GIVEN THE REQUIREMENT that each new type must 'participate'
+% in the definition of nonnull.
 
 isnull(null).
 
@@ -21,13 +30,24 @@ nonnull(X) :- fname(X),    \+isnull(X).
 nonnull(X) :- wordstr(X),  \+isnull(X).
 nonnull(X) :- guidtype(X), \+isnull(X).
 nonnull(X) :- nattype(X),  \+isnull(X).
+nonnull(X) :- tinyint(X),  \+isnull(X).
+nonnull(X) :- barcodeEnum(X),  \+isnull(X).
 
-nonnull(X) :- \+inttype(X), \+fname(X), \+wordstr(X), \+guidtype(X), \+nattype(X),
+% without the following, other atoms not 'typed' in this file will FAIL a 'nonnull' test.
+% for example:  nonnull(abcdefghijk).  will come out FALSE.
+nonnull(X) :- \+inttype(X), \+fname(X), \+wordstr(X), \+guidtype(X), \+nattype(X), \+tinyint(X),  \+barcodeEnum(X),
               \+isnull(X).
 
 strtype(X) :- wordstr(X).
 strtype(X) :- fname(X).
 
+tinyint(null).
+tinyint(tinyint_0).
+tinyint(tinyint_1).
+
+barcodeEnum(null).
+barcodeEnum(full_member_barcode).
+barcodeEnum(guest_barcode).
 
 demonat(null).
 demonat(0).
