@@ -25,17 +25,35 @@
 
 isnull(null).
 
-nonnull(X) :- inttype(X),  \+isnull(X).
-nonnull(X) :- fname(X),    \+isnull(X).
-nonnull(X) :- wordstr(X),  \+isnull(X).
-nonnull(X) :- guidtype(X), \+isnull(X).
-nonnull(X) :- nattype(X),  \+isnull(X).
-nonnull(X) :- tinyint(X),  \+isnull(X).
-nonnull(X) :- barcodeEnum(X),  \+isnull(X).
+% note the use of so-called 'green cut' here.
+% (ok... so not 100% green to overlap between inttype and nattype, but this actually is still ok).
+% once we SUCCEED AT PROVING that something is nonnull, we no longer care to investigate the other nonnull paths
+nonnull(X) :- inttype(X),  !, \+isnull(X).
+nonnull(X) :- fname(X),    !, \+isnull(X).
+nonnull(X) :- wordstr(X),  !, \+isnull(X).
+nonnull(X) :- guidtype(X), !, \+isnull(X).
+nonnull(X) :- nattype(X),  !, \+isnull(X).
+nonnull(X) :- tinyint(X),  !, \+isnull(X).
+nonnull(X) :- barcodeEnum(X),  !, \+isnull(X).
 
 % without the following, other atoms not 'typed' in this file will FAIL a 'nonnull' test.
 % for example:  nonnull(abcdefghijk).  will come out FALSE.
 nonnull(X) :- \+inttype(X), \+fname(X), \+wordstr(X), \+guidtype(X), \+nattype(X), \+tinyint(X),  \+barcodeEnum(X),
+              \+isnull(X).
+
+% after the CUT was added to nonnull, it could no longer be used to GENERATE (retrieve) non-null ground atoms.
+% for this reason, please enjoy the use of getnonnull when you need to generate such a thing.
+getnonnull(X) :- inttype(X),  \+isnull(X).
+getnonnull(X) :- fname(X),    \+isnull(X).
+getnonnull(X) :- wordstr(X),  \+isnull(X).
+getnonnull(X) :- guidtype(X), \+isnull(X).
+getnonnull(X) :- nattype(X),  \+isnull(X).
+getnonnull(X) :- tinyint(X),  \+isnull(X).
+getnonnull(X) :- barcodeEnum(X),  \+isnull(X).
+
+% without the following, other atoms not 'typed' in this file will FAIL a 'nonnull' test.
+% for example:  nonnull(abcdefghijk).  will come out FALSE.
+getnonnull(X) :- \+inttype(X), \+fname(X), \+wordstr(X), \+guidtype(X), \+nattype(X), \+tinyint(X),  \+barcodeEnum(X),
               \+isnull(X).
 
 strtype(X) :- wordstr(X).
