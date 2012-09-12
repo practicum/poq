@@ -86,7 +86,9 @@ recurse_PURCHASE_ID_purchaseTupleList([purchaseTuple(PURCHASE_ID,BARCODE_STRING,
 /*
   There seems to be a performance issue somewhere... because the following statement can be shown 'true' at the swipl prompt dozens and dozens of times (if you keep hitting semi-colon to continue)
 
-?- unique_PURCHASE_ID_purchaseTupleList( [purchaseTuple(0, fccy463, 0, 0, tinyint_0), purchaseTuple(1, fccy463, 0, 0, tinyint_0)] ).
+  Okay... so now we no longer get dozens of dozens of 'true' (dozens of proof trees), but this one still needs some performance-related work:
+
+?- unique_PURCHASE_ID_purchaseTupleList([purchaseTuple(0, fccy463, 0, 0, tinyint_0), purchaseTuple(1, fccy463, 0, 0, tinyint_0), purchaseTuple(2, fccy463, 0, 0, tinyint_1)]).
 
 */
 
