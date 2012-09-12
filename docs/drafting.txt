@@ -62,6 +62,8 @@ CONSIDERATIONS FOR 'TRANSLATING' THE QUERY INTO PROLOG:
 
 1. Prolog casing requirements. Capitalized things are variables! so lower case for all constants. also.. just atoms to represent strings.
 
+2. we will use 'unifies' in prolog to equate to EQUALS in sql. this will work because all domains for all our table-column content are composed entirely of ground atoms in prolog.  Likewise, we will use 'does not unify' for 'not equals'.
+
 OTHER CONSIDERATIONS OF THE PROLOG TOOL IMPLEMENTATION:
 
 it is sometimes hard to generate a list of a desired length. for example... it might take a really long time to ask to for a primary-keyed list of size five, but not of size 2 or 3.  but if we 'seed' the length-5 list by using (reusing) what was generated for the size-2 or size-3 lists, we can meet our requirements (and in a more reasonable time).
