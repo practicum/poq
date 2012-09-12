@@ -57,3 +57,23 @@ double-check: in my listings of 'weaknesses/troublespots' of choosing prolog, di
 another thing for the 'weaknesses/troublespots': prolog doesnt have syntactic sugar for the MANY SORTED case. many-sorted case comes from adding extra predicates per ___ (per variable? per object?) like is_int or is_string or what have you.
 
 Prolog has been a successful base (or influence?) on: SETHEO, PTTP, ...
+
+CONSIDERATIONS FOR 'TRANSLATING' THE QUERY INTO PROLOG:
+
+1. Prolog casing requirements. Capitalized things are variables! so lower case for all constants. also.. just atoms to represent strings.
+
+
+RAMIFICATIONS OF NEGATION AS FAILURE:
+
+if you have:
+
+    conseq(X) :- aa(X), bb(X).
+    nonconseq(X) :- \+ conseq(X).
+
+then you cannot reasonably expect to query:
+
+    ?- nonconseq(A).
+
+it will just fail.
+
+What this means (i think) is that anywhere I have \+something(X) I require X to be instantiated by then, right?
