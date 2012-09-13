@@ -19,24 +19,6 @@ amenitiesAccessBarcodeTuple(BARCODE_STRING,BARCODE_TYPE,AMENITIES_ID,IN_PLAY) :-
         demonat(AMENITIES_ID),nonnull(AMENITIES_ID),
         tinyint(IN_PLAY),nonnull(IN_PLAY).
 
-% student_x_scores(student(SID1,NAME),scores(SID2,CID,POINTS)) :-
-%         demonat(SID1),
-%         demonat(SID2),
-%         demoname(NAME),
-%         demoguid(CID),
-%         demoint(POINTS).
-
-% primary_key_student_sid(L) :-
-%         unique_student_sid(L),
-%         \+has_null_student_sid(L).
-
-% has_null_student_sid(L) :-
-%         member(student(SID,NAME),L),
-%         isnull(SID),
-%         demoname(NAME).
-
-
-
 purchaseTuple(PURCHASE_ID,BARCODE_STRING,PURCHASE_DATE,PURCHASED_SPACES_QTY,CANCELED) :-
         demonat(PURCHASE_ID),nonnull(PURCHASE_ID),
         demoguid(BARCODE_STRING),nonnull(BARCODE_STRING),
