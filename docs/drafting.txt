@@ -104,3 +104,36 @@ X = false.
 ?- thing(c(X,bla(X)))=thing(c(bla(X),Y)).
 X = bla(**),
 Y = bla(bla(**)).
+
+RAMIFICATIONS OF THE CUT:
+
+so far my only use is with the nonnull predicate (i should continue to track any new uses)
+
+
+CHRONOLOGICAL VIEW OF THE DEVELOPMENT OF THIS THESIS:
+
+Began by looking at real-life DBMS and databases.
+
+Began by looking at real-life Q.A. approach in those settings.
+
+Then considering:
+
+    if that were Java, we could:
+        [runtime] assert( ____ );
+
+    of if we were being really formal about it, then using Krakatoa/Why:
+        [static assert]
+
+So for SQL assertions, let's go for the more formal!
+
+Why? Answer: because FOL makes it immediately possible.  (also, SQL in a high-value/high-risk financial settings makes formal verification very tantalizing).  Also: because there has already been preliminary success in this idea.
+
+Next, we must choose a theorem prover.
+
+SMT solver? No... we don't actually need those theories (LIA, UF, etc), and we do not want the back-and-forth coordination between the theory and a SAT-solver, theory and a SAT-solver, over and over.
+
+(other issues with SMT solvers: quantifiers, 'quirks')
+
+So just use good old fashioned Horn clauses and Resolution.  Create FOL predicates and implications, and then deduce conclusions based on that.
+
+Next, we must devise encodings for taking SQL code and creating an appropriate FOL, horn-clause representation.
