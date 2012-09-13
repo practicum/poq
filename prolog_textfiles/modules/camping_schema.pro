@@ -53,7 +53,7 @@ recurse_PURCHASE_ID_purchaseTupleList([purchaseTuple(PURCHASE_ID,BARCODE_STRING,
 
         purchaseTuple(PURCHASE_ID,BARCODE_STRING,PURCHASE_DATE,PURCHASED_SPACES_QTY,CANCELED),
 
-        \+get_assoc(PURCHASE_ID,MAP,_EXISTSVAL),
+        \+get_assoc(PURCHASE_ID,MAP,_EXISTSVAL),  % todo - can i show that these 3 vars are instantiated by this point?
         put_assoc(PURCHASE_ID,MAP,inmap,MAP2),
         recurse_PURCHASE_ID_purchaseTupleList(LT,MAP2,REST).
 
@@ -101,7 +101,7 @@ barcode_x_purchase_join_on_barcode([X0|X1],[X0|Y]) :-
 
 barcode_x_purchase_join_on_barcode([X0|X1],Y) :-
         size_0_to_3(X1),
-        \+filter_for_join_on_barcode(X0),
+        \+filter_for_join_on_barcode(X0), % todo - can i show that X0 is instantiated by this point? move goal down?
         barcode_x_purchase_join_on_barcode(X1,Y).
 
 cond_canceled_zero([],[]).
@@ -112,7 +112,7 @@ cond_canceled_zero([X0|X1],[X0|Y]) :-
 
 cond_canceled_zero([X0|X1],Y) :-
         size_0_to_2(X1),
-        \+filter_on_canceled_zero(X0),
+        \+filter_on_canceled_zero(X0), % todo - can i show that X0 is instantiated by this point? should i move this goal down?
         cond_canceled_zero(X1,Y).
 
 
