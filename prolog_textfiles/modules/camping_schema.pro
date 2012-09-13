@@ -59,11 +59,7 @@ recurse_PURCHASE_ID_purchaseTupleList([],_ASSOC,[]).
 recurse_PURCHASE_ID_purchaseTupleList([purchaseTuple(PURCHASE_ID,BARCODE_STRING,PURCHASE_DATE,PURCHASED_SPACES_QTY,CANCELED)|LT],MAP,OUT) :-
         size_0_to_6(LT), % todo: formalize the rules for this. (perhaps rename to 'limit_size' and provide varying definitions in varying modules)
 
-        demonat(PURCHASE_ID),nonnull(PURCHASE_ID),
-        demoguid(BARCODE_STRING),nonnull(BARCODE_STRING),
-        demonat(PURCHASE_DATE),nonnull(PURCHASE_DATE),
-        demonat(PURCHASED_SPACES_QTY),nonnull(PURCHASED_SPACES_QTY),
-        tinyint(CANCELED),nonnull(CANCELED),
+        purchaseTuple(PURCHASE_ID,BARCODE_STRING,PURCHASE_DATE,PURCHASED_SPACES_QTY,CANCELED),
 
         get_assoc(PURCHASE_ID,MAP,_EXISTSVAL),
         recurse_PURCHASE_ID_purchaseTupleList(LT,MAP,OUT).
@@ -73,11 +69,7 @@ recurse_PURCHASE_ID_purchaseTupleList([purchaseTuple(PURCHASE_ID,BARCODE_STRING,
                                       [purchaseTuple(PURCHASE_ID,BARCODE_STRING,PURCHASE_DATE,PURCHASED_SPACES_QTY,CANCELED)|REST]) :-
         size_0_to_6(LT), % todo: formalize the rules for this. (perhaps rename to 'limit_size' and provide varying definitions in varying modules)
 
-        demonat(PURCHASE_ID),nonnull(PURCHASE_ID),
-        demoguid(BARCODE_STRING),nonnull(BARCODE_STRING),
-        demonat(PURCHASE_DATE),nonnull(PURCHASE_DATE),
-        demonat(PURCHASED_SPACES_QTY),nonnull(PURCHASED_SPACES_QTY),
-        tinyint(CANCELED),nonnull(CANCELED),
+        purchaseTuple(PURCHASE_ID,BARCODE_STRING,PURCHASE_DATE,PURCHASED_SPACES_QTY,CANCELED),
 
         \+get_assoc(PURCHASE_ID,MAP,_EXISTSVAL),
         put_assoc(PURCHASE_ID,MAP,inmap,MAP2),
@@ -95,49 +87,24 @@ recurse_PURCHASE_ID_purchaseTupleList([purchaseTuple(PURCHASE_ID,BARCODE_STRING,
 barcode_x_purchase(amenitiesAccessBarcodeTuple(BARCODE_STRING,BARCODE_TYPE,AMENITIES_ID,IN_PLAY),
                    purchaseTuple(PURCHASE_ID,BARCODE_STRING,PURCHASE_DATE,PURCHASED_SPACES_QTY,CANCELED)) :-
 
-        demoguid(BARCODE_STRING),nonnull(BARCODE_STRING),
-        barcodeEnum(BARCODE_TYPE),nonnull(BARCODE_TYPE),
-        demonat(AMENITIES_ID),nonnull(AMENITIES_ID),
-        tinyint(IN_PLAY),nonnull(IN_PLAY),
-
-        demonat(PURCHASE_ID),nonnull(PURCHASE_ID),
-        demoguid(BARCODE_STRING),nonnull(BARCODE_STRING),
-        demonat(PURCHASE_DATE),nonnull(PURCHASE_DATE),
-        demonat(PURCHASED_SPACES_QTY),nonnull(PURCHASED_SPACES_QTY),
-        tinyint(CANCELED),nonnull(CANCELED).
-
+        amenitiesAccessBarcodeTuple(BARCODE_STRING,BARCODE_TYPE,AMENITIES_ID,IN_PLAY),
+        purchaseTuple(PURCHASE_ID,BARCODE_STRING,PURCHASE_DATE,PURCHASED_SPACES_QTY,CANCELED).
 
 
 % TODO: need to handle NULL barcode here! (not for when barcode is a PK, but for the 'general case')
 filter_for_join_on_barcode( barcode_x_purchase(amenitiesAccessBarcodeTuple(BARCODE_STRING1,BARCODE_TYPE,AMENITIES_ID,IN_PLAY),
                                                purchaseTuple(PURCHASE_ID,BARCODE_STRING2,PURCHASE_DATE,PURCHASED_SPACES_QTY,CANCELED)) ) :-
 
-        demoguid(BARCODE_STRING1),nonnull(BARCODE_STRING1),
-        barcodeEnum(BARCODE_TYPE),nonnull(BARCODE_TYPE),
-        demonat(AMENITIES_ID),nonnull(AMENITIES_ID),
-        tinyint(IN_PLAY),nonnull(IN_PLAY),
-
-        demonat(PURCHASE_ID),nonnull(PURCHASE_ID),
-        demoguid(BARCODE_STRING2),nonnull(BARCODE_STRING2),
-        demonat(PURCHASE_DATE),nonnull(PURCHASE_DATE),
-        demonat(PURCHASED_SPACES_QTY),nonnull(PURCHASED_SPACES_QTY),
-        tinyint(CANCELED),nonnull(CANCELED),
+        amenitiesAccessBarcodeTuple(BARCODE_STRING1,BARCODE_TYPE,AMENITIES_ID,IN_PLAY),
+        purchaseTuple(PURCHASE_ID,BARCODE_STRING2,PURCHASE_DATE,PURCHASED_SPACES_QTY,CANCELED),
 
         BARCODE_STRING1 = BARCODE_STRING2.
 
 filter_on_canceled_zero( barcode_x_purchase(amenitiesAccessBarcodeTuple(BARCODE_STRING1,BARCODE_TYPE,AMENITIES_ID,IN_PLAY),
                                                purchaseTuple(PURCHASE_ID,BARCODE_STRING2,PURCHASE_DATE,PURCHASED_SPACES_QTY,CANCELED)) ) :-
 
-        demoguid(BARCODE_STRING1),nonnull(BARCODE_STRING1),
-        barcodeEnum(BARCODE_TYPE),nonnull(BARCODE_TYPE),
-        demonat(AMENITIES_ID),nonnull(AMENITIES_ID),
-        tinyint(IN_PLAY),nonnull(IN_PLAY),
-
-        demonat(PURCHASE_ID),nonnull(PURCHASE_ID),
-        demoguid(BARCODE_STRING2),nonnull(BARCODE_STRING2),
-        demonat(PURCHASE_DATE),nonnull(PURCHASE_DATE),
-        demonat(PURCHASED_SPACES_QTY),nonnull(PURCHASED_SPACES_QTY),
-        tinyint(CANCELED),nonnull(CANCELED),
+        amenitiesAccessBarcodeTuple(BARCODE_STRING1,BARCODE_TYPE,AMENITIES_ID,IN_PLAY),
+        purchaseTuple(PURCHASE_ID,BARCODE_STRING2,PURCHASE_DATE,PURCHASED_SPACES_QTY,CANCELED),
 
         CANCELED = tinyint_0.
 
@@ -190,16 +157,8 @@ cross_loop_ap(
   [barcode_x_purchase(amenitiesAccessBarcodeTuple(BARCODE_STRING1,BARCODE_TYPE,AMENITIES_ID,IN_PLAY),
                     purchaseTuple(PURCHASE_ID,BARCODE_STRING2,PURCHASE_DATE,PURCHASED_SPACES_QTY,CANCELED))|O1]) :-
 
-        demoguid(BARCODE_STRING1),nonnull(BARCODE_STRING1),
-        barcodeEnum(BARCODE_TYPE),nonnull(BARCODE_TYPE),
-        demonat(AMENITIES_ID),nonnull(AMENITIES_ID),
-        tinyint(IN_PLAY),nonnull(IN_PLAY),
-
-        demonat(PURCHASE_ID),nonnull(PURCHASE_ID),
-        demoguid(BARCODE_STRING2),nonnull(BARCODE_STRING2),
-        demonat(PURCHASE_DATE),nonnull(PURCHASE_DATE),
-        demonat(PURCHASED_SPACES_QTY),nonnull(PURCHASED_SPACES_QTY),
-        tinyint(CANCELED),nonnull(CANCELED),
+        amenitiesAccessBarcodeTuple(BARCODE_STRING1,BARCODE_TYPE,AMENITIES_ID,IN_PLAY),
+        purchaseTuple(PURCHASE_ID,BARCODE_STRING2,PURCHASE_DATE,PURCHASED_SPACES_QTY,CANCELED),
 
         cross_loop_ap(amenitiesAccessBarcodeTuple(BARCODE_STRING1,BARCODE_TYPE,AMENITIES_ID,IN_PLAY),LA,LB1T,LB2,O1).
 
