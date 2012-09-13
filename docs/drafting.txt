@@ -83,3 +83,24 @@ then you cannot reasonably expect to query:
 it will just fail.
 
 What this means (i think) is that anywhere I have \+something(X) I require X to be instantiated by then, right?
+
+RAMIFICATIONS OF OCCURS CHECK BEING MISSING/PRESENT:
+
+?- A=thing(A).
+false.
+
+?- thing(c(X,bla(X)))=thing(c(bla(X),Y)).
+false.
+
+?- current_prolog_flag(occurs_check,X).
+X = true.
+
+?- set_prolog_flag(occurs_check,false).
+true.
+
+?- current_prolog_flag(occurs_check,X).
+X = false.
+
+?- thing(c(X,bla(X)))=thing(c(bla(X),Y)).
+X = bla(**),
+Y = bla(bla(**)).
