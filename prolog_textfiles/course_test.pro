@@ -6,6 +6,53 @@
 
 :- write('        ~~~~ course_test file opened').
 
+% cuts are valid here (i believe) because once something matches we KNOW nothing else would ever succeed.
+mapping_sample(red,rojo) :- !.
+mapping_sample(yellow,amarillo) :- !.
+mapping_sample(blue,azul) :- !.
+
+% cut is valid here (i believe) because once we match on two empties, we KNOW nothing else would ever succeed.
+do_map([],[]) :- !.
+do_map([X0|X1],[MX|R]) :-  mapping_sample(X0,MX),  do_map(X1,R).
+
+% not yet sure about WHY, but putting cuts here prevented this from working: do_reduce(A,6).
+color_value(red,0).
+color_value(blue,2).
+color_value(yellow,4).
+
+do_reduce([],0).
+do_reduce([X0|X1],N) :- do_reduce(X1,M), color_value(X0,P),  N is M + P.
+
+/*
+% plain single '=' symbol is for UNIFICATION, and so makes no sense here:
+?- 3 = 4-1.
+false.
+
+% the double '==' tests for IDENTICAL-ness of two atoms or two variables. also makes no sense here:
+?- 3 == 4-1.
+false.
+
+% the use of 'is' causes the expression to be evaluated
+?- 3 is 4 - 1.
+true.
+
+% also does evaluation and tests for equality (very similar to above).
+?- 3 =:= 4-1.
+true.
+
+?- X =:= 4-1.
+ERROR: =:=/2: Arguments are not sufficiently instantiated
+?- 4-1 =:= X.
+ERROR: =:=/2: Arguments are not sufficiently instantiated
+
+% further information about the difference between 'is' and '=:='
+
+Typically, is/2 should be used with unbound left operand. If equality is to be tested, =:=/2 should be used. For example:
+
+?- 1 is sin(pi/2).   % Fails! sin(pi/2) evaluates to the float 1.0, which does not unify with the integer 1.
+?- 1 =:= sin(pi/2).  % Succeeds as expected.
+
+*/
 
 student(SID,NAME) :-
         demonat(SID),
