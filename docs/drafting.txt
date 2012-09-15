@@ -23,6 +23,8 @@ if ( x == 0 )
 
 assertions are a simple cross-check/sanity-check/double-check, consistency check.
 
+also, even when it seems abundantly obvious that our code conforms to our spec, we might still wish to prove it if we are getting unexpected results and we suspect a bug in the DBMS system and we want to fully rule out our own misconceptions about our query's conformance to spec before reporting a system bug to the DBMS maintainers.
+
 compare run-time assertions with statically provable assertions.  runtime assertions still require that we EXERCISE the code to be checked, and that we exercise it with as many different states as possible. static checking does not rely on that type of exercising.  also: how would one use run-time assertions on SQL? (no..  you actually could do it in a fairly straightforward way, but it isn't built in.)
 
 
