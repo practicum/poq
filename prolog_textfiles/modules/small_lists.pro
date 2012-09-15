@@ -41,31 +41,31 @@ rev([Head|List1], List2, List3) :-
 
 
 
-size_0_to_1(LIST) :- length(LIST,0),!;length(LIST,1).
-size_0_to_2(LIST) :- length(LIST,0),!;length(LIST,1),!;length(LIST,2).
-size_0_to_3(LIST) :- length(LIST,0),!;length(LIST,1),!;length(LIST,2),!;length(LIST,3).
-size_0_to_4(LIST) :- length(LIST,0),!;length(LIST,1),!;length(LIST,2),!;length(LIST,3),!;length(LIST,4).
-size_0_to_5(LIST) :- length(LIST,0),!;length(LIST,1),!;length(LIST,2),!;length(LIST,3),!;length(LIST,4),!;length(LIST,5).
-size_0_to_6(LIST) :- length(LIST,0),!;length(LIST,1),!;length(LIST,2),!;length(LIST,3),!;length(LIST,4),!;length(LIST,5);
+size_0_to_1(LIST) :- length(LIST,0);length(LIST,1).
+size_0_to_2(LIST) :- length(LIST,0);length(LIST,1);length(LIST,2).
+size_0_to_3(LIST) :- length(LIST,0);length(LIST,1);length(LIST,2);length(LIST,3).
+size_0_to_4(LIST) :- length(LIST,0);length(LIST,1);length(LIST,2);length(LIST,3);length(LIST,4).
+size_0_to_5(LIST) :- length(LIST,0);length(LIST,1);length(LIST,2);length(LIST,3);length(LIST,4);length(LIST,5).
+size_0_to_6(LIST) :- length(LIST,0);length(LIST,1);length(LIST,2);length(LIST,3);length(LIST,4);length(LIST,5);
                      length(LIST,6).
-size_0_to_7(LIST) :- length(LIST,0),!;length(LIST,1),!;length(LIST,2),!;length(LIST,3),!;length(LIST,4),!;length(LIST,5);
-                     length(LIST,6),!;length(LIST,7).
-size_0_to_8(LIST) :- length(LIST,0),!;length(LIST,1),!;length(LIST,2),!;length(LIST,3),!;length(LIST,4),!;length(LIST,5);
-                     length(LIST,6),!;length(LIST,7),!;length(LIST,8).
-size_0_to_9(LIST) :- length(LIST,0),!;length(LIST,1),!;length(LIST,2),!;length(LIST,3),!;length(LIST,4),!;length(LIST,5);
-                     length(LIST,6),!;length(LIST,7),!;length(LIST,8),!;length(LIST,9).
-size_0_to_10(LIST) :- length(LIST,0),!;length(LIST,1),!;length(LIST,2),!;length(LIST,3),!;length(LIST,4),!;length(LIST,5);
-                      length(LIST,6),!;length(LIST,7),!;length(LIST,8),!;length(LIST,9),!;length(LIST,10).
-size_0_to_11(LIST) :- length(LIST,0),!;length(LIST,1),!;length(LIST,2),!;length(LIST,3),!;length(LIST,4),!;length(LIST,5);
-                      length(LIST,6),!;length(LIST,7),!;length(LIST,8),!;length(LIST,9),!;length(LIST,10),!;length(LIST,11).
-size_0_to_12(LIST) :- length(LIST,0),!;length(LIST,1),!;length(LIST,2),!;length(LIST,3),!;length(LIST,4),!;length(LIST,5);
-                      length(LIST,6),!;length(LIST,7),!;length(LIST,8),!;length(LIST,9),!;length(LIST,10),!;length(LIST,11),!;length(LIST,12).
+size_0_to_7(LIST) :- length(LIST,0);length(LIST,1);length(LIST,2);length(LIST,3);length(LIST,4);length(LIST,5);
+                     length(LIST,6);length(LIST,7).
+size_0_to_8(LIST) :- length(LIST,0);length(LIST,1);length(LIST,2);length(LIST,3);length(LIST,4);length(LIST,5);
+                     length(LIST,6);length(LIST,7);length(LIST,8).
+size_0_to_9(LIST) :- length(LIST,0);length(LIST,1);length(LIST,2);length(LIST,3);length(LIST,4);length(LIST,5);
+                     length(LIST,6);length(LIST,7);length(LIST,8);length(LIST,9).
+size_0_to_10(LIST) :- length(LIST,0);length(LIST,1);length(LIST,2);length(LIST,3);length(LIST,4);length(LIST,5);
+                      length(LIST,6);length(LIST,7);length(LIST,8);length(LIST,9);length(LIST,10).
+size_0_to_11(LIST) :- length(LIST,0);length(LIST,1);length(LIST,2);length(LIST,3);length(LIST,4);length(LIST,5);
+                      length(LIST,6);length(LIST,7);length(LIST,8);length(LIST,9);length(LIST,10);length(LIST,11).
+size_0_to_12(LIST) :- length(LIST,0);length(LIST,1);length(LIST,2);length(LIST,3);length(LIST,4);length(LIST,5);
+                      length(LIST,6);length(LIST,7);length(LIST,8);length(LIST,9);length(LIST,10);length(LIST,11);length(LIST,12).
 
-size_1_to_2(LIST) :- length(LIST,1),!;length(LIST,2).
-size_1_to_3(LIST) :- length(LIST,1),!;length(LIST,2),!;length(LIST,3).
-size_1_to_4(LIST) :- length(LIST,1),!;length(LIST,2),!;length(LIST,3),!;length(LIST,4).
-size_1_to_5(LIST) :- length(LIST,1),!;length(LIST,2),!;length(LIST,3),!;length(LIST,4),!;length(LIST,5).
-size_1_to_6(LIST) :- length(LIST,1),!;length(LIST,2),!;length(LIST,3),!;length(LIST,4),!;length(LIST,5),!;length(LIST,6).
+size_1_to_2(LIST) :- length(LIST,1);length(LIST,2).
+size_1_to_3(LIST) :- length(LIST,1);length(LIST,2);length(LIST,3).
+size_1_to_4(LIST) :- length(LIST,1);length(LIST,2);length(LIST,3);length(LIST,4).
+size_1_to_5(LIST) :- length(LIST,1);length(LIST,2);length(LIST,3);length(LIST,4);length(LIST,5).
+size_1_to_6(LIST) :- length(LIST,1);length(LIST,2);length(LIST,3);length(LIST,4);length(LIST,5);length(LIST,6).
 
 
 medium_list(LIST) :- length(LIST,6).
