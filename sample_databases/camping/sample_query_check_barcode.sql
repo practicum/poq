@@ -61,7 +61,7 @@ ON
 
 ORDER BY cnt DESC;
 
-
+-- as pointed out by M, the first assertion below needs refinement. 'exactly two' ? '0 or 2' ? '<= 2' ? 'exactly 2 if-and-only-if ___' ?
 
 --  TO BE TESTED: query always returns exactly two rows.
 --  TO BE TESTED: second row always has cnt = 0. (should always be the 2nd row due to the ORDER BY)
