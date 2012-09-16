@@ -138,16 +138,16 @@ bbx(x).
 ccx(x).
 ddx(x).
 
-cross_students_score( [], [], [] ).
+cross_student_score( [], [], [] ).
 
-cross_students_score( [student(SID1,NAME)|[]], [], [] ) :-
+cross_student_score( [student(SID1,NAME)|[]], [], [] ) :-
         t_student(SID1,NAME).
 
-cross_students_score( [], [score(SID2,CID,POINTS)|[]], [] ) :-
+cross_student_score( [], [score(SID2,CID,POINTS)|[]], [] ) :-
         t_score(SID2,CID,POINTS).
 
 % single student but longer list of score
-cross_students_score(
+cross_student_score(
     [student(SID1,NAME)|[]],
     [score(SID2,CID,POINTS)|L2T],
     [student_x_score(student(SID1,NAME),score(SID2,CID,POINTS))|R]  ) :-
@@ -156,10 +156,10 @@ cross_students_score(
         t_student(SID1,NAME),
         t_list_type_score([score(SID2,CID,POINTS)|L2T]),
         size_0_to_12(L2T),
-        cross_students_score( [student(SID1,NAME)|[]], L2T, R ).
+        cross_student_score( [student(SID1,NAME)|[]], L2T, R ).
 
 % longer students list but SINGLE score
-cross_students_score(
+cross_student_score(
     [student(SID1,NAME)|L2T],
     [score(SID2,CID,POINTS)|[]],
     [student_x_score(student(SID1,NAME),score(SID2,CID,POINTS))|R]  ) :-
@@ -168,10 +168,10 @@ cross_students_score(
         t_list_type_student([student(SID1,NAME)|L2T]),
         t_score(SID2,CID,POINTS),
         size_0_to_12(L2T),
-        cross_students_score( L2T, [score(SID2,CID,POINTS)|[]], R ).
+        cross_student_score( L2T, [score(SID2,CID,POINTS)|[]], R ).
 
 % adding one more score to an 'already crossing'
-cross_students_score(
+cross_student_score(
     [student(_A,_B)|_C], % this list needs to be nonempty. the empty case is below.
     [score(SID2,CID,POINTS)|L2T],
     FINAL ) :-
@@ -183,12 +183,12 @@ cross_students_score(
         X>1,
         length([score(SID2,CID,POINTS)|L2T],Y),
         Y>1,
-        cross_students_score([student(_A,_B)|_C],L2T,POUT),
-        cross_students_score([student(_A,_B)|_C],[score(SID2,CID,POINTS)|[]],MOUT),
+        cross_student_score([student(_A,_B)|_C],L2T,POUT),
+        cross_student_score([student(_A,_B)|_C],[score(SID2,CID,POINTS)|[]],MOUT),
         merge(POUT,MOUT,FINAL).
 
 % adding one more student to an 'already crossing'
-cross_students_score(
+cross_student_score(
     [student(SID1,NAME)|L1T],
     [score(_A,_B,_C)|_D], % this list needs to be nonempty. the empty case is below.
     FINAL ) :-
@@ -200,18 +200,18 @@ cross_students_score(
         X>1,
         length([score(_A,_B,_C)|_D],Y),
         Y>1,
-        cross_students_score(L1T,[score(_A,_B,_C)|_D],POUT),
-        cross_students_score([student(SID1,NAME)|[]],[score(_A,_B,_C)|_D],MOUT),
+        cross_student_score(L1T,[score(_A,_B,_C)|_D],POUT),
+        cross_student_score([student(SID1,NAME)|[]],[score(_A,_B,_C)|_D],MOUT),
         merge(POUT,MOUT,FINAL).
 
 
 
 
-% cross_students_score([],L2,[]) :-
+% cross_student_score([],L2,[]) :-
 %         size_0_to_6(L2),
 %         t_list_type_score(L2).
 
-% cross_students_score(L1,[],[]) :-
+% cross_student_score(L1,[],[]) :-
 %         %L1 \= [],
 %         size_0_to_6(L1),
 %         t_list_type_student(L1).
@@ -257,7 +257,7 @@ meets_cond_is_good([X0|X1],Y) :-
 
 myselect(RA,RB,F2) :-
         t_primary_key_student_sid(RA),
-        cross_students_score(RA,RB,RARB),
+        cross_student_score(RA,RB,RARB),
         join_on_sid(RARB,F2).
         %meets_cond_is_good(F1,F2).
 
