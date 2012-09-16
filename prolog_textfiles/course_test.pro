@@ -71,66 +71,66 @@ t_student_x_scores(student(SID1,NAME),scores(SID2,CID,POINTS)) :-
         t_scores(SID2,CID,POINTS).
 
 
-list_type_student([]).
-list_type_student([student(SID,NAME)|LT]) :-
+t_list_type_student([]).
+t_list_type_student([student(SID,NAME)|LT]) :-
         t_student(SID,NAME),
         size_0_to_12(LT),      % it is very important to put this size PRIOR to the recursion below
-        list_type_student(LT).
+        t_list_type_student(LT).
 
-list_type_scores([]).
-list_type_scores([scores(SID2,CID,POINTS)|LT]) :-
+t_list_type_scores([]).
+t_list_type_scores([scores(SID2,CID,POINTS)|LT]) :-
         t_scores(SID2,CID,POINTS),
         size_0_to_12(LT),      % it is very important to put this size PRIOR to the recursion below
-        list_type_scores(LT).
+        t_list_type_scores(LT).
 
-list_type_student_x_scores([]).
-list_type_student_x_scores([student_x_scores(student(SID1,NAME),scores(SID2,CID,POINTS))|LT]) :-
+t_list_type_student_x_scores([]).
+t_list_type_student_x_scores([student_x_scores(student(SID1,NAME),scores(SID2,CID,POINTS))|LT]) :-
         t_student_x_scores(student(SID1,NAME),scores(SID2,CID,POINTS)),
         size_0_to_12(LT),      % it is very important to put this size PRIOR to the recursion below
-        list_type_student_x_scores(LT).
+        t_list_type_student_x_scores(LT).
 
 
-list_type_student_2([]).
-list_type_student_2([student(SID,NAME)|LT]) :-
+t_list_type_student_nonnull_sid([]).
+t_list_type_student_nonnull_sid([student(SID,NAME)|LT]) :-
         t_student(SID,NAME),
         nonnull(SID),
         size_0_to_12(LT),      % it is very important to put this size PRIOR to the recursion below
-        list_type_student_2(LT).
+        t_list_type_student_nonnull_sid(LT).
 
-primary_key_student_sid(L) :-
-        list_type_student_2(L),
+t_primary_key_student_sid(L) :-
+        t_list_type_student_nonnull_sid(L),
         unique_student_sid(L).
 
 
 unique_student_sid([]).
 
 unique_student_sid([student(SID,NAME)|LT]) :-
-        list_type_student([student(SID,NAME)|LT]),
+        %t_list_type_student([student(SID,NAME)|LT]),
         no_dupe_sid([student(SID,NAME)|LT],UX),
         [student(SID,NAME)|LT]=UX.
 
 /* t is the empty mapping, from library assoc */
 no_dupe_sid(L,LOUT) :-
-        list_type_student(L),
-        %list_type_student(LOUT), % not yet sure whether type assertions on the output is good or bad
-        rec_remove_sid(L,t,LOUT).
+        %t_list_type_student(L),
+        %t_list_type_student(LOUT), % not yet sure whether type assertions on the output is good or bad
+        t_rec_remove_sid(L,t,LOUT).
 
-rec_remove_sid([],_ASSOC,[]).
+t_rec_remove_sid([],_ASSOC,[]).
 
-rec_remove_sid([student(LH_SID,NAME)|LT],MAP,OUT) :-
-        list_type_student([student(LH_SID,NAME)|LT]),
-        %list_type_student(OUT), % not yet sure whether type assertions on the output is good or bad
+t_rec_remove_sid([student(LH_SID,NAME)|LT],MAP,OUT) :-
+        t_list_type_student([student(LH_SID,NAME)|LT]),
+        %t_list_type_student(OUT), % not yet sure whether type assertions on the output is good or bad
         size_0_to_6(LT),
         get_assoc(LH_SID,MAP,_EXISTSVAL),
-        rec_remove_sid(LT,MAP,OUT).
+        t_rec_remove_sid(LT,MAP,OUT).
 
-rec_remove_sid([student(LH_SID,NAME)|LT],MAP,[student(LH_SID,NAME)|REST]) :-
-        list_type_student([student(LH_SID,NAME)|LT]),
-        %list_type_student([student(LH_SID,NAME)|REST]), % not yet sure whether type assertions on the output is good or bad
+t_rec_remove_sid([student(LH_SID,NAME)|LT],MAP,[student(LH_SID,NAME)|REST]) :-
+        t_list_type_student([student(LH_SID,NAME)|LT]),
+        %t_list_type_student([student(LH_SID,NAME)|REST]), % not yet sure whether type assertions on the output is good or bad
         size_0_to_6(LT),
         \+get_assoc(LH_SID,MAP,_EXISTSVAL),
         put_assoc(LH_SID,MAP,inmap,MAP2),
-        rec_remove_sid(LT,MAP2,REST).
+        t_rec_remove_sid(LT,MAP2,REST).
 
 
 aax(x).
@@ -154,7 +154,7 @@ cross_students_scores(
 
         aax(_),
         t_student(SID1,NAME),
-        list_type_scores([scores(SID2,CID,POINTS)|L2T]),
+        t_list_type_scores([scores(SID2,CID,POINTS)|L2T]),
         size_0_to_12(L2T),
         cross_students_scores( [student(SID1,NAME)|[]], L2T, R ).
 
@@ -165,7 +165,7 @@ cross_students_scores(
     [student_x_scores(student(SID1,NAME),scores(SID2,CID,POINTS))|R]  ) :-
 
         bbx(_),
-        list_type_student([student(SID1,NAME)|L2T]),
+        t_list_type_student([student(SID1,NAME)|L2T]),
         t_scores(SID2,CID,POINTS),
         size_0_to_12(L2T),
         cross_students_scores( L2T, [scores(SID2,CID,POINTS)|[]], R ).
@@ -177,8 +177,8 @@ cross_students_scores(
     FINAL ) :-
 
         ccx(_),
-        list_type_student([student(_A,_B)|_C]),
-        list_type_scores([scores(SID2,CID,POINTS)|L2T]),
+        t_list_type_student([student(_A,_B)|_C]),
+        t_list_type_scores([scores(SID2,CID,POINTS)|L2T]),
         length([student(_A,_B)|_C],X),
         X>1,
         length([scores(SID2,CID,POINTS)|L2T],Y),
@@ -194,8 +194,8 @@ cross_students_scores(
     FINAL ) :-
 
         ddx(_),
-        list_type_student([student(SID1,NAME)|L1T]),
-        list_type_scores([scores(_A,_B,_C)|_D]),
+        t_list_type_student([student(SID1,NAME)|L1T]),
+        t_list_type_scores([scores(_A,_B,_C)|_D]),
         length([student(SID1,NAME)|L1T],X),
         X>1,
         length([scores(_A,_B,_C)|_D],Y),
@@ -209,12 +209,12 @@ cross_students_scores(
 
 % cross_students_scores([],L2,[]) :-
 %         size_0_to_6(L2),
-%         list_type_scores(L2).
+%         t_list_type_scores(L2).
 
 % cross_students_scores(L1,[],[]) :-
 %         %L1 \= [],
 %         size_0_to_6(L1),
-%         list_type_student(L1).
+%         t_list_type_student(L1).
 
 
 is_good(2).
@@ -230,35 +230,33 @@ filter_on_is_good( student_x_scores(student(SID1,NAME),scores(SID2,CID,POINTS)) 
 
 join_on_sid([],[]).
 join_on_sid([X0|X1],[X0|Y]) :-
-        list_type_student_x_scores([X0|X1]),
+        t_list_type_student_x_scores([X0|X1]),
         size_0_to_3(X1),
         filter_for_join_on_sid(X0),
         join_on_sid(X1,Y).
 
 join_on_sid([X0|X1],Y) :-
-        list_type_student_x_scores([X0|X1]),
+        t_list_type_student_x_scores([X0|X1]),
         size_0_to_3(X1),
         \+filter_for_join_on_sid(X0),
         join_on_sid(X1,Y).
 
 meets_cond_is_good([],[]).
 meets_cond_is_good([X0|X1],[X0|Y]) :-
-        list_type_student_x_scores([X0|X1]),
+        t_list_type_student_x_scores([X0|X1]),
         size_0_to_2(X1),
         filter_on_is_good(X0),
         meets_cond_is_good(X1,Y).
 
 meets_cond_is_good([X0|X1],Y) :-
-        list_type_student_x_scores([X0|X1]),
+        t_list_type_student_x_scores([X0|X1]),
         size_0_to_2(X1),
         \+filter_on_is_good(X0),
         meets_cond_is_good(X1,Y).
 
 
 myselect(RA,RB,F2) :-
-        %list_type_student(RA),
-        %list_type_scores(RB),
-        primary_key_student_sid(RA),
+        t_primary_key_student_sid(RA),
         cross_students_scores(RA,RB,RARB),
         join_on_sid(RARB,F2).
         %meets_cond_is_good(F1,F2).
@@ -270,7 +268,7 @@ sample execution:
 
 ?- myselect(X,Y, Z ),length(Z,N),N>0.
 
-?- length(X,3),length(Y,1),primary_key_student_sid(X),size_0_to_12(Z),myselect(X,Y,Z).
+?- length(X,3),length(Y,1),t_primary_key_student_sid(X),size_0_to_12(Z),myselect(X,Y,Z).
 
 ?- length(X,3),length(Y,1),length(Z,0),myselect(X,Y,Z).
 
