@@ -49,7 +49,7 @@ ERROR: =:=/2: Arguments are not sufficiently instantiated
 
 Typically, is/2 should be used with unbound left operand. If equality is to be tested, =:=/2 should be used. For example:
 
-?- 1 is sin(pi/2).   % Fails! sin(pi/2) evaluates to the float 1.0, which does not unify with the integer 1.
+?- 1 is sin(pi/2).   % Fails. sin(pi/2) evaluates to the float 1.0, which does not unify with the integer 1.
 ?- 1 =:= sin(pi/2).  % Succeeds as expected.
 
 */
@@ -219,7 +219,7 @@ cross_students_scores(
 
 is_good(2).
 
-% TODO: need to handle NULL sid here! (not for when sid is a PK, but for the 'general case')
+% TODO: need to handle NULL sid here. (not for when sid is a PK, but for the 'general case')
 filter_for_join_on_sid( student_x_scores(student(SID1,NAME),scores(SID2,CID,POINTS)) ) :-
         student_x_scores(student(SID1,NAME),scores(SID2,CID,POINTS)),
         SID1 = SID2.
