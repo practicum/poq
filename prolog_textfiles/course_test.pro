@@ -59,16 +59,16 @@ t_student(SID,NAME) :-
         demonat(SID),
         demoname(NAME).
 
-% type definition for a scores tuple
-t_scores(SID,CID,POINTS) :-
+% type definition for a score tuple
+t_score(SID,CID,POINTS) :-
         demonat(SID),
         demoguid(CID),
         demoint(POINTS).
 
 % type definition for a tuple from crossing student(s) with score(s)
-t_student_x_scores(student(SID1,NAME),scores(SID2,CID,POINTS)) :-
+t_student_x_score(student(SID1,NAME),score(SID2,CID,POINTS)) :-
         t_student(SID1,NAME),
-        t_scores(SID2,CID,POINTS).
+        t_score(SID2,CID,POINTS).
 
 
 t_list_type_student([]).
@@ -77,17 +77,17 @@ t_list_type_student([student(SID,NAME)|LT]) :-
         size_0_to_12(LT),      % it is very important to put this size PRIOR to the recursion below
         t_list_type_student(LT).
 
-t_list_type_scores([]).
-t_list_type_scores([scores(SID2,CID,POINTS)|LT]) :-
-        t_scores(SID2,CID,POINTS),
+t_list_type_score([]).
+t_list_type_score([score(SID2,CID,POINTS)|LT]) :-
+        t_score(SID2,CID,POINTS),
         size_0_to_12(LT),      % it is very important to put this size PRIOR to the recursion below
-        t_list_type_scores(LT).
+        t_list_type_score(LT).
 
-t_list_type_student_x_scores([]).
-t_list_type_student_x_scores([student_x_scores(student(SID1,NAME),scores(SID2,CID,POINTS))|LT]) :-
-        t_student_x_scores(student(SID1,NAME),scores(SID2,CID,POINTS)),
+t_list_type_student_x_score([]).
+t_list_type_student_x_score([student_x_score(student(SID1,NAME),score(SID2,CID,POINTS))|LT]) :-
+        t_student_x_score(student(SID1,NAME),score(SID2,CID,POINTS)),
         size_0_to_12(LT),      % it is very important to put this size PRIOR to the recursion below
-        t_list_type_student_x_scores(LT).
+        t_list_type_student_x_score(LT).
 
 
 t_list_type_student_nonnull_sid([]).
@@ -138,80 +138,80 @@ bbx(x).
 ccx(x).
 ddx(x).
 
-cross_students_scores( [], [], [] ).
+cross_students_score( [], [], [] ).
 
-cross_students_scores( [student(SID1,NAME)|[]], [], [] ) :-
+cross_students_score( [student(SID1,NAME)|[]], [], [] ) :-
         t_student(SID1,NAME).
 
-cross_students_scores( [], [scores(SID2,CID,POINTS)|[]], [] ) :-
-        t_scores(SID2,CID,POINTS).
+cross_students_score( [], [score(SID2,CID,POINTS)|[]], [] ) :-
+        t_score(SID2,CID,POINTS).
 
-% single student but longer list of scores
-cross_students_scores(
+% single student but longer list of score
+cross_students_score(
     [student(SID1,NAME)|[]],
-    [scores(SID2,CID,POINTS)|L2T],
-    [student_x_scores(student(SID1,NAME),scores(SID2,CID,POINTS))|R]  ) :-
+    [score(SID2,CID,POINTS)|L2T],
+    [student_x_score(student(SID1,NAME),score(SID2,CID,POINTS))|R]  ) :-
 
         aax(_),
         t_student(SID1,NAME),
-        t_list_type_scores([scores(SID2,CID,POINTS)|L2T]),
+        t_list_type_score([score(SID2,CID,POINTS)|L2T]),
         size_0_to_12(L2T),
-        cross_students_scores( [student(SID1,NAME)|[]], L2T, R ).
+        cross_students_score( [student(SID1,NAME)|[]], L2T, R ).
 
 % longer students list but SINGLE score
-cross_students_scores(
+cross_students_score(
     [student(SID1,NAME)|L2T],
-    [scores(SID2,CID,POINTS)|[]],
-    [student_x_scores(student(SID1,NAME),scores(SID2,CID,POINTS))|R]  ) :-
+    [score(SID2,CID,POINTS)|[]],
+    [student_x_score(student(SID1,NAME),score(SID2,CID,POINTS))|R]  ) :-
 
         bbx(_),
         t_list_type_student([student(SID1,NAME)|L2T]),
-        t_scores(SID2,CID,POINTS),
+        t_score(SID2,CID,POINTS),
         size_0_to_12(L2T),
-        cross_students_scores( L2T, [scores(SID2,CID,POINTS)|[]], R ).
+        cross_students_score( L2T, [score(SID2,CID,POINTS)|[]], R ).
 
 % adding one more score to an 'already crossing'
-cross_students_scores(
+cross_students_score(
     [student(_A,_B)|_C], % this list needs to be nonempty. the empty case is below.
-    [scores(SID2,CID,POINTS)|L2T],
+    [score(SID2,CID,POINTS)|L2T],
     FINAL ) :-
 
         ccx(_),
         t_list_type_student([student(_A,_B)|_C]),
-        t_list_type_scores([scores(SID2,CID,POINTS)|L2T]),
+        t_list_type_score([score(SID2,CID,POINTS)|L2T]),
         length([student(_A,_B)|_C],X),
         X>1,
-        length([scores(SID2,CID,POINTS)|L2T],Y),
+        length([score(SID2,CID,POINTS)|L2T],Y),
         Y>1,
-        cross_students_scores([student(_A,_B)|_C],L2T,POUT),
-        cross_students_scores([student(_A,_B)|_C],[scores(SID2,CID,POINTS)|[]],MOUT),
+        cross_students_score([student(_A,_B)|_C],L2T,POUT),
+        cross_students_score([student(_A,_B)|_C],[score(SID2,CID,POINTS)|[]],MOUT),
         merge(POUT,MOUT,FINAL).
 
 % adding one more student to an 'already crossing'
-cross_students_scores(
+cross_students_score(
     [student(SID1,NAME)|L1T],
-    [scores(_A,_B,_C)|_D], % this list needs to be nonempty. the empty case is below.
+    [score(_A,_B,_C)|_D], % this list needs to be nonempty. the empty case is below.
     FINAL ) :-
 
         ddx(_),
         t_list_type_student([student(SID1,NAME)|L1T]),
-        t_list_type_scores([scores(_A,_B,_C)|_D]),
+        t_list_type_score([score(_A,_B,_C)|_D]),
         length([student(SID1,NAME)|L1T],X),
         X>1,
-        length([scores(_A,_B,_C)|_D],Y),
+        length([score(_A,_B,_C)|_D],Y),
         Y>1,
-        cross_students_scores(L1T,[scores(_A,_B,_C)|_D],POUT),
-        cross_students_scores([student(SID1,NAME)|[]],[scores(_A,_B,_C)|_D],MOUT),
+        cross_students_score(L1T,[score(_A,_B,_C)|_D],POUT),
+        cross_students_score([student(SID1,NAME)|[]],[score(_A,_B,_C)|_D],MOUT),
         merge(POUT,MOUT,FINAL).
 
 
 
 
-% cross_students_scores([],L2,[]) :-
+% cross_students_score([],L2,[]) :-
 %         size_0_to_6(L2),
-%         t_list_type_scores(L2).
+%         t_list_type_score(L2).
 
-% cross_students_scores(L1,[],[]) :-
+% cross_students_score(L1,[],[]) :-
 %         %L1 \= [],
 %         size_0_to_6(L1),
 %         t_list_type_student(L1).
@@ -220,36 +220,36 @@ cross_students_scores(
 is_good(2).
 
 % TODO: need to handle NULL sid here. (not for when sid is a PK, but for the 'general case')
-filter_for_join_on_sid( student_x_scores(student(SID1,NAME),scores(SID2,CID,POINTS)) ) :-
-        t_student_x_scores(student(SID1,NAME),scores(SID2,CID,POINTS)),
+filter_for_join_on_sid( student_x_score(student(SID1,NAME),score(SID2,CID,POINTS)) ) :-
+        t_student_x_score(student(SID1,NAME),score(SID2,CID,POINTS)),
         SID1 = SID2.
 
-filter_on_is_good( student_x_scores(student(SID1,NAME),scores(SID2,CID,POINTS)) ) :-
-        t_student_x_scores(student(SID1,NAME),scores(SID2,CID,POINTS)),
+filter_on_is_good( student_x_score(student(SID1,NAME),score(SID2,CID,POINTS)) ) :-
+        t_student_x_score(student(SID1,NAME),score(SID2,CID,POINTS)),
         is_good(POINTS).
 
 join_on_sid([],[]).
 join_on_sid([X0|X1],[X0|Y]) :-
-        t_list_type_student_x_scores([X0|X1]),
+        t_list_type_student_x_score([X0|X1]),
         size_0_to_3(X1),
         filter_for_join_on_sid(X0),
         join_on_sid(X1,Y).
 
 join_on_sid([X0|X1],Y) :-
-        t_list_type_student_x_scores([X0|X1]),
+        t_list_type_student_x_score([X0|X1]),
         size_0_to_3(X1),
         \+filter_for_join_on_sid(X0),
         join_on_sid(X1,Y).
 
 meets_cond_is_good([],[]).
 meets_cond_is_good([X0|X1],[X0|Y]) :-
-        t_list_type_student_x_scores([X0|X1]),
+        t_list_type_student_x_score([X0|X1]),
         size_0_to_2(X1),
         filter_on_is_good(X0),
         meets_cond_is_good(X1,Y).
 
 meets_cond_is_good([X0|X1],Y) :-
-        t_list_type_student_x_scores([X0|X1]),
+        t_list_type_student_x_score([X0|X1]),
         size_0_to_2(X1),
         \+filter_on_is_good(X0),
         meets_cond_is_good(X1,Y).
@@ -257,7 +257,7 @@ meets_cond_is_good([X0|X1],Y) :-
 
 myselect(RA,RB,F2) :-
         t_primary_key_student_sid(RA),
-        cross_students_scores(RA,RB,RARB),
+        cross_students_score(RA,RB,RARB),
         join_on_sid(RARB,F2).
         %meets_cond_is_good(F1,F2).
 
@@ -272,6 +272,6 @@ sample execution:
 
 ?- length(X,3),length(Y,1),length(Z,0),myselect(X,Y,Z).
 
-?- length([student(a,k),student(b,l),student(c,m)],3),length([scores(a,sp,bad)],1),length(Z,0),myselect([student(a,k),student(b,l),student(c,m)],[scores(a,sp,bad)],Z).
+?- length([student(a,k),student(b,l),student(c,m)],3),length([score(a,sp,bad)],1),length(Z,0),myselect([student(a,k),student(b,l),student(c,m)],[score(a,sp,bad)],Z).
 
 */
