@@ -55,44 +55,44 @@ Typically, is/2 should be used with unbound left operand. If equality is to be t
 */
 
 % type definition for a student tuple
-student(SID,NAME) :-
+t_student(SID,NAME) :-
         demonat(SID),
         demoname(NAME).
 
 % type definition for a scores tuple
-scores(SID,CID,POINTS) :-
+t_scores(SID,CID,POINTS) :-
         demonat(SID),
         demoguid(CID),
         demoint(POINTS).
 
 % type definition for a tuple from crossing student(s) with score(s)
-student_x_scores(student(SID1,NAME),scores(SID2,CID,POINTS)) :-
-        student(SID1,NAME),
-        scores(SID2,CID,POINTS).
+t_student_x_scores(student(SID1,NAME),scores(SID2,CID,POINTS)) :-
+        t_student(SID1,NAME),
+        t_scores(SID2,CID,POINTS).
 
 
 list_type_student([]).
 list_type_student([student(SID,NAME)|LT]) :-
-        student(SID,NAME),
+        t_student(SID,NAME),
         size_0_to_12(LT),      % it is very important to put this size PRIOR to the recursion below
         list_type_student(LT).
 
 list_type_scores([]).
 list_type_scores([scores(SID2,CID,POINTS)|LT]) :-
-        scores(SID2,CID,POINTS),
+        t_scores(SID2,CID,POINTS),
         size_0_to_12(LT),      % it is very important to put this size PRIOR to the recursion below
         list_type_scores(LT).
 
 list_type_student_x_scores([]).
 list_type_student_x_scores([student_x_scores(student(SID1,NAME),scores(SID2,CID,POINTS))|LT]) :-
-        student_x_scores(student(SID1,NAME),scores(SID2,CID,POINTS)),
+        t_student_x_scores(student(SID1,NAME),scores(SID2,CID,POINTS)),
         size_0_to_12(LT),      % it is very important to put this size PRIOR to the recursion below
         list_type_student_x_scores(LT).
 
 
 list_type_student_2([]).
 list_type_student_2([student(SID,NAME)|LT]) :-
-        student(SID,NAME),
+        t_student(SID,NAME),
         nonnull(SID),
         size_0_to_12(LT),      % it is very important to put this size PRIOR to the recursion below
         list_type_student_2(LT).
@@ -141,10 +141,10 @@ ddx(x).
 cross_students_scores( [], [], [] ).
 
 cross_students_scores( [student(SID1,NAME)|[]], [], [] ) :-
-        student(SID1,NAME).
+        t_student(SID1,NAME).
 
 cross_students_scores( [], [scores(SID2,CID,POINTS)|[]], [] ) :-
-        scores(SID2,CID,POINTS).
+        t_scores(SID2,CID,POINTS).
 
 % single student but longer list of scores
 cross_students_scores(
@@ -153,7 +153,7 @@ cross_students_scores(
     [student_x_scores(student(SID1,NAME),scores(SID2,CID,POINTS))|R]  ) :-
 
         aax(_),
-        student(SID1,NAME),
+        t_student(SID1,NAME),
         list_type_scores([scores(SID2,CID,POINTS)|L2T]),
         size_0_to_12(L2T),
         cross_students_scores( [student(SID1,NAME)|[]], L2T, R ).
@@ -166,7 +166,7 @@ cross_students_scores(
 
         bbx(_),
         list_type_student([student(SID1,NAME)|L2T]),
-        scores(SID2,CID,POINTS),
+        t_scores(SID2,CID,POINTS),
         size_0_to_12(L2T),
         cross_students_scores( L2T, [scores(SID2,CID,POINTS)|[]], R ).
 
@@ -221,11 +221,11 @@ is_good(2).
 
 % TODO: need to handle NULL sid here. (not for when sid is a PK, but for the 'general case')
 filter_for_join_on_sid( student_x_scores(student(SID1,NAME),scores(SID2,CID,POINTS)) ) :-
-        student_x_scores(student(SID1,NAME),scores(SID2,CID,POINTS)),
+        t_student_x_scores(student(SID1,NAME),scores(SID2,CID,POINTS)),
         SID1 = SID2.
 
 filter_on_is_good( student_x_scores(student(SID1,NAME),scores(SID2,CID,POINTS)) ) :-
-        student_x_scores(student(SID1,NAME),scores(SID2,CID,POINTS)),
+        t_student_x_scores(student(SID1,NAME),scores(SID2,CID,POINTS)),
         is_good(POINTS).
 
 join_on_sid([],[]).
