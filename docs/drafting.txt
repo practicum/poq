@@ -150,3 +150,7 @@ SMT solver? No... we don't actually need those theories (LIA, UF, etc), and we d
 So just use good old fashioned Horn clauses and Resolution.  Create FOL predicates and implications, and then deduce conclusions based on that.
 
 Next, we must devise encodings for taking SQL code and creating an appropriate FOL, horn-clause representation.
+
+POSSIBLE IMPROVEMENTS TO THE SYSTEM:
+
+performance: concurrent prolog?
