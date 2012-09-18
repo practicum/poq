@@ -6,14 +6,14 @@
 
 :- write('        ~~~~ SCRATCH file opened').
 
-descendant(X,Y) :- offspring(X,Y).
-descendant(X,Z) :- offspring(X,Y),descendant(Y,Z).
+descendantxx(X,Y) :- offspringxx(X,Y).
+descendantxx(X,Z) :- offspringxx(X,Y),descendantxx(Y,Z).
 
-offspring(dad,ish).
-offspring(dad,who).
-offspring(who,grandkid). % if who is the parent, then 'solve' will not terminate. if 'ish' is used, then it succeeds. what??
+offspringxx(dadxx,ishxx).
+offspringxx(dadxx,whoxx).
+offspringxx(whoxx,grandkidxx). % if who is the parent, then 'solve' will not terminate. if 'ish' is used, then it succeeds. what??
 
-offzz(A) :- A.
+% offzz(A) :- A.
 
 say_hi :- write('saying hi').
 
@@ -23,10 +23,10 @@ uu(three) :- say_hi.
 
 vv(_) :- demonat(_), uu(_).
 
-$something(X) :- uu(X).
+% $something(X) :- uu(X).
 
-solve(true).
-solve((A,B)) :- solve(A), solve(B).
-solve(A) :- clause(A,B), solve(B).
+solvexx(true).
+solvexx((A,B)) :- solvexx(A), solvexx(B).
+solvexx(A) :- clause(A,B), solvexx(B).
 
-mmatch((A,B),B) :- write_canonical(B),nl.
+% mmatch((A,B),B) :- write_canonical(B),nl.
