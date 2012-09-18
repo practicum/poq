@@ -111,6 +111,17 @@ RAMIFICATIONS OF THE CUT:
 
 so far my only use is with the nonnull predicate (i should continue to track any new uses)
 
+OTHER PROLOG 'IDIOSYNCRASIES' THAT ONLY AFFECT PERFORMANCE (NOT VALIDITY):
+
+see this:
+
+commit 2aab7d30f4713e5bdbe8eba5b4559b2a926aadf0
+Author: Someone <someone@localhost>
+Date:   Sat Sep 15 21:16:58 2012 -0700
+
+    improvements to eliminate overlap in scenarios that would allow the application of instances of rule(s) cross_student_score
+
+
 
 CHRONOLOGICAL VIEW OF THE DEVELOPMENT OF THIS THESIS:
 
