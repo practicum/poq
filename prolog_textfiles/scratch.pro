@@ -43,6 +43,22 @@ mini_solve(true) :- !.
 %   clause(ANYTHING,call(ANYTHING)) ... and then without this version of mini_solve we loop endlessly on that.
 mini_solve(call(_)) :- !, fail.
 
+% if problems occur, we should probably comment out the next clause and do a trace,
+% because we might want to add a specific matcher, such as that for 'call' above.
+mini_solve(A) :-
+        predicate_property(A, autoload(_)), % using 'autoload' as a rough equivalent for built_in
+        !,
+        call(A).
+
+% 'member' was not showing up as built-in, but its subclauses
+% were. however, its subclauses were NON-visible, so could not be called with call ... ouch.
+/*
+mini_solve(A) :-
+        predicate_property(A,built_in),
+        !,
+        call(A).
+*/
+
 mini_solve((A,B)) :- mini_solve(A), mini_solve(B).
 mini_solve(A) :- clause(A,B), mini_solve(B).
 
