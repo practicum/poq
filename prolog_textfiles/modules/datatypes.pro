@@ -22,7 +22,18 @@
 % possible or else not 'discoverable', because I have not found a way
 % to do it GIVEN THE REQUIREMENT that each new type must 'participate'
 % in the definition of nonnull.
+/*
+UPDATE TO THE ABOVE COMMENTS:
 
+  Today I found a predicate called 'multifile' that may solve the
+  problem I describe above. See:
+
+  http://www.swi-prolog.org/pldoc/man?predicate=multifile%2f1
+
+  multifile :PredicateIndicator, ...
+    Informs the system that the specified predicate(s) may be defined over more than one file. This stops consult/1 from redefining a predicate when a new definition is found.
+
+*/
 isnull(null).
 
 % note the use of so-called 'green cut' here.
