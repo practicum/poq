@@ -52,14 +52,28 @@ mini_solve(A) :-
 
 % 'member' was not showing up as built-in, but its subclauses
 % were. however, its subclauses were NON-visible, so could not be called with call ... ouch.
-/*
+% / *  // despite the fact that built_in was no good on member, we need it for 'length'
 mini_solve(A) :-
         predicate_property(A,built_in),
         !,
         call(A).
-*/
+% * /
 
 mini_solve((A,B)) :- mini_solve(A), mini_solve(B).
 mini_solve(A) :- clause(A,B), mini_solve(B).
+
+/*
+NOTES ABOUT predicate_property AND POTENTIAL PROPERTIES FOR ITS SECOND ARG:
+
+built_in
+    True if the predicate is locked as a built-in predicate. This implies it cannot be redefined in its definition module and it can normally not be seen in the tracer.
+
+foreign
+    True if the predicate is defined in the C language.
+
+interpreted
+    True if the predicate is defined in Prolog. We return true on this because, although the code is actually compiled, it is completely transparent, just like interpreted code.
+*/
+
 
 % mmatch((A,B),B) :- write_canonical(B),nl.
