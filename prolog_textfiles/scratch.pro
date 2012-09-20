@@ -60,6 +60,10 @@ mini_solve(A) :-
 % * /
 
 mini_solve((A,B)) :- mini_solve(A), mini_solve(B).
+
+% why do i NOT need something like the following? i would like to explain this...
+%  mini_solve((A;B)) :- mini_solve(A); mini_solve(B).
+
 mini_solve(A) :- clause(A,B), mini_solve(B).
 
 /*
