@@ -3,6 +3,7 @@
 
 :- use_module(modules/small_lists).
 :- use_module(modules/datatypes).
+:- use_module(modules/mini_solve).
 
 :- write('        ~~~~ SCRATCH file opened').
 
@@ -25,58 +26,54 @@ vv(_) :- demonat(_), uu(_).
 
 % $something(X) :- uu(X).  % YAP prolog did not like the $ dollar sign in the predicate name
 
-/*
-  Exit: (10) clause
-  (  (direct_child(man1, _G443), a_descendant(_G443, grandkid)),
 
-  (call(direct_child(man1, _G443)), call(a_descendant(_G443, grandkid)))) ?
+teacher_info( ebert,5627771225,[cecs1,cecs2,cecs3] ).
 
-  */
+teacher_info( monge,5627771228,[cecs10,cecs12,cecs13] ).
 
-% without the CUT for matching 'true', upon backtracking we take 'true' and match it to the FINAL mini_solve predicate,
-% which causes us to then call clause(true,B), which generates:
-%    ERROR: clause/2: No permission to access private_procedure `true/0'
-mini_solve(true) :- !.
+teacher_info( gittleman,5627771227,[cecs21,cecs22,cecs23] ).
 
-% apparently (by observation, but i have not found documentation yet), after we already have done unification
-% of everything in the explicit program during the 'clause(A,B)' execution, we ultimately unify with:
-%   clause(ANYTHING,call(ANYTHING)) ... and then without this version of mini_solve we loop endlessly on that.
-mini_solve(call(_)) :- !, fail.
+course_info( algorithms,cecs21,gittleman ).
 
-% if problems occur, we should probably comment out the next clause and do a trace,
-% because we might want to add a specific matcher, such as that for 'call' above.
-mini_solve(A) :-
-        predicate_property(A, autoload(_)), % using 'autoload' as a rough equivalent for built_in
-        !,
-        call(A).
+course_info( systems_design,cecs22,gittleman ).
 
-% 'member' was not showing up as built-in, but its subclauses
-% were. however, its subclauses were NON-visible, so could not be called with call ... ouch.
-% / *  // despite the fact that built_in was no good on member, we need it for 'length'
-mini_solve(A) :-
-        predicate_property(A,built_in),
-        !,
-        call(A).
-% * /
+course_info( artificial_intelligence,cecs44,goldstein ).
 
-mini_solve((A,B)) :- mini_solve(A), mini_solve(B).
+taught_by( NUMBER, TEACHER ) :-
+        course_info( _,NUMBER,TEACHER ).
 
-% why do i NOT need something like the following? i would like to explain this...
-%  mini_solve((A;B)) :- mini_solve(A); mini_solve(B).
+taught_by( NUMBER, TEACHER ) :-
+        teacher_info( TEACHER, _, LIST ),
+        member( NUMBER, LIST ).
 
-mini_solve(A) :- clause(A,B), mini_solve(B).
+teaches( TEACHER, COURSE ) :-
+        teacher_info( TEACHER, _, C_LIST ),
+        member( COURSE, C_LIST ).
+
+teaches( TEACHER, COURSE ) :-
+        course_info( _,COURSE,TEACHER ).
+
 
 /*
-NOTES ABOUT predicate_property AND POTENTIAL PROPERTIES FOR ITS SECOND ARG:
+  example usage:
 
-built_in
-    True if the predicate is locked as a built-in predicate. This implies it cannot be redefined in its definition module and it can normally not be seen in the tracer.
+  ?- teaches( goldstein, X).
+  X = cecs44.
 
-foreign
-    True if the predicate is defined in the C language.
+  ?- teaches( gittleman, X).
+  X = cecs21
+  X = cecs22
+  X = cecs23 .
 
-interpreted
-    True if the predicate is defined in Prolog. We return true on this because, although the code is actually compiled, it is completely transparent, just like interpreted code.
+  ?- taught_by( cecs44, X).
+  X = goldstein .
+
+  ?- taught_by( cecs12, X).
+  X = monge .
+
+  ?- taught_by( cecs3, X).
+  X = ebert .
+
 */
 
 
