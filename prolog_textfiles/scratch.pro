@@ -78,3 +78,12 @@ teaches( TEACHER, COURSE ) :-
 
 
 % mmatch((A,B),B) :- write_canonical(B),nl.
+
+siblings(a1,x1).
+siblings(a2,x2).
+siblings(a3,x3).
+
+% DEMO of INFINITE tree
+siblings(X,Y) :- siblings(Y,X).
+% ?- siblings(X,Y) % produces a never-ending stream of assignments
+
