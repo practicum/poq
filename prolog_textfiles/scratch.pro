@@ -1,9 +1,6 @@
 :- use_module(library(lists)).
 :- use_module(library(assoc)).
 
-:- use_module(modules/small_lists).
-:- use_module(modules/datatypes).
-:- use_module(modules/mini_solve).
 
 :- write('        ~~~~ SCRATCH file opened').
 
