@@ -1,0 +1,1 @@
+mysql   --show-warnings  --default-character-set=utf8  --user=username -p --database=camping
