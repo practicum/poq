@@ -132,6 +132,25 @@ t_gtperiod_x_purchase(
 
 % ----------------------------------------------------------
 
+% putting the UNIQUE barcode_string information here.  TODO: what if two columns bore the unique keyword?
+t_list_type_barcode([]).
+t_list_type_barcode(
+  [abc(BARCODE_STRING,
+       BARCODE_TYPE,
+       AMENITIES_ID,
+       IN_PLAY)   |LT]) :-
+
+        t_AmenitiesAccessBarcode(
+            BARCODE_STRING,
+            BARCODE_TYPE,
+            AMENITIES_ID,
+            IN_PLAY),
+        manageable_list_tail(LT),      % it is very important to put this size PRIOR to the recursion below
+        t_list_type_barcode(LT).
+
+
+% ----------------------------------------------------------
+
 % the list to stand in for a 'set' of tuples of type t_barcode_x_purchase
 t_list_type_barcode_x_purchase([]).
 
