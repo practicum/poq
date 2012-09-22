@@ -154,3 +154,5 @@ Next, we must devise encodings for taking SQL code and creating an appropriate F
 POSSIBLE IMPROVEMENTS TO THE SYSTEM:
 
 performance: concurrent prolog?
+
+UTF8, unicode, other charsets/encodings ? does prolog do utf8? probably!
