@@ -134,11 +134,8 @@ t_gtperiod_x_purchase(
 
 % putting the UNIQUE barcode_string information here.  TODO: what if two columns bore the unique keyword?
 t_list_type_barcode(L) :-
-        list_type_abc_removed_dup_barcode(_,L).
-
-
-list_type_abc_removed_dup_barcode(L,LOUT) :-
-        list_type_abc_removed_dup_barcode(L,t,LOUT).
+        % t is the empty mapping, from library assoc
+        list_type_abc_removed_dup_barcode(L,t,L).
 
 
 list_type_abc_removed_dup_barcode([],_ASSOC,[]).
@@ -190,11 +187,8 @@ list_type_abc_removed_dup_barcode(
 
 % putting the UNIQUE barcode_string information here.  TODO: what if two columns bore the unique keyword?
 t_list_type_purchase(L) :-
-        list_type_pch_removed_dup_pchid(_,L).
-
-
-list_type_pch_removed_dup_pchid(L,LOUT) :-
-        list_type_pch_removed_dup_pchid(L,t,LOUT).
+        % t is the empty mapping, from library assoc
+        list_type_pch_removed_dup_pchid(L,t,L).
 
 
 list_type_pch_removed_dup_pchid([],_ASSOC,[]).
