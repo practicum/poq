@@ -133,20 +133,57 @@ t_gtperiod_x_purchase(
 % ----------------------------------------------------------
 
 % putting the UNIQUE barcode_string information here.  TODO: what if two columns bore the unique keyword?
-t_list_type_barcode([]).
-t_list_type_barcode(
+t_list_type_barcode(L) :-
+        list_type_abc_removed_dup_barcode(_,L).
+
+
+list_type_abc_removed_dup_barcode(L,LOUT) :-
+        list_type_abc_removed_dup_barcode(L,t,LOUT).
+
+
+list_type_abc_removed_dup_barcode([],_ASSOC,[]).
+
+
+list_type_abc_removed_dup_barcode(
   [abc(BARCODE_STRING,
        BARCODE_TYPE,
        AMENITIES_ID,
-       IN_PLAY)   |LT]) :-
+       IN_PLAY)   |LT],
+  MAP,
+  OUT) :-
 
+        manageable_list_tail(LT),
         t_AmenitiesAccessBarcode(
             BARCODE_STRING,
             BARCODE_TYPE,
             AMENITIES_ID,
             IN_PLAY),
-        manageable_list_tail(LT),      % it is very important to put this size PRIOR to the recursion below
-        t_list_type_barcode(LT).
+        get_assoc(BARCODE_STRING,MAP,_EXISTSVAL), % map key (BARCODE_STRING) needs to be instantiated by here.
+
+        list_type_abc_removed_dup_barcode(LT,MAP,OUT). % note: here, the OUT (output) does NOT include the head item.
+
+
+list_type_abc_removed_dup_barcode(
+  [abc(BARCODE_STRING,
+       BARCODE_TYPE,
+       AMENITIES_ID,
+       IN_PLAY)   |LT],
+  MAP,
+  [abc(BARCODE_STRING,
+       BARCODE_TYPE,
+       AMENITIES_ID,
+       IN_PLAY)   |REST]) :-
+
+        manageable_list_tail(LT),
+        t_AmenitiesAccessBarcode(
+            BARCODE_STRING,
+            BARCODE_TYPE,
+            AMENITIES_ID,
+            IN_PLAY),
+
+        \+get_assoc(BARCODE_STRING,MAP,_EXISTSVAL),  % map key (BARCODE_STRING) needs to be instantiated by here.
+        put_assoc(BARCODE_STRING,MAP,inmap,MAP2),    % 'inmap' is an arbitrary ground value to link with the key.
+        list_type_abc_removed_dup_barcode(LT,MAP2,REST).
 
 
 % ----------------------------------------------------------
