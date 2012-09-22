@@ -188,6 +188,65 @@ list_type_abc_removed_dup_barcode(
 
 % ----------------------------------------------------------
 
+% putting the UNIQUE barcode_string information here.  TODO: what if two columns bore the unique keyword?
+t_list_type_purchase(L) :-
+        list_type_pch_removed_dup_pchid(_,L).
+
+
+list_type_pch_removed_dup_pchid(L,LOUT) :-
+        list_type_pch_removed_dup_pchid(L,t,LOUT).
+
+
+list_type_pch_removed_dup_pchid([],_ASSOC,[]).
+
+
+list_type_pch_removed_dup_pchid(
+  [pch(UNIQUE_FIELD, % PURCHASE_ID
+       BARCODE_STRING,
+       PURCHASE_DATE,
+       PURCHASED_SPACES_QTY,
+       CANCELED)   |LT],
+  MAP,
+  OUT) :-
+
+        manageable_list_tail(LT),
+        t_Purchase(UNIQUE_FIELD,       % PURCHASE_ID
+                   BARCODE_STRING,
+                   PURCHASE_DATE,
+                   PURCHASED_SPACES_QTY,
+                   CANCELED),
+        get_assoc(UNIQUE_FIELD,MAP,_EXISTSVAL), % map key (UNIQUE_FIELD) needs to be instantiated by here.
+
+        list_type_pch_removed_dup_pchid(LT,MAP,OUT). % note: here, the OUT (output) does NOT include the head item.
+
+
+list_type_pch_removed_dup_pchid(
+  [pch(UNIQUE_FIELD, % PURCHASE_ID
+       BARCODE_STRING,
+       PURCHASE_DATE,
+       PURCHASED_SPACES_QTY,
+       CANCELED)   |LT],
+  MAP,
+  [pch(UNIQUE_FIELD, % PURCHASE_ID
+       BARCODE_STRING,
+       PURCHASE_DATE,
+       PURCHASED_SPACES_QTY,
+       CANCELED)   |REST]) :-
+
+        manageable_list_tail(LT),
+        t_Purchase(UNIQUE_FIELD,       % PURCHASE_ID
+                   BARCODE_STRING,
+                   PURCHASE_DATE,
+                   PURCHASED_SPACES_QTY,
+                   CANCELED),
+
+        \+get_assoc(UNIQUE_FIELD,MAP,_EXISTSVAL),  % map key (UNIQUE_FIELD) needs to be instantiated by here.
+        put_assoc(UNIQUE_FIELD,MAP,inmap,MAP2),    % 'inmap' is an arbitrary ground value to link with the key.
+        list_type_pch_removed_dup_pchid(LT,MAP2,REST).
+
+
+% ----------------------------------------------------------
+
 % the list to stand in for a 'set' of tuples of type t_barcode_x_purchase
 t_list_type_barcode_x_purchase([]).
 
