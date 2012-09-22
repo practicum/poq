@@ -21,6 +21,7 @@ rev([Head|List1], List2, List3) :-
 
 :- module(smallnum,
           [medium_list/1,
+           size_0_to_0/1, % yes, the name here is a bit silly, but i like the symmetry with the other names
            size_0_to_1/1,
            size_0_to_2/1,
            size_0_to_3/1,
@@ -40,7 +41,7 @@ rev([Head|List1], List2, List3) :-
            size_1_to_6/1]).
 
 
-
+size_0_to_0(LIST) :- length(LIST,0).
 size_0_to_1(LIST) :- length(LIST,0);length(LIST,1).
 size_0_to_2(LIST) :- length(LIST,0);length(LIST,1);length(LIST,2).
 size_0_to_3(LIST) :- length(LIST,0);length(LIST,1);length(LIST,2);length(LIST,3).
