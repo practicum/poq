@@ -2,7 +2,6 @@
 :- use_module(library(assoc)).
 
 :- use_module(modules/small_lists).
-:- use_module(modules/datatypes).
 
 :- write('        ~~~~ course_test file opened').
 

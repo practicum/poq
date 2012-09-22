@@ -10,7 +10,7 @@
 
 
 :- use_module(modules/small_lists).
-:- use_module(modules/datatypes).
+%:- use_module(modules/datatypes).  NO. DO NOT ENABLE. instead, the user imports ONE of several choices.
 
 manageable_list_tail(L) :- size_0_to_1(L). % applied to a TAIL of list, we know the WHOLE list would be +1 bigger
 

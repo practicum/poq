@@ -10,7 +10,7 @@
 :- use_module(library(lists)).
 :- use_module(library(assoc)).
 
-:- use_module(datatypes).
+%:- use_module(datatypes).  %NO. DO NOT ENABLE. instead, the user imports ONE of several choices.
 
 
 amenitiesAccessBarcodeTuple(BARCODE_STRING,BARCODE_TYPE,AMENITIES_ID,IN_PLAY) :-
