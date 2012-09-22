@@ -304,3 +304,257 @@ t_list_type_gtperiod_x_purchase(
 
 
 % ----------------------------------------------------------
+
+/*
+There are 7 different clauses to express cross_barcode_purchase.
+
+There should be no duplication in outcomes due to careful management
+of when each of the 7 clauses is allowed to be applied.
+
+Each one of the 7 handles a NON-OVERLAPPING subset of cases based on
+the SIZE of the first two list variables.
+
+The cases (by size of the two lists) are:
+
+[]    []
+1     []
+[]    1
+1     >1
+1+    1     (1+ means 'one or more')
+2+    2+  ... and the first list size is greater to or EQUAL to the second
+2+    2+  ... and the first list size is LESS THAN the second
+*/
+cross_barcode_purchase( [], [], [] ).
+
+
+cross_barcode_purchase(
+  [abc(BARCODE_STRING,
+       BARCODE_TYPE,
+       AMENITIES_ID,
+       IN_PLAY)   |[]],
+  [],
+  [] ) :-
+
+        t_AmenitiesAccessBarcode(
+            BARCODE_STRING,
+            BARCODE_TYPE,
+            AMENITIES_ID,
+            IN_PLAY).
+
+
+cross_barcode_purchase(
+  [],
+  [pch(PURCHASE_ID,
+       BARCODE_STRING,
+       PURCHASE_DATE,
+       PURCHASED_SPACES_QTY,
+       CANCELED)   |[]],
+  [] ) :-
+
+        t_Purchase(
+            PURCHASE_ID,
+            BARCODE_STRING,
+            PURCHASE_DATE,
+            PURCHASED_SPACES_QTY,
+            CANCELED).
+
+
+% single barcode but longer list of purchase
+cross_barcode_purchase(
+  [abc(BARCODE_STRING_abc,
+       BARCODE_TYPE,
+       AMENITIES_ID,
+       IN_PLAY)   |[]],
+  [pch(PURCHASE_ID,
+       BARCODE_STRING_pch,
+       PURCHASE_DATE,
+       PURCHASED_SPACES_QTY,
+       CANCELED)   |L2T],
+  [abc_pch(abc(BARCODE_STRING_abc,
+               BARCODE_TYPE,
+               AMENITIES_ID,
+               IN_PLAY),
+           pch(PURCHASE_ID,
+               BARCODE_STRING_pch,
+               PURCHASE_DATE,
+               PURCHASED_SPACES_QTY,
+               CANCELED))   |R]  ) :-
+
+        t_AmenitiesAccessBarcode(BARCODE_STRING_abc,
+                                 BARCODE_TYPE,
+                                 AMENITIES_ID,
+                                 IN_PLAY),
+        t_list_type_purchase([pch(PURCHASE_ID,
+                                  BARCODE_STRING_pch,
+                                  PURCHASE_DATE,
+                                  PURCHASED_SPACES_QTY,
+                                  CANCELED)   |L2T]),
+        length([pch(PURCHASE_ID,
+                    BARCODE_STRING_pch,
+                    PURCHASE_DATE,
+                    PURCHASED_SPACES_QTY,
+                    CANCELED)   |L2T],X),
+        X>1,
+        manageable_list_tail(L2T),
+        cross_barcode_purchase( [abc(BARCODE_STRING_abc,
+                                     BARCODE_TYPE,
+                                     AMENITIES_ID,
+                                     IN_PLAY)   |[]], L2T, R ).
+
+% longer barcode list but SINGLE purchase
+cross_barcode_purchase(
+  [abc(BARCODE_STRING_abc,
+       BARCODE_TYPE,
+       AMENITIES_ID,
+       IN_PLAY)   |L2T],
+  [pch(PURCHASE_ID,
+       BARCODE_STRING_pch,
+       PURCHASE_DATE,
+       PURCHASED_SPACES_QTY,
+       CANCELED)   |[]],
+  [abc_pch(abc(BARCODE_STRING_abc,
+               BARCODE_TYPE,
+               AMENITIES_ID,
+               IN_PLAY),
+           pch(PURCHASE_ID,
+               BARCODE_STRING_pch,
+               PURCHASE_DATE,
+               PURCHASED_SPACES_QTY,
+               CANCELED))   |R]  ) :-
+
+        t_list_type_barcode([abc(BARCODE_STRING_abc,
+                                 BARCODE_TYPE,
+                                 AMENITIES_ID,
+                                 IN_PLAY)   |L2T]),
+        t_Purchase(PURCHASE_ID,
+                   BARCODE_STRING_pch,
+                   PURCHASE_DATE,
+                   PURCHASED_SPACES_QTY,
+                   CANCELED),
+        manageable_list_tail(L2T),
+        cross_barcode_purchase( L2T,
+                                [pch(PURCHASE_ID,
+                                     BARCODE_STRING_pch,
+                                     PURCHASE_DATE,
+                                     PURCHASED_SPACES_QTY,
+                                     CANCELED)   |[]],
+                                R ).
+
+
+% adding one more purchase to an 'already crossing'
+cross_barcode_purchase(
+  [abc(BARCODE_STRING_abc,
+       BARCODE_TYPE,
+       AMENITIES_ID,
+       IN_PLAY)   |L1T], % this list needs to be nonempty. the empty case is handled elsewhere
+  [pch(PURCHASE_ID,
+       BARCODE_STRING_pch,
+       PURCHASE_DATE,
+       PURCHASED_SPACES_QTY,
+       CANCELED)   |L2T],
+  FINAL ) :-
+
+        t_list_type_barcode([abc(BARCODE_STRING_abc,
+                                 BARCODE_TYPE,
+                                 AMENITIES_ID,
+                                 IN_PLAY)   |L1T]),
+        t_list_type_purchase([pch(PURCHASE_ID,
+                                  BARCODE_STRING_pch,
+                                  PURCHASE_DATE,
+                                  PURCHASED_SPACES_QTY,
+                                  CANCELED)   |L2T]),
+        length([abc(BARCODE_STRING_abc,
+                    BARCODE_TYPE,
+                    AMENITIES_ID,
+                    IN_PLAY)   |L1T],
+               X),
+        X>1,
+        length([pch(PURCHASE_ID,
+                    BARCODE_STRING_pch,
+                    PURCHASE_DATE,
+                    PURCHASED_SPACES_QTY,
+                    CANCELED)   |L2T],
+               Y),
+        Y>1,
+        X>=Y,
+        cross_barcode_purchase([abc(BARCODE_STRING_abc,
+                                    BARCODE_TYPE,
+                                    AMENITIES_ID,
+                                    IN_PLAY)   |L1T],
+                               L2T,
+                               POUT),
+        cross_barcode_purchase([abc(BARCODE_STRING_abc,
+                                    BARCODE_TYPE,
+                                    AMENITIES_ID,
+                                    IN_PLAY)   |L1T],
+                               [pch(PURCHASE_ID,
+                                    BARCODE_STRING_pch,
+                                    PURCHASE_DATE,
+                                    PURCHASED_SPACES_QTY,
+                                    CANCELED)   |[]],
+                               MOUT),
+        merge(POUT,MOUT,FINAL).
+
+
+% adding one more barcode to an 'already crossing'
+cross_barcode_purchase(
+  [abc(BARCODE_STRING_abc,
+       BARCODE_TYPE,
+       AMENITIES_ID,
+       IN_PLAY)   |L1T],
+  [pch(PURCHASE_ID,
+       BARCODE_STRING_pch,
+       PURCHASE_DATE,
+       PURCHASED_SPACES_QTY,
+       CANCELED)  |D], % this list needs to be nonempty. the empty case is handled elsewhere
+  FINAL ) :-
+
+        t_list_type_barcode([abc(BARCODE_STRING_abc,
+                                 BARCODE_TYPE,
+                                 AMENITIES_ID,
+                                 IN_PLAY)   |L1T]),
+        t_list_type_purchase([pch(PURCHASE_ID,
+                                  BARCODE_STRING_pch,
+                                  PURCHASE_DATE,
+                                  PURCHASED_SPACES_QTY,
+                                  CANCELED)   |D]),
+        length([abc(BARCODE_STRING_abc,
+                    BARCODE_TYPE,
+                    AMENITIES_ID,
+                    IN_PLAY)   |L1T],
+               X),
+        X>1,
+        length([pch(PURCHASE_ID,
+                    BARCODE_STRING_pch,
+                    PURCHASE_DATE,
+                    PURCHASED_SPACES_QTY,
+                    CANCELED)   |D],
+               Y),
+        Y>1,
+        X<Y,
+        cross_barcode_purchase(L1T,
+                               [pch(PURCHASE_ID,
+                                    BARCODE_STRING_pch,
+                                    PURCHASE_DATE,
+                                    PURCHASED_SPACES_QTY,
+                                    CANCELED)   |D],
+                               POUT),
+        cross_barcode_purchase([abc(BARCODE_STRING_abc,
+                                    BARCODE_TYPE,
+                                    AMENITIES_ID,
+                                    IN_PLAY)   |[]],
+                               [pch(PURCHASE_ID,
+                                    BARCODE_STRING_pch,
+                                    PURCHASE_DATE,
+                                    PURCHASED_SPACES_QTY,
+                                    CANCELED)   |D],
+                               MOUT),
+        merge(POUT,MOUT,FINAL).
+
+
+/*
+sweet find: my own customizable printing of terms:
+
+portray(+Term)
+    A dynamic predicate, which can be defined by the user to change the behaviour of print/1 on (sub)terms. For each subterm encountered that is not a variable print/1 first calls portray/1 using the term as argument. For lists, only the list as a whole is given to portray/1. If portray/1 succeeds print/1 assumes the term has been written.
+*/
