@@ -241,6 +241,67 @@ list_type_pch_removed_dup_pchid(
 
 % ----------------------------------------------------------
 
+% putting the UNIQUE information here.  TODO: what if two columns bore the unique keyword?
+t_list_type_gtperiod(L) :-
+        % t is the empty mapping, from library assoc
+        list_type_gtp_removed_dup_gtpid(L,t,L).
+
+
+list_type_gtp_removed_dup_gtpid([],_ASSOC,[]).
+
+
+list_type_gtp_removed_dup_gtpid(
+  [gtp(UNIQUE_FIELD,              %TRIAL_PERIOD_ID,
+       BARCODE_STRING_gtp,
+       GUEST_ID,
+       TPERIOD_REDEMPTION_DATE,
+       TPERIOD_CONSTRAINT_ID,
+       CANCELED_gtp)   |LT],
+  MAP,
+  OUT) :-
+
+        manageable_list_tail(LT),
+        t_GuestTrialPeriod(UNIQUE_FIELD,          %TRIAL_PERIOD_ID,
+                           BARCODE_STRING_gtp,
+                           GUEST_ID,
+                           TPERIOD_REDEMPTION_DATE,
+                           TPERIOD_CONSTRAINT_ID,
+                           CANCELED_gtp),
+        get_assoc(UNIQUE_FIELD,MAP,_EXISTSVAL), % map key (UNIQUE_FIELD) needs to be instantiated by here.
+
+        list_type_gtp_removed_dup_gtpid(LT,MAP,OUT). % note: here, the OUT (output) does NOT include the head item.
+
+
+list_type_gtp_removed_dup_gtpid(
+  [gtp(UNIQUE_FIELD,              %TRIAL_PERIOD_ID,
+       BARCODE_STRING_gtp,
+       GUEST_ID,
+       TPERIOD_REDEMPTION_DATE,
+       TPERIOD_CONSTRAINT_ID,
+       CANCELED_gtp)   |LT],
+  MAP,
+  [gtp(UNIQUE_FIELD,              %TRIAL_PERIOD_ID,
+       BARCODE_STRING_gtp,
+       GUEST_ID,
+       TPERIOD_REDEMPTION_DATE,
+       TPERIOD_CONSTRAINT_ID,
+       CANCELED_gtp)   |REST]) :-
+
+        manageable_list_tail(LT),
+        t_GuestTrialPeriod(UNIQUE_FIELD,          %TRIAL_PERIOD_ID,
+                           BARCODE_STRING_gtp,
+                           GUEST_ID,
+                           TPERIOD_REDEMPTION_DATE,
+                           TPERIOD_CONSTRAINT_ID,
+                           CANCELED_gtp),
+
+        \+get_assoc(UNIQUE_FIELD,MAP,_EXISTSVAL),  % map key (UNIQUE_FIELD) needs to be instantiated by here.
+        put_assoc(UNIQUE_FIELD,MAP,inmap,MAP2),    % 'inmap' is an arbitrary ground value to link with the key.
+        list_type_gtp_removed_dup_gtpid(LT,MAP2,REST).
+
+
+% ----------------------------------------------------------
+
 % the list to stand in for a 'set' of tuples of type t_barcode_x_purchase
 t_list_type_barcode_x_purchase([]).
 
@@ -548,6 +609,259 @@ cross_barcode_purchase(
                                     PURCHASE_DATE,
                                     PURCHASED_SPACES_QTY,
                                     CANCELED)   |D],
+                               MOUT),
+        merge(POUT,MOUT,FINAL).
+
+
+% ----------------------------------------------------------
+
+/*
+There are 7 different clauses for the next predicate.
+Refer to the notes above (for cross_barcode_purchase) for more details.
+*/
+cross_barcode_gtperiod( [], [], [] ).
+
+
+cross_barcode_gtperiod(
+  [abc(BARCODE_STRING,
+       BARCODE_TYPE,
+       AMENITIES_ID,
+       IN_PLAY)   |[]],
+  [],
+  [] ) :-
+
+        t_AmenitiesAccessBarcode(
+            BARCODE_STRING,
+            BARCODE_TYPE,
+            AMENITIES_ID,
+            IN_PLAY).
+
+
+cross_barcode_gtperiod(
+  [],
+  [gtp(TRIAL_PERIOD_ID,
+       BARCODE_STRING_gtp,
+       GUEST_ID,
+       TPERIOD_REDEMPTION_DATE,
+       TPERIOD_CONSTRAINT_ID,
+       CANCELED_gtp)   |[]],
+  [] ) :-
+
+        t_GuestTrialPeriod(
+            TRIAL_PERIOD_ID,
+            BARCODE_STRING_gtp,
+            GUEST_ID,
+            TPERIOD_REDEMPTION_DATE,
+            TPERIOD_CONSTRAINT_ID,
+            CANCELED_gtp).
+
+
+% single barcode but longer list of gtperiod(s)
+cross_barcode_gtperiod(
+  [abc(BARCODE_STRING_abc,
+       BARCODE_TYPE,
+       AMENITIES_ID,
+       IN_PLAY)   |[]],
+  [gtp(TRIAL_PERIOD_ID,
+       BARCODE_STRING_gtp,
+       GUEST_ID,
+       TPERIOD_REDEMPTION_DATE,
+       TPERIOD_CONSTRAINT_ID,
+       CANCELED_gtp)   |L2T],
+  [abc_gtp(abc(BARCODE_STRING_abc,
+               BARCODE_TYPE,
+               AMENITIES_ID,
+               IN_PLAY),
+           gtp(TRIAL_PERIOD_ID,
+               BARCODE_STRING_gtp,
+               GUEST_ID,
+               TPERIOD_REDEMPTION_DATE,
+               TPERIOD_CONSTRAINT_ID,
+               CANCELED_gtp))   |R]  ) :-
+
+        t_AmenitiesAccessBarcode(BARCODE_STRING_abc,
+                                 BARCODE_TYPE,
+                                 AMENITIES_ID,
+                                 IN_PLAY),
+        t_list_type_gtperiod([gtp(TRIAL_PERIOD_ID,
+                                  BARCODE_STRING_gtp,
+                                  GUEST_ID,
+                                  TPERIOD_REDEMPTION_DATE,
+                                  TPERIOD_CONSTRAINT_ID,
+                                  CANCELED_gtp)   |L2T]),
+        length([gtp(TRIAL_PERIOD_ID,
+                    BARCODE_STRING_gtp,
+                    GUEST_ID,
+                    TPERIOD_REDEMPTION_DATE,
+                    TPERIOD_CONSTRAINT_ID,
+                    CANCELED_gtp)   |L2T],X),
+        X>1,
+        manageable_list_tail(L2T),
+        cross_barcode_gtperiod( [abc(BARCODE_STRING_abc,
+                                     BARCODE_TYPE,
+                                     AMENITIES_ID,
+                                     IN_PLAY)   |[]], L2T, R ).
+
+% longer barcode list but SINGLE gtperiod
+cross_barcode_gtperiod(
+  [abc(BARCODE_STRING_abc,
+       BARCODE_TYPE,
+       AMENITIES_ID,
+       IN_PLAY)   |L2T],
+  [gtp(TRIAL_PERIOD_ID,
+       BARCODE_STRING_gtp,
+       GUEST_ID,
+       TPERIOD_REDEMPTION_DATE,
+       TPERIOD_CONSTRAINT_ID,
+       CANCELED_gtp)   |[]],
+  [abc_gtp(abc(BARCODE_STRING_abc,
+               BARCODE_TYPE,
+               AMENITIES_ID,
+               IN_PLAY),
+           gtp(TRIAL_PERIOD_ID,
+               BARCODE_STRING_gtp,
+               GUEST_ID,
+               TPERIOD_REDEMPTION_DATE,
+               TPERIOD_CONSTRAINT_ID,
+               CANCELED_gtp))   |R]  ) :-
+
+        t_list_type_barcode([abc(BARCODE_STRING_abc,
+                                 BARCODE_TYPE,
+                                 AMENITIES_ID,
+                                 IN_PLAY)   |L2T]),
+        t_GuestTrialPeriod(TRIAL_PERIOD_ID,
+                           BARCODE_STRING_gtp,
+                           GUEST_ID,
+                           TPERIOD_REDEMPTION_DATE,
+                           TPERIOD_CONSTRAINT_ID,
+                           CANCELED_gtp),
+        manageable_list_tail(L2T),
+        cross_barcode_gtperiod( L2T,
+                                [gtp(TRIAL_PERIOD_ID,
+                                     BARCODE_STRING_gtp,
+                                     GUEST_ID,
+                                     TPERIOD_REDEMPTION_DATE,
+                                     TPERIOD_CONSTRAINT_ID,
+                                     CANCELED_gtp)   |[]],
+                                R ).
+
+
+% adding one more gtperiod to an 'already crossing'
+cross_barcode_gtperiod(
+  [abc(BARCODE_STRING_abc,
+       BARCODE_TYPE,
+       AMENITIES_ID,
+       IN_PLAY)   |L1T], % this list needs to be nonempty. the empty case is handled elsewhere
+  [gtp(TRIAL_PERIOD_ID,
+       BARCODE_STRING_gtp,
+       GUEST_ID,
+       TPERIOD_REDEMPTION_DATE,
+       TPERIOD_CONSTRAINT_ID,
+       CANCELED_gtp)   |L2T],
+  FINAL ) :-
+
+        t_list_type_barcode([abc(BARCODE_STRING_abc,
+                                 BARCODE_TYPE,
+                                 AMENITIES_ID,
+                                 IN_PLAY)   |L1T]),
+        t_list_type_gtperiod([gtp(TRIAL_PERIOD_ID,
+                                  BARCODE_STRING_gtp,
+                                  GUEST_ID,
+                                  TPERIOD_REDEMPTION_DATE,
+                                  TPERIOD_CONSTRAINT_ID,
+                                  CANCELED_gtp)   |L2T]),
+        length([abc(BARCODE_STRING_abc,
+                    BARCODE_TYPE,
+                    AMENITIES_ID,
+                    IN_PLAY)   |L1T],
+               X),
+        X>1,
+        length([gtp(TRIAL_PERIOD_ID,
+                    BARCODE_STRING_gtp,
+                    GUEST_ID,
+                    TPERIOD_REDEMPTION_DATE,
+                    TPERIOD_CONSTRAINT_ID,
+                    CANCELED_gtp)   |L2T],
+               Y),
+        Y>1,
+        X>=Y,
+        cross_barcode_gtperiod([abc(BARCODE_STRING_abc,
+                                    BARCODE_TYPE,
+                                    AMENITIES_ID,
+                                    IN_PLAY)   |L1T],
+                               L2T,
+                               POUT),
+        cross_barcode_gtperiod([abc(BARCODE_STRING_abc,
+                                    BARCODE_TYPE,
+                                    AMENITIES_ID,
+                                    IN_PLAY)   |L1T],
+                               [gtp(TRIAL_PERIOD_ID,
+                                    BARCODE_STRING_gtp,
+                                    GUEST_ID,
+                                    TPERIOD_REDEMPTION_DATE,
+                                    TPERIOD_CONSTRAINT_ID,
+                                    CANCELED_gtp)   |[]],
+                               MOUT),
+        merge(POUT,MOUT,FINAL).
+
+
+% adding one more barcode to an 'already crossing'
+cross_barcode_gtperiod(
+  [abc(BARCODE_STRING_abc,
+       BARCODE_TYPE,
+       AMENITIES_ID,
+       IN_PLAY)   |L1T],
+  [gtp(TRIAL_PERIOD_ID,
+       BARCODE_STRING_gtp,
+       GUEST_ID,
+       TPERIOD_REDEMPTION_DATE,
+       TPERIOD_CONSTRAINT_ID,
+       CANCELED_gtp)  |D], % this list needs to be nonempty. the empty case is handled elsewhere
+  FINAL ) :-
+
+        t_list_type_barcode([abc(BARCODE_STRING_abc,
+                                 BARCODE_TYPE,
+                                 AMENITIES_ID,
+                                 IN_PLAY)   |L1T]),
+        t_list_type_gtperiod([gtp(TRIAL_PERIOD_ID,
+                                  BARCODE_STRING_gtp,
+                                  GUEST_ID,
+                                  TPERIOD_REDEMPTION_DATE,
+                                  TPERIOD_CONSTRAINT_ID,
+                                  CANCELED_gtp)   |D]),
+        length([abc(BARCODE_STRING_abc,
+                    BARCODE_TYPE,
+                    AMENITIES_ID,
+                    IN_PLAY)   |L1T],
+               X),
+        X>1,
+        length([gtp(TRIAL_PERIOD_ID,
+                    BARCODE_STRING_gtp,
+                    GUEST_ID,
+                    TPERIOD_REDEMPTION_DATE,
+                    TPERIOD_CONSTRAINT_ID,
+                    CANCELED_gtp)   |D],
+               Y),
+        Y>1,
+        X<Y,
+        cross_barcode_gtperiod(L1T,
+                               [gtp(TRIAL_PERIOD_ID,
+                                    BARCODE_STRING_gtp,
+                                    GUEST_ID,
+                                    TPERIOD_REDEMPTION_DATE,
+                                    TPERIOD_CONSTRAINT_ID,
+                                    CANCELED_gtp)   |D],
+                               POUT),
+        cross_barcode_gtperiod([abc(BARCODE_STRING_abc,
+                                    BARCODE_TYPE,
+                                    AMENITIES_ID,
+                                    IN_PLAY)   |[]],
+                               [gtp(TRIAL_PERIOD_ID,
+                                    BARCODE_STRING_gtp,
+                                    GUEST_ID,
+                                    TPERIOD_REDEMPTION_DATE,
+                                    TPERIOD_CONSTRAINT_ID,
+                                    CANCELED_gtp)   |D],
                                MOUT),
         merge(POUT,MOUT,FINAL).
 
