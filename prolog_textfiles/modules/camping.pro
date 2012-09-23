@@ -744,9 +744,27 @@ cross_barcode_purchase(
 % ----------------------------------------------------------
 
 /*
-There are 7 different clauses for the next predicate.
+There are 7 different clauses for the next 'cross' predicate.
 Refer to the notes above (for cross_barcode_purchase) for more details.
 */
+% IMPORTANT. IMPORTANT: roll back to commit cf628e5bc086 to see a 'pure crossing' version with no join conditions
+
+meets_join_abc_gtp(
+  abc_gtp(abc(BARCODE_STRING_abc,
+              _BARCODE_TYPE,
+              _AMENITIES_ID,
+              _IN_PLAY),
+          gtp(_TRIAL_PERIOD_ID,
+              BARCODE_STRING_gtp,
+              _GUEST_ID,
+              _TPERIOD_REDEMPTION_DATE,
+              _TPERIOD_CONSTRAINT_ID,
+              CANCELED_gtp)) ) :-
+
+        BARCODE_STRING_abc = BARCODE_STRING_gtp,
+        CANCELED_gtp = tinyint_0.
+
+
 cross_barcode_gtperiod( [], [], [] ).
 
 
@@ -784,7 +802,7 @@ cross_barcode_gtperiod(
             CANCELED_gtp).
 
 
-% single barcode but longer list of gtperiod(s)
+% single barcode but longer list of gtperiod(s), and MEETS join condition
 cross_barcode_gtperiod(
   [abc(BARCODE_STRING_abc,
        BARCODE_TYPE,
@@ -825,12 +843,71 @@ cross_barcode_gtperiod(
                     CANCELED_gtp)   |L2T],X),
         X>1,
         manageable_list_tail(L2T),
+        meets_join_abc_gtp(abc_gtp(abc(BARCODE_STRING_abc,
+                                       BARCODE_TYPE,
+                                       AMENITIES_ID,
+                                       IN_PLAY),
+                                   gtp(TRIAL_PERIOD_ID,
+                                       BARCODE_STRING_gtp,
+                                       GUEST_ID,
+                                       TPERIOD_REDEMPTION_DATE,
+                                       TPERIOD_CONSTRAINT_ID,
+                                       CANCELED_gtp))),
         cross_barcode_gtperiod( [abc(BARCODE_STRING_abc,
                                      BARCODE_TYPE,
                                      AMENITIES_ID,
                                      IN_PLAY)   |[]], L2T, R ).
 
-% longer barcode list but SINGLE gtperiod
+
+% single barcode but longer list of gtperiod(s), and FAILING the join condition
+cross_barcode_gtperiod(
+  [abc(BARCODE_STRING_abc,
+       BARCODE_TYPE,
+       AMENITIES_ID,
+       IN_PLAY)   |[]],
+  [gtp(TRIAL_PERIOD_ID,
+       BARCODE_STRING_gtp,
+       GUEST_ID,
+       TPERIOD_REDEMPTION_DATE,
+       TPERIOD_CONSTRAINT_ID,
+       CANCELED_gtp)   |L2T],
+  R ) :-
+
+        t_AmenitiesAccessBarcode(BARCODE_STRING_abc,
+                                 BARCODE_TYPE,
+                                 AMENITIES_ID,
+                                 IN_PLAY),
+        t_list_type_gtperiod([gtp(TRIAL_PERIOD_ID,
+                                  BARCODE_STRING_gtp,
+                                  GUEST_ID,
+                                  TPERIOD_REDEMPTION_DATE,
+                                  TPERIOD_CONSTRAINT_ID,
+                                  CANCELED_gtp)   |L2T]),
+        length([gtp(TRIAL_PERIOD_ID,
+                    BARCODE_STRING_gtp,
+                    GUEST_ID,
+                    TPERIOD_REDEMPTION_DATE,
+                    TPERIOD_CONSTRAINT_ID,
+                    CANCELED_gtp)   |L2T],X),
+        X>1,
+        manageable_list_tail(L2T),
+        \+meets_join_abc_gtp(abc_gtp(abc(BARCODE_STRING_abc,
+                                         BARCODE_TYPE,
+                                         AMENITIES_ID,
+                                         IN_PLAY),
+                                     gtp(TRIAL_PERIOD_ID,
+                                         BARCODE_STRING_gtp,
+                                         GUEST_ID,
+                                         TPERIOD_REDEMPTION_DATE,
+                                         TPERIOD_CONSTRAINT_ID,
+                                         CANCELED_gtp))),
+        cross_barcode_gtperiod( [abc(BARCODE_STRING_abc,
+                                     BARCODE_TYPE,
+                                     AMENITIES_ID,
+                                     IN_PLAY)   |[]], L2T, R ).
+
+
+% longer barcode list but SINGLE gtperiod, and MEETS the join condition
 cross_barcode_gtperiod(
   [abc(BARCODE_STRING_abc,
        BARCODE_TYPE,
@@ -864,6 +941,61 @@ cross_barcode_gtperiod(
                            TPERIOD_CONSTRAINT_ID,
                            CANCELED_gtp),
         manageable_list_tail(L2T),
+        meets_join_abc_gtp(abc_gtp(abc(BARCODE_STRING_abc,
+                                       BARCODE_TYPE,
+                                       AMENITIES_ID,
+                                       IN_PLAY),
+                                   gtp(TRIAL_PERIOD_ID,
+                                       BARCODE_STRING_gtp,
+                                       GUEST_ID,
+                                       TPERIOD_REDEMPTION_DATE,
+                                       TPERIOD_CONSTRAINT_ID,
+                                       CANCELED_gtp))),
+        cross_barcode_gtperiod( L2T,
+                                [gtp(TRIAL_PERIOD_ID,
+                                     BARCODE_STRING_gtp,
+                                     GUEST_ID,
+                                     TPERIOD_REDEMPTION_DATE,
+                                     TPERIOD_CONSTRAINT_ID,
+                                     CANCELED_gtp)   |[]],
+                                R ).
+
+
+% longer barcode list but SINGLE gtperiod, and FAILING the join condition
+cross_barcode_gtperiod(
+  [abc(BARCODE_STRING_abc,
+       BARCODE_TYPE,
+       AMENITIES_ID,
+       IN_PLAY)   |L2T],
+  [gtp(TRIAL_PERIOD_ID,
+       BARCODE_STRING_gtp,
+       GUEST_ID,
+       TPERIOD_REDEMPTION_DATE,
+       TPERIOD_CONSTRAINT_ID,
+       CANCELED_gtp)   |[]],
+  R ) :-
+
+        t_list_type_barcode([abc(BARCODE_STRING_abc,
+                                 BARCODE_TYPE,
+                                 AMENITIES_ID,
+                                 IN_PLAY)   |L2T]),
+        t_GuestTrialPeriod(TRIAL_PERIOD_ID,
+                           BARCODE_STRING_gtp,
+                           GUEST_ID,
+                           TPERIOD_REDEMPTION_DATE,
+                           TPERIOD_CONSTRAINT_ID,
+                           CANCELED_gtp),
+        manageable_list_tail(L2T),
+        \+meets_join_abc_gtp(abc_gtp(abc(BARCODE_STRING_abc,
+                                         BARCODE_TYPE,
+                                         AMENITIES_ID,
+                                         IN_PLAY),
+                                     gtp(TRIAL_PERIOD_ID,
+                                         BARCODE_STRING_gtp,
+                                         GUEST_ID,
+                                         TPERIOD_REDEMPTION_DATE,
+                                         TPERIOD_CONSTRAINT_ID,
+                                         CANCELED_gtp))),
         cross_barcode_gtperiod( L2T,
                                 [gtp(TRIAL_PERIOD_ID,
                                      BARCODE_STRING_gtp,
