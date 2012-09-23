@@ -3,6 +3,16 @@
           [mini_solve/1,
            mini_solve_id/2]).
 
+/*
+WARNING:
+  No testing of 'mini_solve' has been done on any set of clauses that make any use of:
+     \+  (negation)
+            ... nor ...
+     !   (cut)
+
+*/
+
+
 
 mini_solve(A) :-
         mini_solve(A,0,65535).% same call that the I.D. version makes, but with a BIG limit
