@@ -68,3 +68,7 @@ traverse_expand_partlist(
                                  AccumPlusHeadParts-Z3,
                                  PartListOut-Z2).
 
+
+% just a 'wrapper' to give us a PURE LIST (not diff-list) result
+parts_clean(X,L) :-
+        partsof(X,L-[]).
