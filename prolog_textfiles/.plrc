@@ -16,6 +16,4 @@ rl_write_history :-
 
 
 
-?- [course_test].
-
 ?- use_module(modules/mini_datatypes).
