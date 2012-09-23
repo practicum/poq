@@ -31,14 +31,13 @@ partsof(
 % mind already so far is NOTHING (aka [], aka E-E).
 
 % to accumulate a *basic* X onto the accum,
-% use difference-list concatenation to prepend it.
+% use difference-list concatenation to append it.
 partsacc(
   X,
-  AccumList-Z,
+  AccumList-[X|END],
   AccumList-END) :-
         % Note: this clause is the ONLY PLACE where we ALTER the 3rd arg.
-        basicpart(X),
-        Z = [X|END].  % attach L2 where the end of AccumList used to be. (AccumList the SECOND arg).
+        basicpart(X).
 
 % notice that X does not make it into the output at all. this is why no 'assembly' names are in the final result
 partsacc(
