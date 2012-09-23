@@ -393,6 +393,22 @@ The cases (by size of the two lists) are:
 2+    2+  ... and the first list size is LESS THAN the second
 */
 % IMPORTANT. IMPORTANT: roll back to commit 0ebccc69c58c1c6 to see a 'pure crossing' version with no join conditions
+
+meets_join_abc_pch(
+  abc_pch(abc(BARCODE_STRING_abc,
+              _BARCODE_TYPE,
+              _AMENITIES_ID,
+              _IN_PLAY),
+          pch(_PURCHASE_ID,
+              BARCODE_STRING_pch,
+              _PURCHASE_DATE,
+              _PURCHASED_SPACES_QTY,
+              CANCELED)) ) :-
+
+        BARCODE_STRING_abc = BARCODE_STRING_pch,
+        CANCELED = tinyint_0.
+
+
 cross_barcode_purchase( [], [], [] ).
 
 
@@ -465,7 +481,15 @@ cross_barcode_purchase(
                     CANCELED)   |L2T],X),
         X>1,
         manageable_list_tail(L2T),
-        BARCODE_STRING_abc = BARCODE_STRING_pch, % join condition
+        meets_join_abc_pch(abc_pch(abc(BARCODE_STRING_abc,
+                                       BARCODE_TYPE,
+                                       AMENITIES_ID,
+                                       IN_PLAY),
+                                   pch(PURCHASE_ID,
+                                       BARCODE_STRING_pch,
+                                       PURCHASE_DATE,
+                                       PURCHASED_SPACES_QTY,
+                                       CANCELED))),
         cross_barcode_purchase( [abc(BARCODE_STRING_abc,
                                      BARCODE_TYPE,
                                      AMENITIES_ID,
@@ -501,7 +525,15 @@ cross_barcode_purchase(
                     CANCELED)   |L2T],X),
         X>1,
         manageable_list_tail(L2T),
-        BARCODE_STRING_abc \= BARCODE_STRING_pch, % negation/complement of join condition
+        \+meets_join_abc_pch(abc_pch(abc(BARCODE_STRING_abc,
+                                         BARCODE_TYPE,
+                                         AMENITIES_ID,
+                                         IN_PLAY),
+                                     pch(PURCHASE_ID,
+                                         BARCODE_STRING_pch,
+                                         PURCHASE_DATE,
+                                         PURCHASED_SPACES_QTY,
+                                         CANCELED))),
         cross_barcode_purchase( [abc(BARCODE_STRING_abc,
                                      BARCODE_TYPE,
                                      AMENITIES_ID,
@@ -539,7 +571,15 @@ cross_barcode_purchase(
                    PURCHASED_SPACES_QTY,
                    CANCELED),
         manageable_list_tail(L2T),
-        BARCODE_STRING_abc = BARCODE_STRING_pch, % join condition
+        meets_join_abc_pch(abc_pch(abc(BARCODE_STRING_abc,
+                                       BARCODE_TYPE,
+                                       AMENITIES_ID,
+                                       IN_PLAY),
+                                   pch(PURCHASE_ID,
+                                       BARCODE_STRING_pch,
+                                       PURCHASE_DATE,
+                                       PURCHASED_SPACES_QTY,
+                                       CANCELED))),
         cross_barcode_purchase( L2T,
                                 [pch(PURCHASE_ID,
                                      BARCODE_STRING_pch,
@@ -572,7 +612,15 @@ cross_barcode_purchase(
                    PURCHASED_SPACES_QTY,
                    CANCELED),
         manageable_list_tail(L2T),
-        BARCODE_STRING_abc \= BARCODE_STRING_pch, % negation/complement of join condition
+        \+meets_join_abc_pch(abc_pch(abc(BARCODE_STRING_abc,
+                                         BARCODE_TYPE,
+                                         AMENITIES_ID,
+                                         IN_PLAY),
+                                     pch(PURCHASE_ID,
+                                         BARCODE_STRING_pch,
+                                         PURCHASE_DATE,
+                                         PURCHASED_SPACES_QTY,
+                                         CANCELED))),
         cross_barcode_purchase( L2T,
                                 [pch(PURCHASE_ID,
                                      BARCODE_STRING_pch,
