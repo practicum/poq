@@ -38,8 +38,7 @@ partsacc(
   AccumList-END) :-
         % Note: this clause is the ONLY PLACE where we ALTER the 3rd arg.
         basicpart(X),
-        L2-END = [X|END]-END, % make a new list 'L2' consisting of only X and the list's end.
-        Z = L2.  % attach L2 where the end of AccumList used to be. (AccumList the SECOND arg).
+        Z = [X|END].  % attach L2 where the end of AccumList used to be. (AccumList the SECOND arg).
 
 % notice that X does not make it into the output at all. this is why no 'assembly' names are in the final result
 partsacc(
