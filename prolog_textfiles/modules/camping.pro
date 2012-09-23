@@ -5,14 +5,21 @@
            t_AmenitiesAccessType/2,
            t_barcode_x_purchase/2,
            t_gtperiod_x_purchase/2,
+           t_list_type_barcode/1,  % actually wraps list_type_abc_removed_dup_barcode/3
+           t_list_type_purchase/1,  % actually wraps list_type_pch_removed_dup_pchid/3
+           t_list_type_gtperiod/1, % actually wraps list_type_gtp_removed_dup_gtpid/3
+
            t_list_type_barcode_x_purchase/1,
-           t_list_type_gtperiod_x_purchase/1]).
+           t_list_type_gtperiod_x_purchase/1,
+           cross_barcode_purchase/3,
+           cross_barcode_gtperiod/3]).
 
 
 :- use_module(modules/small_lists).
 %:- use_module(modules/datatypes).  NO. DO NOT ENABLE. instead, the user imports ONE of several choices.
 
 manageable_list_tail(L) :- size_0_to_1(L). % applied to a TAIL of list, we know the WHOLE list would be +1 bigger
+%manageable_list_tail(L) :- length(L,1);length(L,0). % sometimes it is helpful to reverse the order of the permissible lengths
 
 /*
   In structures/functors, using:
@@ -385,6 +392,7 @@ The cases (by size of the two lists) are:
 2+    2+  ... and the first list size is greater to or EQUAL to the second
 2+    2+  ... and the first list size is LESS THAN the second
 */
+% IMPORTANT. IMPORTANT: roll back to commit 0ebccc69c58c1c6 to see a 'pure crossing' version with no join conditions
 cross_barcode_purchase( [], [], [] ).
 
 
@@ -420,7 +428,7 @@ cross_barcode_purchase(
             CANCELED).
 
 
-% single barcode but longer list of purchase
+% single barcode but longer list of purchase, MEETS JOIN conditions
 cross_barcode_purchase(
   [abc(BARCODE_STRING_abc,
        BARCODE_TYPE,
@@ -457,12 +465,50 @@ cross_barcode_purchase(
                     CANCELED)   |L2T],X),
         X>1,
         manageable_list_tail(L2T),
+        BARCODE_STRING_abc = BARCODE_STRING_pch, % join condition
         cross_barcode_purchase( [abc(BARCODE_STRING_abc,
                                      BARCODE_TYPE,
                                      AMENITIES_ID,
                                      IN_PLAY)   |[]], L2T, R ).
 
-% longer barcode list but SINGLE purchase
+
+% single barcode but longer list of purchase, FAILS TO MEET JOIN conditions
+cross_barcode_purchase(
+  [abc(BARCODE_STRING_abc,
+       BARCODE_TYPE,
+       AMENITIES_ID,
+       IN_PLAY)   |[]],
+  [pch(PURCHASE_ID,
+       BARCODE_STRING_pch,
+       PURCHASE_DATE,
+       PURCHASED_SPACES_QTY,
+       CANCELED)   |L2T],
+  R ) :-
+
+        t_AmenitiesAccessBarcode(BARCODE_STRING_abc,
+                                 BARCODE_TYPE,
+                                 AMENITIES_ID,
+                                 IN_PLAY),
+        t_list_type_purchase([pch(PURCHASE_ID,
+                                  BARCODE_STRING_pch,
+                                  PURCHASE_DATE,
+                                  PURCHASED_SPACES_QTY,
+                                  CANCELED)   |L2T]),
+        length([pch(PURCHASE_ID,
+                    BARCODE_STRING_pch,
+                    PURCHASE_DATE,
+                    PURCHASED_SPACES_QTY,
+                    CANCELED)   |L2T],X),
+        X>1,
+        manageable_list_tail(L2T),
+        BARCODE_STRING_abc \= BARCODE_STRING_pch, % negation/complement of join condition
+        cross_barcode_purchase( [abc(BARCODE_STRING_abc,
+                                     BARCODE_TYPE,
+                                     AMENITIES_ID,
+                                     IN_PLAY)   |[]], L2T, R ).
+
+
+% longer barcode list but SINGLE purchase, MEETS JOIN conditions
 cross_barcode_purchase(
   [abc(BARCODE_STRING_abc,
        BARCODE_TYPE,
@@ -493,6 +539,40 @@ cross_barcode_purchase(
                    PURCHASED_SPACES_QTY,
                    CANCELED),
         manageable_list_tail(L2T),
+        BARCODE_STRING_abc = BARCODE_STRING_pch, % join condition
+        cross_barcode_purchase( L2T,
+                                [pch(PURCHASE_ID,
+                                     BARCODE_STRING_pch,
+                                     PURCHASE_DATE,
+                                     PURCHASED_SPACES_QTY,
+                                     CANCELED)   |[]],
+                                R ).
+
+
+% longer barcode list but SINGLE purchase, FAILS TO MEET JOIN conditions
+cross_barcode_purchase(
+  [abc(BARCODE_STRING_abc,
+       BARCODE_TYPE,
+       AMENITIES_ID,
+       IN_PLAY)   |L2T],
+  [pch(PURCHASE_ID,
+       BARCODE_STRING_pch,
+       PURCHASE_DATE,
+       PURCHASED_SPACES_QTY,
+       CANCELED)   |[]],
+  R ) :-
+
+        t_list_type_barcode([abc(BARCODE_STRING_abc,
+                                 BARCODE_TYPE,
+                                 AMENITIES_ID,
+                                 IN_PLAY)   |L2T]),
+        t_Purchase(PURCHASE_ID,
+                   BARCODE_STRING_pch,
+                   PURCHASE_DATE,
+                   PURCHASED_SPACES_QTY,
+                   CANCELED),
+        manageable_list_tail(L2T),
+        BARCODE_STRING_abc \= BARCODE_STRING_pch, % negation/complement of join condition
         cross_barcode_purchase( L2T,
                                 [pch(PURCHASE_ID,
                                      BARCODE_STRING_pch,
