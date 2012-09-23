@@ -66,3 +66,66 @@ traverse_expand_partlist(
                                  AccumPlusHeadParts,
                                  PartListOut).
 
+
+% Dijkstra's Dutch flag (simplified version?) as shown in The Art Of Prolog
+
+solve_dutch_flag(
+  INPUT_LIST,
+  FINAL_OUT) :-
+        dflag_distribute(INPUT_LIST,
+                         REDS,
+                         WHITES,
+                         BLUES),
+        append(WHITES,BLUES,WB),    % make blues be the END of whites
+        append(REDS,WB,FINAL_OUT).  % make whites be the END of reds
+
+
+dflag_distribute(
+  [],
+  [],
+  [],
+  []).
+
+% head is red
+dflag_distribute(
+  [red(X)|TAIL],
+  [red(X)|R],
+  W,
+  B) :-
+        dflag_distribute(
+                         TAIL,
+                         R,
+                         W,
+                         B).
+
+% head is white
+dflag_distribute(
+  [white(X)|TAIL],
+  R,
+  [white(X)|W],
+  B) :-
+        dflag_distribute(
+                         TAIL,
+                         R,
+                         W,
+                         B).
+
+% head is blue
+dflag_distribute(
+  [blue(X)|TAIL],
+  R,
+  W,
+  [blue(X)|B]) :-
+        dflag_distribute(
+                         TAIL,
+                         R,
+                         W,
+                         B).
+
+/*
+?- solve_dutch_flag([red(1),white(2),blue(3),red(4),white(5)],L).
+L = [red(1), red(4), white(2), white(5), blue(3)] ;
+false.
+
+*/
+

@@ -72,3 +72,94 @@ traverse_expand_partlist(
 % just a 'wrapper' to give us a PURE LIST (not diff-list) result
 parts_clean(X,L) :-
         partsof(X,L-[]).
+
+
+
+% Dijkstra's Dutch flag (simplified version?) as shown in The Art Of Prolog
+
+solve_dutch_flag(
+  INPUT_LIST,
+  FINAL_OUT) :-
+        dflag_distribute(INPUT_LIST,
+                         FINAL_OUT-RZ,
+                         W-WZ,
+                         B-[]),  % make [] be the END of blues
+        WZ=B, % make blues be the END of whites
+        RZ=W. % make whites be the END of reds
+
+
+dflag_distribute(
+  [],
+  RZ-RZ,
+  WZ-WZ,
+  BZ-BZ).
+
+% head is red
+dflag_distribute(
+  [red(X)|TAIL],
+  [red(X)|R]-RZ,
+  W,
+  B) :-
+        dflag_distribute(
+                         TAIL,
+                         R-RZ,
+                         W,
+                         B).
+
+% head is white
+dflag_distribute(
+  [white(X)|TAIL],
+  R,
+  [white(X)|W]-WZ,
+  B) :-
+        dflag_distribute(
+                         TAIL,
+                         R,
+                         W-WZ,
+                         B).
+
+% head is blue
+dflag_distribute(
+  [blue(X)|TAIL],
+  R,
+  W,
+  [blue(X)|B]-BZ) :-
+        dflag_distribute(
+                         TAIL,
+                         R,
+                         W,
+                         B-BZ).
+
+/*
+?- dflag_distribute([red(1),white(2),blue(3),red(4),white(5)],R,W,B).
+R = [red(1), red(4)|_G48]-_G48,
+W = [white(2), white(5)|_G59]-_G59,
+B = [blue(3)|_G70]-_G70 ;
+false.
+
+?- dflag_distribute([red(1),white(2),blue(3),red(4),white(5)],R-RZ,W-WZ,B-BZ).
+R = [red(1), red(4)|RZ],
+W = [white(2), white(5)|WZ],
+B = [blue(3)|BZ] ;
+false.
+
+?- dflag_distribute([red(1),white(2),blue(3),red(4),white(5)],R-RZ,W-WZ,B-BZ),WZ=B.
+R = [red(1), red(4)|RZ],
+W = [white(2), white(5), blue(3)|BZ],
+WZ = B, B = [blue(3)|BZ] ;
+false.
+
+?- dflag_distribute([red(1),white(2),blue(3),red(4),white(5)],R-RZ,W-WZ,B-BZ),WZ=B,RZ=W.
+R = [red(1), red(4), white(2), white(5), blue(3)|BZ],
+RZ = W, W = [white(2), white(5), blue(3)|BZ],
+WZ = B, B = [blue(3)|BZ] ;
+false.
+
+
+
+*/
+
+as_in_book(INPUT_LIST,R) :-
+        dflag_distribute(INPUT_LIST, R-W, W-B, B-[]).
+%        WZ=B,
+%        RZ=W.
