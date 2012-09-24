@@ -219,9 +219,23 @@ test_group_by(
                                  GROUP_KEY, %BARCODE_TYPE,
                                  AMENITIES_ID,
                                  IN_PLAY),
-        get_assoc(GROUP_KEY,MAP,COUNT), % map key (GROUP_KEY) needs to be instantiated by here.
+        get_assoc(GROUP_KEY, % map key (GROUP_KEY) needs to be instantiated by here.
+                  MAP,
+                  g(abc(BARCODE_STRING2,
+                        GROUP_KEY, %BARCODE_TYPE,
+                        AMENITIES_ID2,
+                        IN_PLAY2),COUNT) ),
+
         NEW_COUNT is COUNT + 1,
-        put_assoc(GROUP_KEY,MAP,NEW_COUNT,MAP2),
+
+        put_assoc(GROUP_KEY,
+                  MAP,
+                  g(abc(BARCODE_STRING2,
+                        GROUP_KEY, %BARCODE_TYPE,
+                        AMENITIES_ID2,
+                        IN_PLAY2),NEW_COUNT),
+                  MAP2),
+
         test_group_by(LT,MAP2,MAP_OUT).
 
 
@@ -240,7 +254,13 @@ test_group_by(
                                  AMENITIES_ID,
                                  IN_PLAY),
         \+get_assoc(GROUP_KEY,MAP,_), % map key (GROUP_KEY) needs to be instantiated by here.
-        put_assoc(GROUP_KEY,MAP,1,MAP2),
+        put_assoc(GROUP_KEY,
+                  MAP,
+                  g(abc(BARCODE_STRING,
+                        GROUP_KEY, %BARCODE_TYPE,
+                        AMENITIES_ID,
+                        IN_PLAY), 1),
+                  MAP2),
         test_group_by(LT,MAP2,MAP_OUT).
 
 
