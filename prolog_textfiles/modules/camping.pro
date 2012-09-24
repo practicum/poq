@@ -9,6 +9,9 @@
            t_list_type_purchase/1,  % actually wraps list_type_pch_removed_dup_pchid/3
            t_list_type_gtperiod/1, % actually wraps list_type_gtp_removed_dup_gtpid/3
 
+           test_group_by/2,
+           test_group_by/3,
+
            t_list_type_barcode_x_purchase/1,
            t_list_type_gtperiod_x_purchase/1,
            cross_barcode_purchase/3,
@@ -188,6 +191,57 @@ list_type_abc_removed_dup_barcode(
         \+get_assoc(BARCODE_STRING,MAP,_EXISTSVAL),  % map key (BARCODE_STRING) needs to be instantiated by here.
         put_assoc(BARCODE_STRING,MAP,inmap,MAP2),    % 'inmap' is an arbitrary ground value to link with the key.
         list_type_abc_removed_dup_barcode(LT,MAP2,REST).
+
+
+% ----------------------------------------------------------
+
+test_group_by(L,LOUT) :-
+
+        t_list_type_barcode(L),
+        test_group_by(L,t,LOUT).
+
+
+% nothing in the list for further processing. so your 'map so-far' is your finished map.
+test_group_by([],MAP,MAP).
+
+
+% take the list-of-tuples, our 'so-far' map, and produce a done-map.
+test_group_by(
+  [abc(BARCODE_STRING,
+       GROUP_KEY,               %BARCODE_TYPE,
+       AMENITIES_ID,
+       IN_PLAY)   |LT],
+  MAP,
+  MAP_OUT ) :-
+
+        manageable_list_tail(LT),
+        t_AmenitiesAccessBarcode(BARCODE_STRING,
+                                 GROUP_KEY, %BARCODE_TYPE,
+                                 AMENITIES_ID,
+                                 IN_PLAY),
+        get_assoc(GROUP_KEY,MAP,COUNT), % map key (GROUP_KEY) needs to be instantiated by here.
+        NEW_COUNT is COUNT + 1,
+        put_assoc(GROUP_KEY,MAP,NEW_COUNT,MAP2),
+        test_group_by(LT,MAP2,MAP_OUT).
+
+
+% take the list-of-tuples, our 'so-far' map, and produce a done-map.
+test_group_by(
+  [abc(BARCODE_STRING,
+       GROUP_KEY,               %BARCODE_TYPE,
+       AMENITIES_ID,
+       IN_PLAY)   |LT],
+  MAP,
+  MAP_OUT ) :-
+
+        manageable_list_tail(LT),
+        t_AmenitiesAccessBarcode(BARCODE_STRING,
+                                 GROUP_KEY, %BARCODE_TYPE,
+                                 AMENITIES_ID,
+                                 IN_PLAY),
+        \+get_assoc(GROUP_KEY,MAP,_), % map key (GROUP_KEY) needs to be instantiated by here.
+        put_assoc(GROUP_KEY,MAP,1,MAP2),
+        test_group_by(LT,MAP2,MAP_OUT).
 
 
 % ----------------------------------------------------------
