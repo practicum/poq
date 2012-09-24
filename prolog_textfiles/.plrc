@@ -15,5 +15,13 @@ rl_write_history :-
 :- at_halt(rl_write_history).
 
 
-
+% mini_datatypes is ONE OPTION (there are others) for the datatypes that we want the camping module to 'see'
 ?- use_module(modules/mini_datatypes).
+
+
+?- use_module(modules/camping).
+
+
+% comment out the portrayal module if we suspect that my custom printing functions are obscuring some bug
+?- use_module(modules/camping_portrayal).
+
