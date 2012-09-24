@@ -195,6 +195,39 @@ list_type_abc_removed_dup_barcode(
 
 % ----------------------------------------------------------
 
+% we are grouping rows that look like: abc(fccy463, full_member_barcode, 0, tinyint_0)
+% we are grouping based on BARCODE_TYPE. (the second field in the row)
+
+% still todo: must account for NULL values in all aggregates.
+
+% the aggregate function for field 1 is nothing-at-all.
+% the aggregate function for BARCODE_TYPE (the GROUP_KEY) is count. handled specially since it is GROUP_KEY.
+% the aggregate function for AMENITIES_ID is sum. (it makes no sense to sum a key, but this is a demo.)
+% the aggregate function for IN_PLAY is min.
+
+agg_field_do_nothing(PREVIOUS,_INCOMING,WINNER) :-
+        WINNER = PREVIOUS.
+
+agg_field_sum(PREVIOUS,INCOMING,WINNER) :-
+        WINNER is PREVIOUS + INCOMING.
+
+% i need to carefully re-read 4.7.1 Standard Order of Terms
+% http://www.swi-prolog.org/pldoc/doc_for?object=section%283,%274.7.1%27,swi%28%27/doc/Manual/compare.html%27%29%29
+agg_field_min_atom(PREVIOUS,INCOMING,WINNER) :-
+        INCOMING @< PREVIOUS,
+        WINNER = INCOMING.
+
+agg_field_min_atom(PREVIOUS,INCOMING,WINNER) :-
+        INCOMING @>= PREVIOUS,
+        WINNER = PREVIOUS.
+
+/*
+  note: the final map can be examined with: assoc_to_list, assoc_to_values
+
+  possibly also with failure-driven backtracking:
+    gen_assoc(?Key, +Assoc, ?Value)
+      Enumerate matching elements of Assoc in ascending order of their keys via backtracking.
+*/
 test_group_by(L,LOUT) :-
 
         t_list_type_barcode(L),
@@ -226,14 +259,18 @@ test_group_by(
                         AMENITIES_ID2,
                         IN_PLAY2),COUNT) ),
 
+        agg_field_do_nothing(BARCODE_STRING2,BARCODE_STRING,BSNEW),
+        agg_field_sum(AMENITIES_ID2,AMENITIES_ID,AIDNEW),
+        agg_field_min_atom(IN_PLAY2,IN_PLAY,IPNEW),
         NEW_COUNT is COUNT + 1,
 
         put_assoc(GROUP_KEY,
                   MAP,
-                  g(abc(BARCODE_STRING2,
+                  g(abc(BSNEW,
                         GROUP_KEY, %BARCODE_TYPE,
-                        AMENITIES_ID2,
-                        IN_PLAY2),NEW_COUNT),
+                        AIDNEW,
+                        IPNEW),
+                    NEW_COUNT),
                   MAP2),
 
         test_group_by(LT,MAP2,MAP_OUT).
@@ -256,10 +293,11 @@ test_group_by(
         \+get_assoc(GROUP_KEY,MAP,_), % map key (GROUP_KEY) needs to be instantiated by here.
         put_assoc(GROUP_KEY,
                   MAP,
-                  g(abc(BARCODE_STRING,
+                  g(abc(BARCODE_STRING,  % aggregate: nothing-at-all
                         GROUP_KEY, %BARCODE_TYPE,
-                        AMENITIES_ID,
-                        IN_PLAY), 1),
+                        AMENITIES_ID,    % aggregate: sum
+                        IN_PLAY),  % aggregate: min
+                    1), % note: 1 is the starting point for the count aggregate
                   MAP2),
         test_group_by(LT,MAP2,MAP_OUT).
 
