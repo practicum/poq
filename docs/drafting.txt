@@ -162,3 +162,23 @@ POSSIBLE IMPROVEMENTS TO THE SYSTEM:
 performance: concurrent prolog? (multi-threaded)
 
 UTF8, unicode, other charsets/encodings ? does prolog do utf8? probably!
+
+
+SQL LANGUAGE DISCUSSION POINTS
+
+select count( x)
+   versus
+select count(distinct x)
+
+... consider the C.J. Date arguments in favor of the *system* always enforcing the 'distinct' part and you wouldn't have to type it yourself in scenarios like this... ?
+
+
+WEIRD IDEAS:
+
+if a query execution system were written in prolog, would concurrent prolog yield interesting gains in parallelizing the field-by-field calculations for something like:
+
+select
+    min(a),
+    count(distinct a),
+    sum(distinct b),
+    ...
