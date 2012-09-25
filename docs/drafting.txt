@@ -172,6 +172,7 @@ select count(distinct x)
 
 ... consider the C.J. Date arguments in favor of the *system* always enforcing the 'distinct' part and you wouldn't have to type it yourself in scenarios like this... ?
 
+how many 'passes' does the sql parser/analyzer do. we need a correct AST, but then we also need 'name resolution' on table names, and things like: does a UNION apply to two derived tables that are actually union-able.
 
 WEIRD IDEAS:
 
