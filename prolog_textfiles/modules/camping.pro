@@ -304,6 +304,112 @@ test_group_by(
 
 % ----------------------------------------------------------
 
+% we are aggregating rows that look like: abc(fccy463, full_member_barcode, 0, tinyint_0)
+% this is aggregation WITHOUT (aka IN THE ABSENCE OF) any group-by.
+
+% still todo: must account for NULL values in all aggregates.
+
+% the aggregate function for field 1 is nothing-at-all.
+% the aggregate function for BARCODE_TYPE is nothing-at-all.
+% the aggregate function for AMENITIES_ID is sum. (it makes no sense to sum a key, but this is a demo.)
+% the aggregate function for IN_PLAY is min.
+
+
+/*
+  note: the final map can be examined with: assoc_to_list, assoc_to_values
+
+  possibly also with failure-driven backtracking:
+    gen_assoc(?Key, +Assoc, ?Value)
+      Enumerate matching elements of Assoc in ascending order of their keys via backtracking.
+*/
+test_bare_aggregate(L,LOUT) :-
+
+        t_list_type_barcode(L),
+        test_bare_aggregate(L,t,LOUT).
+
+
+% pared everything down to an empty list, but there is also an EMPTY MAP (the so-far map)
+test_bare_aggregate([],t,MAP) :-
+        put_assoc(sole_item,
+                  t,
+                  g(abc(null, %BARCODE_STRING,  % aggregate: nothing-at-all
+                        null, %BARCODE_TYPE,    % aggregate: nothing-at-all
+                        null, %AMENITIES_ID,    % aggregate: sum
+                        null), % IN_PLAY  % aggregate: min
+                    0), % the empty tuple list has a count of zero
+                  MAP).
+
+% nothing in the list for further processing. so your 'map so-far' is your finished map.
+test_bare_aggregate([],MAP,MAP) :-
+        \+empty_assoc(MAP).  % make sure it is NOT an empty map, because that case is handled elsewhere
+
+% take the list-of-tuples, our 'so-far' map, and produce a done-map.
+test_bare_aggregate(
+  [abc(BARCODE_STRING,
+       BARCODE_TYPE,
+       AMENITIES_ID,
+       IN_PLAY)   |LT],
+  MAP,
+  MAP_OUT ) :-
+
+        manageable_list_tail(LT),
+        t_AmenitiesAccessBarcode(BARCODE_STRING,
+                                 BARCODE_TYPE,
+                                 AMENITIES_ID,
+                                 IN_PLAY),
+        get_assoc(sole_item, % map key. this indicates we could replace map here with a simpler accumulator
+                  MAP,
+                  g(abc(BARCODE_STRING2,
+                        BARCODE_TYPE2,
+                        AMENITIES_ID2,
+                        IN_PLAY2),COUNT) ),
+
+        agg_field_do_nothing(BARCODE_STRING2,BARCODE_STRING,BSNEW),
+        agg_field_do_nothing(BARCODE_TYPE2,BARCODE_TYPE,BCNEW),
+        agg_field_sum(AMENITIES_ID2,AMENITIES_ID,AIDNEW),
+        agg_field_min_atom(IN_PLAY2,IN_PLAY,IPNEW),
+        NEW_COUNT is COUNT + 1,
+
+        put_assoc(sole_item,
+                  MAP,
+                  g(abc(BSNEW,
+                        BCNEW,
+                        AIDNEW,
+                        IPNEW),
+                    NEW_COUNT),
+                  MAP2),
+
+        test_bare_aggregate(LT,MAP2,MAP_OUT).
+
+
+% take the list-of-tuples, our 'so-far' map, and produce a done-map.
+test_bare_aggregate(
+  [abc(BARCODE_STRING,
+       BARCODE_TYPE,
+       AMENITIES_ID,
+       IN_PLAY)   |LT],
+  MAP,
+  MAP_OUT ) :-
+
+        manageable_list_tail(LT),
+        t_AmenitiesAccessBarcode(BARCODE_STRING,
+                                 BARCODE_TYPE,
+                                 AMENITIES_ID,
+                                 IN_PLAY),
+        \+get_assoc(sole_item,MAP,_), % map key. this indicates we could replace map here with a simpler accumulator
+        put_assoc(sole_item,
+                  MAP,
+                  g(abc(BARCODE_STRING,  % aggregate: nothing-at-all
+                        BARCODE_TYPE,    % aggregate: nothing-at-all
+                        AMENITIES_ID,    % aggregate: sum
+                        IN_PLAY),  % aggregate: min
+                    1), % note: 1 is the starting point for the count aggregate
+                  MAP2),
+        test_bare_aggregate(LT,MAP2,MAP_OUT).
+
+
+% ----------------------------------------------------------
+
 % putting the UNIQUE barcode_string information here.  TODO: what if two columns bore the unique keyword?
 t_list_type_purchase(L) :-
         % t is the empty mapping, from library assoc
