@@ -27,6 +27,11 @@ also, even when it seems abundantly obvious that our code conforms to our spec, 
 
 compare run-time assertions with statically provable assertions.  runtime assertions still require that we EXERCISE the code to be checked, and that we exercise it with as many different states as possible. static checking does not rely on that type of exercising.  also: how would one use run-time assertions on SQL? (no..  you actually could do it in a fairly straightforward way, but it isn't built in.)
 
+SETTINGS 'REQUIRING' VERIFICATION OF QUERIES:
+
+The obvious one (the one motivating me, personally, all along): when a SQL query is 'compiled in' and becomes part of a stable (large-scale) application.
+
+What about when just 'playing with the data' and doing 'exploratory' SQL queries.  In that setting you might not initially want formal verification.  However, usually the end result of that process is at least one annointed, 'final' query that will be used in a report or used as input to further statistical analysis/inference.  at that point is when you would really want formal verification!
 
 Quality assurance, debugging, and maintenance tools are all needed.
 
