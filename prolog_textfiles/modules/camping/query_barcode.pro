@@ -4,8 +4,8 @@
            % t_list_type_barcode_x_purchase/1,  % not needed?
            % t_list_type_gtperiod_x_purchase/1, % not needed?
 
-           cross_barcode_purchase/3,
-           cross_barcode_gtperiod/3,
+           barcode_join_purchase_on_EXPR/3,
+           barcode_join_gtperiod_on_EXPR/3,
 
            end_of_query_barcode_exports_placeholder/0]).   % this is here so i don't have to move the ']).' each time i add to exports
 
@@ -30,7 +30,7 @@ end_of_query_barcode_exports_placeholder.
 % ----------------------------------------------------------
 
 /*
-There are 7 different clauses to express cross_barcode_purchase.
+There are 7 different clauses to express barcode_join_purchase_on_EXPR.
 
 There should be no duplication in outcomes due to careful management
 of when each of the 7 clauses is allowed to be applied.
@@ -65,10 +65,10 @@ meets_join_abc_pch(
         CANCELED = tinyint_0.
 
 
-cross_barcode_purchase( [], [], [] ).
+barcode_join_purchase_on_EXPR( [], [], [] ).
 
 
-cross_barcode_purchase(
+barcode_join_purchase_on_EXPR(
   [abc(BARCODE_STRING,
        BARCODE_TYPE,
        AMENITIES_ID,
@@ -83,7 +83,7 @@ cross_barcode_purchase(
             IN_PLAY).
 
 
-cross_barcode_purchase(
+barcode_join_purchase_on_EXPR(
   [],
   [pch(PURCHASE_ID,
        BARCODE_STRING,
@@ -101,7 +101,7 @@ cross_barcode_purchase(
 
 
 % single barcode but longer list of purchase, MEETS JOIN conditions
-cross_barcode_purchase(
+barcode_join_purchase_on_EXPR(
   [abc(BARCODE_STRING_abc,
        BARCODE_TYPE,
        AMENITIES_ID,
@@ -146,14 +146,14 @@ cross_barcode_purchase(
                                        PURCHASE_DATE,
                                        PURCHASED_SPACES_QTY,
                                        CANCELED))),
-        cross_barcode_purchase( [abc(BARCODE_STRING_abc,
+        barcode_join_purchase_on_EXPR( [abc(BARCODE_STRING_abc,
                                      BARCODE_TYPE,
                                      AMENITIES_ID,
                                      IN_PLAY)   |[]], L2T, R ).
 
 
 % single barcode but longer list of purchase, FAILS TO MEET JOIN conditions
-cross_barcode_purchase(
+barcode_join_purchase_on_EXPR(
   [abc(BARCODE_STRING_abc,
        BARCODE_TYPE,
        AMENITIES_ID,
@@ -190,14 +190,14 @@ cross_barcode_purchase(
                                          PURCHASE_DATE,
                                          PURCHASED_SPACES_QTY,
                                          CANCELED))),
-        cross_barcode_purchase( [abc(BARCODE_STRING_abc,
+        barcode_join_purchase_on_EXPR( [abc(BARCODE_STRING_abc,
                                      BARCODE_TYPE,
                                      AMENITIES_ID,
                                      IN_PLAY)   |[]], L2T, R ).
 
 
 % longer barcode list but SINGLE purchase, MEETS JOIN conditions
-cross_barcode_purchase(
+barcode_join_purchase_on_EXPR(
   [abc(BARCODE_STRING_abc,
        BARCODE_TYPE,
        AMENITIES_ID,
@@ -238,7 +238,7 @@ cross_barcode_purchase(
                                        PURCHASE_DATE,
                                        PURCHASED_SPACES_QTY,
                                        CANCELED))),
-        cross_barcode_purchase( L2T,
+        barcode_join_purchase_on_EXPR( L2T,
                                 [pch(PURCHASE_ID,
                                      BARCODE_STRING_pch,
                                      PURCHASE_DATE,
@@ -248,7 +248,7 @@ cross_barcode_purchase(
 
 
 % longer barcode list but SINGLE purchase, FAILS TO MEET JOIN conditions
-cross_barcode_purchase(
+barcode_join_purchase_on_EXPR(
   [abc(BARCODE_STRING_abc,
        BARCODE_TYPE,
        AMENITIES_ID,
@@ -281,7 +281,7 @@ cross_barcode_purchase(
                                          PURCHASE_DATE,
                                          PURCHASED_SPACES_QTY,
                                          CANCELED))),
-        cross_barcode_purchase( L2T,
+        barcode_join_purchase_on_EXPR( L2T,
                                 [pch(PURCHASE_ID,
                                      BARCODE_STRING_pch,
                                      PURCHASE_DATE,
@@ -291,7 +291,7 @@ cross_barcode_purchase(
 
 
 % adding one more purchase to an 'already crossing'
-cross_barcode_purchase(
+barcode_join_purchase_on_EXPR(
   [abc(BARCODE_STRING_abc,
        BARCODE_TYPE,
        AMENITIES_ID,
@@ -328,13 +328,13 @@ cross_barcode_purchase(
                Y),
         Y>1,
         X>=Y,
-        cross_barcode_purchase([abc(BARCODE_STRING_abc,
+        barcode_join_purchase_on_EXPR([abc(BARCODE_STRING_abc,
                                     BARCODE_TYPE,
                                     AMENITIES_ID,
                                     IN_PLAY)   |L1T],
                                L2T,
                                POUT),
-        cross_barcode_purchase([abc(BARCODE_STRING_abc,
+        barcode_join_purchase_on_EXPR([abc(BARCODE_STRING_abc,
                                     BARCODE_TYPE,
                                     AMENITIES_ID,
                                     IN_PLAY)   |L1T],
@@ -348,7 +348,7 @@ cross_barcode_purchase(
 
 
 % adding one more barcode to an 'already crossing'
-cross_barcode_purchase(
+barcode_join_purchase_on_EXPR(
   [abc(BARCODE_STRING_abc,
        BARCODE_TYPE,
        AMENITIES_ID,
@@ -383,14 +383,14 @@ cross_barcode_purchase(
                Y),
         Y>1,
         X<Y,
-        cross_barcode_purchase(L1T,
+        barcode_join_purchase_on_EXPR(L1T,
                                [pch(PURCHASE_ID,
                                     BARCODE_STRING_pch,
                                     PURCHASE_DATE,
                                     PURCHASED_SPACES_QTY,
                                     CANCELED)   |D],
                                POUT),
-        cross_barcode_purchase([abc(BARCODE_STRING_abc,
+        barcode_join_purchase_on_EXPR([abc(BARCODE_STRING_abc,
                                     BARCODE_TYPE,
                                     AMENITIES_ID,
                                     IN_PLAY)   |[]],
@@ -407,7 +407,7 @@ cross_barcode_purchase(
 
 /*
 There are 7 different clauses for the next 'cross' predicate.
-Refer to the notes above (for cross_barcode_purchase) for more details.
+Refer to the notes above (for barcode_join_purchase_on_EXPR) for more details.
 */
 % IMPORTANT. IMPORTANT: roll back to commit cf628e5bc086 to see a 'pure crossing' version with no join conditions
 
@@ -427,10 +427,10 @@ meets_join_abc_gtp(
         CANCELED_gtp = tinyint_0.
 
 
-cross_barcode_gtperiod( [], [], [] ).
+barcode_join_gtperiod_on_EXPR( [], [], [] ).
 
 
-cross_barcode_gtperiod(
+barcode_join_gtperiod_on_EXPR(
   [abc(BARCODE_STRING,
        BARCODE_TYPE,
        AMENITIES_ID,
@@ -445,7 +445,7 @@ cross_barcode_gtperiod(
             IN_PLAY).
 
 
-cross_barcode_gtperiod(
+barcode_join_gtperiod_on_EXPR(
   [],
   [gtp(TRIAL_PERIOD_ID,
        BARCODE_STRING_gtp,
@@ -465,7 +465,7 @@ cross_barcode_gtperiod(
 
 
 % single barcode but longer list of gtperiod(s), and MEETS join condition
-cross_barcode_gtperiod(
+barcode_join_gtperiod_on_EXPR(
   [abc(BARCODE_STRING_abc,
        BARCODE_TYPE,
        AMENITIES_ID,
@@ -515,14 +515,14 @@ cross_barcode_gtperiod(
                                        TPERIOD_REDEMPTION_DATE,
                                        TPERIOD_CONSTRAINT_ID,
                                        CANCELED_gtp))),
-        cross_barcode_gtperiod( [abc(BARCODE_STRING_abc,
+        barcode_join_gtperiod_on_EXPR( [abc(BARCODE_STRING_abc,
                                      BARCODE_TYPE,
                                      AMENITIES_ID,
                                      IN_PLAY)   |[]], L2T, R ).
 
 
 % single barcode but longer list of gtperiod(s), and FAILING the join condition
-cross_barcode_gtperiod(
+barcode_join_gtperiod_on_EXPR(
   [abc(BARCODE_STRING_abc,
        BARCODE_TYPE,
        AMENITIES_ID,
@@ -563,14 +563,14 @@ cross_barcode_gtperiod(
                                          TPERIOD_REDEMPTION_DATE,
                                          TPERIOD_CONSTRAINT_ID,
                                          CANCELED_gtp))),
-        cross_barcode_gtperiod( [abc(BARCODE_STRING_abc,
+        barcode_join_gtperiod_on_EXPR( [abc(BARCODE_STRING_abc,
                                      BARCODE_TYPE,
                                      AMENITIES_ID,
                                      IN_PLAY)   |[]], L2T, R ).
 
 
 % longer barcode list but SINGLE gtperiod, and MEETS the join condition
-cross_barcode_gtperiod(
+barcode_join_gtperiod_on_EXPR(
   [abc(BARCODE_STRING_abc,
        BARCODE_TYPE,
        AMENITIES_ID,
@@ -613,7 +613,7 @@ cross_barcode_gtperiod(
                                        TPERIOD_REDEMPTION_DATE,
                                        TPERIOD_CONSTRAINT_ID,
                                        CANCELED_gtp))),
-        cross_barcode_gtperiod( L2T,
+        barcode_join_gtperiod_on_EXPR( L2T,
                                 [gtp(TRIAL_PERIOD_ID,
                                      BARCODE_STRING_gtp,
                                      GUEST_ID,
@@ -624,7 +624,7 @@ cross_barcode_gtperiod(
 
 
 % longer barcode list but SINGLE gtperiod, and FAILING the join condition
-cross_barcode_gtperiod(
+barcode_join_gtperiod_on_EXPR(
   [abc(BARCODE_STRING_abc,
        BARCODE_TYPE,
        AMENITIES_ID,
@@ -658,7 +658,7 @@ cross_barcode_gtperiod(
                                          TPERIOD_REDEMPTION_DATE,
                                          TPERIOD_CONSTRAINT_ID,
                                          CANCELED_gtp))),
-        cross_barcode_gtperiod( L2T,
+        barcode_join_gtperiod_on_EXPR( L2T,
                                 [gtp(TRIAL_PERIOD_ID,
                                      BARCODE_STRING_gtp,
                                      GUEST_ID,
@@ -669,7 +669,7 @@ cross_barcode_gtperiod(
 
 
 % adding one more gtperiod to an 'already crossing'
-cross_barcode_gtperiod(
+barcode_join_gtperiod_on_EXPR(
   [abc(BARCODE_STRING_abc,
        BARCODE_TYPE,
        AMENITIES_ID,
@@ -707,13 +707,13 @@ cross_barcode_gtperiod(
                Y),
         Y>1,
         X>=Y,
-        cross_barcode_gtperiod([abc(BARCODE_STRING_abc,
+        barcode_join_gtperiod_on_EXPR([abc(BARCODE_STRING_abc,
                                     BARCODE_TYPE,
                                     AMENITIES_ID,
                                     IN_PLAY)   |L1T],
                                L2T,
                                POUT),
-        cross_barcode_gtperiod([abc(BARCODE_STRING_abc,
+        barcode_join_gtperiod_on_EXPR([abc(BARCODE_STRING_abc,
                                     BARCODE_TYPE,
                                     AMENITIES_ID,
                                     IN_PLAY)   |L1T],
@@ -728,7 +728,7 @@ cross_barcode_gtperiod(
 
 
 % adding one more barcode to an 'already crossing'
-cross_barcode_gtperiod(
+barcode_join_gtperiod_on_EXPR(
   [abc(BARCODE_STRING_abc,
        BARCODE_TYPE,
        AMENITIES_ID,
@@ -766,7 +766,7 @@ cross_barcode_gtperiod(
                Y),
         Y>1,
         X<Y,
-        cross_barcode_gtperiod(L1T,
+        barcode_join_gtperiod_on_EXPR(L1T,
                                [gtp(TRIAL_PERIOD_ID,
                                     BARCODE_STRING_gtp,
                                     GUEST_ID,
@@ -774,7 +774,7 @@ cross_barcode_gtperiod(
                                     TPERIOD_CONSTRAINT_ID,
                                     CANCELED_gtp)   |D],
                                POUT),
-        cross_barcode_gtperiod([abc(BARCODE_STRING_abc,
+        barcode_join_gtperiod_on_EXPR([abc(BARCODE_STRING_abc,
                                     BARCODE_TYPE,
                                     AMENITIES_ID,
                                     IN_PLAY)   |[]],
