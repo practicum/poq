@@ -14,6 +14,9 @@
            test_bare_aggregate/2,
            test_bare_aggregate/3,
 
+           t_tuple_abc_pch/1,              % type of tuple when joining AmenitiesAccessBarcode to Purchase.
+           t_tuple_gtp_pch/1,              % type of tuple when joining GuestTrialPeriod to Purchase.
+
            % 'dt' is used as an abbreviation for DERIVED TABLE.
            t_dt_content_barcode_x_purchase/1,   % despite the specific kind of join we do on these 2 tables, the output type is this.
            t_dt_content_gtperiod_x_purchase/1,  % despite the specific kind of join we do on these 2 tables, the output type is this.
@@ -22,6 +25,7 @@
 
 
 :- use_module(modules/dbms/small_lists).
+:- use_module(modules/dbms/dbms_builtins).
 %:- use_module(modules/dbms/datatypes).  NO. DO NOT ENABLE. instead, the user imports ONE of several choices.
 
 end_of_camping_exports_placeholder.
@@ -156,22 +160,6 @@ list_type_abc_removed_dup_barcode(
 % the aggregate function for BARCODE_TYPE (the GROUP_KEY) is count. handled specially since it is GROUP_KEY.
 % the aggregate function for AMENITIES_ID is sum. (it makes no sense to sum a key, but this is a demo.)
 % the aggregate function for IN_PLAY is min.
-
-agg_field_do_nothing(PREVIOUS,_INCOMING,WINNER) :-
-        WINNER = PREVIOUS.
-
-agg_field_sum(PREVIOUS,INCOMING,WINNER) :-
-        WINNER is PREVIOUS + INCOMING.
-
-% i need to carefully re-read 4.7.1 Standard Order of Terms
-% http://www.swi-prolog.org/pldoc/doc_for?object=section%283,%274.7.1%27,swi%28%27/doc/Manual/compare.html%27%29%29
-agg_field_min_atom(PREVIOUS,INCOMING,WINNER) :-
-        INCOMING @< PREVIOUS,
-        WINNER = INCOMING.
-
-agg_field_min_atom(PREVIOUS,INCOMING,WINNER) :-
-        INCOMING @>= PREVIOUS,
-        WINNER = PREVIOUS.
 
 /*
   note: the final map can be examined with: assoc_to_list, assoc_to_values
@@ -480,7 +468,7 @@ list_type_gtp_removed_dup_gtpid(
 % ----------------------------------------------------------
 
 % type definition for a tuple from crossing AmenitiesAccessBarcode(s) with Purchase(s)
-t_barcode_x_purchase(
+t_tuple_abc_pch(
   abc(BARCODE_STRING_abc,
       BARCODE_TYPE,
       AMENITIES_ID,
@@ -503,12 +491,12 @@ t_barcode_x_purchase(
             PURCHASED_SPACES_QTY,
             CANCELED).
 
-% the list to stand in for a 'set' of tuples of type t_barcode_x_purchase
+% the list to stand in for a 'set' of tuples of type t_tuple_abc_pch
 t_dt_content_barcode_x_purchase([]).
 
 
 t_dt_content_barcode_x_purchase(
-  [abc_x_pch(abc(BARCODE_STRING_abc,
+  [abc_pch(abc(BARCODE_STRING_abc,
                  BARCODE_TYPE,
                  AMENITIES_ID,
                  IN_PLAY),
@@ -518,7 +506,7 @@ t_dt_content_barcode_x_purchase(
                  PURCHASED_SPACES_QTY,
                  CANCELED))   |LT]) :-
 
-        t_barcode_x_purchase(abc(BARCODE_STRING_abc,
+        t_tuple_abc_pch(abc(BARCODE_STRING_abc,
                                  BARCODE_TYPE,
                                  AMENITIES_ID,
                                  IN_PLAY),
@@ -535,7 +523,7 @@ t_dt_content_barcode_x_purchase(
 
 
 % type definition for a tuple from crossing GuestTrialPeriod(s) with Purchase(s)
-t_gtperiod_x_purchase(
+t_tuple_gtp_pch(
   gtp(TRIAL_PERIOD_ID,
       BARCODE_STRING_gtp,
       GUEST_ID,
@@ -563,12 +551,12 @@ t_gtperiod_x_purchase(
             CANCELED_pch).
 
 
-% the list to stand in for a 'set' of tuples of type t_gtperiod_x_purchase
+% the list to stand in for a 'set' of tuples of type t_tuple_gtp_pch
 t_dt_content_gtperiod_x_purchase([]).
 
 
 t_dt_content_gtperiod_x_purchase(
-  [gtp_x_pch(gtp(TRIAL_PERIOD_ID,
+  [gtp_pch(gtp(TRIAL_PERIOD_ID,
                  BARCODE_STRING_gtp,
                  GUEST_ID,
                  TPERIOD_REDEMPTION_DATE,
@@ -580,7 +568,7 @@ t_dt_content_gtperiod_x_purchase(
                  PURCHASED_SPACES_QTY,
                  CANCELED_pch))   |LT]) :-
 
-        t_gtperiod_x_purchase(gtp(TRIAL_PERIOD_ID,
+        t_tuple_gtp_pch(gtp(TRIAL_PERIOD_ID,
                                   BARCODE_STRING_gtp,
                                   GUEST_ID,
                                   TPERIOD_REDEMPTION_DATE,
