@@ -12,6 +12,9 @@
            test_group_by/2,
            test_group_by/3,
 
+           test_bare_aggregate/2,
+           test_bare_aggregate/3,
+
            t_list_type_barcode_x_purchase/1,
            t_list_type_gtperiod_x_purchase/1,
            cross_barcode_purchase/3,
