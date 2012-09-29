@@ -4,9 +4,6 @@
            t_GuestTrialPeriod/6,           % simple, straightforward tuple type predicate.
            t_AmenitiesAccessType/2,        % simple, straightforward tuple type predicate.
 
-           % t_barcode_x_purchase/2,  % internal use
-           % t_gtperiod_x_purchase/2, % internal use
-
            t_table_content_barcode/1,      % valid tuples populating AmenitiesAccessBarcode. encapsulates UNIQUE constraint.
            t_table_content_purchase/1,     % valid tuples populating Purchase. encapsulates UNIQUE constraint.
            t_table_content_gtperiod/1,     % valid tuples populating GuestTrialPeriod. encapsulates UNIQUE constraint.
@@ -17,8 +14,9 @@
            test_bare_aggregate/2,
            test_bare_aggregate/3,
 
-           % t_list_type_barcode_x_purchase/1,  % not needed?
-           % t_list_type_gtperiod_x_purchase/1, % not needed?
+           % 'dt' is used as an abbreviation for DERIVED TABLE.
+           t_dt_content_barcode_x_purchase/1,   % despite the specific kind of join we do on these 2 tables, the output type is this.
+           t_dt_content_gtperiod_x_purchase/1,  % despite the specific kind of join we do on these 2 tables, the output type is this.
 
            end_of_camping_exports_placeholder/0]).   % this is here so i don't have to move the ']).' each time i add to exports
 
@@ -91,58 +89,7 @@ t_AmenitiesAccessType(
         demoword(AMENITIES_ACCESS_LEVEL_NAME), nonnull(AMENITIES_ACCESS_LEVEL_NAME).
 
 
-% type definition for a tuple from crossing AmenitiesAccessBarcode(s) with Purchase(s)
-t_barcode_x_purchase(
-  abc(BARCODE_STRING_abc,
-      BARCODE_TYPE,
-      AMENITIES_ID,
-      IN_PLAY),
-  pch(PURCHASE_ID,
-      BARCODE_STRING_pch,
-      PURCHASE_DATE,
-      PURCHASED_SPACES_QTY,
-      CANCELED)) :-
 
-        t_AmenitiesAccessBarcode(
-            BARCODE_STRING_abc,
-            BARCODE_TYPE,
-            AMENITIES_ID,
-            IN_PLAY),
-        t_Purchase(
-            PURCHASE_ID,
-            BARCODE_STRING_pch,
-            PURCHASE_DATE,
-            PURCHASED_SPACES_QTY,
-            CANCELED).
-
-
-% type definition for a tuple from crossing GuestTrialPeriod(s) with Purchase(s)
-t_gtperiod_x_purchase(
-  gtp(TRIAL_PERIOD_ID,
-      BARCODE_STRING_gtp,
-      GUEST_ID,
-      TPERIOD_REDEMPTION_DATE,
-      TPERIOD_CONSTRAINT_ID,
-      CANCELED_gtp),
-  pch(PURCHASE_ID,
-      BARCODE_STRING_pch,
-      PURCHASE_DATE,
-      PURCHASED_SPACES_QTY,
-      CANCELED_pch)) :-
-
-        t_GuestTrialPeriod(
-            TRIAL_PERIOD_ID,
-            BARCODE_STRING_gtp,
-            GUEST_ID,
-            TPERIOD_REDEMPTION_DATE,
-            TPERIOD_CONSTRAINT_ID,
-            CANCELED_gtp),
-        t_Purchase(
-            PURCHASE_ID,
-            BARCODE_STRING_pch,
-            PURCHASE_DATE,
-            PURCHASED_SPACES_QTY,
-            CANCELED_pch).
 
 
 % ----------------------------------------------------------
@@ -532,11 +479,35 @@ list_type_gtp_removed_dup_gtpid(
 
 % ----------------------------------------------------------
 
+% type definition for a tuple from crossing AmenitiesAccessBarcode(s) with Purchase(s)
+t_barcode_x_purchase(
+  abc(BARCODE_STRING_abc,
+      BARCODE_TYPE,
+      AMENITIES_ID,
+      IN_PLAY),
+  pch(PURCHASE_ID,
+      BARCODE_STRING_pch,
+      PURCHASE_DATE,
+      PURCHASED_SPACES_QTY,
+      CANCELED)) :-
+
+        t_AmenitiesAccessBarcode(
+            BARCODE_STRING_abc,
+            BARCODE_TYPE,
+            AMENITIES_ID,
+            IN_PLAY),
+        t_Purchase(
+            PURCHASE_ID,
+            BARCODE_STRING_pch,
+            PURCHASE_DATE,
+            PURCHASED_SPACES_QTY,
+            CANCELED).
+
 % the list to stand in for a 'set' of tuples of type t_barcode_x_purchase
-t_list_type_barcode_x_purchase([]).
+t_dt_content_barcode_x_purchase([]).
 
 
-t_list_type_barcode_x_purchase(
+t_dt_content_barcode_x_purchase(
   [abc_x_pch(abc(BARCODE_STRING_abc,
                  BARCODE_TYPE,
                  AMENITIES_ID,
@@ -557,16 +528,46 @@ t_list_type_barcode_x_purchase(
                                  PURCHASED_SPACES_QTY,
                                  CANCELED)),
         manageable_list_tail(LT), % it is very important to put this size PRIOR to the recursion below
-        t_list_type_barcode_x_purchase(LT).
+        t_dt_content_barcode_x_purchase(LT).
 
 
 % ----------------------------------------------------------
 
+
+% type definition for a tuple from crossing GuestTrialPeriod(s) with Purchase(s)
+t_gtperiod_x_purchase(
+  gtp(TRIAL_PERIOD_ID,
+      BARCODE_STRING_gtp,
+      GUEST_ID,
+      TPERIOD_REDEMPTION_DATE,
+      TPERIOD_CONSTRAINT_ID,
+      CANCELED_gtp),
+  pch(PURCHASE_ID,
+      BARCODE_STRING_pch,
+      PURCHASE_DATE,
+      PURCHASED_SPACES_QTY,
+      CANCELED_pch)) :-
+
+        t_GuestTrialPeriod(
+            TRIAL_PERIOD_ID,
+            BARCODE_STRING_gtp,
+            GUEST_ID,
+            TPERIOD_REDEMPTION_DATE,
+            TPERIOD_CONSTRAINT_ID,
+            CANCELED_gtp),
+        t_Purchase(
+            PURCHASE_ID,
+            BARCODE_STRING_pch,
+            PURCHASE_DATE,
+            PURCHASED_SPACES_QTY,
+            CANCELED_pch).
+
+
 % the list to stand in for a 'set' of tuples of type t_gtperiod_x_purchase
-t_list_type_gtperiod_x_purchase([]).
+t_dt_content_gtperiod_x_purchase([]).
 
 
-t_list_type_gtperiod_x_purchase(
+t_dt_content_gtperiod_x_purchase(
   [gtp_x_pch(gtp(TRIAL_PERIOD_ID,
                  BARCODE_STRING_gtp,
                  GUEST_ID,
@@ -591,7 +592,7 @@ t_list_type_gtperiod_x_purchase(
                                   PURCHASED_SPACES_QTY,
                                   CANCELED_pch)),
         manageable_list_tail(LT), % it is very important to put this size PRIOR to the recursion below
-        t_list_type_gtperiod_x_purchase(LT).
+        t_dt_content_gtperiod_x_purchase(LT).
 
 
 % ----------------------------------------------------------
