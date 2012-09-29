@@ -113,5 +113,6 @@ demoguid(null).
 demoguid(fccy463).
 demoguid(srce544).
 demoguid(ddd213).
+demoguid(tchc397).
 
 guidtype(X) :- demoguid(X).
