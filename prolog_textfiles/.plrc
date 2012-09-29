@@ -22,6 +22,7 @@ rl_write_history :-
 ?- use_module(modules/camping).
 ?- use_module(modules/query_barcode).
 
-% comment out the portrayal module if we suspect that my custom printing functions are obscuring some bug
+% comment out the portrayal module if we suspect that my custom printing functions are obscuring some bug.
+% another reason to comment it out: if you need output formatted in a way that you can paste it back into the repl.
 %?- use_module(modules/camping_portrayal).
 
