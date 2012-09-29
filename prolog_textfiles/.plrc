@@ -23,5 +23,5 @@ rl_write_history :-
 
 
 % comment out the portrayal module if we suspect that my custom printing functions are obscuring some bug
-?- use_module(modules/camping_portrayal).
+%?- use_module(modules/camping_portrayal).
 
