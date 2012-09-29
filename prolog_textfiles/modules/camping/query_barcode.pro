@@ -1,16 +1,17 @@
 :- module(query_barcode,
           [
-
-           % t_list_type_barcode_x_purchase/1,  % not needed?
-           % t_list_type_gtperiod_x_purchase/1, % not needed?
-
            barcode_join_purchase_on_EXPR/3,
            barcode_join_gtperiod_on_EXPR/3,
+
+           % the following predicates are NOT using a 'group by'. instead, it is 'bare aggregation' only.
+           aggregate_and_project_1/2,
+           aggregate_and_project_1/3,
 
            end_of_query_barcode_exports_placeholder/0]).   % this is here so i don't have to move the ']).' each time i add to exports
 
 
 :- use_module(modules/dbms/small_lists).
+:- use_module(modules/dbms/dbms_builtins).
 :- use_module(modules/camping/camping).
 %:- use_module(modules/dbms/datatypes).  NO. DO NOT ENABLE. instead, the user imports ONE of several choices.
 
@@ -787,3 +788,160 @@ barcode_join_gtperiod_on_EXPR(
                                MOUT),
         merge(POUT,MOUT,FINAL).
 
+% ----------------------------------------------------------
+
+/* we are aggregating rows that look like:
+
+abc_pch(abc(BARCODE_STRING_abc,
+                 BARCODE_TYPE,
+                 AMENITIES_ID,
+                 IN_PLAY),
+             pch(PURCHASE_ID,
+                 BARCODE_STRING_pch,
+                 PURCHASE_DATE,
+                 PURCHASED_SPACES_QTY,
+                 CANCELED))
+*/
+
+% this is aggregation WITHOUT (aka IN THE ABSENCE OF) any group-by.
+
+% still todo: must account for NULL values in all aggregates.
+
+/*
+  here is the aggregated projected result:
+
+  count(amenities_id)
+  min(amenities_id)
+  max(amenities_id)
+  min(barcode_type)
+  max(barcode_type)
+
+  we will call it ct1 for custom tuple 1 (or custom tuple-type 1)
+*/
+
+
+
+/*
+  note: the final map can be examined with: assoc_to_list, assoc_to_values
+
+  possibly also with failure-driven backtracking:
+    gen_assoc(?Key, +Assoc, ?Value)
+      Enumerate matching elements of Assoc in ascending order of their keys via backtracking.
+*/
+aggregate_and_project_1(L,LOUT) :-
+
+        t_dt_content_barcode_x_purchase(L),
+        aggregate_and_project_1(L,t,LOUT).
+
+
+% pared everything down to an empty list, but there is also an EMPTY MAP (the so-far map)
+aggregate_and_project_1([],t,MAP) :-
+        put_assoc(absent_group_by,
+                  t,
+                  ct1(0,        % count(amenities_id)
+                      null,     % min(amenities_id)
+                      null,     % max(amenities_id)
+                      null,     % min(barcode_type)
+                      null),    % max(barcode_type)
+                  MAP).
+
+% nothing in the list for further processing. so your 'map so-far' is your finished map.
+aggregate_and_project_1([],MAP,MAP) :-
+        \+empty_assoc(MAP).  % make sure it is NOT an empty map, because that case is handled elsewhere
+
+% take the list-of-tuples, our 'so-far' map, and produce a done-map.
+aggregate_and_project_1(
+  [abc_pch(abc(BARCODE_STRING_abc,
+               BARCODE_TYPE,
+               AMENITIES_ID,
+               IN_PLAY),
+           pch(PURCHASE_ID,
+               BARCODE_STRING_pch,
+               PURCHASE_DATE,
+               PURCHASED_SPACES_QTY,
+               CANCELED))   |LT],
+  MAP,
+  MAP_OUT ) :-
+
+        manageable_list_tail(LT),
+        t_tuple_abc_pch(abc(BARCODE_STRING_abc,
+                            BARCODE_TYPE,
+                            AMENITIES_ID,
+                            IN_PLAY),
+                        pch(PURCHASE_ID,
+                            BARCODE_STRING_pch,
+                            PURCHASE_DATE,
+                            PURCHASED_SPACES_QTY,
+                            CANCELED)),
+
+        get_assoc(absent_group_by, % map key. this indicates we could replace map here with a simpler accumulator
+                  MAP,
+                  ct1(CNT_AM_ID_2,    % count(amenities_id)
+                      MIN_AM_ID_2,    % min(amenities_id)
+                      MAX_AM_ID_2,    % max(amenities_id)
+                      MIN_BTYPE_2,    % min(barcode_type)
+                      MAX_BTYPE_2) ), % max(barcode_type)
+
+        agg_field_count(    CNT_AM_ID_2,  AMENITIES_ID,  AMID_NEW),
+        agg_field_min_atom( MIN_AM_ID_2,  AMENITIES_ID,  MIN_AMID_NEW),
+        agg_field_max_atom( MAX_AM_ID_2,  AMENITIES_ID,  MAX_AMID_NEW),
+        agg_field_min_atom( MIN_BTYPE_2,  BARCODE_TYPE,  MIN_BTYPE_NEW),
+        agg_field_max_atom( MAX_BTYPE_2,  BARCODE_TYPE,  MAX_BTYPE_NEW),
+
+        put_assoc(absent_group_by,
+                  MAP,
+                  ct1(AMID_NEW,        % count(amenities_id)
+                      MIN_AMID_NEW,    % min(amenities_id)
+                      MAX_AMID_NEW,    % max(amenities_id)
+                      MIN_BTYPE_NEW,   % min(barcode_type)
+                      MAX_BTYPE_NEW),  % max(barcode_type)
+                  MAP2),
+
+        aggregate_and_project_1(LT,MAP2,MAP_OUT).
+
+
+% take the list-of-tuples, our 'so-far' map, and produce a done-map.
+% This is the case where the GROUP KEY is not yet in the map.
+aggregate_and_project_1(
+  [abc_pch(abc(BARCODE_STRING_abc,
+               BARCODE_TYPE,
+               AMENITIES_ID,
+               IN_PLAY),
+           pch(PURCHASE_ID,
+               BARCODE_STRING_pch,
+               PURCHASE_DATE,
+               PURCHASED_SPACES_QTY,
+               CANCELED))   |LT],
+  MAP,
+  MAP_OUT ) :-
+
+        manageable_list_tail(LT),
+
+        t_tuple_abc_pch(abc(BARCODE_STRING_abc,
+                            BARCODE_TYPE,
+                            AMENITIES_ID,
+                            IN_PLAY),
+                        pch(PURCHASE_ID,
+                            BARCODE_STRING_pch,
+                            PURCHASE_DATE,
+                            PURCHASED_SPACES_QTY,
+                            CANCELED)),
+
+        \+get_assoc(absent_group_by,MAP,_), % map key. this indicates we could replace map here with a simpler accumulator
+
+        % we probably want 'aggregation base case' predicates here.
+        % perhaps especially when null comes into play? or not...
+        % or better: perhaps in the face of agg_field_do_nothing
+
+        put_assoc(absent_group_by,
+                  MAP,
+                  ct1(1,             % note: 1 is the starting point for the count aggregate
+                      AMENITIES_ID,  % min(amenities_id)
+                      AMENITIES_ID,  % max(amenities_id)
+                      BARCODE_TYPE,  % min(barcode_type)
+                      BARCODE_TYPE), % max(barcode_type)
+                  MAP2),
+        aggregate_and_project_1(LT,MAP2,MAP_OUT).
+
+
+% ----------------------------------------------------------
