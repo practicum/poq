@@ -1,13 +1,15 @@
 :- module(camping,
-          [t_AmenitiesAccessBarcode/4,
-           t_Purchase/5,
-           t_GuestTrialPeriod/6,
-           t_AmenitiesAccessType/2,
-           t_barcode_x_purchase/2,
-           t_gtperiod_x_purchase/2,
-           t_list_type_barcode/1,  % actually wraps list_type_abc_removed_dup_barcode/3
-           t_list_type_purchase/1,  % actually wraps list_type_pch_removed_dup_pchid/3
-           t_list_type_gtperiod/1, % actually wraps list_type_gtp_removed_dup_gtpid/3
+          [t_AmenitiesAccessBarcode/4,     % simple, straightforward tuple type predicate.
+           t_Purchase/5,                   % simple, straightforward tuple type predicate.
+           t_GuestTrialPeriod/6,           % simple, straightforward tuple type predicate.
+           t_AmenitiesAccessType/2,        % simple, straightforward tuple type predicate.
+
+           % t_barcode_x_purchase/2,  % internal use
+           % t_gtperiod_x_purchase/2, % internal use
+
+           t_table_content_barcode/1,      % valid tuples populating AmenitiesAccessBarcode. encapsulates UNIQUE constraint.
+           t_table_content_purchase/1,     % valid tuples populating Purchase. encapsulates UNIQUE constraint.
+           t_table_content_gtperiod/1,     % valid tuples populating GuestTrialPeriod. encapsulates UNIQUE constraint.
 
            test_group_by/2,
            test_group_by/3,
@@ -25,7 +27,7 @@
 %:- use_module(modules/datatypes).  NO. DO NOT ENABLE. instead, the user imports ONE of several choices.
 
 manageable_list_tail(L) :- size_0_to_1(L). % applied to a TAIL of list, we know the WHOLE list would be +1 bigger
-%manageable_list_tail(L) :- length(L,1);length(L,0). % sometimes it is helpful to reverse the order of the permissible lengths
+%manageable_list_tail(L) :- length(L,4);length(L,3);length(L,2);length(L,1);length(L,0). % sometimes it is helpful to reverse the order of the permissible lengths
 
 /*
   In structures/functors, using:
@@ -146,7 +148,7 @@ t_gtperiod_x_purchase(
 % ----------------------------------------------------------
 
 % putting the UNIQUE barcode_string information here.  TODO: what if two columns bore the unique keyword?
-t_list_type_barcode(L) :-
+t_table_content_barcode(L) :-
         % t is the empty mapping, from library assoc
         list_type_abc_removed_dup_barcode(L,t,L).
 
@@ -233,7 +235,7 @@ agg_field_min_atom(PREVIOUS,INCOMING,WINNER) :-
 */
 test_group_by(L,LOUT) :-
 
-        t_list_type_barcode(L),
+        t_table_content_barcode(L),
         test_group_by(L,t,LOUT).
 
 
@@ -327,7 +329,7 @@ test_group_by(
 */
 test_bare_aggregate(L,LOUT) :-
 
-        t_list_type_barcode(L),
+        t_table_content_barcode(L),
         test_bare_aggregate(L,t,LOUT).
 
 
@@ -414,7 +416,7 @@ test_bare_aggregate(
 % ----------------------------------------------------------
 
 % putting the UNIQUE barcode_string information here.  TODO: what if two columns bore the unique keyword?
-t_list_type_purchase(L) :-
+t_table_content_purchase(L) :-
         % t is the empty mapping, from library assoc
         list_type_pch_removed_dup_pchid(L,t,L).
 
@@ -470,7 +472,7 @@ list_type_pch_removed_dup_pchid(
 % ----------------------------------------------------------
 
 % putting the UNIQUE information here.  TODO: what if two columns bore the unique keyword?
-t_list_type_gtperiod(L) :-
+t_table_content_gtperiod(L) :-
         % t is the empty mapping, from library assoc
         list_type_gtp_removed_dup_gtpid(L,t,L).
 
@@ -690,7 +692,7 @@ cross_barcode_purchase(
                                  BARCODE_TYPE,
                                  AMENITIES_ID,
                                  IN_PLAY),
-        t_list_type_purchase([pch(PURCHASE_ID,
+        t_table_content_purchase([pch(PURCHASE_ID,
                                   BARCODE_STRING_pch,
                                   PURCHASE_DATE,
                                   PURCHASED_SPACES_QTY,
@@ -734,7 +736,7 @@ cross_barcode_purchase(
                                  BARCODE_TYPE,
                                  AMENITIES_ID,
                                  IN_PLAY),
-        t_list_type_purchase([pch(PURCHASE_ID,
+        t_table_content_purchase([pch(PURCHASE_ID,
                                   BARCODE_STRING_pch,
                                   PURCHASE_DATE,
                                   PURCHASED_SPACES_QTY,
@@ -782,15 +784,17 @@ cross_barcode_purchase(
                PURCHASED_SPACES_QTY,
                CANCELED))   |R]  ) :-
 
-        t_list_type_barcode([abc(BARCODE_STRING_abc,
-                                 BARCODE_TYPE,
-                                 AMENITIES_ID,
-                                 IN_PLAY)   |L2T]),
-        t_Purchase(PURCHASE_ID,
-                   BARCODE_STRING_pch,
-                   PURCHASE_DATE,
-                   PURCHASED_SPACES_QTY,
-                   CANCELED),
+        t_table_content_barcode(
+            [abc(BARCODE_STRING_abc,
+                 BARCODE_TYPE,
+                 AMENITIES_ID,
+                 IN_PLAY)   |L2T]),
+        t_Purchase(
+            PURCHASE_ID,
+            BARCODE_STRING_pch,
+            PURCHASE_DATE,
+            PURCHASED_SPACES_QTY,
+            CANCELED),
         manageable_list_tail(L2T),
         meets_join_abc_pch(abc_pch(abc(BARCODE_STRING_abc,
                                        BARCODE_TYPE,
@@ -823,15 +827,17 @@ cross_barcode_purchase(
        CANCELED)   |[]],
   R ) :-
 
-        t_list_type_barcode([abc(BARCODE_STRING_abc,
-                                 BARCODE_TYPE,
-                                 AMENITIES_ID,
-                                 IN_PLAY)   |L2T]),
-        t_Purchase(PURCHASE_ID,
-                   BARCODE_STRING_pch,
-                   PURCHASE_DATE,
-                   PURCHASED_SPACES_QTY,
-                   CANCELED),
+        t_table_content_barcode(
+            [abc(BARCODE_STRING_abc,
+                 BARCODE_TYPE,
+                 AMENITIES_ID,
+                 IN_PLAY)   |L2T]),
+        t_Purchase(
+            PURCHASE_ID,
+            BARCODE_STRING_pch,
+            PURCHASE_DATE,
+            PURCHASED_SPACES_QTY,
+            CANCELED),
         manageable_list_tail(L2T),
         \+meets_join_abc_pch(abc_pch(abc(BARCODE_STRING_abc,
                                          BARCODE_TYPE,
@@ -864,15 +870,17 @@ cross_barcode_purchase(
        CANCELED)   |L2T],
   FINAL ) :-
 
-        t_list_type_barcode([abc(BARCODE_STRING_abc,
-                                 BARCODE_TYPE,
-                                 AMENITIES_ID,
-                                 IN_PLAY)   |L1T]),
-        t_list_type_purchase([pch(PURCHASE_ID,
-                                  BARCODE_STRING_pch,
-                                  PURCHASE_DATE,
-                                  PURCHASED_SPACES_QTY,
-                                  CANCELED)   |L2T]),
+        t_table_content_barcode(
+            [abc(BARCODE_STRING_abc,
+                 BARCODE_TYPE,
+                 AMENITIES_ID,
+                 IN_PLAY)   |L1T]),
+        t_table_content_purchase(
+            [pch(PURCHASE_ID,
+                 BARCODE_STRING_pch,
+                 PURCHASE_DATE,
+                 PURCHASED_SPACES_QTY,
+                 CANCELED)   |L2T]),
         length([abc(BARCODE_STRING_abc,
                     BARCODE_TYPE,
                     AMENITIES_ID,
@@ -919,11 +927,11 @@ cross_barcode_purchase(
        CANCELED)  |D], % this list needs to be nonempty. the empty case is handled elsewhere
   FINAL ) :-
 
-        t_list_type_barcode([abc(BARCODE_STRING_abc,
+        t_table_content_barcode([abc(BARCODE_STRING_abc,
                                  BARCODE_TYPE,
                                  AMENITIES_ID,
                                  IN_PLAY)   |L1T]),
-        t_list_type_purchase([pch(PURCHASE_ID,
+        t_table_content_purchase([pch(PURCHASE_ID,
                                   BARCODE_STRING_pch,
                                   PURCHASE_DATE,
                                   PURCHASED_SPACES_QTY,
@@ -1050,7 +1058,7 @@ cross_barcode_gtperiod(
                                  BARCODE_TYPE,
                                  AMENITIES_ID,
                                  IN_PLAY),
-        t_list_type_gtperiod([gtp(TRIAL_PERIOD_ID,
+        t_table_content_gtperiod([gtp(TRIAL_PERIOD_ID,
                                   BARCODE_STRING_gtp,
                                   GUEST_ID,
                                   TPERIOD_REDEMPTION_DATE,
@@ -1098,7 +1106,7 @@ cross_barcode_gtperiod(
                                  BARCODE_TYPE,
                                  AMENITIES_ID,
                                  IN_PLAY),
-        t_list_type_gtperiod([gtp(TRIAL_PERIOD_ID,
+        t_table_content_gtperiod([gtp(TRIAL_PERIOD_ID,
                                   BARCODE_STRING_gtp,
                                   GUEST_ID,
                                   TPERIOD_REDEMPTION_DATE,
@@ -1151,7 +1159,7 @@ cross_barcode_gtperiod(
                TPERIOD_CONSTRAINT_ID,
                CANCELED_gtp))   |R]  ) :-
 
-        t_list_type_barcode([abc(BARCODE_STRING_abc,
+        t_table_content_barcode([abc(BARCODE_STRING_abc,
                                  BARCODE_TYPE,
                                  AMENITIES_ID,
                                  IN_PLAY)   |L2T]),
@@ -1196,7 +1204,7 @@ cross_barcode_gtperiod(
        CANCELED_gtp)   |[]],
   R ) :-
 
-        t_list_type_barcode([abc(BARCODE_STRING_abc,
+        t_table_content_barcode([abc(BARCODE_STRING_abc,
                                  BARCODE_TYPE,
                                  AMENITIES_ID,
                                  IN_PLAY)   |L2T]),
@@ -1241,11 +1249,11 @@ cross_barcode_gtperiod(
        CANCELED_gtp)   |L2T],
   FINAL ) :-
 
-        t_list_type_barcode([abc(BARCODE_STRING_abc,
+        t_table_content_barcode([abc(BARCODE_STRING_abc,
                                  BARCODE_TYPE,
                                  AMENITIES_ID,
                                  IN_PLAY)   |L1T]),
-        t_list_type_gtperiod([gtp(TRIAL_PERIOD_ID,
+        t_table_content_gtperiod([gtp(TRIAL_PERIOD_ID,
                                   BARCODE_STRING_gtp,
                                   GUEST_ID,
                                   TPERIOD_REDEMPTION_DATE,
@@ -1300,11 +1308,11 @@ cross_barcode_gtperiod(
        CANCELED_gtp)  |D], % this list needs to be nonempty. the empty case is handled elsewhere
   FINAL ) :-
 
-        t_list_type_barcode([abc(BARCODE_STRING_abc,
+        t_table_content_barcode([abc(BARCODE_STRING_abc,
                                  BARCODE_TYPE,
                                  AMENITIES_ID,
                                  IN_PLAY)   |L1T]),
-        t_list_type_gtperiod([gtp(TRIAL_PERIOD_ID,
+        t_table_content_gtperiod([gtp(TRIAL_PERIOD_ID,
                                   BARCODE_STRING_gtp,
                                   GUEST_ID,
                                   TPERIOD_REDEMPTION_DATE,
