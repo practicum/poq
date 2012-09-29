@@ -17,14 +17,19 @@
            test_bare_aggregate/2,
            test_bare_aggregate/3,
 
-           t_list_type_barcode_x_purchase/1,
-           t_list_type_gtperiod_x_purchase/1,
+           % t_list_type_barcode_x_purchase/1,  % not needed?
+           % t_list_type_gtperiod_x_purchase/1, % not needed?
+
            cross_barcode_purchase/3,
-           cross_barcode_gtperiod/3]).
+           cross_barcode_gtperiod/3,
+
+           end_of_camping_exports_placeholder/0]).   % this is here so i don't have to move the ']).' each time i add to exports
 
 
 :- use_module(modules/small_lists).
 %:- use_module(modules/datatypes).  NO. DO NOT ENABLE. instead, the user imports ONE of several choices.
+
+end_of_camping_exports_placeholder.
 
 manageable_list_tail(L) :- size_0_to_1(L). % applied to a TAIL of list, we know the WHOLE list would be +1 bigger
 %manageable_list_tail(L) :- length(L,4);length(L,3);length(L,2);length(L,1);length(L,0). % sometimes it is helpful to reverse the order of the permissible lengths
