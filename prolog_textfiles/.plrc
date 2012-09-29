@@ -20,7 +20,7 @@ rl_write_history :-
 
 
 ?- use_module(modules/camping).
-
+?- use_module(modules/query_barcode).
 
 % comment out the portrayal module if we suspect that my custom printing functions are obscuring some bug
 %?- use_module(modules/camping_portrayal).
