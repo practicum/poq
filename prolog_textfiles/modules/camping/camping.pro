@@ -14,8 +14,8 @@
            test_bare_aggregate/2,
            test_bare_aggregate/3,
 
-           t_tuple_abc_pch/1,              % type of tuple when joining AmenitiesAccessBarcode to Purchase.
-           t_tuple_gtp_pch/1,              % type of tuple when joining GuestTrialPeriod to Purchase.
+           t_tuple_abc_pch/2,              % type of tuple when joining AmenitiesAccessBarcode to Purchase.
+           t_tuple_gtp_pch/2,              % type of tuple when joining GuestTrialPeriod to Purchase.
 
            % 'dt' is used as an abbreviation for DERIVED TABLE.
            t_dt_content_barcode_x_purchase/1,   % despite the specific kind of join we do on these 2 tables, the output type is this.
