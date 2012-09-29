@@ -1,3 +1,0 @@
-
-# for now, to get SWI prolog to load files, i am using symlinks ending in pl
-*\.pl
