@@ -23,8 +23,8 @@
            end_of_camping_exports_placeholder/0]).   % this is here so i don't have to move the ']).' each time i add to exports
 
 
-:- use_module(modules/small_lists).
-%:- use_module(modules/datatypes).  NO. DO NOT ENABLE. instead, the user imports ONE of several choices.
+:- use_module(modules/dbms/small_lists).
+%:- use_module(modules/dbms/datatypes).  NO. DO NOT ENABLE. instead, the user imports ONE of several choices.
 
 end_of_camping_exports_placeholder.
 
