@@ -188,3 +188,22 @@ select
     count(distinct a),
     sum(distinct b),
     ...
+
+
+--------------------------
+
+in some sense, writing SQL queries and writing prolog code are both 'programming in FOL'.  In prolog the principal focus is on inference rules in a restricted Horn-clause structure.  In SQL the principal focus is on relational joins.
+
+--------------------------
+
+initial excitement over programming is 'look what i made the computer do'.  progressing into an experienced developer of complex systems, this turns into:
+
+gosh darned computer did X when i told it do Y! how did this happen?
+
+i just made it generate my intended result.  will every user with every future input also get the intended result?
+
+we got the results we wanted. are we certain we also avoided extraneous side-effects that we did not want?
+
+
+
+
