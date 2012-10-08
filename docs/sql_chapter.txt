@@ -1,0 +1,181 @@
+
+
+
+This chapter has three main objectives.  First, the SQL language will be placed in context according to its common usage and its relative power compared to other programming languages.  Second, various restrictions are given to delineate the precise subset of SQL that is explored throughout the remainder of this thesis.  Third, a modest taxonomy of SQL bugs will be discussed in order to highlight the need for better tool support surrounding this language.
+
+1. Context  --------- SUBSECTION -----------
+
+SQL is now so ubiquitous in computing and in business that in some ways SQL requires no introduction. Virtually every institution that offers instruction in computer programming includes courses that cover SQL.  Therefore, any student or teacher in this field has undoubtedly heard of SQL.  ..... , many non-technical office workers today will also have some notion of the term SQL.
+
+(confoundingly? some transition) ... precisely owing to this ubiquity, some preliminary definitions are required. SQL is so [ubiquitous.. diffuse.. widely-dispersed?]  that it now means a great many different things to a great many different people, and it is therefore necessary to delineate exactly what the term SQL should be taken to mean in this thesis. (alternative: 'carries a great many different connotations to a great many...')
+
+(firstly..) this thesis considers only those uses of SQL which are dependent on an underlying relational database (RDB).  It may be possible to find uses for the SQL language in absense of any RDB, but in practice this is rarely done.  For this reason, whenever a phrase such as "the use of SQL" is present in this thesis, the implied meaning is "the use of SQL in conjunction with some RDB".
+
+Next, I assume the reader has a basic familiarity with the SQL language.  Specifically, I assume that the reader knows that a typical 'hello world' type of statement would look like:
+
+SELECT last_name
+FROM   Employee
+WHERE  ;
+
+and such a statement would retrieve from the database a result containing the last names of all employees in the system ... .
+
+... some transition here ...
+
+Is SQL a programming language?  To answer this question, we take a restricted definition of programming language that states: X is a programming language iff X is a Turing complete language.  We then answer the equivalent question: is SQL a Turing complete language?
+
+The answer turns out to be "yes," but not due to the rationale that has traditionally been put forth.  Until a few years ago, SQL was only considered to be Turing complete in the presence of vendor-specific (non-standard) language extensions.  Many vendors provided add-on constructs for variable declarations, branching, and iteration that would allow (non-standard) SQL code to achieve Turing completeness.
+
+Without such extensions, however, SQL fell short of Turing completeness.  Basic, standard SQL instructions could only produce a limited type of tabular output; no combination of these instructions could compute the type of algorithms entailed by Turing completeness.
+
+(so) Turing completeness was, for a long time, absent from SQL.
+
+(however) To the surprise and delight of many SQL users and researchers, David Fetter gave a talk at OSCON 2009 where he presented Andrew Gierth's work proving that core standard SQL is indeed Turing complete on its own, using only declarative relational statements and eschewing procedurals constructs.  The crucial pieces of SQL used for this achievement are recursive expressions and window functions.  Recursive expressions have been present in standard SQL since the 1999 standard.  Such constructions allow a relational expression to be defined in terms of itself.  Window functions entered the language with the 2003 standard, and they make interrow calculations possible in a single statement.  In the OSCON talk ... mandelbrot and traveling salesman...
+
+It is now known, then, that standard foundational SQL is Turing complete.  However, practitioners have been highly productive with SQL for several decades without using it in a Turing complete manner.  Furthermore, the majority of SQL applications at the present time still do not use standard SQL as a Turing complete language.
+
+(some nice 'sum-up' here: theoretic result that yes, but real-life usage patterns that say 'no'. (or no thank you). )
+
+Everyday practitioners are not treating SQL as a Turing complete language.  Therefore, by the strict definition of programming language given earlier, SQL is not programming language, at least in the hands of everyday practitioners.
+
+If, in practice, SQL is not a programming language, then what is it?  Essentially, SQL --and the accompanying RDB environment-- serve a similar role to that of spreadsheet, but boosted with several orders of magnitude more storage capacity and performance.  The typical SQL/RDB system is a place to insert and store [huge] amounts of data. (then, crucially, additionally) the system makes that data continuously available for a wide range of calculations, inferences, and transformations.  Like spreadsheets, SQL/RDB systems are pervasive in settings related to finance, demographics, customer relationship management (CRM), and so on.  Unlike spreadsheets, however, SQL/RDB installations can consist of (massive) distributed systems with enormous storage capacity, continuous availability, fine-grained user access controls, and considerably improved performance.
+
+The SQL language, then, is a useful notation for carrying out calculations.  It is a language for writing formulas that calculate some desired result over the data in the RDB.
+
+Perhaps in part due to the spreadsheet similarities, most SQL users are inclined to envision the underlying data in the RDB as a table, as in Figure XXX.
+
+(figures use a VeterinaryVisit table, with 3 columns: date-of-visit, pet-owner, pet. domains will be something like {Alice, Bob, Carol}, {Nov 1, Nov 2, Nov 3, Nov 4}, {dog, cat, bird, rabbit})
+
+However, this is not the only possible representation.  Indeed, it may not be the most illuminating or useful representation.  Using tables can unduly emphasize a two-dimensional viewpoint.  In contrast, Figure YYY shows a three-dimensional representation of the same information.  In general, each row in a given RDB table represents a single point in an N-dimensional space, where N is the number of columns in the table.
+
+This multi-dimensional viewpoint can be helpful in grasping the meaning of SQL-related terminology such as 'projection' and 'Cartesian product'.  For example, it may not be immediately obvious why the code in figure ZZ can be given the formal description of 'the projection of VeterinaryVisit on attributes ( , ).'  However, by examining a three-dimensional visualization (Figure NNN), we can clearly see that the data points are being projected from three-dimensional space onto a two-dimensional plane with axes __ and __.
+
+Another alternative to tabular representations are predicate-based (predicate centric?) representations.  In this view, the (table schema? table definition?) of the VeterinaryVisit table specifies a predicate:
+
+A visit happened on ___ wherein ____ brought his ___ to the clinic.
+
+Let us name this predicate P1. Under this framework of analysing the RDB, by looking at the full contents of the VeterinaryVisit table, we conclude:
+
+    P1( , , ) = true.
+    P1( , , ) = true.
+    P1( , , ) = true.
+
+That is to say: "it is true that a visit happ .." and so forth.
+
+Furthermore, we conclude the falsity of statements like "a visit happened on __ wherein __ brought his __ to the clinic."  In summary, a (table schema?) is an N-ary predicate, where N is the number of columns in the table.  Each row in the table provides a set of parameters that make the predicate evaluate to true.  (also, importantly), if a set of parameters does not appear as a row in the table, then we assume that the predicate evaluates to false for those values.  This presumption that the absense of a row signifies the falsity of the corresponding statment is called the Closed World Assumption.
+
+what these two representations means...
+
+the point of comparing these different visualizations extends beyond any debate over their
+
+rel algebra, rel calc
+
+We have now covered enough ground in this section to give a fairly satisfying definition of what SQL actually is.  It is a non Turing complete language that is used for expressing formulas that belong to the branch of mathematics known as relational algebra (and/or to the branch known as relational calculus).  Once the variables in the SQL formula are assigned values according to the current data residing in the RDB, then the result of the formula can be computed.  Assuming that the SQL practitioner writes an accurate formula, then the computed result is the answer to whatever question the practitioner had in mind regarding the data.
+
+... anything else here? ...
+
+This concludes the basic overview of what SQL is and how it relates to today's computing ecosystem.  In the next section, further subcomponents of the SQL language are considered in detail.  Certain features will be selected as having principal importance to this thesis, and other features will be set aside.
+
+2. Zooming in. Defining the core.  --------- SUBSECTION -----------
+
+keywords.
+
+vendors.
+
+standards.
+
+
+SQL 1999 core. relational closure, nesting.  not (in this paper) interested in a turing complete SQL.
+SQL 1999 was a big leap over 92.
+
+SQL/Foundation section has hardly changed in 2003 and 2008.
+
+/*
+No books cover SQL:2008 yet. Regarding the previous standard, SQL:2003, the only book covering the subject is in German which I was never any good at. Therefore, I also use the following book as reference:
+Jim Melton and Alan Simon: SQL:1999—Understanding Relational Language Components (ISBN 1-55860-456-1).
+
+http://troels.arvin.dk/db/rdbms/
+
+
+*/
+
+r-sql^pe
+
+
+by restricting to core SQL 1999, the most notable thing we drop are stored procedures.
+
+
+non-relational programming: CURSOR,
+
+parts that have more to do with system maintenance or coordination of processes: privilege, transactions.
+
+things that are relational, but have poor commercial support and (not surprisingly) infrequent use: VIEWS, user-defined types.
+
+things that should someday be in POQ, but not in a first version: more specialized (better word?) predicates such as BETWEEN and LIKE, datetime types,
+
+
+interestingly, NATURAL JOIN is not in core SQL 1999. also: INTERSECT.
+
+
+
+
+
+
+
+
+
+
+
+http://wiki.postgresql.org/wiki/Mandelbrot_set
+
+http://stackoverflow.com/questions/900055/is-sql-or-even-tsql-turing-complete
+
+http://assets.en.oreilly.com/1/event/27/High%20Performance%20SQL%20with%20PostgreSQL%20Presentation.pdf
+
+
+SAVE FOR LATER: http://www.wiscorp.com/book_v1dsm.pdf
+
+also for later: http://developer.mimer.com/validator/comparison/upd_comparison_chart.tml
+
+SAVE: http://docs.oracle.com/cd/B28359_01/server.111/b28314/tdpdw_sql.htm#CIHICDAE
+
+/*
+SQL 1999 Features
+•
+•
+•
+•
+©2001
+Regular Expressions
+Recursive queries
+Procedural statements
+Triggers
+Irwin Levinstein
+Later Standards
+• SQL 2003
+– Some XML features
+f
+– Window functions
+– Auto generation
+• SQL 2006
+– Lots of XML
+• SQL 2008
+– Instead Of triggers
+
+
+http://www.jcc.com/sql.htm
+*/
+
+-- iterrow calculations:  http://docs.oracle.com/cd/B28359_01/server.111/b28314/tdpdw_sql.htm#CIHICDAE
+
+
+--keywords count stuff:
+
+http://stackoverflow.com/questions/4980766/reserved-keywords-count-by-programming-language
+
+http://repeatgeek.com/technical/keyword-counts-of-popular-programming-languages/
+
+http://www.sqlite.org/lang_keywords.html
+
+http://publib.boulder.ibm.com/infocenter/idshelp/v115/index.jsp?topic=%2Fcom.ibm.sqls.doc%2Fids_sqs_1951.htm
+
+http://msdn.microsoft.com/en-us/library/aa238507%28v=sql.80%29.aspx
