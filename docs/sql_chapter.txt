@@ -1,4 +1,5 @@
 
+The Focus of Our Assertions: SQL
 
 
 This chapter has three main objectives.  First, the SQL language will be placed in context according to its common usage and its relative power compared to other programming languages.  Second, various restrictions are given to delineate the precise subset of SQL that is explored throughout the remainder of this thesis.  Third, a modest taxonomy of SQL bugs will be discussed in order to highlight the need for better tool support surrounding this language.
@@ -77,6 +78,86 @@ This concludes the basic overview of what SQL is and how it relates to today's c
 
 2. Zooming in. Defining the core.  --------- SUBSECTION -----------
 
+Every SQL/RDB system on the market today is based on a pioneering insight due to E.F. Codd.  Codd is credited with the revolutionary insight that the mathematical concept of relations can be used to elevate stored data out of clunky representations tied to physical machine characteristics and decouple the logical structure of the data from its physical (on-disk) structure.
+
+Prior to Codd's (work/ideas/paper), relational algebra could not be used to explain or theorize about (prior, older, historic?) databases in any way.  Nowadays, relational algebra is a suitable formalism for describing nearly all of the most common foundational operations used in SQL queries.
+
+However, some commands and keywords in the SQL language have no mathematical analog in relational algebra.  Also, several SQL operators that are firmly based on relational operators nonetheless make departures from well-defined relational semantics in the presence of specific special-case RDB content (such as tables with no defined key).
+
+Therefore, for this thesis to continue taking the view that SQL expresses relational formulas, it is necessary to establish a clear demarcation of which parts of the SQL language can be included in further analysis and which must be excluded.
+
+As a first cut, we narrow the focus strictly to features included in 'Core SQL' of the SQL:1999 standard. (say something about 'conformance'). (say something about 'SQL/Foundation').
+
+(justify why 1999 and not 2003 and 2008). nothing too notable has changed in the *relational* features in 2003 and 2008. also, there is some controversy about the decreased value and power of sql standardization in the years beyond 1999, due to the removal (absense? loss?) of a designated compliance-testing body.
+
+By focusing on 'Core SQL' and excluding other optional parts of the 1999 standard, the most (notable? popular?) feature that we exclude are stored procedures, and the imperative scripting keywords.  (the 'if' statement, looping, and variables). (do i want to say anything further to justify the exclusion?)
+
+
+non-relational programming: CURSOR,
+
+parts that have more to do with system maintenance or coordination of processes: privilege, transactions.
+
+things that are relational, but have poor commercial support and (not surprisingly) infrequent use: VIEWS, user-defined types.
+
+things that should someday be in POQ, but not in a first version: more specialized (better word?) predicates such as BETWEEN and LIKE, datetime types,
+
+
+interestingly, NATURAL JOIN is not in core SQL 1999. also: INTERSECT.
+
+
+
+SQL is often described as declarative.  relational calculus is declarative more so than SQL.  Where SQL syntax is more suggestive of the relational calculus then the 'declarative' claim is likely to be true (example?).  However, relational algebra does describe concrete operations, and there is a defined order of operations when computing the value of a relational algebra expression.  In this sense, if a SQL expression is taken as a relational algebra expression, then we do expect an order of operations, and in this sense SQL is 'less declarative' (is this phrasing sound? perhaps not) than commonly believed.
+
+the ever-present:
+
+SELECT ... FROM ... WHERE
+
+maps to the relational expression:
+
+(project (restrict[] (product ) ) )
+
+already we can see that the ordering is a bit mis-matched (better word.).
+
+to make the point about order of operations more dramatically:
+
+7 SELECT
+1 FROM
+3 JOIN
+2 ON
+4 WHERE
+5 GROUP BY
+6 HAVING
+8 ORDER BY
+
+(i might have some qualms about 2 and 3. perhaps collapse that to avoid the issue...)
+
+we should also mention that the entire relational algebra can be 'covered' (i dunno... what's the real word?) by choosing one of several possible minimal sets of operators.  one is: restrict, project, product, union, difference.
+
+
+SQL's departures from 'relationality':
+
+duplicate rows (in base tables and derived tables)
+nulls
+sequencing/ordering (relations have none, even in relation 'headings', potentially)
+fails to obey 'every attribute name in a tuple heading is unique' (goes with the above about relation headings)
+equality comparison of strings (PAD SPACE, and 'equal but distinguishable' or whatever the jargon is)
+lack of a proper BOOLEAN type
+automatic type coercion
+no proper aggregation, only summarization
+many anomalies in handling of empty set
+
+(departures even in the subset we are restricting ourselves to)
+
+
+3.  Taxonomy of SQL Bugs  --------- SUBSECTION -----------
+
+
+
+
+
+
+
+
 keywords.
 
 vendors.
@@ -100,20 +181,6 @@ http://troels.arvin.dk/db/rdbms/
 
 r-sql^pe
 
-
-by restricting to core SQL 1999, the most notable thing we drop are stored procedures.
-
-
-non-relational programming: CURSOR,
-
-parts that have more to do with system maintenance or coordination of processes: privilege, transactions.
-
-things that are relational, but have poor commercial support and (not surprisingly) infrequent use: VIEWS, user-defined types.
-
-things that should someday be in POQ, but not in a first version: more specialized (better word?) predicates such as BETWEEN and LIKE, datetime types,
-
-
-interestingly, NATURAL JOIN is not in core SQL 1999. also: INTERSECT.
 
 
 
@@ -179,3 +246,5 @@ http://www.sqlite.org/lang_keywords.html
 http://publib.boulder.ibm.com/infocenter/idshelp/v115/index.jsp?topic=%2Fcom.ibm.sqls.doc%2Fids_sqs_1951.htm
 
 http://msdn.microsoft.com/en-us/library/aa238507%28v=sql.80%29.aspx
+
+http://www.wiscorp.com/is_sql_a_real_standard.pdf
