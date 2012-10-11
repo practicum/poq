@@ -1,4 +1,7 @@
 
+title thoughts:
+extending query provability applications to the sql practitioner.
+'going beyond', 'arising out of', 'lifting'.
 
 applying the "hot, fast-growth" concepts from formal verification to the "underserved" area of SQL code.
 
@@ -205,5 +208,8 @@ i just made it generate my intended result.  will every user with every future i
 we got the results we wanted. are we certain we also avoided extraneous side-effects that we did not want?
 
 
+FUTURE DIRECTIONS IDEAS:
+
+returning to the thought of using SMT solver approaches: can there be a RDB theory, like another alternative alongside LIA and UF and theories currently provided in SMT tools?
 
 
