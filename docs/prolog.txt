@@ -1,0 +1,157 @@
+
+The idea that unites everything in this thesis is that SQL practitioners can benefit greatly from an assertion-checking system that can verify relevant user-assumptions surrounding the user-formulated SQL statement.  We have already argued in favor of the beneficial outcomes that would be supported by such a tool.  Work still remains, however, to show that building such a tool is possible.
+
+An essential part of such a tool would be a theorem-prover engine that can prove validity of assertions.  The purpose of this chapter is to establish the feasibility of Prolog as an adequate prototyping environment for POQ.  The fundamental concepts that are understood, manipulated, and exercised in a Prolog system are axioms, inference rules, and proof derivation.  Yet, for various reasons it is not possible to treat a standard Prolog environment as a full-fledged theorem prover in its own right.  This chapter provides details on the weaknesses of Prolog that prevent its acceptance as a (true, complete, indisputable, unassailable) automated theorem prover.  However, carefully restricted use of a subset of Prolog is indeed valid for determining the success of early prototypes of POQ.
+
+
+1. SUB-SECTION:  preliminary definitions
+
+Any discussion of Prolog is always firmly rooted in basic notions from first order logic.  This section establishes basic notation and definitions that will be useful throughout the remainder of the chapter.  We assume the reader is already familiar with the syntax of well-formed formulas of propositional logic and well-formed formulas of predicate logic.  This preliminary section is intended to clarify the particular set of symbols used.  It is not intended as any sort of tutorial or guide to FOL syntax. (rephrase).
+
+relatively standard
+
+/\  logical and
+V logical or
+-L  not
+-> implication
+_|_  absurdum / contradiction
+
+symbols that are less standard, but common in discussions of prolog:
+
+<-  implication, with the operands in reverse order
+[]  (the square) absurdum
+
+Two other ideas that will play a central role in this chapter: interpretations and refutation.
+
+Both propositional and predicate logic are designed for determining the truth or falsity of formulas.  In order to make the determination, it is necessary to establish both the targeted formula, and also an interpretation for the formula.  An interpretation is simply a mapping of the formulaic symbols to the domain-specific concepts that the symbols are intended to represent.  Here are a few classic examples:
+
+Formula: A  ^  B
+Interpretation:  A represents ""; B represents ""
+Valuation: statement is true.
+
+Formula: A  ^  B
+Interpretation:  A represents ""; B represents ""
+Valuation: statement is true.
+
+         [ ( 2 + 5 ) > 1 ] -> [ 5 > ( 1 - 2 ) ]
+Formula: [ ( x + y ) > z ] -> [ y > ( z - x ) ]
+Interpretation: x, y, and z represent the integers 2,5,1. '+', '-', and '>' represent the usual well-known operations of integer arithmetic.
+Valuation: statement is true.
+
+
+Refutation.
+
+refutation is an antonym of satisfiability.
+
+If the given interpretation allows us to conclude that a formula is false, then we have found a refutation for the formula.
+
+Classical logic enables one to reason by contradiction.  A proof of X can be established by assuming -LX and establishing that this leads to a contradiction.
+
+2. SUB-SECTION:  Basic usage and theory of Prolog
+
+Modern prolog systems have a wide variety of uses.  In this section we will examine two uses in particular.  The use that is most import.
+
+A prolog system can be employed to directly exploit the proof system that drives the computation of all prolog output.  Alternatively, that same proof system can be used in its 'procedural interpretation', which is what enables the prolog user to employ prolog as a general purpose programming language.
+
+There are several other interpretations and uses of prolog which we will not cover here. (footnote on database interpretation and concurrent interpretation). However, the diversity that is evident even in the two uses mentioned here is quite remarkable.
+
+The following discussion will begin by using a snippet of Prolog source code as a centerpiece.  This immediately allows us to recognize the
+
+This immediately illustrates that reading a Prolog text as if it were a typical imperative-language software source code is very straightforward.  We then work backwards from this procedural reading in order to expose the underlying FOL principles.
+
+In order to establish Prolog's core principles as one-and-the-same with the principles of FOL, we will start with a snippet of Prolog code that appears and behaves in a C-like way
+
+To be clear: Prolog is definitely not an imperative language.  However, it has properties that can give it the 'look and feel' of an imperative language.
+
+Here is the Prolog snippet to be discussed:
+
+% 'rect' is an abbreviation for rectangle
+% 'usernm' is an abbreviation for username
+
+% This procedure calculates the amount of "screen real estate" that
+% will be needed to draw the current username onto the display
+
+bounding_rect_for_drawing_usernm( ... ) :-
+    get_font_setting( ... ),
+    get_trimmed_usernm_string( ... ),
+    calculate_bounding_rect_for_string_and_font( ... ).
+
+We have used '...' to elide the input/output parameters that would normally appear enclosed between each pair of parentheses.  Other than that, the above snippet is syntactically correct, valid Prolog code.  Text appearing after a '%' character is simply commentary, and is not interpreted or executed in any way.
+
+Even a relative beginner to computer programming can readily grasp the structure and intended purpose of the preceding code.  The code seems to indicate that there is a procedure named bounding_rect_for_drawing_usernm.  If we assume that this procedure resides in some available library of functionality (code library? how can i not simply say 'library', but instead say something specific but not overwrought?), then a sensible conclusion would be that we can call this procedure in our code once we indicate our reliance on the library.  When bounding_rect_for_drawing_usernm is called, we can see from its source code that it apparently calls three other procedures in order to accomplish its work.
+
+This procedural reading of the code does provide a correct view of the intended meaning of the code, and also provides a correct view of the ultimate result of calling this code.  What makes Prolog quite drastically different from all the familiar imperative languages is the execution mechanism used to actually drive the specific path through the source code in order to arrive at a result.
+
+In Prolog, the Prolog interpreter does not in fact "call the function bounding_rect_for_drawing_usernm."  Instead, Prolog must be given bounding_rect_for_drawing_usernm as a <i>goal</i>, and computation proceeds via a series of goal reduction operations.  The implementation details of Prolog's goal reduction computations differ markedly from the typical imperative idea of making function calls and returning from function calls. (details of goal reduction will follow)
+
+Despite the significant difference between function calls and goal reductions, it is sensible (permissible) to view bounding_rect_for_drawing_usernm <i>as if</i> it were a callable procedure.  The basis for these differing yet exchangable views is due to the ground-breaking (hypen?) work by Kowalski showing that a particular fragment of FOL has a <i>procedural interpretation</i>.  In other words, the earlier snippet of code is simply one possible interpretation of the following FOL formula:
+
+    A <- B ^ C ^ D.
+
+Recall the earlier examples of semantic interpretations given in section XYZ.  For hundreds of years, logicians produced (worked with) interpretations of logic formulas that were all very similar to those interpretations shown in section XYZ.  Typical interpretations involved domains such as integers and real numbers on the one hand, and the domains of arguments and assertions about the natural world on the other.  Kowalski's insight regarding the viability of FOL itself as a programming language was revolutionary, and has given us a new and separate programming paradigm to study alongside the function and imperative paradigms.
+
+
+
+---> ! important ! before the close of this section, remember to mention another key strength: that when a proof is found (the refutation of the -Lgoal which proves goal), we also get a satisfying assignment.
+
+
+3. SUB-SECTION:  Weaknesses and limitations of Prolog.
+
+We have seen that a standard Prolog system is __________(proof-related...).  Prolog's ability to serve as a programming language has also been established.  For the purposes of protyping POQ we require Prolog to serve as a rudimentary theorem prover.  In other words, while building POQ we will not use Prolog to define <i>procedures<i> such as bounding_rect_for_drawing_usernm.  Instead, we need to use Prolog in order to codify axioms about SQL statements, such as ...
+
+[some SQL here] ===>> [ some axioms here ]
+
+However, Prolog systems include trade-offs that favor the use of Prolog as a general purpose programming language and deemphasize its theorem-proving capabilities.  Only by enumerating and cataloguing these weaknesses can we be certain that POQ will only use Prolog's theorem-proving assets in an effective way.
+
+For a prototype system, we accept weaknesses that may lead to a loss of completeness.  However, we categorically exclude the use of any Prolog features that would yield a loss of soundness.  Once the fundamental aspects of soundness and completeness have been considered, we must also note where certain implementation details of Prolog systems can hurt the efficiency of finding proofs.  Here, too, we may accept a known loss of efficiency (compared to "full-service" provers) in order to benefit from the ease-of-use (simplicity, ample documentation) of Prolog.
+
+weaknesses:
+
+unsound unification
+depth-first search (infinite paths)
+arithmetic and "equals"
+negation, non-horn clauses
+meta-logical stuff: var, name, functor
+retract, assert
+cut
+
+
+
+---------================-------------------
+
+
+
+
+
+Because ...
+The use of prolog for general purpose programming has always been a principal motivator...
+
+trade-offs were made ... for efficiency and (determinism), and they sometimes run counter to the 'pure logic' view of the language. here we mention occur check and ordering (logically equivalent statements where one formulation causes an infinite search).
+
+there is one 'weak point' of the language that comes from the logic itself and not from any mundane performance trade-off.  that is the problem of negation.
+
+
+lack of occurs check is a threat to soundness.  the depth-first search opening the door to infinite paths is a threat to completeness.
+
+
+
+Robinson. resolution.
+
+Kowalski formulated the procedural interpretation of Horn clause fragment.
+
+according to Sterling and Shapiro, the Warren machine 'sealed the deal' on the feasibility of prolog as an executable language.
+
+
+Challenges in prolog:
+- unsound unification
+- depth first search (infinite paths)
+- doesn't work for non-horn clauses
+- meta-logical stuff:  var, name, functor
+- retract, assert
+- cut
+- arithmetic and "equals" (numeric equality as opposed to unifiability)
+[http://www.ai.sri.com/~stickel/pttp.html]
+we can address unsound unification by using a flag to reenable the occurs check.
+we can address the infinite search tree paths by: (list my strategies and explain them)
+as for 'non-horn clauses' – we do not need any, so that's fine.
+
