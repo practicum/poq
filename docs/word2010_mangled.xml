@@ -9639,7 +9639,15 @@
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t>SELECTING A SPECIFICATION LANGUAGE: PROLOG</w:t>
+<w:t xml:space="preserve">SELECTING A SPECIFICATION LANGUAGE: </w:t>
+</w:r>
+<w:r w:rsidR="00FC6A1B">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>PROLOG</w:t>
 </w:r>
 </w:p>
 <w:p w:rsidR="006054AF" w:rsidRPr="006054AF" w:rsidRDefault="006054AF" w:rsidP="006054AF">
@@ -9669,7 +9677,7 @@
 <w:t>The central idea in this thesis is that SQL practitioners can benefit greatly from an assertion-checking system that can verify relevant user-assumptions surrounding the user-formulated SQL statement.  We have already argued in favor of the beneficial outcomes that would be supported by such a tool.  Work still remains, however, to show that building such a tool is possible.</w:t>
 </w:r>
 </w:p>
-<w:p w:rsidR="006054AF" w:rsidRPr="006054AF" w:rsidRDefault="006054AF" w:rsidP="006054AF">
+<w:p w:rsidR="006054AF" w:rsidRDefault="006054AF" w:rsidP="006054AF">
 <w:pPr>
 <w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
 <w:contextualSpacing/>
@@ -9711,7 +9719,23 @@
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t xml:space="preserve"> engine that can prove the validity of assertions.  The purpose of this chapter is to establish the feasibility of Prolog as an adequate prototyping </w:t>
+<w:t xml:space="preserve"> engine that can prove the validity of assertions.  The purpose of this chapter is to establish the feasibility of </w:t>
+</w:r>
+<w:r w:rsidR="00FC6A1B">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>Prolog</w:t>
+</w:r>
+<w:r w:rsidRPr="006054AF">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve"> as an adequate prototyping </w:t>
 </w:r>
 <w:proofErr w:type="spellStart"/>
 <w:r w:rsidRPr="006054AF">
@@ -9729,7 +9753,55 @@
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t xml:space="preserve"> environment for POQ.  The fundamental concepts that are understood, manipulated, and exercised in a Prolog system are axioms, inference rules, and proof derivation.  This certainly indicates that Prolog has theorem-proving capabilities built in.  Yet, for various reasons it is not possible to treat a standard Prolog environment as a full-fledged theorem </w:t>
+<w:t xml:space="preserve"> environment for POQ.  The fundamental concepts that are understood, manipulated, and exercised in a </w:t>
+</w:r>
+<w:r w:rsidR="00FC6A1B">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>Prolog</w:t>
+</w:r>
+<w:r w:rsidRPr="006054AF">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve"> system are axioms, inference rules, and proof derivation.  This certainly indicates that </w:t>
+</w:r>
+<w:r w:rsidR="00FC6A1B">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>Prolog</w:t>
+</w:r>
+<w:r w:rsidRPr="006054AF">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve"> has theorem-proving capabilities built in.  Yet, for various reasons it is not possible to treat a standard </w:t>
+</w:r>
+<w:r w:rsidR="00FC6A1B">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>Prolog</w:t>
+</w:r>
+<w:r w:rsidRPr="006054AF">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve"> environment as a full-fledged theorem </w:t>
 </w:r>
 <w:proofErr w:type="spellStart"/>
 <w:r w:rsidRPr="006054AF">
@@ -9747,7 +9819,23 @@
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t xml:space="preserve"> in its own right.  This chapter provides details on the weaknesses of Prolog that prevent its acceptance as a (true, complete, indisputable, unassailable) automated theorem </w:t>
+<w:t xml:space="preserve"> in its own right.  This chapter provides details on the weaknesses of </w:t>
+</w:r>
+<w:r w:rsidR="00FC6A1B">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>Prolog</w:t>
+</w:r>
+<w:r w:rsidRPr="006054AF">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve"> that prevent its acceptance as a (true, complete, indisputable, unassailable) automated theorem </w:t>
 </w:r>
 <w:proofErr w:type="spellStart"/>
 <w:r w:rsidRPr="006054AF">
@@ -9765,52 +9853,26 @@
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t>.  However, carefully restricted use of a subset of Prolog is indeed valid for determining the success of early prototypes of POQ.</w:t>
+<w:t xml:space="preserve">.  However, carefully restricted use of a subset of </w:t>
 </w:r>
-</w:p>
-<w:p w:rsidR="006054AF" w:rsidRPr="006054AF" w:rsidRDefault="006054AF" w:rsidP="006054AF">
-<w:pPr>
-<w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
-<w:contextualSpacing/>
+<w:r w:rsidR="00FC6A1B">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-</w:pPr>
-</w:p>
-<w:p w:rsidR="006054AF" w:rsidRPr="006054AF" w:rsidRDefault="006054AF" w:rsidP="006054AF">
-<w:pPr>
-<w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
-<w:contextualSpacing/>
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-</w:pPr>
-</w:p>
-<w:p w:rsidR="006054AF" w:rsidRPr="006054AF" w:rsidRDefault="006054AF" w:rsidP="006054AF">
-<w:pPr>
-<w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
-<w:contextualSpacing/>
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-</w:pPr>
+<w:t>Prolog</w:t>
+</w:r>
 <w:r w:rsidRPr="006054AF">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:lastRenderedPageBreak/>
-<w:t>1. SUB-SECTION:  preliminary definitions</w:t>
+<w:t xml:space="preserve"> is indeed valid for determining the success of early prototypes of POQ.</w:t>
 </w:r>
 </w:p>
-<w:p w:rsidR="006054AF" w:rsidRPr="006054AF" w:rsidRDefault="006054AF" w:rsidP="006054AF">
+<w:p w:rsidR="009A5436" w:rsidRDefault="009A5436" w:rsidP="006054AF">
 <w:pPr>
 <w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
 <w:contextualSpacing/>
@@ -9820,6 +9882,39 @@
 <w:szCs w:val="24"/>
 </w:rPr>
 </w:pPr>
+</w:p>
+<w:p w:rsidR="009A5436" w:rsidRPr="006054AF" w:rsidRDefault="009A5436" w:rsidP="006054AF">
+<w:pPr>
+<w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
+<w:contextualSpacing/>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+</w:pPr>
+</w:p>
+<w:p w:rsidR="006054AF" w:rsidRPr="009A5436" w:rsidRDefault="009A5436" w:rsidP="009A5436">
+<w:pPr>
+<w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
+<w:contextualSpacing/>
+<w:jc w:val="center"/>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+<w:u w:val="single"/>
+</w:rPr>
+</w:pPr>
+<w:r w:rsidRPr="009A5436">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+<w:u w:val="single"/>
+</w:rPr>
+<w:t>Preliminary Definitions</w:t>
+</w:r>
 </w:p>
 <w:p w:rsidR="006054AF" w:rsidRPr="006054AF" w:rsidRDefault="006054AF" w:rsidP="006054AF">
 <w:pPr>
@@ -9845,7 +9940,55 @@
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t>Any discussion of Prolog is always firmly rooted in basic notions from first order logic.  This section establishes basic notation and definitions that will be useful throughout the remainder of the chapter.  We assume the reader is already familiar with the syntax of well-formed formulas of propositional logic and well-formed formulas of predicate logic.  This preliminary section is intended to clarify the particular set of symbols used.  It is not intended as any sort of tutorial or guide to FOL syntax. (</w:t>
+<w:t xml:space="preserve">Any discussion of </w:t>
+</w:r>
+<w:r w:rsidR="00FC6A1B">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>Prolog</w:t>
+</w:r>
+<w:r w:rsidRPr="006054AF">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve"> is always firmly rooted in basic notions from first</w:t>
+</w:r>
+<w:r w:rsidR="00932199">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>-</w:t>
+</w:r>
+<w:r w:rsidRPr="006054AF">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>order logic</w:t>
+</w:r>
+<w:r w:rsidR="000F7EC4">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve"> (FOL)</w:t>
+</w:r>
+<w:r w:rsidRPr="006054AF">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>.  This section establishes basic notation and definitions that will be useful throughout the remainder of the chapter.  We assume the reader is already familiar with the syntax of well-formed formulas of propositional logic and well-formed formulas of predicate logic.  This preliminary section is intended to clarify the particular set of symbols used.  It is not intended as any sort of tutorial or guide to FOL syntax. (</w:t>
 </w:r>
 <w:proofErr w:type="gramStart"/>
 <w:r w:rsidRPr="006054AF">
@@ -9866,7 +10009,7 @@
 <w:t>).</w:t>
 </w:r>
 </w:p>
-<w:p w:rsidR="006054AF" w:rsidRPr="006054AF" w:rsidRDefault="006054AF" w:rsidP="006054AF">
+<w:p w:rsidR="006054AF" w:rsidRPr="006054AF" w:rsidRDefault="009A5436" w:rsidP="006054AF">
 <w:pPr>
 <w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
 <w:contextualSpacing/>
@@ -9876,27 +10019,24 @@
 <w:szCs w:val="24"/>
 </w:rPr>
 </w:pPr>
-</w:p>
-<w:p w:rsidR="006054AF" w:rsidRPr="006054AF" w:rsidRDefault="006054AF" w:rsidP="006054AF">
-<w:pPr>
-<w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
-<w:contextualSpacing/>
+<w:r>
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-</w:pPr>
-<w:r w:rsidRPr="006054AF">
+<w:tab/>
+</w:r>
+<w:r w:rsidR="00A565FB">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t>Use FOL and predicate logic interchangeably.</w:t>
+<w:t>Predicate logic is a richer formal language than propositional logic.  Conveniently, however, predicate logic inherits all the symbols and symbol manipulation rules of propositional logic.  First-order logic (FOL) is a synonym for predicate logic.  Both terms—FOL and predicate logic—are used interchangeably in this chapter.  The term predicate logic is chosen at times to emphasize some contrast or comparison with propositional logic; FOL is used as convenient shorthand at other times.</w:t>
 </w:r>
 </w:p>
-<w:p w:rsidR="006054AF" w:rsidRPr="006054AF" w:rsidRDefault="006054AF" w:rsidP="006054AF">
+<w:p w:rsidR="00877415" w:rsidRDefault="00877415" w:rsidP="00877415">
 <w:pPr>
 <w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
 <w:contextualSpacing/>
@@ -9906,37 +10046,81 @@
 <w:szCs w:val="24"/>
 </w:rPr>
 </w:pPr>
+<w:r>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:tab/>
+<w:t>The following are familiar logical symbols that will be used throughout this</w:t>
+</w:r>
+<w:r>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve"> chapter:</w:t>
+</w:r>
 </w:p>
-<w:p w:rsidR="006054AF" w:rsidRPr="006054AF" w:rsidRDefault="006054AF" w:rsidP="006054AF">
+<w:p w:rsidR="00877415" w:rsidRDefault="00877415" w:rsidP="00877415">
 <w:pPr>
 <w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
 <w:contextualSpacing/>
 <w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
 </w:pPr>
-<w:proofErr w:type="gramStart"/>
-<w:r w:rsidRPr="006054AF">
+<w:r w:rsidRPr="00877415">
 <w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t>relatively</w:t>
+<w:t xml:space="preserve"> </w:t>
+</w:r>
+<m:oMath>
+<m:r>
+<w:rPr>
+<w:rFonts w:ascii="Cambria Math" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Cambria Math" w:cs="Cambria Math"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<m:t>
+∧</m:t>
+</m:r>
+</m:oMath>
+<w:r w:rsidRPr="00877415">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve"> </w:t>
+</w:r>
+<w:proofErr w:type="gramStart"/>
+<w:r w:rsidRPr="00877415">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>logical</w:t>
 </w:r>
 <w:proofErr w:type="gramEnd"/>
-<w:r w:rsidRPr="006054AF">
+<w:r w:rsidRPr="00877415">
 <w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t xml:space="preserve"> standard</w:t>
+<w:t xml:space="preserve"> AND; conjunction.</w:t>
 </w:r>
 </w:p>
-<w:p w:rsidR="006054AF" w:rsidRPr="006054AF" w:rsidRDefault="006054AF" w:rsidP="006054AF">
+<w:p w:rsidR="00877415" w:rsidRDefault="00877415" w:rsidP="00877415">
 <w:pPr>
 <w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
 <w:contextualSpacing/>
@@ -9946,45 +10130,61 @@
 <w:szCs w:val="24"/>
 </w:rPr>
 </w:pPr>
-</w:p>
-<w:p w:rsidR="006054AF" w:rsidRPr="006054AF" w:rsidRDefault="006054AF" w:rsidP="006054AF">
-<w:pPr>
-<w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
-<w:contextualSpacing/>
+<w:r w:rsidRPr="00877415">
 <w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-</w:pPr>
-<w:r w:rsidRPr="006054AF">
+<w:t xml:space="preserve"> </w:t>
+</w:r>
+<m:oMath>
+<m:r>
 <w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:rFonts w:ascii="Cambria Math" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Cambria Math" w:cs="Cambria Math"/>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t>/</w:t>
+<m:t>
+∨</m:t>
+</m:r>
+</m:oMath>
+<w:r w:rsidRPr="00877415">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve"> </w:t>
 </w:r>
 <w:proofErr w:type="gramStart"/>
-<w:r w:rsidRPr="006054AF">
+<w:r w:rsidRPr="00877415">
 <w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t>\  logical</w:t>
+<w:t>logical</w:t>
 </w:r>
 <w:proofErr w:type="gramEnd"/>
-<w:r w:rsidRPr="006054AF">
+<w:r w:rsidRPr="00877415">
 <w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t xml:space="preserve"> and</w:t>
+<w:t xml:space="preserve"> OR; disjunction</w:t>
+</w:r>
+<w:r>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>.</w:t>
 </w:r>
 </w:p>
-<w:p w:rsidR="006054AF" w:rsidRPr="006054AF" w:rsidRDefault="006054AF" w:rsidP="006054AF">
+<w:p w:rsidR="00877415" w:rsidRDefault="00877415" w:rsidP="00877415">
 <w:pPr>
 <w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
 <w:contextualSpacing/>
@@ -9994,45 +10194,61 @@
 <w:szCs w:val="24"/>
 </w:rPr>
 </w:pPr>
-<w:r w:rsidRPr="006054AF">
+<w:r w:rsidRPr="00877415">
 <w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t>V logical or</w:t>
+<w:t xml:space="preserve"> </w:t>
 </w:r>
-</w:p>
-<w:p w:rsidR="006054AF" w:rsidRPr="006054AF" w:rsidRDefault="006054AF" w:rsidP="006054AF">
-<w:pPr>
-<w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
-<w:contextualSpacing/>
+<m:oMath>
+<m:r>
 <w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:rFonts w:ascii="Cambria Math" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Cambria Math" w:cs="Cambria Math"/>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-</w:pPr>
-<w:r w:rsidRPr="006054AF">
+<m:t>
+¬</m:t>
+</m:r>
+</m:oMath>
+<w:r w:rsidRPr="00877415">
 <w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t>-</w:t>
+<w:t xml:space="preserve"> </w:t>
 </w:r>
 <w:proofErr w:type="gramStart"/>
-<w:r w:rsidRPr="006054AF">
+<w:r w:rsidRPr="00877415">
 <w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t>L  not</w:t>
+<w:t>not</w:t>
 </w:r>
 <w:proofErr w:type="gramEnd"/>
+<w:r w:rsidRPr="00877415">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>; negation</w:t>
+</w:r>
+<w:r>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>.</w:t>
+</w:r>
 </w:p>
-<w:p w:rsidR="006054AF" w:rsidRPr="006054AF" w:rsidRDefault="006054AF" w:rsidP="006054AF">
+<w:p w:rsidR="00877415" w:rsidRDefault="00877415" w:rsidP="00877415">
 <w:pPr>
 <w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
 <w:contextualSpacing/>
@@ -10042,26 +10258,53 @@
 <w:szCs w:val="24"/>
 </w:rPr>
 </w:pPr>
-<w:r w:rsidRPr="006054AF">
+<w:r w:rsidRPr="00877415">
 <w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t xml:space="preserve">-&gt; </w:t>
+<w:t xml:space="preserve"> </w:t>
+</w:r>
+<m:oMath>
+<m:r>
+<w:rPr>
+<w:rFonts w:ascii="Cambria Math" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Cambria Math" w:cs="Cambria Math"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<m:t>
+→</m:t>
+</m:r>
+</m:oMath>
+<w:r w:rsidRPr="00877415">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve"> </w:t>
 </w:r>
 <w:proofErr w:type="gramStart"/>
-<w:r w:rsidRPr="006054AF">
+<w:r w:rsidRPr="00877415">
 <w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
 <w:t>implication</w:t>
 </w:r>
 <w:proofErr w:type="gramEnd"/>
+<w:r>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>.</w:t>
+</w:r>
 </w:p>
-<w:p w:rsidR="006054AF" w:rsidRPr="006054AF" w:rsidRDefault="006054AF" w:rsidP="006054AF">
+<w:p w:rsidR="00877415" w:rsidRDefault="00877415" w:rsidP="00877415">
 <w:pPr>
 <w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
 <w:contextualSpacing/>
@@ -10071,34 +10314,61 @@
 <w:szCs w:val="24"/>
 </w:rPr>
 </w:pPr>
-<w:r w:rsidRPr="006054AF">
+<w:r w:rsidRPr="00877415">
 <w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t>_|</w:t>
+<w:t xml:space="preserve"> </w:t>
+</w:r>
+<m:oMath>
+<m:r>
+<w:rPr>
+<w:rFonts w:ascii="Cambria Math" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Cambria Math" w:cs="Cambria Math"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<m:t>
+⊥</m:t>
+</m:r>
+</m:oMath>
+<w:r w:rsidRPr="00877415">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve"> </w:t>
 </w:r>
 <w:proofErr w:type="gramStart"/>
-<w:r w:rsidRPr="006054AF">
+<w:r w:rsidRPr="00877415">
 <w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t>_  absurdum</w:t>
+<w:t>absurdum</w:t>
 </w:r>
 <w:proofErr w:type="gramEnd"/>
-<w:r w:rsidRPr="006054AF">
+<w:r w:rsidRPr="00877415">
 <w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t xml:space="preserve"> / contradiction</w:t>
+<w:t>; contradiction</w:t>
+</w:r>
+<w:r>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>.</w:t>
 </w:r>
 </w:p>
-<w:p w:rsidR="006054AF" w:rsidRPr="006054AF" w:rsidRDefault="006054AF" w:rsidP="006054AF">
+<w:p w:rsidR="00877415" w:rsidRDefault="00877415" w:rsidP="00877415">
 <w:pPr>
 <w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
 <w:contextualSpacing/>
@@ -10108,8 +10378,40 @@
 <w:szCs w:val="24"/>
 </w:rPr>
 </w:pPr>
+<w:r>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:tab/>
+</w:r>
+<w:r>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve">The following are perhaps less-familiar symbols.  These symbols occur more commonly in the specific setting of discussing logic in the context of </w:t>
+</w:r>
+<w:r w:rsidR="00FC6A1B">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>Prolog</w:t>
+</w:r>
+<w:r>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>:</w:t>
+</w:r>
 </w:p>
-<w:p w:rsidR="006054AF" w:rsidRPr="006054AF" w:rsidRDefault="006054AF" w:rsidP="006054AF">
+<w:p w:rsidR="00877415" w:rsidRDefault="00877415" w:rsidP="00877415">
 <w:pPr>
 <w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
 <w:contextualSpacing/>
@@ -10119,144 +10421,79 @@
 <w:szCs w:val="24"/>
 </w:rPr>
 </w:pPr>
-<w:proofErr w:type="gramStart"/>
-<w:r w:rsidRPr="006054AF">
+<w:r w:rsidRPr="00877415">
 <w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t>symbols</w:t>
+<w:t xml:space="preserve"> </w:t>
 </w:r>
-<w:proofErr w:type="gramEnd"/>
-<w:r w:rsidRPr="006054AF">
+<m:oMath>
+<m:r>
 <w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:rFonts w:ascii="Cambria Math" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Cambria Math" w:cs="Cambria Math"/>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t xml:space="preserve"> that are less standard, but common in discussions of prolog:</w:t>
-</w:r>
-</w:p>
-<w:p w:rsidR="006054AF" w:rsidRPr="006054AF" w:rsidRDefault="006054AF" w:rsidP="006054AF">
-<w:pPr>
-<w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
-<w:contextualSpacing/>
+<m:t>
+←</m:t>
+</m:r>
+</m:oMath>
+<w:r w:rsidRPr="00877415">
 <w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-</w:pPr>
-</w:p>
-<w:p w:rsidR="006054AF" w:rsidRPr="006054AF" w:rsidRDefault="006054AF" w:rsidP="006054AF">
-<w:pPr>
-<w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
-<w:contextualSpacing/>
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-</w:pPr>
-<w:proofErr w:type="gramStart"/>
-<w:r w:rsidRPr="006054AF">
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-<w:t>&lt;-  implication</w:t>
-</w:r>
-<w:proofErr w:type="gramEnd"/>
-<w:r w:rsidRPr="006054AF">
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-<w:t>, with the operands in reverse order</w:t>
-</w:r>
-</w:p>
-<w:p w:rsidR="006054AF" w:rsidRPr="006054AF" w:rsidRDefault="006054AF" w:rsidP="006054AF">
-<w:pPr>
-<w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
-<w:contextualSpacing/>
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-</w:pPr>
-<w:proofErr w:type="gramStart"/>
-<w:r w:rsidRPr="006054AF">
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-<w:lastRenderedPageBreak/>
-<w:t>[]  (</w:t>
-</w:r>
-<w:proofErr w:type="gramEnd"/>
-<w:r w:rsidRPr="006054AF">
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-<w:t>the square) absurdum</w:t>
-</w:r>
-</w:p>
-<w:p w:rsidR="006054AF" w:rsidRPr="006054AF" w:rsidRDefault="006054AF" w:rsidP="006054AF">
-<w:pPr>
-<w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
-<w:contextualSpacing/>
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-</w:pPr>
-</w:p>
-<w:p w:rsidR="006054AF" w:rsidRPr="006054AF" w:rsidRDefault="006054AF" w:rsidP="006054AF">
-<w:pPr>
-<w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
-<w:contextualSpacing/>
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-</w:pPr>
-<w:r w:rsidRPr="006054AF">
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-<w:t xml:space="preserve">Also:  LOWER-CASE letters for atomic formula, so as not to end up with confusion later on.  </w:t>
+<w:t xml:space="preserve"> </w:t>
 </w:r>
 <w:proofErr w:type="gramStart"/>
-<w:r w:rsidRPr="006054AF">
+<w:r w:rsidRPr="00877415">
 <w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t>upper</w:t>
+<w:t>implication</w:t>
 </w:r>
 <w:proofErr w:type="gramEnd"/>
-<w:r w:rsidRPr="006054AF">
+<w:r w:rsidRPr="00877415">
 <w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t xml:space="preserve"> case letters are always VARIABLES in Prolog ...</w:t>
+<w:t>, w</w:t>
+</w:r>
+<w:proofErr w:type="spellStart"/>
+<w:r w:rsidRPr="00877415">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>ith</w:t>
+</w:r>
+<w:proofErr w:type="spellEnd"/>
+<w:r w:rsidRPr="00877415">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve"> operands in the reverse order</w:t>
+</w:r>
+<w:r>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>.</w:t>
 </w:r>
 </w:p>
-<w:p w:rsidR="006054AF" w:rsidRPr="006054AF" w:rsidRDefault="006054AF" w:rsidP="006054AF">
+<w:p w:rsidR="00877415" w:rsidRDefault="00877415" w:rsidP="00877415">
 <w:pPr>
 <w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
 <w:contextualSpacing/>
@@ -10266,27 +10503,61 @@
 <w:szCs w:val="24"/>
 </w:rPr>
 </w:pPr>
-</w:p>
-<w:p w:rsidR="006054AF" w:rsidRPr="006054AF" w:rsidRDefault="006054AF" w:rsidP="006054AF">
-<w:pPr>
-<w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
-<w:contextualSpacing/>
+<w:r w:rsidRPr="00877415">
 <w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-</w:pPr>
-<w:r w:rsidRPr="006054AF">
+<w:t xml:space="preserve"> </w:t>
+</w:r>
+<m:oMath>
+<m:r>
 <w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:rFonts w:ascii="Cambria Math" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Cambria Math" w:cs="Cambria Math"/>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t>Two other ideas that will play a central role in this chapter: interpretations and refutation.</w:t>
+<m:t>
+□</m:t>
+</m:r>
+</m:oMath>
+<w:r w:rsidRPr="00877415">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve"> </w:t>
+</w:r>
+<w:proofErr w:type="gramStart"/>
+<w:r w:rsidRPr="00877415">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>absurdum</w:t>
+</w:r>
+<w:proofErr w:type="gramEnd"/>
+<w:r w:rsidRPr="00877415">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>; contradiction</w:t>
+</w:r>
+<w:r>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>.</w:t>
 </w:r>
 </w:p>
-<w:p w:rsidR="006054AF" w:rsidRPr="006054AF" w:rsidRDefault="006054AF" w:rsidP="006054AF">
+<w:p w:rsidR="003E0E53" w:rsidRPr="006054AF" w:rsidRDefault="003E0E53" w:rsidP="003E0E53">
 <w:pPr>
 <w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
 <w:contextualSpacing/>
@@ -10296,6 +10567,173 @@
 <w:szCs w:val="24"/>
 </w:rPr>
 </w:pPr>
+<w:r>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:tab/>
+</w:r>
+<w:r>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve">In many textbooks it is common to use upper-case letters to represent propositions.  Unfortunately, upper-case letters in </w:t>
+</w:r>
+<w:r w:rsidR="00FC6A1B">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>Prolog</w:t>
+</w:r>
+<w:r>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve"> always represent </w:t>
+</w:r>
+<w:r w:rsidR="00FC6A1B">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>Prolog</w:t>
+</w:r>
+<w:r>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve"> variables, which may be numeric or </w:t>
+</w:r>
+<w:proofErr w:type="gramStart"/>
+<w:r>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>string-typed</w:t>
+</w:r>
+<w:proofErr w:type="gramEnd"/>
+<w:r>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve"> or lists or many other things.  Propositions, in contrast, can only be Boolean typed.</w:t>
+</w:r>
+<w:r w:rsidR="00E72F7C">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve">  In this chapter propositions are exclusively represented in lower-case.  This slightly unorthodox use of lower-case was chosen to ease the transition between formulas and </w:t>
+</w:r>
+<w:r w:rsidR="00FC6A1B">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>Prolog</w:t>
+</w:r>
+<w:r w:rsidR="00E72F7C">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve"> source code and back during various points in the discussion.</w:t>
+</w:r>
+</w:p>
+<w:p w:rsidR="006054AF" w:rsidRPr="006054AF" w:rsidRDefault="004F0090" w:rsidP="006054AF">
+<w:pPr>
+<w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
+<w:contextualSpacing/>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+</w:pPr>
+<w:r>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:tab/>
+</w:r>
+<w:r w:rsidR="006054AF" w:rsidRPr="006054AF">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>Two other ideas that will play a central role in this chapter</w:t>
+</w:r>
+<w:r>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve"> are</w:t>
+</w:r>
+<w:r w:rsidR="006054AF" w:rsidRPr="006054AF">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve">: </w:t>
+</w:r>
+<w:r w:rsidR="006054AF" w:rsidRPr="004F0090">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:i/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>interpretations</w:t>
+</w:r>
+<w:r w:rsidR="006054AF" w:rsidRPr="006054AF">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve"> and </w:t>
+</w:r>
+<w:r w:rsidR="006054AF" w:rsidRPr="004F0090">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:i/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>refutation</w:t>
+</w:r>
+<w:r w:rsidR="006054AF" w:rsidRPr="006054AF">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>.</w:t>
+</w:r>
 </w:p>
 <w:p w:rsidR="006054AF" w:rsidRPr="006054AF" w:rsidRDefault="006054AF" w:rsidP="006054AF">
 <w:pPr>
@@ -10315,13 +10753,38 @@
 </w:rPr>
 <w:tab/>
 </w:r>
+<w:r w:rsidR="004F0090">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve">Interpretations are fundamental to most useful applications of logic.  </w:t>
+</w:r>
 <w:r w:rsidRPr="006054AF">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t>Both propositional and predicate logic are designed for determining the truth or falsity of formulas.  In order to make the determination, it is necessary to establish both the targeted formula, and also an interpretation for the formula.  An interpretation is simply a mapping of the formulaic symbols to the domain-specific concepts that the symbols are intended to represent.  Here are a few classic examples:</w:t>
+<w:t xml:space="preserve">Both propositional and predicate logic are designed for determining the truth or falsity of formulas.  In order to make the determination, it is necessary to establish both the targeted formula, and also an </w:t>
+</w:r>
+<w:r w:rsidRPr="004F0090">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:i/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>interpretation</w:t>
+</w:r>
+<w:r w:rsidRPr="006054AF">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve"> for the formula.  An interpretation is simply a mapping of the formulaic symbols to the domain-specific concepts that the symbols are intended to represent.  Here are a few classic examples:</w:t>
 </w:r>
 </w:p>
 <w:p w:rsidR="006054AF" w:rsidRPr="006054AF" w:rsidRDefault="006054AF" w:rsidP="006054AF">
@@ -10335,7 +10798,7 @@
 </w:rPr>
 </w:pPr>
 </w:p>
-<w:p w:rsidR="006054AF" w:rsidRPr="006054AF" w:rsidRDefault="006054AF" w:rsidP="006054AF">
+<w:p w:rsidR="00791169" w:rsidRDefault="006054AF" w:rsidP="006054AF">
 <w:pPr>
 <w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
 <w:contextualSpacing/>
@@ -10353,26 +10816,35 @@
 </w:rPr>
 <w:t xml:space="preserve">Formula: </w:t>
 </w:r>
-<w:proofErr w:type="gramStart"/>
-<w:r w:rsidRPr="006054AF">
+<w:r w:rsidR="00791169" w:rsidRPr="00791169">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t>A  ^</w:t>
+<w:t xml:space="preserve"> </w:t>
 </w:r>
-<w:proofErr w:type="gramEnd"/>
-<w:r w:rsidRPr="006054AF">
+<m:oMath>
+<m:r>
+<w:rPr>
+<w:rFonts w:ascii="Cambria Math" w:hAnsi="Cambria Math" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<m:t>
+a∧b</m:t>
+</m:r>
+</m:oMath>
+<w:r w:rsidR="00791169" w:rsidRPr="00791169">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t xml:space="preserve">  B                         // fix the casing!</w:t>
+<w:t xml:space="preserve">  </w:t>
 </w:r>
 </w:p>
-<w:p w:rsidR="006054AF" w:rsidRPr="006054AF" w:rsidRDefault="006054AF" w:rsidP="006054AF">
+<w:p w:rsidR="006F64B6" w:rsidRDefault="006054AF" w:rsidP="006054AF">
 <w:pPr>
 <w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
 <w:contextualSpacing/>
@@ -10388,7 +10860,113 @@
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t>Interpretation:  A represents ""; B represents ""</w:t>
+<w:t xml:space="preserve">Interpretation:  </w:t>
+</w:r>
+</w:p>
+<w:p w:rsidR="006F64B6" w:rsidRDefault="006F64B6" w:rsidP="006054AF">
+<w:pPr>
+<w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
+<w:contextualSpacing/>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+</w:pPr>
+<w:r>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:tab/>
+</w:r>
+<w:proofErr w:type="gramStart"/>
+<w:r w:rsidR="00791169">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>a</w:t>
+</w:r>
+<w:proofErr w:type="gramEnd"/>
+<w:r w:rsidR="006054AF" w:rsidRPr="006054AF">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve"> represents </w:t>
+</w:r>
+<w:r>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>"the sun rises in the east"</w:t>
+</w:r>
+<w:r w:rsidR="006054AF" w:rsidRPr="006054AF">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve">; </w:t>
+</w:r>
+</w:p>
+<w:p w:rsidR="006054AF" w:rsidRPr="006054AF" w:rsidRDefault="006F64B6" w:rsidP="006054AF">
+<w:pPr>
+<w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
+<w:contextualSpacing/>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+</w:pPr>
+<w:r>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:tab/>
+</w:r>
+<w:proofErr w:type="gramStart"/>
+<w:r>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>b</w:t>
+</w:r>
+<w:proofErr w:type="gramEnd"/>
+<w:r w:rsidR="006054AF" w:rsidRPr="006054AF">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve"> represents</w:t>
+</w:r>
+<w:r>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve"> "the sun sets in the west"</w:t>
+</w:r>
+<w:r w:rsidR="006054AF" w:rsidRPr="006054AF">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve"> </w:t>
 </w:r>
 </w:p>
 <w:p w:rsidR="006054AF" w:rsidRPr="006054AF" w:rsidRDefault="006054AF" w:rsidP="006054AF">
@@ -10421,7 +10999,7 @@
 </w:rPr>
 </w:pPr>
 </w:p>
-<w:p w:rsidR="006054AF" w:rsidRPr="006054AF" w:rsidRDefault="006054AF" w:rsidP="006054AF">
+<w:p w:rsidR="006F64B6" w:rsidRDefault="006F64B6" w:rsidP="006F64B6">
 <w:pPr>
 <w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
 <w:contextualSpacing/>
@@ -10439,14 +11017,79 @@
 </w:rPr>
 <w:t xml:space="preserve">Formula: </w:t>
 </w:r>
-<w:proofErr w:type="gramStart"/>
+<w:r w:rsidRPr="00791169">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve"> </w:t>
+</w:r>
+<m:oMath>
+<m:r>
+<w:rPr>
+<w:rFonts w:ascii="Cambria Math" w:hAnsi="Cambria Math" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<m:t>
+a∧b</m:t>
+</m:r>
+</m:oMath>
+<w:r w:rsidRPr="00791169">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve">  </w:t>
+</w:r>
+</w:p>
+<w:p w:rsidR="006F64B6" w:rsidRDefault="006F64B6" w:rsidP="006F64B6">
+<w:pPr>
+<w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
+<w:contextualSpacing/>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+</w:pPr>
 <w:r w:rsidRPr="006054AF">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t>A  ^</w:t>
+<w:t xml:space="preserve">Interpretation:  </w:t>
+</w:r>
+</w:p>
+<w:p w:rsidR="006F64B6" w:rsidRDefault="006F64B6" w:rsidP="006F64B6">
+<w:pPr>
+<w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
+<w:contextualSpacing/>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+</w:pPr>
+<w:r>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:tab/>
+</w:r>
+<w:proofErr w:type="gramStart"/>
+<w:r>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>a</w:t>
 </w:r>
 <w:proofErr w:type="gramEnd"/>
 <w:r w:rsidRPr="006054AF">
@@ -10455,29 +11098,26 @@
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t xml:space="preserve">  B                          // fix the casing!</w:t>
+<w:t xml:space="preserve"> represents </w:t>
 </w:r>
-</w:p>
-<w:p w:rsidR="006054AF" w:rsidRPr="006054AF" w:rsidRDefault="006054AF" w:rsidP="006054AF">
-<w:pPr>
-<w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
-<w:contextualSpacing/>
+<w:r>
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-</w:pPr>
+<w:t>"the sun rises in the east"</w:t>
+</w:r>
 <w:r w:rsidRPr="006054AF">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t>Interpretation:  A represents ""; B represents ""</w:t>
+<w:t xml:space="preserve">; </w:t>
 </w:r>
 </w:p>
-<w:p w:rsidR="006054AF" w:rsidRPr="006054AF" w:rsidRDefault="006054AF" w:rsidP="006054AF">
+<w:p w:rsidR="006F64B6" w:rsidRPr="006054AF" w:rsidRDefault="006F64B6" w:rsidP="006F64B6">
 <w:pPr>
 <w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
 <w:contextualSpacing/>
@@ -10487,52 +11127,22 @@
 <w:szCs w:val="24"/>
 </w:rPr>
 </w:pPr>
-<w:r w:rsidRPr="006054AF">
+<w:r>
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t>Valuation: statement is true.</w:t>
-</w:r>
-</w:p>
-<w:p w:rsidR="006054AF" w:rsidRPr="006054AF" w:rsidRDefault="006054AF" w:rsidP="006054AF">
-<w:pPr>
-<w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
-<w:contextualSpacing/>
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-</w:pPr>
-</w:p>
-<w:p w:rsidR="006054AF" w:rsidRPr="006054AF" w:rsidRDefault="006054AF" w:rsidP="006054AF">
-<w:pPr>
-<w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
-<w:contextualSpacing/>
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-</w:pPr>
-<w:r w:rsidRPr="006054AF">
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-<w:t xml:space="preserve">         </w:t>
+<w:tab/>
 </w:r>
 <w:proofErr w:type="gramStart"/>
-<w:r w:rsidRPr="006054AF">
+<w:r>
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t>[ (</w:t>
+<w:t>b</w:t>
 </w:r>
 <w:proofErr w:type="gramEnd"/>
 <w:r w:rsidRPr="006054AF">
@@ -10541,28 +11151,42 @@
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t xml:space="preserve"> 2 + 5 ) &gt; 1 ] -&gt; </w:t>
+<w:t xml:space="preserve"> represents</w:t>
 </w:r>
-<w:proofErr w:type="gramStart"/>
+<w:r>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve"> "the sun sets in the </w:t>
+</w:r>
+<w:r>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>north</w:t>
+</w:r>
+<w:r>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>"</w:t>
+</w:r>
 <w:r w:rsidRPr="006054AF">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t>[ 5</w:t>
-</w:r>
-<w:proofErr w:type="gramEnd"/>
-<w:r w:rsidRPr="006054AF">
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-<w:t xml:space="preserve"> &gt; ( 1 - 2 ) ]</w:t>
+<w:t xml:space="preserve"> </w:t>
 </w:r>
 </w:p>
-<w:p w:rsidR="006054AF" w:rsidRPr="006054AF" w:rsidRDefault="006054AF" w:rsidP="006054AF">
+<w:p w:rsidR="006F64B6" w:rsidRPr="006054AF" w:rsidRDefault="006F64B6" w:rsidP="006F64B6">
 <w:pPr>
 <w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
 <w:contextualSpacing/>
@@ -10578,176 +11202,16 @@
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t xml:space="preserve">Formula: </w:t>
+<w:t xml:space="preserve">Valuation: statement is </w:t>
 </w:r>
-<w:proofErr w:type="gramStart"/>
-<w:r w:rsidRPr="006054AF">
+<w:r>
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t>[ (</w:t>
+<w:t>false</w:t>
 </w:r>
-<w:proofErr w:type="gramEnd"/>
-<w:r w:rsidRPr="006054AF">
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-<w:t xml:space="preserve"> x + y ) &gt; z ] -&gt; [ y &gt; ( z - x ) ]</w:t>
-</w:r>
-</w:p>
-<w:p w:rsidR="006054AF" w:rsidRPr="006054AF" w:rsidRDefault="006054AF" w:rsidP="006054AF">
-<w:pPr>
-<w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
-<w:contextualSpacing/>
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-</w:pPr>
-<w:r w:rsidRPr="006054AF">
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-<w:lastRenderedPageBreak/>
-<w:t>Interpretation: x, y, and z represent the integers 2</w:t>
-</w:r>
-<w:proofErr w:type="gramStart"/>
-<w:r w:rsidRPr="006054AF">
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-<w:t>,5,1</w:t>
-</w:r>
-<w:proofErr w:type="gramEnd"/>
-<w:r w:rsidRPr="006054AF">
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-<w:t>. '+', '-', and '&gt;' represent the usual well-known operations of integer arithmetic.</w:t>
-</w:r>
-</w:p>
-<w:p w:rsidR="006054AF" w:rsidRPr="006054AF" w:rsidRDefault="006054AF" w:rsidP="006054AF">
-<w:pPr>
-<w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
-<w:contextualSpacing/>
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-</w:pPr>
-<w:r w:rsidRPr="006054AF">
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-<w:t>Valuation: statement is true.</w:t>
-</w:r>
-</w:p>
-<w:p w:rsidR="006054AF" w:rsidRPr="006054AF" w:rsidRDefault="006054AF" w:rsidP="006054AF">
-<w:pPr>
-<w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
-<w:contextualSpacing/>
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-</w:pPr>
-</w:p>
-<w:p w:rsidR="006054AF" w:rsidRPr="006054AF" w:rsidRDefault="006054AF" w:rsidP="006054AF">
-<w:pPr>
-<w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
-<w:contextualSpacing/>
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-</w:pPr>
-</w:p>
-<w:p w:rsidR="006054AF" w:rsidRPr="006054AF" w:rsidRDefault="006054AF" w:rsidP="006054AF">
-<w:pPr>
-<w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
-<w:contextualSpacing/>
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-</w:pPr>
-<w:proofErr w:type="gramStart"/>
-<w:r w:rsidRPr="006054AF">
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-<w:t>Refutation.</w:t>
-</w:r>
-<w:proofErr w:type="gramEnd"/>
-</w:p>
-<w:p w:rsidR="006054AF" w:rsidRPr="006054AF" w:rsidRDefault="006054AF" w:rsidP="006054AF">
-<w:pPr>
-<w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
-<w:contextualSpacing/>
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-</w:pPr>
-</w:p>
-<w:p w:rsidR="006054AF" w:rsidRPr="006054AF" w:rsidRDefault="006054AF" w:rsidP="006054AF">
-<w:pPr>
-<w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
-<w:contextualSpacing/>
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-</w:pPr>
-<w:proofErr w:type="gramStart"/>
-<w:r w:rsidRPr="006054AF">
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-<w:t>refutability</w:t>
-</w:r>
-<w:proofErr w:type="gramEnd"/>
-<w:r w:rsidRPr="006054AF">
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-<w:t xml:space="preserve"> is an antonym of </w:t>
-</w:r>
-<w:proofErr w:type="spellStart"/>
-<w:r w:rsidRPr="006054AF">
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-<w:t>satisfiability</w:t>
-</w:r>
-<w:proofErr w:type="spellEnd"/>
 <w:r w:rsidRPr="006054AF">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
@@ -10784,21 +11248,37 @@
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t>If the given interpretation allows us to conclude that a formula is false, then we have found a refutation for the formula.</w:t>
+<w:t xml:space="preserve">Formula: </w:t>
 </w:r>
-</w:p>
-<w:p w:rsidR="006054AF" w:rsidRPr="006054AF" w:rsidRDefault="006054AF" w:rsidP="006054AF">
-<w:pPr>
-<w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
-<w:contextualSpacing/>
+<w:r w:rsidR="006F64B6" w:rsidRPr="006F64B6">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-</w:pPr>
+<w:t xml:space="preserve"> </w:t>
+</w:r>
+<m:oMath>
+<m:r>
+<w:rPr>
+<w:rFonts w:ascii="Cambria Math" w:hAnsi="Cambria Math" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<m:t>
+[(x+y)&gt;z]→[y&gt;(z-x)]</m:t>
+</m:r>
+</m:oMath>
+<w:r w:rsidR="006F64B6" w:rsidRPr="006F64B6">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve"> </w:t>
+</w:r>
 </w:p>
-<w:p w:rsidR="006054AF" w:rsidRPr="006054AF" w:rsidRDefault="006054AF" w:rsidP="006054AF">
+<w:p w:rsidR="006F64B6" w:rsidRDefault="006054AF" w:rsidP="006054AF">
 <w:pPr>
 <w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
 <w:contextualSpacing/>
@@ -10814,51 +11294,11 @@
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t>Classical logic enables one to reason by contradiction.  A proof of X can be established by assuming -LX and establishing that this leads to a contradiction.</w:t>
+<w:lastRenderedPageBreak/>
+<w:t xml:space="preserve">Interpretation: </w:t>
 </w:r>
 </w:p>
-<w:p w:rsidR="006054AF" w:rsidRPr="006054AF" w:rsidRDefault="006054AF" w:rsidP="006054AF">
-<w:pPr>
-<w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
-<w:contextualSpacing/>
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-</w:pPr>
-</w:p>
-<w:p w:rsidR="006054AF" w:rsidRPr="006054AF" w:rsidRDefault="006054AF" w:rsidP="006054AF">
-<w:pPr>
-<w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
-<w:contextualSpacing/>
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-</w:pPr>
-<w:r w:rsidRPr="006054AF">
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-<w:t>2. SUB-SECTION:  Basic usage and theory of Prolog</w:t>
-</w:r>
-</w:p>
-<w:p w:rsidR="006054AF" w:rsidRPr="006054AF" w:rsidRDefault="006054AF" w:rsidP="006054AF">
-<w:pPr>
-<w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
-<w:contextualSpacing/>
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-</w:pPr>
-</w:p>
-<w:p w:rsidR="006054AF" w:rsidRPr="006054AF" w:rsidRDefault="006054AF" w:rsidP="006054AF">
+<w:p w:rsidR="006F64B6" w:rsidRDefault="006F64B6" w:rsidP="006054AF">
 <w:pPr>
 <w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
 <w:contextualSpacing/>
@@ -10875,25 +11315,294 @@
 <w:szCs w:val="24"/>
 </w:rPr>
 <w:tab/>
-</w:r>
-<w:r w:rsidRPr="006054AF">
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-<w:t xml:space="preserve">Modern prolog systems have a wide variety of uses.  In this section we will examine two uses in particular.  The use that is most </w:t>
 </w:r>
 <w:proofErr w:type="gramStart"/>
+<w:r w:rsidR="006054AF" w:rsidRPr="006054AF">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>x</w:t>
+</w:r>
+<w:proofErr w:type="gramEnd"/>
+<w:r w:rsidR="006054AF" w:rsidRPr="006054AF">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>, y, and z represent the integers 2,5,1.</w:t>
+</w:r>
+</w:p>
+<w:p w:rsidR="006054AF" w:rsidRPr="006054AF" w:rsidRDefault="006F64B6" w:rsidP="006054AF">
+<w:pPr>
+<w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
+<w:contextualSpacing/>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+</w:pPr>
+<w:r>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:tab/>
+</w:r>
+<w:r w:rsidR="006054AF" w:rsidRPr="006054AF">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve"> '+', '-', and '&gt;' represent the usual well-known operations of integer arithmetic.</w:t>
+</w:r>
+</w:p>
+<w:p w:rsidR="006054AF" w:rsidRPr="006054AF" w:rsidRDefault="006054AF" w:rsidP="006054AF">
+<w:pPr>
+<w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
+<w:contextualSpacing/>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+</w:pPr>
 <w:r w:rsidRPr="006054AF">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t>import ....</w:t>
+<w:t>Valuation: statement is true.</w:t>
 </w:r>
-<w:proofErr w:type="gramEnd"/>
+</w:p>
+<w:p w:rsidR="006054AF" w:rsidRPr="006054AF" w:rsidRDefault="006054AF" w:rsidP="006054AF">
+<w:pPr>
+<w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
+<w:contextualSpacing/>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+</w:pPr>
+</w:p>
+<w:p w:rsidR="006054AF" w:rsidRPr="006054AF" w:rsidRDefault="006F64B6" w:rsidP="006054AF">
+<w:pPr>
+<w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
+<w:contextualSpacing/>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+</w:pPr>
+<w:r>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:tab/>
+</w:r>
+<w:r>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve">The last concept to be defined in this section is </w:t>
+</w:r>
+<w:r w:rsidRPr="006F64B6">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:i/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>refutation</w:t>
+</w:r>
+<w:r>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve">.  Refutability is an antonym of </w:t>
+</w:r>
+<w:proofErr w:type="spellStart"/>
+<w:r>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>satisfiability</w:t>
+</w:r>
+<w:proofErr w:type="spellEnd"/>
+<w:r>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve">.  </w:t>
+</w:r>
+<w:r w:rsidR="006054AF" w:rsidRPr="006054AF">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>If the given interpretation allows us to conclude that a formula is false, then we have found a refutation for the formula.</w:t>
+</w:r>
+<w:r>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve">  </w:t>
+</w:r>
+<w:r w:rsidR="006054AF" w:rsidRPr="006054AF">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve">Classical logic enables one to reason by contradiction.  A proof of </w:t>
+</w:r>
+<w:r>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve">a formula </w:t>
+</w:r>
+<m:oMath>
+<m:r>
+<w:rPr>
+<w:rFonts w:ascii="Cambria Math" w:hAnsi="Cambria Math" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<m:t>
+φ</m:t>
+</m:r>
+</m:oMath>
+<w:r w:rsidRPr="006F64B6">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve"> </w:t>
+</w:r>
+<w:r w:rsidR="006054AF" w:rsidRPr="006054AF">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>can be established by assuming</w:t>
+</w:r>
+<w:r>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve"> </w:t>
+</w:r>
+<m:oMath>
+<m:r>
+<w:rPr>
+<w:rFonts w:ascii="Cambria Math" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Cambria Math" w:cs="Cambria Math"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<m:t>
+¬</m:t>
+</m:r>
+<m:r>
+<w:rPr>
+<w:rFonts w:ascii="Cambria Math" w:hAnsi="Cambria Math" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<m:t>
+φ</m:t>
+</m:r>
+</m:oMath>
+<w:r w:rsidR="006054AF" w:rsidRPr="006054AF">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve"> </w:t>
+</w:r>
+<w:r>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve"> and e</w:t>
+</w:r>
+<w:r w:rsidR="006054AF" w:rsidRPr="006054AF">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>stablishing that this leads to a contradiction.</w:t>
+</w:r>
+<w:r>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve">  When such a contradiction is what we seek, then a refutation procedure is an algorithm designed to establish the contradiction as quickly as possible.</w:t>
+</w:r>
+</w:p>
+<w:p w:rsidR="006054AF" w:rsidRPr="00C5159E" w:rsidRDefault="006054AF" w:rsidP="00C5159E">
+<w:pPr>
+<w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
+<w:contextualSpacing/>
+<w:jc w:val="center"/>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+<w:u w:val="single"/>
+</w:rPr>
+</w:pPr>
+<w:r w:rsidRPr="00C5159E">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+<w:u w:val="single"/>
+</w:rPr>
+<w:t xml:space="preserve">Basic usage and theory of </w:t>
+</w:r>
+<w:r w:rsidR="00FC6A1B">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+<w:u w:val="single"/>
+</w:rPr>
+<w:t>Prolog</w:t>
+</w:r>
 </w:p>
 <w:p w:rsidR="006054AF" w:rsidRPr="006054AF" w:rsidRDefault="006054AF" w:rsidP="006054AF">
 <w:pPr>
@@ -10919,7 +11628,138 @@
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t>A prolog system can be employed to directly exploit the proof system that drives the computation of all prolog output.  Alternatively, that same proof system can be used in its 'procedural interpretation', which is what enables the prolog user to employ prolog as a general purpose programming language.</w:t>
+<w:t xml:space="preserve">Modern </w:t>
+</w:r>
+<w:r w:rsidR="00FC6A1B">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>Prolog</w:t>
+</w:r>
+<w:r w:rsidRPr="006054AF">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve"> systems have a wide variety of uses.  In this section we will examine two uses in particular.  The use that is most import</w:t>
+</w:r>
+<w:r w:rsidR="00C5159E">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve">ant to POQ is that which makes targeted use of the resolution-based proof derivation algorithms provided by the </w:t>
+</w:r>
+<w:r w:rsidR="00FC6A1B">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>Prolog</w:t>
+</w:r>
+<w:r w:rsidR="00C5159E">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve"> system.</w:t>
+</w:r>
+</w:p>
+<w:p w:rsidR="006054AF" w:rsidRPr="006054AF" w:rsidRDefault="006054AF" w:rsidP="006054AF">
+<w:pPr>
+<w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
+<w:contextualSpacing/>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+</w:pPr>
+<w:r>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:tab/>
+</w:r>
+<w:r w:rsidRPr="006054AF">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve">A </w:t>
+</w:r>
+<w:r w:rsidR="00FC6A1B">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>Prolog</w:t>
+</w:r>
+<w:r w:rsidRPr="006054AF">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve"> system can be employed to directly exploit the proof system that drives the computation of all </w:t>
+</w:r>
+<w:r w:rsidR="00FC6A1B">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>Prolog</w:t>
+</w:r>
+<w:r w:rsidRPr="006054AF">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve"> output.  Alternatively, that same proof system can be used in its 'procedural interpretation', which is what enables the </w:t>
+</w:r>
+<w:r w:rsidR="00FC6A1B">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>Prolog</w:t>
+</w:r>
+<w:r w:rsidRPr="006054AF">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve"> user to employ </w:t>
+</w:r>
+<w:r w:rsidR="00FC6A1B">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>Prolog</w:t>
+</w:r>
+<w:r w:rsidRPr="006054AF">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve"> as a general purpose programming language.</w:t>
 </w:r>
 </w:p>
 <w:p w:rsidR="006054AF" w:rsidRPr="006054AF" w:rsidRDefault="006054AF" w:rsidP="006054AF">
@@ -10947,7 +11787,23 @@
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t>There are several other interpretations and uses of prolog which we will not cover here. (</w:t>
+<w:t xml:space="preserve">There are several other interpretations and uses of </w:t>
+</w:r>
+<w:r w:rsidR="00FC6A1B">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>Prolog</w:t>
+</w:r>
+<w:r w:rsidRPr="006054AF">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve"> which we will not cover here. (</w:t>
 </w:r>
 <w:proofErr w:type="gramStart"/>
 <w:r w:rsidRPr="006054AF">
@@ -10992,7 +11848,39 @@
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t>The following discussion will begin by using a snippet of Prolog source code as a centerpiece.  This immediately illustrates that reading a Prolog text as if it were a typical imperative-language software source code is very straightforward.  We then work backwards from this procedural reading in order to expose the underlying FOL principles.</w:t>
+<w:t xml:space="preserve">The following discussion will begin by using a snippet of </w:t>
+</w:r>
+<w:r w:rsidR="00FC6A1B">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>Prolog</w:t>
+</w:r>
+<w:r w:rsidRPr="006054AF">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve"> source code as a centerpiece.  This immediately illustrates that reading a </w:t>
+</w:r>
+<w:r w:rsidR="00FC6A1B">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>Prolog</w:t>
+</w:r>
+<w:r w:rsidRPr="006054AF">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve"> text as if it were a typical imperative-language software source code is very straightforward.  We then work backwards from this procedural reading in order to expose the underlying FOL principles.</w:t>
 </w:r>
 </w:p>
 <w:p w:rsidR="006054AF" w:rsidRPr="006054AF" w:rsidRDefault="006054AF" w:rsidP="006054AF">
@@ -11019,7 +11907,23 @@
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t>To be clear: Prolog is definitely not an imperative language.  However, it has properties that can give it the 'look and feel' of an imperative language.  Those properties will be examined further as this section develops.</w:t>
+<w:t xml:space="preserve">To be clear: </w:t>
+</w:r>
+<w:r w:rsidR="00FC6A1B">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>Prolog</w:t>
+</w:r>
+<w:r w:rsidRPr="006054AF">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve"> is definitely not an imperative language.  However, it has properties that can give it the 'look and feel' of an imperative language.  Those properties will be examined further as this section develops.</w:t>
 </w:r>
 </w:p>
 <w:p w:rsidR="006054AF" w:rsidRPr="006054AF" w:rsidRDefault="006054AF" w:rsidP="006054AF">
@@ -11046,7 +11950,23 @@
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t>Here is the Prolog snippet to be discussed:</w:t>
+<w:t xml:space="preserve">Here is the </w:t>
+</w:r>
+<w:r w:rsidR="00FC6A1B">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>Prolog</w:t>
+</w:r>
+<w:r w:rsidRPr="006054AF">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve"> snippet to be discussed:</w:t>
 </w:r>
 </w:p>
 <w:p w:rsidR="006054AF" w:rsidRPr="006054AF" w:rsidRDefault="006054AF" w:rsidP="006054AF">
@@ -11060,378 +11980,378 @@
 </w:rPr>
 </w:pPr>
 </w:p>
-<w:p w:rsidR="006054AF" w:rsidRPr="006054AF" w:rsidRDefault="006054AF" w:rsidP="006054AF">
+<w:p w:rsidR="006054AF" w:rsidRPr="00FC6A1B" w:rsidRDefault="006054AF" w:rsidP="006054AF">
 <w:pPr>
 <w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
 <w:contextualSpacing/>
 <w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
+<w:rFonts w:ascii="Courier New" w:hAnsi="Courier New" w:cs="Courier New"/>
+<w:sz w:val="20"/>
+<w:szCs w:val="20"/>
 </w:rPr>
 </w:pPr>
-<w:r w:rsidRPr="006054AF">
+<w:r w:rsidRPr="00FC6A1B">
 <w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
+<w:rFonts w:ascii="Courier New" w:hAnsi="Courier New" w:cs="Courier New"/>
+<w:sz w:val="20"/>
+<w:szCs w:val="20"/>
 </w:rPr>
 <w:t>% Note: '</w:t>
 </w:r>
 <w:proofErr w:type="spellStart"/>
-<w:r w:rsidRPr="006054AF">
+<w:r w:rsidRPr="00FC6A1B">
 <w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
+<w:rFonts w:ascii="Courier New" w:hAnsi="Courier New" w:cs="Courier New"/>
+<w:sz w:val="20"/>
+<w:szCs w:val="20"/>
 </w:rPr>
 <w:t>rect</w:t>
 </w:r>
 <w:proofErr w:type="spellEnd"/>
-<w:r w:rsidRPr="006054AF">
+<w:r w:rsidRPr="00FC6A1B">
 <w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
+<w:rFonts w:ascii="Courier New" w:hAnsi="Courier New" w:cs="Courier New"/>
+<w:sz w:val="20"/>
+<w:szCs w:val="20"/>
 </w:rPr>
 <w:t>' is an abbreviation for rectangle,</w:t>
 </w:r>
 </w:p>
-<w:p w:rsidR="006054AF" w:rsidRPr="006054AF" w:rsidRDefault="006054AF" w:rsidP="006054AF">
+<w:p w:rsidR="006054AF" w:rsidRPr="00FC6A1B" w:rsidRDefault="006054AF" w:rsidP="006054AF">
 <w:pPr>
 <w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
 <w:contextualSpacing/>
 <w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
+<w:rFonts w:ascii="Courier New" w:hAnsi="Courier New" w:cs="Courier New"/>
+<w:sz w:val="20"/>
+<w:szCs w:val="20"/>
 </w:rPr>
 </w:pPr>
-<w:r w:rsidRPr="006054AF">
+<w:r w:rsidRPr="00FC6A1B">
 <w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
+<w:rFonts w:ascii="Courier New" w:hAnsi="Courier New" w:cs="Courier New"/>
+<w:sz w:val="20"/>
+<w:szCs w:val="20"/>
 </w:rPr>
 <w:t>% and '</w:t>
 </w:r>
 <w:proofErr w:type="spellStart"/>
-<w:r w:rsidRPr="006054AF">
+<w:r w:rsidRPr="00FC6A1B">
 <w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
+<w:rFonts w:ascii="Courier New" w:hAnsi="Courier New" w:cs="Courier New"/>
+<w:sz w:val="20"/>
+<w:szCs w:val="20"/>
 </w:rPr>
 <w:t>usernm</w:t>
 </w:r>
 <w:proofErr w:type="spellEnd"/>
-<w:r w:rsidRPr="006054AF">
+<w:r w:rsidRPr="00FC6A1B">
 <w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
+<w:rFonts w:ascii="Courier New" w:hAnsi="Courier New" w:cs="Courier New"/>
+<w:sz w:val="20"/>
+<w:szCs w:val="20"/>
 </w:rPr>
 <w:t>' is an abbreviation for username</w:t>
 </w:r>
 </w:p>
-<w:p w:rsidR="006054AF" w:rsidRPr="006054AF" w:rsidRDefault="006054AF" w:rsidP="006054AF">
+<w:p w:rsidR="006054AF" w:rsidRPr="00FC6A1B" w:rsidRDefault="006054AF" w:rsidP="006054AF">
 <w:pPr>
 <w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
 <w:contextualSpacing/>
 <w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
+<w:rFonts w:ascii="Courier New" w:hAnsi="Courier New" w:cs="Courier New"/>
+<w:sz w:val="20"/>
+<w:szCs w:val="20"/>
 </w:rPr>
 </w:pPr>
 </w:p>
-<w:p w:rsidR="006054AF" w:rsidRPr="006054AF" w:rsidRDefault="006054AF" w:rsidP="006054AF">
+<w:p w:rsidR="006054AF" w:rsidRPr="00FC6A1B" w:rsidRDefault="006054AF" w:rsidP="006054AF">
 <w:pPr>
 <w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
 <w:contextualSpacing/>
 <w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
+<w:rFonts w:ascii="Courier New" w:hAnsi="Courier New" w:cs="Courier New"/>
+<w:sz w:val="20"/>
+<w:szCs w:val="20"/>
 </w:rPr>
 </w:pPr>
-<w:r w:rsidRPr="006054AF">
+<w:r w:rsidRPr="00FC6A1B">
 <w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
+<w:rFonts w:ascii="Courier New" w:hAnsi="Courier New" w:cs="Courier New"/>
+<w:sz w:val="20"/>
+<w:szCs w:val="20"/>
 </w:rPr>
 <w:t xml:space="preserve">% </w:t>
 </w:r>
 <w:proofErr w:type="gramStart"/>
-<w:r w:rsidRPr="006054AF">
+<w:r w:rsidRPr="00FC6A1B">
 <w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
+<w:rFonts w:ascii="Courier New" w:hAnsi="Courier New" w:cs="Courier New"/>
+<w:sz w:val="20"/>
+<w:szCs w:val="20"/>
 </w:rPr>
 <w:t>This</w:t>
 </w:r>
 <w:proofErr w:type="gramEnd"/>
-<w:r w:rsidRPr="006054AF">
+<w:r w:rsidRPr="00FC6A1B">
 <w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
+<w:rFonts w:ascii="Courier New" w:hAnsi="Courier New" w:cs="Courier New"/>
+<w:sz w:val="20"/>
+<w:szCs w:val="20"/>
 </w:rPr>
 <w:t xml:space="preserve"> procedure calculates the amount of "screen real estate" that</w:t>
 </w:r>
 </w:p>
-<w:p w:rsidR="006054AF" w:rsidRPr="006054AF" w:rsidRDefault="006054AF" w:rsidP="006054AF">
+<w:p w:rsidR="006054AF" w:rsidRPr="00FC6A1B" w:rsidRDefault="006054AF" w:rsidP="006054AF">
 <w:pPr>
 <w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
 <w:contextualSpacing/>
 <w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
+<w:rFonts w:ascii="Courier New" w:hAnsi="Courier New" w:cs="Courier New"/>
+<w:sz w:val="20"/>
+<w:szCs w:val="20"/>
 </w:rPr>
 </w:pPr>
-<w:r w:rsidRPr="006054AF">
+<w:r w:rsidRPr="00FC6A1B">
 <w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
+<w:rFonts w:ascii="Courier New" w:hAnsi="Courier New" w:cs="Courier New"/>
+<w:sz w:val="20"/>
+<w:szCs w:val="20"/>
 </w:rPr>
 <w:t>% will be needed to draw the current username onto the display</w:t>
 </w:r>
 </w:p>
-<w:p w:rsidR="006054AF" w:rsidRPr="006054AF" w:rsidRDefault="006054AF" w:rsidP="006054AF">
+<w:p w:rsidR="006054AF" w:rsidRPr="00FC6A1B" w:rsidRDefault="006054AF" w:rsidP="006054AF">
 <w:pPr>
 <w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
 <w:contextualSpacing/>
 <w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
+<w:rFonts w:ascii="Courier New" w:hAnsi="Courier New" w:cs="Courier New"/>
+<w:sz w:val="20"/>
+<w:szCs w:val="20"/>
 </w:rPr>
 </w:pPr>
 </w:p>
-<w:p w:rsidR="006054AF" w:rsidRPr="006054AF" w:rsidRDefault="006054AF" w:rsidP="006054AF">
+<w:p w:rsidR="006054AF" w:rsidRPr="00FC6A1B" w:rsidRDefault="006054AF" w:rsidP="006054AF">
 <w:pPr>
 <w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
 <w:contextualSpacing/>
 <w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
+<w:rFonts w:ascii="Courier New" w:hAnsi="Courier New" w:cs="Courier New"/>
+<w:sz w:val="20"/>
+<w:szCs w:val="20"/>
 </w:rPr>
 </w:pPr>
 <w:proofErr w:type="spellStart"/>
-<w:r w:rsidRPr="006054AF">
+<w:r w:rsidRPr="00FC6A1B">
 <w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
+<w:rFonts w:ascii="Courier New" w:hAnsi="Courier New" w:cs="Courier New"/>
+<w:sz w:val="20"/>
+<w:szCs w:val="20"/>
 </w:rPr>
 <w:t>bounding_rect_for_drawing_</w:t>
 </w:r>
 <w:proofErr w:type="gramStart"/>
-<w:r w:rsidRPr="006054AF">
+<w:r w:rsidRPr="00FC6A1B">
 <w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
+<w:rFonts w:ascii="Courier New" w:hAnsi="Courier New" w:cs="Courier New"/>
+<w:sz w:val="20"/>
+<w:szCs w:val="20"/>
 </w:rPr>
 <w:t>usernm</w:t>
 </w:r>
 <w:proofErr w:type="spellEnd"/>
-<w:r w:rsidRPr="006054AF">
+<w:r w:rsidRPr="00FC6A1B">
 <w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
+<w:rFonts w:ascii="Courier New" w:hAnsi="Courier New" w:cs="Courier New"/>
+<w:sz w:val="20"/>
+<w:szCs w:val="20"/>
 </w:rPr>
 <w:t>(</w:t>
 </w:r>
 <w:proofErr w:type="gramEnd"/>
-<w:r w:rsidRPr="006054AF">
+<w:r w:rsidRPr="00FC6A1B">
 <w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
+<w:rFonts w:ascii="Courier New" w:hAnsi="Courier New" w:cs="Courier New"/>
+<w:sz w:val="20"/>
+<w:szCs w:val="20"/>
 </w:rPr>
 <w:t xml:space="preserve"> ... ) :-</w:t>
 </w:r>
 </w:p>
-<w:p w:rsidR="006054AF" w:rsidRPr="006054AF" w:rsidRDefault="006054AF" w:rsidP="006054AF">
+<w:p w:rsidR="006054AF" w:rsidRPr="00FC6A1B" w:rsidRDefault="006054AF" w:rsidP="006054AF">
 <w:pPr>
 <w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
 <w:contextualSpacing/>
 <w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
+<w:rFonts w:ascii="Courier New" w:hAnsi="Courier New" w:cs="Courier New"/>
+<w:sz w:val="20"/>
+<w:szCs w:val="20"/>
 </w:rPr>
 </w:pPr>
-<w:r w:rsidRPr="006054AF">
+<w:r w:rsidRPr="00FC6A1B">
 <w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
+<w:rFonts w:ascii="Courier New" w:hAnsi="Courier New" w:cs="Courier New"/>
+<w:sz w:val="20"/>
+<w:szCs w:val="20"/>
 </w:rPr>
 <w:t xml:space="preserve">    </w:t>
 </w:r>
 <w:proofErr w:type="spellStart"/>
-<w:r w:rsidRPr="006054AF">
+<w:r w:rsidRPr="00FC6A1B">
 <w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
+<w:rFonts w:ascii="Courier New" w:hAnsi="Courier New" w:cs="Courier New"/>
+<w:sz w:val="20"/>
+<w:szCs w:val="20"/>
 </w:rPr>
 <w:t>get_font_</w:t>
 </w:r>
 <w:proofErr w:type="gramStart"/>
-<w:r w:rsidRPr="006054AF">
+<w:r w:rsidRPr="00FC6A1B">
 <w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
+<w:rFonts w:ascii="Courier New" w:hAnsi="Courier New" w:cs="Courier New"/>
+<w:sz w:val="20"/>
+<w:szCs w:val="20"/>
 </w:rPr>
 <w:t>setting</w:t>
 </w:r>
 <w:proofErr w:type="spellEnd"/>
-<w:r w:rsidRPr="006054AF">
+<w:r w:rsidRPr="00FC6A1B">
 <w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
+<w:rFonts w:ascii="Courier New" w:hAnsi="Courier New" w:cs="Courier New"/>
+<w:sz w:val="20"/>
+<w:szCs w:val="20"/>
 </w:rPr>
 <w:t>(</w:t>
 </w:r>
 <w:proofErr w:type="gramEnd"/>
-<w:r w:rsidRPr="006054AF">
+<w:r w:rsidRPr="00FC6A1B">
 <w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
+<w:rFonts w:ascii="Courier New" w:hAnsi="Courier New" w:cs="Courier New"/>
+<w:sz w:val="20"/>
+<w:szCs w:val="20"/>
 </w:rPr>
 <w:t xml:space="preserve"> ... ),</w:t>
 </w:r>
 </w:p>
-<w:p w:rsidR="006054AF" w:rsidRPr="006054AF" w:rsidRDefault="006054AF" w:rsidP="006054AF">
+<w:p w:rsidR="006054AF" w:rsidRPr="00FC6A1B" w:rsidRDefault="006054AF" w:rsidP="006054AF">
 <w:pPr>
 <w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
 <w:contextualSpacing/>
 <w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
+<w:rFonts w:ascii="Courier New" w:hAnsi="Courier New" w:cs="Courier New"/>
+<w:sz w:val="20"/>
+<w:szCs w:val="20"/>
 </w:rPr>
 </w:pPr>
-<w:r w:rsidRPr="006054AF">
+<w:r w:rsidRPr="00FC6A1B">
 <w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
+<w:rFonts w:ascii="Courier New" w:hAnsi="Courier New" w:cs="Courier New"/>
+<w:sz w:val="20"/>
+<w:szCs w:val="20"/>
 </w:rPr>
 <w:t xml:space="preserve">    </w:t>
 </w:r>
 <w:proofErr w:type="spellStart"/>
-<w:r w:rsidRPr="006054AF">
+<w:r w:rsidRPr="00FC6A1B">
 <w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
+<w:rFonts w:ascii="Courier New" w:hAnsi="Courier New" w:cs="Courier New"/>
+<w:sz w:val="20"/>
+<w:szCs w:val="20"/>
 </w:rPr>
 <w:t>get_trimmed_usernm_</w:t>
 </w:r>
 <w:proofErr w:type="gramStart"/>
-<w:r w:rsidRPr="006054AF">
+<w:r w:rsidRPr="00FC6A1B">
 <w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
+<w:rFonts w:ascii="Courier New" w:hAnsi="Courier New" w:cs="Courier New"/>
+<w:sz w:val="20"/>
+<w:szCs w:val="20"/>
 </w:rPr>
 <w:t>string</w:t>
 </w:r>
 <w:proofErr w:type="spellEnd"/>
-<w:r w:rsidRPr="006054AF">
+<w:r w:rsidRPr="00FC6A1B">
 <w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
+<w:rFonts w:ascii="Courier New" w:hAnsi="Courier New" w:cs="Courier New"/>
+<w:sz w:val="20"/>
+<w:szCs w:val="20"/>
 </w:rPr>
 <w:t>(</w:t>
 </w:r>
 <w:proofErr w:type="gramEnd"/>
-<w:r w:rsidRPr="006054AF">
+<w:r w:rsidRPr="00FC6A1B">
 <w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
+<w:rFonts w:ascii="Courier New" w:hAnsi="Courier New" w:cs="Courier New"/>
+<w:sz w:val="20"/>
+<w:szCs w:val="20"/>
 </w:rPr>
 <w:t xml:space="preserve"> ... ),</w:t>
 </w:r>
 </w:p>
-<w:p w:rsidR="006054AF" w:rsidRPr="006054AF" w:rsidRDefault="006054AF" w:rsidP="006054AF">
+<w:p w:rsidR="006054AF" w:rsidRPr="00FC6A1B" w:rsidRDefault="006054AF" w:rsidP="006054AF">
 <w:pPr>
 <w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
 <w:contextualSpacing/>
 <w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
+<w:rFonts w:ascii="Courier New" w:hAnsi="Courier New" w:cs="Courier New"/>
+<w:sz w:val="20"/>
+<w:szCs w:val="20"/>
 </w:rPr>
 </w:pPr>
-<w:r w:rsidRPr="006054AF">
+<w:r w:rsidRPr="00FC6A1B">
 <w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
+<w:rFonts w:ascii="Courier New" w:hAnsi="Courier New" w:cs="Courier New"/>
+<w:sz w:val="20"/>
+<w:szCs w:val="20"/>
 </w:rPr>
 <w:t xml:space="preserve">    </w:t>
 </w:r>
 <w:proofErr w:type="spellStart"/>
-<w:r w:rsidRPr="006054AF">
+<w:r w:rsidRPr="00FC6A1B">
 <w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
+<w:rFonts w:ascii="Courier New" w:hAnsi="Courier New" w:cs="Courier New"/>
+<w:sz w:val="20"/>
+<w:szCs w:val="20"/>
 </w:rPr>
 <w:t>calculate_bounding_rect_for_string_and_</w:t>
 </w:r>
 <w:proofErr w:type="gramStart"/>
-<w:r w:rsidRPr="006054AF">
+<w:r w:rsidRPr="00FC6A1B">
 <w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
+<w:rFonts w:ascii="Courier New" w:hAnsi="Courier New" w:cs="Courier New"/>
+<w:sz w:val="20"/>
+<w:szCs w:val="20"/>
 </w:rPr>
 <w:t>font</w:t>
 </w:r>
 <w:proofErr w:type="spellEnd"/>
-<w:r w:rsidRPr="006054AF">
+<w:r w:rsidRPr="00FC6A1B">
 <w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
+<w:rFonts w:ascii="Courier New" w:hAnsi="Courier New" w:cs="Courier New"/>
+<w:sz w:val="20"/>
+<w:szCs w:val="20"/>
 </w:rPr>
 <w:t>(</w:t>
 </w:r>
 <w:proofErr w:type="gramEnd"/>
-<w:r w:rsidRPr="006054AF">
+<w:r w:rsidRPr="00FC6A1B">
 <w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
+<w:rFonts w:ascii="Courier New" w:hAnsi="Courier New" w:cs="Courier New"/>
+<w:sz w:val="20"/>
+<w:szCs w:val="20"/>
 </w:rPr>
 <w:t xml:space="preserve"> ... ).</w:t>
 </w:r>
 </w:p>
-<w:p w:rsidR="006054AF" w:rsidRPr="006054AF" w:rsidRDefault="006054AF" w:rsidP="006054AF">
+<w:p w:rsidR="006054AF" w:rsidRPr="00FC6A1B" w:rsidRDefault="006054AF" w:rsidP="006054AF">
 <w:pPr>
 <w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
 <w:contextualSpacing/>
 <w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
+<w:rFonts w:ascii="Courier New" w:hAnsi="Courier New" w:cs="Courier New"/>
+<w:sz w:val="20"/>
+<w:szCs w:val="20"/>
 </w:rPr>
 </w:pPr>
 </w:p>
@@ -11459,7 +12379,23 @@
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t>We have used '...' to elide the input/output parameters that would normally appear enclosed between each pair of parentheses.  Other than that, the above snippet is valid and syntactically correct Prolog code.  Text appearing after a '%' character is simply commentary, and is not interpreted or executed in any way.</w:t>
+<w:t xml:space="preserve">We have used '...' to elide the input/output parameters that would normally appear enclosed between each pair of parentheses.  Other than that, the above snippet is valid and syntactically correct </w:t>
+</w:r>
+<w:r w:rsidR="00FC6A1B">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>Prolog</w:t>
+</w:r>
+<w:r w:rsidRPr="006054AF">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve"> code.  Text appearing after a '%' character is simply commentary, and is not interpreted or executed in any way.</w:t>
 </w:r>
 </w:p>
 <w:p w:rsidR="006054AF" w:rsidRPr="006054AF" w:rsidRDefault="006054AF" w:rsidP="006054AF">
@@ -11489,9 +12425,10 @@
 <w:t xml:space="preserve">Even a relative beginner to computer programming can readily grasp the structure and intended purpose of the preceding code.  The code seems to indicate that there is a procedure named </w:t>
 </w:r>
 <w:proofErr w:type="spellStart"/>
-<w:r w:rsidRPr="006054AF">
+<w:r w:rsidRPr="00FC6A1B">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:b/>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
@@ -11507,9 +12444,10 @@
 <w:t xml:space="preserve">.  If we assume that this procedure resides in some available library of functionality (code library? how can i not simply say 'library', but instead say something specific but not overwrought?), then a sensible conclusion would be that we can call this procedure in our code once we indicate our reliance on the library.  When </w:t>
 </w:r>
 <w:proofErr w:type="spellStart"/>
-<w:r w:rsidRPr="006054AF">
+<w:r w:rsidRPr="00FC6A1B">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:b/>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
@@ -11549,7 +12487,23 @@
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t>This procedural reading of the code does provide a correct view of the intended meaning of the code, and also provides a correct view of the ultimate result of executing this code.  What makes Prolog quite drastically different from all the familiar imperative languages is the execution mechanism used to actually drive the specific path through the source code in order to arrive at a result.</w:t>
+<w:t xml:space="preserve">This procedural reading of the code does provide a correct view of the intended meaning of the code, and also provides a correct view of the ultimate result of executing this code.  What makes </w:t>
+</w:r>
+<w:r w:rsidR="00FC6A1B">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>Prolog</w:t>
+</w:r>
+<w:r w:rsidRPr="006054AF">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve"> quite drastically different from all the familiar imperative languages is the execution mechanism used to actually drive the specific path through the source code in order to arrive at a result.</w:t>
 </w:r>
 </w:p>
 <w:p w:rsidR="006054AF" w:rsidRPr="006054AF" w:rsidRDefault="006054AF" w:rsidP="006054AF">
@@ -11576,7 +12530,39 @@
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t xml:space="preserve">In Prolog, the Prolog interpreter does not in fact "call the function </w:t>
+<w:t xml:space="preserve">In </w:t>
+</w:r>
+<w:r w:rsidR="00FC6A1B">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>Prolog</w:t>
+</w:r>
+<w:r w:rsidRPr="006054AF">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve">, the </w:t>
+</w:r>
+<w:r w:rsidR="00FC6A1B">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>Prolog</w:t>
+</w:r>
+<w:r w:rsidRPr="006054AF">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve"> interpreter does not in fact "call the function </w:t>
 </w:r>
 <w:proofErr w:type="spellStart"/>
 <w:r w:rsidRPr="006054AF">
@@ -11594,7 +12580,23 @@
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t xml:space="preserve">."  Instead, Prolog must be given </w:t>
+<w:t xml:space="preserve">."  Instead, </w:t>
+</w:r>
+<w:r w:rsidR="00FC6A1B">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>Prolog</w:t>
+</w:r>
+<w:r w:rsidRPr="006054AF">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve"> must be given </w:t>
 </w:r>
 <w:proofErr w:type="spellStart"/>
 <w:r w:rsidRPr="006054AF">
@@ -11612,7 +12614,56 @@
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t xml:space="preserve"> as a &lt;i&gt;goal&lt;/i&gt;, and computation proceeds via a series of goal reduction operations.  The implementation details of Prolog's goal </w:t>
+<w:t xml:space="preserve"> as a </w:t>
+</w:r>
+<w:r w:rsidRPr="00FC6A1B">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:i/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>goal</w:t>
+</w:r>
+<w:r w:rsidRPr="006054AF">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>, and computation</w:t>
+</w:r>
+<w:r w:rsidR="00FC6A1B">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve"> then</w:t>
+</w:r>
+<w:r w:rsidRPr="006054AF">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve"> proceeds via a series of goal reduction operations.  The implementation details of </w:t>
+</w:r>
+<w:r w:rsidR="00FC6A1B">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>Prolog</w:t>
+</w:r>
+<w:r w:rsidRPr="006054AF">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve">'s goal </w:t>
 </w:r>
 <w:r w:rsidRPr="006054AF">
 <w:rPr>
@@ -11624,22 +12675,30 @@
 <w:t>reduction computations differ markedly from the typical imperative-programming idea of making function calls and returning from function calls. (</w:t>
 </w:r>
 <w:proofErr w:type="gramStart"/>
-<w:r w:rsidRPr="006054AF">
+<w:r w:rsidR="00FC6A1B">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t>details</w:t>
+<w:t>perhaps</w:t>
 </w:r>
 <w:proofErr w:type="gramEnd"/>
+<w:r w:rsidR="00FC6A1B">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve"> explicitly say something here like: </w:t>
+</w:r>
 <w:r w:rsidRPr="006054AF">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t xml:space="preserve"> of goal reduction will follow)</w:t>
+<w:t>details of goal reduction will follow)</w:t>
 </w:r>
 </w:p>
 <w:p w:rsidR="006054AF" w:rsidRPr="006054AF" w:rsidRDefault="006054AF" w:rsidP="006054AF">
@@ -11684,7 +12743,51 @@
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t xml:space="preserve"> &lt;i&gt;as if&lt;/i&gt; it were a callable procedure.  The basis for the exchangeability of the procedural view and the goal-reduction view is due to the ground-breaking (</w:t>
+<w:t xml:space="preserve"> </w:t>
+</w:r>
+<w:r w:rsidRPr="00FC6A1B">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:i/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve">as </w:t>
+</w:r>
+<w:proofErr w:type="gramStart"/>
+<w:r w:rsidRPr="00FC6A1B">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:i/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>if</w:t>
+</w:r>
+<w:r w:rsidR="00FC6A1B">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve"> </w:t>
+</w:r>
+<w:r w:rsidRPr="006054AF">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve"> it</w:t>
+</w:r>
+<w:proofErr w:type="gramEnd"/>
+<w:r w:rsidRPr="006054AF">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve"> were a callable procedure.  The basis for the exchangeability of the procedural view and the goal-reduction view is due to the ground-breaking (</w:t>
 </w:r>
 <w:proofErr w:type="spellStart"/>
 <w:r w:rsidRPr="006054AF">
@@ -11702,10 +12805,44 @@
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t>?) work by Kowalski showing that a particular fragment of FOL has a &lt;i&gt;procedural interpretation&lt;/i&gt;.  In other words, the earlier snippet of code is simply one possible interpretation of the following FOL formula:</w:t>
+<w:t xml:space="preserve">?) work by Kowalski showing that a particular fragment of FOL has a </w:t>
+</w:r>
+<w:r w:rsidRPr="00FC6A1B">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:i/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>procedural interpretation</w:t>
+</w:r>
+<w:r w:rsidRPr="006054AF">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve">.  In other words, the earlier snippet of code is simply one possible </w:t>
+</w:r>
+<w:r w:rsidRPr="00FC6A1B">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:i/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>interpretation</w:t>
+</w:r>
+<w:r w:rsidRPr="006054AF">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve"> of the following FOL formula:</w:t>
 </w:r>
 </w:p>
-<w:p w:rsidR="006054AF" w:rsidRPr="006054AF" w:rsidRDefault="006054AF" w:rsidP="006054AF">
+<w:p w:rsidR="006054AF" w:rsidRPr="006054AF" w:rsidRDefault="00FC6A1B" w:rsidP="006054AF">
 <w:pPr>
 <w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
 <w:contextualSpacing/>
@@ -11715,42 +12852,40 @@
 <w:szCs w:val="24"/>
 </w:rPr>
 </w:pPr>
-</w:p>
-<w:p w:rsidR="006054AF" w:rsidRPr="006054AF" w:rsidRDefault="006054AF" w:rsidP="006054AF">
-<w:pPr>
-<w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
-<w:contextualSpacing/>
+<w:r>
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-</w:pPr>
-<w:r w:rsidRPr="006054AF">
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-<w:t xml:space="preserve">    A &lt;- </w:t>
+<w:tab/>
 </w:r>
-<w:proofErr w:type="gramStart"/>
-<w:r w:rsidRPr="006054AF">
+<w:r w:rsidRPr="00FC6A1B">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t>( B</w:t>
+<w:t xml:space="preserve"> </w:t>
 </w:r>
-<w:proofErr w:type="gramEnd"/>
-<w:r w:rsidRPr="006054AF">
+<m:oMath>
+<m:r>
+<w:rPr>
+<w:rFonts w:ascii="Cambria Math" w:hAnsi="Cambria Math" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<m:t>
+a←(b∧c∧d)</m:t>
+</m:r>
+</m:oMath>
+<w:r w:rsidRPr="00FC6A1B">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t xml:space="preserve"> ^ C ^ D ).    // fix the casing!</w:t>
+<w:t xml:space="preserve"> </w:t>
 </w:r>
 </w:p>
 <w:p w:rsidR="006054AF" w:rsidRPr="006054AF" w:rsidRDefault="006054AF" w:rsidP="006054AF">
@@ -11801,7 +12936,7 @@
 <w:t xml:space="preserve"> paragraph needs heavy revision. goal is to say: "wow this is so revolutionary!" -- hopefully without sounding silly)</w:t>
 </w:r>
 </w:p>
-<w:p w:rsidR="006054AF" w:rsidRPr="006054AF" w:rsidRDefault="006054AF" w:rsidP="006054AF">
+<w:p w:rsidR="006054AF" w:rsidRPr="006054AF" w:rsidRDefault="00FC6A1B" w:rsidP="006054AF">
 <w:pPr>
 <w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
 <w:contextualSpacing/>
@@ -11811,13 +12946,45 @@
 <w:szCs w:val="24"/>
 </w:rPr>
 </w:pPr>
-<w:r w:rsidRPr="006054AF">
+<w:r>
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t xml:space="preserve">Recall the earlier examples of semantic interpretations given in section XYZ.  For hundreds of years, logicians produced (worked with) interpretations of logic formulas that were all very similar to those interpretations shown in section XYZ.  Typical interpretations involved domains such as integers and real numbers on the one hand, and the domains of arguments and assertions about the natural world on the other.  Furthermore, the old 'typical' interpretations produced interpreted formulas that were seen as static assertions of facts and properties of the domain objects.  Interpretations of formulas had not been used to define an executable algorithmic process.  Kowalski's </w:t>
+<w:tab/>
+</w:r>
+<w:r w:rsidR="006054AF" w:rsidRPr="006054AF">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>Recall the earlier examples of semantic interpretations given in</w:t>
+</w:r>
+<w:r>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve"> the preliminary definitions</w:t>
+</w:r>
+<w:r w:rsidR="006054AF" w:rsidRPr="006054AF">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve"> section.  For hundreds of years, logicians produced (worked with) interpretations of logic formulas that were all very similar to those interpretations shown in </w:t>
+</w:r>
+<w:r>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>the preliminary definitions</w:t>
 </w:r>
 <w:r w:rsidRPr="006054AF">
 <w:rPr>
@@ -11825,8 +12992,40 @@
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
+<w:t xml:space="preserve"> section</w:t>
+</w:r>
+<w:r w:rsidR="006054AF" w:rsidRPr="006054AF">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve">.  Typical interpretations involved domains such as integers and real numbers on the one hand, and the domains of arguments and assertions about the natural world on the other.  Furthermore, the old 'typical' interpretations produced interpreted formulas that were seen as static assertions of facts and properties of the domain objects.  Interpretations of formulas had not been used to define an executable algorithmic process.  Kowalski's </w:t>
+</w:r>
+<w:r w:rsidR="006054AF" w:rsidRPr="006054AF">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
 <w:lastRenderedPageBreak/>
-<w:t>insight about how to interpret FOL itself as a programming language was revolutionary, and has given us a new and separate programming paradigm to study alongside the functional and imperative paradigms.</w:t>
+<w:t>insight about how to interpret FOL itself as a programming language was revolutionary, and has given us a new and separate programming paradigm to</w:t>
+</w:r>
+<w:r>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve"> employ and to</w:t>
+</w:r>
+<w:r w:rsidR="006054AF" w:rsidRPr="006054AF">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve"> study alongside the functional and imperative paradigms.</w:t>
 </w:r>
 </w:p>
 <w:p w:rsidR="006054AF" w:rsidRPr="006054AF" w:rsidRDefault="003233B3" w:rsidP="006054AF">
@@ -11853,25 +13052,57 @@
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t xml:space="preserve">The 'procedural interpretation' of FOL has historically been defined on a fragment of FOL that is restricted to formulas in Horn clause form.  In keeping with standard definitions throughout all fields (subfields, </w:t>
+<w:t xml:space="preserve">The 'procedural interpretation' of FOL has historically been defined on a fragment of FOL that is restricted to formulas in Horn clause form.  In keeping with standard definitions </w:t>
 </w:r>
-<w:proofErr w:type="spellStart"/>
+<w:r w:rsidR="00FC6A1B">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve">common to all branches </w:t>
+</w:r>
 <w:r w:rsidR="006054AF" w:rsidRPr="006054AF">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t>etc</w:t>
+<w:t xml:space="preserve">of propositional and predicate logic, a </w:t>
 </w:r>
-<w:proofErr w:type="spellEnd"/>
+<w:r w:rsidR="006054AF" w:rsidRPr="00FC6A1B">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:i/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>clause</w:t>
+</w:r>
 <w:r w:rsidR="006054AF" w:rsidRPr="006054AF">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t>) of propositional and predicate logic, a &lt;i&gt;clause&lt;/i&gt; is a disjunction of literals.  A Horn clause, then, is a clause having no more than one positive literal (and any number -- zero or more -- negative literals).</w:t>
+<w:t xml:space="preserve"> is a disjunction of literals.  A </w:t>
+</w:r>
+<w:r w:rsidR="006054AF" w:rsidRPr="00FC6A1B">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:i/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>Horn clause</w:t>
+</w:r>
+<w:r w:rsidR="006054AF" w:rsidRPr="006054AF">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve"> is a clause having no more than one positive literal (and any number -- zero or more -- negative literals).</w:t>
 </w:r>
 </w:p>
 <w:p w:rsidR="006054AF" w:rsidRPr="006054AF" w:rsidRDefault="003233B3" w:rsidP="006054AF">
@@ -11900,6 +13131,8 @@
 </w:rPr>
 <w:t>The following is a typical Horn clause:</w:t>
 </w:r>
+<w:bookmarkStart w:id="0" w:name="_GoBack"/>
+<w:bookmarkEnd w:id="0"/>
 </w:p>
 <w:p w:rsidR="006054AF" w:rsidRPr="006054AF" w:rsidRDefault="006054AF" w:rsidP="006054AF">
 <w:pPr>
@@ -12060,7 +13293,23 @@
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t>This is why the Horn clause A v -B v -C is expressed in Prolog as:</w:t>
+<w:t xml:space="preserve">This is why the Horn clause A v -B v -C is expressed in </w:t>
+</w:r>
+<w:r w:rsidR="00FC6A1B">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>Prolog</w:t>
+</w:r>
+<w:r w:rsidRPr="006054AF">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve"> as:</w:t>
 </w:r>
 </w:p>
 <w:p w:rsidR="006054AF" w:rsidRPr="006054AF" w:rsidRDefault="006054AF" w:rsidP="006054AF">
@@ -12138,7 +13387,23 @@
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t>Note that in Prolog ':-' is the notation used for &lt;-, and the comma represents conjunction.</w:t>
+<w:t xml:space="preserve">Note that in </w:t>
+</w:r>
+<w:r w:rsidR="00FC6A1B">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>Prolog</w:t>
+</w:r>
+<w:r w:rsidRPr="006054AF">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve"> ':-' is the notation used for &lt;-, and the comma represents conjunction.</w:t>
 </w:r>
 </w:p>
 <w:p w:rsidR="006054AF" w:rsidRPr="006054AF" w:rsidRDefault="006054AF" w:rsidP="006054AF">
@@ -12726,7 +13991,23 @@
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t>As we said earlier, the role of program interpreter is played by the proof procedure.  In Prolog, the proof procedure is a refinement of Robinson's resolution procedure (rule? inference? check precise terminology).</w:t>
+<w:t xml:space="preserve">As we said earlier, the role of program interpreter is played by the proof procedure.  In </w:t>
+</w:r>
+<w:r w:rsidR="00FC6A1B">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>Prolog</w:t>
+</w:r>
+<w:r w:rsidR="006054AF" w:rsidRPr="006054AF">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>, the proof procedure is a refinement of Robinson's resolution procedure (rule? inference? check precise terminology).</w:t>
 </w:r>
 </w:p>
 <w:p w:rsidR="006054AF" w:rsidRPr="006054AF" w:rsidRDefault="00DA4063" w:rsidP="006054AF">
@@ -13482,13 +14763,21 @@
 </w:rPr>
 <w:tab/>
 </w:r>
+<w:r w:rsidR="00FC6A1B">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>Prolog</w:t>
+</w:r>
 <w:r w:rsidR="006054AF" w:rsidRPr="006054AF">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t xml:space="preserve">Prolog permits functional notation and predicates of arbitrary </w:t>
+<w:t xml:space="preserve"> permits functional notation and predicates of arbitrary </w:t>
 </w:r>
 <w:proofErr w:type="spellStart"/>
 <w:r w:rsidR="006054AF" w:rsidRPr="006054AF">
@@ -13506,7 +14795,23 @@
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t>.  Therefore, Prolog relies on the extended FOL version of resolution in its full generality. (... add a few more explanatory notes about general resolution here...)</w:t>
+<w:t xml:space="preserve">.  Therefore, </w:t>
+</w:r>
+<w:r w:rsidR="00FC6A1B">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>Prolog</w:t>
+</w:r>
+<w:r w:rsidR="006054AF" w:rsidRPr="006054AF">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve"> relies on the extended FOL version of resolution in its full generality. (... add a few more explanatory notes about general resolution here...)</w:t>
 </w:r>
 </w:p>
 <w:p w:rsidR="006054AF" w:rsidRPr="006054AF" w:rsidRDefault="00DA4063" w:rsidP="006054AF">
@@ -13549,7 +14854,23 @@
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t xml:space="preserve"> to show the brief demonstration of resolution given above, the demonstration is sufficient to clarify the few remaining points about the computation steps involved in executing Prolog source code.</w:t>
+<w:t xml:space="preserve"> to show the brief demonstration of resolution given above, the demonstration is sufficient to clarify the few remaining points about the computation steps involved in executing </w:t>
+</w:r>
+<w:r w:rsidR="00FC6A1B">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>Prolog</w:t>
+</w:r>
+<w:r w:rsidR="006054AF" w:rsidRPr="006054AF">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve"> source code.</w:t>
 </w:r>
 </w:p>
 <w:p w:rsidR="006054AF" w:rsidRPr="006054AF" w:rsidRDefault="00DA4063" w:rsidP="006054AF">
@@ -13924,7 +15245,23 @@
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t xml:space="preserve">, what actually happens in a Prolog system is that </w:t>
+<w:t xml:space="preserve">, what actually happens in a </w:t>
+</w:r>
+<w:r w:rsidR="00FC6A1B">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>Prolog</w:t>
+</w:r>
+<w:r w:rsidR="006054AF" w:rsidRPr="006054AF">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve"> system is that </w:t>
 </w:r>
 <w:proofErr w:type="spellStart"/>
 <w:r w:rsidR="006054AF" w:rsidRPr="006054AF">
@@ -14252,17 +15589,7 @@
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t>, we must continue making logical inferences in this way until we derive [].  To complete the call in this example, we require that somewhere in the set of program clauses there is a clause containing the positive literal g1.  Likewise, there must be a program clause containing the positive l</w:t>
-</w:r>
-<w:bookmarkStart w:id="0" w:name="_GoBack"/>
-<w:bookmarkEnd w:id="0"/>
-<w:r w:rsidR="006054AF" w:rsidRPr="006054AF">
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-<w:t>iteral g2, and another clause containing c.</w:t>
+<w:t>, we must continue making logical inferences in this way until we derive [].  To complete the call in this example, we require that somewhere in the set of program clauses there is a clause containing the positive literal g1.  Likewise, there must be a program clause containing the positive literal g2, and another clause containing c.</w:t>
 </w:r>
 </w:p>
 <w:p w:rsidR="006054AF" w:rsidRPr="006054AF" w:rsidRDefault="006054AF" w:rsidP="006054AF">
@@ -14783,7 +16110,23 @@
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t xml:space="preserve"> key strength of prolog: that when a proof is found (the refutation of the -</w:t>
+<w:t xml:space="preserve"> key strength of </w:t>
+</w:r>
+<w:r w:rsidR="00FC6A1B">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>Prolog</w:t>
+</w:r>
+<w:r w:rsidRPr="006054AF">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>: that when a proof is found (the refutation of the -</w:t>
 </w:r>
 <w:proofErr w:type="spellStart"/>
 <w:r w:rsidRPr="006054AF">
@@ -14842,7 +16185,23 @@
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t>3. SUB-SECTION:  Weaknesses and limitations of Prolog.</w:t>
+<w:t xml:space="preserve">3. SUB-SECTION:  Weaknesses and limitations of </w:t>
+</w:r>
+<w:r w:rsidR="00FC6A1B">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>Prolog</w:t>
+</w:r>
+<w:r w:rsidRPr="006054AF">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>.</w:t>
 </w:r>
 </w:p>
 <w:p w:rsidR="006054AF" w:rsidRPr="006054AF" w:rsidRDefault="006054AF" w:rsidP="006054AF">
@@ -14872,7 +16231,23 @@
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t>We have seen that a standard Prolog system is _________</w:t>
+<w:t xml:space="preserve">We have seen that a standard </w:t>
+</w:r>
+<w:r w:rsidR="00FC6A1B">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>Prolog</w:t>
+</w:r>
+<w:r w:rsidRPr="006054AF">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve"> system is _________</w:t>
 </w:r>
 <w:proofErr w:type="gramStart"/>
 <w:r w:rsidRPr="006054AF">
@@ -14890,7 +16265,23 @@
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t xml:space="preserve">proof-related...).  Prolog's ability to serve as a programming language has also been established.  For the purposes of </w:t>
+<w:t xml:space="preserve">proof-related...).  </w:t>
+</w:r>
+<w:r w:rsidR="00FC6A1B">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>Prolog</w:t>
+</w:r>
+<w:r w:rsidRPr="006054AF">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve">'s ability to serve as a programming language has also been established.  For the purposes of </w:t>
 </w:r>
 <w:proofErr w:type="spellStart"/>
 <w:r w:rsidRPr="006054AF">
@@ -14908,7 +16299,23 @@
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t xml:space="preserve"> POQ we require Prolog to serve as a rudimentary theorem </w:t>
+<w:t xml:space="preserve"> POQ we require </w:t>
+</w:r>
+<w:r w:rsidR="00FC6A1B">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>Prolog</w:t>
+</w:r>
+<w:r w:rsidRPr="006054AF">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve"> to serve as a rudimentary theorem </w:t>
 </w:r>
 <w:proofErr w:type="spellStart"/>
 <w:r w:rsidRPr="006054AF">
@@ -14926,7 +16333,23 @@
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t xml:space="preserve">.  In other words, while building POQ we will not use Prolog to define &lt;i&gt;procedures&lt;i&gt; such as </w:t>
+<w:t xml:space="preserve">.  In other words, while building POQ we will not use </w:t>
+</w:r>
+<w:r w:rsidR="00FC6A1B">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>Prolog</w:t>
+</w:r>
+<w:r w:rsidRPr="006054AF">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve"> to define &lt;i&gt;procedures&lt;i&gt; such as </w:t>
 </w:r>
 <w:proofErr w:type="spellStart"/>
 <w:r w:rsidRPr="006054AF">
@@ -14945,7 +16368,23 @@
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t xml:space="preserve">.  Instead, we need to use Prolog in order to codify axioms about SQL statements, such </w:t>
+<w:t xml:space="preserve">.  Instead, we need to use </w:t>
+</w:r>
+<w:r w:rsidR="00FC6A1B">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>Prolog</w:t>
+</w:r>
+<w:r w:rsidRPr="006054AF">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve"> in order to codify axioms about SQL statements, such </w:t>
 </w:r>
 <w:proofErr w:type="gramStart"/>
 <w:r w:rsidRPr="006054AF">
@@ -15051,7 +16490,55 @@
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t>However, Prolog systems include trade-offs that favor the use of Prolog as a general purpose programming language and deemphasize its theorem-proving capabilities.  Only by enumerating and cataloguing these weaknesses can we be certain that POQ will only use Prolog's theorem-proving assets in an effective way.</w:t>
+<w:t xml:space="preserve">However, </w:t>
+</w:r>
+<w:r w:rsidR="00FC6A1B">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>Prolog</w:t>
+</w:r>
+<w:r w:rsidRPr="006054AF">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve"> systems include trade-offs that favor the use of </w:t>
+</w:r>
+<w:r w:rsidR="00FC6A1B">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>Prolog</w:t>
+</w:r>
+<w:r w:rsidRPr="006054AF">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve"> as a general purpose programming language and deemphasize its theorem-proving capabilities.  Only by enumerating and cataloguing these weaknesses can we be certain that POQ will only use </w:t>
+</w:r>
+<w:r w:rsidR="00FC6A1B">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>Prolog</w:t>
+</w:r>
+<w:r w:rsidRPr="006054AF">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>'s theorem-proving assets in an effective way.</w:t>
 </w:r>
 </w:p>
 <w:p w:rsidR="006054AF" w:rsidRPr="006054AF" w:rsidRDefault="006054AF" w:rsidP="006054AF">
@@ -15081,7 +16568,39 @@
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t xml:space="preserve">For a prototype system, we accept weaknesses that may lead to a loss of completeness.  However, we categorically exclude the use of any Prolog features that would yield a loss of soundness.  Once the fundamental aspects of soundness and completeness have been considered, we must also note where certain implementation details of Prolog systems can hurt the efficiency of finding proofs.  Here, too, we may accept a known loss of efficiency (compared to "full-service" </w:t>
+<w:t xml:space="preserve">For a prototype system, we accept weaknesses that may lead to a loss of completeness.  However, we categorically exclude the use of any </w:t>
+</w:r>
+<w:r w:rsidR="00FC6A1B">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>Prolog</w:t>
+</w:r>
+<w:r w:rsidRPr="006054AF">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve"> features that would yield a loss of soundness.  Once the fundamental aspects of soundness and completeness have been considered, we must also note where certain implementation details of </w:t>
+</w:r>
+<w:r w:rsidR="00FC6A1B">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>Prolog</w:t>
+</w:r>
+<w:r w:rsidRPr="006054AF">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve"> systems can hurt the efficiency of finding proofs.  Here, too, we may accept a known loss of efficiency (compared to "full-service" </w:t>
 </w:r>
 <w:proofErr w:type="spellStart"/>
 <w:r w:rsidRPr="006054AF">
@@ -15099,7 +16618,23 @@
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t>) in order to benefit from the ease-of-use (simplicity, ample documentation) of Prolog.</w:t>
+<w:t xml:space="preserve">) in order to benefit from the ease-of-use (simplicity, ample documentation) of </w:t>
+</w:r>
+<w:r w:rsidR="00FC6A1B">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>Prolog</w:t>
+</w:r>
+<w:r w:rsidRPr="006054AF">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>.</w:t>
 </w:r>
 </w:p>
 <w:p w:rsidR="006054AF" w:rsidRPr="006054AF" w:rsidRDefault="006054AF" w:rsidP="006054AF">
@@ -15184,7 +16719,23 @@
 <w:szCs w:val="24"/>
 </w:rPr>
 <w:lastRenderedPageBreak/>
-<w:t>The use of prolog for general purpose programming has always been a principal motivator...</w:t>
+<w:t xml:space="preserve">The use of </w:t>
+</w:r>
+<w:r w:rsidR="00FC6A1B">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>Prolog</w:t>
+</w:r>
+<w:r w:rsidRPr="006054AF">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve"> for general purpose programming has always been a principal motivator...</w:t>
 </w:r>
 </w:p>
 <w:p w:rsidR="006054AF" w:rsidRPr="006054AF" w:rsidRDefault="006054AF" w:rsidP="006054AF">
@@ -17532,7 +19083,23 @@
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t>The analysis section (here) is probably also the place to show some complexity values, based on search trees and unification in prolog.</w:t>
+<w:t xml:space="preserve">The analysis section (here) is probably also the place to show some complexity values, based on search trees and unification in </w:t>
+</w:r>
+<w:r w:rsidR="00FC6A1B">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>Prolog</w:t>
+</w:r>
+<w:r w:rsidRPr="00C261FF">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>.</w:t>
 </w:r>
 </w:p>
 <w:p w:rsidR="00C261FF" w:rsidRPr="00C261FF" w:rsidRDefault="00C261FF" w:rsidP="00C261FF">
@@ -17592,7 +19159,23 @@
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t>Discuss difficulties with arithmetic in a Prolog theorem-</w:t>
+<w:t xml:space="preserve">Discuss difficulties with arithmetic in a </w:t>
+</w:r>
+<w:r w:rsidR="00FC6A1B">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>Prolog</w:t>
+</w:r>
+<w:r w:rsidRPr="00C261FF">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve"> theorem-</w:t>
 </w:r>
 <w:proofErr w:type="spellStart"/>
 <w:r w:rsidRPr="00C261FF">
@@ -17885,7 +19468,23 @@
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t>Enter: Prolog and resolution/unification.</w:t>
+<w:t xml:space="preserve">Enter: </w:t>
+</w:r>
+<w:r w:rsidR="00FC6A1B">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>Prolog</w:t>
+</w:r>
+<w:r>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve"> and resolution/unification.</w:t>
 </w:r>
 </w:p>
 <w:p w:rsidR="006054AF" w:rsidRDefault="006054AF" w:rsidP="006054AF">
@@ -19032,14 +20631,14 @@
 </w:rPr>
 <w:fldChar w:fldCharType="separate"/>
 </w:r>
-<w:r w:rsidR="00657983">
+<w:r w:rsidR="00FC6A1B">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:noProof/>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t>31</w:t>
+<w:t>25</w:t>
 </w:r>
 <w:r w:rsidRPr="00952998">
 <w:rPr>
@@ -19092,7 +20691,7 @@
 </w:rPr>
 <w:fldChar w:fldCharType="separate"/>
 </w:r>
-<w:r w:rsidR="006054AF">
+<w:r w:rsidR="00FC6A1B">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:noProof/>
@@ -19503,6 +21102,7 @@
 <w:rsid w:val="000A7D0E"/>
 <w:rsid w:val="000E063A"/>
 <w:rsid w:val="000E6BB9"/>
+<w:rsid w:val="000F7EC4"/>
 <w:rsid w:val="00137987"/>
 <w:rsid w:val="00137CE1"/>
 <w:rsid w:val="00161875"/>
@@ -19522,6 +21122,7 @@
 <w:rsid w:val="002A098B"/>
 <w:rsid w:val="002B7CF4"/>
 <w:rsid w:val="002C4E24"/>
+<w:rsid w:val="002D3887"/>
 <w:rsid w:val="00313340"/>
 <w:rsid w:val="003157ED"/>
 <w:rsid w:val="003233B3"/>
@@ -19529,6 +21130,7 @@
 <w:rsid w:val="00384BF9"/>
 <w:rsid w:val="00386A3C"/>
 <w:rsid w:val="003C6C13"/>
+<w:rsid w:val="003E0E53"/>
 <w:rsid w:val="00412E3C"/>
 <w:rsid w:val="004213E9"/>
 <w:rsid w:val="004252A5"/>
@@ -19536,6 +21138,7 @@
 <w:rsid w:val="0046416B"/>
 <w:rsid w:val="00476BE6"/>
 <w:rsid w:val="00477F42"/>
+<w:rsid w:val="004F0090"/>
 <w:rsid w:val="004F3CA9"/>
 <w:rsid w:val="004F59DE"/>
 <w:rsid w:val="00501E81"/>
@@ -19551,11 +21154,14 @@
 <w:rsid w:val="00657983"/>
 <w:rsid w:val="0068682D"/>
 <w:rsid w:val="00695037"/>
+<w:rsid w:val="006F2BE1"/>
+<w:rsid w:val="006F64B6"/>
 <w:rsid w:val="00741439"/>
 <w:rsid w:val="007577AB"/>
 <w:rsid w:val="00767191"/>
 <w:rsid w:val="00777C47"/>
 <w:rsid w:val="007846CE"/>
+<w:rsid w:val="00791169"/>
 <w:rsid w:val="00793AE4"/>
 <w:rsid w:val="007B1266"/>
 <w:rsid w:val="007C701F"/>
@@ -19564,6 +21170,7 @@
 <w:rsid w:val="00844E63"/>
 <w:rsid w:val="00871B48"/>
 <w:rsid w:val="00872597"/>
+<w:rsid w:val="00877415"/>
 <w:rsid w:val="008823CF"/>
 <w:rsid w:val="00896CED"/>
 <w:rsid w:val="008A5FF5"/>
@@ -19573,16 +21180,19 @@
 <w:rsid w:val="008F12D3"/>
 <w:rsid w:val="00914A92"/>
 <w:rsid w:val="00924A69"/>
+<w:rsid w:val="00932199"/>
 <w:rsid w:val="0094063E"/>
 <w:rsid w:val="00952998"/>
 <w:rsid w:val="00953414"/>
 <w:rsid w:val="00990028"/>
 <w:rsid w:val="009907F9"/>
+<w:rsid w:val="009A5436"/>
 <w:rsid w:val="009A6439"/>
 <w:rsid w:val="009E2084"/>
 <w:rsid w:val="009E657F"/>
 <w:rsid w:val="00A10CBF"/>
 <w:rsid w:val="00A433C9"/>
+<w:rsid w:val="00A565FB"/>
 <w:rsid w:val="00A71402"/>
 <w:rsid w:val="00AB4F0D"/>
 <w:rsid w:val="00B242B7"/>
@@ -19597,6 +21207,7 @@
 <w:rsid w:val="00C165C2"/>
 <w:rsid w:val="00C261FF"/>
 <w:rsid w:val="00C41BC4"/>
+<w:rsid w:val="00C5159E"/>
 <w:rsid w:val="00C52439"/>
 <w:rsid w:val="00C66B24"/>
 <w:rsid w:val="00C7069A"/>
@@ -19620,6 +21231,7 @@
 <w:rsid w:val="00E15281"/>
 <w:rsid w:val="00E24FAB"/>
 <w:rsid w:val="00E703EB"/>
+<w:rsid w:val="00E72F7C"/>
 <w:rsid w:val="00EA293A"/>
 <w:rsid w:val="00EA6A7E"/>
 <w:rsid w:val="00EA77A9"/>
@@ -19632,6 +21244,7 @@
 <w:rsid w:val="00F659B0"/>
 <w:rsid w:val="00F720B3"/>
 <w:rsid w:val="00FC15BE"/>
+<w:rsid w:val="00FC6A1B"/>
 </w:rsids>
 <m:mathPr>
 <m:mathFont m:val="Cambria Math"/>
@@ -19823,7 +21436,6 @@
 <w:style w:type="character" w:default="1" w:styleId="DefaultParagraphFont">
 <w:name w:val="Default Paragraph Font"/>
 <w:uiPriority w:val="1"/>
-<w:semiHidden/>
 <w:unhideWhenUsed/>
 </w:style>
 <w:style w:type="table" w:default="1" w:styleId="TableNormal">
@@ -20177,21 +21789,21 @@
 <Template>
 Normal.dotm</Template>
 <TotalTime>
-229</TotalTime>
+307</TotalTime>
 <Pages>
 60</Pages>
 <Words>
-7510</Words>
+7718</Words>
 <Characters>
-42812</Characters>
+43999</Characters>
 <Application>
 Microsoft Office Word</Application>
 <DocSecurity>
 0</DocSecurity>
 <Lines>
-356</Lines>
+366</Lines>
 <Paragraphs>
-100</Paragraphs>
+103</Paragraphs>
 <ScaleCrop>
 false</ScaleCrop>
 <HeadingPairs>
@@ -20215,7 +21827,7 @@ Title</vt:lpstr>
 <LinksUpToDate>
 false</LinksUpToDate>
 <CharactersWithSpaces>
-50222</CharactersWithSpaces>
+51614</CharactersWithSpaces>
 <SharedDoc>
 false</SharedDoc>
 <HyperlinksChanged>
@@ -20234,7 +21846,7 @@ false</HyperlinksChanged>
 </pkg:part>
 <pkg:part pkg:name="/customXml/itemProps1.xml" pkg:contentType="application/vnd.openxmlformats-officedocument.customXmlProperties+xml" pkg:padding="32">
 <pkg:xmlData pkg:originalXmlStandalone="no">
-<ds:datastoreItem ds:itemID="{5C62E55C-B3B3-4970-BAE3-76101743E5ED}" xmlns:ds="http://schemas.openxmlformats.org/officeDocument/2006/customXml">
+<ds:datastoreItem ds:itemID="{EDFC9F62-E4C3-4598-B33C-D56111EC865F}" xmlns:ds="http://schemas.openxmlformats.org/officeDocument/2006/customXml">
 <ds:schemaRefs>
 <ds:schemaRef ds:uri="http://schemas.openxmlformats.org/officeDocument/2006/bibliography"/>
 </ds:schemaRefs>
@@ -20480,7 +22092,6 @@ false</HyperlinksChanged>
 <w:style w:type="character" w:default="1" w:styleId="DefaultParagraphFont">
 <w:name w:val="Default Paragraph Font"/>
 <w:uiPriority w:val="1"/>
-<w:semiHidden/>
 <w:unhideWhenUsed/>
 </w:style>
 <w:style w:type="table" w:default="1" w:styleId="TableNormal">
@@ -20604,11 +22215,11 @@ Someone</dc:creator>
 <cp:lastModifiedBy>
 Someone</cp:lastModifiedBy>
 <cp:revision>
-78</cp:revision>
+93</cp:revision>
 <dcterms:created xsi:type="dcterms:W3CDTF">
 2012-08-19T03:41:00Z</dcterms:created>
 <dcterms:modified xsi:type="dcterms:W3CDTF">
-2012-09-03T01:06:00Z</dcterms:modified>
+2012-09-03T02:27:00Z</dcterms:modified>
 </cp:coreProperties>
 </pkg:xmlData>
 </pkg:part>
