@@ -1,12 +1,14 @@
 
 The central idea in this thesis is that SQL practitioners can benefit greatly from an assertion-checking system that can verify relevant user-assumptions surrounding the user-formulated SQL statement.  We have already argued in favor of the beneficial outcomes that would be supported by such a tool.  Work still remains, however, to show that building such a tool is possible.
 
-An essential part of such a tool would be a theorem-prover engine that can prove the validity of assertions.  The purpose of this chapter is to establish the feasibility of Prolog as an adequate prototyping prover environment for POQ.  The fundamental concepts that are understood, manipulated, and exercised in a Prolog system are axioms, inference rules, and proof derivation.  Yet, for various reasons it is not possible to treat a standard Prolog environment as a full-fledged theorem prover in its own right.  This chapter provides details on the weaknesses of Prolog that prevent its acceptance as a (true, complete, indisputable, unassailable) automated theorem prover.  However, carefully restricted use of a subset of Prolog is indeed valid for determining the success of early prototypes of POQ.
+An essential part of such a tool would be a theorem-prover engine that can prove the validity of assertions.  The purpose of this chapter is to establish the feasibility of Prolog as an adequate prototyping prover environment for POQ.  The fundamental concepts that are understood, manipulated, and exercised in a Prolog system are axioms, inference rules, and proof derivation.  This certainly indicates that Prolog has theorem-proving capabilities built in.  Yet, for various reasons it is not possible to treat a standard Prolog environment as a full-fledged theorem prover in its own right.  This chapter provides details on the weaknesses of Prolog that prevent its acceptance as a (true, complete, indisputable, unassailable) automated theorem prover.  However, carefully restricted use of a subset of Prolog is indeed valid for determining the success of early prototypes of POQ.
 
 
 1. SUB-SECTION:  preliminary definitions
 
 Any discussion of Prolog is always firmly rooted in basic notions from first order logic.  This section establishes basic notation and definitions that will be useful throughout the remainder of the chapter.  We assume the reader is already familiar with the syntax of well-formed formulas of propositional logic and well-formed formulas of predicate logic.  This preliminary section is intended to clarify the particular set of symbols used.  It is not intended as any sort of tutorial or guide to FOL syntax. (rephrase).
+
+Use FOL and predicate logic interchangeably.
 
 relatively standard
 
@@ -21,15 +23,17 @@ symbols that are less standard, but common in discussions of prolog:
 <-  implication, with the operands in reverse order
 []  (the square) absurdum
 
+Also:  LOWER-CASE letters for atomic formula, so as not to end up with confusion later on.  upper case letters are always VARIABLES in Prolog ...
+
 Two other ideas that will play a central role in this chapter: interpretations and refutation.
 
 Both propositional and predicate logic are designed for determining the truth or falsity of formulas.  In order to make the determination, it is necessary to establish both the targeted formula, and also an interpretation for the formula.  An interpretation is simply a mapping of the formulaic symbols to the domain-specific concepts that the symbols are intended to represent.  Here are a few classic examples:
 
-Formula: A  ^  B
+Formula: A  ^  B                         // fix the casing!
 Interpretation:  A represents ""; B represents ""
 Valuation: statement is true.
 
-Formula: A  ^  B
+Formula: A  ^  B                          // fix the casing!
 Interpretation:  A represents ""; B represents ""
 Valuation: statement is true.
 
@@ -82,7 +86,7 @@ In Prolog, the Prolog interpreter does not in fact "call the function bounding_r
 
 Despite the significant difference between function calls and goal reductions, it is sensible (permissible) to view bounding_rect_for_drawing_usernm <i>as if</i> it were a callable procedure.  The basis for the exchangeability of the procedural view and the goal-reduction view is due to the ground-breaking (hypen?) work by Kowalski showing that a particular fragment of FOL has a <i>procedural interpretation</i>.  In other words, the earlier snippet of code is simply one possible interpretation of the following FOL formula:
 
-    A <- ( B ^ C ^ D ).
+    A <- ( B ^ C ^ D ).    // fix the casing!
 
 (next paragraph needs heavy revision. goal is to say: "wow this is so revolutionary!" -- hopefully without sounding silly)
 Recall the earlier examples of semantic interpretations given in section XYZ.  For hundreds of years, logicians produced (worked with) interpretations of logic formulas that were all very similar to those interpretations shown in section XYZ.  Typical interpretations involved domains such as integers and real numbers on the one hand, and the domains of arguments and assertions about the natural world on the other.  Furthermore, the old 'typical' interpretations produced interpreted formulas that were seen as static assertions of facts and properties of the domain objects.  Interpretations of formulas had not been used to define an executable algorithmic process.  Kowalski's insight about how to interpret FOL itself as a programming language was revolutionary, and has given us a new and separate programming paradigm to study alongside the functional and imperative paradigms.
@@ -91,11 +95,11 @@ The 'procedural interpretation' of FOL has historically been defined on a fragme
 
 The following is a typical Horn clause:
 
-    A v -B v -C
+    A v -B v -C    // fix the casing!
 
 Because of several well-known logical equivalences including X <- Y === X v -Y (and the distribuitivity? of v and negation), the same Horn clause can also be expressed as:
 
-    A <- (B /\ C)
+    A <- (B /\ C)        // fix the casing!
 
 This is why the Horn clause A v -B v -C is expressed in Prolog as:
 
@@ -129,8 +133,77 @@ Assuming that we seek a successful computation, then once the procedure begins o
 
 we would actually like to derive a contradiction, which would indicate a successful proof of the original proposed theorem.
 
+As we said earlier, the role of program interpreter is played by the proof procedure.  In Prolog, the proof procedure is a refinement of Robinson's resolution procedure (rule? inference? check precise terminology).
+
+Here is a simplified demonstration of how resolution works:
+
+Let the program clauses be:
+
+c1: r v -p v -b
+c2: b v -p
+c3: p
+
+The new theorem (the goal) is: r, so we negate that in preparation for the proof-by-contradiction.  The negated proposed theorem is added to set of the program clauses, yielding:
+
+c1: r v -p v -b
+c2: b v -p
+c3: p
+g:  -r
+
+If the resolution procedure derives a contradiction, then we have proved the theorem ''.
+
+Resolution procedes by repeatedly finding a pair of clauses in the set that ..., and adding the <i>resolvent</i> of the pair to the total set of clauses.  (define resolvent).  In a successful computation, eventually the resolvent of some pair will be [] (box), which indicates the desired contradiction.
+
+Continuing the example:
+
+From c1 and c2, use the resolution rule to infer:
+
+c4: r v -p
+
+From c4 and c3, infer:
+
+c5: r
+
+We can see that g and c5 yield a contradiction.  From g and c5 we derive [], which was the desired result.  The proof of the theoremhood of r is complete.
+
+All that has been shown in this simplified demonstration is the resolution rule as applied to propositional formulas.  However, when Robinson discovered resolution there were already highly effective procedures for deciding the satisfiability and unsatisfiability of sets of propositional clauses.  The real power of resolution lies in the fact that Robinson was able to define an extended form that works for any set of first-order clauses.  This means that the clauses can contain predicates and functions of arbitrary arities instead of simply propositions.
+
+Prolog permits functional notation and predicates of arbitrary arities.  Therefore, Prolog relies on the extended FOL version of resolution in its full generality. (... add a few more explanatory notes about general resolution here...)
+
+Despite the simplifications use to show the brief demonstration of resolution given above, the demonstration is sufficient to clarify the few remaining points about the computation steps involved in executing Prolog source code.
+
+Returning to our original source code snippet, we can now provide specifics about how the execution path through a 'procedure call' to bounding_rect_for_drawing_usernm is fundamentally different from an execution path through a similarly coded procedure in a typical imperative programming language.
+
+Recall that we assumed that the code snippet for bounding_rect_for_drawing_usernm would be present as a library routine in our program.
+
+This means that our program consists of a set of predicate logic Horn clauses like so:
+
+    ....
+    b v -g1 v -g2 v -c
+    ...
+
+where b stands for bounding_rect_for_drawing_usernm, g1 stands for get_font_setting, g2 stands for get_trimmed_usernm_string, and c stands for calculate_bounding_rect_for_string_and_font.
+
+To make a 'procedure call' to bounding_rect_for_drawing_usernm, what actually happens in a Prolog system is that bounding_rect_for_drawing_usernm is posed as a prospective theorem to be proved, also known as a goal statement.  The proof attempt proceeds by contradiction, so we negate bounding_rect_for_drawing_usernm, yielding a set of clauses:
+
+    ....
+    b v -g1 v -g2 v -c
+    ...
+    -b
+
+This set is input to the resolution procedure, which continuously derives resolvents until we (hopefully) derive the contradiction [].
+
+Clearly, the given set of clauses immediately allows for the derivation of:
+
+    -g1 v -g2 v -c
+
+To complete the 'procedure call' to bounding_rect_for_drawing_usernm, we must continue making logical inferences in this way until we derive [].  To complete the call in this example, we require that somewhere in the set of program clauses there is a clause containing the positive literal g1.  Likewise, there must be a program clause containing the positive literal g2, and another clause containing c.
+
+Still to cover: non-determinism. backtracking.  then that should be it for this section.
 
 
+
+my own review/revision notes.  make sure these points are covered adequately:
 
 set of 'procedure declarations' is a program.
 
@@ -145,8 +218,9 @@ we wish to derive contradiction [] (box), which means the program halted success
 the proof procedure is the interpreter.
 
 
+my own review/revision notes.  this might go in this chapter, or perhaps in the next chapter:
 
----> ! important ! before the close of this section, remember to mention another key strength: that when a proof is found (the refutation of the -Lgoal which proves goal), we also get a satisfying assignment.
+another key strength of prolog: that when a proof is found (the refutation of the -Lgoal which proves goal), we also get a satisfying assignment.
 
 
 3. SUB-SECTION:  Weaknesses and limitations of Prolog.
@@ -158,21 +232,6 @@ We have seen that a standard Prolog system is __________(proof-related...).  Pro
 However, Prolog systems include trade-offs that favor the use of Prolog as a general purpose programming language and deemphasize its theorem-proving capabilities.  Only by enumerating and cataloguing these weaknesses can we be certain that POQ will only use Prolog's theorem-proving assets in an effective way.
 
 For a prototype system, we accept weaknesses that may lead to a loss of completeness.  However, we categorically exclude the use of any Prolog features that would yield a loss of soundness.  Once the fundamental aspects of soundness and completeness have been considered, we must also note where certain implementation details of Prolog systems can hurt the efficiency of finding proofs.  Here, too, we may accept a known loss of efficiency (compared to "full-service" provers) in order to benefit from the ease-of-use (simplicity, ample documentation) of Prolog.
-
-weaknesses:
-
-unsound unification
-depth-first search (infinite paths)
-arithmetic and "equals"
-negation, non-horn clauses
-meta-logical stuff: var, name, functor
-retract, assert
-cut
-
-
-
----------================-------------------
-
 
 
 
@@ -188,24 +247,31 @@ there is one 'weak point' of the language that comes from the logic itself and n
 lack of occurs check is a threat to soundness.  the depth-first search opening the door to infinite paths is a threat to completeness.
 
 
+weaknesses:
 
-Robinson. resolution.
+unsound unification
+depth-first search (infinite paths)
+arithmetic and "equals"
+negation, non-horn clauses
 
-Kowalski formulated the procedural interpretation of Horn clause fragment.
+meta-logical stuff: var, name, functor
+retract, assert
+cut
 
-according to Sterling and Shapiro, the Warren machine 'sealed the deal' on the feasibility of prolog as an executable language.
 
 
-Challenges in prolog:
-- unsound unification
-- depth first search (infinite paths)
-- doesn't work for non-horn clauses
-- meta-logical stuff:  var, name, functor
-- retract, assert
-- cut
-- arithmetic and "equals" (numeric equality as opposed to unifiability)
-[http://www.ai.sri.com/~stickel/pttp.html]
+---------================-------------------
+
+
+
+
+
+
+
+
+
 we can address unsound unification by using a flag to reenable the occurs check.
 we can address the infinite search tree paths by: (list my strategies and explain them)
-as for 'non-horn clauses' – we do not need any, so that's fine.
+
+as for 'non-horn clauses' – we do not need any. (could this be due to closed-world assumption in database? not 100% sure if that is precisely why or just a coincidence)
 
