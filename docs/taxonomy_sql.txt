@@ -1,4 +1,7 @@
 
+categories: empty set 'edge cases'.
+
+
 ~~ type safety, types. equality. joins
 ~~ vendor implementation inadequacies.
 
@@ -287,6 +290,16 @@ mysql> select * from EnumOrderingDemo order by enum_column;
 5 rows in set (0.00 sec)
 
 mysql> -- create temporary table EnumOrderingDemo( some_value bigint, enum_column ENUM('red','orange','yellow') );
+
+
+
+===============================================================================
+===============================================================================
+===============================================================================
+
+~~ NULL gotchas
+
+the SUM over a non-nullable integer column in an empty table is NULL and not zero.
 
 ===============================================================================
 ===============================================================================
@@ -608,16 +621,137 @@ mysql> select  * from Customer c left join OptionalInfo oi on c.id = oi. custome
 ===============================================================================
 ===============================================================================
 
-~~ aggregates.
-~~ nulls.
+~~ order of operations.
 
 
+mysql> select id from Customer;
++------+
+| id   |
++------+
+|    1 |
+|    2 |
+|    3 |
+|    4 |
+|    5 |
+|    6 |
++------+
+6 rows in set (0.00 sec)
+
+mysql> select id from Customer limit 2;
++------+
+| id   |
++------+
+|    1 |
+|    2 |
++------+
+2 rows in set (0.01 sec)
+
+mysql> select group_concat(id) from Customer limit 2;
++------------------+
+| group_concat(id) |
++------------------+
+| 1,2,3,4,5,6      |
++------------------+
+1 row in set (0.00 sec)
+
+
+mysql> select group_concat(id1) from (select id as id1 from Customer limit 2) as x;
++-------------------+
+| group_concat(id1) |
++-------------------+
+| 1,2               |
++-------------------+
+1 row in set (0.00 sec)
 
 ===============================================================================
 ===============================================================================
 ===============================================================================
 
-~~ aggregates.
-~~ nulls.
+~~ 'freedom' of implementation in ordering.
+
+
+mysql> select * from C;
++------+--------+
+| num  | string |
++------+--------+
+|    3 | x      |
+|    3 | n      |
+|    3 | z      |
+|    2 | c      |
+|    2 | r      |
++------+--------+
+5 rows in set (0.00 sec)
+
+mysql> select * from C order by num limit 4;
++------+--------+
+| num  | string |
++------+--------+
+|    2 | c      |
+|    2 | r      |
+|    3 | x      |
+|    3 | n      |
++------+--------+
+4 rows in set (0.00 sec)
+
+
+could also return 3-x, 3-z, as well as 3-n, 3-z.
+
+===============================================================================
+===============================================================================
+===============================================================================
+
+~~ empty set logic.
+~~ "if there are NO PARTS, then trivially ALL suppliers supply 'all' the parts"
+
+mysql> select * from Supplier;
++------+
+| s_id |
++------+
+|    1 |
+|    2 |
+|    3 |
++------+
+3 rows in set (0.00 sec)
+
+mysql> select * from SupplierPart;
++------+------+
+| s_id | p_id |
++------+------+
+|    2 |  888 |
+|    1 |  999 |
+|    2 |  999 |
++------+------+
+3 rows in set (0.00 sec)
+
+mysql> select * from Part;
++------+
+| p_id |
++------+
+|  888 |
+|  999 |
++------+
+2 rows in set (0.00 sec)
+
+mysql> select * from Supplier s where not exists( select * from Part p where not  exists ( select * from SupplierPart sp where s. s_id = sp. s_id and sp. p_id = p. p_id ) );
++------+
+| s_id |
++------+
+|    2 |
++------+
+1 row in set (0.00 sec)
+
+mysql> delete from Part;
+Query OK, 2 rows affected (0.02 sec)
+
+mysql> select * from Supplier s where not exists( select * from Part p where not  exists ( select * from SupplierPart sp where s. s_id = sp. s_id and sp. p_id = p. p_id ) );
++------+
+| s_id |
++------+
+|    1 |
+|    2 |
+|    3 |
++------+
+3 rows in set (0.00 sec)
+
 
 
