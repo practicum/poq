@@ -1,3 +1,6 @@
+
+~~ type safety, types. equality. joins
+
 mysql> select * from Student;
 +------+--------+------+
 | s_id | s_name | d_id |
@@ -48,8 +51,12 @@ mysql> select st.s_name, d.d_name from Student st join Dormitory d on st.d_id = 
 +--------+-----------+
 3 rows in set (0.00 sec)
 
+===============================================================================
+===============================================================================
+===============================================================================
 
 
+~~ ordering. equality. strings. collations
 
 create temporary table StringDemo(string varchar(100), id int);
 
@@ -67,6 +74,11 @@ select
 from StringDemo
 group by string;
 
+===============================================================================
+===============================================================================
+===============================================================================
+
+~~ ordering. equality. strings. collations
 
 
 create temporary table StringDemo2(string varchar(100), id int);
@@ -85,6 +97,12 @@ select
 from StringDemo2
 group by string;
 
+===============================================================================
+===============================================================================
+===============================================================================
+
+
+~~ strings. type safety. 'the assignment principle'
 
 mysql> create temporary table StringDemo3(string varchar(4), id int);
 Query OK, 0 rows affected (0.01 sec)
@@ -100,6 +118,13 @@ mysql> select * from StringDemo3;
 | abcd   |    4 |
 +--------+------+
 1 row in set (0.00 sec)
+
+===============================================================================
+===============================================================================
+===============================================================================
+
+
+~~ coercion. cardinality of nested expression.
 
 
 mysql> select * from OrderItems;
@@ -136,3 +161,162 @@ mysql> select * from OrderItems where order_id = ( select order_id from RefundCl
 
 mysql> select * from OrderItems where order_id = ( select order_id from RefundClaim where customer_id = 'CUST0058' and claim_date = '2012-04-15');
 ERROR 1242 (21000): Subquery returns more than 1 row
+
+
+===============================================================================
+===============================================================================
+===============================================================================
+
+
+~~ enum. types. ordering by enum. ordering assumptions.
+
+mysql> select * from EnumOrderingDemo;
++------------+-------------+
+| some_value | enum_column |
++------------+-------------+
+|         34 | orange      |
+|         23 | red         |
+|         73 | red         |
+|         87 | yellow      |
+|         92 | orange      |
++------------+-------------+
+5 rows in set (0.00 sec)
+
+mysql> select * from EnumOrderingDemo order by enum_column;
++------------+-------------+
+| some_value | enum_column |
++------------+-------------+
+|         23 | red         |
+|         73 | red         |
+|         34 | orange      |
+|         92 | orange      |
+|         87 | yellow      |
++------------+-------------+
+5 rows in set (0.00 sec)
+
+mysql> -- create temporary table EnumOrderingDemo( some_value bigint, enum_column ENUM('red','orange','yellow') );
+
+===============================================================================
+===============================================================================
+===============================================================================
+
+
+~~ NULL gotchas
+
+mysql> select * from NamesDemo;
++-------+--------+--------+
+| first | middle | last   |
++-------+--------+--------+
+| Alice | NULL   | Smith  |
+| Bob   | M      | Jones  |
+| Carol | P      | Taylor |
++-------+--------+--------+
+3 rows in set (0.00 sec)
+
+mysql> select * from NamesDemo where middle = 'P';
++-------+--------+--------+
+| first | middle | last   |
++-------+--------+--------+
+| Carol | P      | Taylor |
++-------+--------+--------+
+1 row in set (0.00 sec)
+
+mysql> select * from NamesDemo where not middle = 'P';
++-------+--------+-------+
+| first | middle | last  |
++-------+--------+-------+
+| Bob   | M      | Jones |
++-------+--------+-------+
+1 row in set (0.00 sec)
+
+
+===============================================================================
+===============================================================================
+===============================================================================
+
+
+~~ NULL gotchas
+
+mysql> select * from NamesDemo;
++-------+--------+--------+
+| first | middle | last   |
++-------+--------+--------+
+| Alice | NULL   | Smith  |
+| Bob   | M      | Jones  |
+| Carol | P      | Taylor |
++-------+--------+--------+
+3 rows in set (0.00 sec)
+
+mysql> select count(1), middle from NamesDemo group by middle;
++----------+--------+
+| count(1) | middle |
++----------+--------+
+|        1 | NULL   |
+|        1 | M      |
+|        1 | P      |
++----------+--------+
+3 rows in set (0.00 sec)
+
+mysql> select * from NamesDemo;
++-------+--------+--------+
+| first | middle | last   |
++-------+--------+--------+
+| Alice | NULL   | Smith  |
+| Bob   | M      | Jones  |
+| Carol | P      | Taylor |
+| Carol | NULL   | Lynn   |
++-------+--------+--------+
+4 rows in set (0.00 sec)
+
+mysql> select count(1), middle from NamesDemo group by middle;
++----------+--------+
+| count(1) | middle |
++----------+--------+
+|        2 | NULL   |
+|        1 | M      |
+|        1 | P      |
++----------+--------+
+3 rows in set (0.00 sec)
+
+
+
+===============================================================================
+===============================================================================
+===============================================================================
+
+~~ NULL gotchas
+
+mysql> select * from NamesDemo;
++-------+--------+--------+
+| first | middle | last   |
++-------+--------+--------+
+| Alice | NULL   | Smith  |
+| Bob   | M      | Jones  |
+| Carol | P      | Taylor |
++-------+--------+--------+
+3 rows in set (0.00 sec)
+
+mysql> select concat( first, ' ', middle, ' ', last ) from NamesDemo;
++-----------------------------------------+
+| concat( first, ' ', middle, ' ', last ) |
++-----------------------------------------+
+| NULL                                    |
+| Bob M Jones                             |
+| Carol P Taylor                          |
++-----------------------------------------+
+3 rows in set (0.00 sec)
+
+
+===============================================================================
+===============================================================================
+===============================================================================
+
+
+
+
+
+
+
+
+
+
