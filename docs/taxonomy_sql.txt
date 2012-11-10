@@ -1,5 +1,6 @@
 
 ~~ type safety, types. equality. joins
+~~ vendor implementation inadequacies.
 
 mysql> select * from Student;
 +------+--------+------+
@@ -125,7 +126,7 @@ mysql> select * from StringDemo3;
 
 
 ~~ coercion. cardinality of nested expression.
-
+~~ 'selectivity' of the WHERE expression. assuming it selects 0 or 1.
 
 mysql> select * from OrderItems;
 +----------+----------------+------------------+
@@ -161,6 +162,97 @@ mysql> select * from OrderItems where order_id = ( select order_id from RefundCl
 
 mysql> select * from OrderItems where order_id = ( select order_id from RefundClaim where customer_id = 'CUST0058' and claim_date = '2012-04-15');
 ERROR 1242 (21000): Subquery returns more than 1 row
+
+===============================================================================
+===============================================================================
+===============================================================================
+
+
+~~ correlation gotchas.
+~~ vendor implementation inadequacies.
+~~ 'selectivity' of the GROUP BY expression (?).
+
+mysql> select * from ShoppingCart;
++---------+---------------------+
+| cart_id | cart_date           |
++---------+---------------------+
+| EJXHFJ  | 2010-08-17 00:00:00 |
+| IDHCJT  | 2010-12-28 00:00:00 |
+| TJCHSS  | 2011-03-23 00:00:00 |
+| UDIXXS  | 2012-07-08 00:00:00 |
++---------+---------------------+
+4 rows in set (0.00 sec)
+
+mysql> select * from ShoppingCartItems;
++---------+------------+
+| cart_id | product    |
++---------+------------+
+| EJXHFJ  | toothbrush |
+| EJXHFJ  | washcloth  |
+| IDHCJT  | toothbrush |
+| TJCHSS  | toothbrush |
+| UDIXXS  | washcloth  |
++---------+------------+
+5 rows in set (0.00 sec)
+
+mysql> select * from ShoppingCart c join ShoppingCartItems ci on c.cart_id = ci.cart_id;
++---------+---------------------+---------+------------+
+| cart_id | cart_date           | cart_id | product    |
++---------+---------------------+---------+------------+
+| EJXHFJ  | 2010-08-17 00:00:00 | EJXHFJ  | toothbrush |
+| EJXHFJ  | 2010-08-17 00:00:00 | EJXHFJ  | washcloth  |
+| IDHCJT  | 2010-12-28 00:00:00 | IDHCJT  | toothbrush |
+| TJCHSS  | 2011-03-23 00:00:00 | TJCHSS  | toothbrush |
+| UDIXXS  | 2012-07-08 00:00:00 | UDIXXS  | washcloth  |
++---------+---------------------+---------+------------+
+5 rows in set (0.00 sec)
+
+mysql> select max(c.cart_date) as recent_date, ci.product from ShoppingCart c join ShoppingCartItems ci on c.cart_id = ci.cart_id group by ci.product;
++---------------------+------------+
+| recent_date         | product    |
++---------------------+------------+
+| 2011-03-23 00:00:00 | toothbrush |
+| 2012-07-08 00:00:00 | washcloth  |
++---------------------+------------+
+2 rows in set (0.00 sec)
+
+mysql> select max(c.cart_date) as recent_date, ci.product, c.cart_id from ShoppingCart c join ShoppingCartItems ci on c.cart_id = ci.cart_id group by ci.product;
++---------------------+------------+---------+
+| recent_date         | product    | cart_id |
++---------------------+------------+---------+
+| 2011-03-23 00:00:00 | toothbrush | EJXHFJ  |
+| 2012-07-08 00:00:00 | washcloth  | EJXHFJ  |
++---------------------+------------+---------+
+2 rows in set (0.00 sec)
+
+mysql> SET SQL_MODE=(SELECT CONCAT(@@sql_mode,',ONLY_FULL_GROUP_BY'));
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> select max(c.cart_date) as recent_date, ci.product, c.cart_id from ShoppingCart c join ShoppingCartItems ci on c.cart_id = ci.cart_id group by ci.product;
+ERROR 1055 (42000): 'camping.c.cart_id' isn't in GROUP BY
+
+
+-- second attempt. 'closer'. seems 'apparently correct' but LIKELY NOT still 100% technically logically correct:
+-- (assumes that cart_id is increasing just like date)
+
+mysql> select max(c.cart_date) as recent_date, ci.product, max( c.cart_id ) as recent_cart from ShoppingCart c join ShoppingCartItems ci on c.cart_id = ci.cart_id group by ci.product;
++---------------------+------------+-------------+
+| recent_date         | product    | recent_cart |
++---------------------+------------+-------------+
+| 2011-03-23 00:00:00 | toothbrush | TJCHSS      |
+| 2012-07-08 00:00:00 | washcloth  | UDIXXS      |
++---------------------+------------+-------------+
+2 rows in set (0.00 sec)
+
+
+hard to rely on id columns having a monotone increasing property, even with something like auto_increment enabled.
+
+"""
+No you can not assume that. One scenario where ID's would not be sequential is in replicated multi-master setup. If for example two servers exist in such setup, one will only generate even auto IDs, and the other only odd IDs (keep in mind it's just an example).
+
+http://stackoverflow.com/questions/6895679/mysqls-auto-increment-behavior-in-a-multiple-row-insert
+"""
+
 
 
 ===============================================================================
@@ -311,12 +403,221 @@ mysql> select concat( first, ' ', middle, ' ', last ) from NamesDemo;
 ===============================================================================
 ===============================================================================
 
+~~ NULL gotchas
+
+mysql> select * from A;
++-------+
+| int_a |
++-------+
+|     5 |
+|     6 |
+|     7 |
+|     8 |
+|  NULL |
++-------+
+5 rows in set (0.00 sec)
+
+mysql> select * from B;
++-------+
+| int_b |
++-------+
+|     7 |
++-------+
+1 row in set (0.00 sec)
+
+mysql> select * from A a where a.int_a not in (select int_b from B);
++-------+
+| int_a |
++-------+
+|     5 |
+|     6 |
+|     8 |
++-------+
+3 rows in set (0.00 sec)
+
+mysql> select * from A a where not exists (select int_b from B b where b.int_b = a.int_a);
++-------+
+| int_a |
++-------+
+|     5 |
+|     6 |
+|     8 |
+|  NULL |
++-------+
+4 rows in set (0.00 sec)
 
 
 
+===============================================================================
+===============================================================================
+===============================================================================
+
+~~ aggregates.
+~~ nulls.
+
+mysql> select * from Number;
++------+
+| num  |
++------+
+|    3 |
+|    4 |
++------+
+2 rows in set (0.00 sec)
+
+mysql> select count(1), sum(1) from Number;
++----------+--------+
+| count(1) | sum(1) |
++----------+--------+
+|        2 |      2 |
++----------+--------+
+1 row in set (0.00 sec)
+
+mysql> delete from Number;
+Query OK, 2 rows affected (0.01 sec)
+
+mysql> select * from Number;
+Empty set (0.00 sec)
+
+mysql> select count(1), sum(1) from Number;
++----------+--------+
+| count(1) | sum(1) |
++----------+--------+
+|        0 |   NULL |
++----------+--------+
+1 row in set (0.00 sec)
+
+mysql> select count(1), sum(1) from Number group by num;
+Empty set (0.00 sec)
+
+
+===============================================================================
+===============================================================================
+===============================================================================
+
+~~ order of operations.
+~~ editing code.
+~~ false assumptions on equivalencies of two queries.
+
+mysql> select * from Employee;
++---------+----------+--------+
+| dept_id | emp_name | salary |
++---------+----------+--------+
+|     101 | Jones    |   4500 |
+|     101 | Martin   |    990 |
+|     101 | Smith    |    890 |
+|     209 | Swanson  |   3100 |
+|     209 | Knight   |   3100 |
+|     330 | Taylor   |    850 |
++---------+----------+--------+
+6 rows in set (0.00 sec)
+
+mysql> select dept_id, sum( case when salary < 1000 then 1 else 0 end ) as low_earners from Employee group by dept_id;
++---------+-------------+
+| dept_id | low_earners |
++---------+-------------+
+|     101 |           2 |
+|     209 |           0 |
+|     330 |           1 |
++---------+-------------+
+3 rows in set (0.00 sec)
+
+mysql> select dept_id, count(1) from Employee where salary < 1000 group by dept_id;
++---------+----------+
+| dept_id | count(1) |
++---------+----------+
+|     101 |        2 |
+|     330 |        1 |
++---------+----------+
+2 rows in set (0.01 sec)
 
 
 
+===============================================================================
+===============================================================================
+===============================================================================
 
+~~ nulls.
+~~ left join.
+
+mysql> select * from Customer;
++------+
+| id   |
++------+
+|    1 |
+|    2 |
+|    3 |
+|    4 |
+|    5 |
+|    6 |
++------+
+6 rows in set (0.00 sec)
+
+mysql> select * from OptionalInfo;
++-------------+-------+
+| customer_id | title |
++-------------+-------+
+|           2 | Mr.   |
+|           5 | Mr.   |
+|           6 | Ms.   |
++-------------+-------+
+3 rows in set (0.00 sec)
+
+mysql> select  * from Customer c join OptionalInfo oi on c.id = oi. customer_id where coalesce( oi. title, '') <> 'Mr.';
++------+-------------+-------+
+| id   | customer_id | title |
++------+-------------+-------+
+|    6 |           6 | Ms.   |
++------+-------------+-------+
+1 row in set (0.00 sec)
+
+mysql> select  * from Customer c join OptionalInfo oi on c.id = oi. customer_id and coalesce( oi. title, '') <> 'Mr.';
++------+-------------+-------+
+| id   | customer_id | title |
++------+-------------+-------+
+|    6 |           6 | Ms.   |
++------+-------------+-------+
+1 row in set (0.00 sec)
+
+mysql> select  * from Customer c left join OptionalInfo oi on c.id = oi. customer_id where coalesce( oi. title, '') <> 'Mr.';
++------+-------------+-------+
+| id   | customer_id | title |
++------+-------------+-------+
+|    1 |        NULL | NULL  |
+|    3 |        NULL | NULL  |
+|    4 |        NULL | NULL  |
+|    6 |           6 | Ms.   |
++------+-------------+-------+
+4 rows in set (0.00 sec)
+
+mysql> select  * from Customer c left join OptionalInfo oi on c.id = oi. customer_id and coalesce( oi. title, '') <> 'Mr.';
++------+-------------+-------+
+| id   | customer_id | title |
++------+-------------+-------+
+|    1 |        NULL | NULL  |
+|    2 |        NULL | NULL  |
+|    3 |        NULL | NULL  |
+|    4 |        NULL | NULL  |
+|    5 |        NULL | NULL  |
+|    6 |           6 | Ms.   |
++------+-------------+-------+
+6 rows in set (0.01 sec)
+
+
+
+===============================================================================
+===============================================================================
+===============================================================================
+
+~~ aggregates.
+~~ nulls.
+
+
+
+===============================================================================
+===============================================================================
+===============================================================================
+
+~~ aggregates.
+~~ nulls.
 
 
