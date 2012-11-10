@@ -1,0 +1,138 @@
+mysql> select * from Student;
++------+--------+------+
+| s_id | s_name | d_id |
++------+--------+------+
+|    1 | Alice  |    2 |
+|    2 | Bob    |    3 |
+|    3 | Carol  |    2 |
++------+--------+------+
+3 rows in set (0.00 sec)
+
+mysql> select * from Department;
++----+------------+
+| id | dept_name  |
++----+------------+
+|  1 | Math       |
+|  2 | English    |
+|  3 | Psychology |
++----+------------+
+3 rows in set (0.00 sec)
+
+mysql> select * from Dormitory;
++----+-----------+
+| id | d_name    |
++----+-----------+
+|  1 | Jefferson |
+|  2 | Lincoln   |
+|  3 | Roosevelt |
++----+-----------+
+3 rows in set (0.00 sec)
+
+mysql> select st.s_name, dept.dept_name from Student st join Department dept on st.d_id = dept.id;
++--------+------------+
+| s_name | dept_name  |
++--------+------------+
+| Alice  | English    |
+| Carol  | English    |
+| Bob    | Psychology |
++--------+------------+
+3 rows in set (0.00 sec)
+
+mysql> select st.s_name, d.d_name from Student st join Dormitory d on st.d_id = d.id;
++--------+-----------+
+| s_name | d_name    |
++--------+-----------+
+| Alice  | Lincoln   |
+| Carol  | Lincoln   |
+| Bob    | Roosevelt |
++--------+-----------+
+3 rows in set (0.00 sec)
+
+
+
+
+create temporary table StringDemo(string varchar(100), id int);
+
+insert into StringDemo values ('A ', 20);
+insert into StringDemo values ('B', 30);
+insert into StringDemo values ('C', 40);
+insert into StringDemo values ('D', 25);
+insert into StringDemo values ('A ', 21);
+insert into StringDemo values ('A', 32);
+insert into StringDemo values ('A ', 28);
+
+select
+    string,
+    count(*) count
+from StringDemo
+group by string;
+
+
+
+create temporary table StringDemo2(string varchar(100), id int);
+
+insert into StringDemo2 values ('A', 20);
+insert into StringDemo2 values ('B', 30);
+insert into StringDemo2 values ('C', 40);
+insert into StringDemo2 values ('D', 25);
+insert into StringDemo2 values ('a', 21);
+insert into StringDemo2 values ('a', 32);
+insert into StringDemo2 values ('a', 28);
+
+select
+    string,
+    count(*) count
+from StringDemo2
+group by string;
+
+
+mysql> create temporary table StringDemo3(string varchar(4), id int);
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> insert into StringDemo3 ( string, id ) values ('abcdef', 4);
+Query OK, 1 row affected, 1 warning (0.01 sec)
+
+Warning (Code 1265): Data truncated for column 'string' at row 1
+mysql> select * from StringDemo3;
++--------+------+
+| string | id   |
++--------+------+
+| abcd   |    4 |
++--------+------+
+1 row in set (0.00 sec)
+
+
+mysql> select * from OrderItems;
++----------+----------------+------------------+
+| order_id | product        | quantity_ordered |
++----------+----------------+------------------+
+|        1 | toothbrush     |                1 |
+|        1 | bar soap       |                3 |
+|        2 | ream paper     |                2 |
+|        2 | pencils, 12 pk |                1 |
+|        3 | pens, 12 pk    |                4 |
+|        4 | socks, 3 pk    |                2 |
++----------+----------------+------------------+
+6 rows in set (0.00 sec)
+
+mysql> select * from RefundClaim;
++-------------+----------+---------------------+
+| customer_id | order_id | claim_date          |
++-------------+----------+---------------------+
+| CUST0032    |        1 | 2012-01-15 00:00:00 |
+| CUST0058    |        3 | 2012-04-15 00:00:00 |
+| CUST0058    |        4 | 2012-04-15 00:00:00 |
++-------------+----------+---------------------+
+3 rows in set (0.00 sec)
+
+mysql> select * from OrderItems where order_id = ( select order_id from RefundClaim where customer_id = 'CUST0032' and claim_date = '2012-01-15');
++----------+------------+------------------+
+| order_id | product    | quantity_ordered |
++----------+------------+------------------+
+|        1 | toothbrush |                1 |
+|        1 | bar soap   |                3 |
++----------+------------+------------------+
+2 rows in set (0.00 sec)
+
+mysql> select * from OrderItems where order_id = ( select order_id from RefundClaim where customer_id = 'CUST0058' and claim_date = '2012-04-15');
+ERROR 1242 (21000): Subquery returns more than 1 row
