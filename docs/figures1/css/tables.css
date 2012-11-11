@@ -11,7 +11,19 @@ code {
     margin: 0;
     font-family: "Liberation Mono";
     font-size: 1em;
+    padding: 0px 0px 0px 0px; /* top right bottom left */
 }
+
+
+.wrapper {
+    border: 2px solid black;
+    float: left;
+    clear: left;
+    padding-bottom: 8px;
+    max-width: 600px;
+    margin-bottom: 40px;
+}
+
 
 h1 {
     text-align: center;
@@ -49,7 +61,7 @@ table {
 
 th, td {
     /* border: 1px dashed red; */
-    padding: 3px 5px 3px 3px; /* top right bottom left */
+    padding: 1px 5px 1px 3px; /* top right bottom left */
     margin: 0;
 }
 
@@ -62,30 +74,21 @@ thead th {
 
 dl {
     clear: both;
-    padding: 1em 10px;
+    padding: 15px 0px 0px 8px; /* top right bottom left */
 }
 
 dd, dt {
     float: left;
+    padding: 0px 0px 5px 5px; /* top right bottom left */
 }
 
 dt {
     font-weight: bold;
     clear: left;
-    margin-left: 5px; /* move list headers over a bit */
 }
 
 dd {
-    margin-left: 30px;
-}
-
-.wrapper {
-    border: 2px solid black;
-    float: left;
-    clear: left;
-    padding-bottom: 20px;
-    max-width: 900px;
-    margin-bottom: 40px;
+    margin-left: 20px;
 }
 
 
