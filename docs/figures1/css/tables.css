@@ -36,9 +36,12 @@ h1 {
 h3 {
     /* text-align: center; */
     margin: 5px 0px 0px 5px; /* top right bottom left */
-    font-size: 0.9em;
+    font-size: 1em;
     font-weight: normal;
+}
 
+div.resultset h3 {
+    font-style: italic;
 }
 
 
@@ -71,6 +74,16 @@ thead th {
     font-weight: normal;
     background-color: #ddd;
 }
+
+
+div.resultset table {
+    border: 1px dashed black;
+}
+
+div.resultset thead th {
+    border-bottom: 1px dashed black;
+}
+
 
 dl {
     clear: both;
