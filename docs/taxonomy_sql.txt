@@ -301,6 +301,8 @@ mysql> -- create temporary table EnumOrderingDemo( some_value bigint, enum_colum
 
 the SUM over a non-nullable integer column in an empty table is NULL and not zero.
 
+min and max are null. Date argues that min of empty should be the TYPE's max, and max of empty should be the type's min. this would be similar to how shortest-path algorithms initialize path lengths to INFINITY and only overwrite that as shorter paths are found.
+
 ===============================================================================
 ===============================================================================
 ===============================================================================
@@ -755,3 +757,49 @@ mysql> select * from Supplier s where not exists( select * from Part p where not
 
 
 
+VERY SIMILAR IDEA NEXT, but with 'cars weighing more than any toyota' (or chevy), and what if there is NO toyota (or chevy)
+
+mysql> select * from Cars;
++----------+----------+--------+
+| model    | make     | weight |
++----------+----------+--------+
+| tempo    | ford     |   1000 |
+| aerostar | ford     |   4000 |
+| corolla  | toyota   |    900 |
+| camry    | toyota   |   1300 |
+| escalade | cadillac |   5000 |
++----------+----------+--------+
+5 rows in set (0.00 sec)
+
+mysql> select * from Cars c1 where not exists ( select * from Cars c2 where c2.make = 'toyota' and c2.weight >= c1.weight );
++----------+----------+--------+
+| model    | make     | weight |
++----------+----------+--------+
+| aerostar | ford     |   4000 |
+| escalade | cadillac |   5000 |
++----------+----------+--------+
+2 rows in set (0.00 sec)
+
+mysql> select * from Cars c1 where c1.weight > ( select max( c2.weight ) from Cars c2 where c2.make = 'toyota');
++----------+----------+--------+
+| model    | make     | weight |
++----------+----------+--------+
+| aerostar | ford     |   4000 |
+| escalade | cadillac |   5000 |
++----------+----------+--------+
+2 rows in set (0.00 sec)
+
+mysql> select * from Cars c1 where not exists ( select * from Cars c2 where c2.make = 'chevrolet' and c2.weight >= c1.weight );
++----------+----------+--------+
+| model    | make     | weight |
++----------+----------+--------+
+| tempo    | ford     |   1000 |
+| aerostar | ford     |   4000 |
+| corolla  | toyota   |    900 |
+| camry    | toyota   |   1300 |
+| escalade | cadillac |   5000 |
++----------+----------+--------+
+5 rows in set (0.00 sec)
+
+mysql> select * from Cars c1 where c1.weight > ( select max( c2.weight ) from Cars c2 where c2.make = 'chevrolet');
+Empty set (0.00 sec)
