@@ -1,3 +1,15 @@
+body {
+    font-family: sans-serif;
+    font-size: 10pt;
+}
+
+h1 {
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    font-size: 3em;
+}
+
 table {
     border: 1px solid black;
     border-spacing: 0; /* what got rid of the weird gaps under the headers */
@@ -5,7 +17,8 @@ table {
 }
 
 th, td {
-    padding: 5px 10px 5px 10px; /* top right bottom left */
+    /* border: 1px dashed red; */ 
+    padding: 5px 5px; /* top&bottom right&left; internal padding in each cell */ 
     margin: 0;
 }
 
@@ -44,9 +57,12 @@ dd {
 }
 
 .wrapper {
-    border: 3px dashed red;
+    border: 2px solid black;
     float: left;
+    clear: left;
     padding-bottom: 20px;
+    max-width: 900px;
+    margin-bottom: 40px;
 }
 
 h3 {
@@ -63,3 +79,4 @@ code {
 code kksel {
     font-weight: bold;
 }
+
