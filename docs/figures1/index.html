@@ -4,9 +4,9 @@
     <link rel="stylesheet" type="text/css" href="css/tables.css" />
   </head>
   <body>
-    <div class="wrapper">
+    <div class="wrapper"> <!-- one. first. 01  -->
 
-      <h1>My Big Title</h1>
+      <h1>Scalar Context Overrun</h1>
 
       <div class="element">
 	<h3>My Table Title</h3>
@@ -168,9 +168,9 @@
 
       <dl>
 	<dt>TABLE:</dt>
-	<dd><code><kksel>SELECT</kksel> * FROM FARTBAGS
-LEFT JOIN DROOLMOPS
-ON YOUR MOM;
+	<dd><code><kksel>SELECT</kksel> * FROM table_one
+LEFT JOIN table_two
+ON ... j-condition ...;
 	  </code>
 	</dd>
 
@@ -181,9 +181,9 @@ ON YOUR MOM;
 
 
 
-    <div class="wrapper">
+    <div class="wrapper"> <!-- two. second. 02 -->
 
-      <h1>My Big Title</h1>
+      <h1>Blind Spot in Group By</h1>
 
       <div class="element">
 	<h3>My Table Title</h3>
@@ -305,16 +305,2528 @@ ON YOUR MOM;
 
       <dl>
 	<dt>TABLE:</dt>
-	<dd><code><kksel>SELECT</kksel> * FROM FARTBAGS
-LEFT JOIN DROOLMOPS
-ON YOUR MOM;
+	<dd><code><kksel>SELECT</kksel> * FROM table_one
+LEFT JOIN table_two
+ON ... j-condition ...;
 	  </code>
 	</dd>
 
 	<dt>TABLE:</dt>
 	<dd>stuff about table</dd>
       </dl>
-    </div><!-- /wrapper fig 2 -->
+    </div>
+
+
+   <div class="wrapper"> <!-- three. third. 03  -->
+
+      <h1>Undermining the Limit</h1>
+
+      <div class="element">
+	<h3>My Table Title</h3>
+	<table>
+	  <thead>
+	    <tr>
+	      <th>s_id</th>
+	      <th>s_name</th>
+	      <th>d_id</th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	    <tr>
+	      <td>1</td>
+	      <td>Alice</td>
+	      <td>2</td>
+	    </tr>
+	    <tr>
+	      <td>2</td>
+	      <td>Bob</td>
+	      <td>3</td>
+	    </tr>
+	    <tr>
+	      <td>3</td>
+	      <td>Miss. Carol Sissippi</td>
+	      <td>2</td>
+	    </tr>
+	  </tbody>
+	</table>
+      </div>
+      <div class="element">
+	<h3>My Table Title 2</h3>
+	<table>
+	  <thead>
+	    <tr>
+	      <th>s_id</th>
+	      <th>s_name</th>
+	      <th>d_id</th>
+	      <th>d_id_derp</th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	    <tr>
+	      <td>1</td>
+	      <td>Alice</td>
+	      <td>2</td>
+	      <td>2</td>
+	    </tr>
+	    <tr>
+	      <td>2</td>
+	      <td>Bob</td>
+	      <td>3</td>
+	      <td>2</td>
+	    </tr>
+	    <tr>
+	      <td>3</td>
+	      <td>Carol</td>
+	      <td>2</td>
+	      <td>2</td>
+	    </tr>
+	    <tr>
+	      <td>4</td>
+	      <td>Carol-san</td>
+	      <td>2</td>
+	      <td>2</td>
+	    </tr>
+	  </tbody>
+	</table>
+      </div>
+      <div class="element">
+	<h3>My Table Title 3</h3>
+	<table>
+	  <thead>
+	    <tr>
+	      <th>s_id</th>
+	      <th>s_name</th>
+	      <th>d_id</th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	    <tr>
+	      <td>1</td>
+	      <td>Alice</td>
+	      <td>2</td>
+	    </tr>
+	    <tr>
+	      <td>2</td>
+	      <td>Bob</td>
+	      <td>3</td>
+	    </tr>
+	    <tr>
+	      <td>3</td>
+	      <td>Carol</td>
+	      <td>2</td>
+	    </tr>
+	  </tbody>
+	</table>
+      </div>
+
+      <div class="element new-element">
+      <!-- <div class="element"> -->
+	<h3>My Table Title 4</h3>
+	<table>
+	  <thead>
+	    <tr>
+	      <th>s_id</th>
+	      <th>s_name</th>
+	      <th>d_id</th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	    <tr>
+	      <td>1</td>
+	      <td>Alice</td>
+	      <td>2</td>
+	    </tr>
+	    <tr>
+	      <td>2</td>
+	      <td>Bob</td>
+	      <td>3</td>
+	    </tr>
+	    <tr>
+	      <td>3</td>
+	      <td>Carol</td>
+	      <td>2</td>
+	    </tr>
+	  </tbody>
+	</table>
+      </div>
+      <div class="element">
+	<h3>My Table Title</h3>
+	<table>
+	  <thead>
+	    <tr>
+	      <th>s_id</th>
+	      <th>s_name</th>
+	      <th>d_id</th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	    <tr>
+	      <td>1</td>
+	      <td>Alice</td>
+	      <td>2</td>
+	    </tr>
+	    <tr>
+	      <td>2</td>
+	      <td>Bob</td>
+	      <td>3</td>
+	    </tr>
+	    <tr>
+	      <td>3</td>
+	      <td>Carol</td>
+	      <td>2</td>
+	    </tr>
+	  </tbody>
+	</table>
+      </div>
+
+      <dl>
+	<dt>TABLE:</dt>
+	<dd><code><kksel>SELECT</kksel> * FROM table_one
+LEFT JOIN table_two
+ON ... j-condition ...;
+	  </code>
+	</dd>
+
+	<dt>TABLE:</dt>
+	<dd>stuff about table</dd>
+      </dl>
+    </div>
+
+
+
+    <div class="wrapper"> <!-- four. fourth. 04  -->
+
+      <h1>Fickle Tiebreaker</h1>
+
+      <div class="element">
+	<h3>My Table Title</h3>
+	<table>
+	  <thead>
+	    <tr>
+	      <th>s_id</th>
+	      <th>s_name</th>
+	      <th>d_id</th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	    <tr>
+	      <td>1</td>
+	      <td>Alice</td>
+	      <td>2</td>
+	    </tr>
+	    <tr>
+	      <td>2</td>
+	      <td>Bob</td>
+	      <td>3</td>
+	    </tr>
+	    <tr>
+	      <td>3</td>
+	      <td>Miss. Carol Sissippi</td>
+	      <td>2</td>
+	    </tr>
+	  </tbody>
+	</table>
+      </div>
+
+      <div class="element">
+	<h3>My Table Title</h3>
+	<table>
+	  <thead>
+	    <tr>
+	      <th>s_id</th>
+	      <th>s_name</th>
+	      <th>d_id</th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	    <tr>
+	      <td>1</td>
+	      <td>Alice</td>
+	      <td>2</td>
+	    </tr>
+	    <tr>
+	      <td>2</td>
+	      <td>Bob</td>
+	      <td>3</td>
+	    </tr>
+	    <tr>
+	      <td>3</td>
+	      <td>Miss. Carol Sissippi</td>
+	      <td>2</td>
+	    </tr>
+	  </tbody>
+	</table>
+      </div>
+      <div class="element">
+	<h3>My Table Title</h3>
+	<table>
+	  <thead>
+	    <tr>
+	      <th>s_id</th>
+	      <th>s_name</th>
+	      <th>d_id</th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	    <tr>
+	      <td>1</td>
+	      <td>Alice</td>
+	      <td>2</td>
+	    </tr>
+	    <tr>
+	      <td>2</td>
+	      <td>Bob</td>
+	      <td>3</td>
+	    </tr>
+	    <tr>
+	      <td>3</td>
+	      <td>Miss. Carol Sissippi</td>
+	      <td>2</td>
+	    </tr>
+	  </tbody>
+	</table>
+      </div>
+      <div class="element">
+	<h3>My Table Title</h3>
+	<table>
+	  <thead>
+	    <tr>
+	      <th>s_id</th>
+	      <th>s_name</th>
+	      <th>d_id</th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	    <tr>
+	      <td>1</td>
+	      <td>Alice</td>
+	      <td>2</td>
+	    </tr>
+	    <tr>
+	      <td>2</td>
+	      <td>Bob</td>
+	      <td>3</td>
+	    </tr>
+	    <tr>
+	      <td>3</td>
+	      <td>Carol</td>
+	      <td>2</td>
+	    </tr>
+	  </tbody>
+	</table>
+      </div>
+
+      <dl>
+	<dt>TABLE:</dt>
+	<dd><code><kksel>SELECT</kksel> * FROM table_one
+LEFT JOIN table_two
+ON ... j-condition ...;
+	  </code>
+	</dd>
+
+	<dt>TABLE:</dt>
+	<dd>stuff about table</dd>
+      </dl>
+    </div>
+
+
+   <div class="wrapper"> <!-- five. fifth. 05  -->
+
+      <h1>Stray Column in Group By</h1>
+
+      <div class="element">
+	<h3>My Table Title</h3>
+	<table>
+	  <thead>
+	    <tr>
+	      <th>s_id</th>
+	      <th>s_name</th>
+	      <th>d_id</th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	    <tr>
+	      <td>1</td>
+	      <td>Alice</td>
+	      <td>2</td>
+	    </tr>
+	    <tr>
+	      <td>2</td>
+	      <td>Bob</td>
+	      <td>3</td>
+	    </tr>
+	    <tr>
+	      <td>3</td>
+	      <td>Miss. Carol Sissippi</td>
+	      <td>2</td>
+	    </tr>
+	  </tbody>
+	</table>
+      </div>
+      <div class="element">
+	<h3>My Table Title 2</h3>
+	<table>
+	  <thead>
+	    <tr>
+	      <th>s_id</th>
+	      <th>s_name</th>
+	      <th>d_id</th>
+	      <th>d_id_derp</th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	    <tr>
+	      <td>1</td>
+	      <td>Alice</td>
+	      <td>2</td>
+	      <td>2</td>
+	    </tr>
+	    <tr>
+	      <td>2</td>
+	      <td>Bob</td>
+	      <td>3</td>
+	      <td>2</td>
+	    </tr>
+	    <tr>
+	      <td>3</td>
+	      <td>Carol</td>
+	      <td>2</td>
+	      <td>2</td>
+	    </tr>
+	    <tr>
+	      <td>4</td>
+	      <td>Carol-san</td>
+	      <td>2</td>
+	      <td>2</td>
+	    </tr>
+	  </tbody>
+	</table>
+      </div>
+      <div class="element">
+	<h3>My Table Title 3</h3>
+	<table>
+	  <thead>
+	    <tr>
+	      <th>s_id</th>
+	      <th>s_name</th>
+	      <th>d_id</th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	    <tr>
+	      <td>1</td>
+	      <td>Alice</td>
+	      <td>2</td>
+	    </tr>
+	    <tr>
+	      <td>2</td>
+	      <td>Bob</td>
+	      <td>3</td>
+	    </tr>
+	    <tr>
+	      <td>3</td>
+	      <td>Carol</td>
+	      <td>2</td>
+	    </tr>
+	  </tbody>
+	</table>
+      </div>
+
+      <div class="element new-element">
+      <!-- <div class="element"> -->
+	<h3>My Table Title 4</h3>
+	<table>
+	  <thead>
+	    <tr>
+	      <th>s_id</th>
+	      <th>s_name</th>
+	      <th>d_id</th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	    <tr>
+	      <td>1</td>
+	      <td>Alice</td>
+	      <td>2</td>
+	    </tr>
+	    <tr>
+	      <td>2</td>
+	      <td>Bob</td>
+	      <td>3</td>
+	    </tr>
+	    <tr>
+	      <td>3</td>
+	      <td>Carol</td>
+	      <td>2</td>
+	    </tr>
+	  </tbody>
+	</table>
+      </div>
+      <div class="element">
+	<h3>My Table Title</h3>
+	<table>
+	  <thead>
+	    <tr>
+	      <th>s_id</th>
+	      <th>s_name</th>
+	      <th>d_id</th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	    <tr>
+	      <td>1</td>
+	      <td>Alice</td>
+	      <td>2</td>
+	    </tr>
+	    <tr>
+	      <td>2</td>
+	      <td>Bob</td>
+	      <td>3</td>
+	    </tr>
+	    <tr>
+	      <td>3</td>
+	      <td>Carol</td>
+	      <td>2</td>
+	    </tr>
+	  </tbody>
+	</table>
+      </div>
+
+      <dl>
+	<dt>TABLE:</dt>
+	<dd><code><kksel>SELECT</kksel> * FROM table_one
+LEFT JOIN table_two
+ON ... j-condition ...;
+	  </code>
+	</dd>
+
+	<dt>TABLE:</dt>
+	<dd>stuff about table</dd>
+      </dl>
+    </div>
+
+
+
+   <div class="wrapper"> <!-- five b. 05b -->
+
+      <h1>Approximated Correlation</h1>
+
+      <div class="element">
+	<h3>My Table Title</h3>
+	<table>
+	  <thead>
+	    <tr>
+	      <th>s_id</th>
+	      <th>s_name</th>
+	      <th>d_id</th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	    <tr>
+	      <td>1</td>
+	      <td>Alice</td>
+	      <td>2</td>
+	    </tr>
+	    <tr>
+	      <td>2</td>
+	      <td>Bob</td>
+	      <td>3</td>
+	    </tr>
+	    <tr>
+	      <td>3</td>
+	      <td>Miss. Carol Sissippi</td>
+	      <td>2</td>
+	    </tr>
+	  </tbody>
+	</table>
+      </div>
+      <div class="element">
+	<h3>My Table Title 2</h3>
+	<table>
+	  <thead>
+	    <tr>
+	      <th>s_id</th>
+	      <th>s_name</th>
+	      <th>d_id</th>
+	      <th>d_id_derp</th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	    <tr>
+	      <td>1</td>
+	      <td>Alice</td>
+	      <td>2</td>
+	      <td>2</td>
+	    </tr>
+	    <tr>
+	      <td>2</td>
+	      <td>Bob</td>
+	      <td>3</td>
+	      <td>2</td>
+	    </tr>
+	    <tr>
+	      <td>3</td>
+	      <td>Carol</td>
+	      <td>2</td>
+	      <td>2</td>
+	    </tr>
+	    <tr>
+	      <td>4</td>
+	      <td>Carol-san</td>
+	      <td>2</td>
+	      <td>2</td>
+	    </tr>
+	  </tbody>
+	</table>
+      </div>
+      <div class="element">
+	<h3>My Table Title 3</h3>
+	<table>
+	  <thead>
+	    <tr>
+	      <th>s_id</th>
+	      <th>s_name</th>
+	      <th>d_id</th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	    <tr>
+	      <td>1</td>
+	      <td>Alice</td>
+	      <td>2</td>
+	    </tr>
+	    <tr>
+	      <td>2</td>
+	      <td>Bob</td>
+	      <td>3</td>
+	    </tr>
+	    <tr>
+	      <td>3</td>
+	      <td>Carol</td>
+	      <td>2</td>
+	    </tr>
+	  </tbody>
+	</table>
+      </div>
+
+      <div class="element new-element">
+      <!-- <div class="element"> -->
+	<h3>My Table Title 4</h3>
+	<table>
+	  <thead>
+	    <tr>
+	      <th>s_id</th>
+	      <th>s_name</th>
+	      <th>d_id</th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	    <tr>
+	      <td>1</td>
+	      <td>Alice</td>
+	      <td>2</td>
+	    </tr>
+	    <tr>
+	      <td>2</td>
+	      <td>Bob</td>
+	      <td>3</td>
+	    </tr>
+	    <tr>
+	      <td>3</td>
+	      <td>Carol</td>
+	      <td>2</td>
+	    </tr>
+	  </tbody>
+	</table>
+      </div>
+      <div class="element">
+	<h3>My Table Title</h3>
+	<table>
+	  <thead>
+	    <tr>
+	      <th>s_id</th>
+	      <th>s_name</th>
+	      <th>d_id</th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	    <tr>
+	      <td>1</td>
+	      <td>Alice</td>
+	      <td>2</td>
+	    </tr>
+	    <tr>
+	      <td>2</td>
+	      <td>Bob</td>
+	      <td>3</td>
+	    </tr>
+	    <tr>
+	      <td>3</td>
+	      <td>Carol</td>
+	      <td>2</td>
+	    </tr>
+	  </tbody>
+	</table>
+      </div>
+
+      <dl>
+	<dt>TABLE:</dt>
+	<dd><code><kksel>SELECT</kksel> * FROM table_one
+LEFT JOIN table_two
+ON ... j-condition ...;
+	  </code>
+	</dd>
+
+	<dt>TABLE:</dt>
+	<dd>stuff about table</dd>
+      </dl>
+    </div>
+
+
+
+
+    <div class="wrapper"> <!-- six. sixth. 06  -->
+
+      <h1>Enum Hides Sort Key</h1>
+
+      <div class="element">
+	<h3>My Table Title</h3>
+	<table>
+	  <thead>
+	    <tr>
+	      <th>s_id</th>
+	      <th>s_name</th>
+	      <th>d_id</th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	    <tr>
+	      <td>1</td>
+	      <td>Alice</td>
+	      <td>2</td>
+	    </tr>
+	    <tr>
+	      <td>2</td>
+	      <td>Bob</td>
+	      <td>3</td>
+	    </tr>
+	    <tr>
+	      <td>3</td>
+	      <td>Miss. Carol Sissippi</td>
+	      <td>2</td>
+	    </tr>
+	  </tbody>
+	</table>
+      </div>
+
+      <div class="element">
+	<h3>My Table Title</h3>
+	<table>
+	  <thead>
+	    <tr>
+	      <th>s_id</th>
+	      <th>s_name</th>
+	      <th>d_id</th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	    <tr>
+	      <td>1</td>
+	      <td>Alice</td>
+	      <td>2</td>
+	    </tr>
+	    <tr>
+	      <td>2</td>
+	      <td>Bob</td>
+	      <td>3</td>
+	    </tr>
+	    <tr>
+	      <td>3</td>
+	      <td>Miss. Carol Sissippi</td>
+	      <td>2</td>
+	    </tr>
+	  </tbody>
+	</table>
+      </div>
+      <div class="element">
+	<h3>My Table Title</h3>
+	<table>
+	  <thead>
+	    <tr>
+	      <th>s_id</th>
+	      <th>s_name</th>
+	      <th>d_id</th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	    <tr>
+	      <td>1</td>
+	      <td>Alice</td>
+	      <td>2</td>
+	    </tr>
+	    <tr>
+	      <td>2</td>
+	      <td>Bob</td>
+	      <td>3</td>
+	    </tr>
+	    <tr>
+	      <td>3</td>
+	      <td>Miss. Carol Sissippi</td>
+	      <td>2</td>
+	    </tr>
+	  </tbody>
+	</table>
+      </div>
+      <div class="element">
+	<h3>My Table Title</h3>
+	<table>
+	  <thead>
+	    <tr>
+	      <th>s_id</th>
+	      <th>s_name</th>
+	      <th>d_id</th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	    <tr>
+	      <td>1</td>
+	      <td>Alice</td>
+	      <td>2</td>
+	    </tr>
+	    <tr>
+	      <td>2</td>
+	      <td>Bob</td>
+	      <td>3</td>
+	    </tr>
+	    <tr>
+	      <td>3</td>
+	      <td>Carol</td>
+	      <td>2</td>
+	    </tr>
+	  </tbody>
+	</table>
+      </div>
+
+      <dl>
+	<dt>TABLE:</dt>
+	<dd><code><kksel>SELECT</kksel> * FROM table_one
+LEFT JOIN table_two
+ON ... j-condition ...;
+	  </code>
+	</dd>
+
+	<dt>TABLE:</dt>
+	<dd>stuff about table</dd>
+      </dl>
+    </div>
+
+
+   <div class="wrapper"> <!-- seven. seventh. 07  -->
+
+      <h1>Equal But Distinguishable</h1>
+
+      <div class="element">
+	<h3>My Table Title</h3>
+	<table>
+	  <thead>
+	    <tr>
+	      <th>s_id</th>
+	      <th>s_name</th>
+	      <th>d_id</th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	    <tr>
+	      <td>1</td>
+	      <td>Alice</td>
+	      <td>2</td>
+	    </tr>
+	    <tr>
+	      <td>2</td>
+	      <td>Bob</td>
+	      <td>3</td>
+	    </tr>
+	    <tr>
+	      <td>3</td>
+	      <td>Miss. Carol Sissippi</td>
+	      <td>2</td>
+	    </tr>
+	  </tbody>
+	</table>
+      </div>
+      <div class="element">
+	<h3>My Table Title 2</h3>
+	<table>
+	  <thead>
+	    <tr>
+	      <th>s_id</th>
+	      <th>s_name</th>
+	      <th>d_id</th>
+	      <th>d_id_derp</th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	    <tr>
+	      <td>1</td>
+	      <td>Alice</td>
+	      <td>2</td>
+	      <td>2</td>
+	    </tr>
+	    <tr>
+	      <td>2</td>
+	      <td>Bob</td>
+	      <td>3</td>
+	      <td>2</td>
+	    </tr>
+	    <tr>
+	      <td>3</td>
+	      <td>Carol</td>
+	      <td>2</td>
+	      <td>2</td>
+	    </tr>
+	    <tr>
+	      <td>4</td>
+	      <td>Carol-san</td>
+	      <td>2</td>
+	      <td>2</td>
+	    </tr>
+	  </tbody>
+	</table>
+      </div>
+      <div class="element">
+	<h3>My Table Title 3</h3>
+	<table>
+	  <thead>
+	    <tr>
+	      <th>s_id</th>
+	      <th>s_name</th>
+	      <th>d_id</th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	    <tr>
+	      <td>1</td>
+	      <td>Alice</td>
+	      <td>2</td>
+	    </tr>
+	    <tr>
+	      <td>2</td>
+	      <td>Bob</td>
+	      <td>3</td>
+	    </tr>
+	    <tr>
+	      <td>3</td>
+	      <td>Carol</td>
+	      <td>2</td>
+	    </tr>
+	  </tbody>
+	</table>
+      </div>
+
+      <div class="element new-element">
+      <!-- <div class="element"> -->
+	<h3>My Table Title 4</h3>
+	<table>
+	  <thead>
+	    <tr>
+	      <th>s_id</th>
+	      <th>s_name</th>
+	      <th>d_id</th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	    <tr>
+	      <td>1</td>
+	      <td>Alice</td>
+	      <td>2</td>
+	    </tr>
+	    <tr>
+	      <td>2</td>
+	      <td>Bob</td>
+	      <td>3</td>
+	    </tr>
+	    <tr>
+	      <td>3</td>
+	      <td>Carol</td>
+	      <td>2</td>
+	    </tr>
+	  </tbody>
+	</table>
+      </div>
+      <div class="element">
+	<h3>My Table Title</h3>
+	<table>
+	  <thead>
+	    <tr>
+	      <th>s_id</th>
+	      <th>s_name</th>
+	      <th>d_id</th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	    <tr>
+	      <td>1</td>
+	      <td>Alice</td>
+	      <td>2</td>
+	    </tr>
+	    <tr>
+	      <td>2</td>
+	      <td>Bob</td>
+	      <td>3</td>
+	    </tr>
+	    <tr>
+	      <td>3</td>
+	      <td>Carol</td>
+	      <td>2</td>
+	    </tr>
+	  </tbody>
+	</table>
+      </div>
+
+      <dl>
+	<dt>TABLE:</dt>
+	<dd><code><kksel>SELECT</kksel> * FROM table_one
+LEFT JOIN table_two
+ON ... j-condition ...;
+	  </code>
+	</dd>
+
+	<dt>TABLE:</dt>
+	<dd>stuff about table</dd>
+      </dl>
+    </div>
+
+
+
+    <div class="wrapper"> <!-- eight. eighth. 08  -->
+
+      <h1>Meaningless Join</h1>
+
+      <div class="element">
+	<h3>My Table Title</h3>
+	<table>
+	  <thead>
+	    <tr>
+	      <th>s_id</th>
+	      <th>s_name</th>
+	      <th>d_id</th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	    <tr>
+	      <td>1</td>
+	      <td>Alice</td>
+	      <td>2</td>
+	    </tr>
+	    <tr>
+	      <td>2</td>
+	      <td>Bob</td>
+	      <td>3</td>
+	    </tr>
+	    <tr>
+	      <td>3</td>
+	      <td>Miss. Carol Sissippi</td>
+	      <td>2</td>
+	    </tr>
+	  </tbody>
+	</table>
+      </div>
+
+      <div class="element">
+	<h3>My Table Title</h3>
+	<table>
+	  <thead>
+	    <tr>
+	      <th>s_id</th>
+	      <th>s_name</th>
+	      <th>d_id</th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	    <tr>
+	      <td>1</td>
+	      <td>Alice</td>
+	      <td>2</td>
+	    </tr>
+	    <tr>
+	      <td>2</td>
+	      <td>Bob</td>
+	      <td>3</td>
+	    </tr>
+	    <tr>
+	      <td>3</td>
+	      <td>Miss. Carol Sissippi</td>
+	      <td>2</td>
+	    </tr>
+	  </tbody>
+	</table>
+      </div>
+      <div class="element">
+	<h3>My Table Title</h3>
+	<table>
+	  <thead>
+	    <tr>
+	      <th>s_id</th>
+	      <th>s_name</th>
+	      <th>d_id</th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	    <tr>
+	      <td>1</td>
+	      <td>Alice</td>
+	      <td>2</td>
+	    </tr>
+	    <tr>
+	      <td>2</td>
+	      <td>Bob</td>
+	      <td>3</td>
+	    </tr>
+	    <tr>
+	      <td>3</td>
+	      <td>Miss. Carol Sissippi</td>
+	      <td>2</td>
+	    </tr>
+	  </tbody>
+	</table>
+      </div>
+      <div class="element">
+	<h3>My Table Title</h3>
+	<table>
+	  <thead>
+	    <tr>
+	      <th>s_id</th>
+	      <th>s_name</th>
+	      <th>d_id</th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	    <tr>
+	      <td>1</td>
+	      <td>Alice</td>
+	      <td>2</td>
+	    </tr>
+	    <tr>
+	      <td>2</td>
+	      <td>Bob</td>
+	      <td>3</td>
+	    </tr>
+	    <tr>
+	      <td>3</td>
+	      <td>Carol</td>
+	      <td>2</td>
+	    </tr>
+	  </tbody>
+	</table>
+      </div>
+
+      <dl>
+	<dt>TABLE:</dt>
+	<dd><code><kksel>SELECT</kksel> * FROM table_one
+LEFT JOIN table_two
+ON ... j-condition ...;
+	  </code>
+	</dd>
+
+	<dt>TABLE:</dt>
+	<dd>stuff about table</dd>
+      </dl>
+    </div>
+
+
+   <div class="wrapper"> <!-- nine. 09   -->
+
+      <h1>Attribute Value Truncation</h1>
+
+      <div class="element">
+	<h3>My Table Title</h3>
+	<table>
+	  <thead>
+	    <tr>
+	      <th>s_id</th>
+	      <th>s_name</th>
+	      <th>d_id</th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	    <tr>
+	      <td>1</td>
+	      <td>Alice</td>
+	      <td>2</td>
+	    </tr>
+	    <tr>
+	      <td>2</td>
+	      <td>Bob</td>
+	      <td>3</td>
+	    </tr>
+	    <tr>
+	      <td>3</td>
+	      <td>Miss. Carol Sissippi</td>
+	      <td>2</td>
+	    </tr>
+	  </tbody>
+	</table>
+      </div>
+      <div class="element">
+	<h3>My Table Title 2</h3>
+	<table>
+	  <thead>
+	    <tr>
+	      <th>s_id</th>
+	      <th>s_name</th>
+	      <th>d_id</th>
+	      <th>d_id_derp</th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	    <tr>
+	      <td>1</td>
+	      <td>Alice</td>
+	      <td>2</td>
+	      <td>2</td>
+	    </tr>
+	    <tr>
+	      <td>2</td>
+	      <td>Bob</td>
+	      <td>3</td>
+	      <td>2</td>
+	    </tr>
+	    <tr>
+	      <td>3</td>
+	      <td>Carol</td>
+	      <td>2</td>
+	      <td>2</td>
+	    </tr>
+	    <tr>
+	      <td>4</td>
+	      <td>Carol-san</td>
+	      <td>2</td>
+	      <td>2</td>
+	    </tr>
+	  </tbody>
+	</table>
+      </div>
+      <div class="element">
+	<h3>My Table Title 3</h3>
+	<table>
+	  <thead>
+	    <tr>
+	      <th>s_id</th>
+	      <th>s_name</th>
+	      <th>d_id</th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	    <tr>
+	      <td>1</td>
+	      <td>Alice</td>
+	      <td>2</td>
+	    </tr>
+	    <tr>
+	      <td>2</td>
+	      <td>Bob</td>
+	      <td>3</td>
+	    </tr>
+	    <tr>
+	      <td>3</td>
+	      <td>Carol</td>
+	      <td>2</td>
+	    </tr>
+	  </tbody>
+	</table>
+      </div>
+
+      <div class="element new-element">
+      <!-- <div class="element"> -->
+	<h3>My Table Title 4</h3>
+	<table>
+	  <thead>
+	    <tr>
+	      <th>s_id</th>
+	      <th>s_name</th>
+	      <th>d_id</th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	    <tr>
+	      <td>1</td>
+	      <td>Alice</td>
+	      <td>2</td>
+	    </tr>
+	    <tr>
+	      <td>2</td>
+	      <td>Bob</td>
+	      <td>3</td>
+	    </tr>
+	    <tr>
+	      <td>3</td>
+	      <td>Carol</td>
+	      <td>2</td>
+	    </tr>
+	  </tbody>
+	</table>
+      </div>
+      <div class="element">
+	<h3>My Table Title</h3>
+	<table>
+	  <thead>
+	    <tr>
+	      <th>s_id</th>
+	      <th>s_name</th>
+	      <th>d_id</th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	    <tr>
+	      <td>1</td>
+	      <td>Alice</td>
+	      <td>2</td>
+	    </tr>
+	    <tr>
+	      <td>2</td>
+	      <td>Bob</td>
+	      <td>3</td>
+	    </tr>
+	    <tr>
+	      <td>3</td>
+	      <td>Carol</td>
+	      <td>2</td>
+	    </tr>
+	  </tbody>
+	</table>
+      </div>
+
+      <dl>
+	<dt>TABLE:</dt>
+	<dd><code><kksel>SELECT</kksel> * FROM table_one
+LEFT JOIN table_two
+ON ... j-condition ...;
+	  </code>
+	</dd>
+
+	<dt>TABLE:</dt>
+	<dd>stuff about table</dd>
+      </dl>
+    </div>
+
+
+
+    <div class="wrapper"> <!-- ten 10  -->
+
+      <h1>Equal Shares of an Empty Pie - Example One</h1>
+
+      <div class="element">
+	<h3>My Table Title</h3>
+	<table>
+	  <thead>
+	    <tr>
+	      <th>s_id</th>
+	      <th>s_name</th>
+	      <th>d_id</th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	    <tr>
+	      <td>1</td>
+	      <td>Alice</td>
+	      <td>2</td>
+	    </tr>
+	    <tr>
+	      <td>2</td>
+	      <td>Bob</td>
+	      <td>3</td>
+	    </tr>
+	    <tr>
+	      <td>3</td>
+	      <td>Miss. Carol Sissippi</td>
+	      <td>2</td>
+	    </tr>
+	  </tbody>
+	</table>
+      </div>
+
+      <div class="element">
+	<h3>My Table Title</h3>
+	<table>
+	  <thead>
+	    <tr>
+	      <th>s_id</th>
+	      <th>s_name</th>
+	      <th>d_id</th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	    <tr>
+	      <td>1</td>
+	      <td>Alice</td>
+	      <td>2</td>
+	    </tr>
+	    <tr>
+	      <td>2</td>
+	      <td>Bob</td>
+	      <td>3</td>
+	    </tr>
+	    <tr>
+	      <td>3</td>
+	      <td>Miss. Carol Sissippi</td>
+	      <td>2</td>
+	    </tr>
+	  </tbody>
+	</table>
+      </div>
+      <div class="element">
+	<h3>My Table Title</h3>
+	<table>
+	  <thead>
+	    <tr>
+	      <th>s_id</th>
+	      <th>s_name</th>
+	      <th>d_id</th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	    <tr>
+	      <td>1</td>
+	      <td>Alice</td>
+	      <td>2</td>
+	    </tr>
+	    <tr>
+	      <td>2</td>
+	      <td>Bob</td>
+	      <td>3</td>
+	    </tr>
+	    <tr>
+	      <td>3</td>
+	      <td>Miss. Carol Sissippi</td>
+	      <td>2</td>
+	    </tr>
+	  </tbody>
+	</table>
+      </div>
+      <div class="element">
+	<h3>My Table Title</h3>
+	<table>
+	  <thead>
+	    <tr>
+	      <th>s_id</th>
+	      <th>s_name</th>
+	      <th>d_id</th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	    <tr>
+	      <td>1</td>
+	      <td>Alice</td>
+	      <td>2</td>
+	    </tr>
+	    <tr>
+	      <td>2</td>
+	      <td>Bob</td>
+	      <td>3</td>
+	    </tr>
+	    <tr>
+	      <td>3</td>
+	      <td>Carol</td>
+	      <td>2</td>
+	    </tr>
+	  </tbody>
+	</table>
+      </div>
+
+      <dl>
+	<dt>TABLE:</dt>
+	<dd><code><kksel>SELECT</kksel> * FROM table_one
+LEFT JOIN table_two
+ON ... j-condition ...;
+	  </code>
+	</dd>
+
+	<dt>TABLE:</dt>
+	<dd>stuff about table</dd>
+      </dl>
+    </div>
+
+
+
+
+    <div class="wrapper"> <!-- eighteen 18  -->
+
+      <h1>Equal Shares of an Empty Pie - Example Two</h1>
+
+      <div class="element">
+	<h3>My Table Title</h3>
+	<table>
+	  <thead>
+	    <tr>
+	      <th>s_id</th>
+	      <th>s_name</th>
+	      <th>d_id</th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	    <tr>
+	      <td>1</td>
+	      <td>Alice</td>
+	      <td>2</td>
+	    </tr>
+	    <tr>
+	      <td>2</td>
+	      <td>Bob</td>
+	      <td>3</td>
+	    </tr>
+	    <tr>
+	      <td>3</td>
+	      <td>Miss. Carol Sissippi</td>
+	      <td>2</td>
+	    </tr>
+	  </tbody>
+	</table>
+      </div>
+
+      <div class="element">
+	<h3>My Table Title</h3>
+	<table>
+	  <thead>
+	    <tr>
+	      <th>s_id</th>
+	      <th>s_name</th>
+	      <th>d_id</th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	    <tr>
+	      <td>1</td>
+	      <td>Alice</td>
+	      <td>2</td>
+	    </tr>
+	    <tr>
+	      <td>2</td>
+	      <td>Bob</td>
+	      <td>3</td>
+	    </tr>
+	    <tr>
+	      <td>3</td>
+	      <td>Miss. Carol Sissippi</td>
+	      <td>2</td>
+	    </tr>
+	  </tbody>
+	</table>
+      </div>
+      <div class="element">
+	<h3>My Table Title</h3>
+	<table>
+	  <thead>
+	    <tr>
+	      <th>s_id</th>
+	      <th>s_name</th>
+	      <th>d_id</th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	    <tr>
+	      <td>1</td>
+	      <td>Alice</td>
+	      <td>2</td>
+	    </tr>
+	    <tr>
+	      <td>2</td>
+	      <td>Bob</td>
+	      <td>3</td>
+	    </tr>
+	    <tr>
+	      <td>3</td>
+	      <td>Miss. Carol Sissippi</td>
+	      <td>2</td>
+	    </tr>
+	  </tbody>
+	</table>
+      </div>
+      <div class="element">
+	<h3>My Table Title</h3>
+	<table>
+	  <thead>
+	    <tr>
+	      <th>s_id</th>
+	      <th>s_name</th>
+	      <th>d_id</th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	    <tr>
+	      <td>1</td>
+	      <td>Alice</td>
+	      <td>2</td>
+	    </tr>
+	    <tr>
+	      <td>2</td>
+	      <td>Bob</td>
+	      <td>3</td>
+	    </tr>
+	    <tr>
+	      <td>3</td>
+	      <td>Carol</td>
+	      <td>2</td>
+	    </tr>
+	  </tbody>
+	</table>
+      </div>
+
+      <dl>
+	<dt>TABLE:</dt>
+	<dd><code><kksel>SELECT</kksel> * FROM table_one
+LEFT JOIN table_two
+ON ... j-condition ...;
+	  </code>
+	</dd>
+
+	<dt>TABLE:</dt>
+	<dd>stuff about table</dd>
+      </dl>
+    </div>
+
+
+
+
+
+
+   <div class="wrapper"> <!-- eleven 11 -->
+
+      <h1>Repealed Law of the Excluded Middle</h1>
+
+      <div class="element">
+	<h3>My Table Title</h3>
+	<table>
+	  <thead>
+	    <tr>
+	      <th>s_id</th>
+	      <th>s_name</th>
+	      <th>d_id</th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	    <tr>
+	      <td>1</td>
+	      <td>Alice</td>
+	      <td>2</td>
+	    </tr>
+	    <tr>
+	      <td>2</td>
+	      <td>Bob</td>
+	      <td>3</td>
+	    </tr>
+	    <tr>
+	      <td>3</td>
+	      <td>Miss. Carol Sissippi</td>
+	      <td>2</td>
+	    </tr>
+	  </tbody>
+	</table>
+      </div>
+      <div class="element">
+	<h3>My Table Title 2</h3>
+	<table>
+	  <thead>
+	    <tr>
+	      <th>s_id</th>
+	      <th>s_name</th>
+	      <th>d_id</th>
+	      <th>d_id_derp</th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	    <tr>
+	      <td>1</td>
+	      <td>Alice</td>
+	      <td>2</td>
+	      <td>2</td>
+	    </tr>
+	    <tr>
+	      <td>2</td>
+	      <td>Bob</td>
+	      <td>3</td>
+	      <td>2</td>
+	    </tr>
+	    <tr>
+	      <td>3</td>
+	      <td>Carol</td>
+	      <td>2</td>
+	      <td>2</td>
+	    </tr>
+	    <tr>
+	      <td>4</td>
+	      <td>Carol-san</td>
+	      <td>2</td>
+	      <td>2</td>
+	    </tr>
+	  </tbody>
+	</table>
+      </div>
+      <div class="element">
+	<h3>My Table Title 3</h3>
+	<table>
+	  <thead>
+	    <tr>
+	      <th>s_id</th>
+	      <th>s_name</th>
+	      <th>d_id</th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	    <tr>
+	      <td>1</td>
+	      <td>Alice</td>
+	      <td>2</td>
+	    </tr>
+	    <tr>
+	      <td>2</td>
+	      <td>Bob</td>
+	      <td>3</td>
+	    </tr>
+	    <tr>
+	      <td>3</td>
+	      <td>Carol</td>
+	      <td>2</td>
+	    </tr>
+	  </tbody>
+	</table>
+      </div>
+
+      <div class="element new-element">
+      <!-- <div class="element"> -->
+	<h3>My Table Title 4</h3>
+	<table>
+	  <thead>
+	    <tr>
+	      <th>s_id</th>
+	      <th>s_name</th>
+	      <th>d_id</th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	    <tr>
+	      <td>1</td>
+	      <td>Alice</td>
+	      <td>2</td>
+	    </tr>
+	    <tr>
+	      <td>2</td>
+	      <td>Bob</td>
+	      <td>3</td>
+	    </tr>
+	    <tr>
+	      <td>3</td>
+	      <td>Carol</td>
+	      <td>2</td>
+	    </tr>
+	  </tbody>
+	</table>
+      </div>
+      <div class="element">
+	<h3>My Table Title</h3>
+	<table>
+	  <thead>
+	    <tr>
+	      <th>s_id</th>
+	      <th>s_name</th>
+	      <th>d_id</th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	    <tr>
+	      <td>1</td>
+	      <td>Alice</td>
+	      <td>2</td>
+	    </tr>
+	    <tr>
+	      <td>2</td>
+	      <td>Bob</td>
+	      <td>3</td>
+	    </tr>
+	    <tr>
+	      <td>3</td>
+	      <td>Carol</td>
+	      <td>2</td>
+	    </tr>
+	  </tbody>
+	</table>
+      </div>
+
+      <dl>
+	<dt>TABLE:</dt>
+	<dd><code><kksel>SELECT</kksel> * FROM table_one
+LEFT JOIN table_two
+ON ... j-condition ...;
+	  </code>
+	</dd>
+
+	<dt>TABLE:</dt>
+	<dd>stuff about table</dd>
+      </dl>
+    </div>
+
+
+
+    <div class="wrapper"> <!-- twelve 12  -->
+
+      <h1>Unnamed Class in Group By</h1>
+
+      <div class="element">
+	<h3>My Table Title</h3>
+	<table>
+	  <thead>
+	    <tr>
+	      <th>s_id</th>
+	      <th>s_name</th>
+	      <th>d_id</th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	    <tr>
+	      <td>1</td>
+	      <td>Alice</td>
+	      <td>2</td>
+	    </tr>
+	    <tr>
+	      <td>2</td>
+	      <td>Bob</td>
+	      <td>3</td>
+	    </tr>
+	    <tr>
+	      <td>3</td>
+	      <td>Miss. Carol Sissippi</td>
+	      <td>2</td>
+	    </tr>
+	  </tbody>
+	</table>
+      </div>
+
+      <div class="element">
+	<h3>My Table Title</h3>
+	<table>
+	  <thead>
+	    <tr>
+	      <th>s_id</th>
+	      <th>s_name</th>
+	      <th>d_id</th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	    <tr>
+	      <td>1</td>
+	      <td>Alice</td>
+	      <td>2</td>
+	    </tr>
+	    <tr>
+	      <td>2</td>
+	      <td>Bob</td>
+	      <td>3</td>
+	    </tr>
+	    <tr>
+	      <td>3</td>
+	      <td>Miss. Carol Sissippi</td>
+	      <td>2</td>
+	    </tr>
+	  </tbody>
+	</table>
+      </div>
+      <div class="element">
+	<h3>My Table Title</h3>
+	<table>
+	  <thead>
+	    <tr>
+	      <th>s_id</th>
+	      <th>s_name</th>
+	      <th>d_id</th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	    <tr>
+	      <td>1</td>
+	      <td>Alice</td>
+	      <td>2</td>
+	    </tr>
+	    <tr>
+	      <td>2</td>
+	      <td>Bob</td>
+	      <td>3</td>
+	    </tr>
+	    <tr>
+	      <td>3</td>
+	      <td>Miss. Carol Sissippi</td>
+	      <td>2</td>
+	    </tr>
+	  </tbody>
+	</table>
+      </div>
+      <div class="element">
+	<h3>My Table Title</h3>
+	<table>
+	  <thead>
+	    <tr>
+	      <th>s_id</th>
+	      <th>s_name</th>
+	      <th>d_id</th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	    <tr>
+	      <td>1</td>
+	      <td>Alice</td>
+	      <td>2</td>
+	    </tr>
+	    <tr>
+	      <td>2</td>
+	      <td>Bob</td>
+	      <td>3</td>
+	    </tr>
+	    <tr>
+	      <td>3</td>
+	      <td>Carol</td>
+	      <td>2</td>
+	    </tr>
+	  </tbody>
+	</table>
+      </div>
+
+      <dl>
+	<dt>TABLE:</dt>
+	<dd><code><kksel>SELECT</kksel> * FROM table_one
+LEFT JOIN table_two
+ON ... j-condition ...;
+	  </code>
+	</dd>
+
+	<dt>TABLE:</dt>
+	<dd>stuff about table</dd>
+      </dl>
+    </div>
+
+
+   <div class="wrapper"> <!-- thirteen 13 -->
+
+      <h1>Black Hole Operand</h1>
+
+      <div class="element">
+	<h3>My Table Title</h3>
+	<table>
+	  <thead>
+	    <tr>
+	      <th>s_id</th>
+	      <th>s_name</th>
+	      <th>d_id</th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	    <tr>
+	      <td>1</td>
+	      <td>Alice</td>
+	      <td>2</td>
+	    </tr>
+	    <tr>
+	      <td>2</td>
+	      <td>Bob</td>
+	      <td>3</td>
+	    </tr>
+	    <tr>
+	      <td>3</td>
+	      <td>Miss. Carol Sissippi</td>
+	      <td>2</td>
+	    </tr>
+	  </tbody>
+	</table>
+      </div>
+      <div class="element">
+	<h3>My Table Title 2</h3>
+	<table>
+	  <thead>
+	    <tr>
+	      <th>s_id</th>
+	      <th>s_name</th>
+	      <th>d_id</th>
+	      <th>d_id_derp</th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	    <tr>
+	      <td>1</td>
+	      <td>Alice</td>
+	      <td>2</td>
+	      <td>2</td>
+	    </tr>
+	    <tr>
+	      <td>2</td>
+	      <td>Bob</td>
+	      <td>3</td>
+	      <td>2</td>
+	    </tr>
+	    <tr>
+	      <td>3</td>
+	      <td>Carol</td>
+	      <td>2</td>
+	      <td>2</td>
+	    </tr>
+	    <tr>
+	      <td>4</td>
+	      <td>Carol-san</td>
+	      <td>2</td>
+	      <td>2</td>
+	    </tr>
+	  </tbody>
+	</table>
+      </div>
+      <div class="element">
+	<h3>My Table Title 3</h3>
+	<table>
+	  <thead>
+	    <tr>
+	      <th>s_id</th>
+	      <th>s_name</th>
+	      <th>d_id</th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	    <tr>
+	      <td>1</td>
+	      <td>Alice</td>
+	      <td>2</td>
+	    </tr>
+	    <tr>
+	      <td>2</td>
+	      <td>Bob</td>
+	      <td>3</td>
+	    </tr>
+	    <tr>
+	      <td>3</td>
+	      <td>Carol</td>
+	      <td>2</td>
+	    </tr>
+	  </tbody>
+	</table>
+      </div>
+
+      <div class="element new-element">
+      <!-- <div class="element"> -->
+	<h3>My Table Title 4</h3>
+	<table>
+	  <thead>
+	    <tr>
+	      <th>s_id</th>
+	      <th>s_name</th>
+	      <th>d_id</th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	    <tr>
+	      <td>1</td>
+	      <td>Alice</td>
+	      <td>2</td>
+	    </tr>
+	    <tr>
+	      <td>2</td>
+	      <td>Bob</td>
+	      <td>3</td>
+	    </tr>
+	    <tr>
+	      <td>3</td>
+	      <td>Carol</td>
+	      <td>2</td>
+	    </tr>
+	  </tbody>
+	</table>
+      </div>
+      <div class="element">
+	<h3>My Table Title</h3>
+	<table>
+	  <thead>
+	    <tr>
+	      <th>s_id</th>
+	      <th>s_name</th>
+	      <th>d_id</th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	    <tr>
+	      <td>1</td>
+	      <td>Alice</td>
+	      <td>2</td>
+	    </tr>
+	    <tr>
+	      <td>2</td>
+	      <td>Bob</td>
+	      <td>3</td>
+	    </tr>
+	    <tr>
+	      <td>3</td>
+	      <td>Carol</td>
+	      <td>2</td>
+	    </tr>
+	  </tbody>
+	</table>
+      </div>
+
+      <dl>
+	<dt>TABLE:</dt>
+	<dd><code><kksel>SELECT</kksel> * FROM table_one
+LEFT JOIN table_two
+ON ... j-condition ...;
+	  </code>
+	</dd>
+
+	<dt>TABLE:</dt>
+	<dd>stuff about table</dd>
+      </dl>
+    </div>
+
+
+
+    <div class="wrapper"> <!-- fourteen 14  -->
+
+      <h1>NULL Cannot "Not In"</h1>
+
+      <div class="element">
+	<h3>My Table Title</h3>
+	<table>
+	  <thead>
+	    <tr>
+	      <th>s_id</th>
+	      <th>s_name</th>
+	      <th>d_id</th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	    <tr>
+	      <td>1</td>
+	      <td>Alice</td>
+	      <td>2</td>
+	    </tr>
+	    <tr>
+	      <td>2</td>
+	      <td>Bob</td>
+	      <td>3</td>
+	    </tr>
+	    <tr>
+	      <td>3</td>
+	      <td>Miss. Carol Sissippi</td>
+	      <td>2</td>
+	    </tr>
+	  </tbody>
+	</table>
+      </div>
+
+      <div class="element">
+	<h3>My Table Title</h3>
+	<table>
+	  <thead>
+	    <tr>
+	      <th>s_id</th>
+	      <th>s_name</th>
+	      <th>d_id</th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	    <tr>
+	      <td>1</td>
+	      <td>Alice</td>
+	      <td>2</td>
+	    </tr>
+	    <tr>
+	      <td>2</td>
+	      <td>Bob</td>
+	      <td>3</td>
+	    </tr>
+	    <tr>
+	      <td>3</td>
+	      <td>Miss. Carol Sissippi</td>
+	      <td>2</td>
+	    </tr>
+	  </tbody>
+	</table>
+      </div>
+      <div class="element">
+	<h3>My Table Title</h3>
+	<table>
+	  <thead>
+	    <tr>
+	      <th>s_id</th>
+	      <th>s_name</th>
+	      <th>d_id</th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	    <tr>
+	      <td>1</td>
+	      <td>Alice</td>
+	      <td>2</td>
+	    </tr>
+	    <tr>
+	      <td>2</td>
+	      <td>Bob</td>
+	      <td>3</td>
+	    </tr>
+	    <tr>
+	      <td>3</td>
+	      <td>Miss. Carol Sissippi</td>
+	      <td>2</td>
+	    </tr>
+	  </tbody>
+	</table>
+      </div>
+      <div class="element">
+	<h3>My Table Title</h3>
+	<table>
+	  <thead>
+	    <tr>
+	      <th>s_id</th>
+	      <th>s_name</th>
+	      <th>d_id</th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	    <tr>
+	      <td>1</td>
+	      <td>Alice</td>
+	      <td>2</td>
+	    </tr>
+	    <tr>
+	      <td>2</td>
+	      <td>Bob</td>
+	      <td>3</td>
+	    </tr>
+	    <tr>
+	      <td>3</td>
+	      <td>Carol</td>
+	      <td>2</td>
+	    </tr>
+	  </tbody>
+	</table>
+      </div>
+
+      <dl>
+	<dt>TABLE:</dt>
+	<dd><code><kksel>SELECT</kksel> * FROM table_one
+LEFT JOIN table_two
+ON ... j-condition ...;
+	  </code>
+	</dd>
+
+	<dt>TABLE:</dt>
+	<dd>stuff about table</dd>
+      </dl>
+    </div>
+
+
+   <div class="wrapper"> <!-- fifteen 15 -->
+
+      <h1>Summarizing a Void</h1>
+
+      <div class="element">
+	<h3>My Table Title</h3>
+	<table>
+	  <thead>
+	    <tr>
+	      <th>s_id</th>
+	      <th>s_name</th>
+	      <th>d_id</th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	    <tr>
+	      <td>1</td>
+	      <td>Alice</td>
+	      <td>2</td>
+	    </tr>
+	    <tr>
+	      <td>2</td>
+	      <td>Bob</td>
+	      <td>3</td>
+	    </tr>
+	    <tr>
+	      <td>3</td>
+	      <td>Miss. Carol Sissippi</td>
+	      <td>2</td>
+	    </tr>
+	  </tbody>
+	</table>
+      </div>
+      <div class="element">
+	<h3>My Table Title 2</h3>
+	<table>
+	  <thead>
+	    <tr>
+	      <th>s_id</th>
+	      <th>s_name</th>
+	      <th>d_id</th>
+	      <th>d_id_derp</th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	    <tr>
+	      <td>1</td>
+	      <td>Alice</td>
+	      <td>2</td>
+	      <td>2</td>
+	    </tr>
+	    <tr>
+	      <td>2</td>
+	      <td>Bob</td>
+	      <td>3</td>
+	      <td>2</td>
+	    </tr>
+	    <tr>
+	      <td>3</td>
+	      <td>Carol</td>
+	      <td>2</td>
+	      <td>2</td>
+	    </tr>
+	    <tr>
+	      <td>4</td>
+	      <td>Carol-san</td>
+	      <td>2</td>
+	      <td>2</td>
+	    </tr>
+	  </tbody>
+	</table>
+      </div>
+      <div class="element">
+	<h3>My Table Title 3</h3>
+	<table>
+	  <thead>
+	    <tr>
+	      <th>s_id</th>
+	      <th>s_name</th>
+	      <th>d_id</th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	    <tr>
+	      <td>1</td>
+	      <td>Alice</td>
+	      <td>2</td>
+	    </tr>
+	    <tr>
+	      <td>2</td>
+	      <td>Bob</td>
+	      <td>3</td>
+	    </tr>
+	    <tr>
+	      <td>3</td>
+	      <td>Carol</td>
+	      <td>2</td>
+	    </tr>
+	  </tbody>
+	</table>
+      </div>
+
+      <div class="element new-element">
+      <!-- <div class="element"> -->
+	<h3>My Table Title 4</h3>
+	<table>
+	  <thead>
+	    <tr>
+	      <th>s_id</th>
+	      <th>s_name</th>
+	      <th>d_id</th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	    <tr>
+	      <td>1</td>
+	      <td>Alice</td>
+	      <td>2</td>
+	    </tr>
+	    <tr>
+	      <td>2</td>
+	      <td>Bob</td>
+	      <td>3</td>
+	    </tr>
+	    <tr>
+	      <td>3</td>
+	      <td>Carol</td>
+	      <td>2</td>
+	    </tr>
+	  </tbody>
+	</table>
+      </div>
+      <div class="element">
+	<h3>My Table Title</h3>
+	<table>
+	  <thead>
+	    <tr>
+	      <th>s_id</th>
+	      <th>s_name</th>
+	      <th>d_id</th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	    <tr>
+	      <td>1</td>
+	      <td>Alice</td>
+	      <td>2</td>
+	    </tr>
+	    <tr>
+	      <td>2</td>
+	      <td>Bob</td>
+	      <td>3</td>
+	    </tr>
+	    <tr>
+	      <td>3</td>
+	      <td>Carol</td>
+	      <td>2</td>
+	    </tr>
+	  </tbody>
+	</table>
+      </div>
+
+      <dl>
+	<dt>TABLE:</dt>
+	<dd><code><kksel>SELECT</kksel> * FROM table_one
+LEFT JOIN table_two
+ON ... j-condition ...;
+	  </code>
+	</dd>
+
+	<dt>TABLE:</dt>
+	<dd>stuff about table</dd>
+      </dl>
+    </div>
+
+
+
+    <div class="wrapper"> <!-- sixteen 16  -->
+
+      <h1>Left Join is a Misnomer</h1>
+
+      <div class="element">
+	<h3>My Table Title</h3>
+	<table>
+	  <thead>
+	    <tr>
+	      <th>s_id</th>
+	      <th>s_name</th>
+	      <th>d_id</th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	    <tr>
+	      <td>1</td>
+	      <td>Alice</td>
+	      <td>2</td>
+	    </tr>
+	    <tr>
+	      <td>2</td>
+	      <td>Bob</td>
+	      <td>3</td>
+	    </tr>
+	    <tr>
+	      <td>3</td>
+	      <td>Miss. Carol Sissippi</td>
+	      <td>2</td>
+	    </tr>
+	  </tbody>
+	</table>
+      </div>
+
+      <div class="element">
+	<h3>My Table Title</h3>
+	<table>
+	  <thead>
+	    <tr>
+	      <th>s_id</th>
+	      <th>s_name</th>
+	      <th>d_id</th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	    <tr>
+	      <td>1</td>
+	      <td>Alice</td>
+	      <td>2</td>
+	    </tr>
+	    <tr>
+	      <td>2</td>
+	      <td>Bob</td>
+	      <td>3</td>
+	    </tr>
+	    <tr>
+	      <td>3</td>
+	      <td>Miss. Carol Sissippi</td>
+	      <td>2</td>
+	    </tr>
+	  </tbody>
+	</table>
+      </div>
+      <div class="element">
+	<h3>My Table Title</h3>
+	<table>
+	  <thead>
+	    <tr>
+	      <th>s_id</th>
+	      <th>s_name</th>
+	      <th>d_id</th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	    <tr>
+	      <td>1</td>
+	      <td>Alice</td>
+	      <td>2</td>
+	    </tr>
+	    <tr>
+	      <td>2</td>
+	      <td>Bob</td>
+	      <td>3</td>
+	    </tr>
+	    <tr>
+	      <td>3</td>
+	      <td>Miss. Carol Sissippi</td>
+	      <td>2</td>
+	    </tr>
+	  </tbody>
+	</table>
+      </div>
+      <div class="element">
+	<h3>My Table Title</h3>
+	<table>
+	  <thead>
+	    <tr>
+	      <th>s_id</th>
+	      <th>s_name</th>
+	      <th>d_id</th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	    <tr>
+	      <td>1</td>
+	      <td>Alice</td>
+	      <td>2</td>
+	    </tr>
+	    <tr>
+	      <td>2</td>
+	      <td>Bob</td>
+	      <td>3</td>
+	    </tr>
+	    <tr>
+	      <td>3</td>
+	      <td>Carol</td>
+	      <td>2</td>
+	    </tr>
+	  </tbody>
+	</table>
+      </div>
+
+      <dl>
+	<dt>TABLE:</dt>
+	<dd><code><kksel>SELECT</kksel> * FROM table_one
+LEFT JOIN table_two
+ON ... j-condition ...;
+	  </code>
+	</dd>
+
+	<dt>TABLE:</dt>
+	<dd>stuff about table</dd>
+      </dl>
+    </div>
+
 
 
   </body>
