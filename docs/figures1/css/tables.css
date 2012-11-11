@@ -11,7 +11,7 @@ code {
     margin: 0;
     font-family: "Liberation Mono";
     font-size: 1em;
-    padding: 0px 0px 0px 0px; /* top right bottom left */
+    padding: 0px 8px 0px 0px; /* top right bottom left */
 }
 
 
