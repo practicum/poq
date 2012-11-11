@@ -9,170 +9,141 @@
       <h1>Scalar Context Overrun</h1>
 
       <div class="element">
-        <h3>My Table Title</h3>
+        <h3>OrderDetail</h3>
         <table>
           <thead>
             <tr>
-              <th>s_id</th>
-              <th>s_name</th>
-              <th>d_id</th>
+              <th>order</th>
+              <th>product</th>
+              <th>quantity</th>
             </tr>
           </thead>
           <tbody>
             <tr>
               <td>1</td>
-              <td>Alice</td>
-              <td>2</td>
+              <td>brush</td>
+              <td>1</td>
             </tr>
-            <tr>
-              <td>2</td>
-              <td>Bob</td>
-              <td>3</td>
-            </tr>
-            <tr>
-              <td>3</td>
-              <td>Miss. Carol Sissippi</td>
-              <td>2</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="element">
-        <h3>My Table Title 2</h3>
-        <table>
-          <thead>
-            <tr>
-              <th>s_id</th>
-              <th>s_name</th>
-              <th>d_id</th>
-              <th>d_id_derp</th>
-            </tr>
-          </thead>
-          <tbody>
             <tr>
               <td>1</td>
-              <td>Alice</td>
+              <td>soap</td>
+              <td>3</td>
+            </tr>
+            <tr>
               <td>2</td>
+              <td>book</td>
               <td>2</td>
             </tr>
             <tr>
               <td>2</td>
-              <td>Bob</td>
-              <td>3</td>
-              <td>2</td>
+              <td>pencil</td>
+              <td>1</td>
             </tr>
             <tr>
               <td>3</td>
-              <td>Carol</td>
-              <td>2</td>
-              <td>2</td>
+              <td>pen</td>
+              <td>4</td>
             </tr>
             <tr>
               <td>4</td>
-              <td>Carol-san</td>
-              <td>2</td>
-              <td>2</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="element">
-        <h3>My Table Title 3</h3>
-        <table>
-          <thead>
-            <tr>
-              <th>s_id</th>
-              <th>s_name</th>
-              <th>d_id</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>1</td>
-              <td>Alice</td>
-              <td>2</td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>Bob</td>
-              <td>3</td>
-            </tr>
-            <tr>
-              <td>3</td>
-              <td>Carol</td>
-              <td>2</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <div class="element new-element">
-      <!-- <div class="element"> -->
-        <h3>My Table Title 4</h3>
-        <table>
-          <thead>
-            <tr>
-              <th>s_id</th>
-              <th>s_name</th>
-              <th>d_id</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>1</td>
-              <td>Alice</td>
-              <td>2</td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>Bob</td>
-              <td>3</td>
-            </tr>
-            <tr>
-              <td>3</td>
-              <td>Carol</td>
+              <td>hat</td>
               <td>2</td>
             </tr>
           </tbody>
         </table>
       </div>
       <div class="element">
-        <h3>My Table Title</h3>
+        <h3>RefundClaim_V1</h3>
         <table>
           <thead>
             <tr>
-              <th>s_id</th>
-              <th>s_name</th>
-              <th>d_id</th>
+              <th>customer</th>
+              <th>order</th>
+              <th>claim_date</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>C032</td>
+              <td>3</td>
+              <td>2012-01-15</td>
+            </tr>
+            <tr>
+              <td>C058</td>
+              <td>1</td>
+              <td>2012-04-15</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="element">
+        <h3>RefundClaim_V2</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>customer</th>
+              <th>order</th>
+              <th>claim_date</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>C032</td>
+              <td>3</td>
+              <td>2012-01-15</td>
+            </tr>
+            <tr>
+              <td>C058</td>
+              <td>1</td>
+              <td>2012-04-15</td>
+            </tr>
+            <tr>
+              <td>C058</td>
+              <td>4</td>
+              <td>2012-04-15</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="element resultset">
+        <h3>Query A</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>order</th>
+              <th>product</th>
+              <th>quantity</th>
             </tr>
           </thead>
           <tbody>
             <tr>
               <td>1</td>
-              <td>Alice</td>
-              <td>2</td>
+              <td>brush</td>
+              <td>1</td>
             </tr>
             <tr>
-              <td>2</td>
-              <td>Bob</td>
+              <td>1</td>
+              <td>soap</td>
               <td>3</td>
-            </tr>
-            <tr>
-              <td>3</td>
-              <td>Carol</td>
-              <td>2</td>
             </tr>
           </tbody>
         </table>
       </div>
 
       <dl>
-        <dt>TABLE:</dt>
-        <dd><code><kksel>SELECT</kksel> * FROM table_one <kksel>LEFT JOIN</kksel> table_two</code>
+        <dt>Query A:</dt>
+        <dd><code>SELECT * FROM OrderDetail WHERE order =
+( SELECT order FROM RefundClaim_V1 WHERE
+  customer = 'C058' and claim_date = '2012-04-15' );</code>
         </dd>
 
-        <dt>TABLE:</dt>
-        <dd>stuff about table</dd>
+        <dt>Query B:</dt>
+        <dd><code>-- This query will fail.
+SELECT * FROM OrderDetail WHERE order =
+( SELECT order FROM RefundClaim_V2 WHERE
+  customer = 'C058' and claim_date = '2012-04-15' );</code>
+        </dd>
+
       </dl>
     </div>
 
