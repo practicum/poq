@@ -370,133 +370,75 @@ WHERE salary < 1000 GROUP BY dept;</code>
       <h1>Fickle Tiebreaker</h1>
 
       <div class="element">
-        <h3>My Table Title</h3>
+        <h3>SomeTable</h3>
         <table>
           <thead>
             <tr>
-              <th>s_id</th>
-              <th>s_name</th>
-              <th>d_id</th>
+              <th>num</th>
+              <th>string</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td>1</td>
-              <td>Alice</td>
-              <td>2</td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>Bob</td>
               <td>3</td>
+              <td>x</td>
             </tr>
             <tr>
               <td>3</td>
-              <td>Miss. Carol Sissippi</td>
+              <td>n</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>z</td>
+            </tr>
+            <tr>
               <td>2</td>
+              <td>c</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>r</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="element resultset">
+        <h3>Query</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>num</th>
+              <th>string</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>2</td>
+              <td>c</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>r</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>x</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>n</td>
             </tr>
           </tbody>
         </table>
       </div>
 
-      <div class="element">
-        <h3>My Table Title</h3>
-        <table>
-          <thead>
-            <tr>
-              <th>s_id</th>
-              <th>s_name</th>
-              <th>d_id</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>1</td>
-              <td>Alice</td>
-              <td>2</td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>Bob</td>
-              <td>3</td>
-            </tr>
-            <tr>
-              <td>3</td>
-              <td>Miss. Carol Sissippi</td>
-              <td>2</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="element">
-        <h3>My Table Title</h3>
-        <table>
-          <thead>
-            <tr>
-              <th>s_id</th>
-              <th>s_name</th>
-              <th>d_id</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>1</td>
-              <td>Alice</td>
-              <td>2</td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>Bob</td>
-              <td>3</td>
-            </tr>
-            <tr>
-              <td>3</td>
-              <td>Miss. Carol Sissippi</td>
-              <td>2</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="element">
-        <h3>My Table Title</h3>
-        <table>
-          <thead>
-            <tr>
-              <th>s_id</th>
-              <th>s_name</th>
-              <th>d_id</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>1</td>
-              <td>Alice</td>
-              <td>2</td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>Bob</td>
-              <td>3</td>
-            </tr>
-            <tr>
-              <td>3</td>
-              <td>Carol</td>
-              <td>2</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+
 
       <dl>
-        <dt>TABLE:</dt>
-        <dd><code><kksel>SELECT</kksel> * FROM table_one
-LEFT JOIN table_two
-ON ... j-condition ...;
-          </code>
+        <dt>QUERY:</dt>
+        <dd><code>SELECT * FROM SomeTable ORDER BY num LIMIT 4;</code>
         </dd>
 
-        <dt>TABLE:</dt>
-        <dd>stuff about table</dd>
       </dl>
     </div>
 
