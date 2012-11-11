@@ -54,7 +54,12 @@ h3 {
     margin-bottom: 0;
 }
 
-pre {
+code {
+    white-space: pre;
     margin: 0;
     font-family: "FreeMono";
+}
+
+code kksel {
+    font-weight: bold;
 }
