@@ -153,131 +153,111 @@ SELECT * FROM OrderDetail WHERE order =
 
       <h1>Blind Spot in Group By</h1>
 
+
       <div class="element">
-        <h3>My Table Title</h3>
+        <h3>Employee</h3>
         <table>
           <thead>
             <tr>
-              <th>s_id</th>
-              <th>s_name</th>
-              <th>d_id</th>
+              <th>dept</th>
+              <th>employee</th>
+              <th>salary</th>
             </tr>
           </thead>
           <tbody>
             <tr>
+              <td>101</td>
+              <td>Jones</td>
+              <td>4500</td>
+            </tr>
+            <tr>
+              <td>101</td>
+              <td>Martin</td>
+              <td>990</td>
+            </tr>
+            <tr>
+              <td>101</td>
+              <td>Smith</td>
+              <td>890</td>
+            </tr>
+            <tr>
+              <td>209</td>
+              <td>Swanson</td>
+              <td>3100</td>
+            </tr>
+            <tr>
+              <td>209</td>
+              <td>Knight</td>
+              <td>3100</td>
+            </tr>
+            <tr>
+              <td>330</td>
+              <td>Taylor</td>
+              <td>850</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="element resultset">
+        <h3>Query A</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>dept</th>
+              <th>low_wage</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>101</td>
+              <td>2</td>
+            </tr>
+            <tr>
+              <td>209</td>
+              <td>0</td>
+            </tr>
+            <tr>
+              <td>330</td>
               <td>1</td>
-              <td>Alice</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="element resultset">
+        <h3>Query B</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>dept</th>
+              <th>low_wage</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>101</td>
               <td>2</td>
             </tr>
             <tr>
-              <td>2</td>
-              <td>Bob</td>
-              <td>3</td>
-            </tr>
-            <tr>
-              <td>3</td>
-              <td>Miss. Carol Sissippi</td>
-              <td>2</td>
+              <td>330</td>
+              <td>1</td>
             </tr>
           </tbody>
         </table>
       </div>
 
-      <div class="element">
-        <h3>My Table Title</h3>
-        <table>
-          <thead>
-            <tr>
-              <th>s_id</th>
-              <th>s_name</th>
-              <th>d_id</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>1</td>
-              <td>Alice</td>
-              <td>2</td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>Bob</td>
-              <td>3</td>
-            </tr>
-            <tr>
-              <td>3</td>
-              <td>Miss. Carol Sissippi</td>
-              <td>2</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="element">
-        <h3>My Table Title</h3>
-        <table>
-          <thead>
-            <tr>
-              <th>s_id</th>
-              <th>s_name</th>
-              <th>d_id</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>1</td>
-              <td>Alice</td>
-              <td>2</td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>Bob</td>
-              <td>3</td>
-            </tr>
-            <tr>
-              <td>3</td>
-              <td>Miss. Carol Sissippi</td>
-              <td>2</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="element">
-        <h3>My Table Title</h3>
-        <table>
-          <thead>
-            <tr>
-              <th>s_id</th>
-              <th>s_name</th>
-              <th>d_id</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>1</td>
-              <td>Alice</td>
-              <td>2</td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>Bob</td>
-              <td>3</td>
-            </tr>
-            <tr>
-              <td>3</td>
-              <td>Carol</td>
-              <td>2</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
 
       <dl>
-        <dt>TABLE:</dt>
-        <dd><code><kksel>SELECT</kksel> * FROM table_one
-LEFT JOIN table_two
-ON ... j-condition ...;          </code>
+        <dt>Query A:</dt>
+        <dd><code>SELECT
+  dept,
+  sum( case when salary < 1000 then 1 else 0 end ) as low_wage
+FROM Employee GROUP BY dept;</code>
         </dd>
 
+        <dt>Query B:</dt>
+        <dd><code>SELECT dept, count(1) as low_wage FROM Employee &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+WHERE salary < 1000 GROUP BY dept;</code>
+        </dd>
 
       </dl>
     </div>
