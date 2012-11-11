@@ -268,173 +268,98 @@ WHERE salary < 1000 GROUP BY dept;</code>
       <h1>Undermining the Limit</h1>
 
       <div class="element">
-        <h3>My Table Title</h3>
+        <h3>Customer</h3>
         <table>
           <thead>
             <tr>
-              <th>s_id</th>
-              <th>s_name</th>
-              <th>d_id</th>
+              <th>id</th>
             </tr>
           </thead>
           <tbody>
             <tr>
               <td>1</td>
-              <td>Alice</td>
-              <td>2</td>
             </tr>
             <tr>
-              <td>2</td>
-              <td>Bob</td>
-              <td>3</td>
-            </tr>
-            <tr>
-              <td>3</td>
-              <td>Miss. Carol Sissippi</td>
-              <td>2</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="element">
-        <h3>My Table Title 2</h3>
-        <table>
-          <thead>
-            <tr>
-              <th>s_id</th>
-              <th>s_name</th>
-              <th>d_id</th>
-              <th>d_id_derp</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>1</td>
-              <td>Alice</td>
-              <td>2</td>
-              <td>2</td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>Bob</td>
-              <td>3</td>
               <td>2</td>
             </tr>
             <tr>
               <td>3</td>
-              <td>Carol</td>
-              <td>2</td>
-              <td>2</td>
             </tr>
             <tr>
               <td>4</td>
-              <td>Carol-san</td>
-              <td>2</td>
-              <td>2</td>
+            </tr>
+            <tr>
+              <td>5</td>
+            </tr>
+            <tr>
+              <td>6</td>
             </tr>
           </tbody>
         </table>
       </div>
-      <div class="element">
-        <h3>My Table Title 3</h3>
+      <div class="element resultset">
+        <h3>QA</h3>
         <table>
           <thead>
             <tr>
-              <th>s_id</th>
-              <th>s_name</th>
-              <th>d_id</th>
+              <th>id</th>
             </tr>
           </thead>
           <tbody>
             <tr>
               <td>1</td>
-              <td>Alice</td>
-              <td>2</td>
             </tr>
             <tr>
               <td>2</td>
-              <td>Bob</td>
-              <td>3</td>
             </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="element resultset">
+        <h3>QB</h3>
+        <table>
+          <thead>
             <tr>
-              <td>3</td>
-              <td>Carol</td>
-              <td>2</td>
+              <th>group_concat(id)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1, 2, 3, 4, 5, 6</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="element resultset">
+        <h3>QC</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>group_concat(id1)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1, 2</td>
             </tr>
           </tbody>
         </table>
       </div>
 
-      <div class="element new-element">
-      <!-- <div class="element"> -->
-        <h3>My Table Title 4</h3>
-        <table>
-          <thead>
-            <tr>
-              <th>s_id</th>
-              <th>s_name</th>
-              <th>d_id</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>1</td>
-              <td>Alice</td>
-              <td>2</td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>Bob</td>
-              <td>3</td>
-            </tr>
-            <tr>
-              <td>3</td>
-              <td>Carol</td>
-              <td>2</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="element">
-        <h3>My Table Title</h3>
-        <table>
-          <thead>
-            <tr>
-              <th>s_id</th>
-              <th>s_name</th>
-              <th>d_id</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>1</td>
-              <td>Alice</td>
-              <td>2</td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>Bob</td>
-              <td>3</td>
-            </tr>
-            <tr>
-              <td>3</td>
-              <td>Carol</td>
-              <td>2</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
 
       <dl>
-        <dt>TABLE:</dt>
-        <dd><code><kksel>SELECT</kksel> * FROM table_one
-LEFT JOIN table_two
-ON ... j-condition ...;
-          </code>
+        <dt>QA:</dt>
+        <dd><code>SELECT id FROM Customer LIMIT 2;</code>
         </dd>
 
-        <dt>TABLE:</dt>
-        <dd>stuff about table</dd>
+        <dt>QB:</dt>
+        <dd><code>SELECT group_concat(id) FROM Customer LIMIT 2;</code>
+        </dd>
+        <dt>QC:</dt>
+        <dd><code>SELECT group_concat(id1) FROM
+(SELECT id as id1 FROM Customer LIMIT 2) as c2;</code>
+        </dd>
+
       </dl>
     </div>
 
