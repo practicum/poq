@@ -1,10 +1,11 @@
 table {
     border: 1px solid black;
-    margin: 0 auto;
+    /* margin: 0 auto; */
 }
 
 th, td {
     padding: 5px 10px;
+    margin: 0;
 }
 
 thead th {
@@ -12,4 +13,30 @@ thead th {
     /* background-color: #ddd; */
 }
 
+div.element {
+    float: left;
+    margin: 1em 2em;
+}
 
+div.new-element {
+    clear: left;
+}
+
+dl {
+    clear: both;
+    margin: 2em;
+}
+
+dl dd, dl dt {
+    display: inline;
+    margin: 0;
+}
+
+dt {
+    font-weight: bold;
+}
+
+.wrapper {
+    border: 3px dashed red;
+    float: left;
+}
