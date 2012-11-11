@@ -1,0 +1,15 @@
+table {
+    border: 1px solid black;
+    margin: 0 auto;
+}
+
+th, td {
+    padding: 5px 10px;
+}
+
+thead th {
+    border-bottom: 1px solid black;
+    /* background-color: #ddd; */
+}
+
+
