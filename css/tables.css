@@ -1,5 +1,6 @@
 table {
     border: 1px solid black;
+    border-spacing: 0;
     /* margin: 0 auto; */
 }
 
@@ -9,13 +10,14 @@ th, td {
 }
 
 thead th {
+    text-align: left;
     border-bottom: 1px solid black;
     /* background-color: #ddd; */
 }
 
 div.element {
     float: left;
-    margin: 1em 2em;
+    margin: 10px 10px;
 }
 
 div.new-element {
@@ -24,19 +26,31 @@ div.new-element {
 
 dl {
     clear: both;
-    margin: 2em;
+    padding: 1em 10px;
 }
 
-dl dd, dl dt {
-    display: inline;
-    margin: 0;
+dd, dt {
+    float: left;
 }
 
 dt {
     font-weight: bold;
+    clear: left;
 }
+
 
 .wrapper {
     border: 3px dashed red;
     float: left;
+    padding-bottom: 20px;
+}
+
+h3 {
+    /* text-align: center; */
+    margin-bottom: 0;
+}
+
+pre {
+    margin: 0;
+    font-family: "FreeMono";
 }
