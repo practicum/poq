@@ -1,11 +1,11 @@
 table {
     border: 1px solid black;
-    border-spacing: 0;
+    border-spacing: 0; /* what got rid of the weird gaps under the headers */
     /* margin: 0 auto; */
 }
 
 th, td {
-    padding: 5px 10px;
+    padding: 5px 10px 5px 10px; /* top right bottom left */
     margin: 0;
 }
 
@@ -17,7 +17,7 @@ thead th {
 
 div.element {
     float: left;
-    margin: 10px 10px;
+    margin: 10px 10px; /* top&bottom left&right */
 }
 
 div.new-element {
@@ -36,8 +36,12 @@ dd, dt {
 dt {
     font-weight: bold;
     clear: left;
+    margin-left: 5px; /* move list headers over a bit */
 }
 
+dd {
+    margin-left: 30px;
+}
 
 .wrapper {
     border: 3px dashed red;
