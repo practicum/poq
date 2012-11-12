@@ -277,7 +277,7 @@ mysql> select * from EnumOrderingDemo;
 +------------+-------------+
 5 rows in set (0.00 sec)
 
-mysql> select * from EnumOrderingDemo order by enum_column;
+mysql> select * from EnumDemo order by enum_column;
 +------------+-------------+
 | some_value | enum_column |
 +------------+-------------+
@@ -289,7 +289,7 @@ mysql> select * from EnumOrderingDemo order by enum_column;
 +------------+-------------+
 5 rows in set (0.00 sec)
 
-mysql> -- create temporary table EnumOrderingDemo( some_value bigint, enum_column ENUM('red','orange','yellow') );
+mysql> -- create temporary table EnumDemo( some_value bigint, enum_column ENUM('red','orange','yellow') );
 
 
 

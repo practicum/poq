@@ -725,7 +725,7 @@ GROUP BY ci.product;</code>
         <dd><code>SELECT max(c.cart_date) as recent_date,
        ci.product,
        max( c.cart ) as recent_cart
-FROM ShoppingCart c JOIN CartDetail ci ON c.cart = ci.cart
+FROM ShoppingCart c JOIN CartDetail ci ON c.cart = ci.cart&nbsp;
 GROUP BY ci.product;</code>
 
         </dd>
@@ -741,133 +741,81 @@ GROUP BY ci.product;</code>
       <h1>Enum Hides Sort Key</h1>
 
       <div class="element">
-        <h3>My Table Title</h3>
+        <h3>EnumDemo</h3>
         <table>
           <thead>
             <tr>
-              <th>s_id</th>
-              <th>s_name</th>
-              <th>d_id</th>
+              <th>some_value</th>
+              <th>enum_column</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td>1</td>
-              <td>Alice</td>
-              <td>2</td>
+              <td>34</td>
+              <td>orange</td>
             </tr>
             <tr>
-              <td>2</td>
-              <td>Bob</td>
-              <td>3</td>
+              <td>23</td>
+              <td>red</td>
             </tr>
             <tr>
-              <td>3</td>
-              <td>Miss. Carol Sissippi</td>
-              <td>2</td>
+              <td>73</td>
+              <td>red</td>
+            </tr>
+            <tr>
+              <td>87</td>
+              <td>yellow</td>
+            </tr>
+            <tr>
+              <td>92</td>
+              <td>orange</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="element resultset">
+        <h3>Query</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>some_value</th>
+              <th>enum_column</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>23</td>
+              <td>red</td>
+            </tr>
+            <tr>
+              <td>73</td>
+              <td>red</td>
+            </tr>
+            <tr>
+              <td>34</td>
+              <td>orange</td>
+            </tr>
+            <tr>
+              <td>92</td>
+              <td>orange</td>
+            </tr>
+            <tr>
+              <td>87</td>
+              <td>yellow</td>
             </tr>
           </tbody>
         </table>
       </div>
 
-      <div class="element">
-        <h3>My Table Title</h3>
-        <table>
-          <thead>
-            <tr>
-              <th>s_id</th>
-              <th>s_name</th>
-              <th>d_id</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>1</td>
-              <td>Alice</td>
-              <td>2</td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>Bob</td>
-              <td>3</td>
-            </tr>
-            <tr>
-              <td>3</td>
-              <td>Miss. Carol Sissippi</td>
-              <td>2</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="element">
-        <h3>My Table Title</h3>
-        <table>
-          <thead>
-            <tr>
-              <th>s_id</th>
-              <th>s_name</th>
-              <th>d_id</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>1</td>
-              <td>Alice</td>
-              <td>2</td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>Bob</td>
-              <td>3</td>
-            </tr>
-            <tr>
-              <td>3</td>
-              <td>Miss. Carol Sissippi</td>
-              <td>2</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="element">
-        <h3>My Table Title</h3>
-        <table>
-          <thead>
-            <tr>
-              <th>s_id</th>
-              <th>s_name</th>
-              <th>d_id</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>1</td>
-              <td>Alice</td>
-              <td>2</td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>Bob</td>
-              <td>3</td>
-            </tr>
-            <tr>
-              <td>3</td>
-              <td>Carol</td>
-              <td>2</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+
 
       <dl>
-        <dt>TABLE:</dt>
-        <dd><code><kksel>SELECT</kksel> * FROM table_one
-LEFT JOIN table_two
-ON ... j-condition ...;
-          </code>
+        <dt>Query:</dt>
+        <dd><code>SELECT * FROM EnumDemo ORDER BY enum_column;</code>
+
         </dd>
 
-        <dt>TABLE:</dt>
-        <dd>stuff about table</dd>
+
       </dl>
     </div>
 
