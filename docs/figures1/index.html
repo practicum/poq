@@ -1249,133 +1249,137 @@ ON st.d_id = d.id;</code>
       <h1>Equal Shares of an Empty Pie - Example One</h1>
 
       <div class="element">
-        <h3>My Table Title</h3>
+        <h3>Supplier</h3>
         <table>
           <thead>
             <tr>
               <th>s_id</th>
-              <th>s_name</th>
-              <th>d_id</th>
             </tr>
           </thead>
           <tbody>
             <tr>
               <td>1</td>
-              <td>Alice</td>
-              <td>2</td>
             </tr>
             <tr>
               <td>2</td>
-              <td>Bob</td>
-              <td>3</td>
             </tr>
             <tr>
               <td>3</td>
-              <td>Miss. Carol Sissippi</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="element">
+        <h3>SPJoin</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>s_id</th>
+              <th>p_id</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
               <td>2</td>
+              <td>888</td>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>999</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>999</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="element">
+        <h3>Part_V1</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>p_id</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>888</td>
+            </tr>
+            <tr>
+              <td>999</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="element">
+        <h3>Part_V2</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>p_id</th>
+            </tr>
+          </thead>
+          <tbody>
+
+          </tbody>
+        </table>
+      </div>
+      <div class="element resultset">
+        <h3>Query A</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>s_id</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>2</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="element resultset">
+        <h3>Query B</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>s_id</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>2</td>
+            </tr>
+            <tr>
+              <td>3</td>
             </tr>
           </tbody>
         </table>
       </div>
 
-      <div class="element">
-        <h3>My Table Title</h3>
-        <table>
-          <thead>
-            <tr>
-              <th>s_id</th>
-              <th>s_name</th>
-              <th>d_id</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>1</td>
-              <td>Alice</td>
-              <td>2</td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>Bob</td>
-              <td>3</td>
-            </tr>
-            <tr>
-              <td>3</td>
-              <td>Miss. Carol Sissippi</td>
-              <td>2</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="element">
-        <h3>My Table Title</h3>
-        <table>
-          <thead>
-            <tr>
-              <th>s_id</th>
-              <th>s_name</th>
-              <th>d_id</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>1</td>
-              <td>Alice</td>
-              <td>2</td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>Bob</td>
-              <td>3</td>
-            </tr>
-            <tr>
-              <td>3</td>
-              <td>Miss. Carol Sissippi</td>
-              <td>2</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="element">
-        <h3>My Table Title</h3>
-        <table>
-          <thead>
-            <tr>
-              <th>s_id</th>
-              <th>s_name</th>
-              <th>d_id</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>1</td>
-              <td>Alice</td>
-              <td>2</td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>Bob</td>
-              <td>3</td>
-            </tr>
-            <tr>
-              <td>3</td>
-              <td>Carol</td>
-              <td>2</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+
 
       <dl>
-        <dt>TABLE:</dt>
-        <dd><code><kksel>SELECT</kksel> * FROM table_one
-LEFT JOIN table_two
-ON ... j-condition ...;
-          </code>
+        <dt>Query A:</dt>
+        <dd><code>SELECT * FROM Supplier s WHERE NOT EXISTS
+  ( SELECT * FROM Part_V1 p WHERE NOT EXISTS
+    ( SELECT * FROM SPJoin sp
+      WHERE s.s_id = sp.s_id and sp.p_id = p.p_id ) );</code>
         </dd>
 
-        <dt>TABLE:</dt>
-        <dd>stuff about table</dd>
+        <dt>Query B:</dt>
+        <dd><code>SELECT * FROM Supplier s WHERE NOT EXISTS
+  ( SELECT * FROM Part_V2 p WHERE NOT EXISTS
+    ( SELECT * FROM SPJoin sp
+      WHERE s.s_id = sp.s_id and sp.p_id = p.p_id ) );</code>
+        </dd>
+
+
       </dl>
     </div>
 
@@ -1387,133 +1391,174 @@ ON ... j-condition ...;
       <h1>Equal Shares of an Empty Pie - Example Two</h1>
 
       <div class="element">
-        <h3>My Table Title</h3>
+        <h3>Cars</h3>
         <table>
           <thead>
             <tr>
-              <th>s_id</th>
-              <th>s_name</th>
-              <th>d_id</th>
+              <th>model</th>
+              <th>make</th>
+              <th>weight</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td>1</td>
-              <td>Alice</td>
-              <td>2</td>
+              <td>tempo</td>
+              <td>ford</td>
+              <td>1000</td>
             </tr>
             <tr>
-              <td>2</td>
-              <td>Bob</td>
-              <td>3</td>
+              <td>aerostar</td>
+              <td>ford</td>
+              <td>4000</td>
             </tr>
             <tr>
-              <td>3</td>
-              <td>Miss. Carol Sissippi</td>
-              <td>2</td>
+              <td>corolla</td>
+              <td>toyota</td>
+              <td>900</td>
+            </tr>
+            <tr>
+              <td>camry</td>
+              <td>toyota</td>
+              <td>1300</td>
+            </tr>
+            <tr>
+              <td>escalade</td>
+              <td>cadillac</td>
+              <td>5000</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="element resultset">
+        <h3>QA</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>model</th>
+              <th>make</th>
+              <th>weight</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>aerostar</td>
+              <td>ford</td>
+              <td>4000</td>
+            </tr>
+            <tr>
+              <td>escalade</td>
+              <td>cadillac</td>
+              <td>5000</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="element resultset">
+        <h3>QB</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>model</th>
+              <th>make</th>
+              <th>weight</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>aerostar</td>
+              <td>ford</td>
+              <td>4000</td>
+            </tr>
+            <tr>
+              <td>escalade</td>
+              <td>cadillac</td>
+              <td>5000</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="element resultset">
+        <h3>QC</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>model</th>
+              <th>make</th>
+              <th>weight</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>tempo</td>
+              <td>ford</td>
+              <td>1000</td>
+            </tr>
+            <tr>
+              <td>aerostar</td>
+              <td>ford</td>
+              <td>4000</td>
+            </tr>
+            <tr>
+              <td>corolla</td>
+              <td>toyota</td>
+              <td>900</td>
+            </tr>
+            <tr>
+              <td>camry</td>
+              <td>toyota</td>
+              <td>1300</td>
+            </tr>
+            <tr>
+              <td>escalade</td>
+              <td>cadillac</td>
+              <td>5000</td>
             </tr>
           </tbody>
         </table>
       </div>
 
-      <div class="element">
-        <h3>My Table Title</h3>
+      <div class="element resultset">
+        <h3>QD</h3>
         <table>
           <thead>
             <tr>
-              <th>s_id</th>
-              <th>s_name</th>
-              <th>d_id</th>
+              <th>model</th>
+              <th>make</th>
+              <th>weight</th>
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>1</td>
-              <td>Alice</td>
-              <td>2</td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>Bob</td>
-              <td>3</td>
-            </tr>
-            <tr>
-              <td>3</td>
-              <td>Miss. Carol Sissippi</td>
-              <td>2</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="element">
-        <h3>My Table Title</h3>
-        <table>
-          <thead>
-            <tr>
-              <th>s_id</th>
-              <th>s_name</th>
-              <th>d_id</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>1</td>
-              <td>Alice</td>
-              <td>2</td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>Bob</td>
-              <td>3</td>
-            </tr>
-            <tr>
-              <td>3</td>
-              <td>Miss. Carol Sissippi</td>
-              <td>2</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="element">
-        <h3>My Table Title</h3>
-        <table>
-          <thead>
-            <tr>
-              <th>s_id</th>
-              <th>s_name</th>
-              <th>d_id</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>1</td>
-              <td>Alice</td>
-              <td>2</td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>Bob</td>
-              <td>3</td>
-            </tr>
-            <tr>
-              <td>3</td>
-              <td>Carol</td>
-              <td>2</td>
-            </tr>
+
           </tbody>
         </table>
       </div>
 
       <dl>
-        <dt>TABLE:</dt>
-        <dd><code><kksel>SELECT</kksel> * FROM table_one
-LEFT JOIN table_two
-ON ... j-condition ...;
-          </code>
+        <dt>QA:</dt>
+        <dd><code>SELECT * FROM Cars c1 WHERE NOT EXISTS
+( SELECT * FROM Cars c2
+  WHERE c2.make = 'toyota' and c2.weight >= c1.weight );</code>
         </dd>
 
-        <dt>TABLE:</dt>
-        <dd>stuff about table</dd>
+        <dt>QB:</dt>
+        <dd><code>SELECT * FROM Cars c1 WHERE c1.weight >
+( SELECT max( c2.weight ) FROM Cars c2
+  WHERE c2.make = 'toyota' );</code>
+        </dd>
+
+        <dt>QC:</dt>
+        <dd><code>SELECT * FROM Cars c1 WHERE NOT EXISTS
+( SELECT * FROM Cars c2
+  WHERE c2.make = 'chevrolet' and c2.weight >= c1.weight );</code>
+        </dd>
+
+        <dt>QD:</dt>
+        <dd><code>SELECT * FROM Cars c1 WHERE c1.weight >
+( SELECT max( c2.weight ) FROM Cars c2
+  WHERE c2.make = 'chevrolet' );</code>
+        </dd>
+
+
       </dl>
     </div>
 
