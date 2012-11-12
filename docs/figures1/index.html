@@ -1576,125 +1576,26 @@ ON st.d_id = d.id;</code>
         <table>
           <thead>
             <tr>
-              <th>s_id</th>
-              <th>s_name</th>
-              <th>d_id</th>
+              <th>first</th>
+              <th>middle</th>
+              <th>last</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td>1</td>
               <td>Alice</td>
-              <td>2</td>
+              <td>NULL</td>
+              <td>Smith</td>
             </tr>
             <tr>
-              <td>2</td>
               <td>Bob</td>
-              <td>3</td>
+              <td>M</td>
+              <td>Jones</td>
             </tr>
             <tr>
-              <td>3</td>
-              <td>Miss. Carol Sissippi</td>
-              <td>2</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="element">
-        <h3>My Table Title 2</h3>
-        <table>
-          <thead>
-            <tr>
-              <th>s_id</th>
-              <th>s_name</th>
-              <th>d_id</th>
-              <th>d_id_derp</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>1</td>
-              <td>Alice</td>
-              <td>2</td>
-              <td>2</td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>Bob</td>
-              <td>3</td>
-              <td>2</td>
-            </tr>
-            <tr>
-              <td>3</td>
               <td>Carol</td>
-              <td>2</td>
-              <td>2</td>
-            </tr>
-            <tr>
-              <td>4</td>
-              <td>Carol-san</td>
-              <td>2</td>
-              <td>2</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="element">
-        <h3>My Table Title 3</h3>
-        <table>
-          <thead>
-            <tr>
-              <th>s_id</th>
-              <th>s_name</th>
-              <th>d_id</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>1</td>
-              <td>Alice</td>
-              <td>2</td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>Bob</td>
-              <td>3</td>
-            </tr>
-            <tr>
-              <td>3</td>
-              <td>Carol</td>
-              <td>2</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <div class="element new-element">
-      <!-- <div class="element"> -->
-        <h3>My Table Title 4</h3>
-        <table>
-          <thead>
-            <tr>
-              <th>s_id</th>
-              <th>s_name</th>
-              <th>d_id</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>1</td>
-              <td>Alice</td>
-              <td>2</td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>Bob</td>
-              <td>3</td>
-            </tr>
-            <tr>
-              <td>3</td>
-              <td>Carol</td>
-              <td>2</td>
+              <td>P</td>
+              <td>Taylor</td>
             </tr>
           </tbody>
         </table>
@@ -1704,30 +1605,40 @@ ON st.d_id = d.id;</code>
         <table>
           <thead>
             <tr>
-              <th>s_id</th>
-              <th>s_name</th>
-              <th>d_id</th>
+              <th>first</th>
+              <th>middle</th>
+              <th>last</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td>1</td>
-              <td>Alice</td>
-              <td>2</td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>Bob</td>
-              <td>3</td>
-            </tr>
-            <tr>
-              <td>3</td>
               <td>Carol</td>
-              <td>2</td>
+              <td>P</td>
+              <td>Taylor</td>
             </tr>
           </tbody>
         </table>
       </div>
+      <div class="element">
+        <h3>My Table Title</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>first</th>
+              <th>middle</th>
+              <th>last</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Bob</td>
+              <td>M</td>
+              <td>Jones</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
 
       <dl>
         <dt>TABLE:</dt>
@@ -1753,118 +1664,62 @@ ON ... j-condition ...;
         <table>
           <thead>
             <tr>
-              <th>s_id</th>
-              <th>s_name</th>
-              <th>d_id</th>
+              <th>first</th>
+              <th>middle</th>
+              <th>last</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td>1</td>
               <td>Alice</td>
-              <td>2</td>
+              <td>NULL</td>
+              <td>Smith</td>
             </tr>
             <tr>
-              <td>2</td>
               <td>Bob</td>
-              <td>3</td>
+              <td>M</td>
+              <td>Jones</td>
             </tr>
             <tr>
-              <td>3</td>
-              <td>Miss. Carol Sissippi</td>
+              <td>Carol</td>
+              <td>P</td>
+              <td>Taylor</td>
+            </tr>
+            <tr>
+              <td>Caroline</td>
+              <td>NULL</td>
+              <td>Brown</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="element">
+        <h3>My Table Title</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>count(1)</th>
+              <th>middle</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
               <td>2</td>
+              <td>NULL</td>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>M</td>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>P</td>
             </tr>
           </tbody>
         </table>
       </div>
 
-      <div class="element">
-        <h3>My Table Title</h3>
-        <table>
-          <thead>
-            <tr>
-              <th>s_id</th>
-              <th>s_name</th>
-              <th>d_id</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>1</td>
-              <td>Alice</td>
-              <td>2</td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>Bob</td>
-              <td>3</td>
-            </tr>
-            <tr>
-              <td>3</td>
-              <td>Miss. Carol Sissippi</td>
-              <td>2</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="element">
-        <h3>My Table Title</h3>
-        <table>
-          <thead>
-            <tr>
-              <th>s_id</th>
-              <th>s_name</th>
-              <th>d_id</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>1</td>
-              <td>Alice</td>
-              <td>2</td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>Bob</td>
-              <td>3</td>
-            </tr>
-            <tr>
-              <td>3</td>
-              <td>Miss. Carol Sissippi</td>
-              <td>2</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="element">
-        <h3>My Table Title</h3>
-        <table>
-          <thead>
-            <tr>
-              <th>s_id</th>
-              <th>s_name</th>
-              <th>d_id</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>1</td>
-              <td>Alice</td>
-              <td>2</td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>Bob</td>
-              <td>3</td>
-            </tr>
-            <tr>
-              <td>3</td>
-              <td>Carol</td>
-              <td>2</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+
 
       <dl>
         <dt>TABLE:</dt>
@@ -1889,125 +1744,26 @@ ON ... j-condition ...;
         <table>
           <thead>
             <tr>
-              <th>s_id</th>
-              <th>s_name</th>
-              <th>d_id</th>
+              <th>first</th>
+              <th>middle</th>
+              <th>last</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td>1</td>
               <td>Alice</td>
-              <td>2</td>
+              <td>NULL</td>
+              <td>Smith</td>
             </tr>
             <tr>
-              <td>2</td>
               <td>Bob</td>
-              <td>3</td>
+              <td>M</td>
+              <td>Jones</td>
             </tr>
             <tr>
-              <td>3</td>
-              <td>Miss. Carol Sissippi</td>
-              <td>2</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="element">
-        <h3>My Table Title 2</h3>
-        <table>
-          <thead>
-            <tr>
-              <th>s_id</th>
-              <th>s_name</th>
-              <th>d_id</th>
-              <th>d_id_derp</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>1</td>
-              <td>Alice</td>
-              <td>2</td>
-              <td>2</td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>Bob</td>
-              <td>3</td>
-              <td>2</td>
-            </tr>
-            <tr>
-              <td>3</td>
               <td>Carol</td>
-              <td>2</td>
-              <td>2</td>
-            </tr>
-            <tr>
-              <td>4</td>
-              <td>Carol-san</td>
-              <td>2</td>
-              <td>2</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="element">
-        <h3>My Table Title 3</h3>
-        <table>
-          <thead>
-            <tr>
-              <th>s_id</th>
-              <th>s_name</th>
-              <th>d_id</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>1</td>
-              <td>Alice</td>
-              <td>2</td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>Bob</td>
-              <td>3</td>
-            </tr>
-            <tr>
-              <td>3</td>
-              <td>Carol</td>
-              <td>2</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <div class="element new-element">
-      <!-- <div class="element"> -->
-        <h3>My Table Title 4</h3>
-        <table>
-          <thead>
-            <tr>
-              <th>s_id</th>
-              <th>s_name</th>
-              <th>d_id</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>1</td>
-              <td>Alice</td>
-              <td>2</td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>Bob</td>
-              <td>3</td>
-            </tr>
-            <tr>
-              <td>3</td>
-              <td>Carol</td>
-              <td>2</td>
+              <td>P</td>
+              <td>Taylor</td>
             </tr>
           </tbody>
         </table>
@@ -2017,30 +1773,24 @@ ON ... j-condition ...;
         <table>
           <thead>
             <tr>
-              <th>s_id</th>
-              <th>s_name</th>
-              <th>d_id</th>
+              <th>fullname</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td>1</td>
-              <td>Alice</td>
-              <td>2</td>
+              <td>NULL</td>
             </tr>
             <tr>
-              <td>2</td>
-              <td>Bob</td>
-              <td>3</td>
+              <td>Bob M Jones</td>
             </tr>
             <tr>
-              <td>3</td>
-              <td>Carol</td>
-              <td>2</td>
+              <td>Carol P Taylor</td>
             </tr>
           </tbody>
         </table>
       </div>
+
+
 
       <dl>
         <dt>TABLE:</dt>
@@ -2066,118 +1816,90 @@ ON ... j-condition ...;
         <table>
           <thead>
             <tr>
-              <th>s_id</th>
-              <th>s_name</th>
-              <th>d_id</th>
+              <th>int_a</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td>1</td>
-              <td>Alice</td>
-              <td>2</td>
+              <td>5</td>
             </tr>
             <tr>
-              <td>2</td>
-              <td>Bob</td>
-              <td>3</td>
+              <td>6</td>
             </tr>
             <tr>
-              <td>3</td>
-              <td>Miss. Carol Sissippi</td>
-              <td>2</td>
+              <td>7</td>
+            </tr>
+            <tr>
+              <td>8</td>
+            </tr>
+            <tr>
+              <td>NULL</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="element">
+        <h3>My Table Title</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>int_b</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>7</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="element">
+        <h3>My Table Title</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>int_a</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>5</td>
+            </tr>
+            <tr>
+              <td>6</td>
+            </tr>
+            <tr>
+              <td>8</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="element">
+        <h3>My Table Title</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>int_a</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>5</td>
+            </tr>
+            <tr>
+              <td>6</td>
+            </tr>
+            <tr>
+              <td>8</td>
+            </tr>
+            <tr>
+              <td>NULL</td>
             </tr>
           </tbody>
         </table>
       </div>
 
-      <div class="element">
-        <h3>My Table Title</h3>
-        <table>
-          <thead>
-            <tr>
-              <th>s_id</th>
-              <th>s_name</th>
-              <th>d_id</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>1</td>
-              <td>Alice</td>
-              <td>2</td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>Bob</td>
-              <td>3</td>
-            </tr>
-            <tr>
-              <td>3</td>
-              <td>Miss. Carol Sissippi</td>
-              <td>2</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="element">
-        <h3>My Table Title</h3>
-        <table>
-          <thead>
-            <tr>
-              <th>s_id</th>
-              <th>s_name</th>
-              <th>d_id</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>1</td>
-              <td>Alice</td>
-              <td>2</td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>Bob</td>
-              <td>3</td>
-            </tr>
-            <tr>
-              <td>3</td>
-              <td>Miss. Carol Sissippi</td>
-              <td>2</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="element">
-        <h3>My Table Title</h3>
-        <table>
-          <thead>
-            <tr>
-              <th>s_id</th>
-              <th>s_name</th>
-              <th>d_id</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>1</td>
-              <td>Alice</td>
-              <td>2</td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>Bob</td>
-              <td>3</td>
-            </tr>
-            <tr>
-              <td>3</td>
-              <td>Carol</td>
-              <td>2</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+
 
       <dl>
         <dt>TABLE:</dt>
@@ -2197,68 +1919,36 @@ ON ... j-condition ...;
 
       <h1>Summarizing a Void</h1>
 
+
       <div class="element">
         <h3>My Table Title</h3>
         <table>
           <thead>
             <tr>
-              <th>s_id</th>
-              <th>s_name</th>
-              <th>d_id</th>
+              <th>num</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td>1</td>
-              <td>Alice</td>
-              <td>2</td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>Bob</td>
               <td>3</td>
-            </tr>
-            <tr>
-              <td>3</td>
-              <td>Miss. Carol Sissippi</td>
-              <td>2</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="element">
-        <h3>My Table Title 2</h3>
-        <table>
-          <thead>
-            <tr>
-              <th>s_id</th>
-              <th>s_name</th>
-              <th>d_id</th>
-              <th>d_id_derp</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>1</td>
-              <td>Alice</td>
-              <td>2</td>
-              <td>2</td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>Bob</td>
-              <td>3</td>
-              <td>2</td>
-            </tr>
-            <tr>
-              <td>3</td>
-              <td>Carol</td>
-              <td>2</td>
-              <td>2</td>
             </tr>
             <tr>
               <td>4</td>
-              <td>Carol-san</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="element">
+        <h3>My Table Title</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>count(1)</th>
+              <th>sum(1)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
               <td>2</td>
               <td>2</td>
             </tr>
@@ -2266,94 +1956,24 @@ ON ... j-condition ...;
         </table>
       </div>
       <div class="element">
-        <h3>My Table Title 3</h3>
+        <h3>My Table Title</h3>
         <table>
           <thead>
             <tr>
-              <th>s_id</th>
-              <th>s_name</th>
-              <th>d_id</th>
+              <th>count(1)</th>
+              <th>sum(1)</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td>1</td>
-              <td>Alice</td>
-              <td>2</td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>Bob</td>
-              <td>3</td>
-            </tr>
-            <tr>
-              <td>3</td>
-              <td>Carol</td>
-              <td>2</td>
+              <td>0</td>
+              <td>NULL</td>
             </tr>
           </tbody>
         </table>
       </div>
 
-      <div class="element new-element">
-      <!-- <div class="element"> -->
-        <h3>My Table Title 4</h3>
-        <table>
-          <thead>
-            <tr>
-              <th>s_id</th>
-              <th>s_name</th>
-              <th>d_id</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>1</td>
-              <td>Alice</td>
-              <td>2</td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>Bob</td>
-              <td>3</td>
-            </tr>
-            <tr>
-              <td>3</td>
-              <td>Carol</td>
-              <td>2</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="element">
-        <h3>My Table Title</h3>
-        <table>
-          <thead>
-            <tr>
-              <th>s_id</th>
-              <th>s_name</th>
-              <th>d_id</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>1</td>
-              <td>Alice</td>
-              <td>2</td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>Bob</td>
-              <td>3</td>
-            </tr>
-            <tr>
-              <td>3</td>
-              <td>Carol</td>
-              <td>2</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+
 
       <dl>
         <dt>TABLE:</dt>
@@ -2379,118 +1999,174 @@ ON ... j-condition ...;
         <table>
           <thead>
             <tr>
-              <th>s_id</th>
-              <th>s_name</th>
-              <th>d_id</th>
+              <th>id</th>
             </tr>
           </thead>
           <tbody>
             <tr>
               <td>1</td>
-              <td>Alice</td>
-              <td>2</td>
             </tr>
             <tr>
               <td>2</td>
-              <td>Bob</td>
-              <td>3</td>
             </tr>
             <tr>
               <td>3</td>
-              <td>Miss. Carol Sissippi</td>
+            </tr>
+            <tr>
+              <td>4</td>
+            </tr>
+            <tr>
+              <td>5</td>
+            </tr>
+            <tr>
+              <td>6</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="element">
+        <h3>My Table Title</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>cid</th>
+              <th>title</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
               <td>2</td>
+              <td>Mr.</td>
+            </tr>
+            <tr>
+              <td>5</td>
+              <td>Mr.</td>
+            </tr>
+            <tr>
+              <td>6</td>
+              <td>Ms.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="element">
+        <h3>My Table Title</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>id</th>
+              <th>cid</th>
+              <th>title</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>6</td>
+              <td>6</td>
+              <td>Ms.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="element">
+        <h3>My Table Title</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>id</th>
+              <th>cid</th>
+              <th>title</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>6</td>
+              <td>6</td>
+              <td>Ms.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="element">
+        <h3>My Table Title</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>id</th>
+              <th>cid</th>
+              <th>title</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>NULL</td>
+              <td>NULL</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>NULL</td>
+              <td>NULL</td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>NULL</td>
+              <td>NULL</td>
+            </tr>
+            <tr>
+              <td>6</td>
+              <td>6</td>
+              <td>Ms.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="element">
+        <h3>My Table Title</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>id</th>
+              <th>cid</th>
+              <th>title</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>NULL</td>
+              <td>NULL</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>NULL</td>
+              <td>NULL</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>NULL</td>
+              <td>NULL</td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>NULL</td>
+              <td>NULL</td>
+            </tr>
+            <tr>
+              <td>5</td>
+              <td>NULL</td>
+              <td>NULL</td>
+            </tr>
+            <tr>
+              <td>6</td>
+              <td>6</td>
+              <td>Ms.</td>
             </tr>
           </tbody>
         </table>
       </div>
 
-      <div class="element">
-        <h3>My Table Title</h3>
-        <table>
-          <thead>
-            <tr>
-              <th>s_id</th>
-              <th>s_name</th>
-              <th>d_id</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>1</td>
-              <td>Alice</td>
-              <td>2</td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>Bob</td>
-              <td>3</td>
-            </tr>
-            <tr>
-              <td>3</td>
-              <td>Miss. Carol Sissippi</td>
-              <td>2</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="element">
-        <h3>My Table Title</h3>
-        <table>
-          <thead>
-            <tr>
-              <th>s_id</th>
-              <th>s_name</th>
-              <th>d_id</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>1</td>
-              <td>Alice</td>
-              <td>2</td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>Bob</td>
-              <td>3</td>
-            </tr>
-            <tr>
-              <td>3</td>
-              <td>Miss. Carol Sissippi</td>
-              <td>2</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="element">
-        <h3>My Table Title</h3>
-        <table>
-          <thead>
-            <tr>
-              <th>s_id</th>
-              <th>s_name</th>
-              <th>d_id</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>1</td>
-              <td>Alice</td>
-              <td>2</td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>Bob</td>
-              <td>3</td>
-            </tr>
-            <tr>
-              <td>3</td>
-              <td>Carol</td>
-              <td>2</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+
 
       <dl>
         <dt>TABLE:</dt>

@@ -436,7 +436,7 @@ mysql> select * from NamesDemo;
 | Alice | NULL   | Smith  |
 | Bob   | M      | Jones  |
 | Carol | P      | Taylor |
-| Carol | NULL   | Lynn   |
+| Caroline | NULL   | Brown   |
 +-------+--------+--------+
 4 rows in set (0.00 sec)
 
@@ -470,7 +470,7 @@ mysql> select * from NamesDemo;
 
 mysql> select concat( first, ' ', middle, ' ', last ) from NamesDemo;
 +-----------------------------------------+
-| concat( first, ' ', middle, ' ', last ) |
+| fullname |
 +-----------------------------------------+
 | NULL                                    |
 | Bob M Jones                             |
