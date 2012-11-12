@@ -1572,7 +1572,7 @@ ON st.d_id = d.id;</code>
       <h1>Repealed Law of the Excluded Middle</h1>
 
       <div class="element">
-        <h3>My Table Title</h3>
+        <h3>Person</h3>
         <table>
           <thead>
             <tr>
@@ -1600,8 +1600,8 @@ ON st.d_id = d.id;</code>
           </tbody>
         </table>
       </div>
-      <div class="element">
-        <h3>My Table Title</h3>
+      <div class="element resultset">
+        <h3>Query A</h3>
         <table>
           <thead>
             <tr>
@@ -1619,8 +1619,8 @@ ON st.d_id = d.id;</code>
           </tbody>
         </table>
       </div>
-      <div class="element">
-        <h3>My Table Title</h3>
+      <div class="element resultset">
+        <h3>Query B</h3>
         <table>
           <thead>
             <tr>
@@ -1641,15 +1641,14 @@ ON st.d_id = d.id;</code>
 
 
       <dl>
-        <dt>TABLE:</dt>
-        <dd><code><kksel>SELECT</kksel> * FROM table_one
-LEFT JOIN table_two
-ON ... j-condition ...;
-          </code>
+        <dt>Query A:</dt>
+        <dd><code>SELECT * FROM Person WHERE middle = 'P';</code>
         </dd>
 
-        <dt>TABLE:</dt>
-        <dd>stuff about table</dd>
+        <dt>Query B:</dt>
+        <dd><code>SELECT * FROM Person WHERE NOT middle = 'P';</code>
+        </dd>
+
       </dl>
     </div>
 
@@ -1660,7 +1659,7 @@ ON ... j-condition ...;
       <h1>Unnamed Class in Group By</h1>
 
       <div class="element">
-        <h3>My Table Title</h3>
+        <h3>Person</h3>
         <table>
           <thead>
             <tr>
@@ -1693,8 +1692,8 @@ ON ... j-condition ...;
           </tbody>
         </table>
       </div>
-      <div class="element">
-        <h3>My Table Title</h3>
+      <div class="element resultset">
+        <h3>Query</h3>
         <table>
           <thead>
             <tr>
@@ -1722,15 +1721,11 @@ ON ... j-condition ...;
 
 
       <dl>
-        <dt>TABLE:</dt>
-        <dd><code><kksel>SELECT</kksel> * FROM table_one
-LEFT JOIN table_two
-ON ... j-condition ...;
-          </code>
+        <dt>Query:</dt>
+        <dd><code>SELECT count(1), middle FROM Person GROUP BY middle;</code>
+
         </dd>
 
-        <dt>TABLE:</dt>
-        <dd>stuff about table</dd>
       </dl>
     </div>
 
@@ -1740,7 +1735,7 @@ ON ... j-condition ...;
       <h1>Black Hole Operand</h1>
 
       <div class="element">
-        <h3>My Table Title</h3>
+        <h3>Person</h3>
         <table>
           <thead>
             <tr>
@@ -1768,8 +1763,8 @@ ON ... j-condition ...;
           </tbody>
         </table>
       </div>
-      <div class="element">
-        <h3>My Table Title</h3>
+      <div class="element resultset">
+        <h3>Query</h3>
         <table>
           <thead>
             <tr>
@@ -1793,15 +1788,11 @@ ON ... j-condition ...;
 
 
       <dl>
-        <dt>TABLE:</dt>
-        <dd><code><kksel>SELECT</kksel> * FROM table_one
-LEFT JOIN table_two
-ON ... j-condition ...;
-          </code>
+        <dt>Query:</dt>
+        <dd><code>SELECT concat( first, ' ', middle, ' ', last ) as fullname&nbsp;
+FROM Person;</code>
         </dd>
 
-        <dt>TABLE:</dt>
-        <dd>stuff about table</dd>
       </dl>
     </div>
 
@@ -1812,7 +1803,7 @@ ON ... j-condition ...;
       <h1>NULL Cannot "Not In"</h1>
 
       <div class="element">
-        <h3>My Table Title</h3>
+        <h3>A</h3>
         <table>
           <thead>
             <tr>
@@ -1839,7 +1830,7 @@ ON ... j-condition ...;
         </table>
       </div>
       <div class="element">
-        <h3>My Table Title</h3>
+        <h3>B</h3>
         <table>
           <thead>
             <tr>
@@ -1853,8 +1844,8 @@ ON ... j-condition ...;
           </tbody>
         </table>
       </div>
-      <div class="element">
-        <h3>My Table Title</h3>
+      <div class="element resultset">
+        <h3>QA</h3>
         <table>
           <thead>
             <tr>
@@ -1874,8 +1865,8 @@ ON ... j-condition ...;
           </tbody>
         </table>
       </div>
-      <div class="element">
-        <h3>My Table Title</h3>
+      <div class="element resultset">
+        <h3>QB</h3>
         <table>
           <thead>
             <tr>
@@ -1902,15 +1893,20 @@ ON ... j-condition ...;
 
 
       <dl>
-        <dt>TABLE:</dt>
-        <dd><code><kksel>SELECT</kksel> * FROM table_one
-LEFT JOIN table_two
-ON ... j-condition ...;
-          </code>
+
+        <dt>QA:</dt>
+        <dd><code>SELECT * FROM A a WHERE a.int_a NOT IN
+( SELECT int_b FROM B );</code>
+
         </dd>
 
-        <dt>TABLE:</dt>
-        <dd>stuff about table</dd>
+        <dt>QB:</dt>
+        <dd><code>SELECT * FROM A a WHERE NOT EXISTS
+( SELECT int_b FROM B b WHERE b.int_b = a.int_a );</code>
+        </dd>
+
+
+
       </dl>
     </div>
 
@@ -1921,7 +1917,7 @@ ON ... j-condition ...;
 
 
       <div class="element">
-        <h3>My Table Title</h3>
+        <h3>A</h3>
         <table>
           <thead>
             <tr>
@@ -1938,8 +1934,23 @@ ON ... j-condition ...;
           </tbody>
         </table>
       </div>
+
       <div class="element">
-        <h3>My Table Title</h3>
+        <h3>B</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>num</th>
+            </tr>
+          </thead>
+          <tbody>
+
+          </tbody>
+        </table>
+      </div>
+
+      <div class="element resultset">
+        <h3>QA</h3>
         <table>
           <thead>
             <tr>
@@ -1955,8 +1966,8 @@ ON ... j-condition ...;
           </tbody>
         </table>
       </div>
-      <div class="element">
-        <h3>My Table Title</h3>
+      <div class="element resultset">
+        <h3>QB</h3>
         <table>
           <thead>
             <tr>
@@ -1976,15 +1987,16 @@ ON ... j-condition ...;
 
 
       <dl>
-        <dt>TABLE:</dt>
-        <dd><code><kksel>SELECT</kksel> * FROM table_one
-LEFT JOIN table_two
-ON ... j-condition ...;
-          </code>
+        <dt>QA:</dt>
+        <dd><code>SELECT count(1), sum(1) FROM A;</code>
+
         </dd>
 
-        <dt>TABLE:</dt>
-        <dd>stuff about table</dd>
+        <dt>QB:</dt>
+        <dd><code>SELECT count(1), sum(1) FROM B;</code>
+
+        </dd>
+
       </dl>
     </div>
 
@@ -1995,7 +2007,7 @@ ON ... j-condition ...;
       <h1>Left Join is a Misnomer</h1>
 
       <div class="element">
-        <h3>My Table Title</h3>
+        <h3>Person</h3>
         <table>
           <thead>
             <tr>
@@ -2025,11 +2037,11 @@ ON ... j-condition ...;
         </table>
       </div>
       <div class="element">
-        <h3>My Table Title</h3>
+        <h3>ExtraInfo</h3>
         <table>
           <thead>
             <tr>
-              <th>cid</th>
+              <th>pid</th>
               <th>title</th>
             </tr>
           </thead>
@@ -2049,13 +2061,13 @@ ON ... j-condition ...;
           </tbody>
         </table>
       </div>
-      <div class="element">
-        <h3>My Table Title</h3>
+      <div class="element resultset">
+        <h3>QA</h3>
         <table>
           <thead>
             <tr>
               <th>id</th>
-              <th>cid</th>
+              <th>pid</th>
               <th>title</th>
             </tr>
           </thead>
@@ -2068,13 +2080,13 @@ ON ... j-condition ...;
           </tbody>
         </table>
       </div>
-      <div class="element">
-        <h3>My Table Title</h3>
+      <div class="element resultset">
+        <h3>QB</h3>
         <table>
           <thead>
             <tr>
               <th>id</th>
-              <th>cid</th>
+              <th>pid</th>
               <th>title</th>
             </tr>
           </thead>
@@ -2087,13 +2099,13 @@ ON ... j-condition ...;
           </tbody>
         </table>
       </div>
-      <div class="element">
-        <h3>My Table Title</h3>
+      <div class="element resultset">
+        <h3>QC</h3>
         <table>
           <thead>
             <tr>
               <th>id</th>
-              <th>cid</th>
+              <th>pid</th>
               <th>title</th>
             </tr>
           </thead>
@@ -2121,13 +2133,13 @@ ON ... j-condition ...;
           </tbody>
         </table>
       </div>
-      <div class="element">
-        <h3>My Table Title</h3>
+      <div class="element resultset">
+        <h3>QD</h3>
         <table>
           <thead>
             <tr>
               <th>id</th>
-              <th>cid</th>
+              <th>pid</th>
               <th>title</th>
             </tr>
           </thead>
@@ -2169,15 +2181,27 @@ ON ... j-condition ...;
 
 
       <dl>
-        <dt>TABLE:</dt>
-        <dd><code><kksel>SELECT</kksel> * FROM table_one
-LEFT JOIN table_two
-ON ... j-condition ...;
-          </code>
+        <dt>QA:</dt>
+        <dd><code>SELECT * FROM Person p JOIN ExtraInfo ei ON p.id = ei.pid
+WHERE coalesce( ei.title, '') <> 'Mr.';</code>
         </dd>
 
-        <dt>TABLE:</dt>
-        <dd>stuff about table</dd>
+        <dt>QB:</dt>
+        <dd><code>SELECT * FROM Person p JOIN ExtraInfo ei
+ON p.id = ei.pid and coalesce( ei.title, '') <> 'Mr.';</code>
+        </dd>
+
+        <dt>QC:</dt>
+        <dd><code>SELECT * FROM Person p LEFT JOIN ExtraInfo ei 
+ON p.id = ei.pid
+WHERE coalesce( ei.title, '') <> 'Mr.';</code>
+        </dd>
+
+        <dt>QD:</dt>
+        <dd><code>SELECT * FROM Person p LEFT JOIN ExtraInfo ei
+ON p.id = ei.pid and coalesce( ei.title, '') <> 'Mr.';</code>
+        </dd>
+
       </dl>
     </div>
 
