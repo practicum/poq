@@ -72,6 +72,46 @@ insert into StringDemo values ('A ', 21);
 insert into StringDemo values ('A', 32);
 insert into StringDemo values ('A ', 28);
 
+mysql> select * from StringDemo;
++--------+------+
+| string | id   |
++--------+------+
+| A      |   20 |
+| B      |   30 |
+| C      |   40 |
+| D      |   25 |
+| A      |   21 |
+| A      |   32 |
+| A      |   28 |
++--------+------+
+7 rows in set (0.01 sec)
+
+mysql> select quote(string), length(string), id from StringDemo;
++---------------+----------------+------+
+| quote(string) | length(string) | id   |
++---------------+----------------+------+
+| 'A '          |              2 |   20 |
+| 'B'           |              1 |   30 |
+| 'C'           |              1 |   40 |
+| 'D'           |              1 |   25 |
+| 'A '          |              2 |   21 |
+| 'A'           |              1 |   32 |
+| 'A '          |              2 |   28 |
++---------------+----------------+------+
+7 rows in set (0.00 sec)
+
+mysql> select     quote(string),      count(*) as count from StringDemo group by string;
++---------------+-------+
+| quote(string) | count |
++---------------+-------+
+| 'A '          |     4 |
+| 'B'           |     1 |
+| 'C'           |     1 |
+| 'D'           |     1 |
++---------------+-------+
+4 rows in set (0.00 sec)
+
+
 select
     string,
     count(*) count
@@ -85,21 +125,46 @@ group by string;
 ~~ ordering. equality. strings. collations
 
 
-create temporary table StringDemo2(string varchar(100), id int);
+create temporary table StringDemo(string varchar(100), id int);
 
-insert into StringDemo2 values ('A', 20);
-insert into StringDemo2 values ('B', 30);
-insert into StringDemo2 values ('C', 40);
-insert into StringDemo2 values ('D', 25);
-insert into StringDemo2 values ('a', 21);
-insert into StringDemo2 values ('a', 32);
-insert into StringDemo2 values ('a', 28);
+insert into StringDemo values ('A', 20);
+insert into StringDemo values ('B', 30);
+insert into StringDemo values ('C', 40);
+insert into StringDemo values ('D', 25);
+insert into StringDemo values ('a', 21);
+insert into StringDemo values ('a', 32);
+insert into StringDemo values ('a', 28);
 
 select
     string,
-    count(*) count
-from StringDemo2
+    count(*) as count
+from StringDemo
 group by string;
+
+mysql> select * from StringDemo;
++--------+------+
+| string | id   |
++--------+------+
+| A      |   20 |
+| B      |   30 |
+| C      |   40 |
+| D      |   25 |
+| a      |   21 |
+| a      |   32 |
+| a      |   28 |
++--------+------+
+7 rows in set (0.00 sec)
+
+mysql> select     string,      count(*) as count from StringDemo group by string;
++--------+-------+
+| string | count |
++--------+-------+
+| A      |     4 |
+| B      |     1 |
+| C      |     1 |
+| D      |     1 |
++--------+-------+
+4 rows in set (0.00 sec)
 
 ===============================================================================
 ===============================================================================

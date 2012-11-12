@@ -822,176 +822,231 @@ GROUP BY ci.product;</code>
 
    <div class="wrapper"> <!-- seven. seventh. 07  -->
 
-      <h1>Equal But Distinguishable</h1>
+      <h1>Equal But Distinguishable - Example One</h1>
 
       <div class="element">
-        <h3>My Table Title</h3>
+        <h3>StringDemo</h3>
         <table>
           <thead>
             <tr>
-              <th>s_id</th>
-              <th>s_name</th>
-              <th>d_id</th>
+              <th>string</th>
+              <th>id</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td>1</td>
-              <td>Alice</td>
-              <td>2</td>
+              <td>A</td>
+              <td>20</td>
             </tr>
             <tr>
-              <td>2</td>
-              <td>Bob</td>
-              <td>3</td>
+              <td>B</td>
+              <td>30</td>
             </tr>
             <tr>
-              <td>3</td>
-              <td>Miss. Carol Sissippi</td>
-              <td>2</td>
+              <td>C</td>
+              <td>40</td>
+            </tr>
+            <tr>
+              <td>D</td>
+              <td>25</td>
+            </tr>
+            <tr>
+              <td>A</td>
+              <td>21</td>
+            </tr>
+            <tr>
+              <td>A</td>
+              <td>32</td>
+            </tr>
+            <tr>
+              <td>A</td>
+              <td>28</td>
             </tr>
           </tbody>
         </table>
       </div>
-      <div class="element">
-        <h3>My Table Title 2</h3>
+      <div class="element resultset">
+        <h3>Details</h3>
         <table>
           <thead>
             <tr>
-              <th>s_id</th>
-              <th>s_name</th>
-              <th>d_id</th>
-              <th>d_id_derp</th>
+              <th>quote(string)</th>
+              <th>length(string)</th>
+              <th>id</th>
             </tr>
           </thead>
           <tbody>
             <tr>
+              <td>'A&nbsp;&nbsp;'</td>
+              <td>2</td>
+              <td>20</td>
+            </tr>
+            <tr>
+              <td>'B'</td>
               <td>1</td>
-              <td>Alice</td>
-              <td>2</td>
-              <td>2</td>
+              <td>30</td>
             </tr>
             <tr>
-              <td>2</td>
-              <td>Bob</td>
-              <td>3</td>
-              <td>2</td>
+              <td>'C'</td>
+              <td>1</td>
+              <td>40</td>
             </tr>
             <tr>
-              <td>3</td>
-              <td>Carol</td>
-              <td>2</td>
-              <td>2</td>
+              <td>'D'</td>
+              <td>1</td>
+              <td>25</td>
             </tr>
             <tr>
+              <td>'A&nbsp;&nbsp;'</td>
+              <td>2</td>
+              <td>21</td>
+            </tr>
+            <tr>
+              <td>'A'</td>
+              <td>1</td>
+              <td>32</td>
+            </tr>
+            <tr>
+              <td>'A&nbsp;&nbsp;'</td>
+              <td>2</td>
+              <td>28</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="element resultset">
+        <h3>Grouped</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>quote(string)</th>
+              <th>count</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>'A&nbsp;&nbsp;'</td>
               <td>4</td>
-              <td>Carol-san</td>
-              <td>2</td>
-              <td>2</td>
             </tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="element">
-        <h3>My Table Title 3</h3>
-        <table>
-          <thead>
             <tr>
-              <th>s_id</th>
-              <th>s_name</th>
-              <th>d_id</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
+              <td>'B'</td>
               <td>1</td>
-              <td>Alice</td>
-              <td>2</td>
             </tr>
             <tr>
-              <td>2</td>
-              <td>Bob</td>
-              <td>3</td>
+              <td>'C'</td>
+              <td>1</td>
             </tr>
             <tr>
-              <td>3</td>
-              <td>Carol</td>
-              <td>2</td>
+              <td>'D'</td>
+              <td>1</td>
             </tr>
           </tbody>
         </table>
       </div>
 
-      <div class="element new-element">
-      <!-- <div class="element"> -->
-        <h3>My Table Title 4</h3>
-        <table>
-          <thead>
-            <tr>
-              <th>s_id</th>
-              <th>s_name</th>
-              <th>d_id</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>1</td>
-              <td>Alice</td>
-              <td>2</td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>Bob</td>
-              <td>3</td>
-            </tr>
-            <tr>
-              <td>3</td>
-              <td>Carol</td>
-              <td>2</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="element">
-        <h3>My Table Title</h3>
-        <table>
-          <thead>
-            <tr>
-              <th>s_id</th>
-              <th>s_name</th>
-              <th>d_id</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>1</td>
-              <td>Alice</td>
-              <td>2</td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>Bob</td>
-              <td>3</td>
-            </tr>
-            <tr>
-              <td>3</td>
-              <td>Carol</td>
-              <td>2</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+
 
       <dl>
-        <dt>TABLE:</dt>
-        <dd><code><kksel>SELECT</kksel> * FROM table_one
-LEFT JOIN table_two
-ON ... j-condition ...;
-          </code>
+        <dt>Details:</dt>
+        <dd><code>SELECT quote(string), length(string), id FROM StringDemo;</code>
         </dd>
 
-        <dt>TABLE:</dt>
-        <dd>stuff about table</dd>
+        <dt>Grouped:</dt>
+        <dd><code>SELECT quote(string), count(*) as count FROM StringDemo &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+GROUP BY string;</code>
+
+        </dd>
+
+      </dl>
+    </div>
+
+
+
+   <div class="wrapper"> <!-- seven. seventh. 07  -->
+
+      <h1>Equal But Distinguishable - Example Two</h1>
+
+      <div class="element">
+        <h3>StringDemo</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>string</th>
+              <th>id</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>A</td>
+              <td>20</td>
+            </tr>
+            <tr>
+              <td>B</td>
+              <td>30</td>
+            </tr>
+            <tr>
+              <td>C</td>
+              <td>40</td>
+            </tr>
+            <tr>
+              <td>D</td>
+              <td>25</td>
+            </tr>
+            <tr>
+              <td>a</td>
+              <td>21</td>
+            </tr>
+            <tr>
+              <td>a</td>
+              <td>32</td>
+            </tr>
+            <tr>
+              <td>a</td>
+              <td>28</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="element resultset">
+        <h3>Grouped</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>string</th>
+              <th>count</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>A</td>
+              <td>4</td>
+            </tr>
+            <tr>
+              <td>B</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>C</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>D</td>
+              <td>1</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+
+
+      <dl>
+        <dt>Grouped:</dt>
+        <dd><code>SELECT string, count(*) as count
+FROM StringDemo GROUP BY string;</code>
+        </dd>
+
+
+
       </dl>
     </div>
 
