@@ -1056,96 +1056,9 @@ FROM StringDemo GROUP BY string;</code>
 
       <h1>Meaningless Join</h1>
 
-      <div class="element">
-        <h3>My Table Title</h3>
-        <table>
-          <thead>
-            <tr>
-              <th>s_id</th>
-              <th>s_name</th>
-              <th>d_id</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>1</td>
-              <td>Alice</td>
-              <td>2</td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>Bob</td>
-              <td>3</td>
-            </tr>
-            <tr>
-              <td>3</td>
-              <td>Miss. Carol Sissippi</td>
-              <td>2</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
 
       <div class="element">
-        <h3>My Table Title</h3>
-        <table>
-          <thead>
-            <tr>
-              <th>s_id</th>
-              <th>s_name</th>
-              <th>d_id</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>1</td>
-              <td>Alice</td>
-              <td>2</td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>Bob</td>
-              <td>3</td>
-            </tr>
-            <tr>
-              <td>3</td>
-              <td>Miss. Carol Sissippi</td>
-              <td>2</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="element">
-        <h3>My Table Title</h3>
-        <table>
-          <thead>
-            <tr>
-              <th>s_id</th>
-              <th>s_name</th>
-              <th>d_id</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>1</td>
-              <td>Alice</td>
-              <td>2</td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>Bob</td>
-              <td>3</td>
-            </tr>
-            <tr>
-              <td>3</td>
-              <td>Miss. Carol Sissippi</td>
-              <td>2</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="element">
-        <h3>My Table Title</h3>
+        <h3>Student</h3>
         <table>
           <thead>
             <tr>
@@ -1173,17 +1086,122 @@ FROM StringDemo GROUP BY string;</code>
           </tbody>
         </table>
       </div>
+      <div class="element">
+        <h3>Department</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>id</th>
+              <th>dept_name</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>Math</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>English</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>Psychology</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="element">
+        <h3>Dormitory</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>id</th>
+              <th>d_name</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>Jefferson</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Lincoln</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>Roosevelt</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="element new-element resultset">
+        <h3>Query A</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>s_name</th>
+              <th>dept_name</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Alice</td>
+              <td>English</td>
+            </tr>
+            <tr>
+              <td>Carol</td>
+              <td>English</td>
+            </tr>
+            <tr>
+              <td>Bob</td>
+              <td>Psychology</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="element resultset">
+        <h3>Query B</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>s_name</th>
+              <th>d_name</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Alice</td>
+              <td>Lincoln</td>
+            </tr>
+            <tr>
+              <td>Carol</td>
+              <td>Lincoln</td>
+            </tr>
+            <tr>
+              <td>Bob</td>
+              <td>Roosevelt</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+
 
       <dl>
-        <dt>TABLE:</dt>
-        <dd><code><kksel>SELECT</kksel> * FROM table_one
-LEFT JOIN table_two
-ON ... j-condition ...;
-          </code>
+        <dt>Query A:</dt>
+        <dd><code>SELECT st.s_name, dept.dept_name
+FROM Student st JOIN Department dept &nbsp;
+ON st.d_id = dept.id;</code>
         </dd>
 
-        <dt>TABLE:</dt>
-        <dd>stuff about table</dd>
+        <dt>Query B:</dt>
+        <dd><code>SELECT st.s_name, d.d_name
+FROM Student st join Dormitory d
+ON st.d_id = d.id;</code>
+        </dd>
+
       </dl>
     </div>
 
