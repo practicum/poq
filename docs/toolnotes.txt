@@ -1,0 +1,142 @@
+
+
+In this chapter, it is time to see how SQL queries can be formalized and fed into a proof system for verification. As stated in the introduction ( and in ... maybe ... optional-chapter UU ), applying formal proofs in place of testing requires some explanation.  Our rationale is based on the preexisting(inherent) proximity of SQL statements to FOL statements.  It is also based on the assumption that program provers are now ready to cross over into mainstream commercial programming settings.
+
+(sub-section: program provers, state-of-the-art .. ?? )
+
+If, indeed, the modern program provers are ready for widespread use, then it is certainly advisable to examine how they work.  Their structure and operation should inform any attempts at building a SQL prover.
+
+A high-level overview of modern program proofs is best illustrated with an example.  Figure TTT will be the centerpiece for the running example throughout this section (sub-section?).
+
+Figure TTT shows a single function named Func1 that contains seven program statements numbered S1 through S7.  To prove something about Func1, we cannot simply input the source code of Func1 into a prover and expect any meaningful result.  Providing Func1 as input is only half of what is required.  The prover will need the function code, and it will also need a description of what is to be proved about that code.  This auxiliary description is called the specification.
+
+The specification is provided using the formulas labeled @pre and @post, which are abbreviations for precondition and postcondition.  The most trivial precondition is PHI : T.  When a function is annotated with the trivial precondition, this means that the function's correctness should hold no matter what context is active when the function is called, and no matter what arguments are passed to the function (as long as they are allowed by the programming language, of course).  The postcondition, on the other hand, will never be the trivial formula T, because that would indicate that there are no requirements placed upon the behavior of this function.
+
+Once the specification and source code are provided, the prover tool's work can begin.  The tool's task is to derive further FOL terms from the source code, and combine those terms with the formulas in @pre and @post to form a single larger formula that can be automatically checked for validity.
+
+The formulas in @pre and @post are restricted as to how much of the source code of Func1 they can reference.  The formula in @pre can only reference the inputs to the function.  (For now,) we will continue to assume that the @pre in our example is simply T.  The formula in @post can reference the function's inputs and its return value.  The proof tool environment typically defines a special variable symbol such as \result or rv (for return value) that can be used as a variable in the @post formula.
+
+(look for more discussion in literature for this: Why are @pre and @post limited to what they 'see' ?)
+
+(this paragraph may need more discussion/substantiation)
+The restrictions imposed upon @pre and @post are important from a practical standpoint.  On the one hand, if @pre and @post could contain references to any and all program variables in the body of the function, then the specification burden can be extended to writing miniature specifications about every line of code.  If the overarching goal is to automate as much of the proof as possible, then limiting the scope of the specifications to be written by the human is clearly a good thing.  The human should specify as little as possible, at as high a level as possible, and leave the remaining details for the computer.  Also, if the specifications are not smaller and simpler than the source code, then what hope is there that the specifications won't contain every bit as many errors as the source code?  Lastly, keeping the specifications at the function level (or higher where possible) preserves the modularity of an application that programmers have always endeavored to achieve.  In other words, the programmers continue to enjoy the freedom to reimplement a function in any number of ways, as long as it obeys the original specification.
+
+Since the prover tool must combine the program statements with @pre and @post to produce a unified formula, the rv special variable is a good place to start.  This variable is provides a crucial link between the specification and the function body internals.  Statement S7 of the function is reinterpreted as: rv := v2.  Via this reinterpretation, we now have a way to link the effects of the program statements to a variable used in @post.
+
+Once the prover tool knows @post, the body of Func1, and the transformation of S7 (as just described), the construction of the total formula to validate proceeds by working backwards from statement S7 all the way up to statement S1. (that needs rewording).   This back-to-front construction is performed using a function known as (denoted by?) wp.  The function wp is what Dijkstra originally called a predicate transformer when he introduced the concept in the 1970s.  The name wp stands for weakest precondition.  As the name suggests, the output of the wp function is a precondition, which is an FOL formula.  The inputs to the wp function are a single program statement and the known required postcondition that must hold true after the statement is executed.
+
+In our example, then, wp is first applied to S7, using S7 as the statement input, and using @post as the required FOL formula that must hold true after S7 executes.  The output of this first application of wp will be labeled, say, WP7.  Next, we will apply the wp function to S6 and WP7 to compute WP6.  The entire series of wp computations looks like:
+
+    WP7 = wp( S7, @post )
+    WP6 = wp( S6, WP7 )
+    WP5 = wp( S5, WP6 )
+    WP4 = wp( S4, WP5 )
+    WP3 = wp( S3, WP4 )
+    WP2 = wp( S2, WP3 )
+    WP1 = wp( S1, WP2 )
+
+Once the tool has computed the formula WP1, the the only remaining task is to prove that the following is valid:
+
+    @pre -> WP1
+
+When @pre is the trivial formula T, then the proof must be that T -> WP1, or in other words that WP1 holds tautologically. (not at all sure, yet, that 'holds tautologically' is a proper descriptive wording. need to say something concise like that, though)
+
+
+
+revisit discussion of 'trivial precondition'.
+
+
+
+
+
+@pre : PHI
+@post : PSI
+
+Func1: bool has_some_property ( int x )
+{
+    S1: declare and initiaze local variable v1.
+    S2: declare and initiaze local variable v2.
+    S3: perform an operation on x, v1.
+    S4: perform an operation on x, v2.
+    S5: perform an operation on x.
+    S6: perform an operation on v2, x.
+    S7: return v2.
+}
+
+
+
+
+
+
+to close the section on current tool operations: mention that CoC book gives excellent walkthrough using Pi and pi(SYM)VC.  RSD book gives walkthrough using real-life C and Frama-C.
+
+
+
+
+
+assuming that lists and maps are built in. integer addition and <, >.
+
+using atoms as 'strings'. atoms must start with lower-case, so we use all lowercase, making strings essentially 'caseless'.
+
+
+
+domain/types - guid, nat, int, word
+
+-- did not do dates, datetime
+
+define the tuple types (record types). this looks satisfyingly similar to CREATE TABLE syntax.
+
+
+each table (relation) is a list.  in this list we encode 'unique' constraints on 'columns'
+
+list size restrictions!
+
+
+talk about null.
+
+
+
+cross product (special prolog considerations)
+group by / aggregates
+join
+where
+
+
+each of the above-named operations are like 'template code' that needs fill-in-the-blank on a query-by-query basis.
+
+
+
+earlier versions had a list-of-tuples type, and then asserted uniquess on a list.
+... later versions put the uniqueness stuff inside the definition of the list.
+
+
+earlier versions had cross product then filter. current version puts JOIN conditions in the cross product operation.
+
+
+
+----------------
+'big picture' tool:
+
+parse the create_table and constraints from DDL.
+
+
+parse the sql queries.
+
+user-provided 'assertions' .. in what form?
+
+
+what things can be mentioned in the assertions?  cardinality of result set? 'cells' in the result set? cardinality of base tables?
+
+
+when a proof has a counter-example, perhaps even provide INSERT statements.
+
+
+
+
+
+
+
+as soon as we get into composition of relational operations, the old 'optimizer' 'query-rewrite' concerns come into play.
+
+
+work backwords? final table type is 'a x b x c'... can we find one that meets the conditions? once we do, 'delve' deeper into the next most recent layer that made 'a x b x c' ... can we find a way that that layer would have made this 'a x b x c'.
