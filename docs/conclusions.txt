@@ -18,6 +18,10 @@ Despite the simplicity (size? minimalism? toy? toy-ness?) of the sample proof ob
 
 
 
+patterns/idioms: http://repsi-tool.googlecode.com/files/Dissertation%20U7637432.pdf
+
+from 2011 !  another good one: http://www.andrew.cmu.edu/user/gatt/projects.html
+
 
 
 

@@ -1,0 +1,42 @@
+
+Relational database theory holds a respected role as an essential topic in the study of computer science.  Standing shoulder-to-shoulder with ___, ____, operating systems, ____, database theory receives first-class treatment in university curricula.  As with so many things, though, database theory and practice do not perfectly coincide.  The first-class status of database theory (in academia) has not translated into a first-class status for database programming in commercial application development.
+
+
+
+The relatively low profile of SQL amongst application developers cannot be explained by any scarcity of uses for the language.  Database programming is required in a large number of commercial applications, and this number continues to grow.  Traditional application domains where SQL is common include finance and customer relationship management (CRM).  (Another ubiquitous class of database-reliant applications are )  Furthermore, the vast majority of websites store content in and retrieve content from a central database.  Other networked applications (systems) residing outside of the world wide web include MMORPGs (for consoles and personal computers).  More recently, an entirely new setting for SQL code has seen explosive growth: embedded relational datastores for iPhone, Android, and Windows 8 Metro apps.
+
+Two concrete indicators of the second-class status of SQL in industry are the comparative lack of shared design vocabulary for SQL (idiomatic SQL), and the lack of support for writing and testing SQL code.  (clarify about tools: Application code that happens to be written in the SQL language.)  There are many tools for auto-generating table schemas, visualizing table schemas, loading data into tables, etc.  'administrative/custodial' tasks.
+
+It is an open question as to whether the lack of tools stems from the diminished social status of SQL, or (vice-versa) whether the diminished status is partially due to a lack of tool support.  It seems plausible that tool-makers would overlook (ignore, shun) the language because the programmer marketplace appears to have less appetite for SQL than for other languages.  Perhaps equally plausible, however, is that programmers very 'cunningly' spend time using languages that streamline their work, and perhaps SQL would be perceived as a more efficient medium for application code if more tools emerged to support fast and effective SQL development.  So there is a chicken-and-egg conundrum relating SQL's stature and SQL's lack of tool support.  Either way, it seems likely that improving either variable would have a positive effect on the other.
+
+This thesis offers contributions to both fronts: SQL design vocabulary and tool support.  To aid in the vocabulary arena, Chapter PPP contains a modest taxonomy of pitfalls that can cause subtle errors in SQL code.  To aid in the tool-support arena, Chapter XXX outlines workable strategies to implement key pieces of a quality assurance tool for SQL code.
+
+(alternate wording: patterns to identify defect-prone structures.  ideas/suggestions for how to -partially- automate the defect detection)
+
+Our problem has been named.  The issue of foremost concern to us is a lack of practical tool support for SQL.  Specifically, we would like a tool for automatically finding defects in SQL code.  This is a practical need that is based on direct, applied SQL experience in typical commercial settings.  The solution proposed here, however, will deviate sharply from current industry experience.
+
+To address a problem involving the identification of software defects, the typical industry response would likely be heavily biased towards increasing the amount of testing.  Current levels of SQL testing are almost certainly inadequate.  Therefore, having test tools for SQL queries would certainly be beneficial.
+
+Nevertheless, this thesis proposes a quality assurance method for SQL that is based not on tests, but on formal proofs of correctness.  The practicality of such a proposal deserves scrutiny. (HERE COMES A SENTENCE OF EXCESSIVE LENGTH THAT NEEDS FIXING)  Proving the correctness of software has been a research goal for decades, and yet only a very small percentage of professional developers actually have formal prover tools that can be applied on a regular basis as an integrated step in the software lifecycle.
+
+There are two key facts that should mitigate any concerns about practical applicability.  One is that software correctness proofs are finally breaking into new arenas and gargenering greater visibility and success by the day.  A second and perhaps more compelling fact is that SQL is free from the language features that have caused such significant setbacks to historic attempts at proving correctness of imperative software written in C, Java, and the like.
+
+(subsection) Summary:
+
+(consider switching the order of the next two paragraphs)
+
+The problem addressed in this thesis is the lack of QA tool support for SQL.  The solution proposed is a (tailored) formal verification framework.  The remaining chapters provide greater detail about both the problem and the proposed solution.  Chapter BB provides an overview of the SQL language.  Chapter CC provides an overview of one particular automated proof system.  Chapter DD  ...  (optional chapter, not sure) ...  .  Chapter EE will combine the SQL language with the automated proof system to develop a formal verification tool.  TTT concrete examples are given in Chapter EE.  Finally, the document closes with a conclusion in Chapter FF.
+
+An important objective of this work was to keep discussions and ideas grounded in real-life code and execution environments.  SQL is used throughout this document because it is by far the most common language for interacting with RDBMS data.  Similarly, SLD resolution is the proof system used here because it is the proof system with the longest history of continued use on modern computers.  Nonetheless, SQL is not necessarily a superior or (optimal... elegant) relational language.  Likewise, SLD resolution is not the most efficient automated proof procedure.  However, the choice of a single concrete database language and a single concrete proof procedure does not restrict the generality of the results of this thesis.  In general, this thesis is concerned with generating FOL proofs for statements in the relational (tuple) calculus.  If another RDBMS language supplants/overtakes SQL, this thesis still applies.  If the basis of generating the FOL  proofs is replaced with (ensure this is sensible: model-checking or constraint satisfaction), then this thesis still applies.
+
+
+
+
+
+
+
+For many teams, if a typical project involves both Java and SQL, it will be culturally acceptable to learn just enough SQL to get by, while similar
+
+
+
+
