@@ -1,0 +1,34 @@
+
+
+
+
+When the original ideas for this thesis were first being conceived in the author's imagination, (orchestrated?) real-world support for testing SQL query correctness (just 'SQL queries'?) was virtually non-existent.  Academic research on the topic was also scarce.  In the intervening years, however, very encouraging progress has emerged from multiple sources.  Microsoft Research ..... . A team from the University of Texas, ... ...  even finding a bug in a production Oracle DBMS product.  In industry, promising tools have emerged from ApexSQL, Redgate, and Quest.  These tools focus on testing and analysis/understanding of SQL code.  The presence of these new developments and research results is quite encouraging.  Clearly there is a deepening respect and acknowledgement for both the benefits and the risks of incorporating SQL code into a software project.
+
+Of course, another database-related trend has emerged during these past few years.  As illustrated in figure XXX, there has been a steady growth of interest surrounding NoSQL technologies.  A full exposition contrasting NoSQL with SQL is a topic for another venue; we do not attempt such an exposition here.  NoSQL must be mentioned, however, otherwise this thesis would seem to exist in a vacuum where relevant trends are foolishly ignored/discarded (OMG reword!).  If NoSQL were to 'win out' over SQL and become the dominant storage mechanism for common applications (such as those mentioned in Chapter NNN), then the ideas and results of this thesis would be obsolete.  Thankfully, there is plenty of reason to believe that SQL/RDBMS is not going extinct.  Google... .  CJ Date ... .  Stonebraker.
+
+Demonstrations (demo code, examples, trials, proof of concept) were done using Prolog-style SLD resolution, which is known to be subpar for true theorem proving needs.  The reason this subpar route was chosen is that more modern provers/solvers were found to be lacking in documentation, sample code, test cases, mailing-list support, and other 'production-development' conveniences that make (independent) code reuse possible in 'real life'. (CVC3, Yices, Z3).  More developed (more robust? more full-featured? having their own IDE) such as Coq and Why3 have active mailing lists, but these lists are still almost entirely academic. (reword).  Any of the above-mentioned tools are likely capable of tackling the problems in this thesis.  Many of them are certainly capable of tackling the problems more efficiently than SLD resolution. Z3 is capable without question, since it was demonstrated in the Qex prototype [citation].  On the one hand, this author's inability to come up to speed quickly with the above-mentioned tools could be taken as a sign that such tools are not yet ready for 'off-the-shelf' use by an average yet highly-motivated industry developer.  Most likely, however, the failure to successfully incorporate a modern solver into this thesis project is simply a consequence of this author's prior inexperience and underexposure to the entire realm of formal methods, and not any reflection of any weaknesses in the tools.
+
+The most positive and definite result shown in this thesis is the ease of translation from SQL code to FOL formulas.  The impetus for pursuing formal methods instead of ad-hoc testing approaches arose from the observation that SQL ought to translate quite readily into FOL.  Indeed that hypothesis was borne out during experimentation.  Once the FOL formulas are derived, then things become more challenging.  All the 'typical' problems of verification (SAT, etc) come into play.  Complexity... NP ...   ... more ... .
+
+(regarding the complexity, etc ... ) There is hope.  Problems shown tractable by exploiting XYZ... .  In the same vein, it seems plausible that SQL queries involve promising structures to exploit for clever (better word?) optimizations.  The data structures are limited and regular.  Basically, the relation is the only data structure.  Furthermore, we can normally take for granted that every attribute (attribute value? cell?) in a tuple is a simple atomic item like a string or an integer.  This simplicity and regularity should prove amenable to specialized/specially-adapted algorithms.
+
+It is disappointing that this thesis could not expand the range of included experiments to cover a large, 'real-life' query.  Future iterations of this system/tool/technique will need to tackle larger queries.  The limitations in the current examples are almost certainly a factor (symptom, outgrowth, ?) of inherent inefficiencies of SLD resolution.  The technique itself is definitely still promising.
+
+Despite the simplicity (size? minimalism? toy? toy-ness?) of the sample proof obligations shown in this thesis, the successful proofs are exciting nonetheless.  Consider (once again) example 'BBB' from Chapter MMM.  Even the hint of a day when it is possible to do this is exhilarating to SQL user.  The only thing sweeter than finishing some SQL code and running it will be asking a prover system 'this can never return NULL in column three, right?' and getting an immediate and definitive 'yes'.
+
+
+
+
+
+
+tutorial-D. in turn influenced by the IBM Peterlee ideas.
+
+
+
+perhaps it is ill-advised to worry about post facto verification of large queries. (refer to 'cliff b jones' on this. pg. 35).
+
+
+sql seems to be an 'easy target' for successful application of verification. assuming sql were soon blanketed in a complete verification system, could lessons transfer back over to imperative languages?  maybe not. but if sql were bolstered in this way, it could help encourage a dev style more similar to what is described in 'out of the tar pit'.
+
+
+yes, we have NoSQL. recent google paper (still relational). stonebraker's comments about how NoSQL just pushes things that a DB solved back into the application layer, where each application now has to solve it again.
