@@ -10,6 +10,22 @@ A high-level overview of modern program proofs is best illustrated with an examp
 
 Figure TTT shows a single function named Func1 that contains seven program statements numbered S1 through S7.  To prove something about Func1, we cannot simply input the source code of Func1 into a prover and expect any meaningful result.  Providing Func1 as input is only half of what is required.  The prover will need the function code, and it will also need a description of what is to be proved about that code.  This auxiliary description is called the specification.
 
+
+@pre : PHI
+@post : PSI
+
+Func1: bool has_some_property ( int x )
+{
+    S1: declare and initiaze local variable v1.
+    S2: declare and initiaze local variable v2.
+    S3: perform an operation on x, v1.
+    S4: perform an operation on x, v2.
+    S5: perform an operation on x.
+    S6: perform an operation on v2, x.
+    S7: return v2.
+}
+
+
 The specification is provided using the formulas labeled @pre and @post, which are abbreviations for precondition and postcondition.  The most trivial precondition is PHI : T.  When a function is annotated with the trivial precondition, this means that the function's correctness should hold no matter what context is active when the function is called, and no matter what arguments are passed to the function (as long as they are allowed by the programming language, of course).  The postcondition, on the other hand, will never be the trivial formula T, because that would indicate that there are no requirements placed upon the behavior of this function.
 
 Once the specification and source code are provided, the prover tool's work can begin.  The tool's task is to derive further FOL terms from the source code, and combine those terms with the formulas in @pre and @post to form a single larger formula that can be automatically checked for validity.
@@ -41,31 +57,17 @@ Once the tool has computed the formula WP1, the the only remaining task is to pr
 
 When @pre is the trivial formula T, then the proof must be that T -> WP1, or in other words that WP1 holds tautologically. (not at all sure, yet, that 'holds tautologically' is a proper descriptive wording. need to say something concise like that, though)
 
+It is prudent to make a few remarks about why the validation of @pre -> WP1 will complete the correctness proof of Func1.  To become convinced that this is a complete proof, one need only contemplate the significance that each WP-X precondition has for each statement of the function.  To elaborate: since the tool has guaranteed that WP1 is valid, then we know that after executing S1, the intermediate formula WP2 will be valid.  Next, since we know that WP2 will be valid immediately prior to S2, then we can be sure that after executing S2 the formula WP3 will hold.  We continue reasoning in this fashion until noting that after executing S7 we are certain that @post will hold true.  The certainty that @post holds upon returning from S7 is precisely what we sought to prove.
 
+A program will almost certainly consist of more than one function.  To prove the correctness of an entire program, the proof task will be made more or less complex depending in part on whether each function has @pre : T or not.  If all functions possess T as the full precondition, then we need only prove the correctness of each function in isolation.  Otherwise, additional work will be needed for each function with a non-trivial precondition.  For those functions, each call site of the function must be identified.  Additional proofs must be constructed to show that each call site satisfies the precondition of the function.
 
-revisit discussion of 'trivial precondition'.
+The FOL formulas involved in modern proof tasks involve basic predicate logic ______  theories.  Theories are .... .  Modern prover tools such as Frama-C employ SMT ...    The formula will be converted to a PL logic formula, and a satisfying propositional assignment will be found using an algorithm such as DPLL (or variants).  The true propositions that emerge from that step are 'unwrapped' back into their full FOL-with-theory formulations, and those FOL statements are handled by a decision procedure specific to the relevant theory. (examples).
 
+FOL is sound and complete.  That means that if a formula is valid, the rules of FOL do provide sufficient power to describe a proper proof of the formula.  However, FOL is only semi-decidable.  This means that no single algorithm can ever automatically determine truth or falsity for all possible input formulas.  What semi-decidability does provide is still a rather useful result: it is possible to devise an algorithm that will successfully output 'true' for every valid FOL formula.  What happens in cases of invalid formulas, unfortunately, is that the algorithm may return 'false' or the algorithm may run forever.  To deal with this inevitability, prover tools typically employ a timeout.  If the tool fails to compute an output prior to the designated timeout, then the user cannot be certain whether the formula was invalid or whether the tool was not given enough time to find the validity proof.
 
+In cases where the tool's algorithms fail to compute an output, completeness results still provide a mathematical guarantee that the truth or falsity is demonstrable using an FOL deduction system.  The thing not fully guaranteed is that an automated algorithm can locate the proper demonstration.  This still leaves another option which is perfectly viable in some settings.  The remaining option is that a human find the proper FOL deducation sequence that proves or falsifies the formula.
 
-
-
-@pre : PHI
-@post : PSI
-
-Func1: bool has_some_property ( int x )
-{
-    S1: declare and initiaze local variable v1.
-    S2: declare and initiaze local variable v2.
-    S3: perform an operation on x, v1.
-    S4: perform an operation on x, v2.
-    S5: perform an operation on x.
-    S6: perform an operation on v2, x.
-    S7: return v2.
-}
-
-
-
-
+To support this option of last resort (the option of human intervention), tools like Frama-C provide integration with interactive theorem provers as well as with automated theorem provers.  The tool will first attempt automatic proofs of as much of the target program as possible.  Then, for any proofs that failed to complete automatically, the user has the option to launch an interactive proof session to provide the necessary deduction steps manually.
 
 
 to close the section on current tool operations: mention that CoC book gives excellent walkthrough using Pi and pi(SYM)VC.  RSD book gives walkthrough using real-life C and Frama-C.
