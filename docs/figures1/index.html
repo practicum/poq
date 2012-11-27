@@ -4,6 +4,128 @@
     <link rel="stylesheet" type="text/css" href="css/tables.css" />
   </head>
   <body>
+
+    <div class="wrapper"> <!-- one. first. 01  -->
+
+      <h1>VeterinaryVisit Table</h1>
+
+      <div class="element">
+        <h3>VeterinaryVisit</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>pet_owner</th>
+              <th>animal_patient</th>
+              <th>date</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Carol</td>
+              <td>cat</td>
+              <td>Nov 1</td>
+            </tr>
+            <tr>
+              <td>Bob</td>
+              <td>cat</td>
+              <td>Nov 1</td>
+            </tr>
+            <tr>
+              <td>Bob</td>
+              <td>bird</td>
+              <td>Nov 2</td>
+            </tr>
+            <tr>
+              <td>Carol</td>
+              <td>dog</td>
+              <td>Nov 3</td>
+            </tr>
+            <tr>
+              <td>Alice</td>
+              <td>cat</td>
+              <td>Nov 4</td>
+            </tr>
+            <tr>
+              <td>Alice</td>
+              <td>rabbit</td>
+              <td>Nov 4</td>
+            </tr>
+            <tr>
+              <td>Bob</td>
+              <td>rabbit</td>
+              <td>Nov 4</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+
+
+      <dl>
+        <dt>Query:</dt>
+        <dd><code>SELECT * FROM VeterinaryVisit;</code>
+        </dd>
+
+
+
+      </dl>
+    </div>
+
+
+
+    <div class="wrapper"> <!-- one. first. 01  -->
+
+      <h1>Projection of VeterinaryVisit Table</h1>
+
+      <div class="element resultset">
+        <h3>Projection</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>date</th>
+              <th>animal_patient</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Nov 1</td>
+              <td>cat</td>
+            </tr>
+            <tr>
+              <td>Nov 2</td>
+              <td>bird</td>
+            </tr>
+            <tr>
+              <td>Nov 3</td>
+              <td>dog</td>
+            </tr>
+            <tr>
+              <td>Nov 4</td>
+              <td>cat</td>
+            </tr>
+            <tr>
+              <td>Nov 4</td>
+              <td>rabbit</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+
+
+
+      <dl>
+        <dt>Projection:</dt>
+        <dd><code>SELECT DISTINCT date, animal_patient FROM VeterinaryVisit;</code>
+        </dd>
+
+
+
+      </dl>
+    </div>
+
+
+
     <div class="wrapper"> <!-- one. first. 01  -->
 
       <h1>Scalar Context Overrun</h1>
