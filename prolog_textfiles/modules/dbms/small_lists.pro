@@ -42,6 +42,7 @@ rev([Head|List1], List2, List3) :-
            size_1_to_6/1]).
 
 
+% manageable_list_tail has to range from ZERO to something, with no 'gaps', otherwise user-code fails
 manageable_list_tail(L) :- size_0_to_1(L). % applied to a TAIL of list, we know the WHOLE list would be +1 bigger
 %manageable_list_tail(L) :- length(L,4);length(L,3);length(L,2);length(L,1);length(L,0). % sometimes it is helpful to reverse the order of the permissible lengths
 
