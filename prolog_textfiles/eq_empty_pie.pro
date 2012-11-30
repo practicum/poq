@@ -150,7 +150,7 @@ list_type_sp_compound_key(
 % ----------------------------------------------------------
 
 /*
-There are 7 different clauses to express supp_join_part_on_EXPR..
+There are 7 different clauses to express supp_cross_part.
 
 There should be no duplication in outcomes due to careful management
 of when each of the 7 clauses is allowed to be applied.
@@ -168,26 +168,11 @@ The cases (by size of the two lists) are:
 2+    2+  ... and the first list size is greater to or EQUAL to the second
 2+    2+  ... and the first list size is LESS THAN the second
 */
-% IMPORTANT. IMPORTANT: roll back to commit 0ebccc69c58c1c6 to see a 'pure crossing' version with no join conditions
+
+supp_cross_part( [], [], [] ).
 
 
-
-/*
-meets_join_supp_part(
-  sc_cd(sc(CART_sc,
-           _CART_DATE),
-        cd(CART_cd,
-           _PRODUCT)) ) :-
-
-        CART_sc = CART_cd.
-*/
-
-% --  TODO...  it seems the 'on_EXPR' part will not be needed here...
-
-supp_join_part_on_EXPR( [], [], [] ).
-
-
-supp_join_part_on_EXPR(
+supp_cross_part(
   [s(S_ID_s)   |[]],
   [],
   [] ) :-
@@ -195,7 +180,7 @@ supp_join_part_on_EXPR(
         t_Supplier(S_ID_s).
 
 
-supp_join_part_on_EXPR(
+supp_cross_part(
   [],
   [p(P_ID_p)  |[]],
   [] ) :-
@@ -204,7 +189,7 @@ supp_join_part_on_EXPR(
 
 
 % single barcode but longer list of purchase, MEETS JOIN conditions
-supp_join_part_on_EXPR(
+supp_cross_part(
   [s(S_ID_s)   |[]],
   [p(P_ID_p)   |L2T],
   [s_p(s(S_ID_s),p(P_ID_p)) | R] ) :-
@@ -217,37 +202,12 @@ supp_join_part_on_EXPR(
 
         X>1,
         manageable_list_tail(L2T),
-%        meets_join_supp_part(sc_cd(sc(CART_sc,           CART_DATE),
-%                                   cd(CART_cd,           PRODUCT))),
-        supp_join_part_on_EXPR( [s(S_ID_s)   |[]], L2T, R ).
-
-/*
-% single barcode but longer list of purchase, FAILS TO MEET JOIN conditions
-supp_join_part_on_EXPR(
-  [sc(CART_sc,
-           CART_DATE)   |[]],
-  [cd(CART_cd,
-           PRODUCT)   |L2T],
-  R ) :-
-
-        t_ShoppingCart(CART_sc,CART_DATE),
-
-        t_table_content_cdetail([cd(CART_cd,
-           PRODUCT)   |L2T]),
-        length([cd(CART_cd,
-           PRODUCT)   |L2T],X),
-        X>1,
-        manageable_list_tail(L2T),
-%        \+meets_join_supp_part(sc_cd(sc(CART_sc,           CART_DATE),
-%                                 cd(CART_cd,           PRODUCT))),
-        supp_join_part_on_EXPR( [sc(CART_sc,
-           CART_DATE)   |[]], L2T, R ).
-*/
+        supp_cross_part( [s(S_ID_s)   |[]], L2T, R ).
 
 
 
 % longer barcode list but SINGLE purchase, MEETS JOIN conditions
-supp_join_part_on_EXPR(
+supp_cross_part(
   [s(S_ID_s)   |L2T],
   [p(P_ID_p)   |[]],
   [s_p(s(S_ID_s),p(P_ID_p)) | R] ) :-
@@ -257,38 +217,14 @@ supp_join_part_on_EXPR(
         t_Part(P_ID_p),
 
         manageable_list_tail(L2T),
-%        meets_join_supp_part(sc_cd(sc(CART_sc,           CART_DATE),
-%                               cd(CART_cd,           PRODUCT))),
-        supp_join_part_on_EXPR( L2T,
+        supp_cross_part( L2T,
                                 [p(P_ID_p)   |[]],
                                 R ).
 
-/*
-% longer barcode list but SINGLE purchase, FAILS TO MEET JOIN conditions
-supp_join_part_on_EXPR(
-  [sc(CART_sc,
-           CART_DATE)   |L2T],
-  [cd(CART_cd,
-           PRODUCT)   |[]],
-  R ) :-
 
-        t_table_content_scart(
-            [sc(CART_sc,
-           CART_DATE)   |L2T]),
-
-        t_CartDetail(CART_cd,PRODUCT),
-
-        manageable_list_tail(L2T),
-%        \+meets_join_supp_part(sc_cd(sc(CART_sc,           CART_DATE),
-%                                 cd(CART_cd,           PRODUCT))),
-        supp_join_part_on_EXPR( L2T,
-                                [cd(CART_cd,
-           PRODUCT)   |[]],
-                                R ).
-*/
 
 % adding one more purchase to an 'already crossing'
-supp_join_part_on_EXPR(
+supp_cross_part(
   [s(S_ID_s)   |L1T],% this list needs to be nonempty. the empty case is handled elsewhere
   [p(P_ID_p)   |L2T],
   FINAL ) :-
@@ -304,17 +240,17 @@ supp_join_part_on_EXPR(
                Y),
         Y>1,
         X>=Y,
-        supp_join_part_on_EXPR([s(S_ID_s)   |L1T],
+        supp_cross_part([s(S_ID_s)   |L1T],
                                L2T,
                                POUT),
-        supp_join_part_on_EXPR([s(S_ID_s)   |L1T],
+        supp_cross_part([s(S_ID_s)   |L1T],
                                [p(P_ID_p)   |[]],
                                MOUT),
         merge(POUT,MOUT,FINAL).
 
 
 % adding one more barcode to an 'already crossing'
-supp_join_part_on_EXPR(
+supp_cross_part(
   [s(S_ID_s)   |L1T],
   [p(P_ID_p)   |D],% this list needs to be nonempty. the empty case is handled elsewhere
   FINAL ) :-
@@ -329,14 +265,72 @@ supp_join_part_on_EXPR(
                Y),
         Y>1,
         X<Y,
-        supp_join_part_on_EXPR(L1T,
+        supp_cross_part(L1T,
                                [p(P_ID_p)   |D],
                                POUT),
-        supp_join_part_on_EXPR([s(S_ID_s)   |[]],
+        supp_cross_part([s(S_ID_s)   |[]],
                                [p(P_ID_p)   |D],
                                MOUT),
         merge(POUT,MOUT,FINAL).
 
 
 % ----------------------------------------------------------
+
+/*
+  STAB - the actual Supplier table for this instance of the scenario.
+  PTAB - the actual Part table for this instance of the scenario.
+  XSP - a cartesian crossing of STAB and PTAB. (equivalent to nested loops: for s in Supp { for p in Part })
+
+  SPJ - the actual SPJoin table. (IMPORTANT WARNING: not foreign-key constrained!)
+
+  QR - result of query when performed on the above-mentioned objects (from example one of equal shares of an empty pie)
+
+
+ */
+run_query(STAB,PTAB,XSP,SPJ,QR) :-
+
+        supp_cross_part(STAB,PTAB,XSP),
+        t_table_content_spjoin(SPJ),
+
+        filter_supp(SPJ,XSP,STAB,QR).
+
+
+filter_supp(_SPJ_CONST,[],STAB_SUBSET,STAB_SUBSET) :- % could check type of SPJ_CONST
+
+        write( '   -----------------------   ' ), nl.
+/*
+  We need to recurse down through the whole MOD_XSP.
+
+  SPJ_CONST will stay the same throughout.
+
+  STAB_CONST will stay the same throughout.
+
+  STAB_SUBSET needs to 'begin' (start out?) holding exactly the content of STAB_CONST
+
+  - need the current head of MOD_XSP.
+  - the current head has 's' and 'p'.
+  - if s,p is NOT in SPJ_CONST, then *delete* 's' from STAB_SUBSET
+  - otherwise, leave STAB_SUBSET unchanged and recurse on MOD_XSP tail
+*/
+
+
+filter_supp(SPJ_CONST,
+            [s_p(s(S_ID_s), p(P_ID_p))|XSP_T], %MOD_XSP,
+            STAB_SUBSET,
+            NEXT_SUBSET) :-
+
+        \+member(sp(S_ID_s,P_ID_p) ,SPJ_CONST), % - if s,p is NOT in SPJ_CONST, then *delete* 's' from STAB_SUBSET
+        delete(STAB_SUBSET,s(S_ID_s),NEW_SUBSET), % TODO -check behavior: if s is NOT in STAB. if s is in there twice?
+        filter_supp(SPJ_CONST,XSP_T,NEW_SUBSET,NEXT_SUBSET).
+
+filter_supp(SPJ_CONST,
+            [s_p(s(S_ID_s), p(P_ID_p))|XSP_T], %MOD_XSP,
+            STAB_SUBSET,
+            NEXT_SUBSET) :-
+
+        member(sp(S_ID_s,P_ID_p) ,SPJ_CONST),
+        filter_supp(SPJ_CONST,XSP_T,STAB_SUBSET,NEXT_SUBSET).%- otherwise, leave STAB_SUBSET unchanged and recurse on MOD_XSP tail
+
+
+
 
