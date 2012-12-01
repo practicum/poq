@@ -438,7 +438,9 @@ appr_corr_group_by(L,LOUT) :-
 
 
 % nothing in the list for further processing. so your 'map so-far' is your finished map.
-appr_corr_group_by([],MAP,MAP).
+appr_corr_group_by([],MAP,MAP) :-
+
+        write( '   -----------------------   ' ), nl.
 
 
 
