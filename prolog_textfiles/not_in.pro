@@ -4,7 +4,26 @@
 :- use_module(modules/dbms/small_lists).
 :- use_module(modules/dbms/dbms_builtins).
 
+/*
+  two sample tests to see whether either query would allow a NULL in the result set. one does, and the other does not.
 
+?- run_query_not_exists(X,Y,[t1(null)|[t1(B)|[]]]).
+   -----------------------
+X = [t1(null), t1(0)],
+Y = [],
+B = 0 ;
+   -----------------------
+X = [t1(null), t1(0)],
+Y = [t2(1)],
+B = 0 ;
+   -----------------------
+X = [t1(null), t1(0)],
+Y = [t2(2)],
+B = 0 .
+
+?- run_query_not_in(X,Y,[t1(null)|[t1(B)|[]]]).
+
+  */
 
 
 
