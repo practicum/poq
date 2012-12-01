@@ -157,8 +157,8 @@ filter_notexists([t1(T01)|T1_T], % MOD_T1,
  */
 run_query_not_in(T1,T2,QR) :-
 
-        %t_table_content_type_1(T1),
-        %t_table_content_type_2(T2),
+        t_table_content_type_1(T1),
+        t_table_content_type_2(T2),
 
         filter_notin(T1,T2,T1,QR).
 
