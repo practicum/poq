@@ -103,8 +103,8 @@ list_type_sc_removed_dup_type_2(
  */
 run_query_not_exists(T1,T2,QR) :-
 
-        %t_table_content_type_1(T1),
-        %t_table_content_type_2(T2),
+        t_table_content_type_1(T1),
+        t_table_content_type_2(T2),
 
         filter_notexists(T1,T2,T1,QR).
 
