@@ -4,6 +4,12 @@
 :- use_module(modules/dbms/small_lists).
 :- use_module(modules/dbms/dbms_builtins).
 
+/*
+an example that asks whether the sum of outputs of both queries can ever sum to LESS than the size of the source table.
+  (and it shows that, presumably surprisingly and helpfully, the answer actually is YES).
+
+remove_nonmatches([X|XT],XR),inverse_remove_nonmatches([X|XT],XR2),length([X|XT],LOT),length(XR,LXR),length(XR2,LXR2),SUM is LXR+LXR2,SUM@<LOT.
+  */
 
 t_Person(
   FIRST,

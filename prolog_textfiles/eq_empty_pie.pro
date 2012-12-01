@@ -4,6 +4,13 @@
 :- use_module(modules/dbms/small_lists).
 :- use_module(modules/dbms/dbms_builtins).
 
+/*
+example of asking 'can i ever have a supplier in the results that does NOT supply anything?'
+  (and the answer, presumed to be unexpected but helpful, is yes)
+
+run_query(S,P,XING,SP,[s(A)|[]]), \+member( sp(A,B), SP).
+  */
+
 
 /*
 loop s
