@@ -158,8 +158,8 @@ the SIZE of the first two list variables.
 The cases (by size of the two lists) are:
 
 []    []
-1     []
-[]    1
+1+    []
+[]    1+
 1     >1
 1+    1     (1+ means 'one or more')
 2+    2+  ... and the first list size is greater to or EQUAL to the second
@@ -185,21 +185,31 @@ sc_join_cd_on_EXPR( [], [], [] ).
 
 sc_join_cd_on_EXPR(
   [sc(CART_sc,
-           CART_DATE)   |[]],
+           CART_DATE)   |L2T],
   [],
   [] ) :-
 
         t_ShoppingCart(CART_sc,
-                       CART_DATE).
+                       CART_DATE),
+
+        t_table_content_scart([sc(CART_sc,
+           CART_DATE)   |L2T]),
+
+        manageable_list_tail(L2T).
 
 
 sc_join_cd_on_EXPR(
   [],
   [cd(CART_cd,
-           PRODUCT)   |[]],
+           PRODUCT)   |L2T],
   [] ) :-
 
-        t_CartDetail(CART_cd, PRODUCT).
+        t_CartDetail(CART_cd, PRODUCT),
+
+        t_table_content_cdetail([cd(CART_cd,
+           PRODUCT)   |L2T]),
+
+        manageable_list_tail(L2T).
 
 
 % single barcode but longer list of purchase, MEETS JOIN conditions
