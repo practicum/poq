@@ -18,4 +18,10 @@ Many discussions of the relational model for database theory introduce relationa
 
 Relational calculus is...
 
-There are two methods of constructing an FOL language of relational calculus.  One is known as the tuple relational calculus, and the other is known as the domain relational calculus.
+There are two methods of constructing an FOL language of relational calculus.  One is known as the tuple relational calculus, and the other is known as the domain relational calculus.  The Prolog expressions that will be developed in this chapter are based most closely on the domain relational calculus.  Basic variables in the domain relational calculus are placeholders for values from the domains of the attributes in the database.  In other words, (to use an informal description that is closer to day-to-day SQL parlance), each variable holds a value that is permissible in a "column" of some table.  If the database has a table that contains a column (or columns) of type integer, then the corresponding domain relational calculus expressions will use variables that range over the integers.  Sets of domain variables can be strung together in a sequence to build a tuple.  Following this domain relational approach, our Prolog code first defines our domains and domain variables, and then builds tuple structures from there.  This differs from tuple relational calculus, where the fundamental variables are tuples, and the tuple components are accessed via numeric or named indices applied to the tuple.
+
+The tuple relational calculus and the domain relational calculus are equivalent, and they are both equivalent to the relational algebra.  (i kind of said this earlier... uh-oh, cleanup time again).  However, these calculi and the equivalent algebra are not sufficient to express aggregation.  In this chapter, we also devise logical formulas to describe aggregation.  Research by several other teams has outlined similar ways of augmenting the original calculus with additional axiomatized operations in order to formally express features in SQL that do not exist in the original relational calculi.
+
+Using the domain relational calculus as a guide, the first definitions (objects? statements?) we create in (POQ?) are ... (ugh... phrase not happening for me right now)
+
+
