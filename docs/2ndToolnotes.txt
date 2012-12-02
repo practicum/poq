@@ -1,5 +1,8 @@
 
 
+TALK ABOUT HOW WHEN THE FORMULA IS INVALID, WE WOULD LIKE TO SEE A COUNTEREXAMPLE.
+
+
 'complete set'. propositional formula using only /\ and NOT. the other connectives can be expressed in terms of those two.
 
 'complete set' for relational algebra: select, project, union, minus, cartesian product.  a join can be expressed as a cartesian product followed by a select. intersection can be expressed using union and minus.
@@ -24,4 +27,28 @@ The tuple relational calculus and the domain relational calculus are equivalent,
 
 Using the domain relational calculus as a guide, the first definitions (objects? statements?) we create in (POQ?) are ... (ugh... phrase not happening for me right now)
 
+For example, the following Prolog statements are used to define a finite domain 'natural_type,' which is a subset of the natural numbers.  Later we will use this domain to build tuples where one or more attributes of the tuple are of type natural_type.
+
+natural_type(0).
+natural_type(1).
+natural_type(2).
+natural_type(3).
+natural_type(4).
+
+In Prolog, we can then specify a domain variable to range over natural_type by writing:
+
+natural_type(X).
+
+Any symbol beginning with a capital letter is always a variable in Prolog.  This capitalization rule is what allows us to unambiguously detect that 'X' is a variable in the preceding Prolog statement.  However, it is also what forces us to use lower-case names for some of the items that follow, such as 'null', even though in SQL we typically see this concept represented as 'NULL' and not 'null'.
+
+Natural numbers are used in databases in many ways.  A column that represents, say, the number of cartons of roofing shingles in stock at a warehouse would likely use the natural number type.  Natural numbers are also often used as unique row identifier numbers in database tables.  In additional to natural numbers, another datatype that is used to uniquely label rows is the Globally Unique Identifier type, or GUID. We add this domain to our system as follows:
+
+guid_type(fccy463).
+guid_type(srce544).
+guid_type(ddd213).
+guid_type(tchc397).
+
+Actual GUID values are longer than 'fccy463' and the other values shown above.  The choice of using shortened values to represent GUIDs is a deliberate design decision in our system.  To explain this decision, it is helpful to first consider the role that these values will play in the system.  To restate a prior point, the values that we use to populate the finite domain of each type are precisely the values that will later appear as attributes in concrete tuples.  However, in cases where assertions are proved valid, the end user of the proof system may never need to view any of the contrete tuples that were created during the proof process.  So in the case of a successful proof, it does not matter too much what our values look like, as long as they map closely enough to a real-life representation of the database so that we can have confidence in the proof.  In cases where assumptions are invalid, then our design requirements for these values become a bit more stringent.  As stated earlier, the detection of invalid statements will cause the system to output a counterexample.  The counterexample is an assignment of values to each variable that was featured in the assertion.  Recall that the variables in the assertion can represent table values, row values, and parameter values (in cases where the SQL statement is parameterized).  This means that the system's GUID values--such as 'fccy463'--will be shown to the user as part of a concrete counterexample.
+
+Depending on whether we expect our end user to have a flexible imagination or not, we might accept or reject certain design criteria in defining our GUID domain.  The design criteria that have been applied here are simple.  When a GUID is printed out as part of a counterexample, our user must recognize this value as representing a plausible potential value that might someday get inserted into the pertinent database table.  The value does not need to be an actual value that is currently present in the real-life database.  Quite the contrary, because if it did need to be present currently, then our tool would only check the satisfiability or unsatisfiability of a SQL statement given the current database state, and that is not the intent of the tool at all.  The intent of the tool is to prove that certain properties of the SQL statement and its result set will hold true for all states that this database can attain, including past states, present states, and future states.  The user is expected to understand that 'fccy463' represents something that might someday appear in the database.  Even when the user knows that the appearance of 'fccy463' in a counterexample in no way indicates that 'fccy463' is present in the real-life database currently, the user could still raise objections.  One such objection would be that 'fccy463' is not formatted appropriately the way that real-life GUIDs are.  This is where the expectation of a "flexible imagination" comes into play.  It seems reasonable to expect that most trained users could easily know to "mentally map" a symbol like 'fccy463' into a realistic GUID such as '{5224F545-A443-4859-BA23-7B5A95BDC8EF}' in order to visualize the real-life equivalent of the counterexample, and in order to generate a real-life SQL script filled with test data for testing the counterexample, if needed.
 

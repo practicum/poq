@@ -75,6 +75,8 @@ natural_type(null).
 natural_type(0).
 natural_type(1).
 natural_type(2).
+natural_type(3).
+natural_type(4).
 
 int_type(X) :- natural_type(X).
 
