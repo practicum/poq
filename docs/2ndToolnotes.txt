@@ -1,0 +1,21 @@
+
+
+'complete set'. propositional formula using only /\ and NOT. the other connectives can be expressed in terms of those two.
+
+'complete set' for relational algebra: select, project, union, minus, cartesian product.  a join can be expressed as a cartesian product followed by a select. intersection can be expressed using union and minus.
+
+
+
+We need to show that relational SQL statements convert readily into FOL statements.
+
+Relational calculus is...
+
+Therefore, relational calculus will contain the usual FOL symbols /\, ->, and so forth, combined with various predicate symbols.  The relational calculus does not directly use (JOIN, UNION) ...   In some ways, the relational calculus is 'harder to read' (yuck. fix this) ... It might not be immediately obvious what the predicate symbols 'map to' in SQL ... (ok, that is a bit better than 'hard to read') ...   (still fix this).  Therefore, it will be helpful to breifly touch upon the well-known operations of relational alebra.  These operations can all be expressed in relational calculus.  However, they are more familiar to many SQL students as being operations of the relational algebra.   (WHOA.. that whole paragraph needs help. but i need to digress into algebra, and have to introduce it somehow).
+
+Many of the most common SQL keywords are essentially "wrappers" or "syntactic sugar" for relational algebra formula.  This is true for keywords like JOIN, UNION, WHERE, and SELECT.  The SELECT keyword, however, does not correspond to the relational algebra notion of selection, but rather to the relational operation known as "project."
+
+Many discussions of the relational model for database theory introduce relational algebra first, and then discuss relational calculus in turn.  Relational algebra and relational calculus have been shown to be equivalent.
+
+Relational calculus is...
+
+There are two methods of constructing an FOL language of relational calculus.  One is known as the tuple relational calculus, and the other is known as the domain relational calculus.
