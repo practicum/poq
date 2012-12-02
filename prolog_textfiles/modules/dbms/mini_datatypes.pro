@@ -1,6 +1,6 @@
 :- module(datatypes,
           [isnull/1,
-           nonnull/1,
+           xxx_hide_nonnull/1,
            int_type/1,
            natural_type/1,
            name_type/1,
@@ -33,17 +33,17 @@ isnull(null).
 % note the use of so-called 'green cut' here.
 % (ok... so not 100% green to overlap between int_type and natural_type, but this actually is still ok).
 % once we SUCCEED AT PROVING that something is nonnull, we no longer care to investigate the other nonnull paths
-nonnull(X) :- int_type(X),  !, \+isnull(X).
-nonnull(X) :- name_type(X),    !, \+isnull(X).
-nonnull(X) :- word_type(X),  !, \+isnull(X).
-nonnull(X) :- guid_type(X), !, \+isnull(X).
-nonnull(X) :- natural_type(X),  !, \+isnull(X).
-nonnull(X) :- tinyint(X),  !, \+isnull(X).
-nonnull(X) :- barcodeEnum(X),  !, \+isnull(X).
+xxx_hide_nonnull(X) :- int_type(X),  !, \+isnull(X).
+xxx_hide_nonnull(X) :- name_type(X),    !, \+isnull(X).
+xxx_hide_nonnull(X) :- word_type(X),  !, \+isnull(X).
+xxx_hide_nonnull(X) :- guid_type(X), !, \+isnull(X).
+xxx_hide_nonnull(X) :- natural_type(X),  !, \+isnull(X).
+xxx_hide_nonnull(X) :- tinyint(X),  !, \+isnull(X).
+xxx_hide_nonnull(X) :- barcodeEnum(X),  !, \+isnull(X).
 
 % without the following, other atoms not 'typed' in this file will FAIL a 'nonnull' test.
 % for example:  nonnull(abcdefghijk).  will come out FALSE.
-nonnull(X) :- \+int_type(X), \+name_type(X), \+word_type(X), \+guid_type(X), \+natural_type(X), \+tinyint(X),  \+barcodeEnum(X),
+xxx_hide_nonnull(X) :- \+int_type(X), \+name_type(X), \+word_type(X), \+guid_type(X), \+natural_type(X), \+tinyint(X),  \+barcodeEnum(X),
               \+isnull(X).
 
 % after the CUT was added to nonnull, it could no longer be used to GENERATE (retrieve) non-null ground atoms.
