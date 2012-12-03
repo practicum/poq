@@ -191,85 +191,36 @@ The cases (by size of the two lists) are:
 2+    2+  ... and the first list size is greater to or EQUAL to the second
 2+    2+  ... and the first list size is LESS THAN the second
 */
-% IMPORTANT. IMPORTANT: roll back to commit 0ebccc69c58c1c6 to see a 'pure crossing' version with no join conditions
 
-
-/*
-
-shopping_cart_tuple(
-  CART_ID,
-  CUST_ID) :-
-
-        guid_type(CART_ID), not_null(CART_ID),
-        natural_type(CUST_ID).
-
-
-cart_detail_tuple(
-  CART_ID,
-  PRODUCT) :-
-
-        guid_type(CART_ID), not_null(CART_ID),
-        product_string_type(PRODUCT), not_null(PRODUCT).
-
-  */
-
-
-meets_join_sc_cd(
-  CART_ID_sc,_CUST_ID,CART_ID_cd,_PRODUCT
-                 ) :-
-
+meets_join_sc_cd(CART_ID_sc,_CUST_ID,CART_ID_cd,_PRODUCT) :-
         CART_ID_sc = CART_ID_cd.
-
 
 
 sc_join_cd_on_EXPR( [], [], [] ).
 
-/*
-[]    []
-1+    []  <-----
-[]    1+
-1     >1
-  */
+
 sc_join_cd_on_EXPR(
-  [(CART_ID_sc,CUST_ID)   |L2T],
+  [(CART_ID_sc,CUST_ID) |L2T],
   [],
   [] ) :-
-
-        %shopping_cart_tuple(CART_ID_sc,CUST_ID), % is this needed?
 
         shopping_cart_table([(CART_ID_sc,CUST_ID)   |L2T]),
 
         within_table_size_limit([(CART_ID_sc,CUST_ID)   |L2T]).
 
-/*
-[]    []
-1+    []
-[]    1+  <-----
-1     >1
-  */
+
 sc_join_cd_on_EXPR(
   [],
   [(CART_ID_cd,PRODUCT)   |L2T],
   [] ) :-
-
-        %cart_detail_tuple(CART_ID_cd,PRODUCT), % is this needed?
 
         cart_detail_table([(CART_ID_cd,PRODUCT)   |L2T]),
 
         within_table_size_limit([(CART_ID_cd,PRODUCT)   |L2T]).
 
 
-/*
-(1+ means 'one or more')
 
-[]    []
-1+    []
-[]    1+
-1     >1    <-----
-1+    1
-  */
-% single barcode but longer list of purchase, MEETS JOIN conditions
-% ---------- todo ....  EXPERIMENT here... the join condition can be encoded in the HEAD right here, i think
+% single cart but longer list of c_details, MEETS JOIN conditions
 sc_join_cd_on_EXPR(
   [(CART_ID_sc,CUST_ID)   |[]],
 
@@ -291,8 +242,7 @@ sc_join_cd_on_EXPR(
         sc_join_cd_on_EXPR([(CART_ID_sc,CUST_ID)   |[]] , L2T, R ).
 
 
-% single barcode but longer list of purchase, FAILS TO MEET JOIN conditions
-% ---------- todo ....  EXPERIMENT here... the join condition can be encoded in the HEAD right here, i think
+% single cart but longer list of c_details, FAILS TO MEET JOIN conditions
 sc_join_cd_on_EXPR(
   [(CART_ID_sc,CUST_ID)   |[]],
 
@@ -315,7 +265,7 @@ sc_join_cd_on_EXPR(
 
 
 
-% longer barcode list but SINGLE purchase, MEETS JOIN conditions
+% longer carts list but SINGLE detail item, MEETS JOIN conditions
 sc_join_cd_on_EXPR(
   [(CART_ID_sc,CUST_ID)   |L2T],
 
@@ -335,7 +285,7 @@ sc_join_cd_on_EXPR(
         sc_join_cd_on_EXPR( L2T, [(CART_ID_cd,PRODUCT)   |[]] ,   R ).
 
 
-% longer barcode list but SINGLE purchase, FAILS TO MEET JOIN conditions
+% longer carts list but SINGLE details item, FAILS TO MEET JOIN conditions
 sc_join_cd_on_EXPR(
   [(CART_ID_sc,CUST_ID)   |L2T],
 
@@ -355,7 +305,7 @@ sc_join_cd_on_EXPR(
 
 
 
-% adding one more purchase to an 'already crossing'
+% adding one more details item to an 'already crossing'
 sc_join_cd_on_EXPR(
   [(CART_ID_sc,CUST_ID)   |L1T],
 
@@ -367,18 +317,17 @@ sc_join_cd_on_EXPR(
 
         cart_detail_table([(CART_ID_cd,PRODUCT)   |L2T]),
 
-
-        length([(CART_ID_sc,CUST_ID)   |L1T],               X),
+        length([(CART_ID_sc,CUST_ID)   |L1T],  X),
         X>1,
-        length([(CART_ID_cd,PRODUCT)   |L2T],               Y),
+        length([(CART_ID_cd,PRODUCT)   |L2T],  Y),
         Y>1,
         X>=Y,
         sc_join_cd_on_EXPR([(CART_ID_sc,CUST_ID)   |L1T],    L2T,      POUT),
-        sc_join_cd_on_EXPR([(CART_ID_sc,CUST_ID)   |L1T], [(CART_ID_cd,PRODUCT)   |[]],     MOUT),
+        sc_join_cd_on_EXPR([(CART_ID_sc,CUST_ID)   |L1T], [(CART_ID_cd,PRODUCT)   |[]],  MOUT),
         merge(POUT,MOUT,FINAL).
 
 
-% adding one more barcode to an 'already crossing'
+% adding one more cart to an 'already crossing'
 sc_join_cd_on_EXPR(
   [(CART_ID_sc,CUST_ID)   |L1T],
 
@@ -390,13 +339,13 @@ sc_join_cd_on_EXPR(
 
         cart_detail_table([(CART_ID_cd,PRODUCT)   |L2T]),
 
-        length([(CART_ID_sc,CUST_ID)   |L1T],               X),
+        length([(CART_ID_sc,CUST_ID)   |L1T],  X),
         X>1,
-        length([(CART_ID_cd,PRODUCT)   |L2T],               Y),
+        length([(CART_ID_cd,PRODUCT)   |L2T],  Y),
 
         Y>1,
         X<Y,
-        sc_join_cd_on_EXPR(L1T,  [(CART_ID_cd,PRODUCT)   |L2T],           POUT),
+        sc_join_cd_on_EXPR(L1T,  [(CART_ID_cd,PRODUCT)   |L2T],   POUT),
         sc_join_cd_on_EXPR([(CART_ID_sc,CUST_ID)   |[]],   [(CART_ID_cd,PRODUCT)   |L2T],    MOUT),
         merge(POUT,MOUT,FINAL).
 
