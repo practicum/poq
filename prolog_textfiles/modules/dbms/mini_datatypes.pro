@@ -88,6 +88,9 @@ name_type(null).
 name_type(jacob).
 name_type(isabella).
 name_type(william).
+name_type(olivia).
+name_type(noah).
+name_type(emily).
 
 
 
@@ -103,5 +106,9 @@ guid_type(fccy463).
 guid_type(srce544).
 guid_type(ddd213).
 guid_type(tchc397).
+guid_type(mmm636).
+guid_type(eght400).
+guid_type(avhi158).
+guid_type(shlm647).
 
 
