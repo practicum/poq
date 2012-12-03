@@ -151,7 +151,7 @@ sc_join_cd_on_EXPR(
 
         table_two_table([( # STCT2T # )   |L2T]),% type assertion
 
-        length([(ONE_ID_one)   |L1T],  X),
+        length([( # STCT1T # )   |L1T],  X),
         X>1,
         length([( # STCT2T # )   |L2T],  Y),
         Y>1,
