@@ -123,7 +123,7 @@ At this point it is necessary to acknowledge and explain a few limitations of th
 
 These restrictions may sound severe, but there is good reason to believe that they actually do not dampen the usefulness of such a prover tool in any significant way.  For queries that reference only a handful of tables, flaws in the query formulation can typically be easily demonstrated using counterexamples that are populated with only small-sized tables.  Therefore, it will normally be efficient to run the first few proof attempts using tight bounds on domain size and table size.  If those proofs succeed, yet more confidence in the correctness of the SQL is still desired, then the bounds can be incrementally lifted as more and more proofs are attempted using larger and larger table definitions.  This incrementally widening approach can be continued either until sufficient confidence is gained, or until the proof task becomes intractable.  Furthermore, it is definitely not necessary for our system to represent infinite domains or tables of infinite size.  If the only counterexample to the correctness of some assumption were a counterexample that relied on an infinite table, then this would not serve any practical application.  In practice, all databases are finite, with attributes ranging over finite domains.
 
-In other words, the size restrictions are notable but not overly troubling.  However, the system will have to perform bookkeeping to make sure that the sizes of the domains are large enough to populate any maximum-sized table that may have unique constraints on each of its columns.
+In other words, the size restrictions are notable but not overly troubling.  However, the system will have to perform bookkeeping to make sure that the sizes of the domains are large enough to populate any maximum-sized table that may have unique constraints on each of its columns.  Similarly, some reasonable heuristic may need to be devised so that table sizes are suffiently large so as to not artificially impede a given JOIN from returning a non-empty result.  As other operations become supported, then similar remarks would likely apply for operations such as INTERSECT, EXCEPT, and others.
 
 The use of finite domains for each attribute raises another issue beyond weakened proof power.  The other issue pertains to what might be called the "degree of query awareness" that our tool can (or cannot) achieve while using small finite domains for attributes.  The researchers who created the ADUSA tool for testing RDB query engines sought to avoid a particular problem of non query-aware approaches.  They noted that any tool that generates random table content for the purpose of running test queries will have little chance of producing non-empty result sets if the query to be targeted for testing is:
 
@@ -135,6 +135,203 @@ The Prolog-based tool proposed in this thesis would likewise never simulate any 
 
 SELECT * FROM Student WHERE name = @name_parameter;
 
-And part of the precondition annotations should state that @name_parameter must be some string that is present in the Student table, or else that @name_parameter must be some string that is not present in the Student table.  It seems that the only motivation for running tests on the "Amelia Barnett" query would be to see how the query behaves when "Amelia Barnett" is located, and/or how the query behaves when "Amelia Barnett" is not located.  As long as the motivation is as just described, then our "@name_parameter" approach would perform verification of assertions that should fit the bill just the same.  The only difference would be that in our system some other name would be chosen from our name_string_type domain.  On the other hand, there may be some rare case where a user wished to specifically execute a query containing "Amelia Barnett" due to some suspicious of an obscure bug in the RDB related to precisely that string.  In that case, asking our Prolog tool to test the query is pointless, since there is very little similarity between the internals of the Prolog tool and the internals of whatever real-life RDB is suspected of having the obscure bug.
+Then, part of the precondition annotations should state that @name_parameter must be some string that is present in the Student table, or else that @name_parameter must be some string that is *not* present in the Student table.  It seems that the only motivation for running tests on the "Amelia Barnett" query would be to see how the query behaves when "Amelia Barnett" is located, and/or how the query behaves when "Amelia Barnett" is *not* located.  As long as the motivation is as just described, then our "@name_parameter" approach would perform verification that should be equally as meaningful as that of any "query-aware" system.  The only difference would be that in our system some other name would be chosen from our name_string_type domain.  On the other hand, there may be some rare case where a user wished to specifically execute a query containing "Amelia Barnett" due to some suspicious of an obscure bug in the RDB related to precisely that string.  In that case, asking our Prolog tool to test the query is pointless, since there is very little similarity between the internals of the Prolog tool and the internals of whatever real-life RDB is suspected of having the obscure bug.
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+(SECTION: expressing operations using axioms in Prolog)
+
+Arguably the most popular operation in SQL is the JOIN operation, so any tool for analyzing SQL would be well-advised to make support for JOINs job number one.  The necessary Prolog axioms for formalizing JOIN operations were devised early on in the development process.  However, the design of these axioms has undergone one major change since their initial creation.  Initially, it seemed that a reasonable design goal for this prover tool would be to only require the most straightforward parsing of the SQL queries.  The goal was to translate the SQL into an equivalent set of FOL formulas in the simplest and most direct way possible.  In other words, a front-end parser for the tool would not be required to do any re-writing or optimizing of the initial query tree generated via simple parsing.
+
+Based on those early design goals, the original FOL axioms for JOIN involved statements to specify a cartesian product of the relevant tables, followed by statements to describe a filtering of the cartesian product results using the join condition as the filter expression.  It is well-known that such a naive approach to JOIN implemenation does not perform well in any RDB query execution engine.  As it turns out, this approach did not perform well in a prover setting either.  Therefore, the current axiomatization of JOIN operations in this system is more analogous to a nested loops approach, where each row in the outer-loop table is compared to each row in the inner-loop table, and only when comparison succeeds are the row pairs allowed as members of the result set.
+
+Because each new JOIN can use a new pair of tables and a new JOIN condition, the prover system will have to dynamically generate clauses to describe each particular JOIN.  However, there is a template that the system can follow, so this process can in principle become fully automated someday.  Figure III shows a sample set of axioms to define the JOIN indicated by the SQL fragment: ShoppingCart c JOIN CartDetail cd ON c.cart_id = cd.cart_id.  In addition to the JOIN snippet just provided, it is also necessary to understand the tuple types involved in order to make complete sense of what is being declared.  The tuple types in this case are "shopping_cart_tuple(CART_ID,CUST_ID)" and "cart_detail_tuple(CART_ID, PRODUCT)."  The CART_ID variable ranges over the domain of GUIDs; the CUST_ID variable ranges over the domain of natural numbers; and the PRODUCT variable ranges over the strings in product_string_type.
+
+The remainder of this section will be devoted to discussion of these axioms for the JOIN operation.  This operation has the largest set of axioms of any operation in the system.  Also, the properties of these axioms are representative 
+
+
+
+% ----------------------------------------------------------
+
+/*
+There are 7 different clauses to express sc_join_cd_on_EXPR.
+
+There should be no duplication in outcomes due to careful management
+of when each of the 7 clauses is allowed to be applied.
+
+Each one of the 7 handles a NON-OVERLAPPING subset of cases based on
+the SIZE of the first two list variables.
+
+The cases (by size of the two lists) are:
+
+[]    []
+1+    []
+[]    1+
+1     >1
+1+    1     (1+ means 'one or more')
+2+    2+  ... and the first list size is greater to or EQUAL to the second
+2+    2+  ... and the first list size is LESS THAN the second
+*/
+
+meets_join_sc_cd(CART_ID_sc,_CUST_ID,CART_ID_cd,_PRODUCT) :-
+        CART_ID_sc = CART_ID_cd.
+
+
+sc_join_cd_on_EXPR( [], [], [] ).
+
+
+sc_join_cd_on_EXPR(
+  [(CART_ID_sc,CUST_ID) |L2T],
+  [],
+  [] ) :-
+
+        shopping_cart_table([(CART_ID_sc,CUST_ID)   |L2T]),
+
+        within_table_size_limit([(CART_ID_sc,CUST_ID)   |L2T]).
+
+
+sc_join_cd_on_EXPR(
+  [],
+  [(CART_ID_cd,PRODUCT)   |L2T],
+  [] ) :-
+
+        cart_detail_table([(CART_ID_cd,PRODUCT)   |L2T]),
+
+        within_table_size_limit([(CART_ID_cd,PRODUCT)   |L2T]).
+
+
+
+% single cart but longer list of c_details, MEETS JOIN conditions
+sc_join_cd_on_EXPR(
+  [(CART_ID_sc,CUST_ID)   |[]],
+
+  [(CART_ID_cd,PRODUCT)   |L2T],
+
+  [(CART_ID_sc,CUST_ID,CART_ID_cd,PRODUCT) |R] ) :-
+
+
+        shopping_cart_tuple(CART_ID_sc,CUST_ID),
+
+        cart_detail_table([(CART_ID_cd,PRODUCT)   |L2T]),
+
+        length([(CART_ID_cd,PRODUCT)   |L2T],X),
+        X>1,
+        within_table_size_limit(L2T),
+
+        meets_join_sc_cd(CART_ID_sc,CUST_ID,CART_ID_cd,PRODUCT),
+
+        sc_join_cd_on_EXPR([(CART_ID_sc,CUST_ID)   |[]] , L2T, R ).
+
+
+% single cart but longer list of c_details, FAILS TO MEET JOIN conditions
+sc_join_cd_on_EXPR(
+  [(CART_ID_sc,CUST_ID)   |[]],
+
+  [(CART_ID_cd,PRODUCT)   |L2T],
+
+  R ) :-
+
+        shopping_cart_tuple(CART_ID_sc,CUST_ID),
+
+        cart_detail_table([(CART_ID_cd,PRODUCT)   |L2T]),
+
+        length([(CART_ID_cd,PRODUCT)   |L2T],X),
+
+        X>1,
+        within_table_size_limit(L2T),
+
+        \+meets_join_sc_cd(CART_ID_sc,CUST_ID,CART_ID_cd,PRODUCT),
+
+        sc_join_cd_on_EXPR([(CART_ID_sc,CUST_ID)   |[]] , L2T, R ).
+
+
+
+% longer carts list but SINGLE detail item, MEETS JOIN conditions
+sc_join_cd_on_EXPR(
+  [(CART_ID_sc,CUST_ID)   |L2T],
+
+  [(CART_ID_cd,PRODUCT)   |[]],
+
+  [(CART_ID_sc,CUST_ID,CART_ID_cd,PRODUCT) |R] ) :-
+
+
+        shopping_cart_table([(CART_ID_sc,CUST_ID)   |L2T]),
+
+        cart_detail_tuple(CART_ID_cd,PRODUCT),
+
+        within_table_size_limit(L2T),
+
+        meets_join_sc_cd(CART_ID_sc,CUST_ID,CART_ID_cd,PRODUCT),
+
+        sc_join_cd_on_EXPR( L2T, [(CART_ID_cd,PRODUCT)   |[]] ,   R ).
+
+
+% longer carts list but SINGLE details item, FAILS TO MEET JOIN conditions
+sc_join_cd_on_EXPR(
+  [(CART_ID_sc,CUST_ID)   |L2T],
+
+  [(CART_ID_cd,PRODUCT)   |[]],
+
+  R ) :-
+
+        shopping_cart_table([(CART_ID_sc,CUST_ID)   |L2T]),
+
+        cart_detail_tuple(CART_ID_cd,PRODUCT),
+
+        within_table_size_limit(L2T),
+
+        \+meets_join_sc_cd(CART_ID_sc,CUST_ID,CART_ID_cd,PRODUCT),
+
+        sc_join_cd_on_EXPR( L2T, [(CART_ID_cd,PRODUCT)   |[]] ,   R ).
+
+
+
+% adding one more details item to an 'already crossing'
+sc_join_cd_on_EXPR(
+  [(CART_ID_sc,CUST_ID)   |L1T],
+
+  [(CART_ID_cd,PRODUCT)   |L2T],
+
+  FINAL ) :-
+
+        shopping_cart_table([(CART_ID_sc,CUST_ID)   |L1T]),
+
+        cart_detail_table([(CART_ID_cd,PRODUCT)   |L2T]),
+
+        length([(CART_ID_sc,CUST_ID)   |L1T],  X),
+        X>1,
+        length([(CART_ID_cd,PRODUCT)   |L2T],  Y),
+        Y>1,
+        X>=Y,
+        sc_join_cd_on_EXPR([(CART_ID_sc,CUST_ID)   |L1T],    L2T,      POUT),
+        sc_join_cd_on_EXPR([(CART_ID_sc,CUST_ID)   |L1T], [(CART_ID_cd,PRODUCT)   |[]],  MOUT),
+        merge(POUT,MOUT,FINAL).
+
+
+% adding one more cart to an 'already crossing'
+sc_join_cd_on_EXPR(
+  [(CART_ID_sc,CUST_ID)   |L1T],
+
+  [(CART_ID_cd,PRODUCT)   |L2T],
+
+  FINAL ) :-
+
+        shopping_cart_table([(CART_ID_sc,CUST_ID)   |L1T]),
+
+        cart_detail_table([(CART_ID_cd,PRODUCT)   |L2T]),
+
+        length([(CART_ID_sc,CUST_ID)   |L1T],  X),
+        X>1,
+        length([(CART_ID_cd,PRODUCT)   |L2T],  Y),
+
+        Y>1,
+        X<Y,
+        sc_join_cd_on_EXPR(L1T,  [(CART_ID_cd,PRODUCT)   |L2T],   POUT),
+        sc_join_cd_on_EXPR([(CART_ID_sc,CUST_ID)   |[]],   [(CART_ID_cd,PRODUCT)   |L2T],    MOUT),
+        merge(POUT,MOUT,FINAL).
+
+
+% ----------------------------------------------------------
+
 
 
