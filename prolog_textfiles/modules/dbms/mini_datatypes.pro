@@ -80,8 +80,8 @@ natural_type(null).
 natural_type(0).
 natural_type(1).
 natural_type(2).
-natural_type(3).
-natural_type(4).
+% natural_type(3).
+% natural_type(4).
 
 int_type(X) :- natural_type(X).
 
@@ -93,9 +93,9 @@ name_string_type(null).
 name_string_type(jacob).
 name_string_type(isabella).
 name_string_type(william).
-name_string_type(olivia).
-name_string_type(noah).
-name_string_type(emily).
+%name_string_type(olivia).
+% name_string_type(noah).
+% name_string_type(emily).
 
 
 
@@ -110,10 +110,10 @@ guid_type(null).
 guid_type(fccy463).
 guid_type(srce544).
 guid_type(ddd213).
-guid_type(tchc397).
-guid_type(mmm636).
-guid_type(eght400).
-guid_type(avhi158).
-guid_type(shlm647).
+% guid_type(tchc397).
+% guid_type(mmm636).
+% guid_type(eght400).
+% guid_type(avhi158).
+% guid_type(shlm647).
 
 

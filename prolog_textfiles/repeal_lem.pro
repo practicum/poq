@@ -95,3 +95,18 @@ inverse_remove_nonmatches([(F,M,L)|X1],Y) :-
         person_table([(F,M,L)|X1]),
         \+inverse_criteria(F,M,L),
         inverse_remove_nonmatches(X1,Y).
+
+
+
+run_stuff(_) :-
+        remove_nonmatches([X|XT],XR),
+        inverse_remove_nonmatches([X|XT],XR2),
+        length([X|XT],LOT),
+        length(XR,LXR),
+        length(XR2,LXR2),
+        write('~~~~~~~~~~~~~~~~~~~~~~~~~~~'),nl,
+        write([X|XT]),nl,
+        write('keep jacobs. size: '), write(LXR),nl,
+        write('keep non jacobs. size: '), write(LXR2),nl,
+        SUM is LXR+LXR2,
+        SUM@<LOT.
