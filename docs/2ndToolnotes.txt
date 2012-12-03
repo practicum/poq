@@ -76,7 +76,7 @@ Ignoring the special case of a primary key column, the default behavior in SQL t
 
 not_null(X) :- \+isnull(X).
 
-Instead of using the above declaration of notnull, we could simply type '\+isnull' wherever a predicate like notnull would appear.  However, the shorthand is easier on the eyes, and it more closely resembles the SQL syntax that it represents (i.e. 'NOT NULL').
+Instead of using the above declaration of not_null, we could simply type '\+isnull' wherever a predicate like not_null would appear.  However, the shorthand is easier on the eyes, and it more closely resembles the SQL syntax that it represents (i.e. 'NOT NULL').
 
 So in order to add a string domain to the system, we know that we will add something like 'string_type(null)' in order to support nullable string columns.  After that, however, the possibilities are vast regarding what other items should become members of this finite domain.  In the earlier discussion of GUIDs, it was deemed reasonable to expect that a user would accept 'fccy463' as representing a GUID, even if it is an imperfect representative.  However, while we could also request that our users accept things like 'ejhrbxjs' or 'abcdef' as reasonable product names or employee names, at best this seems like a significant distraction.  At worst, it could be a significant obstacle to the user's ability to comprehend some counterexample assignments produced by the system.
 
@@ -91,7 +91,7 @@ CREATE TABLE Product ( product_id int, product_name varchar(100), PRIMARY KEY (p
 From the table definition, it can be determined that the tuple will have two components: one numeric component and one string component.  The string component will have the default nullability.  However, because the numeric component is also the table's primary key in this case, SQL will automatically disallow it from ever containing NULL.  Based on that, the system can create the following tuple type definition:
 
 product_tuple( PROD_ID, PROD_NAME ) :-
-    natural_type(PROD_ID), notnull(PROD_ID),
+    natural_type(PROD_ID), not_null(PROD_ID),
     product_string_type(PROD_NAME).
 
 The above is a logical formula in Prolog that states that any sequence of variables ( PROD_ID, PROD_NAME ) is indeed a product_tuple as long as PROD_ID is a natural number value and not null, and PROD_NAME is a valid string.  In the case of PROD_NAME, since the nonnull predicate has not been asserted for that variable, we would also allow the sequence ( PROD_ID, null ) to be a product tuple, as long as the requirements on PROD_ID are met.
@@ -111,3 +111,4 @@ The preceding discussion establishes the relevant properties that our table type
 
 
 
+must discuss FINITE DOMAINS.
