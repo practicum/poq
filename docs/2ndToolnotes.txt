@@ -147,7 +147,9 @@ Based on those early design goals, the original FOL axioms for JOIN involved sta
 
 Because each new JOIN can use a new pair of tables and a new JOIN condition, the prover system will have to dynamically generate clauses to describe each particular JOIN.  However, there is a template that the system can follow, so this process can in principle become fully automated someday.  Figure III shows a sample set of axioms to define the JOIN indicated by the SQL fragment: ShoppingCart c JOIN CartDetail cd ON c.cart_id = cd.cart_id.  In addition to the JOIN snippet just provided, it is also necessary to understand the tuple types involved in order to make complete sense of what is being declared.  The tuple types in this case are "shopping_cart_tuple(CART_ID,CUST_ID)" and "cart_detail_tuple(CART_ID, PRODUCT)."  The CART_ID variable ranges over the domain of GUIDs; the CUST_ID variable ranges over the domain of natural numbers; and the PRODUCT variable ranges over the strings in product_string_type.
 
-The remainder of this section will be devoted to discussion of these axioms for the JOIN operation.  This operation has the largest set of axioms of any operation in the system.  Also, the properties of these axioms are representative
+The remainder of this section will be devoted to discussion of these axioms for the JOIN operation.  This operation has the largest set of axioms of any operation in the system.  Also, the properties of these axioms are representative of properties contained within the axioms for aggregation and antijoin used elsewhere in the system.  The source code for the entire current system can be found in Appendix AAAA.
+
+
 
 
 
