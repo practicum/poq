@@ -34,27 +34,26 @@ Y = 1 .
 
 */
 
+product_string_type(null).
+product_string_type(aspirin).
+product_string_type(ibuprofen).
+%product_string_type(guaifenesin).
 
 
-/*
-    sc will stand for 'ShoppingCart'
-    cd will stand for 'CartDetail'
-*/
 
-
-t_ShoppingCart(
+shopping_cart_tuple(
   CART,
   CART_DATE) :-
 
-        demoguid(CART), nonnull(CART),
-        demonat(CART_DATE), nonnull(CART_DATE).
+        guid_type(CART), not_null(CART),
+        natural_type(CART_DATE), not_null(CART_DATE).
 
-t_CartDetail(
+cart_detail_tuple(
   CART,
   PRODUCT) :-
 
-        demoguid(CART), nonnull(CART),
-        wordstr(PRODUCT), nonnull(PRODUCT).
+        guid_type(CART), not_null(CART),
+        product_string_type(PRODUCT), not_null(PRODUCT).
 
 
 
@@ -62,82 +61,78 @@ t_CartDetail(
 % ----------------------------------------------------------
 
 % putting the UNIQUE barcode_string information here.  TODO: what if two columns bore the unique keyword?
-t_table_content_scart(L) :-
+shopping_cart_table(L) :-
         % t is the empty mapping, from library assoc
-        list_type_sc_removed_dup_cart(L,t,L).
+        shopping_cart_table_with_constraints(L,t,L).
 
 
-list_type_sc_removed_dup_cart([],_ASSOC,[]).
+shopping_cart_table_with_constraints([],_ASSOC,[]).
 
 
-list_type_sc_removed_dup_cart(
-  [sc(CART_sc,
-           CART_DATE)   |LT],
+shopping_cart_table_with_constraints(
+  [(CART_sc,           CART_DATE)   |LT],
   MAP,
   OUT) :-
 
-        manageable_list_tail(LT),
-        t_ShoppingCart(CART_sc,CART_DATE),
+        within_table_size_limit(LT),
+        shopping_cart_tuple(CART_sc,CART_DATE),
 
         get_assoc(CART_sc,MAP,_EXISTSVAL), % map key (CART_sc) needs to be instantiated by here.
 
-        list_type_sc_removed_dup_cart(LT,MAP,OUT). % note: here, the OUT (output) does NOT include the head item.
+        shopping_cart_table_with_constraints(LT,MAP,OUT). % note: here, the OUT (output) does NOT include the head item.
 
 
-list_type_sc_removed_dup_cart(
-  [sc(CART_sc,
-           CART_DATE)   |LT],
+shopping_cart_table_with_constraints(
+  [(CART_sc,           CART_DATE)   |LT],
   MAP,
-  [sc(CART_sc,
+  [(CART_sc,
            CART_DATE)   |REST]) :-
 
-        manageable_list_tail(LT),
-        t_ShoppingCart(CART_sc,CART_DATE),
+        within_table_size_limit([(CART_sc,    CART_DATE)   |LT]),
+        shopping_cart_tuple(CART_sc,CART_DATE),
 
         \+get_assoc(CART_sc,MAP,_EXISTSVAL),  % map key (CART_sc) needs to be instantiated by here.
         put_assoc(CART_sc,MAP,inmap,MAP2),    % 'inmap' is an arbitrary ground value to link with the key.
-        list_type_sc_removed_dup_cart(LT,MAP2,REST).
+        shopping_cart_table_with_constraints(LT,MAP2,REST).
 
 
 
 % ----------------------------------------------------------
 
 % putting the UNIQUE barcode_string information here.  TODO: what if two columns bore the unique keyword?
-t_table_content_cdetail(L) :-
+cart_detail_table(L) :-
         % t is the empty mapping, from library assoc
-        list_type_cd_compound_key(L,t,L).
+        cart_detail_table_with_constraints(L,t,L).
 
 
-list_type_cd_compound_key([],_ASSOC,[]).
+cart_detail_table_with_constraints([],_ASSOC,[]).
 
 
-list_type_cd_compound_key(
-  [cd(CART_cd,
-           PRODUCT)   |LT],
+cart_detail_table_with_constraints(
+  [(CART_cd,           PRODUCT)   |LT],
   MAP,
   OUT) :-
 
-        manageable_list_tail(LT),
-        t_CartDetail(CART_cd,PRODUCT),
+        within_table_size_limit(LT),
+        cart_detail_tuple(CART_cd,PRODUCT),
 
         get_assoc(ck(CART_cd,PRODUCT),MAP,_EXISTSVAL), % map key (CART_cd) needs to be instantiated by here.
 
-        list_type_cd_compound_key(LT,MAP,OUT). % note: here, the OUT (output) does NOT include the head item.
+        cart_detail_table_with_constraints(LT,MAP,OUT). % note: here, the OUT (output) does NOT include the head item.
 
 
-list_type_cd_compound_key(
-  [cd(CART_cd,
-           PRODUCT)   |LT],
+cart_detail_table_with_constraints(
+  [(CART_cd,           PRODUCT)   |LT],
   MAP,
-  [cd(CART_cd,
+  [(CART_cd,
            PRODUCT)   |REST]) :-
 
-        manageable_list_tail(LT),
-        t_CartDetail(CART_cd,PRODUCT),
+        within_table_size_limit([(CART_cd,           PRODUCT)   |LT]),
+        cart_detail_tuple(CART_cd,PRODUCT),
 
         \+get_assoc(ck(CART_cd,PRODUCT),MAP,_EXISTSVAL),  % map key (ck(CART_cd,PRODUCT)) needs to be instantiated by here.
         put_assoc(ck(CART_cd,PRODUCT),MAP,inmap,MAP2),    % 'inmap' is an arbitrary ground value to link with the key.
-        list_type_cd_compound_key(LT,MAP2,REST).
+        cart_detail_table_with_constraints(LT,MAP2,REST).
 
 
 % ----------------------------------------------------------
@@ -147,7 +142,7 @@ list_type_cd_compound_key(
 % ----------------------------------------------------------
 
 /*
-There are 7 different clauses to express sc_join_cd_on_EXPR..
+There are 7 different clauses to express sc_join_cd_on_EXPR.
 
 There should be no duplication in outcomes due to careful management
 of when each of the 7 clauses is allowed to be applied.
@@ -165,16 +160,10 @@ The cases (by size of the two lists) are:
 2+    2+  ... and the first list size is greater to or EQUAL to the second
 2+    2+  ... and the first list size is LESS THAN the second
 */
-% IMPORTANT. IMPORTANT: roll back to commit 0ebccc69c58c1c6 to see a 'pure crossing' version with no join conditions
 
 
 
-
-meets_join_sc_cd(
-  sc_cd(sc(CART_sc,
-           _CART_DATE),
-        cd(CART_cd,
-           _PRODUCT)) ) :-
+meets_join(CART_sc, _CART_DATE, CART_cd,  _PRODUCT) :-
 
         CART_sc = CART_cd.
 
@@ -184,209 +173,153 @@ sc_join_cd_on_EXPR( [], [], [] ).
 
 
 sc_join_cd_on_EXPR(
-  [sc(CART_sc,
-           CART_DATE)   |L2T],
+  [(CART_sc,CART_DATE) |L2T],
   [],
   [] ) :-
 
-        t_ShoppingCart(CART_sc,
-                       CART_DATE),
+        shopping_cart_table([(CART_sc,CART_DATE)   |L2T]), % type assertion
 
-        t_table_content_scart([sc(CART_sc,
-           CART_DATE)   |L2T]),
-
-        manageable_list_tail(L2T).
+        within_table_size_limit([(CART_sc,CART_DATE)   |L2T]).
 
 
 sc_join_cd_on_EXPR(
   [],
-  [cd(CART_cd,
-           PRODUCT)   |L2T],
+  [(CART_cd,PRODUCT)   |L2T],
   [] ) :-
 
-        t_CartDetail(CART_cd, PRODUCT),
+        cart_detail_table([(CART_cd,PRODUCT)   |L2T]), % type assertion
 
-        t_table_content_cdetail([cd(CART_cd,
-           PRODUCT)   |L2T]),
-
-        manageable_list_tail(L2T).
+        within_table_size_limit([(CART_cd,PRODUCT)   |L2T]).
 
 
-% single barcode but longer list of purchase, MEETS JOIN conditions
-% ---------- todo ....  EXPERIMENT here... the join condition can be encoded in the HEAD right here, i think
+
+% single cart but longer list of c_details, MEETS JOIN conditions
 sc_join_cd_on_EXPR(
-  [sc(CART_sc,
-           CART_DATE)   |[]],
-  [cd(CART_cd,
-           PRODUCT)   |L2T],
-  [sc_cd(sc(CART_sc,
-           CART_DATE),
-           cd(CART_cd,
-           PRODUCT))   |R]  ) :-
+  [(CART_sc,CART_DATE)   |[]],
 
-        t_ShoppingCart(CART_sc,CART_DATE),
+  [(CART_cd,PRODUCT)   |L2T],
 
-        %t_CartDetail(CART_cd,PRODUCT),
+  [(CART_sc,CART_DATE,CART_cd,PRODUCT) |R] ) :-
 
-        t_table_content_cdetail([cd(CART_cd,
-           PRODUCT)   |L2T]),
-        length([cd(CART_cd,
-           PRODUCT)   |L2T],X),
+
+        shopping_cart_tuple(CART_sc,CART_DATE),  % type assertion
+
+        cart_detail_table([(CART_cd,PRODUCT)   |L2T]), % type assertion
+
+        length([(CART_cd,PRODUCT)   |L2T],X),
         X>1,
-        manageable_list_tail(L2T),
-        meets_join_sc_cd(sc_cd(sc(CART_sc,
-           CART_DATE),
-                                   cd(CART_cd,
-           PRODUCT))),
-        sc_join_cd_on_EXPR( [sc(CART_sc,
-           CART_DATE)   |[]], L2T, R ).
+        within_table_size_limit(L2T),
+
+        meets_join(CART_sc,CART_DATE,CART_cd,PRODUCT),
+
+        sc_join_cd_on_EXPR([(CART_sc,CART_DATE)   |[]] , L2T, R ).
 
 
-% single barcode but longer list of purchase, FAILS TO MEET JOIN conditions
-% ---------- todo ....  EXPERIMENT here... the join condition can be encoded in the HEAD right here, i think
+% single cart but longer list of c_details, FAILS TO MEET JOIN conditions
 sc_join_cd_on_EXPR(
-  [sc(CART_sc,
-           CART_DATE)   |[]],
-  [cd(CART_cd,
-           PRODUCT)   |L2T],
+  [(CART_sc,CART_DATE)   |[]],
+
+  [(CART_cd,PRODUCT)   |L2T],
+
   R ) :-
 
-        t_ShoppingCart(CART_sc,CART_DATE),
+        shopping_cart_tuple(CART_sc,CART_DATE),% type assertion
 
-        t_table_content_cdetail([cd(CART_cd,
-           PRODUCT)   |L2T]),
-        length([cd(CART_cd,
-           PRODUCT)   |L2T],X),
+        cart_detail_table([(CART_cd,PRODUCT)   |L2T]),% type assertion
+
+        length([(CART_cd,PRODUCT)   |L2T],X),
+
         X>1,
-        manageable_list_tail(L2T),
-        \+meets_join_sc_cd(sc_cd(sc(CART_sc,
-           CART_DATE),
-                                 cd(CART_cd,
-           PRODUCT))),
-        sc_join_cd_on_EXPR( [sc(CART_sc,
-           CART_DATE)   |[]], L2T, R ).
+        within_table_size_limit(L2T),
+
+        \+meets_join(CART_sc,CART_DATE,CART_cd,PRODUCT),
+
+        sc_join_cd_on_EXPR([(CART_sc,CART_DATE)   |[]] , L2T, R ).
 
 
-% longer barcode list but SINGLE purchase, MEETS JOIN conditions
+
+% longer carts list but SINGLE detail item, MEETS JOIN conditions
 sc_join_cd_on_EXPR(
-  [sc(CART_sc,
-           CART_DATE)   |L2T],
-  [cd(CART_cd,
-           PRODUCT)   |[]],
-  [sc_cd(sc(CART_sc,
-           CART_DATE),
-         cd(CART_cd,
-           PRODUCT))   |R]  ) :-
+  [(CART_sc,CART_DATE)   |L2T],
 
-        t_table_content_scart(
-            [sc(CART_sc,
-           CART_DATE)   |L2T]),
+  [(CART_cd,PRODUCT)   |[]],
 
-        t_CartDetail(CART_cd,PRODUCT),
-
-        manageable_list_tail(L2T),
-        meets_join_sc_cd(sc_cd(sc(CART_sc,
-           CART_DATE),
-                               cd(CART_cd,
-           PRODUCT))),
-        sc_join_cd_on_EXPR( L2T,
-                                [cd(CART_cd,
-           PRODUCT)   |[]],
-                                R ).
+  [(CART_sc,CART_DATE,CART_cd,PRODUCT) |R] ) :-
 
 
-% longer barcode list but SINGLE purchase, FAILS TO MEET JOIN conditions
+        shopping_cart_table([(CART_sc,CART_DATE)   |L2T]),% type assertion
+
+        cart_detail_tuple(CART_cd,PRODUCT),% type assertion
+
+        within_table_size_limit(L2T),
+
+        meets_join(CART_sc,CART_DATE,CART_cd,PRODUCT),
+
+        sc_join_cd_on_EXPR( L2T, [(CART_cd,PRODUCT)   |[]] ,   R ).
+
+
+% longer carts list but SINGLE details item, FAILS TO MEET JOIN conditions
 sc_join_cd_on_EXPR(
-  [sc(CART_sc,
-           CART_DATE)   |L2T],
-  [cd(CART_cd,
-           PRODUCT)   |[]],
+  [(CART_sc,CART_DATE)   |L2T],
+
+  [(CART_cd,PRODUCT)   |[]],
+
   R ) :-
 
-        t_table_content_scart(
-            [sc(CART_sc,
-           CART_DATE)   |L2T]),
+        shopping_cart_table([(CART_sc,CART_DATE)   |L2T]),% type assertion
 
-        t_CartDetail(CART_cd,PRODUCT),
+        cart_detail_tuple(CART_cd,PRODUCT),% type assertion
 
-        manageable_list_tail(L2T),
-        \+meets_join_sc_cd(sc_cd(sc(CART_sc,
-           CART_DATE),
-                                 cd(CART_cd,
-           PRODUCT))),
-        sc_join_cd_on_EXPR( L2T,
-                                [cd(CART_cd,
-           PRODUCT)   |[]],
-                                R ).
+        within_table_size_limit(L2T),
+
+        \+meets_join(CART_sc,CART_DATE,CART_cd,PRODUCT),
+
+        sc_join_cd_on_EXPR( L2T, [(CART_cd,PRODUCT)   |[]] ,   R ).
 
 
-% adding one more purchase to an 'already crossing'
+
+% adding one more details item to an 'already crossing'
 sc_join_cd_on_EXPR(
-  [sc(CART_sc,
-           CART_DATE)   |L1T], % this list needs to be nonempty. the empty case is handled elsewhere
-  [cd(CART_cd,
-           PRODUCT)   |L2T],
+  [(CART_sc,CART_DATE)   |L1T],
+
+  [(CART_cd,PRODUCT)   |L2T],
+
   FINAL ) :-
 
-        t_table_content_scart(
-            [sc(CART_sc,
-           CART_DATE)   |L1T]),
-        t_table_content_cdetail(
-            [cd(CART_cd,
-           PRODUCT)   |L2T]),
-        length([sc(CART_sc,
-           CART_DATE)   |L1T],
-               X),
+        shopping_cart_table([(CART_sc,CART_DATE)   |L1T]),% type assertion
+
+        cart_detail_table([(CART_cd,PRODUCT)   |L2T]),% type assertion
+
+        length([(CART_sc,CART_DATE)   |L1T],  X),
         X>1,
-        length([cd(CART_cd,
-           PRODUCT)   |L2T],
-               Y),
+        length([(CART_cd,PRODUCT)   |L2T],  Y),
         Y>1,
         X>=Y,
-        sc_join_cd_on_EXPR([sc(CART_sc,
-           CART_DATE)   |L1T],
-                               L2T,
-                               POUT),
-        sc_join_cd_on_EXPR([sc(CART_sc,
-           CART_DATE)   |L1T],
-                               [cd(CART_cd,
-           PRODUCT)   |[]],
-                               MOUT),
+        sc_join_cd_on_EXPR([(CART_sc,CART_DATE)   |L1T],    L2T,      POUT),
+        sc_join_cd_on_EXPR([(CART_sc,CART_DATE)   |L1T], [(CART_cd,PRODUCT)   |[]],  MOUT),
         merge(POUT,MOUT,FINAL).
 
 
-% adding one more barcode to an 'already crossing'
+% adding one more cart to an 'already crossing'
 sc_join_cd_on_EXPR(
-  [sc(CART_sc,
-           CART_DATE)   |L1T],
-  [cd(CART_cd,
-           PRODUCT)  |D], % this list needs to be nonempty. the empty case is handled elsewhere
+  [(CART_sc,CART_DATE)   |L1T],
+
+  [(CART_cd,PRODUCT)   |L2T],
+
   FINAL ) :-
 
-        t_table_content_scart([sc(CART_sc,
-           CART_DATE)   |L1T]),
-        t_table_content_cdetail([cd(CART_cd,
-           PRODUCT)   |D]),
-        length([sc(CART_sc,
-           CART_DATE)   |L1T],
-               X),
+        shopping_cart_table([(CART_sc,CART_DATE)   |L1T]),% type assertion
+
+        cart_detail_table([(CART_cd,PRODUCT)   |L2T]),% type assertion
+
+        length([(CART_sc,CART_DATE)   |L1T],  X),
         X>1,
-        length([cd(CART_cd,
-           PRODUCT)
-   |D],
-               Y),
+        length([(CART_cd,PRODUCT)   |L2T],  Y),
+
         Y>1,
         X<Y,
-        sc_join_cd_on_EXPR(L1T,
-                               [cd(CART_cd,
-           PRODUCT)   |D],
-                               POUT),
-        sc_join_cd_on_EXPR([sc(CART_sc,
-           CART_DATE)   |[]],
-                               [cd(CART_cd,
-           PRODUCT)
-                      |D],
-                               MOUT),
+        sc_join_cd_on_EXPR(L1T,  [(CART_cd,PRODUCT)   |L2T],   POUT),
+        sc_join_cd_on_EXPR([(CART_sc,CART_DATE)   |[]],   [(CART_cd,PRODUCT)   |L2T],    MOUT),
         merge(POUT,MOUT,FINAL).
 
 
@@ -413,14 +346,14 @@ appr_corr_join_derived_table(J) :-
         sc_join_cd_on_EXPR(_SC,_CD,J).
 
 appr_corr_join_derived_tuple(
-  sc_cd(sc(CART,CART_DATE), cd(CART,PRODUCT)) ) :-
+  sc_cd((CART,CART_DATE), cd(CART,PRODUCT)) ) :-
 
-        t_ShoppingCart(CART,CART_DATE),
-        t_CartDetail(CART,PRODUCT).
+        shopping_cart_tuple(CART,CART_DATE),
+        cart_detail_tuple(CART,PRODUCT).
 
 /*
-J = [sc_cd(sc(fccy463, 0), cd(fccy463, rural)),
-     sc_cd(sc(fccy463, 0), cd(fccy463, noise))]
+J = [sc_cd((fccy463, 0), cd(fccy463, rural)),
+     sc_cd((fccy463, 0), cd(fccy463, noise))]
 */
 
 
@@ -446,13 +379,13 @@ appr_corr_group_by([],MAP,MAP) :-
 
 % take the list-of-tuples, our 'so-far' map, and produce a done-map.
 appr_corr_group_by(
-  [sc_cd(sc(CART_sc,CART_DATE), cd(CART_cd,PRODUCT_gk))   |LT],
+  [sc_cd((CART_sc,CART_DATE), cd(CART_cd,PRODUCT_gk))   |LT],
   MAP,
   MAP_OUT ) :-
 
         manageable_list_tail(LT),
 
-        appr_corr_join_derived_tuple(sc_cd(sc(CART_sc,CART_DATE), cd(CART_cd,PRODUCT_gk))),
+        appr_corr_join_derived_tuple(sc_cd((CART_sc,CART_DATE), cd(CART_cd,PRODUCT_gk))),
 /*
         t_AmenitiesAccessBarcode(BARCODE_STRING,
                                  GROUP_KEY, %BARCODE_TYPE,
@@ -478,13 +411,13 @@ appr_corr_group_by(
 
 % take the list-of-tuples, our 'so-far' map, and produce a done-map.
 appr_corr_group_by(
-  [sc_cd(sc(CART_sc,CART_DATE), cd(CART_cd,PRODUCT_gk))   |LT],
+  [sc_cd((CART_sc,CART_DATE), cd(CART_cd,PRODUCT_gk))   |LT],
   MAP,
   MAP_OUT ) :-
 
         manageable_list_tail(LT),
 
-        appr_corr_join_derived_tuple(sc_cd(sc(CART_sc,CART_DATE), cd(CART_cd,PRODUCT_gk))),
+        appr_corr_join_derived_tuple(sc_cd((CART_sc,CART_DATE), cd(CART_cd,PRODUCT_gk))),
 
         \+get_assoc(PRODUCT_gk,MAP,_), % map key (PRODUCT_gk) needs to be instantiated by here.
         put_assoc(PRODUCT_gk,
