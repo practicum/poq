@@ -13,12 +13,17 @@ manageable_list_tail(L) :- size_0_to_2(L).
 
   i was able to do the following:
 
-  ?- appr_corr_join_derived_table( [sc_cd(sc(fccy463, 0), cd(fccy463, rural)), sc_cd(sc(srce544, 0), cd(srce544, rural))] ).
-true .
+  appr_corr_join_derived_table( [(fccy463, 0, fccy463, aspirin), (srce544, 0,srce544, aspirin)] ).
 
-?- test_it(  [sc_cd(sc(fccy463, 0), cd(fccy463, rural)), sc_cd(sc(srce544, 0), cd(srce544, rural))]  ,K).K = [g(d_prod_cart(0, rural, srce544), 2)] .
 
-?- test_it(  [sc_cd(sc(fccy463, X), cd(fccy463, rural)), sc_cd(sc(srce544, Y), cd(srce544, rural))]  ,  [g(d_prod_cart(X, rural, srce544), 2)]),X@>Y.
+?- test_it(  [(fccy463, 0, fccy463, aspirin), (srce544, 0,srce544, aspirin)]  ,K).
+K = [g(d_prod_cart(0, aspirin, srce544), 2)] .
+
+
+  ?- test_it(  [(fccy463, X, fccy463, aspirin), (srce544, Y,srce544, aspirin)]  , [g(d_prod_cart(X, aspirin, srce544), 2)]  ),
+  X@>Y.
+
+
 X = 1,
 Y = 0 ;
 X = 1,
@@ -345,8 +350,7 @@ sc_join_cd_on_EXPR(
 appr_corr_join_derived_table(J) :-
         sc_join_cd_on_EXPR(_SC,_CD,J).
 
-appr_corr_join_derived_tuple(
-  sc_cd((CART,CART_DATE), cd(CART,PRODUCT)) ) :-
+appr_corr_join_derived_tuple( CART,CART_DATE,CART,PRODUCT ) :-
 
         shopping_cart_tuple(CART,CART_DATE),
         cart_detail_tuple(CART,PRODUCT).
@@ -375,23 +379,18 @@ appr_corr_group_by([],MAP,MAP) :-
 
         write( '   -----------------------   ' ), nl.
 
-
+% (CART_sc,CART_DATE,CART_cd,PRODUCT_gk)
 
 % take the list-of-tuples, our 'so-far' map, and produce a done-map.
 appr_corr_group_by(
-  [sc_cd((CART_sc,CART_DATE), cd(CART_cd,PRODUCT_gk))   |LT],
+  [(CART_sc,CART_DATE,CART_cd,PRODUCT_gk)   |LT],
   MAP,
   MAP_OUT ) :-
 
-        manageable_list_tail(LT),
+        within_table_size_limit(LT),
 
-        appr_corr_join_derived_tuple(sc_cd((CART_sc,CART_DATE), cd(CART_cd,PRODUCT_gk))),
-/*
-        t_AmenitiesAccessBarcode(BARCODE_STRING,
-                                 GROUP_KEY, %BARCODE_TYPE,
-                                 AMENITIES_ID,
-                                 IN_PLAY),
-  */
+        appr_corr_join_derived_tuple(CART_sc,CART_DATE,CART_cd,PRODUCT_gk),
+
         get_assoc(PRODUCT_gk, % map key (GROUP_KEY) needs to be instantiated by here.
                   MAP,
                   g(d_prod_cart(MAX_DATE,PRODUCT_gk,MAX_CART), COUNT) ),
@@ -411,13 +410,13 @@ appr_corr_group_by(
 
 % take the list-of-tuples, our 'so-far' map, and produce a done-map.
 appr_corr_group_by(
-  [sc_cd((CART_sc,CART_DATE), cd(CART_cd,PRODUCT_gk))   |LT],
+  [(CART_sc,CART_DATE,CART_cd,PRODUCT_gk)   |LT],
   MAP,
   MAP_OUT ) :-
 
-        manageable_list_tail(LT),
+        within_table_size_limit(LT),
 
-        appr_corr_join_derived_tuple(sc_cd((CART_sc,CART_DATE), cd(CART_cd,PRODUCT_gk))),
+        appr_corr_join_derived_tuple(CART_sc,CART_DATE,CART_cd,PRODUCT_gk),
 
         \+get_assoc(PRODUCT_gk,MAP,_), % map key (PRODUCT_gk) needs to be instantiated by here.
         put_assoc(PRODUCT_gk,
