@@ -14,7 +14,7 @@ not_null(X) :- \+isnull(X).
 product_string_type(null).
 product_string_type(aspirin).
 product_string_type(ibuprofen).
-product_string_type(guaifenesin).
+%product_string_type(guaifenesin).
 
 
 product_tuple( PROD_ID, PROD_NAME ) :-
@@ -70,6 +70,338 @@ product_table_with_constraints(
 
 
 
+
+% =====================================================================
+
+shopping_cart_tuple(
+  CART_ID,
+  CUST_ID) :-
+
+        guid_type(CART_ID), not_null(CART_ID),
+        natural_type(CUST_ID).
+
+
+cart_detail_tuple(
+  CART_ID,
+  PRODUCT) :-
+
+        guid_type(CART_ID), not_null(CART_ID),
+        product_string_type(PRODUCT), not_null(PRODUCT).
+
+
+shopping_cart_table(T) :-
+        % t is the empty mapping, from library assoc
+        shopping_cart_table_with_constraints(T,t,T).
+
+
+shopping_cart_table_with_constraints([],_ASSOC,[]).
+
+
+shopping_cart_table_with_constraints(
+  [(CART_ID,CUST_ID)   |LT],
+  MAP,
+  OUT) :-
+
+        within_table_size_limit(LT),
+        shopping_cart_tuple(CART_ID,CUST_ID),
+
+        get_assoc(CART_ID,MAP,_EXISTSVAL), % map key (CART_sc) needs to be instantiated by here.
+
+        shopping_cart_table_with_constraints(LT,MAP,OUT). % note: here, the OUT (output) does NOT include the head item.
+
+
+shopping_cart_table_with_constraints(
+  [(CART_ID,CUST_ID)   |LT],
+  MAP,
+  [(CART_ID,CUST_ID)   |REST]) :-
+
+        within_table_size_limit([(CART_ID,CUST_ID)   |LT]),
+        shopping_cart_tuple(CART_ID,CUST_ID),
+
+        \+get_assoc(CART_ID,MAP,_EXISTSVAL),  % map key (CART_ID) needs to be instantiated by here.
+        put_assoc(CART_ID,MAP,inmap,MAP2),    % 'inmap' is an arbitrary ground value to link with the key.
+        shopping_cart_table_with_constraints(LT,MAP2,REST).
+
+
+
+
+% ----------------------------------------------------------
+
+
+cart_detail_table(L) :-
+        % t is the empty mapping, from library assoc
+        cart_detail_table_with_constraints(L,t,L).
+
+
+cart_detail_table_with_constraints([],_ASSOC,[]).
+
+
+cart_detail_table_with_constraints(
+  [(CART_ID, PRODUCT)    |LT],
+  MAP,
+  OUT) :-
+
+        within_table_size_limit(LT),
+        cart_detail_tuple(CART_ID, PRODUCT),
+
+        get_assoc(ck(CART_ID, PRODUCT),MAP,_EXISTSVAL), % map key (CART_cd) needs to be instantiated by here.
+
+        cart_detail_table_with_constraints(LT,MAP,OUT). % note: here, the OUT (output) does NOT include the head item.
+
+
+cart_detail_table_with_constraints(
+  [(CART_ID, PRODUCT)    |LT],
+  MAP,
+  [(CART_ID, PRODUCT)    |REST]) :-
+
+        within_table_size_limit([(CART_ID, PRODUCT)    |LT]),
+        cart_detail_tuple(CART_ID, PRODUCT),
+
+        \+get_assoc(ck(CART_ID, PRODUCT),MAP,_EXISTSVAL),  % map key (ck(CART_ID, PRODUCT)) needs to be instantiated by here.
+        put_assoc(ck(CART_ID, PRODUCT),MAP,inmap,MAP2),    % 'inmap' is an arbitrary ground value to link with the key.
+        cart_detail_table_with_constraints(LT,MAP2,REST).
+
+
+% ----------------------------------------------------------
+
+
+
+
+
+
+
+% ----------------------------------------------------------
+
+/*
+There are 7 different clauses to express sc_join_cd_on_EXPR.
+
+There should be no duplication in outcomes due to careful management
+of when each of the 7 clauses is allowed to be applied.
+
+Each one of the 7 handles a NON-OVERLAPPING subset of cases based on
+the SIZE of the first two list variables.
+
+The cases (by size of the two lists) are:
+
+[]    []
+1+    []
+[]    1+
+1     >1
+1+    1     (1+ means 'one or more')
+2+    2+  ... and the first list size is greater to or EQUAL to the second
+2+    2+  ... and the first list size is LESS THAN the second
+*/
+% IMPORTANT. IMPORTANT: roll back to commit 0ebccc69c58c1c6 to see a 'pure crossing' version with no join conditions
+
+
+/*
+
+shopping_cart_tuple(
+  CART_ID,
+  CUST_ID) :-
+
+        guid_type(CART_ID), not_null(CART_ID),
+        natural_type(CUST_ID).
+
+
+cart_detail_tuple(
+  CART_ID,
+  PRODUCT) :-
+
+        guid_type(CART_ID), not_null(CART_ID),
+        product_string_type(PRODUCT), not_null(PRODUCT).
+
+  */
+
+
+meets_join_sc_cd(
+  CART_ID_sc,_CUST_ID,CART_ID_cd,_PRODUCT
+                 ) :-
+
+        CART_ID_sc = CART_ID_cd.
+
+
+
+sc_join_cd_on_EXPR( [], [], [] ).
+
+/*
+[]    []
+1+    []  <-----
+[]    1+
+1     >1
+  */
+sc_join_cd_on_EXPR(
+  [(CART_ID_sc,CUST_ID)   |L2T],
+  [],
+  [] ) :-
+
+        %shopping_cart_tuple(CART_ID_sc,CUST_ID), % is this needed?
+
+        shopping_cart_table([(CART_ID_sc,CUST_ID)   |L2T]),
+
+        within_table_size_limit([(CART_ID_sc,CUST_ID)   |L2T]).
+
+/*
+[]    []
+1+    []
+[]    1+  <-----
+1     >1
+  */
+sc_join_cd_on_EXPR(
+  [],
+  [(CART_ID_cd,PRODUCT)   |L2T],
+  [] ) :-
+
+        %cart_detail_tuple(CART_ID_cd,PRODUCT), % is this needed?
+
+        cart_detail_table([(CART_ID_cd,PRODUCT)   |L2T]),
+
+        within_table_size_limit([(CART_ID_cd,PRODUCT)   |L2T]).
+
+
+/*
+(1+ means 'one or more')
+
+[]    []
+1+    []
+[]    1+
+1     >1    <-----
+1+    1
+  */
+% single barcode but longer list of purchase, MEETS JOIN conditions
+% ---------- todo ....  EXPERIMENT here... the join condition can be encoded in the HEAD right here, i think
+sc_join_cd_on_EXPR(
+  [(CART_ID_sc,CUST_ID)   |[]],
+
+  [(CART_ID_cd,PRODUCT)   |L2T],
+
+  [(CART_ID_sc,CUST_ID,CART_ID_cd,PRODUCT) |R] ) :-
+
+
+        shopping_cart_tuple(CART_ID_sc,CUST_ID),
+
+        cart_detail_table([(CART_ID_cd,PRODUCT)   |L2T]),
+
+        length([(CART_ID_cd,PRODUCT)   |L2T],X),
+        X>1,
+        within_table_size_limit(L2T),
+
+        meets_join_sc_cd(CART_ID_sc,CUST_ID,CART_ID_cd,PRODUCT),
+
+        sc_join_cd_on_EXPR([(CART_ID_sc,CUST_ID)   |[]] , L2T, R ).
+
+
+% single barcode but longer list of purchase, FAILS TO MEET JOIN conditions
+% ---------- todo ....  EXPERIMENT here... the join condition can be encoded in the HEAD right here, i think
+sc_join_cd_on_EXPR(
+  [(CART_ID_sc,CUST_ID)   |[]],
+
+  [(CART_ID_cd,PRODUCT)   |L2T],
+
+  R ) :-
+
+        shopping_cart_tuple(CART_ID_sc,CUST_ID),
+
+        cart_detail_table([(CART_ID_cd,PRODUCT)   |L2T]),
+
+        length([(CART_ID_cd,PRODUCT)   |L2T],X),
+
+        X>1,
+        within_table_size_limit(L2T),
+
+        \+meets_join_sc_cd(CART_ID_sc,CUST_ID,CART_ID_cd,PRODUCT),
+
+        sc_join_cd_on_EXPR([(CART_ID_sc,CUST_ID)   |[]] , L2T, R ).
+
+
+
+% longer barcode list but SINGLE purchase, MEETS JOIN conditions
+sc_join_cd_on_EXPR(
+  [(CART_ID_sc,CUST_ID)   |L2T],
+
+  [(CART_ID_cd,PRODUCT)   |[]],
+
+  [(CART_ID_sc,CUST_ID,CART_ID_cd,PRODUCT) |R] ) :-
+
+
+        shopping_cart_table([(CART_ID_sc,CUST_ID)   |L2T]),
+
+        cart_detail_tuple(CART_ID_cd,PRODUCT),
+
+        within_table_size_limit(L2T),
+
+        meets_join_sc_cd(CART_ID_sc,CUST_ID,CART_ID_cd,PRODUCT),
+
+        sc_join_cd_on_EXPR( L2T, [(CART_ID_cd,PRODUCT)   |[]] ,   R ).
+
+
+% longer barcode list but SINGLE purchase, FAILS TO MEET JOIN conditions
+sc_join_cd_on_EXPR(
+  [(CART_ID_sc,CUST_ID)   |L2T],
+
+  [(CART_ID_cd,PRODUCT)   |[]],
+
+  R ) :-
+
+        shopping_cart_table([(CART_ID_sc,CUST_ID)   |L2T]),
+
+        cart_detail_tuple(CART_ID_cd,PRODUCT),
+
+        within_table_size_limit(L2T),
+
+        \+meets_join_sc_cd(CART_ID_sc,CUST_ID,CART_ID_cd,PRODUCT),
+
+        sc_join_cd_on_EXPR( L2T, [(CART_ID_cd,PRODUCT)   |[]] ,   R ).
+
+
+
+% adding one more purchase to an 'already crossing'
+sc_join_cd_on_EXPR(
+  [(CART_ID_sc,CUST_ID)   |L1T],
+
+  [(CART_ID_cd,PRODUCT)   |L2T],
+
+  FINAL ) :-
+
+        shopping_cart_table([(CART_ID_sc,CUST_ID)   |L1T]),
+
+        cart_detail_table([(CART_ID_cd,PRODUCT)   |L2T]),
+
+
+        length([(CART_ID_sc,CUST_ID)   |L1T],               X),
+        X>1,
+        length([(CART_ID_cd,PRODUCT)   |L2T],               Y),
+        Y>1,
+        X>=Y,
+        sc_join_cd_on_EXPR([(CART_ID_sc,CUST_ID)   |L1T],    L2T,      POUT),
+        sc_join_cd_on_EXPR([(CART_ID_sc,CUST_ID)   |L1T], [(CART_ID_cd,PRODUCT)   |[]],     MOUT),
+        merge(POUT,MOUT,FINAL).
+
+
+% adding one more barcode to an 'already crossing'
+sc_join_cd_on_EXPR(
+  [(CART_ID_sc,CUST_ID)   |L1T],
+
+  [(CART_ID_cd,PRODUCT)   |L2T],
+
+  FINAL ) :-
+
+        shopping_cart_table([(CART_ID_sc,CUST_ID)   |L1T]),
+
+        cart_detail_table([(CART_ID_cd,PRODUCT)   |L2T]),
+
+        length([(CART_ID_sc,CUST_ID)   |L1T],               X),
+        X>1,
+        length([(CART_ID_cd,PRODUCT)   |L2T],               Y),
+
+        Y>1,
+        X<Y,
+        sc_join_cd_on_EXPR(L1T,  [(CART_ID_cd,PRODUCT)   |L2T],           POUT),
+        sc_join_cd_on_EXPR([(CART_ID_sc,CUST_ID)   |[]],   [(CART_ID_cd,PRODUCT)   |L2T],    MOUT),
+        merge(POUT,MOUT,FINAL).
+
+
+% ----------------------------------------------------------
 
 
 
