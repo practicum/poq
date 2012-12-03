@@ -1,9 +1,10 @@
 :- module(datatypes,
           [isnull/1,
+           not_null/1,
            xxx_hide_nonnull/1,
            int_type/1,
            natural_type/1,
-           name_type/1,
+           name_string_type/1,
            word_type/1,
            guid_type/1,
            tinyint/1,
@@ -30,11 +31,15 @@ UPDATE TO THE ABOVE COMMENTS:
 */
 isnull(null).
 
+% remember: we are talking about X should be INSTANTIATED ALREADY
+not_null(X) :- \+isnull(X).
+
+
 % note the use of so-called 'green cut' here.
 % (ok... so not 100% green to overlap between int_type and natural_type, but this actually is still ok).
 % once we SUCCEED AT PROVING that something is nonnull, we no longer care to investigate the other nonnull paths
 xxx_hide_nonnull(X) :- int_type(X),  !, \+isnull(X).
-xxx_hide_nonnull(X) :- name_type(X),    !, \+isnull(X).
+xxx_hide_nonnull(X) :- name_string_type(X),    !, \+isnull(X).
 xxx_hide_nonnull(X) :- word_type(X),  !, \+isnull(X).
 xxx_hide_nonnull(X) :- guid_type(X), !, \+isnull(X).
 xxx_hide_nonnull(X) :- natural_type(X),  !, \+isnull(X).
@@ -43,13 +48,13 @@ xxx_hide_nonnull(X) :- barcodeEnum(X),  !, \+isnull(X).
 
 % without the following, other atoms not 'typed' in this file will FAIL a 'nonnull' test.
 % for example:  nonnull(abcdefghijk).  will come out FALSE.
-xxx_hide_nonnull(X) :- \+int_type(X), \+name_type(X), \+word_type(X), \+guid_type(X), \+natural_type(X), \+tinyint(X),  \+barcodeEnum(X),
+xxx_hide_nonnull(X) :- \+int_type(X), \+name_string_type(X), \+word_type(X), \+guid_type(X), \+natural_type(X), \+tinyint(X),  \+barcodeEnum(X),
               \+isnull(X).
 
 % after the CUT was added to nonnull, it could no longer be used to GENERATE (retrieve) non-null ground atoms.
 % for this reason, please enjoy the use of getnonnull when you need to generate such a thing.
 getnonnull(X) :- int_type(X),  \+isnull(X).
-getnonnull(X) :- name_type(X),    \+isnull(X).
+getnonnull(X) :- name_string_type(X),    \+isnull(X).
 getnonnull(X) :- word_type(X),  \+isnull(X).
 getnonnull(X) :- guid_type(X), \+isnull(X).
 getnonnull(X) :- natural_type(X),  \+isnull(X).
@@ -58,7 +63,7 @@ getnonnull(X) :- barcodeEnum(X),  \+isnull(X).
 
 % without the following, other atoms not 'typed' in this file will FAIL a 'nonnull' test.
 % for example:  nonnull(abcdefghijk).  will come out FALSE.
-getnonnull(X) :- \+int_type(X), \+name_type(X), \+word_type(X), \+guid_type(X), \+natural_type(X), \+tinyint(X),  \+barcodeEnum(X),
+getnonnull(X) :- \+int_type(X), \+name_string_type(X), \+word_type(X), \+guid_type(X), \+natural_type(X), \+tinyint(X),  \+barcodeEnum(X),
               \+isnull(X).
 
 
@@ -84,13 +89,13 @@ int_type(-2).
 int_type(-1).
 
 
-name_type(null).
-name_type(jacob).
-name_type(isabella).
-name_type(william).
-name_type(olivia).
-name_type(noah).
-name_type(emily).
+name_string_type(null).
+name_string_type(jacob).
+name_string_type(isabella).
+name_string_type(william).
+name_string_type(olivia).
+name_string_type(noah).
+name_string_type(emily).
 
 
 
