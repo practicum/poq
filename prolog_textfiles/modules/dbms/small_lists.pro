@@ -22,6 +22,7 @@ rev([Head|List1], List2, List3) :-
 :- module(smallnum,
           [% xxx_manageable_list_tail/1,
            within_table_size_limit/1,
+           within_joined_size_limit/1,
            size_0_to_0/1, % yes, the name here is a bit silly, but i like the symmetry with the other names
            size_0_to_1/1,
            size_0_to_2/1,
@@ -31,7 +32,11 @@ rev([Head|List1], List2, List3) :-
 
 
 
-within_table_size_limit(LIST) :- length(LIST,0);length(LIST,1);length(LIST,2);length(LIST,3).
+within_table_size_limit(LIST) :- length(LIST,0);length(LIST,1);length(LIST,2);length(LIST,3);length(LIST,4).
+
+within_joined_size_limit(LIST) :- length(LIST,0);length(LIST,1);length(LIST,2);length(LIST,3);length(LIST,4);length(LIST,5);
+        length(LIST,6);length(LIST,7);length(LIST,8).
+
 
 % xxx_manageable_list_tail has to range from ZERO to something, with no 'gaps', otherwise user-code fails
 xxx_manageable_list_tail(L) :- size_0_to_1(L). % applied to a TAIL of list, we know the WHOLE list would be +1 bigger

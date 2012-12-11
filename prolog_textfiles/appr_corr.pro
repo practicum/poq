@@ -70,9 +70,9 @@ shopping_cart_table(L) :-
 
 shopping_cart_table_with_constraints([],_ASSOC,[]).
 
-
+/*
 shopping_cart_table_with_constraints(
-  [(CART_sc,           CART_DATE)   |LT],
+  [(CART_sc,CART_DATE)   |LT],
   MAP,
   OUT) :-
 
@@ -81,16 +81,16 @@ shopping_cart_table_with_constraints(
 
         get_assoc(CART_sc,MAP,_EXISTSVAL), % map key (CART_sc) needs to be instantiated by here.
 
+        % in this case, 'get_assoc' was specified to be true, so this key value is already in the list.
         shopping_cart_table_with_constraints(LT,MAP,OUT). % note: here, the OUT (output) does NOT include the head item.
-
+*/
 
 shopping_cart_table_with_constraints(
-  [(CART_sc,           CART_DATE)   |LT],
+  [(CART_sc,CART_DATE)   |LT],
   MAP,
-  [(CART_sc,
-           CART_DATE)   |REST]) :-
+  [(CART_sc,CART_DATE)   |REST]) :-
 
-        within_table_size_limit([(CART_sc,    CART_DATE)   |LT]),
+        within_table_size_limit([(CART_sc,CART_DATE)   |LT]),
         shopping_cart_tuple(CART_sc,CART_DATE),
 
         \+get_assoc(CART_sc,MAP,_EXISTSVAL),  % map key (CART_sc) needs to be instantiated by here.
@@ -109,7 +109,7 @@ cart_detail_table(L) :-
 
 cart_detail_table_with_constraints([],_ASSOC,[]).
 
-
+/*
 cart_detail_table_with_constraints(
   [(CART_cd,           PRODUCT)   |LT],
   MAP,
@@ -121,15 +121,14 @@ cart_detail_table_with_constraints(
         get_assoc(ck(CART_cd,PRODUCT),MAP,_EXISTSVAL), % map key (CART_cd) needs to be instantiated by here.
 
         cart_detail_table_with_constraints(LT,MAP,OUT). % note: here, the OUT (output) does NOT include the head item.
-
+*/
 
 cart_detail_table_with_constraints(
-  [(CART_cd,           PRODUCT)   |LT],
+  [(CART_cd,PRODUCT)   |LT],
   MAP,
-  [(CART_cd,
-           PRODUCT)   |REST]) :-
+  [(CART_cd,PRODUCT)   |REST]) :-
 
-        within_table_size_limit([(CART_cd,           PRODUCT)   |LT]),
+        within_table_size_limit([(CART_cd,PRODUCT)   |LT]),
         cart_detail_tuple(CART_cd,PRODUCT),
 
         \+get_assoc(ck(CART_cd,PRODUCT),MAP,_EXISTSVAL),  % map key (ck(CART_cd,PRODUCT)) needs to be instantiated by here.
@@ -170,10 +169,10 @@ meets_join(CART_sc, _CART_DATE, CART_cd,  _PRODUCT) :-
         CART_sc = CART_cd.
 
 
-
+% case 1 of 7: left-hand list and right-hand list are [], []
 sc_join_cd_on_EXPR( [], [], [] ).
 
-
+% case 2 of 7: left-hand list and right-hand list are sizes: 1+, []
 sc_join_cd_on_EXPR(
   [(CART_sc,CART_DATE) |L2T],
   [],
@@ -184,6 +183,7 @@ sc_join_cd_on_EXPR(
         within_table_size_limit([(CART_sc,CART_DATE)   |L2T]).
 
 
+% case 3 of 7: left-hand list and right-hand list are sizes: [], 1+
 sc_join_cd_on_EXPR(
   [],
   [(CART_cd,PRODUCT)   |L2T],
@@ -194,8 +194,8 @@ sc_join_cd_on_EXPR(
         within_table_size_limit([(CART_cd,PRODUCT)   |L2T]).
 
 
-
-% single cart but longer list of c_details, MEETS JOIN conditions
+% case 4 of 7 - A: left-hand list and right-hand list are sizes: 1, >1
+% single item in left-hand list but longer right-hand list, MEETS JOIN conditions
 sc_join_cd_on_EXPR(
   [(CART_sc,CART_DATE)   |[]],
 
@@ -217,7 +217,8 @@ sc_join_cd_on_EXPR(
         sc_join_cd_on_EXPR([(CART_sc,CART_DATE)   |[]] , L2T, R ).
 
 
-% single cart but longer list of c_details, FAILS TO MEET JOIN conditions
+% case 4 of 7 - B: left-hand list and right-hand list are sizes: 1, >1
+% single item in left-hand list but longer right-hand list, FAILS TO MEET JOIN conditions
 sc_join_cd_on_EXPR(
   [(CART_sc,CART_DATE)   |[]],
 
@@ -239,8 +240,8 @@ sc_join_cd_on_EXPR(
         sc_join_cd_on_EXPR([(CART_sc,CART_DATE)   |[]] , L2T, R ).
 
 
-
-% longer carts list but SINGLE detail item, MEETS JOIN conditions
+% case 5 of 7 - A: left-hand list and right-hand list are sizes: 1+, 1 (1+ means 'one or more')
+% longer left-hand list but only a single item in right-hand list, MEETS JOIN conditions
 sc_join_cd_on_EXPR(
   [(CART_sc,CART_DATE)   |L2T],
 
@@ -260,7 +261,8 @@ sc_join_cd_on_EXPR(
         sc_join_cd_on_EXPR( L2T, [(CART_cd,PRODUCT)   |[]] ,   R ).
 
 
-% longer carts list but SINGLE details item, FAILS TO MEET JOIN conditions
+% case 5 of 7 - B: left-hand list and right-hand list are sizes: 1+, 1 (1+ means 'one or more')
+% longer left-hand list but only a single item in right-hand list, FAILS TO MEET JOIN conditions
 sc_join_cd_on_EXPR(
   [(CART_sc,CART_DATE)   |L2T],
 
@@ -279,8 +281,9 @@ sc_join_cd_on_EXPR(
         sc_join_cd_on_EXPR( L2T, [(CART_cd,PRODUCT)   |[]] ,   R ).
 
 
-
-% adding one more details item to an 'already crossing'
+% case 6 of 7: left-hand list and right-hand list are sizes:
+%  2+    2+  ... and the first list size is greater to or EQUAL to the second
+% adding one more right-hand-list item to an 'already crossing'
 sc_join_cd_on_EXPR(
   [(CART_sc,CART_DATE)   |L1T],
 
@@ -302,7 +305,10 @@ sc_join_cd_on_EXPR(
         merge(POUT,MOUT,FINAL).
 
 
-% adding one more cart to an 'already crossing'
+
+% case 6 of 7: left-hand list and right-hand list are sizes:
+%  2+    2+  ... and the first list size is LESS THAN the second
+% adding one more left-hand-list item to an 'already crossing'
 sc_join_cd_on_EXPR(
   [(CART_sc,CART_DATE)   |L1T],
 
