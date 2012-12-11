@@ -180,7 +180,7 @@ sc_join_cd_on_EXPR(
 
         shopping_cart_table([(CART_sc,CART_DATE)   |L2T]), % type assertion
 
-        within_table_size_limit([(CART_sc,CART_DATE)   |L2T]).
+        within_joined_size_limit([(CART_sc,CART_DATE)   |L2T]).
 
 
 % case 3 of 7: left-hand list and right-hand list are sizes: [], 1+
@@ -191,7 +191,7 @@ sc_join_cd_on_EXPR(
 
         cart_detail_table([(CART_cd,PRODUCT)   |L2T]), % type assertion
 
-        within_table_size_limit([(CART_cd,PRODUCT)   |L2T]).
+        within_joined_size_limit([(CART_cd,PRODUCT)   |L2T]).
 
 
 % case 4 of 7 - A: left-hand list and right-hand list are sizes: 1, >1
@@ -199,22 +199,20 @@ sc_join_cd_on_EXPR(
 sc_join_cd_on_EXPR(
   [(CART_sc,CART_DATE)   |[]],
 
-  [(CART_cd,PRODUCT)   |L2T],
+  [(CART_cd,PRODUCT)   |[MID2|L2T]],
 
   [(CART_sc,CART_DATE,CART_cd,PRODUCT) |R] ) :-
 
 
         shopping_cart_tuple(CART_sc,CART_DATE),  % type assertion
 
-        cart_detail_table([(CART_cd,PRODUCT)   |L2T]), % type assertion
+        cart_detail_table([(CART_cd,PRODUCT)   |[MID2|L2T]]), % type assertion
 
-        length([(CART_cd,PRODUCT)   |L2T],X),
-        X>1,
-        within_table_size_limit(L2T),
+        within_joined_size_limit([(CART_sc,CART_DATE,CART_cd,PRODUCT) |R]),
 
         meets_join(CART_sc,CART_DATE,CART_cd,PRODUCT),
 
-        sc_join_cd_on_EXPR([(CART_sc,CART_DATE)   |[]] , L2T, R ).
+        sc_join_cd_on_EXPR([(CART_sc,CART_DATE)   |[]] , [MID2|L2T], R ).
 
 
 % case 4 of 7 - B: left-hand list and right-hand list are sizes: 1, >1
@@ -222,22 +220,19 @@ sc_join_cd_on_EXPR(
 sc_join_cd_on_EXPR(
   [(CART_sc,CART_DATE)   |[]],
 
-  [(CART_cd,PRODUCT)   |L2T],
+  [(CART_cd,PRODUCT)   |[MID2|L2T]],
 
   R ) :-
 
         shopping_cart_tuple(CART_sc,CART_DATE),% type assertion
 
-        cart_detail_table([(CART_cd,PRODUCT)   |L2T]),% type assertion
+        cart_detail_table([(CART_cd,PRODUCT)   |[MID2|L2T]]),% type assertion
 
-        length([(CART_cd,PRODUCT)   |L2T],X),
-
-        X>1,
-        within_table_size_limit(L2T),
+        within_joined_size_limit(R),
 
         \+meets_join(CART_sc,CART_DATE,CART_cd,PRODUCT),
 
-        sc_join_cd_on_EXPR([(CART_sc,CART_DATE)   |[]] , L2T, R ).
+        sc_join_cd_on_EXPR([(CART_sc,CART_DATE)   |[]] , [MID2|L2T], R ).
 
 
 % case 5 of 7 - A: left-hand list and right-hand list are sizes: 1+, 1 (1+ means 'one or more')
@@ -254,7 +249,7 @@ sc_join_cd_on_EXPR(
 
         cart_detail_tuple(CART_cd,PRODUCT),% type assertion
 
-        within_table_size_limit(L2T),
+        within_joined_size_limit([(CART_sc,CART_DATE,CART_cd,PRODUCT) |R]),
 
         meets_join(CART_sc,CART_DATE,CART_cd,PRODUCT),
 
@@ -274,7 +269,7 @@ sc_join_cd_on_EXPR(
 
         cart_detail_tuple(CART_cd,PRODUCT),% type assertion
 
-        within_table_size_limit(L2T),
+        within_joined_size_limit(R),
 
         \+meets_join(CART_sc,CART_DATE,CART_cd,PRODUCT),
 
@@ -285,49 +280,46 @@ sc_join_cd_on_EXPR(
 %  2+    2+  ... and the first list size is greater to or EQUAL to the second
 % adding one more right-hand-list item to an 'already crossing'
 sc_join_cd_on_EXPR(
-  [(CART_sc,CART_DATE)   |L1T],
+  [(CART_sc,CART_DATE)   |[MID1|L1T]],
 
-  [(CART_cd,PRODUCT)   |L2T],
+  [(CART_cd,PRODUCT)   |[MID2|L2T]],
 
   FINAL ) :-
 
-        shopping_cart_table([(CART_sc,CART_DATE)   |L1T]),% type assertion
+        shopping_cart_table([(CART_sc,CART_DATE)   |[MID1|L1T]]),% type assertion
 
-        cart_detail_table([(CART_cd,PRODUCT)   |L2T]),% type assertion
+        cart_detail_table([(CART_cd,PRODUCT)   |[MID2|L2T]]),% type assertion
 
-        length([(CART_sc,CART_DATE)   |L1T],  X),
-        X>1,
-        length([(CART_cd,PRODUCT)   |L2T],  Y),
-        Y>1,
+        length([(CART_sc,CART_DATE)   |[MID1|L1T]],  X),
+        length([(CART_cd,PRODUCT)   |[MID2|L2T]],  Y),
+
         X>=Y,
-        sc_join_cd_on_EXPR([(CART_sc,CART_DATE)   |L1T],    L2T,      POUT),
-        sc_join_cd_on_EXPR([(CART_sc,CART_DATE)   |L1T], [(CART_cd,PRODUCT)   |[]],  MOUT),
+        sc_join_cd_on_EXPR([(CART_sc,CART_DATE)   |[MID1|L1T]],    [MID2|L2T],      POUT),
+        sc_join_cd_on_EXPR([(CART_sc,CART_DATE)   |[MID1|L1T]], [(CART_cd,PRODUCT)   |[]],  MOUT),
         merge(POUT,MOUT,FINAL).
 
 
 
-% case 6 of 7: left-hand list and right-hand list are sizes:
+% case 7 of 7: left-hand list and right-hand list are sizes:
 %  2+    2+  ... and the first list size is LESS THAN the second
 % adding one more left-hand-list item to an 'already crossing'
 sc_join_cd_on_EXPR(
-  [(CART_sc,CART_DATE)   |L1T],
+  [(CART_sc,CART_DATE)   |[MID1|L1T]],
 
-  [(CART_cd,PRODUCT)   |L2T],
+  [(CART_cd,PRODUCT)   |[MID2|L2T]],
 
   FINAL ) :-
 
-        shopping_cart_table([(CART_sc,CART_DATE)   |L1T]),% type assertion
+        shopping_cart_table([(CART_sc,CART_DATE)   |[MID1|L1T]]),% type assertion
 
-        cart_detail_table([(CART_cd,PRODUCT)   |L2T]),% type assertion
+        cart_detail_table([(CART_cd,PRODUCT)   |[MID2|L2T]]),% type assertion
 
-        length([(CART_sc,CART_DATE)   |L1T],  X),
-        X>1,
-        length([(CART_cd,PRODUCT)   |L2T],  Y),
+        length([(CART_sc,CART_DATE)   |[MID1|L1T]],  X),
+        length([(CART_cd,PRODUCT)   |[MID2|L2T]],  Y),
 
-        Y>1,
         X<Y,
-        sc_join_cd_on_EXPR(L1T,  [(CART_cd,PRODUCT)   |L2T],   POUT),
-        sc_join_cd_on_EXPR([(CART_sc,CART_DATE)   |[]],   [(CART_cd,PRODUCT)   |L2T],    MOUT),
+        sc_join_cd_on_EXPR([MID1|L1T],  [(CART_cd,PRODUCT)   |[MID2|L2T]],   POUT),
+        sc_join_cd_on_EXPR([(CART_sc,CART_DATE)   |[]],   [(CART_cd,PRODUCT)   |[MID2|L2T]],    MOUT),
         merge(POUT,MOUT,FINAL).
 
 
