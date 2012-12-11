@@ -7,6 +7,7 @@
            name_string_type/1,  % jacob, isabella ... (and null)
            word_type/1,         % dance, rural ... (and null)
            guid_type/1,         % fccy463, srce544 ... (and null)
+           product_string_type/1, % aspirin, ibuprofen ... (and null)
 
            end_of_d1_exports_placeholder/0]).   % this is here so i don't have to move the ']).' each time i add to exports
 
@@ -74,3 +75,7 @@ guid_type(ddd213).
 % guid_type(shlm647).
 
 
+product_string_type(null).
+product_string_type(aspirin).
+product_string_type(ibuprofen).
+%product_string_type(guaifenesin).

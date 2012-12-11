@@ -39,10 +39,7 @@ Y = 1 .
 
 */
 
-product_string_type(null).
-product_string_type(aspirin).
-product_string_type(ibuprofen).
-%product_string_type(guaifenesin).
+
 
 
 
