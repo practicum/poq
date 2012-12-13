@@ -3,9 +3,13 @@
            not_null/1,
            xxx_hide_nonnull/1,
            natural_type/1,      % 0, 1, 2 ... (and null)
+           map_natural/3,
            name_string_type/1,  % jacob, isabella ... (and null)
+           map_name/3,
            guid_type/1,         % fccy463, srce544 ... (and null)
+           map_guid/3,
            product_string_type/1, % aspirin, ibuprofen ... (and null)
+           map_product/3,
 
            end_of_d1_exports_placeholder/0]).   % this is here so i don't have to move the ']).' each time i add to exports
 

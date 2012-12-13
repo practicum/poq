@@ -50,6 +50,16 @@ shopping_cart_tuple(
         guid_type(CART), not_null(CART),
         natural_type(CART_DATE), not_null(CART_DATE).
 
+shopping_cart_tuple_in_order(
+  CART,
+  CART_DATE,
+  PRECEDING_VAL,
+  RANK_OF_THIS_TUPLE) :-
+        map_guid(CART,0,V0),
+        map_natural(CART_DATE,1,V1),
+        RANK_OF_THIS_TUPLE is V0 + V1,
+        RANK_OF_THIS_TUPLE @>= PRECEDING_VAL.
+
 cart_detail_tuple(
   CART,
   PRODUCT) :-
@@ -57,6 +67,15 @@ cart_detail_tuple(
         guid_type(CART), not_null(CART),
         product_string_type(PRODUCT), not_null(PRODUCT).
 
+cart_detail_tuple_in_order(
+  CART,
+  PRODUCT,
+  PRECEDING_VAL,
+  RANK_OF_THIS_TUPLE) :-
+        map_guid(CART,0,V0),
+        map_product(PRODUCT,1,V1),
+        RANK_OF_THIS_TUPLE is V0 + V1,
+        RANK_OF_THIS_TUPLE @>= PRECEDING_VAL.
 
 
 
@@ -65,10 +84,10 @@ cart_detail_tuple(
 % putting the UNIQUE barcode_string information here.  TODO: what if two columns bore the unique keyword?
 shopping_cart_table(L) :-
         % t is the empty mapping, from library assoc
-        shopping_cart_table_with_constraints(L,t,L).
+        shopping_cart_table_with_constraints(L,t,_,L).
 
 
-shopping_cart_table_with_constraints([],_ASSOC,[]).
+shopping_cart_table_with_constraints([],_ASSOC,0,[]).
 
 /*
 shopping_cart_table_with_constraints(
@@ -88,6 +107,7 @@ shopping_cart_table_with_constraints(
 shopping_cart_table_with_constraints(
   [(CART_sc,CART_DATE)   |LT],
   MAP,
+  CURR_MAX,
   [(CART_sc,CART_DATE)   |REST]) :-
 
         within_table_size_limit([(CART_sc,CART_DATE)   |LT]),
@@ -95,7 +115,8 @@ shopping_cart_table_with_constraints(
 
         \+get_assoc(CART_sc,MAP,_EXISTSVAL),  % map key (CART_sc) needs to be instantiated by here.
         put_assoc(CART_sc,MAP,inmap,MAP2),    % 'inmap' is an arbitrary ground value to link with the key.
-        shopping_cart_table_with_constraints(LT,MAP2,REST).
+        shopping_cart_table_with_constraints(LT,MAP2,LT_MAX,REST),
+        shopping_cart_tuple_in_order(CART_sc,CART_DATE,LT_MAX,CURR_MAX).
 
 
 
@@ -104,10 +125,10 @@ shopping_cart_table_with_constraints(
 % putting the UNIQUE barcode_string information here.  TODO: what if two columns bore the unique keyword?
 cart_detail_table(L) :-
         % t is the empty mapping, from library assoc
-        cart_detail_table_with_constraints(L,t,L).
+        cart_detail_table_with_constraints(L,t,_,L).
 
 
-cart_detail_table_with_constraints([],_ASSOC,[]).
+cart_detail_table_with_constraints([],_ASSOC,0,[]).
 
 /*
 cart_detail_table_with_constraints(
@@ -126,6 +147,7 @@ cart_detail_table_with_constraints(
 cart_detail_table_with_constraints(
   [(CART_cd,PRODUCT)   |LT],
   MAP,
+  CURR_MAX,
   [(CART_cd,PRODUCT)   |REST]) :-
 
         within_table_size_limit([(CART_cd,PRODUCT)   |LT]),
@@ -133,7 +155,8 @@ cart_detail_table_with_constraints(
 
         \+get_assoc(ck(CART_cd,PRODUCT),MAP,_EXISTSVAL),  % map key (ck(CART_cd,PRODUCT)) needs to be instantiated by here.
         put_assoc(ck(CART_cd,PRODUCT),MAP,inmap,MAP2),    % 'inmap' is an arbitrary ground value to link with the key.
-        cart_detail_table_with_constraints(LT,MAP2,REST).
+        cart_detail_table_with_constraints(LT,MAP2,LT_MAX,REST),
+        cart_detail_tuple_in_order(CART_cd,PRODUCT,LT_MAX,CURR_MAX).
 
 
 % ----------------------------------------------------------
