@@ -13,7 +13,7 @@
 */
 
 /*
-There are 7 different clauses to express sc_join_cd_on_EXPR.
+There are 7 different clauses to express join_on_expression.
 
 There should be no duplication in outcomes due to careful management
 of when each of the 7 clauses is allowed to be applied.
@@ -33,39 +33,52 @@ The cases (by size of the two lists) are:
 */
 
 
+table_one_table(L) :-
+        predicate_for_table_1(L).
+
+table_two_table(L) :-
+        predicate_for_table_2(L).
+
+table_one_tuple(# STCT1T #) :-
+        particulartable_tuple(# STCT1T #). % to be filled in on a case-by-case basis
+
+table_two_table(# STCT2T #) :-
+        particulartable2_tuple(# STCT2T #). % to be filled in on a case-by-case basis
+
+
 % NOTE: let this always be named simply 'meets_join' throughout the system
 meets_join(   # STCJRT #   ) :-
         ONE_ID_one = ONE_ID_two. % this can change and be arbitrarily complex
 
 
 % case 1 of 7: left-hand list and right-hand list are [], []
-sc_join_cd_on_EXPR( [], [], [] ).
+join_on_expression( [], [], [] ).
 
 % case 2 of 7: left-hand list and right-hand list are sizes: 1+, []
-sc_join_cd_on_EXPR(
+join_on_expression(
   [(  # STCT1T # ) |L2T],
   [],
   [] ) :-
 
         table_one_table([( # STCT1T # )   |L2T]), % type assertion
 
-        within_joined_size_limit([( # STCT1T # )   |L2T]).
+        within_table_size_limit_limit([( # STCT1T # )   |L2T]).
 
 
 % case 3 of 7: left-hand list and right-hand list are sizes: [], 1+
-sc_join_cd_on_EXPR(
+join_on_expression(
   [],
   [( # STCT2T # )   |L2T],
   [] ) :-
 
         table_two_table([( # STCT2T # )   |L2T]), % type assertion
 
-        within_joined_size_limit([( # STCT2T # )   |L2T]).
+        within_table_size_limit_limit([( # STCT2T # )   |L2T]).
 
 
 % case 4 of 7 - A: left-hand list and right-hand list are sizes: 1, >1
 % single item in left-hand list but longer right-hand list, MEETS JOIN conditions
-sc_join_cd_on_EXPR(
+join_on_expression(
   [( # STCT1T # )   |[]],
 
   [( # STCT2T # )   |[MID2|L2T]],
@@ -81,12 +94,12 @@ sc_join_cd_on_EXPR(
 
         meets_join( # STCJRT # ),
 
-        sc_join_cd_on_EXPR([( # STCT1T # )   |[]] , [MID2|L2T], R ).
+        join_on_expression([( # STCT1T # )   |[]] , [MID2|L2T], R ).
 
 
 % case 4 of 7 - B: left-hand list and right-hand list are sizes: 1, >1
 % single item in left-hand list but longer right-hand list, FAILS TO MEET JOIN conditions
-sc_join_cd_on_EXPR(
+join_on_expression(
   [( # STCT1T # )   |[]],
 
   [( # STCT2T # )   |[MID2|L2T]],
@@ -101,12 +114,12 @@ sc_join_cd_on_EXPR(
 
         \+meets_join( # STCJRT # ),
 
-        sc_join_cd_on_EXPR([( # STCT1T # )   |[]] , [MID2|L2T], R ).
+        join_on_expression([( # STCT1T # )   |[]] , [MID2|L2T], R ).
 
 
 % case 5 of 7 - A: left-hand list and right-hand list are sizes: 1+, 1 (1+ means 'one or more')
 % longer left-hand list but only a single item in right-hand list, MEETS JOIN conditions
-sc_join_cd_on_EXPR(
+join_on_expression(
   [( # STCT1T # )   |L2T],
 
   [( # STCT2T # )   |[]],
@@ -122,12 +135,12 @@ sc_join_cd_on_EXPR(
 
         meets_join( # STCJRT # ),
 
-        sc_join_cd_on_EXPR( L2T, [( # STCT2T # )   |[]] ,   R ).
+        join_on_expression( L2T, [( # STCT2T # )   |[]] ,   R ).
 
 
 % case 5 of 7 - B: left-hand list and right-hand list are sizes: 1+, 1 (1+ means 'one or more')
 % longer left-hand list but only a single item in right-hand list, FAILS TO MEET JOIN conditions
-sc_join_cd_on_EXPR(
+join_on_expression(
   [( # STCT1T # )   |L2T],
 
   [( # STCT2T # )   |[]],
@@ -142,13 +155,13 @@ sc_join_cd_on_EXPR(
 
         \+meets_join( # STCJRT # ),
 
-        sc_join_cd_on_EXPR( L2T, [( # STCT2T # )   |[]] ,   R ).
+        join_on_expression( L2T, [( # STCT2T # )   |[]] ,   R ).
 
 
 % case 6 of 7: left-hand list and right-hand list are sizes:
 %  2+    2+  ... and the first list size is greater to or EQUAL to the second
 % adding one more right-hand-list item to an 'already crossing'
-sc_join_cd_on_EXPR(
+join_on_expression(
   [( # STCT1T # )   |[MID1|L1T]],
 
   [( # STCT2T # )   |[MID2|L2T]],
@@ -163,8 +176,8 @@ sc_join_cd_on_EXPR(
         length([( # STCT2T # )   |[MID2|L2T]],  Y),
 
         X>=Y,
-        sc_join_cd_on_EXPR([( # STCT1T # )   |[MID1|L1T]],    [MID2|L2T],      POUT),
-        sc_join_cd_on_EXPR([( # STCT1T # )   |[MID1|L1T]], [( # STCT2T # )   |[]],  MOUT),
+        join_on_expression([( # STCT1T # )   |[MID1|L1T]],    [MID2|L2T],      POUT),
+        join_on_expression([( # STCT1T # )   |[MID1|L1T]], [( # STCT2T # )   |[]],  MOUT),
         merge(POUT,MOUT,FINAL).
 
 
@@ -172,7 +185,7 @@ sc_join_cd_on_EXPR(
 % case 7 of 7: left-hand list and right-hand list are sizes:
 %  2+    2+  ... and the first list size is LESS THAN the second
 % adding one more left-hand-list item to an 'already crossing'
-sc_join_cd_on_EXPR(
+join_on_expression(
   [( # STCT1T # )   |[MID1|L1T]],
 
   [( # STCT2T # )   |[MID2|L2T]],
@@ -187,8 +200,8 @@ sc_join_cd_on_EXPR(
         length([( # STCT2T # )   |[MID2|L2T]],  Y),
 
         X<Y,
-        sc_join_cd_on_EXPR([MID1|L1T],  [( # STCT2T # )   |[MID2|L2T]],   POUT),
-        sc_join_cd_on_EXPR([( # STCT1T # )   |[]],   [( # STCT2T # )   |[MID2|L2T]],    MOUT),
+        join_on_expression([MID1|L1T],  [( # STCT2T # )   |[MID2|L2T]],   POUT),
+        join_on_expression([( # STCT1T # )   |[]],   [( # STCT2T # )   |[MID2|L2T]],    MOUT),
         merge(POUT,MOUT,FINAL).
 
 
