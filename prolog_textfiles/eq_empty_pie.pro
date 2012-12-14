@@ -1,6 +1,5 @@
 
 
-
 :- use_module(modules/dbms/small_lists).
 :- use_module(modules/dbms/dbms_builtins).
 
@@ -19,96 +18,97 @@ loop s
   */
 
 
-t_Supplier(S_ID_s) :-
-        demonat(S_ID_s), nonnull(S_ID_s).
+supplier_tuple(S_ID_s) :-
+        natural_type(S_ID_s), not_null(S_ID_s).
 
+supplier_tuple_in_order(
+  S_ID_s,
+  PRECEDING_VAL,
+  RANK_OF_THIS_TUPLE) :-
+        map_natural(S_ID_s,0,V0),
+        RANK_OF_THIS_TUPLE is V0,
+        RANK_OF_THIS_TUPLE @>= PRECEDING_VAL.
 
-t_SPJoin(
+spjoin_tuple(
   S_ID_sp,
   P_ID_sp) :-
 
-        demonat(S_ID_sp), nonnull(S_ID_sp),
-        demonat(P_ID_sp), nonnull(P_ID_sp).
+        natural_type(S_ID_sp), not_null(S_ID_sp),
+        natural_type(P_ID_sp), not_null(P_ID_sp).
 
-t_Part(P_ID_p) :-
+spjoin_tuple_in_order(
+  S_ID_sp,
+  P_ID_sp,
+  PRECEDING_VAL,
+  RANK_OF_THIS_TUPLE) :-
+        map_natural(S_ID_sp,0,V0),
+        map_natural(P_ID_sp,1,V1),
+        RANK_OF_THIS_TUPLE is V0 + V1,
+        RANK_OF_THIS_TUPLE @>= PRECEDING_VAL.
 
-        demonat(P_ID_p), nonnull(P_ID_p).
+part_tuple(P_ID_p) :-
 
+        natural_type(P_ID_p), not_null(P_ID_p).
 
+part_tuple_in_order(
+  P_ID_p,
+  PRECEDING_VAL,
+  RANK_OF_THIS_TUPLE) :-
+        map_natural(P_ID_p,0,V0),
+        RANK_OF_THIS_TUPLE is V0,
+        RANK_OF_THIS_TUPLE @>= PRECEDING_VAL.
 
 % ----------------------------------------------------------
 
 % putting the UNIQUE S_ID_s info here
-t_table_content_supplier(L) :-
+supplier_table(L) :-
         % t is the empty mapping, from library assoc
-        list_type_sc_removed_dup_supplier(L,t,L).
+        supplier_table_with_constraints(L,t,_,L).
 
 
-list_type_sc_removed_dup_supplier([],_ASSOC,[]).
+supplier_table_with_constraints([],_ASSOC,0,[]).
 
 
-list_type_sc_removed_dup_supplier(
-  [s(S_ID_s)   |LT],
+supplier_table_with_constraints(
+  [(S_ID_s)   |LT],
   MAP,
-  OUT) :-
+  CURR_MAX,
+  [(S_ID_s)   |REST]) :-
 
-        manageable_list_tail(LT),
-        t_Supplier(S_ID_s),
-
-        get_assoc(S_ID_s,MAP,_EXISTSVAL), % map key (S_ID_s) needs to be instantiated by here.
-
-        list_type_sc_removed_dup_supplier(LT,MAP,OUT). % note: here, the OUT (output) does NOT include the head item.
-
-
-list_type_sc_removed_dup_supplier(
-  [s(S_ID_s)   |LT],
-  MAP,
-  [s(S_ID_s)   |REST]) :-
-
-        manageable_list_tail(LT),
-        t_Supplier(S_ID_s),
+        within_table_size_limit([(S_ID_s)   |LT]),
+        supplier_tuple(S_ID_s),
 
         \+get_assoc(S_ID_s,MAP,_EXISTSVAL),  % map key (S_ID_s) needs to be instantiated by here.
         put_assoc(S_ID_s,MAP,inmap,MAP2),    % 'inmap' is an arbitrary ground value to link with the key.
-        list_type_sc_removed_dup_supplier(LT,MAP2,REST).
+        supplier_table_with_constraints(LT,MAP2,LT_MAX,REST),
+        supplier_tuple_in_order(S_ID_s,LT_MAX,CURR_MAX).
 
 
 
 % ----------------------------------------------------------
 
 % putting the UNIQUE P_ID_p information here.
-t_table_content_part(L) :-
+part_table(L) :-
         % t is the empty mapping, from library assoc
-        list_type_sc_removed_dup_part(L,t,L).
+        part_table_with_constraints(L,t,_,L).
 
 
-list_type_sc_removed_dup_part([],_ASSOC,[]).
+part_table_with_constraints([],_ASSOC,0,[]).
 
 
-list_type_sc_removed_dup_part(
-  [p(P_ID_p)   |LT],
+part_table_with_constraints(
+  [(P_ID_p)   |LT],
   MAP,
-  OUT) :-
+  CURR_MAX,
+  [(P_ID_p)   |REST]) :-
 
-        manageable_list_tail(LT),
-        t_Part(P_ID_p),
-
-        get_assoc(P_ID_p,MAP,_EXISTSVAL), % map key (P_ID_p) needs to be instantiated by here.
-
-        list_type_sc_removed_dup_part(LT,MAP,OUT). % note: here, the OUT (output) does NOT include the head item.
-
-
-list_type_sc_removed_dup_part(
-  [p(P_ID_p)   |LT],
-  MAP,
-  [p(P_ID_p)   |REST]) :-
-
-        manageable_list_tail(LT),
-        t_Part(P_ID_p),
+        within_table_size_limit([(P_ID_p)   |LT]),
+        part_tuple(P_ID_p),
 
         \+get_assoc(P_ID_p,MAP,_EXISTSVAL),  % map key (P_ID_p) needs to be instantiated by here.
         put_assoc(P_ID_p,MAP,inmap,MAP2),    % 'inmap' is an arbitrary ground value to link with the key.
-        list_type_sc_removed_dup_part(LT,MAP2,REST).
+        part_table_with_constraints(LT,MAP2,LT_MAX,REST),
+        part_tuple_in_order(P_ID_p,LT_MAX,CURR_MAX).
 
 
 
@@ -116,38 +116,27 @@ list_type_sc_removed_dup_part(
 % ----------------------------------------------------------
 
 % putting the UNIQUE (S_ID_sp,P_ID_sp) information here.
-t_table_content_spjoin(L) :-
+spjoin_table(L) :-
         % t is the empty mapping, from library assoc
-        list_type_sp_compound_key(L,t,L).
+        spjoin_table_with_constraints(L,t,_,L).
 
 
-list_type_sp_compound_key([],_ASSOC,[]).
+spjoin_table_with_constraints([],_ASSOC,0,[]).
 
 
-list_type_sp_compound_key(
-  [sp(S_ID_sp,P_ID_sp)   |LT],
+spjoin_table_with_constraints(
+  [(S_ID_sp,P_ID_sp)   |LT],
   MAP,
-  OUT) :-
+  CURR_MAX,
+  [(S_ID_sp,P_ID_sp)   |REST]) :-
 
-        manageable_list_tail(LT),
-        t_SPJoin(S_ID_sp,P_ID_sp),
-
-        get_assoc(ck(S_ID_sp,P_ID_sp),MAP,_EXISTSVAL), % map key ck(S_ID_sp,P_ID_sp) needs to be instantiated by here.
-
-        list_type_sp_compound_key(LT,MAP,OUT). % note: here, the OUT (output) does NOT include the head item.
-
-
-list_type_sp_compound_key(
-  [sp(S_ID_sp,P_ID_sp)   |LT],
-  MAP,
-  [sp(S_ID_sp,P_ID_sp)   |REST]) :-
-
-        manageable_list_tail(LT),
-        t_SPJoin(S_ID_sp,P_ID_sp),
+        within_table_size_limit([(S_ID_sp,P_ID_sp)   |LT]),
+        spjoin_tuple(S_ID_sp,P_ID_sp),
 
         \+get_assoc(ck(S_ID_sp,P_ID_sp),MAP,_EXISTSVAL),  % map key (ck(S_ID_sp,P_ID_sp)) needs to be instantiated by here.
         put_assoc(ck(S_ID_sp,P_ID_sp),MAP,inmap,MAP2),    % 'inmap' is an arbitrary ground value to link with the key.
-        list_type_sp_compound_key(LT,MAP2,REST).
+        spjoin_table_with_constraints(LT,MAP2,LT_MAX,REST),
+        spjoin_tuple_in_order(S_ID_sp,P_ID_sp,LT_MAX,CURR_MAX).
 
 
 % ----------------------------------------------------------
@@ -180,103 +169,103 @@ supp_cross_part( [], [], [] ).
 
 
 supp_cross_part(
-  [s(S_ID_s)   |[]],
+  [(S_ID_s)   |[]],
   [],
   [] ) :-
 
-        t_Supplier(S_ID_s).
+        supplier_tuple(S_ID_s).
 
 
 supp_cross_part(
   [],
-  [p(P_ID_p)  |[]],
+  [(P_ID_p)  |[]],
   [] ) :-
 
-        t_Part(P_ID_p).
+        part_tuple(P_ID_p).
 
 
 % single barcode but longer list of purchase, MEETS JOIN conditions
 supp_cross_part(
-  [s(S_ID_s)   |[]],
-  [p(P_ID_p)   |L2T],
-  [s_p(s(S_ID_s),p(P_ID_p)) | R] ) :-
+  [(S_ID_s)   |[]],
+  [(P_ID_p)   |L2T],
+  [s_p((S_ID_s),(P_ID_p)) | R] ) :-
 
-        t_Supplier(S_ID_s),
+        supplier_tuple(S_ID_s),
 
-        t_table_content_part([p(P_ID_p)   |L2T]),
+        part_table([(P_ID_p)   |L2T]),
 
-        length([p(P_ID_p)   |L2T],X),
+        length([(P_ID_p)   |L2T],X),
 
         X>1,
         manageable_list_tail(L2T),
-        supp_cross_part( [s(S_ID_s)   |[]], L2T, R ).
+        supp_cross_part( [(S_ID_s)   |[]], L2T, R ).
 
 
 
 % longer barcode list but SINGLE purchase, MEETS JOIN conditions
 supp_cross_part(
-  [s(S_ID_s)   |L2T],
-  [p(P_ID_p)   |[]],
-  [s_p(s(S_ID_s),p(P_ID_p)) | R] ) :-
+  [(S_ID_s)   |L2T],
+  [(P_ID_p)   |[]],
+  [s_p((S_ID_s),(P_ID_p)) | R] ) :-
 
-        t_table_content_supplier( [s(S_ID_s)   |L2T] ),
+        supplier_table( [(S_ID_s)   |L2T] ),
 
-        t_Part(P_ID_p),
+        part_tuple(P_ID_p),
 
         manageable_list_tail(L2T),
         supp_cross_part( L2T,
-                                [p(P_ID_p)   |[]],
+                                [(P_ID_p)   |[]],
                                 R ).
 
 
 
 % adding one more purchase to an 'already crossing'
 supp_cross_part(
-  [s(S_ID_s)   |L1T],% this list needs to be nonempty. the empty case is handled elsewhere
-  [p(P_ID_p)   |L2T],
+  [(S_ID_s)   |L1T],% this list needs to be nonempty. the empty case is handled elsewhere
+  [(P_ID_p)   |L2T],
   FINAL ) :-
 
-        t_table_content_supplier([s(S_ID_s)   |L1T]),
-        t_table_content_part([p(P_ID_p)   |L2T]),
+        supplier_table([(S_ID_s)   |L1T]),
+        part_table([(P_ID_p)   |L2T]),
 
 
-        length([s(S_ID_s)   |L1T],
+        length([(S_ID_s)   |L1T],
                X),
         X>1,
-        length([p(P_ID_p)   |L2T],
+        length([(P_ID_p)   |L2T],
                Y),
         Y>1,
         X>=Y,
-        supp_cross_part([s(S_ID_s)   |L1T],
+        supp_cross_part([(S_ID_s)   |L1T],
                                L2T,
                                POUT),
-        supp_cross_part([s(S_ID_s)   |L1T],
-                               [p(P_ID_p)   |[]],
+        supp_cross_part([(S_ID_s)   |L1T],
+                               [(P_ID_p)   |[]],
                                MOUT),
         merge(POUT,MOUT,FINAL).
 
 
 % adding one more barcode to an 'already crossing'
 supp_cross_part(
-  [s(S_ID_s)   |L1T],
-  [p(P_ID_p)   |D],% this list needs to be nonempty. the empty case is handled elsewhere
+  [(S_ID_s)   |L1T],
+  [(P_ID_p)   |D],% this list needs to be nonempty. the empty case is handled elsewhere
   FINAL ) :-
 
-        t_table_content_supplier([s(S_ID_s)   |L1T]),
-        t_table_content_part([p(P_ID_p)   |D]),
+        supplier_table([(S_ID_s)   |L1T]),
+        part_table([(P_ID_p)   |D]),
 
-        length([s(S_ID_s)   |L1T],
+        length([(S_ID_s)   |L1T],
                X),
         X>1,
-        length([p(P_ID_p)   |D],
+        length([(P_ID_p)   |D],
                Y),
         Y>1,
         X<Y,
         supp_cross_part(L1T,
-                               [p(P_ID_p)   |D],
+                               [(P_ID_p)   |D],
                                POUT),
-        supp_cross_part([s(S_ID_s)   |[]],
-                               [p(P_ID_p)   |D],
+        supp_cross_part([(S_ID_s)   |[]],
+                               [(P_ID_p)   |D],
                                MOUT),
         merge(POUT,MOUT,FINAL).
 
@@ -297,7 +286,7 @@ supp_cross_part(
 run_query(STAB,PTAB,XSP,SPJ,QR) :-
 
         supp_cross_part(STAB,PTAB,XSP),
-        t_table_content_spjoin(SPJ),
+        spjoin_table(SPJ),
 
         filter_supp(SPJ,XSP,STAB,QR).
 
@@ -322,7 +311,7 @@ filter_supp(_SPJ_CONST,[],STAB_SUBSET,STAB_SUBSET) :- % could check type of SPJ_
 
 
 filter_supp(SPJ_CONST,
-            [s_p(s(S_ID_s), p(P_ID_p))|XSP_T], %MOD_XSP,
+            [s_p(s(S_ID_s), (P_ID_p))|XSP_T], %MOD_XSP,
             STAB_SUBSET,
             NEXT_SUBSET) :-
 
@@ -331,7 +320,7 @@ filter_supp(SPJ_CONST,
         filter_supp(SPJ_CONST,XSP_T,NEW_SUBSET,NEXT_SUBSET).
 
 filter_supp(SPJ_CONST,
-            [s_p(s(S_ID_s), p(P_ID_p))|XSP_T], %MOD_XSP,
+            [s_p(s(S_ID_s), (P_ID_p))|XSP_T], %MOD_XSP,
             STAB_SUBSET,
             NEXT_SUBSET) :-
 
