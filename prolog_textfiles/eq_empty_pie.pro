@@ -7,7 +7,7 @@
 example of asking 'can i ever have a supplier in the results that does NOT supply anything?'
   (and the answer, presumed to be unexpected but helpful, is yes)
 
-run_query(S,P,XING,SP,[s(A)|[]]), \+member( sp(A,B), SP).
+run_query(S,P,XING,SP,[(A)|[]]), \+member( (A,B), SP).
   */
 
 
@@ -323,7 +323,7 @@ join_on_expression(
  */
 run_query(STAB,PTAB,XSP,SPJ,QR) :-
 
-        supp_cross_part(STAB,PTAB,XSP),
+        join_on_expression(STAB,PTAB,XSP),
         spjoin_table(SPJ),
 
         filter_supp(SPJ,XSP,STAB,QR).
