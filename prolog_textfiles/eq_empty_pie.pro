@@ -143,7 +143,7 @@ spjoin_table_with_constraints(
 % ----------------------------------------------------------
 
 /*
-There are 7 different clauses to express supp_cross_part.
+There are 7 different clauses to express join_on_expression.
 
 There should be no duplication in outcomes due to careful management
 of when each of the 7 clauses is allowed to be applied.
@@ -154,116 +154,157 @@ the SIZE of the first two list variables.
 The cases (by size of the two lists) are:
 
 []    []
-1     []
-[]    1
+1+    []
+[]    1+
 1     >1
 1+    1     (1+ means 'one or more')
 2+    2+  ... and the first list size is greater to or EQUAL to the second
 2+    2+  ... and the first list size is LESS THAN the second
 */
 
-supp_cross_part( [], [], [] ).
+
+table_one_table(L) :-
+        supplier_table(L).
+
+table_two_table(L) :-
+        part_table(L).
+
+table_one_tuple(S_ID_s) :-
+        supplier_tuple(S_ID_s). % to be filled in on a case-by-case basis
+
+table_two_tuple(P_ID_p) :-
+        part_tuple(P_ID_p). % to be filled in on a case-by-case basis
 
 
-supp_cross_part(
-  [(S_ID_s)   |[]],
+% NOTE: let this always be named simply 'meets_join' throughout the system
+meets_join(   _S_ID_s,_P_ID_p   ) :-
+        true.
+
+
+
+% case 1 of 7: left-hand list and right-hand list are [], []
+join_on_expression( [], [], [] ).
+
+% case 2 of 7: left-hand list and right-hand list are sizes: 1+, []
+join_on_expression(
+  [(  S_ID_s ) |L2T],
   [],
   [] ) :-
 
-        supplier_tuple(S_ID_s).
+        table_one_table([( S_ID_s )   |L2T]), % type assertion
+
+        within_table_size_limit([( S_ID_s )   |L2T]).
 
 
-supp_cross_part(
+% case 3 of 7: left-hand list and right-hand list are sizes: [], 1+
+join_on_expression(
   [],
-  [(P_ID_p)  |[]],
+  [( P_ID_p )   |L2T],
   [] ) :-
 
-        part_tuple(P_ID_p).
+        table_two_table([( P_ID_p )   |L2T]), % type assertion
+
+        within_table_size_limit([( P_ID_p )   |L2T]).
 
 
-% single barcode but longer list of purchase, MEETS JOIN conditions
-supp_cross_part(
-  [(S_ID_s)   |[]],
-  [(P_ID_p)   |L2T],
-  [s_p((S_ID_s),(P_ID_p)) | R] ) :-
+% case 4 of 7 - A: left-hand list and right-hand list are sizes: 1, >1
+% single item in left-hand list but longer right-hand list, MEETS JOIN conditions
+join_on_expression(
+  [( S_ID_s )   |[]],
 
-        supplier_tuple(S_ID_s),
+  [( P_ID_p )   |[MID2|L2T]],
 
-        part_table([(P_ID_p)   |L2T]),
-
-        length([(P_ID_p)   |L2T],X),
-
-        X>1,
-        manageable_list_tail(L2T),
-        supp_cross_part( [(S_ID_s)   |[]], L2T, R ).
+  [( S_ID_s,P_ID_p ) |R] ) :-
 
 
+        table_one_tuple( S_ID_s ),  % type assertion
 
-% longer barcode list but SINGLE purchase, MEETS JOIN conditions
-supp_cross_part(
-  [(S_ID_s)   |L2T],
-  [(P_ID_p)   |[]],
-  [s_p((S_ID_s),(P_ID_p)) | R] ) :-
+        table_two_table([( P_ID_p )   |[MID2|L2T]]), % type assertion
 
-        supplier_table( [(S_ID_s)   |L2T] ),
+        within_joined_size_limit([( S_ID_s,P_ID_p ) |R]),
 
-        part_tuple(P_ID_p),
+        meets_join( S_ID_s,P_ID_p ),
 
-        manageable_list_tail(L2T),
-        supp_cross_part( L2T,
-                                [(P_ID_p)   |[]],
-                                R ).
+        join_on_expression([( S_ID_s )   |[]] , [MID2|L2T], R ).
 
 
+% case 4 of 7 - B: left-hand list and right-hand list are sizes: 1, >1
+% single item in left-hand list but longer right-hand list, FAILS TO MEET JOIN conditions
 
-% adding one more purchase to an 'already crossing'
-supp_cross_part(
-  [(S_ID_s)   |L1T],% this list needs to be nonempty. the empty case is handled elsewhere
-  [(P_ID_p)   |L2T],
+% omitted because we are doing a full cross product. *everything* meets the join condition.
+
+
+% case 5 of 7 - A: left-hand list and right-hand list are sizes: 1+, 1 (1+ means 'one or more')
+% longer left-hand list but only a single item in right-hand list, MEETS JOIN conditions
+join_on_expression(
+  [( S_ID_s )   |L2T],
+
+  [( P_ID_p )   |[]],
+
+  [( S_ID_s,P_ID_p ) |R] ) :-
+
+
+        table_one_table([( S_ID_s )   |L2T]),% type assertion
+
+        table_two_tuple( P_ID_p ),% type assertion
+
+        within_joined_size_limit([( S_ID_s,P_ID_p ) |R]),
+
+        meets_join( S_ID_s,P_ID_p ),
+
+        join_on_expression( L2T, [( P_ID_p )   |[]] ,   R ).
+
+
+% case 5 of 7 - B: left-hand list and right-hand list are sizes: 1+, 1 (1+ means 'one or more')
+% longer left-hand list but only a single item in right-hand list, FAILS TO MEET JOIN conditions
+
+% omitted because we are doing a full cross product. *everything* meets the join condition.
+
+
+% case 6 of 7: left-hand list and right-hand list are sizes:
+%  2+    2+  ... and the first list size is greater to or EQUAL to the second
+% adding one more right-hand-list item to an 'already crossing'
+join_on_expression(
+  [( S_ID_s )   |[MID1|L1T]],
+
+  [( P_ID_p )   |[MID2|L2T]],
+
   FINAL ) :-
 
-        supplier_table([(S_ID_s)   |L1T]),
-        part_table([(P_ID_p)   |L2T]),
+        table_one_table([( S_ID_s )   |[MID1|L1T]]),% type assertion
 
+        table_two_table([( P_ID_p )   |[MID2|L2T]]),% type assertion
 
-        length([(S_ID_s)   |L1T],
-               X),
-        X>1,
-        length([(P_ID_p)   |L2T],
-               Y),
-        Y>1,
+        length([( S_ID_s )   |[MID1|L1T]],  X),
+        length([( P_ID_p )   |[MID2|L2T]],  Y),
+
         X>=Y,
-        supp_cross_part([(S_ID_s)   |L1T],
-                               L2T,
-                               POUT),
-        supp_cross_part([(S_ID_s)   |L1T],
-                               [(P_ID_p)   |[]],
-                               MOUT),
+        join_on_expression([( S_ID_s )   |[MID1|L1T]],    [MID2|L2T],      POUT),
+        join_on_expression([( S_ID_s )   |[MID1|L1T]], [( P_ID_p )   |[]],  MOUT),
         merge(POUT,MOUT,FINAL).
 
 
-% adding one more barcode to an 'already crossing'
-supp_cross_part(
-  [(S_ID_s)   |L1T],
-  [(P_ID_p)   |D],% this list needs to be nonempty. the empty case is handled elsewhere
+
+% case 7 of 7: left-hand list and right-hand list are sizes:
+%  2+    2+  ... and the first list size is LESS THAN the second
+% adding one more left-hand-list item to an 'already crossing'
+join_on_expression(
+  [( S_ID_s )   |[MID1|L1T]],
+
+  [( P_ID_p )   |[MID2|L2T]],
+
   FINAL ) :-
 
-        supplier_table([(S_ID_s)   |L1T]),
-        part_table([(P_ID_p)   |D]),
+        table_one_table([( S_ID_s )   |[MID1|L1T]]),% type assertion
 
-        length([(S_ID_s)   |L1T],
-               X),
-        X>1,
-        length([(P_ID_p)   |D],
-               Y),
-        Y>1,
+        table_two_table([( P_ID_p )   |[MID2|L2T]]),% type assertion
+
+        length([( S_ID_s )   |[MID1|L1T]],  X),
+        length([( P_ID_p )   |[MID2|L2T]],  Y),
+
         X<Y,
-        supp_cross_part(L1T,
-                               [(P_ID_p)   |D],
-                               POUT),
-        supp_cross_part([(S_ID_s)   |[]],
-                               [(P_ID_p)   |D],
-                               MOUT),
+        join_on_expression([MID1|L1T],  [( P_ID_p )   |[MID2|L2T]],   POUT),
+        join_on_expression([( S_ID_s )   |[]],   [( P_ID_p )   |[MID2|L2T]],    MOUT),
         merge(POUT,MOUT,FINAL).
 
 
