@@ -78,11 +78,10 @@ supplier_table_with_constraints(
         within_table_size_limit([(S_ID_s)   |LT]),
         supplier_tuple(S_ID_s),
 
-        \+get_assoc(S_ID_s,MAP,_EXISTSVAL),  % map key (S_ID_s) needs to be instantiated by here.
-        put_assoc(S_ID_s,MAP,inmap,MAP2),    % 'inmap' is an arbitrary ground value to link with the key.
+        \+get_assoc((S_ID_s),MAP,_EXISTSVAL),  % map key needs to be instantiated by here.
+        put_assoc((S_ID_s),MAP,inmap,MAP2),    % 'inmap' is an arbitrary ground value to link with the key.
         supplier_table_with_constraints(LT,MAP2,LT_MAX,REST),
         supplier_tuple_in_order(S_ID_s,LT_MAX,CURR_MAX).
-
 
 
 % ----------------------------------------------------------
@@ -105,12 +104,10 @@ part_table_with_constraints(
         within_table_size_limit([(P_ID_p)   |LT]),
         part_tuple(P_ID_p),
 
-        \+get_assoc(P_ID_p,MAP,_EXISTSVAL),  % map key (P_ID_p) needs to be instantiated by here.
-        put_assoc(P_ID_p,MAP,inmap,MAP2),    % 'inmap' is an arbitrary ground value to link with the key.
+        \+get_assoc((P_ID_p),MAP,_EXISTSVAL),  % map key needs to be instantiated by here.
+        put_assoc((P_ID_p),MAP,inmap,MAP2),    % 'inmap' is an arbitrary ground value to link with the key.
         part_table_with_constraints(LT,MAP2,LT_MAX,REST),
         part_tuple_in_order(P_ID_p,LT_MAX,CURR_MAX).
-
-
 
 
 % ----------------------------------------------------------
@@ -133,8 +130,8 @@ spjoin_table_with_constraints(
         within_table_size_limit([(S_ID_sp,P_ID_sp)   |LT]),
         spjoin_tuple(S_ID_sp,P_ID_sp),
 
-        \+get_assoc(ck(S_ID_sp,P_ID_sp),MAP,_EXISTSVAL),  % map key (ck(S_ID_sp,P_ID_sp)) needs to be instantiated by here.
-        put_assoc(ck(S_ID_sp,P_ID_sp),MAP,inmap,MAP2),    % 'inmap' is an arbitrary ground value to link with the key.
+        \+get_assoc((S_ID_sp,P_ID_sp),MAP,_EXISTSVAL),  % map key needs to be instantiated by here.
+        put_assoc((S_ID_sp,P_ID_sp),MAP,inmap,MAP2),    % 'inmap' is an arbitrary ground value to link with the key.
         spjoin_table_with_constraints(LT,MAP2,LT_MAX,REST),
         spjoin_tuple_in_order(S_ID_sp,P_ID_sp,LT_MAX,CURR_MAX).
 
