@@ -42,7 +42,7 @@ table_two_table(L) :-
 table_one_tuple(# STCT1T #) :-
         particulartable_tuple(# STCT1T #). % to be filled in on a case-by-case basis
 
-table_two_table(# STCT2T #) :-
+table_two_tuple(# STCT2T #) :-
         particulartable2_tuple(# STCT2T #). % to be filled in on a case-by-case basis
 
 
@@ -62,7 +62,7 @@ join_on_expression(
 
         table_one_table([( # STCT1T # )   |L2T]), % type assertion
 
-        within_table_size_limit_limit([( # STCT1T # )   |L2T]).
+        within_table_size_limit([( # STCT1T # )   |L2T]).
 
 
 % case 3 of 7: left-hand list and right-hand list are sizes: [], 1+
@@ -73,7 +73,7 @@ join_on_expression(
 
         table_two_table([( # STCT2T # )   |L2T]), % type assertion
 
-        within_table_size_limit_limit([( # STCT2T # )   |L2T]).
+        within_table_size_limit([( # STCT2T # )   |L2T]).
 
 
 % case 4 of 7 - A: left-hand list and right-hand list are sizes: 1, >1
