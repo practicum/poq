@@ -30,9 +30,10 @@ meets_join(   # STCJRT sequence of tuple components for join result tuple type# 
         ONE_ID_one = ONE_ID_two. % this can change and be arbitrarily complex
 
 
+% case 1 of 7: left-hand list and right-hand list are [], []
 sc_join_cd_on_EXPR( [], [], [] ).
 
-
+% case 2 of 7: left-hand list and right-hand list are sizes: 1+, []
 sc_join_cd_on_EXPR(
   [(  # STCT1T sequence of tuple components for table-one tuple# ) |L2T],
   [],
@@ -43,6 +44,7 @@ sc_join_cd_on_EXPR(
         within_table_size_limit([( # STCT1T # )   |L2T]).
 
 
+% case 3 of 7: left-hand list and right-hand list are sizes: [], 1+
 sc_join_cd_on_EXPR(
   [],
   [( # STCT2T # )   |L2T],
@@ -53,8 +55,8 @@ sc_join_cd_on_EXPR(
         within_table_size_limit([( # STCT2T # )   |L2T]).
 
 
-
-% single cart but longer list of c_details, MEETS JOIN conditions
+% case 4 of 7 - A: left-hand list and right-hand list are sizes: 1, >1
+% single item in left-hand list but longer right-hand list, MEETS JOIN conditions
 sc_join_cd_on_EXPR(
   [( # STCT1T # )   |[]],
 
@@ -76,7 +78,8 @@ sc_join_cd_on_EXPR(
         sc_join_cd_on_EXPR([( # STCT1T # )   |[]] , L2T, R ).
 
 
-% single cart but longer list of c_details, FAILS TO MEET JOIN conditions
+% case 4 of 7 - B: left-hand list and right-hand list are sizes: 1, >1
+% single item in left-hand list but longer right-hand list, FAILS TO MEET JOIN conditions
 sc_join_cd_on_EXPR(
   [( # STCT1T # )   |[]],
 
@@ -98,8 +101,8 @@ sc_join_cd_on_EXPR(
         sc_join_cd_on_EXPR([( # STCT1T # )   |[]] , L2T, R ).
 
 
-
-% longer carts list but SINGLE detail item, MEETS JOIN conditions
+% case 5 of 7 - A: left-hand list and right-hand list are sizes: 1+, 1 (1+ means 'one or more')
+% longer left-hand list but only a single item in right-hand list, MEETS JOIN conditions
 sc_join_cd_on_EXPR(
   [( # STCT1T # )   |L2T],
 
@@ -119,7 +122,8 @@ sc_join_cd_on_EXPR(
         sc_join_cd_on_EXPR( L2T, [( # STCT2T # )   |[]] ,   R ).
 
 
-% longer carts list but SINGLE details item, FAILS TO MEET JOIN conditions
+% case 5 of 7 - B: left-hand list and right-hand list are sizes: 1+, 1 (1+ means 'one or more')
+% longer left-hand list but only a single item in right-hand list, FAILS TO MEET JOIN conditions
 sc_join_cd_on_EXPR(
   [( # STCT1T # )   |L2T],
 
@@ -138,8 +142,9 @@ sc_join_cd_on_EXPR(
         sc_join_cd_on_EXPR( L2T, [( # STCT2T # )   |[]] ,   R ).
 
 
-
-% adding one more details item to an 'already crossing'
+% case 6 of 7: left-hand list and right-hand list are sizes:
+%  2+    2+  ... and the first list size is greater to or EQUAL to the second
+% adding one more right-hand-list item to an 'already crossing'
 sc_join_cd_on_EXPR(
   [( # STCT1T # )   |L1T],
 
@@ -161,7 +166,10 @@ sc_join_cd_on_EXPR(
         merge(POUT,MOUT,FINAL).
 
 
-% adding one more cart to an 'already crossing'
+
+% case 7 of 7: left-hand list and right-hand list are sizes:
+%  2+    2+  ... and the first list size is LESS THAN the second
+% adding one more left-hand-list item to an 'already crossing'
 sc_join_cd_on_EXPR(
   [( # STCT1T # )   |L1T],
 
