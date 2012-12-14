@@ -82,12 +82,6 @@ cart_detail_tuple_in_order(
 % ----------------------------------------------------------
 
 % putting the UNIQUE barcode_string information here.  TODO: what if two columns bore the unique keyword?
-shopping_cart_table(L) :-
-        % t is the empty mapping, from library assoc
-        shopping_cart_table_with_constraints(L,t,_,L).
-
-
-shopping_cart_table_with_constraints([],_ASSOC,0,[]).
 
 /*
 shopping_cart_table_with_constraints(
@@ -104,6 +98,14 @@ shopping_cart_table_with_constraints(
         shopping_cart_table_with_constraints(LT,MAP,OUT). % note: here, the OUT (output) does NOT include the head item.
 */
 
+shopping_cart_table(L) :-
+        % t is the empty mapping, from library assoc
+        shopping_cart_table_with_constraints(L,t,_,L).
+
+
+shopping_cart_table_with_constraints([],_ASSOC,0,[]).
+
+
 shopping_cart_table_with_constraints(
   [(CART_sc,CART_DATE)   |LT],
   MAP,
@@ -113,8 +115,8 @@ shopping_cart_table_with_constraints(
         within_table_size_limit([(CART_sc,CART_DATE)   |LT]),
         shopping_cart_tuple(CART_sc,CART_DATE),
 
-        \+get_assoc(CART_sc,MAP,_EXISTSVAL),  % map key (CART_sc) needs to be instantiated by here.
-        put_assoc(CART_sc,MAP,inmap,MAP2),    % 'inmap' is an arbitrary ground value to link with the key.
+        \+get_assoc((CART_sc),MAP,_EXISTSVAL),  % map key needs to be instantiated by here.
+        put_assoc((CART_sc),MAP,inmap,MAP2),    % 'inmap' is an arbitrary ground value to link with the key.
         shopping_cart_table_with_constraints(LT,MAP2,LT_MAX,REST),
         shopping_cart_tuple_in_order(CART_sc,CART_DATE,LT_MAX,CURR_MAX).
 
@@ -123,6 +125,7 @@ shopping_cart_table_with_constraints(
 % ----------------------------------------------------------
 
 % putting the UNIQUE barcode_string information here.  TODO: what if two columns bore the unique keyword?
+
 cart_detail_table(L) :-
         % t is the empty mapping, from library assoc
         cart_detail_table_with_constraints(L,t,_,L).
@@ -130,19 +133,6 @@ cart_detail_table(L) :-
 
 cart_detail_table_with_constraints([],_ASSOC,0,[]).
 
-/*
-cart_detail_table_with_constraints(
-  [(CART_cd,           PRODUCT)   |LT],
-  MAP,
-  OUT) :-
-
-        within_table_size_limit(LT),
-        cart_detail_tuple(CART_cd,PRODUCT),
-
-        get_assoc(ck(CART_cd,PRODUCT),MAP,_EXISTSVAL), % map key (CART_cd) needs to be instantiated by here.
-
-        cart_detail_table_with_constraints(LT,MAP,OUT). % note: here, the OUT (output) does NOT include the head item.
-*/
 
 cart_detail_table_with_constraints(
   [(CART_cd,PRODUCT)   |LT],
@@ -153,11 +143,10 @@ cart_detail_table_with_constraints(
         within_table_size_limit([(CART_cd,PRODUCT)   |LT]),
         cart_detail_tuple(CART_cd,PRODUCT),
 
-        \+get_assoc(ck(CART_cd,PRODUCT),MAP,_EXISTSVAL),  % map key (ck(CART_cd,PRODUCT)) needs to be instantiated by here.
-        put_assoc(ck(CART_cd,PRODUCT),MAP,inmap,MAP2),    % 'inmap' is an arbitrary ground value to link with the key.
+        \+get_assoc((CART_cd,PRODUCT),MAP,_EXISTSVAL),  % map key needs to be instantiated by here.
+        put_assoc((CART_cd,PRODUCT),MAP,inmap,MAP2),    % 'inmap' is an arbitrary ground value to link with the key.
         cart_detail_table_with_constraints(LT,MAP2,LT_MAX,REST),
         cart_detail_tuple_in_order(CART_cd,PRODUCT,LT_MAX,CURR_MAX).
-
 
 % ----------------------------------------------------------
 
