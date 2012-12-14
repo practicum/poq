@@ -5,6 +5,14 @@
 % ----------------------------------------------------------
 
 /*
+  Names of the placeholders in the template:
+
+  # STCJRT sequence of tuple components for join result tuple type#
+  # STCT1T sequence of tuple components for table-one tuple#
+  # STCT2T table-two #
+*/
+
+/*
 There are 7 different clauses to express sc_join_cd_on_EXPR.
 
 There should be no duplication in outcomes due to careful management
@@ -25,8 +33,8 @@ The cases (by size of the two lists) are:
 */
 
 
-% TODO - NOTE: let this always be named simply 'meets_join' throughout the system
-meets_join(   # STCJRT sequence of tuple components for join result tuple type#   ) :-
+% NOTE: let this always be named simply 'meets_join' throughout the system
+meets_join(   # STCJRT #   ) :-
         ONE_ID_one = ONE_ID_two. % this can change and be arbitrarily complex
 
 
@@ -35,13 +43,13 @@ sc_join_cd_on_EXPR( [], [], [] ).
 
 % case 2 of 7: left-hand list and right-hand list are sizes: 1+, []
 sc_join_cd_on_EXPR(
-  [(  # STCT1T sequence of tuple components for table-one tuple# ) |L2T],
+  [(  # STCT1T # ) |L2T],
   [],
   [] ) :-
 
         table_one_table([( # STCT1T # )   |L2T]), % type assertion
 
-        within_table_size_limit([( # STCT1T # )   |L2T]).
+        within_joined_size_limit([( # STCT1T # )   |L2T]).
 
 
 % case 3 of 7: left-hand list and right-hand list are sizes: [], 1+
@@ -52,7 +60,7 @@ sc_join_cd_on_EXPR(
 
         table_two_table([( # STCT2T # )   |L2T]), % type assertion
 
-        within_table_size_limit([( # STCT2T # )   |L2T]).
+        within_joined_size_limit([( # STCT2T # )   |L2T]).
 
 
 % case 4 of 7 - A: left-hand list and right-hand list are sizes: 1, >1
@@ -60,22 +68,20 @@ sc_join_cd_on_EXPR(
 sc_join_cd_on_EXPR(
   [( # STCT1T # )   |[]],
 
-  [( # STCT2T # )   |L2T],
+  [( # STCT2T # )   |[MID2|L2T]],
 
   [( # STCJRT # ) |R] ) :-
 
 
         table_one_tuple( # STCT1T # ),  % type assertion
 
-        table_two_table([( # STCT2T # )   |L2T]), % type assertion
+        table_two_table([( # STCT2T # )   |[MID2|L2T]]), % type assertion
 
-        length([( # STCT2T # )   |L2T],X),
-        X>1,
-        within_table_size_limit(L2T),
+        within_joined_size_limit([( # STCJRT # ) |R]),
 
         meets_join( # STCJRT # ),
 
-        sc_join_cd_on_EXPR([( # STCT1T # )   |[]] , L2T, R ).
+        sc_join_cd_on_EXPR([( # STCT1T # )   |[]] , [MID2|L2T], R ).
 
 
 % case 4 of 7 - B: left-hand list and right-hand list are sizes: 1, >1
@@ -83,22 +89,19 @@ sc_join_cd_on_EXPR(
 sc_join_cd_on_EXPR(
   [( # STCT1T # )   |[]],
 
-  [( # STCT2T # )   |L2T],
+  [( # STCT2T # )   |[MID2|L2T]],
 
   R ) :-
 
         table_one_tuple( # STCT1T # ),% type assertion
 
-        table_two_table([( # STCT2T # )   |L2T]),% type assertion
+        table_two_table([( # STCT2T # )   |[MID2|L2T]]),% type assertion
 
-        length([( # STCT2T # )   |L2T],X),
-
-        X>1,
-        within_table_size_limit(L2T),
+        within_joined_size_limit(R),
 
         \+meets_join( # STCJRT # ),
 
-        sc_join_cd_on_EXPR([( # STCT1T # )   |[]] , L2T, R ).
+        sc_join_cd_on_EXPR([( # STCT1T # )   |[]] , [MID2|L2T], R ).
 
 
 % case 5 of 7 - A: left-hand list and right-hand list are sizes: 1+, 1 (1+ means 'one or more')
@@ -115,7 +118,7 @@ sc_join_cd_on_EXPR(
 
         table_two_tuple( # STCT2T # ),% type assertion
 
-        within_table_size_limit(L2T),
+        within_joined_size_limit([( # STCJRT # ) |R]),
 
         meets_join( # STCJRT # ),
 
@@ -135,7 +138,7 @@ sc_join_cd_on_EXPR(
 
         table_two_tuple( # STCT2T # ),% type assertion
 
-        within_table_size_limit(L2T),
+        within_joined_size_limit(R),
 
         \+meets_join( # STCJRT # ),
 
@@ -146,23 +149,22 @@ sc_join_cd_on_EXPR(
 %  2+    2+  ... and the first list size is greater to or EQUAL to the second
 % adding one more right-hand-list item to an 'already crossing'
 sc_join_cd_on_EXPR(
-  [( # STCT1T # )   |L1T],
+  [( # STCT1T # )   |[MID1|L1T]],
 
-  [( # STCT2T # )   |L2T],
+  [( # STCT2T # )   |[MID2|L2T]],
 
   FINAL ) :-
 
-        table_one_table([( # STCT1T # )   |L1T]),% type assertion
+        table_one_table([( # STCT1T # )   |[MID1|L1T]]),% type assertion
 
-        table_two_table([( # STCT2T # )   |L2T]),% type assertion
+        table_two_table([( # STCT2T # )   |[MID2|L2T]]),% type assertion
 
-        length([( # STCT1T # )   |L1T],  X),
-        X>1,
-        length([( # STCT2T # )   |L2T],  Y),
-        Y>1,
+        length([( # STCT1T # )   |[MID1|L1T]],  X),
+        length([( # STCT2T # )   |[MID2|L2T]],  Y),
+
         X>=Y,
-        sc_join_cd_on_EXPR([( # STCT1T # )   |L1T],    L2T,      POUT),
-        sc_join_cd_on_EXPR([( # STCT1T # )   |L1T], [( # STCT2T # )   |[]],  MOUT),
+        sc_join_cd_on_EXPR([( # STCT1T # )   |[MID1|L1T]],    [MID2|L2T],      POUT),
+        sc_join_cd_on_EXPR([( # STCT1T # )   |[MID1|L1T]], [( # STCT2T # )   |[]],  MOUT),
         merge(POUT,MOUT,FINAL).
 
 
@@ -171,24 +173,22 @@ sc_join_cd_on_EXPR(
 %  2+    2+  ... and the first list size is LESS THAN the second
 % adding one more left-hand-list item to an 'already crossing'
 sc_join_cd_on_EXPR(
-  [( # STCT1T # )   |L1T],
+  [( # STCT1T # )   |[MID1|L1T]],
 
-  [( # STCT2T # )   |L2T],
+  [( # STCT2T # )   |[MID2|L2T]],
 
   FINAL ) :-
 
-        table_one_table([( # STCT1T # )   |L1T]),% type assertion
+        table_one_table([( # STCT1T # )   |[MID1|L1T]]),% type assertion
 
-        table_two_table([( # STCT2T # )   |L2T]),% type assertion
+        table_two_table([( # STCT2T # )   |[MID2|L2T]]),% type assertion
 
-        length([( # STCT1T # )   |L1T],  X),
-        X>1,
-        length([( # STCT2T # )   |L2T],  Y),
+        length([( # STCT1T # )   |[MID1|L1T]],  X),
+        length([( # STCT2T # )   |[MID2|L2T]],  Y),
 
-        Y>1,
         X<Y,
-        sc_join_cd_on_EXPR(L1T,  [( # STCT2T # )   |L2T],   POUT),
-        sc_join_cd_on_EXPR([( # STCT1T # )   |[]],   [( # STCT2T # )   |L2T],    MOUT),
+        sc_join_cd_on_EXPR([MID1|L1T],  [( # STCT2T # )   |[MID2|L2T]],   POUT),
+        sc_join_cd_on_EXPR([( # STCT1T # )   |[]],   [( # STCT2T # )   |[MID2|L2T]],    MOUT),
         merge(POUT,MOUT,FINAL).
 
 
