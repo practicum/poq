@@ -5,6 +5,12 @@
            agg_field_min_atom/3,
            agg_field_max_atom/3,
 
+           agg_base_do_nothing/2,
+           agg_base_sum/2,
+           agg_base_count/2,
+           agg_base_min_atom/2,
+           agg_base_max_atom/2,
+
            end_of_dbms_builtins_exports_placeholder/0]).   % this is here so i don't have to move the ']).' each time i add to exports
 
 
@@ -44,3 +50,16 @@ agg_field_max_atom(PREVIOUS,INCOMING,WINNER) :-
         INCOMING @=< PREVIOUS,
         WINNER = PREVIOUS.
 
+agg_base_do_nothing(INCOMING,OUTPUT) :-
+        OUTPUT = INCOMING.
+
+agg_base_sum(INCOMING,OUTPUT) :-
+        OUTPUT = INCOMING.
+
+agg_base_count(_INCOMING,1).
+
+agg_base_min_atom(INCOMING,OUTPUT) :-
+        OUTPUT = INCOMING.
+
+agg_base_max_atom(INCOMING,OUTPUT) :-
+        OUTPUT = INCOMING.
