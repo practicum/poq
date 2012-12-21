@@ -7,11 +7,10 @@
 /*
   two sample tests to see whether either query would allow a NULL in the result set. one does, and the other does not.
 
-?- run_query_not_exists(X,Y,[(null)|[(B)|[]]]).
 
+?- run_query_not_exists(T1,T2,X),member(null,X).
 
-?- run_query_not_in(X,Y,[t1(null)|[t1(B)|[]]]).
-
+?- run_query_not_in(T1,T2,X),member(null,X).
   */
 
 
