@@ -11,6 +11,12 @@
            agg_base_min_atom/2,
            agg_base_max_atom/2,
 
+           agg_empty_do_nothing/1,
+           agg_empty_sum/1,
+           agg_empty_count/1,
+           agg_empty_min_atom/1,
+           agg_empty_max_atom/1,
+
            end_of_dbms_builtins_exports_placeholder/0]).   % this is here so i don't have to move the ']).' each time i add to exports
 
 
@@ -63,3 +69,14 @@ agg_base_min_atom(INCOMING,OUTPUT) :-
 
 agg_base_max_atom(INCOMING,OUTPUT) :-
         OUTPUT = INCOMING.
+
+agg_empty_do_nothing(null).
+
+agg_empty_sum(null).
+
+agg_empty_count(0).
+
+agg_empty_min_atom(null).
+
+agg_empty_max_atom(null).
+

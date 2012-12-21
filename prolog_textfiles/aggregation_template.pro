@@ -39,6 +39,38 @@ group_by(L,LOUT) :-
         group_by(L,t,LOUT).
 
 
+
+/*
+  There are THREE different predicates where the first argument is the EMPTY list: []
+
+  If the actual 'group by' statement is missing from the original SQL code, then this is
+  'bare aggregation', and we need to use the FIRST TWO predicates (and omit the third).
+
+  In that case (case of missing group by), then we also replace the GROUP KEY with 'nogroup'.
+
+  If there is a 'group by' clause in the original SQL code, then we are grouping and so we
+  leave the FIRST TWO predicates COMMENTED OUT and we use the THIRD predicate only.
+*/
+% pared everything down to an empty list, but there is also an EMPTY MAP (the so-far map)
+group_by([],t,MAP) :-
+
+        % there should be 1 line of 'agg_field' statement for each column in the table
+        agg_empty_max_atom(COL_1_AGG),
+        agg_empty_max_atom(COL_2_AGG),
+        agg_empty_do_nothing(COL_3_AGG),
+        agg_empty_do_nothing(COL_4_AGG),
+
+        put_assoc(empty_table,
+                  t,
+                  (COL_1_AGG,COL_2_AGG,COL_3_AGG,COL_4_AGG),
+                  MAP).
+
+
+% after recursing down to an empty list-of-tuples, we can only consider the MAP to be the output if MAP is not empty:
+group_by([],MAP,MAP) :-
+        \+empty_assoc(MAP).
+
+
 % nothing in the list for further processing. so your 'map so-far' is your finished map.
 group_by([],MAP,MAP) :-
 
