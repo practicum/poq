@@ -41,13 +41,13 @@ natural_type(1).
 natural_type(2).
 
 
-map_natural(null,POS,VAL) :-
+map_natural(1,POS,VAL) :-
         positional_base(X),
         VAL is 0 * X ^ POS.
 map_natural(0,POS,VAL) :-
         positional_base(X),
         VAL is 1 * X ^ POS.
-map_natural(1,POS,VAL) :-
+map_natural(null,POS,VAL) :-
         positional_base(X),
         VAL is 2 * X ^ POS.
 map_natural(2,POS,VAL) :-
@@ -63,7 +63,7 @@ name_string_type(jacob).
 name_string_type(isabella).
 name_string_type(william).
 
-map_name(null,POS,VAL) :-
+map_name(william,POS,VAL) :-
         positional_base(X),
         VAL is 0 * X ^ POS.
 map_name(jacob,POS,VAL) :-
@@ -72,7 +72,7 @@ map_name(jacob,POS,VAL) :-
 map_name(isabella,POS,VAL) :-
         positional_base(X),
         VAL is 2 * X ^ POS.
-map_name(william,POS,VAL) :-
+map_name(null,POS,VAL) :-
         positional_base(X),
         VAL is 3 * X ^ POS.
 %name_string_type(olivia).
@@ -113,10 +113,10 @@ product_string_type(guaifenesin).
 map_product(null,POS,VAL) :-
         positional_base(X),
         VAL is 0 * X ^ POS.
-map_product(aspirin,POS,VAL) :-
+map_product(ibuprofen,POS,VAL) :-
         positional_base(X),
         VAL is 1 * X ^ POS.
-map_product(ibuprofen,POS,VAL) :-
+map_product(aspirin,POS,VAL) :-
         positional_base(X),
         VAL is 2 * X ^ POS.
 map_product(guaifenesin,POS,VAL) :-
