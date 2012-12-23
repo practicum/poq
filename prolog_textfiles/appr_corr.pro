@@ -6,34 +6,27 @@
 %:- use_module(modules/dbms/datatypes).  NO. DO NOT ENABLE. instead, the user imports ONE of several choices.
 
 /*
-as of Nov 13, 2012, with this setting:
 
-manageable_list_tail(L) :- size_0_to_2(L).
-
-
-  i was able to do the following:
-
-  appr_corr_join_derived_table( [(fccy463, 0, fccy463, aspirin), (srce544, 0,srce544, aspirin)] ).
+C is ShoppingCart table.
+CI is CartDetail table.
+J is the intermediate join of C and CI (using the condition from the query)
+Q_RESULT is the q_result
 
 
-?- test_it(  [(fccy463, 0, fccy463, aspirin), (srce544, 0,srce544, aspirin)]  ,K).
-K = [g(d_prod_cart(0, aspirin, srce544), 2)] .
+axiomatized_query(C,CI,J,Q_RESULT) :-
+
+        join_on_expression(C,CI,J),
+        group_by(J,t,LOUT),
+        assoc_to_values(LOUT,Q_RESULT).
 
 
-  ?- test_it(  [(fccy463, X, fccy463, aspirin), (srce544, Y,srce544, aspirin)]  , [g(d_prod_cart(X, aspirin, srce544), 2)]  ),
-  X@>Y.
+axiomatized_query(C,CI,J,Q_RESULT),
+member( (CA,D1,CA,P), J ),
+member( (CB,D2,CB,P), J),
+member( (CA,D2,CA,P), Q_RESULT ),
+CB \= CA,
+D2 \= D1.
 
-
-X = 1,
-Y = 0 ;
-X = 1,
-Y = 0 ;
-X = 2,
-Y = 0 ;
-X = 2,
-Y = 0 ;
-X = 2,
-Y = 1 .
 
 
 
@@ -360,8 +353,7 @@ join_on_expression(
 restrict_list_tail_size(LT) :-
         within_joined_size_limit(LT).
 
-required_table_type_for_group_by(J) :-
-        join_on_expression(_SC,_CD,J).
+
 
 required_tuple_type_for_group_by( CART,CART_DATE,CART,PRODUCT ) :-
 
@@ -369,19 +361,6 @@ required_tuple_type_for_group_by( CART,CART_DATE,CART,PRODUCT ) :-
         cart_detail_tuple(CART,PRODUCT).
 
 
-/*
-  still todo: must account for NULL values in all aggregates.
-
-  note: the final map can be examined with: assoc_to_list, assoc_to_values
-
-  possibly also with failure-driven backtracking:
-    gen_assoc(?Key, +Assoc, ?Value)
-      Enumerate matching elements of Assoc in ascending order of their keys via backtracking.
-*/
-group_by(L,LOUT) :-
-
-        required_table_type_for_group_by(L), % assert the type of the table
-        group_by(L,t,LOUT).
 
 
 % nothing in the list for further processing. so your 'map so-far' is your finished map.
@@ -408,7 +387,7 @@ group_by(
         % there should be 1 line of 'agg_field' statement for each column in the table
         agg_field_max_atom(COL_1_SOFAR,COL_1,COL_1_AGG),
         agg_field_max_atom(COL_2_SOFAR,COL_2,COL_2_AGG),
-        agg_field_do_nothing(COL_3_SOFAR,COL_3,COL_3_AGG),
+        agg_field_max_atom(COL_3_SOFAR,COL_3,COL_3_AGG),
         agg_field_do_nothing(COL_4_SOFAR,COL_4,COL_4_AGG),
 
         put_assoc((COL_4),
@@ -435,7 +414,7 @@ group_by(
         % there should be 1 line of 'agg_base' statement for each column in the table
         agg_base_max_atom(COL_1,COL_1_AGG),
         agg_base_max_atom(COL_2,COL_2_AGG),
-        agg_base_do_nothing(COL_3,COL_3_AGG),
+        agg_base_max_atom(COL_3,COL_3_AGG),
         agg_base_do_nothing(COL_4,COL_4_AGG),
 
         put_assoc((COL_4),
@@ -448,7 +427,9 @@ group_by(
 
 
 
-test_it(X,K) :-
+axiomatized_query(C,CI,J,Q_RESULT) :-
 
-        group_by(X,Y), assoc_to_values(Y,K).
+        join_on_expression(C,CI,J),
+        group_by(J,t,LOUT),
+        assoc_to_values(LOUT,Q_RESULT).
 
