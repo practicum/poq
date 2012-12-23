@@ -355,99 +355,90 @@ join_on_expression(
 
 % ----------------------------------------------------------
 
-% we are grouping rows that look like: abc(fccy463, full_member_barcode, 0, tinyint_0)
-% we are grouping based on BARCODE_TYPE. (the second field in the row)
-
-% still todo: must account for NULL values in all aggregates.
-
-% the aggregate function for field 1 is nothing-at-all.
-% the aggregate function for BARCODE_TYPE (the GROUP_KEY) is count. handled specially since it is GROUP_KEY.
-% the aggregate function for AMENITIES_ID is sum. (it makes no sense to sum a key, but this is a demo.)
-% the aggregate function for IN_PLAY is min.
 
 
-appr_corr_join_derived_table(J) :-
-        sc_join_cd_on_EXPR(_SC,_CD,J).
-
-appr_corr_join_derived_tuple( CART,CART_DATE,CART,PRODUCT ) :-
-
-        shopping_cart_tuple(CART,CART_DATE),
-        cart_detail_tuple(CART,PRODUCT).
-
-/*
-J = [sc_cd((fccy463, 0), cd(fccy463, rural)),
-     sc_cd((fccy463, 0), cd(fccy463, noise))]
-*/
 
 
 /*
+  still todo: must account for NULL values in all aggregates.
+
   note: the final map can be examined with: assoc_to_list, assoc_to_values
 
   possibly also with failure-driven backtracking:
     gen_assoc(?Key, +Assoc, ?Value)
       Enumerate matching elements of Assoc in ascending order of their keys via backtracking.
 */
-appr_corr_group_by(L,LOUT) :-
+group_by(L,LOUT) :-
 
-        appr_corr_join_derived_table(L),
-        appr_corr_group_by(L,t,LOUT).
+        required_table_type_for_group_by(L), % assert the type of the table
+        group_by(L,t,LOUT).
 
 
 % nothing in the list for further processing. so your 'map so-far' is your finished map.
-appr_corr_group_by([],MAP,MAP) :-
+group_by([],MAP,MAP) :-
 
         write( '   -----------------------   ' ), nl.
 
-% (CART_sc,CART_DATE,CART_cd,PRODUCT_gk)
 
 % take the list-of-tuples, our 'so-far' map, and produce a done-map.
-appr_corr_group_by(
-  [(CART_sc,CART_DATE,CART_cd,PRODUCT_gk)   |LT],
+% in this case, the current row does group together with some already mapped key.
+group_by(
+  [(COL_1,COL_2,COL_3,COL_4)   |LT],
   MAP,
   MAP_OUT ) :-
 
-        within_table_size_limit(LT),
+        restrict_list_tail_size(LT),
 
-        appr_corr_join_derived_tuple(CART_sc,CART_DATE,CART_cd,PRODUCT_gk),
+        required_tuple_type_for_group_by(COL_1,COL_2,COL_3,COL_4),
 
-        get_assoc(PRODUCT_gk, % map key (GROUP_KEY) needs to be instantiated by here.
+        get_assoc((COL_4), % map key needs to be instantiated by here.
                   MAP,
-                  g(d_prod_cart(MAX_DATE,PRODUCT_gk,MAX_CART), COUNT) ),
+                  (COL_1_SOFAR,COL_2_SOFAR,COL_3_SOFAR,COL_4_SOFAR)),
 
-        agg_field_max_atom(MAX_DATE,CART_DATE,STORE_CART_DATE),
-        agg_field_max_atom(MAX_CART,CART_sc,STORE_CART),
+        % there should be 1 line of 'agg_field' statement for each column in the table
+        agg_field_max_atom(COL_1_SOFAR,COL_1,COL_1_AGG),
+        agg_field_max_atom(COL_2_SOFAR,COL_2,COL_2_AGG),
+        agg_field_do_nothing(COL_3_SOFAR,COL_3,COL_3_AGG),
+        agg_field_do_nothing(COL_4_SOFAR,COL_4,COL_4_AGG),
 
-        NEW_COUNT is COUNT + 1,
-
-        put_assoc(PRODUCT_gk,
+        put_assoc((COL_4),
                   MAP,
-                  g(d_prod_cart(STORE_CART_DATE,PRODUCT_gk,STORE_CART), NEW_COUNT),
+                  (COL_1_AGG,COL_2_AGG,COL_3_AGG,COL_4_AGG),
                   MAP2),
 
-        appr_corr_group_by(LT,MAP2,MAP_OUT).
+        group_by(LT,MAP2,MAP_OUT).
 
 
 % take the list-of-tuples, our 'so-far' map, and produce a done-map.
-appr_corr_group_by(
-  [(CART_sc,CART_DATE,CART_cd,PRODUCT_gk)   |LT],
+% in this case, the group-key for the current row is new (never-seen so far), so we put starting values in the map for this key.
+group_by(
+  [(COL_1,COL_2,COL_3,COL_4)   |LT],
   MAP,
   MAP_OUT ) :-
 
-        within_table_size_limit(LT),
+        restrict_list_tail_size(LT),
 
-        appr_corr_join_derived_tuple(CART_sc,CART_DATE,CART_cd,PRODUCT_gk),
+        required_tuple_type_for_group_by(COL_1,COL_2,COL_3,COL_4),
 
-        \+get_assoc(PRODUCT_gk,MAP,_), % map key (PRODUCT_gk) needs to be instantiated by here.
-        put_assoc(PRODUCT_gk,
+        \+get_assoc((COL_4),MAP,_), % map key needs to be instantiated by here.
+
+        % there should be 1 line of 'agg_base' statement for each column in the table
+        agg_base_max_atom(COL_1,COL_1_AGG),
+        agg_base_max_atom(COL_2,COL_2_AGG),
+        agg_base_do_nothing(COL_3,COL_3_AGG),
+        agg_base_do_nothing(COL_4,COL_4_AGG),
+
+        put_assoc((COL_4),
                   MAP,
-                  g(d_prod_cart(CART_DATE,PRODUCT_gk,CART_sc),  % aggregate: min
-                    1), % note: 1 is the starting point for the count aggregate
+                  (COL_1_AGG,COL_2_AGG,COL_3_AGG,COL_4_AGG),
                   MAP2),
-        appr_corr_group_by(LT,MAP2,MAP_OUT).
+        group_by(LT,MAP2,MAP_OUT).
+
 
 
 
 
 test_it(X,K) :-
 
-        appr_corr_group_by(X,Y), assoc_to_values(Y,K).
+        group_by(X,Y), assoc_to_values(Y,K).
+
