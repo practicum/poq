@@ -357,6 +357,16 @@ join_on_expression(
 
 
 
+restrict_list_tail_size(LT) :-
+        within_joined_size_limit(LT).
+
+required_table_type_for_group_by(J) :-
+        join_on_expression(_SC,_CD,J).
+
+required_tuple_type_for_group_by( CART,CART_DATE,CART,PRODUCT ) :-
+
+        shopping_cart_tuple(CART,CART_DATE),
+        cart_detail_tuple(CART,PRODUCT).
 
 
 /*
