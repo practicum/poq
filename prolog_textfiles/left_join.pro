@@ -123,8 +123,8 @@ extra_info_table_with_constraints(
         within_table_size_limit([(PID,TITLE)   |LT]),
         extra_info_tuple(PID,TITLE),
 
-        \+get_assoc((PID,TITLE),MAP,_EXISTSVAL),  % map key needs to be instantiated by here.
-        put_assoc((PID,TITLE),MAP,inmap,MAP2),    % 'inmap' is an arbitrary ground value to link with the key.
+        \+get_assoc((PID),MAP,_EXISTSVAL),  % map key needs to be instantiated by here.
+        put_assoc((PID),MAP,inmap,MAP2),    % 'inmap' is an arbitrary ground value to link with the key.
         extra_info_table_with_constraints(LT,MAP2,LT_MAX,REST),
         extra_info_tuple_in_order(PID,TITLE,LT_MAX,CURR_MAX).
 
@@ -181,14 +181,7 @@ pad_right_side([(PID)|OK1],[(PID , null,null )|OK2]) :-
         pad_right_side(OK1,OK2).
 
 
-/*
-meets_join(   PID,PID2,_TITLE   ) :-
-        PID = PID2. % this can change and be arbitrarily complex
-*/
-
-meets_join(   PID,PID2,TITLE   ) :-
-        PID = PID2,
-        expression_1(TITLE).
+% look towards end of this file for the 'meets_join' predicate
 
 
 % case 1 of 7: left-hand list and right-hand list are [], []
@@ -382,24 +375,42 @@ internal_join_axioms(
 
 apply_where_clause([],[]).
 
-apply_where_clause([(PID,PID,TITLE)|L1T],[(PID,PID,TITLE)|L2T]) :-
-        natural_type(PID),
+apply_where_clause([(PID1,PID2,TITLE)|L1T],[(PID1,PID2,TITLE)|L2T]) :-
+        natural_type(PID1),
+        natural_type(PID2),
         title_string_type(TITLE),
         expression_1(TITLE),
         apply_where_clause(L1T,L2T).
 
-apply_where_clause([(PID,PID,TITLE)|L1T],L2T) :-
-        natural_type(PID),
+apply_where_clause([(PID1,PID2,TITLE)|L1T],L2T) :-
+        natural_type(PID1),
+        natural_type(PID2),
         title_string_type(TITLE),
         \+expression_1(TITLE),
         apply_where_clause(L1T,L2T).
 
 
+/*
+meets_join(   PID,PID2,_TITLE   ) :-
+        PID = PID2. % this can change and be arbitrarily complex
 
 
-axiomatized_query(C,CI,J,Q_RESULT) :-
+axiomatized_query(P,E,Q_RESULT) :-
+        left_join_on_expression(P,E,JT),
+        apply_where_clause(JT,Q_RESULT).
+*/
 
-        join_on_expression(C,CI,J),
-        group_by(J,t,LOUT),
-        assoc_to_values(LOUT,Q_RESULT).
 
+meets_join(   PID,PID2,TITLE   ) :-
+        PID = PID2,
+        expression_1(TITLE).
+
+axiomatized_query(P,E,Q_RESULT) :-
+        left_join_on_expression(P,E,Q_RESULT).
+
+
+/*
+axiomatized_query(P,E,Q_RESULT),
+member( (ID1,_ID2,_TITLE), Q_RESULT ),
+member( (ID1,mr), E ).
+*/
