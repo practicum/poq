@@ -10,6 +10,8 @@
            map_guid/3,
            product_string_type/1, % aspirin, ibuprofen ... (and null)
            map_product/3,
+           title_string_type/1, % Mr., Ms., Mrs. ... (and null)
+           map_title/3,
 
            end_of_d1_exports_placeholder/0]).   % this is here so i don't have to move the ']).' each time i add to exports
 
@@ -122,3 +124,25 @@ map_product(aspirin,POS,VAL) :-
 map_product(guaifenesin,POS,VAL) :-
         positional_base(X),
         VAL is 3 * X ^ POS.
+
+title_string_type(null).
+title_string_type(ms).
+title_string_type(mr).
+title_string_type(dr).
+title_string_type(mrs).
+
+map_title(null,POS,VAL) :-
+        positional_base(X),
+        VAL is 0 * X ^ POS.
+map_title(ms,POS,VAL) :-
+        positional_base(X),
+        VAL is 1 * X ^ POS.
+map_title(mr,POS,VAL) :-
+        positional_base(X),
+        VAL is 2 * X ^ POS.
+map_title(dr,POS,VAL) :-
+        positional_base(X),
+        VAL is 3 * X ^ POS.
+map_title(mrs,POS,VAL) :-
+        positional_base(X),
+        VAL is 4 * X ^ POS.
