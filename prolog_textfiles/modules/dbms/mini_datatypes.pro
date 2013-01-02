@@ -12,6 +12,8 @@
            map_product/3,
            title_string_type/1, % Mr., Ms., Mrs. ... (and null)
            map_title/3,
+           salary_type/1,
+           map_salary/3,
 
            end_of_d1_exports_placeholder/0]).   % this is here so i don't have to move the ']).' each time i add to exports
 
@@ -144,5 +146,27 @@ map_title(dr,POS,VAL) :-
         positional_base(X),
         VAL is 3 * X ^ POS.
 map_title(mrs,POS,VAL) :-
+        positional_base(X),
+        VAL is 4 * X ^ POS.
+
+salary_type(null).
+salary_type(4500).
+salary_type(850).
+salary_type(3100).
+salary_type(990).
+
+map_salary(null,POS,VAL) :-
+        positional_base(X),
+        VAL is 0 * X ^ POS.
+map_salary(4500,POS,VAL) :-
+        positional_base(X),
+        VAL is 1 * X ^ POS.
+map_salary(850,POS,VAL) :-
+        positional_base(X),
+        VAL is 2 * X ^ POS.
+map_salary(3100,POS,VAL) :-
+        positional_base(X),
+        VAL is 3 * X ^ POS.
+map_salary(990,POS,VAL) :-
         positional_base(X),
         VAL is 4 * X ^ POS.
