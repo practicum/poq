@@ -1,3 +1,1 @@
-The name of this project (for now) is 'proof' for crying out loud.  Why does it show up after more than a dozen things that are NOT so named when you search specifically for a repository named 'proof' ??  So maybe populating this darned README will help with this...
-
 Eventually this will become something that applies theorem-proving to sql select statements to test various assertions about the properties of the statements and their potential result sets.
