@@ -63,3 +63,8 @@ Once POQ completes Step 3 from Figure JJJ, information begins flowing upward thr
 
 There are at least two helpful transformations that the Synthesis & Translation layer could apply to such a result.  One is to display essentially the same information as shown above in Prolog, but to render it in a tabular format that is familiar to SQL users.  Another is to generate a complete SQL script that would create and populate SQL tables, run the original SQL query, and demonstrate the entire counter-scenario inside an actual RDB system (and outside of POQ).  Users could execute such scripts in an RDB system of their choosing.  Both of these potential transformations are shown in Figure LLL.  Again, the UI Layer is left unspecified in this thesis.  Therefore, no choice is made here as to whether the tabular counter-example and/or the counter-example SQL script would be displayed in a graphical window or printed at the command-line, or displayed or transmitted in any other manner.
 
+??????????????????
+??????????????????
+    conclude this section. ui layer not treated. prover engine is SWIPL prolog. therefore, focus is now entirely on Synthesis & Translation layer.  According to Figure JJJ, the duties of ___ layer are 2a, 2b, and 4.  Step 4 has been covered sufficently.  Step 2b is ommitted due to the simplifying assumption.  Step 2a is the focus of the rest of this chapter.
+??????????????????
+??????????????????
