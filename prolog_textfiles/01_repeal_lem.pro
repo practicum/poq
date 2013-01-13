@@ -9,6 +9,27 @@ an example that asks whether the sum of outputs of both queries can ever sum to 
   (and it shows that, presumably surprisingly and helpfully, the answer actually is YES).
 
 remove_nonmatches([X|XT],XR),inverse_remove_nonmatches([X|XT],XR2),length([X|XT],LOT),length(XR,LXR),length(XR2,LXR2),SUM is LXR+LXR2,SUM@<LOT.
+
+axiomatized_query(P,DT1,DT2,Q_RESULT) :-
+        remove_nonmatches(P,DT1),
+        inverse_remove_nonmatches(P,DT2),
+        merge(DT1,DT2,Q_RESULT).
+
+
+?-  axiomatized_query(P,DT1,DT2,Q_RESULT),
+    length(P,PL),
+    length(Q_RESULT,QL),
+    QL@<PL.
+
+CEX:
+  P = [ (william, jacob, isabella), (jacob, null, jacob)],
+D1 = [ (william, jacob, isabella)],
+D2 = [],
+Q = [ (william, jacob, isabella)],
+PL = 2,
+QL = 1 ;
+
+
   */
 
 person_tuple(
@@ -97,15 +118,8 @@ inverse_remove_nonmatches([(F,M,L)|X1],Y) :-
 
 
 
-run_stuff(_) :-
-        remove_nonmatches([X|XT],XR),
-        inverse_remove_nonmatches([X|XT],XR2),
-        length([X|XT],LOT),
-        length(XR,LXR),
-        length(XR2,LXR2),
-        write('~~~~~~~~~~~~~~~~~~~~~~~~~~~'),nl,
-        write([X|XT]),nl,
-        write('keep jacobs. size: '), write(LXR),nl,
-        write('keep non jacobs. size: '), write(LXR2),nl,
-        SUM is LXR+LXR2,
-        SUM@<LOT.
+axiomatized_query(P,DT1,DT2,Q_RESULT) :-
+        remove_nonmatches(P,DT1),
+        inverse_remove_nonmatches(P,DT2),
+        merge(DT1,DT2,Q_RESULT).
+
