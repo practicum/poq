@@ -7,27 +7,33 @@
 
 /*
 
-C is ShoppingCart table.
-CI is CartDetail table.
-J is the intermediate join of C and CI (using the condition from the query)
-Q_RESULT is the q_result
+axiomatized_query(P,E,Q_RESULT) :-
+        left_join_on_expression(P,E,Q_RESULT).
+
+axiomatized_query(P,E,Q_RESULT),
+member( (ID1,_ID2,_TITLE), Q_RESULT ),
+member( (ID1,mr), E ).
+
+length(P,3),
+axiomatized_query(P,E,Q_RESULT),
+member( (ID1,_ID2,_TITLE), Q_RESULT ),
+member( (ID1,mr), E ).
+
+P = [2, 0, 1],
+E = [ (0, mrs), (1, mr)],
+Q_RESULT = [ (0, 0, mrs), (2, null, null), (1, null, null)],
 
 
-axiomatized_query(C,CI,J,Q_RESULT) :-
-
-        join_on_expression(C,CI,J),
-        group_by(J,t,LOUT),
-        assoc_to_values(LOUT,Q_RESULT).
 
 
-axiomatized_query(C,CI,J,Q_RESULT),
-member( (CA,D1,CA,P), J ),
-member( (CB,D2,CB,P), J),
-member( (CA,D2,CA,P), Q_RESULT ),
-CB \= CA,
-D2 \= D1.
+axiomatized_query(P,E,JT,Q_RESULT) :-
+        left_join_on_expression(P,E,JT),
+        apply_where_clause(JT,Q_RESULT).
 
 
+axiomatized_query(P,E,JT,Q_RESULT),
+member( (ID1,_ID2,_TITLE), Q_RESULT ),
+member( (ID1,mr), E ).
 
 
 */
@@ -394,8 +400,8 @@ apply_where_clause([(PID1,PID2,TITLE)|L1T],L2T) :-
 meets_join(   PID,PID2,_TITLE   ) :-
         PID = PID2. % this can change and be arbitrarily complex
 
-
-axiomatized_query(P,E,Q_RESULT) :-
+% this is QC, which is well-behaved
+axiomatized_query(P,E,JT,Q_RESULT) :-
         left_join_on_expression(P,E,JT),
         apply_where_clause(JT,Q_RESULT).
 */
@@ -405,12 +411,9 @@ meets_join(   PID,PID2,TITLE   ) :-
         PID = PID2,
         expression_1(TITLE).
 
+% this is QD, which is flawed
 axiomatized_query(P,E,Q_RESULT) :-
         left_join_on_expression(P,E,Q_RESULT).
 
 
-/*
-axiomatized_query(P,E,Q_RESULT),
-member( (ID1,_ID2,_TITLE), Q_RESULT ),
-member( (ID1,mr), E ).
-*/
+
