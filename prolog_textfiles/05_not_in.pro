@@ -10,6 +10,12 @@
 
 ?- run_query_not_exists(T1,T2,X),member(null,X).
 
+T1 = [2, null, 0],
+T2 = [2],
+X = [null, 0] ;
+
+
+
 ?- run_query_not_in(T1,T2,X),member(null,X).
   */
 
