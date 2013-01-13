@@ -1,0 +1,17 @@
+
+testing versus proving.
+
+the paper about how unit tests (on duck-typed code) do a lot of what a compiler does in strong-typed code.
+
+
+sql has no higher-order logic, no higher-order functions.
+
+also, you don't need a 'termination proof'.
+
+
+financial industry use of SQL. correctness seems like a big deal there.
+
+
+at least three ways that errors could happen. (four? five? add more if you have em') 1. unexpected parameter to the query. 2. unexpected table states, 3. table schema definitions CHANGE!!
+
+... note: #3 is a big one!  even if we all think we write code that we are convinced is correct 'in the now', how to we 'protect' it going forward?
