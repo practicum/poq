@@ -5,6 +5,19 @@
 
 %:- use_module(modules/dbms/datatypes).  NO. DO NOT ENABLE. instead, the user imports ONE of several choices.
 
+/*
+axiomatized_query(E,Q_RESULT),
+member((DPT,_,_),E),
+\+member((DPT,_,_),Q_RESULT).
+
+length(E,3),
+axiomatized_query(E,Q_RESULT),
+member((DPT,_,_),E),
+\+member((DPT,_,_),Q_RESULT).
+
+
+*/
+
 expression_1(SALARY) :-
         SALARY @< 1000.
 
@@ -182,6 +195,7 @@ agg_field_col_three(COL_3_SOFAR,COL_3,COL_3_AGG) :-
 agg_base_col_three(COL_3,COL_3_AGG) :-
         agg_base_count(COL_3,COL_3_AGG).
 
+% this is query B, which is flawed
 axiomatized_query(E,Q_RESULT) :-
         employee_table(E),
         apply_where_clause(E,E2),
@@ -197,12 +211,8 @@ agg_field_col_three(PREVIOUS,INCOMING,WINNER) :-
 agg_base_col_three(INCOMING,OUTPUT) :-
         function_1(INCOMING,OUTPUT).
 
+% this is query A (good)
 axiomatized_query(E,Q_RESULT) :-
         group_by(E,A), assoc_to_values(A,Q_RESULT).
 
 
-/*
-axiomatized_query(E,Q_RESULT),
-member((DPT,_,_),E),
-\+member((DPT,_,_),Q_RESULT).
-*/
