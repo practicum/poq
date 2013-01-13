@@ -7,9 +7,15 @@
 example of asking 'can i ever have a supplier in the results that does NOT supply anything?'
   (and the answer, presumed to be unexpected but helpful, is yes)
 
-run_query(S,P,XING,SP,[(A)|[]]), \+member( (A,B), SP).
-  */
+run_query(S,P,XING,SP,Q),
+  member((A),Q),
+  \+member( (A,B), SP).
 
+
+S = [0, 1],
+SP = [ (0, 0), (0, 1)],
+
+  */
 
 /*
 loop s
