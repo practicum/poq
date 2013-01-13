@@ -28,6 +28,16 @@ CB \= CA,
 D2 \= D1.
 
 
+C = [ (fccy463, 0), (ddd213, 1)],
+CI = [ (ddd213, aspirin), (fccy463, aspirin)],
+J = [ (ddd213, 1, ddd213, aspirin), (fccy463, 0, fccy463, aspirin)],
+Q_RESULT = [ (fccy463, 1, fccy463, aspirin)],
+CA = fccy463,
+D1 = 0,
+P = aspirin,
+CB = ddd213,
+D2 = 1 ;
+
 
 
 */
