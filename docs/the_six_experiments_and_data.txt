@@ -1,0 +1,5 @@
+
+
+explain that precondition can reference 'inputs'. postcondition uses 'inputs' and Q_RESULT.
+
+reiterate that there there are four inputs: query, ddl, pre, post. so when the prover engine shows that the query did not meet the specification, the outcome can be 'repaired' by changing any one of those four inputs.

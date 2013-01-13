@@ -80,3 +80,12 @@ In the absence of correlated subqueries, generating the correct query tree from 
 Currently, the source code of the POQ project [cite:github] contains axiom schemas for five relational operators: JOIN, LEFT JOIN, WHERE, GROUP BY, UNION ALL.  Adding support for new operators requires formulating a new axiom schema for each newly-targeted operator.  Often it is not adequate to simply find a correct logical formulation.  Instead, internal idiosyncracies of the Prover Engine often necessitate finding a particular axiom formulation that plays to the strengths of the Prover's search algorithms and avoids the Prover's weaknesses.  In other words, there will be many axiom schemas that are logically correct and equivalent to one another, but the key to the practical applicability of POQ (or any similar tool) is the find the axiom schemas that are processed most efficiently by whichever prover engine is in place [cite:bjorner, possibly schumann?].
 
 To further illustrate the readiness with which query tree traversal can be automated, the processing of a leaf node (base table node) and the processing of a non-leaf node (operator node) will now be shown in detail.  The processing is entirely straightforward; no complications arise that would prohibit automation.
+
+leaf-node. table. tuples. domains. primary key on table.
+
+Note: foreign key constraints involve more than one table. not yet handled in POQ.
+
+
+
+
+internal node. determine operator. determine child node info.
