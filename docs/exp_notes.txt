@@ -1,0 +1,7 @@
+
+
+no 'pruning' of the search space. backtracking exhaustively searches everything. inefficient.
+
+resolution with different 'selection' and different scheduling/matching or whatever.
+
+or use a system with more than one inference rule.
