@@ -13,27 +13,44 @@
 
 
     <table cellspacing="0">
-      <caption>My Header</caption>
+      <caption>Example 1: Missing output due to NULL</caption>
       <tr>
 	<!-- sql query -->
-	<td><code>SELECT * FROM Person 
+	<td><p class="quadtitle">SQL Query<p>
+<code>SELECT * FROM Person
 WHERE middle = 'P'
+--
 UNION ALL
-SELECT * FROM Person 
+--
+SELECT * FROM Person
 WHERE NOT middle = 'P';</code></td>
 	<!-- proof task -->
-	<td></td>
+	<td><p class="quadtitle">Proof Task<p>
+<code>axiomatized_query(Person,Q_RESULT),
+length(Person,PLength),
+length(Q_RESULT,QLength),
+QLength@&lt;PLength.</code></td>
       </tr>
       <tr>
 	<!-- sql DDL code -->
-	<td><code>CREATE TEMPORARY TABLE Person
+	<td><p class="quadtitle">SQL DDL Code<p>
+<code>CREATE TEMPORARY TABLE Person
 (
     first  VARCHAR(20) NOT NULL,
     middle VARCHAR(20) NULL,
     last   VARCHAR(20) NOT NULL
 );</code></td>
 	<!-- output -->
-	<td>prolog</td>
+	<td><p class="quadtitle">Result: Counterexample<p>
+<code>Person =
+  [ (william, jacob, isabella),
+    (jacob, null, jacob) ],
+Q_RESULT =
+  [ (william, jacob, isabella) ],
+%%%%
+PLength = 2,
+%%%%
+QLength = 1 ;</code></td>
       </tr>
     </table>
 

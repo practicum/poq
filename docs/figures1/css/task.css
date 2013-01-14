@@ -123,7 +123,13 @@ td {
     padding: 10px;
 }
 caption { 
+    font-size: 1.5em;
     border: 1px solid black;
     border-width: 1px 1px 0px 1px;
+    font-weight: bold;
+}
+
+.quadtitle {
+    text-align: center;
     font-weight: bold;
 }
