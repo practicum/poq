@@ -1,4 +1,29 @@
 
+we would have described the 'frama-c' WHY3 type of imperative proving.
+
+we claimed that 'weakest precondition' steps are not needed, since 'SQL is FOL'. explained we base things on DOMAIN relational calculus.
+
+
+
+We need to show that relational SQL statements convert readily into FOL statements.
+
+Relational calculus is...
+
+Therefore, relational calculus will contain the usual FOL symbols /\, ->, and so forth, combined with various predicate symbols.  The relational calculus does not directly use (JOIN, UNION) ...   In some ways, the relational calculus is 'harder to read' (yuck. fix this) ... It might not be immediately obvious what the predicate symbols 'map to' in SQL ... (ok, that is a bit better than 'hard to read') ...   (still fix this).  Therefore, it will be helpful to breifly touch upon the well-known operations of relational alebra.  These operations can all be expressed in relational calculus.  However, they are more familiar to many SQL students as being operations of the relational algebra.   (WHOA.. that whole paragraph needs help. but i need to digress into algebra, and have to introduce it somehow).
+
+Many of the most common SQL keywords are essentially "wrappers" or "syntactic sugar" for relational algebra formula.  This is true for keywords like JOIN, UNION, WHERE, and SELECT.  The SELECT keyword, however, does not correspond to the relational algebra notion of selection, but rather to the relational operation known as "project."
+
+Many discussions of the relational model for database theory introduce relational algebra first, and then discuss relational calculus in turn.  Relational algebra and relational calculus have been shown to be equivalent.
+
+Relational calculus is...
+
+There are two methods of constructing an FOL language of relational calculus.  One is known as the tuple relational calculus, and the other is known as the domain relational calculus.  The Prolog expressions that will be developed in this chapter are based most closely on the domain relational calculus.  Basic variables in the domain relational calculus are placeholders for values from the domains of the attributes in the database.  In other words, (to use an informal description that is closer to day-to-day SQL parlance), each variable holds a value that is permissible in a "column" of some table.  If the database has a table that contains a column (or columns) of type integer, then the corresponding domain relational calculus expressions will use variables that range over the integers.  Sets of domain variables can be strung together in a sequence to build a tuple.  Following this domain relational approach, our Prolog code first defines our domains and domain variables, and then builds tuple structures from there.  This differs from tuple relational calculus, where the fundamental variables are tuples, and the tuple components are accessed via numeric or named indices applied to the tuple.
+
+The tuple relational calculus and the domain relational calculus are equivalent, and they are both equivalent to the relational algebra.  (i kind of said this earlier... uh-oh, cleanup time again).  However, these calculi and the equivalent algebra are not sufficient to express aggregation.  In this chapter, we also devise logical formulas to describe aggregation.  Research by several other teams has outlined similar ways of augmenting the original calculus with additional axiomatized operations in order to formally express features in SQL that do not exist in the original relational calculi.
+
+
+
+
 
 In chapter UUU, a number of common SQL pitfalls were listed and described.  Most experienced SQL practicioners are aware of these pitfalls.  Being aware of the potential errors, however, is not enough to make a person immune to committing them in the future.  Despite not being a cure-all, knowledge of potential trouble-spots is undeniably helpful during coding.  Once coding is finished, knowledge of trouble-spots can have an even bigger payoff during code reviews, testing, and debugging.  It is rare for a software project to achieve full test coverage; most project teams do not even attempt it.  In light of this, heuristics such as lists of common pitfalls become valuable guideposts so that testing efforts are focused on the pieces of code and the combinations of inputs that are most likely to uncover problems. (whether the 'list of pitfalls' explicitly documented or subconsciouly internalized by experienced teams) .
 
@@ -79,13 +104,336 @@ In the absence of correlated subqueries, generating the correct query tree from 
 
 Currently, the source code of the POQ project [cite:github] contains axiom schemas for five relational operators: JOIN, LEFT JOIN, WHERE, GROUP BY, UNION ALL.  Adding support for new operators requires formulating a new axiom schema for each newly-targeted operator.  Often it is not adequate to simply find a correct logical formulation.  Instead, internal idiosyncracies of the Prover Engine often necessitate finding a particular axiom formulation that plays to the strengths of the Prover's search algorithms and avoids the Prover's weaknesses.  In other words, there will be many axiom schemas that are logically correct and equivalent to one another, but the key to the practical applicability of POQ (or any similar tool) is the find the axiom schemas that are processed most efficiently by whichever prover engine is in place [cite:bjorner, possibly schumann?].
 
-To further illustrate the readiness with which query tree traversal can be automated, the processing of a leaf node (base table node) and the processing of a non-leaf node (operator node) will now be shown in detail.  The processing is entirely straightforward; no complications arise that would prohibit automation.
+To further illustrate the readiness with which query tree traversal and axiom generation can be automated, the processing of a leaf node (base table node) and the processing of a non-leaf node (operator node) will now be shown in detail.  The processing is entirely straightforward; no complications arise that would prohibit automation.
 
-leaf-node. table. tuples. domains. primary key on table.
+>>>>>>>>>>>> leaf-node. table. tuples. domains. primary key on table.
 
-Note: foreign key constraints involve more than one table. not yet handled in POQ.
+>>>>>>>>>>>> Note: foreign key constraints involve more than one table. not yet handled in POQ.
+
+A base table is always shown as a leaf node in a query tree, which is to say it has no further subordinate elements shown in the tree.  Nonetheless, a table can itself be broken down further into constituent parts.  A table definiton contains a list of column definitions.  Each column definition has a column name and a datatype.  POQ needs to examine all of these.
+
+As mentioned near the top of this chapter, domain relational calculus provides a foundation for the axioms used in POQ.  When building the axioms that support a given query, the starting point is an individual domain.  When POQ reaches a leaf node, it examines the columns of the table represented by the leaf node, and determines which POQ domain corresponds to the SQL datatype of each column.
+
+POQ begins with the domain of each column, and then creates axioms in a bottom-up fashion.  Tuple type axioms are built in terms of domain axioms.  Table axioms, in turn, are built in terms of tuple axioms.  Later, both the table axioms and the tuple axioms contribute to the instantiation of the operator axiom schemas at non-leaf nodes.
+
+In order to represent each column type using Prolog predicates, POQ consults a lookup table that maps each SQL datatype to a POQ domain.  One simple case is to map SQL type "int unsigned" to the POQ domain natural_type.  All domains in POQ are finite domains.  For example, the following Prolog statements are used to define a finite domain 'natural_type,' which is a subset of the natural numbers.
+
+natural_type(0).
+natural_type(1).
+natural_type(2).
+natural_type(3).
+natural_type(4).
+
+The natural_type domain as just shown only has a cardinality of 5.  The cardinalities of the finite domains is something that POQ will allow to be configured at runtime.  For all examples in Chapter HHH, each domain used was of size ___.  Ensuring that domains are finite is a necessary step to prevent the Prolog proof procedure from taking an infinite branch of a proof tree.
+
+Given the above specification for natural_type in Prolog, we can then specify a domain variable to range over natural_type by writing:
+
+natural_type(X).
+
+Any symbol beginning with a capital letter is always a variable in Prolog.  This capitalization rule is what allows us to unambiguously detect that 'X' is a variable in the preceding Prolog statement.  However, it is also what forces us to use lower-case names for some of the items that follow, such as 'null', even though in SQL we typically see this concept represented as 'NULL' and not 'null'.
+
+Natural numbers are used in databases in many ways.  A column that represents, say, the number of cartons of roofing shingles in stock at a warehouse would likely use the natural number type.  Natural numbers are also often used as unique row identifier numbers in database tables.  In additional to natural numbers, another datatype that is used to uniquely label rows is the Globally Unique Identifier type, or GUID. We add this domain to our system as follows:
+
+guid_type(fccy463).
+guid_type(srce544).
+guid_type(ddd213).
+guid_type(tchc397).
+
+Actual GUID values are longer than 'fccy463' and the other values shown above.  The choice of using shortened values to represent GUIDs is a deliberate design decision in our system.  To explain this decision, it is helpful to first consider the role that these values will play in the system.  To restate a prior point, the values that we use to populate the finite domain of each type are precisely the values that will later appear as attributes in concrete tuples.  However, in cases where assertions are proved valid, the end user of the proof system may never need to view any of the contrete tuples that were created during the proof process.  So in the case of a successful proof, it does not matter too much what our values look like, as long as they map closely enough to a real-life representation of the database so that we can have confidence in the proof.  In cases where assumptions are invalid, then our design requirements for these values become a bit more stringent.  As stated earlier, the detection of invalid statements will cause the system to output a counterexample.  The counterexample is an assignment of values to each variable that was featured in the assertion.  Recall that the variables in the assertion can represent table values, row values, and parameter values (in cases where the SQL statement is parameterized).  This means that the system's GUID values--such as 'fccy463'--will be shown to the user as part of a concrete counterexample.
+
+Depending on whether we expect our end user to have a flexible imagination or not, we might accept or reject certain design criteria in defining our GUID domain.  The design criteria that have been applied here are simple.  When a GUID is printed out as part of a counterexample, our user must recognize this value as representing a plausible potential value that might someday get inserted into the pertinent database table.  The value does not need to be an actual value that is currently present in the real-life database.  Quite the contrary, because if it did need to be present currently, then our tool would only check the satisfiability or unsatisfiability of a SQL statement given the current database state, and that is not the intent of the tool at all.  The intent of the tool is to prove that certain properties of the SQL statement and its result set will hold true for all states that this database can attain, including past states, present states, and future states.  The user is expected to understand that 'fccy463' represents something that might someday appear in the database.  Even when the user knows that the appearance of 'fccy463' in a counterexample in no way indicates that 'fccy463' is present in the real-life database currently, the user could still raise objections.  One such objection would be that 'fccy463' is not formatted appropriately the way that real-life GUIDs are.  This is where the expectation of a "flexible imagination" comes into play.  It seems reasonable to expect that most trained users could easily know to "mentally map" a symbol like 'fccy463' into a realistic GUID such as '{5224F545-A443-4859-BA23-7B5A95BDC8EF}' in order to visualize the real-life equivalent of the counterexample, and in order to generate a real-life SQL script filled with test data for testing the counterexample, if needed.  The idea that our users will be flexible enough to accept "reasonably recognizable" values allows us to keep the Prolog code simple, and allows us to avoid any potential hassles in cases where a true-to-life representation of a datatype might involve the use of characters or strings that are difficult to work with in Prolog.
+
+If there are any enum types in the database, then we can easily define such a type in our Prolog system:
+
+color_enum_type(red).
+color_enum_type(orange).
+color_enum_type(yellow).
+color_enum_type(green).
+
+The most important type remaining is the string type.  The introduction of that type will involve another discussion of design trade-offs.  Therefore, before we consider strings, we shall cover the simple technique of supporting nullable attributes in our system.  We only need one way to represent NULL, so we will use the Prolog constant 'null.'  Constants must begin with lower-case letters in Prolog, so we are unable to use a constant that would faithfully coincide with the capitalized keyword that SQL uses.  Here we declare our constant as the only thing that is null:
+
+isnull(null).
+
+Then, we must add clauses that will allow 'null' to appear any place where a number, GUID, or enum value can appear.  This is done as follows:
+
+natural_type(null).
+guid_type(null).
+color_enum_type(null).
+
+Ignoring the special case of a primary key column, the default behavior in SQL table creation (double-check standard. cite section of standard?) is to create each table column such that NULL can appear in any column, no matter the datatype of the column.  This observation is what motivated the inclusion of our 'null' constant into each domain of our system.  However, it is also possible to override the default nullability in SQL and declare columns that do not permit NULL.  To accomodate this possibility, we add the following shorthand:
+
+not_null(X) :- \+isnull(X).
+
+Instead of using the above declaration of not_null, we could simply type '\+isnull' wherever a predicate like not_null would appear.  However, the shorthand is easier on the eyes, and it more closely resembles the SQL syntax that it represents (i.e. 'NOT NULL').
+
+So in order to add a string domain to the system, we know that we will add something like 'string_type(null)' in order to support nullable string columns.  After that, however, the possibilities are vast regarding what other items should become members of this finite domain.  In the earlier discussion of GUIDs, it was deemed reasonable to expect that a user would accept 'fccy463' as representing a GUID, even if it is an imperfect representative.  However, while we could also request that our users accept things like 'ejhrbxjs' or 'abcdef' as reasonable product names or employee names, at best this seems like a significant distraction.  At worst, it could be a significant obstacle to the user's ability to comprehend some counterexample assignments produced by the system.
+
+Therefore, for usability reasons, the system will actually support multiple string domains such as name_string_type and product_string_type.  This way, a counterexample involving a Product table would display values like "desk," "book," "bottle," or "car" instead of gibberish strings.  To pay the cost of this usability feature, however, a burden of extra annotations must be imposed.  When the system parses SQL table definitions, it will no longer be sufficient for the system to recognize a SQL type declaration as "some string type."  Instead, a specific annotation should be provided so that the proof system can be alerted to map the column's type specifically to name_string_type, product_string_type, or some other specific subset of string representatives.
+
+Now that some basic types have been defined, it will be possible to define tuples composed of these types.  While it was easy to list some helpful datatypes without considering any particular database, it is not possible to populate our system with tuple types in the same (free-form? ad-hoc? open-ended?) way.  The set of datatypes available in SQL databases are fairly uniform across the different database products.  Therefore, other than the idea of tailoring our string types to look sensible in particular scenarios, we can prepopulate our system with several finite domains that will likely be useful for proofs involving any database we encounter.  The same cannot be said for tuple types.  The tuple types that we will require for proofs about a given database are likely to be unique to that particular database.  Therefore, concrete tuple types are something that the proof system will have to generate after parsing the 'CREATE TABLE' statements that define the given database.
+
+To give an example of a tuple type specification in the proof system, we need a concrete table defintion as input.  Consider the following table defition:
+
+CREATE TABLE Product ( product_id int, product_name varchar(100), PRIMARY KEY (product_id) );
+
+From the table definition, it can be determined that the tuple will have two components: one numeric component and one string component.  The string component will have the default nullability.  However, because the numeric component is also the table's primary key in this case, SQL will automatically disallow it from ever containing NULL.  Based on that, the system can create the following tuple type definition:
+
+product_tuple( PROD_ID, PROD_NAME ) :-
+    natural_type(PROD_ID), not_null(PROD_ID),
+    product_string_type(PROD_NAME).
+
+The above is a logical formula in Prolog that states that any sequence of variables ( PROD_ID, PROD_NAME ) is indeed a product_tuple as long as PROD_ID is a natural number value and not null, and PROD_NAME is a valid string.  In the case of PROD_NAME, since the nonnull predicate has not been asserted for that variable, we would also allow the sequence ( PROD_ID, null ) to be a product tuple, as long as the requirements on PROD_ID are met.
+
+Of course, rather than asserting that "if requirements are met, then ( PROD_ID, PROD_NAME ) is a product tuple," we would really like use an "if and only if" (bi-implication) instead of a simple "if" (implication).  Prolog does not have a symbol for logical bi-implication.  However, if no other implication is provided that can imply that ( PROD_ID, PROD_NAME ), then we have essentially achieved bi-implication due to the behavior of Prolog.  Prolog will only ever allow the the product_tuple conclusion to be true when Prolog can satisfy the body of a concrete clause where the head symbolizes the satisfaction of the product_tuple predicate.  The product_tuple clause shown above would be the only one our system would generate with product_tuple as the head, so this would be the only way allowable to conclude that some sequence ( PROD_ID, PROD_NAME ) is a permissible product tuple.
+
+Now that tuples have a place in the system, the only remaining structure to define is the table types that are formed from collections of tuples.  A SQL table is an approximation of a relation.  A relation in a strict sense is an unordered set of tuples.  Note that the definition of set means that a relation will never contain duplicate tuples.  In a SQL database, on the other hand, it is possible to create tables that contain duplicate rows.  Additionally, a SQL database usually only provides a very imperfect sense of the supposed lack of ordering over rows.  The database will typically display a result set in the same order no matter how times a query is run, and many times the resulting rows will appear to have been sorted by some numeric column, even when the query did not include any keywords that would require an order.
+
+To maximize the kinds of SQL query bugs that our system can catch, we need to emulate the non-set characteristic of SQL tables that admits duplicate rows in a table.  Otherwise, if our system obeyed a faithful set-based description of relations, then the proof system might uphold a user's assertion about the uniqueness of some row, only to be disappointed when contrary results are observed in the real-life database.  Perhaps counter-intuitively, a very different rationale will apply to making design decisions about whether to emulate SQL's tendency to obey some apparent ordering when no ordering is required.  In the case of SQL's "apparent" result ordering, we would provide a more valuable service by deliberating seeking to avoid emulating this behavior.
+
+The argument in favor of avoiding emulation of apparent ordering is based on the observation that such ordering can change on a moment's notice, sometimes after being stable for months or years.  This almost always causes unfortunate side-effects whenever a SQL user had been lulled into relying on the ordering.  When inherently unordered queries produce "apparently ordered" results, this is usually because the internal algorithms of the RDB store and retrieve data relying on fast-lookup indices.  If a database administrator decides to drop an index or reformulate an index, then the RDB might suddenly be caused to answer a long-standing query using a different retrieval order than before.  This is virtually certain to cause application errors if the application had been designed to attach some meaning or ranking based on the order of the output rows from the query.  The SQLite RDB contains an interesting feature to help users detect such errors.  The SQLite command 'PRAGMA reverse_unordered_selects;' affects queries that do not contain any special keywords that require the sorting of results.  When the pragma is enabled, the RDB will output result sets for such queries in the *reverse* order of whatever the retrieval algorithm normally would have done.  By alternating whether this pragma is enabled or disabled, SQLite users have a better chance of noticing where faulty presumptions of sorting have led to bugs in their application.
+
+===============
+= the next paragraph is out-of-date. needs fixing to match latest POQ implementation
+==============
+The preceding discussion establishes the relevant properties that our table types should possess.  Designing a structure that admits duplicate tuples is not difficult.  However, attempting to provide a true sense of the absence of any ordering is potentially trickier.  A list structure obviously has an order, so using the built-in Prolog list type to express SQL tables would at first glance seem problematic.  Nevertheless, Prolog lists are the chosen method in our system.  Thankfully, it turns out that the nature of Prolog's execution engine neutralize any concerns over undesirable ordering.  In our Prolog-based proof system, the backtracking behavior of Prolog's proof search will be sufficient to ensure avoidance of any "apparent" (yet unguaranteed) ordering.  Concretely, if an assertion needs to be validated for a set of product tuples regardless of the order in which they appear, Prolog will eventually test many possible reorderings via backtracking.
+
+We continue to use the same 'CREATE TABLE' declaration that was shown above for the Product table.  The table has a primary key, so we will eventually need to enforce uniqueness on the product_id column.  Leaving that aside for now, we begin by declaring a typed list.  As a first pass, we simply provide two clauses to define a list of tuples that can only contain product_tuple typed tuples.
+
+product_table( [] ).
+
+product_table( [(P_ID,P_NAME)|T] ) :-
+        within_table_size_limit([(P_ID,P_NAME)|T]),
+        product_tuple(P_ID, P_NAME),
+        product_table(T).
+
+These clauses state that an empty list is a valid representation of a product table.  Also, a list such that the head of the list is a product tuple and the tail of the list (recursively) meets the definition of product_table is also itself a product table.  Note that a restriction is also being imposed on the size of the table by using the predicate within_table_size_limit.  We will return to the topic of restricted table sizes in a moment.
+
+The previous two clauses for product_table do not account for the primary key column at all.  In practice, most tables do possess a primary key column (although a few beleaguered heirs to legacy systems might beg to differ).  Therefore, in most cases the type of recursive table definition just shown will not be sufficient.  For the Product table under development, we actually use a predicate named product_table_with_constraints which is more than twice as long as the product_table code just shown.  The predicate product_table_with_constraints is also defined recursively.  The full source code can be found in Appendix AAAA.
+
+At this point it is necessary to acknowledge and explain a few limitations of the proof system that have become evident in this section.  We stated several times that each domain is defined as a finite domain.  Also, the table definitions use a predicate named within_table_size_limit to enforce an upper bound on table size.  Placing limits on domain size and on table size weakens the proofs that are emitted, and requires us to clearly label each proof with the boundaries that were in effect during validity testing.  For example, it would not be appropriate for the system to state simply that an assertion was "proved valid."  Instead, the only appropriate claims will be those of the format: "assertion was proved valid in a database where table sizes cannot grow beyond 20 rows, and where the numeric domain ranges from 0 to 20, and where there are never more than 15 unique strings stored throughout the database at any time."
+
+These restrictions may sound severe, but there is good reason to believe that they actually do not dampen the usefulness of such a prover tool in any significant way.  For queries that reference only a handful of tables, flaws in the query formulation can typically be easily demonstrated using counterexamples that are populated with only small-sized tables.  Therefore, it will normally be efficient to run the first few proof attempts using tight bounds on domain size and table size.  If those proofs succeed, yet more confidence in the correctness of the SQL is still desired, then the bounds can be incrementally lifted as more and more proofs are attempted using larger and larger table definitions.  This incrementally widening approach can be continued either until sufficient confidence is gained, or until the proof task becomes intractable.  Furthermore, it is definitely not necessary for our system to represent infinite domains or tables of infinite size.  If the only counterexample to the correctness of some assumption were a counterexample that relied on an infinite table, then this would not serve any practical application.  In practice, all databases are finite, with attributes ranging over finite domains.
+
+In other words, the size restrictions are notable but not overly troubling.  However, the system will have to perform bookkeeping to make sure that the sizes of the domains are large enough to populate any maximum-sized table that may have unique constraints on each of its columns.  Similarly, some reasonable heuristic may need to be devised so that table sizes are suffiently large so as to not artificially impede a given JOIN from returning a non-empty result.  The most conservative heuristic would be to prevent any derived table resulting from a JOIN from exceeding a maximum size that is the square of the currently imposed maximum size of any base table.  Here, too, however, a smaller maximum could be applied first, keeping in mind that an incremental widening approach can always be tried afterward.  As other operations become supported, then similar remarks would likely apply for operations such as INTERSECT, EXCEPT, and others.
+
+The use of finite domains for each attribute raises another issue beyond weakened proof power.  The other issue pertains to what might be called the "degree of query awareness" that our tool can (or cannot) achieve while using small finite domains for attributes.  The researchers who created the ADUSA tool for testing RDB query engines sought to avoid a particular problem of non query-aware approaches.  They noted that any tool that generates random table content for the purpose of running test queries will have little chance of producing non-empty result sets if the query to be targeted for testing is:
+
+SELECT * FROM Student WHERE name = 'Amelia Barnett';
+
+No matter how many times the Student table is filled with random test data, it will be highly unlikely that a random generator type of tool would ever put "Amelia Barnett" into the Student table.  Therefore, the test query might be executed many times, but the test framework would never be able to ascertain anything particularly meaningful about the characteristics of the data that this query might potentially return.
+
+The Prolog-based tool proposed in this thesis would likewise never simulate any table containing the precise name "Amelia Barnett."  However, our Prolog-based tool can do something just as useful, as long as the SQL query to be tested is formulated and annotated properly.  For our system, the query should instead be formulated like so:
+
+SELECT * FROM Student WHERE name = @name_parameter;
+
+Then, part of the precondition annotations should state that @name_parameter must be some string that is present in the Student table, or else that @name_parameter must be some string that is *not* present in the Student table.  It seems that the only motivation for running tests on the "Amelia Barnett" query would be to see how the query behaves when "Amelia Barnett" is located, and/or how the query behaves when "Amelia Barnett" is *not* located.  As long as the motivation is as just described, then our "@name_parameter" approach would perform verification that should be equally as meaningful as that of any "query-aware" system.  The only difference would be that in our system some other name would be chosen from our name_string_type domain.  On the other hand, there may be some rare case where a user wished to specifically execute a query containing "Amelia Barnett" due to some suspicious of an obscure bug in the RDB related to precisely that string.  In that case, asking our Prolog tool to test the query is pointless, since there is very little similarity between the internals of the Prolog tool and the internals of whatever real-life RDB is suspected of having the obscure bug.
+
+Figure NNN shows all datatype mappings used in this chapter.
+
+Domains are built into POQ (see Appendix TTT).  It is easy to add more domains as needed.  A principle that is widely adhered to among SQL practicioners is the idea that each column position in a tuple can only contain an atomic, indivisible item.  Therefore, it is unlikely that POQ would ever need to define domains to represent any complex datatypes such as trees or arrays.  On the other hand, some applications do store XML snippets in BLOB-typed columns of SQL tables.  Support for column types of non-atomic varieties is not planned for POQ.
+
+Domains are built-in, but specific tuple types are not.  The tuple types POQ requires will potentially be different for each SQL query POQ is tasked with processing.  These types, therefore, must be generated during the post-order traversal of the query tree during each new run of the tool.  The same is true for the table axioms.  Of course, if the user knows in advance that he/she will be processing many SQL queries that all access the same database, then it might be reasonable to have POQ generate up front all the tuple types and table axioms for all base tables in the database.  Those axioms could then be cached for reuse during the processing of each query.  However, the time saved by this up-front processing would likely be negligible.  On the other hand, the user may appreciate only having to provide DDL input once, rather than providing the CREATE TABLE declarations each time a new query is input.
+
+>>>>>>>>>>>> internal node. determine operator. determine child node info.
+
+Now for an illustration of processing a non-leaf node.  This illustration is for a node representing JOIN operator.  Nodes for this operator always have two child nodes.  JOIN is one of ???5??? operators currently implemented as Prolog axiom schemas.  Full details for all ???5??? supported operators can be found in Appendix UUU.
+
+Arguably the most popular operation in SQL is the JOIN operation, so any tool for analyzing SQL would be well-advised to make support for JOINs job number one.  The necessary Prolog axioms for formalizing JOIN operations were devised early on in the development process.  However, the design of these axioms has undergone one major change since their initial creation.  Initially, it seemed that a reasonable design goal for this prover tool would be to only require the most straightforward parsing of the SQL queries.  The goal was to translate the SQL into an equivalent set of FOL formulas in the simplest and most direct way possible.  In other words, a front-end parser for the tool would not be required to do any re-writing or optimizing of the initial query tree generated via simple parsing.
+
+Based on those early design goals, the original FOL axioms for JOIN involved statements to specify a cartesian product of the relevant tables, followed by statements to describe a filtering of the cartesian product results using the join condition as the filter expression.  It is well-known that such a naive approach to JOIN implemenation does not perform well in any RDB query execution engine.  As it turns out, this approach did not perform well in a prover setting either.  Therefore, the current axiomatization of JOIN operations in this system is more analogous to a nested loops approach, where each row in the outer-loop table is compared to each row in the inner-loop table, and only when comparison succeeds are the row pairs allowed as members of the result set.
+
+Because each new JOIN can use a new pair of tables and a new JOIN condition, the prover system will have to dynamically generate clauses to describe each particular JOIN.  However, there is a template that the system can follow, so this process can in principle become fully automated someday.  Figure III shows a sample set of axioms to define the JOIN indicated by the SQL fragment: ShoppingCart c JOIN CartDetail cd ON c.cart_id = cd.cart_id.  In addition to the JOIN snippet just provided, it is also necessary to understand the tuple types involved in order to make complete sense of what is being declared.  The tuple types in this case are "shopping_cart_tuple(CART_ID,CUST_ID)" and "cart_detail_tuple(CART_ID, PRODUCT)."  The CART_ID variable ranges over the domain of GUIDs; the CUST_ID variable ranges over the domain of natural numbers; and the PRODUCT variable ranges over the strings in product_string_type.
+
+The remainder of this section will be devoted to discussion of these axioms for the JOIN operation.  This operation has the largest set of axioms of any operation in the system.  Also, the properties of these axioms are representative of properties contained within the axioms for aggregation and antijoin used elsewhere in the system.  The source code for the entire current system can be found in Appendix AAAA.
 
 
 
 
-internal node. determine operator. determine child node info.
+
+% ----------------------------------------------------------
+
+/*
+There are 7 different clauses to express sc_join_cd_on_EXPR.
+
+There should be no duplication in outcomes due to careful management
+of when each of the 7 clauses is allowed to be applied.
+
+Each one of the 7 handles a NON-OVERLAPPING subset of cases based on
+the SIZE of the first two list variables.
+
+The cases (by size of the two lists) are:
+
+[]    []
+1+    []
+[]    1+
+1     >1
+1+    1     (1+ means 'one or more')
+2+    2+  ... and the first list size is greater to or EQUAL to the second
+2+    2+  ... and the first list size is LESS THAN the second
+*/
+
+meets_join_sc_cd(CART_ID_sc,_CUST_ID,CART_ID_cd,_PRODUCT) :-
+        CART_ID_sc = CART_ID_cd.
+
+
+sc_join_cd_on_EXPR( [], [], [] ).
+
+
+sc_join_cd_on_EXPR(
+  [(CART_ID_sc,CUST_ID) |L2T],
+  [],
+  [] ) :-
+
+        shopping_cart_table([(CART_ID_sc,CUST_ID)   |L2T]),
+
+        within_table_size_limit([(CART_ID_sc,CUST_ID)   |L2T]).
+
+
+sc_join_cd_on_EXPR(
+  [],
+  [(CART_ID_cd,PRODUCT)   |L2T],
+  [] ) :-
+
+        cart_detail_table([(CART_ID_cd,PRODUCT)   |L2T]),
+
+        within_table_size_limit([(CART_ID_cd,PRODUCT)   |L2T]).
+
+
+
+% single cart but longer list of c_details, MEETS JOIN conditions
+sc_join_cd_on_EXPR(
+  [(CART_ID_sc,CUST_ID)   |[]],
+
+  [(CART_ID_cd,PRODUCT)   |L2T],
+
+  [(CART_ID_sc,CUST_ID,CART_ID_cd,PRODUCT) |R] ) :-
+
+
+        shopping_cart_tuple(CART_ID_sc,CUST_ID),
+
+        cart_detail_table([(CART_ID_cd,PRODUCT)   |L2T]),
+
+        length([(CART_ID_cd,PRODUCT)   |L2T],X),
+        X>1,
+        within_table_size_limit(L2T),
+
+        meets_join_sc_cd(CART_ID_sc,CUST_ID,CART_ID_cd,PRODUCT),
+
+        sc_join_cd_on_EXPR([(CART_ID_sc,CUST_ID)   |[]] , L2T, R ).
+
+
+% single cart but longer list of c_details, FAILS TO MEET JOIN conditions
+sc_join_cd_on_EXPR(
+  [(CART_ID_sc,CUST_ID)   |[]],
+
+  [(CART_ID_cd,PRODUCT)   |L2T],
+
+  R ) :-
+
+        shopping_cart_tuple(CART_ID_sc,CUST_ID),
+
+        cart_detail_table([(CART_ID_cd,PRODUCT)   |L2T]),
+
+        length([(CART_ID_cd,PRODUCT)   |L2T],X),
+
+        X>1,
+        within_table_size_limit(L2T),
+
+        \+meets_join_sc_cd(CART_ID_sc,CUST_ID,CART_ID_cd,PRODUCT),
+
+        sc_join_cd_on_EXPR([(CART_ID_sc,CUST_ID)   |[]] , L2T, R ).
+
+
+
+% longer carts list but SINGLE detail item, MEETS JOIN conditions
+sc_join_cd_on_EXPR(
+  [(CART_ID_sc,CUST_ID)   |L2T],
+
+  [(CART_ID_cd,PRODUCT)   |[]],
+
+  [(CART_ID_sc,CUST_ID,CART_ID_cd,PRODUCT) |R] ) :-
+
+
+        shopping_cart_table([(CART_ID_sc,CUST_ID)   |L2T]),
+
+        cart_detail_tuple(CART_ID_cd,PRODUCT),
+
+        within_table_size_limit(L2T),
+
+        meets_join_sc_cd(CART_ID_sc,CUST_ID,CART_ID_cd,PRODUCT),
+
+        sc_join_cd_on_EXPR( L2T, [(CART_ID_cd,PRODUCT)   |[]] ,   R ).
+
+
+% longer carts list but SINGLE details item, FAILS TO MEET JOIN conditions
+sc_join_cd_on_EXPR(
+  [(CART_ID_sc,CUST_ID)   |L2T],
+
+  [(CART_ID_cd,PRODUCT)   |[]],
+
+  R ) :-
+
+        shopping_cart_table([(CART_ID_sc,CUST_ID)   |L2T]),
+
+        cart_detail_tuple(CART_ID_cd,PRODUCT),
+
+        within_table_size_limit(L2T),
+
+        \+meets_join_sc_cd(CART_ID_sc,CUST_ID,CART_ID_cd,PRODUCT),
+
+        sc_join_cd_on_EXPR( L2T, [(CART_ID_cd,PRODUCT)   |[]] ,   R ).
+
+
+
+% adding one more details item to an 'already crossing'
+sc_join_cd_on_EXPR(
+  [(CART_ID_sc,CUST_ID)   |L1T],
+
+  [(CART_ID_cd,PRODUCT)   |L2T],
+
+  FINAL ) :-
+
+        shopping_cart_table([(CART_ID_sc,CUST_ID)   |L1T]),
+
+        cart_detail_table([(CART_ID_cd,PRODUCT)   |L2T]),
+
+        length([(CART_ID_sc,CUST_ID)   |L1T],  X),
+        X>1,
+        length([(CART_ID_cd,PRODUCT)   |L2T],  Y),
+        Y>1,
+        X>=Y,
+        sc_join_cd_on_EXPR([(CART_ID_sc,CUST_ID)   |L1T],    L2T,      POUT),
+        sc_join_cd_on_EXPR([(CART_ID_sc,CUST_ID)   |L1T], [(CART_ID_cd,PRODUCT)   |[]],  MOUT),
+        merge(POUT,MOUT,FINAL).
+
+
+% adding one more cart to an 'already crossing'
+sc_join_cd_on_EXPR(
+  [(CART_ID_sc,CUST_ID)   |L1T],
+
+  [(CART_ID_cd,PRODUCT)   |L2T],
+
+  FINAL ) :-
+
+        shopping_cart_table([(CART_ID_sc,CUST_ID)   |L1T]),
+
+        cart_detail_table([(CART_ID_cd,PRODUCT)   |L2T]),
+
+        length([(CART_ID_sc,CUST_ID)   |L1T],  X),
+        X>1,
+        length([(CART_ID_cd,PRODUCT)   |L2T],  Y),
+
+        Y>1,
+        X<Y,
+        sc_join_cd_on_EXPR(L1T,  [(CART_ID_cd,PRODUCT)   |L2T],   POUT),
+        sc_join_cd_on_EXPR([(CART_ID_sc,CUST_ID)   |[]],   [(CART_ID_cd,PRODUCT)   |L2T],    MOUT),
+        merge(POUT,MOUT,FINAL).
+
+
+% ----------------------------------------------------------
+
+
+
+
+
+This chapter has described a feasible implementation for the POQ tool.  The following chapter demonstrates the usefulness and practical applicability of POQ by applying POQ's techniques to six concrete examples.
