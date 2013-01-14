@@ -264,22 +264,33 @@ respect to its specification.</i></code></td>
 <p>&nbsp;<p>&nbsp;
 
     <table cellspacing="0">
-      <caption>Example X: asdf</caption>
+      <caption>Example 5: Unexpected NULL in results due to NOT EXISTS</caption>
       <tr>
 	<!-- sql query -->
 	<td><p class="quadtitle">SQL Query</p>
-<code></code></td>
+<code>SELECT * FROM EntityA a
+WHERE NOT EXISTS (
+  SELECT int_b FROM EntityB b
+  WHERE b.int_b = a.int_a );</code></td>
 	<!-- proof task -->
 	<td><p class="quadtitle">Proof Task</p>
-<code></code></td>
+<code>axiomatized_query
+  (EntityA,EntityB,Q_RESULT),
+member(null,Q_RESULT).</code></td>
       </tr>
       <tr>
 	<!-- sql DDL code -->
 	<td><p class="quadtitle">SQL DDL Code</p>
-<code></code></td>
+<code>CREATE TEMPORARY TABLE EntityA
+( int_a INT UNSIGNED UNIQUE );
+
+CREATE TEMPORARY TABLE EntityB
+( int_b INT UNSIGNED NOT NULL UNIQUE );</code></td>
 	<!-- output -->
 	<td><p class="quadtitle">Result (Counterexample)</p>
-<code></code></td>
+<code>EntityA = [2, null, 0],
+EntityB = [2],
+Q_RESULT = [null, 0] ;</code></td>
       </tr>
     </table>
 
