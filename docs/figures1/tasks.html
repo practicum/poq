@@ -299,25 +299,104 @@ Q_RESULT = [null, 0] ;</code></td>
 <p>&nbsp;<p>&nbsp;
 
     <table cellspacing="0">
-      <caption>Example X: asdf</caption>
+      <caption>Example 6a: Unexpected results in the presence of an empty table</caption>
       <tr>
 	<!-- sql query -->
 	<td><p class="quadtitle">SQL Query</p>
-<code></code></td>
+<code>SELECT * FROM Supplier s
+WHERE NOT EXISTS (
+  SELECT * FROM Part p
+  WHERE NOT EXISTS (
+    SELECT * FROM SPJoin sp
+    WHERE s.s_id = sp.s_id
+    AND sp.p_id = p.p_id ) );</code></td>
 	<!-- proof task -->
 	<td><p class="quadtitle">Proof Task</p>
-<code></code></td>
+<code>axiomatized_query
+  (Supplier,Part,SPJoin,Q_RESULT),
+member( (SID), Q_RESULT ),
+\+member( (SID,_), SPJoin ).</code></td>
       </tr>
       <tr>
 	<!-- sql DDL code -->
 	<td><p class="quadtitle">SQL DDL Code</p>
-<code></code></td>
+<code>CREATE TEMPORARY TABLE Supplier
+( s_id INT UNSIGNED NOT NULL,
+  PRIMARY KEY (s_id));
+
+CREATE TEMPORARY TABLE Part
+( p_id INT UNSIGNED NOT NULL,
+  PRIMARY KEY (p_id));
+
+CREATE TEMPORARY TABLE SPJoin
+( s_id INT UNSIGNED NOT NULL,
+  p_id INT UNSIGNED NOT NULL,
+  PRIMARY KEY (s_id,p_id));</code></td>
 	<!-- output -->
 	<td><p class="quadtitle">Result (Counterexample)</p>
-<code></code></td>
+<code>Supplier =
+  [ 0,
+    1 ],
+Part = [],
+SPJoin =
+  [ (0, 0),
+    (0, 1) ],
+Q_RESULT = [0, 1],
+SID = 1</code></td>
       </tr>
     </table>
 
+
+
+<p>&nbsp;<p>&nbsp;
+
+    <table cellspacing="0">
+      <caption>Example 6b: Precondition to exclude the presence of an empty table</caption>
+      <tr>
+	<!-- sql query -->
+	<td><p class="quadtitle">SQL Query</p>
+<code>SELECT * FROM Supplier s
+WHERE NOT EXISTS (
+  SELECT * FROM Part p
+  WHERE NOT EXISTS (
+    SELECT * FROM SPJoin sp
+    WHERE s.s_id = sp.s_id
+    AND sp.p_id = p.p_id ) );</code></td>
+	<!-- proof task -->
+	<td><p class="quadtitle">Proof Task</p>
+<code>axiomatized_query
+  (Supplier,Part,SPJoin,Q_RESULT),
+member  ( (SID),   Q_RESULT ),
+\+member( (SID,_), SPJoin ),
+length(Part,L),
+L@&gt;0.</code></td>
+      </tr>
+      <tr>
+	<!-- sql DDL code -->
+	<td><p class="quadtitle">SQL DDL Code</p>
+<code>CREATE TEMPORARY TABLE Supplier
+( s_id INT UNSIGNED NOT NULL,
+  PRIMARY KEY (s_id));
+
+CREATE TEMPORARY TABLE Part
+( p_id INT UNSIGNED NOT NULL,
+  PRIMARY KEY (p_id));
+
+CREATE TEMPORARY TABLE SPJoin
+( s_id INT UNSIGNED NOT NULL,
+  p_id INT UNSIGNED NOT NULL,
+  PRIMARY KEY (s_id,p_id));</code></td>
+	<!-- output -->
+	<td><p class="quadtitle">Result</p>
+<code><i>Code is verified correct with
+respect to its specification.</i></code></td>
+      </tr>
+    </table>
+
+
+
+
+<p>&nbsp;<p>&nbsp;
 
 
   </body>
