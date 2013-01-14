@@ -32,7 +32,7 @@ QLength@&lt;PLength.</code></td>
       <tr>
 	<!-- sql DDL code -->
 	<td><p class="quadtitle">SQL DDL Code</p>
-<code>CREATE TEMPORARY TABLE Person
+<code>CREATE TABLE Person
 (
     first  VARCHAR(20) NOT NULL,
     middle VARCHAR(20) NULL,
@@ -75,12 +75,12 @@ member( (C,D,_,_), Q_RESULT),
       <tr>
 	<!-- sql DDL code -->
 	<td><p class="quadtitle">SQL DDL Code</p>
-<code>CREATE TEMPORARY TABLE ShoppingCart
+<code>CREATE TABLE ShoppingCart
 (cart      VARCHAR(20),
  cart_date DATE NOT NULL,
  PRIMARY KEY (cart));
 
-CREATE TEMPORARY TABLE CartDetail
+CREATE TABLE CartDetail
 (cart    VARCHAR(20),
  product VARCHAR(20),
  PRIMARY KEY (cart,product));</code></td>
@@ -122,11 +122,11 @@ member( (ID,mr),  ExtraInfo ).  </code></td>
       <tr>
 	<!-- sql DDL code -->
 	<td><p class="quadtitle">SQL DDL Code</p>
-<code>CREATE TEMPORARY TABLE Person
+<code>CREATE TABLE Person
 ( p_id INT UNSIGNED NOT NULL,
   PRIMARY KEY (p_id));
 
-CREATE TEMPORARY TABLE ExtraInfo
+CREATE TABLE ExtraInfo
 ( p_id  INT UNSIGNED NOT NULL,
   title VARCHAR(20) NOT NULL,
   PRIMARY KEY (p_id));</code></td>
@@ -166,11 +166,11 @@ member( (ID,mr),  ExtraInfo ).  </code></td>
       <tr>
 	<!-- sql DDL code -->
 	<td><p class="quadtitle">SQL DDL Code</p>
-<code>CREATE TEMPORARY TABLE Person
+<code>CREATE TABLE Person
 ( p_id INT UNSIGNED NOT NULL,
   PRIMARY KEY (p_id));
 
-CREATE TEMPORARY TABLE ExtraInfo
+CREATE TABLE ExtraInfo
 ( p_id  INT UNSIGNED NOT NULL,
   title VARCHAR(20) NOT NULL,
   PRIMARY KEY (p_id));</code></td>
@@ -205,7 +205,7 @@ member((DPT,_,_),Employee),
       <tr>
 	<!-- sql DDL code -->
 	<td><p class="quadtitle">SQL DDL Code</p>
-<code>CREATE TEMPORARY TABLE Employee
+<code>CREATE TABLE Employee
 ( dept   INT UNSIGNED NOT NULL,
   emp    VARCHAR(20)  NOT NULL,
   salary INT UNSIGNED NOT NULL,
@@ -247,7 +247,7 @@ member((DPT,_,_),Employee),
       <tr>
 	<!-- sql DDL code -->
 	<td><p class="quadtitle">SQL DDL Code</p>
-<code>CREATE TEMPORARY TABLE Employee
+<code>CREATE TABLE Employee
 ( dept   INT UNSIGNED NOT NULL,
   emp    VARCHAR(20)  NOT NULL,
   salary INT UNSIGNED NOT NULL,
@@ -281,10 +281,10 @@ member(null,Q_RESULT).</code></td>
       <tr>
 	<!-- sql DDL code -->
 	<td><p class="quadtitle">SQL DDL Code</p>
-<code>CREATE TEMPORARY TABLE EntityA
+<code>CREATE TABLE EntityA
 ( int_a INT UNSIGNED UNIQUE );
 
-CREATE TEMPORARY TABLE EntityB
+CREATE TABLE EntityB
 ( int_b INT UNSIGNED NOT NULL UNIQUE );</code></td>
 	<!-- output -->
 	<td><p class="quadtitle">Result (Counterexample)</p>
@@ -320,15 +320,15 @@ member( (SID), Q_RESULT ),
       <tr>
 	<!-- sql DDL code -->
 	<td><p class="quadtitle">SQL DDL Code</p>
-<code>CREATE TEMPORARY TABLE Supplier
+<code>CREATE TABLE Supplier
 ( s_id INT UNSIGNED NOT NULL,
   PRIMARY KEY (s_id));
 
-CREATE TEMPORARY TABLE Part
+CREATE TABLE Part
 ( p_id INT UNSIGNED NOT NULL,
   PRIMARY KEY (p_id));
 
-CREATE TEMPORARY TABLE SPJoin
+CREATE TABLE SPJoin
 ( s_id INT UNSIGNED NOT NULL,
   p_id INT UNSIGNED NOT NULL,
   PRIMARY KEY (s_id,p_id));</code></td>
@@ -374,15 +374,15 @@ L@&gt;0.</code></td>
       <tr>
 	<!-- sql DDL code -->
 	<td><p class="quadtitle">SQL DDL Code</p>
-<code>CREATE TEMPORARY TABLE Supplier
+<code>CREATE TABLE Supplier
 ( s_id INT UNSIGNED NOT NULL,
   PRIMARY KEY (s_id));
 
-CREATE TEMPORARY TABLE Part
+CREATE TABLE Part
 ( p_id INT UNSIGNED NOT NULL,
   PRIMARY KEY (p_id));
 
-CREATE TEMPORARY TABLE SPJoin
+CREATE TABLE SPJoin
 ( s_id INT UNSIGNED NOT NULL,
   p_id INT UNSIGNED NOT NULL,
   PRIMARY KEY (s_id,p_id));</code></td>
