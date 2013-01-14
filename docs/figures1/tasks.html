@@ -16,16 +16,14 @@
       <caption>Example 1: Missing output due to NULL</caption>
       <tr>
 	<!-- sql query -->
-	<td><p class="quadtitle">SQL Query<p>
+	<td><p class="quadtitle">SQL Query</p>
 <code>SELECT * FROM Person
 WHERE middle = 'P'
---
 UNION ALL
---
 SELECT * FROM Person
 WHERE NOT middle = 'P';</code></td>
 	<!-- proof task -->
-	<td><p class="quadtitle">Proof Task<p>
+	<td><p class="quadtitle">Proof Task</p>
 <code>axiomatized_query(Person,Q_RESULT),
 length(Person,PLength),
 length(Q_RESULT,QLength),
@@ -33,7 +31,7 @@ QLength@&lt;PLength.</code></td>
       </tr>
       <tr>
 	<!-- sql DDL code -->
-	<td><p class="quadtitle">SQL DDL Code<p>
+	<td><p class="quadtitle">SQL DDL Code</p>
 <code>CREATE TEMPORARY TABLE Person
 (
     first  VARCHAR(20) NOT NULL,
@@ -41,30 +39,116 @@ QLength@&lt;PLength.</code></td>
     last   VARCHAR(20) NOT NULL
 );</code></td>
 	<!-- output -->
-	<td><p class="quadtitle">Result: Counterexample<p>
+	<td><p class="quadtitle">Result (Counterexample)</p>
 <code>Person =
   [ (william, jacob, isabella),
     (jacob, null, jacob) ],
 Q_RESULT =
   [ (william, jacob, isabella) ],
-%%%%
 PLength = 2,
-%%%%
 QLength = 1 ;</code></td>
       </tr>
     </table>
 
+
+<p>&nbsp;<p>&nbsp;
+
+    <table cellspacing="0">
+      <caption>Example 2: Flawed logic in use of GROUP BY</caption>
+      <tr>
+	<!-- sql query -->
+	<td><p class="quadtitle">SQL Query</p>
+<code>SELECT max( c.cart ) AS recent_cart_c,
+       max( c.cart_date ) AS recent_date,
+       max( ci.cart ) AS recent_cart_ci,
+       ci.product
+FROM ShoppingCart c JOIN CartDetail ci
+ON c.cart = ci.cart
+GROUP BY ci.product;</code></td>
+	<!-- proof task -->
+	<td><p class="quadtitle">Proof Task</p>
+<code>axiomatized_query
+  (ShoppingCart,CartDetail,Q_RESULT),
+member( (C,D,_,_), Q_RESULT),
+\+member( (C,D), ShoppingCart ).</code></td>
+      </tr>
+      <tr>
+	<!-- sql DDL code -->
+	<td><p class="quadtitle">SQL DDL Code</p>
+<code>CREATE TEMPORARY TABLE ShoppingCart
+(cart      VARCHAR(20),
+ cart_date DATE NOT NULL,
+ PRIMARY KEY (cart));
+
+CREATE TEMPORARY TABLE CartDetail
+(cart    VARCHAR(20),
+ product VARCHAR(20),
+ PRIMARY KEY (cart,product));</code></td>
+	<!-- output -->
+	<td><p class="quadtitle">Result (Counterexample)</p>
+<code>ShoppingCart =
+  [ (fccy463, 0),
+    (ddd213,  1) ],
+CartDetail =
+  [ (ddd213,  aspirin),
+    (fccy463, aspirin) ],
+Q_RESULT =
+  [ (fccy463, 1, fccy463, aspirin)],
+C = fccy463, D = 1 .</code></td>
+      </tr>
+    </table>
+
+
+
+
+<p>&nbsp;<p>&nbsp;
+
+    <table cellspacing="0">
+      <caption>Example X: asdf</caption>
+      <tr>
+	<!-- sql query -->
+	<td><p class="quadtitle">SQL Query</p>
+<code></code></td>
+	<!-- proof task -->
+	<td><p class="quadtitle">Proof Task</p>
+<code></code></td>
+      </tr>
+      <tr>
+	<!-- sql DDL code -->
+	<td><p class="quadtitle">SQL DDL Code</p>
+<code></code></td>
+	<!-- output -->
+	<td><p class="quadtitle">Result (Counterexample)</p>
+<code></code></td>
+      </tr>
+    </table>
+
+
+
+<p>&nbsp;<p>&nbsp;
+
+    <table cellspacing="0">
+      <caption>Example X: asdf</caption>
+      <tr>
+	<!-- sql query -->
+	<td><p class="quadtitle">SQL Query</p>
+<code></code></td>
+	<!-- proof task -->
+	<td><p class="quadtitle">Proof Task</p>
+<code></code></td>
+      </tr>
+      <tr>
+	<!-- sql DDL code -->
+	<td><p class="quadtitle">SQL DDL Code</p>
+<code></code></td>
+	<!-- output -->
+	<td><p class="quadtitle">Result (Counterexample)</p>
+<code></code></td>
+      </tr>
+    </table>
+
+
+
   </body>
-
-
-
-
-
-
-
-
-
-
-
 
 </html>
