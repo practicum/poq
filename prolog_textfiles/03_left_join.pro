@@ -6,34 +6,23 @@
 %:- use_module(modules/dbms/datatypes).  NO. DO NOT ENABLE. instead, the user imports ONE of several choices.
 
 /*
+axiomatized_query(Person,ExtraInfo,Q_RESULT),
+member( (ID,_,_), Q_RESULT ),
+member( (ID,mr), ExtraInfo ).
 
-axiomatized_query(P,E,Q_RESULT) :-
-        left_join_on_expression(P,E,Q_RESULT).
+length(Person,3),
+axiomatized_query(Person,ExtraInfo,Q_RESULT),
+member( (ID,_,_), Q_RESULT ),
+member( (ID,mr), ExtraInfo ).
 
-axiomatized_query(P,E,Q_RESULT),
-member( (ID1,_ID2,_TITLE), Q_RESULT ),
-member( (ID1,mr), E ).
 
-length(P,3),
-axiomatized_query(P,E,Q_RESULT),
-member( (ID1,_ID2,_TITLE), Q_RESULT ),
-member( (ID1,mr), E ).
-
-P = [2, 0, 1],
-E = [ (0, mrs), (1, mr)],
+Person = [2, 0, 1],
+ExtraInfo = [ (0, mrs), (1, mr)],
 Q_RESULT = [ (0, 0, mrs), (2, null, null), (1, null, null)],
+ID = 1
 
 
 
-
-axiomatized_query(P,E,JT,Q_RESULT) :-
-        left_join_on_expression(P,E,JT),
-        apply_where_clause(JT,Q_RESULT).
-
-
-axiomatized_query(P,E,JT,Q_RESULT),
-member( (ID1,_ID2,_TITLE), Q_RESULT ),
-member( (ID1,mr), E ).
 
 
 */
@@ -396,24 +385,24 @@ apply_where_clause([(PID1,PID2,TITLE)|L1T],L2T) :-
         apply_where_clause(L1T,L2T).
 
 
-/*
+
 meets_join(   PID,PID2,_TITLE   ) :-
         PID = PID2. % this can change and be arbitrarily complex
 
 % this is QC, which is well-behaved
-axiomatized_query(P,E,JT,Q_RESULT) :-
-        left_join_on_expression(P,E,JT),
+axiomatized_query(Person,ExtraInfo,Q_RESULT) :-
+        left_join_on_expression(Person,ExtraInfo,JT),
         apply_where_clause(JT,Q_RESULT).
-*/
 
 
+/*
 meets_join(   PID,PID2,TITLE   ) :-
         PID = PID2,
         expression_1(TITLE).
 
 % this is QD, which is flawed
-axiomatized_query(P,E,Q_RESULT) :-
-        left_join_on_expression(P,E,Q_RESULT).
+axiomatized_query(Person,ExtraInfo,Q_RESULT) :-
+        left_join_on_expression(Person,ExtraInfo,Q_RESULT).
 
-
+*/
 
