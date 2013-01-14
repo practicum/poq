@@ -187,25 +187,77 @@ respect to its specification.</i></code></td>
 <p>&nbsp;<p>&nbsp;
 
     <table cellspacing="0">
-      <caption>Example X: asdf</caption>
+      <caption>Example 4a: Flawed logic while grouping by department</caption>
       <tr>
 	<!-- sql query -->
 	<td><p class="quadtitle">SQL Query</p>
-<code></code></td>
+<code>SELECT dept,
+  count(emp),
+  count(salary) as low_wage_count
+FROM Employee WHERE salary < 1000
+GROUP BY dept;</code></td>
 	<!-- proof task -->
 	<td><p class="quadtitle">Proof Task</p>
-<code></code></td>
+<code>axiomatized_query(Employee,Q_RESULT),
+member((DPT,_,_),Employee),
+\+member((DPT,_,_),Q_RESULT).</code></td>
       </tr>
       <tr>
 	<!-- sql DDL code -->
 	<td><p class="quadtitle">SQL DDL Code</p>
-<code></code></td>
+<code>CREATE TEMPORARY TABLE Employee
+( dept   INT UNSIGNED NOT NULL,
+  emp    VARCHAR(20)  NOT NULL,
+  salary INT UNSIGNED NOT NULL,
+  PRIMARY KEY (emp));</code></td>
 	<!-- output -->
 	<td><p class="quadtitle">Result (Counterexample)</p>
-<code></code></td>
+<code>Employee = [ (0, jacob, 850),
+             (0, william, 850),
+             (1, isabella, 4500) ],
+Q_RESULT = [ (0, jacob, 2)],
+DPT = 1 ;
+</code></td>
       </tr>
     </table>
 
+
+
+
+
+<p>&nbsp;<p>&nbsp;
+
+    <table cellspacing="0">
+      <caption>Example 4b: Correct logic grouping by department</caption>
+      <tr>
+	<!-- sql query -->
+	<td><p class="quadtitle">SQL Query</p>
+<code>SELECT dept,
+  count(emp),
+  sum( case when salary < 1000
+            then 1
+            else 0 end ) as low_wage
+FROM Employee GROUP BY dept;</code></td>
+	<!-- proof task -->
+	<td><p class="quadtitle">Proof Task</p>
+<code>axiomatized_query(Employee,Q_RESULT),
+member((DPT,_,_),Employee),
+\+member((DPT,_,_),Q_RESULT).</code></td>
+      </tr>
+      <tr>
+	<!-- sql DDL code -->
+	<td><p class="quadtitle">SQL DDL Code</p>
+<code>CREATE TEMPORARY TABLE Employee
+( dept   INT UNSIGNED NOT NULL,
+  emp    VARCHAR(20)  NOT NULL,
+  salary INT UNSIGNED NOT NULL,
+  PRIMARY KEY (emp));</code></td>
+	<!-- output -->
+	<td><p class="quadtitle">Result</p>
+<code><i>Code is verified correct with
+respect to its specification.</i></code></td>
+      </tr>
+    </table>
 
 
 
