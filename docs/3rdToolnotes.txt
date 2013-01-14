@@ -236,7 +236,7 @@ Domains are built-in, but specific tuple types are not.  The tuple types POQ req
 
 >>>>>>>>>>>> internal node. determine operator. determine child node info.
 
-Now for an illustration of processing a non-leaf node.  This illustration is for a node representing JOIN operator.  Nodes for this operator always have two child nodes.  JOIN is one of ???5??? operators currently implemented as Prolog axiom schemas.  Full details for all ???5??? supported operators can be found in Appendix UUU.
+Now for an illustration of processing a non-leaf node.  This illustration is for a node representing the JOIN operator.  Nodes for this operator always have two child nodes.  JOIN is one of ???5??? operators currently implemented as Prolog axiom schemas.  Full details for all ???5??? supported operators can be found in Appendix UUU.
 
 Arguably the most popular operation in SQL is the JOIN operation, so any tool for analyzing SQL would be well-advised to make support for JOINs job number one.  The necessary Prolog axioms for formalizing JOIN operations were devised early on in the development process.  However, the design of these axioms has undergone one major change since their initial creation.  Initially, it seemed that a reasonable design goal for this prover tool would be to only require the most straightforward parsing of the SQL queries.  The goal was to translate the SQL into an equivalent set of FOL formulas in the simplest and most direct way possible.  In other words, a front-end parser for the tool would not be required to do any re-writing or optimizing of the initial query tree generated via simple parsing.
 
