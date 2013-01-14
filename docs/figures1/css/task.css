@@ -1,0 +1,129 @@
+body {
+    font-family: "Source Sans Pro";
+    /*font-face: Verdana;*/
+    font-size: 10pt;
+}
+
+
+
+code {
+    white-space: pre;
+    margin: 0;
+    font-family: "Liberation Mono";
+    font-size: 1em;
+    padding: 0px 8px 0px 0px; /* top right bottom left */
+}
+
+/*
+.wrapper {
+    border: 2px solid black;
+    float: left;
+    clear: left;
+    padding-bottom: 5px;
+    max-width: 550px;
+    margin-bottom: 40px;
+}
+
+
+h1 {
+    text-align: center;
+    margin: 0px 30px 0px 30px; / * top right bottom left * /
+    padding: 0;
+    font-size: 1.5em;
+}
+
+
+h3 {
+    / * text-align: center; * /
+    margin: 5px 0px 0px 3px; / * top right bottom left * /
+    font-size: 1em;
+    font-weight: normal;
+}
+
+div.resultset h3 {
+    font-style: italic;
+}
+
+
+div.element {
+    float: left;
+    margin: 10px 8px 0px 8px; / * top right bottom left * /
+}
+
+div.new-element {
+    clear: left;
+}
+
+
+table {
+    border: 1px solid black;
+    border-spacing: 0; / * what got rid of the weird gaps under the headers * /
+    margin: 0px 0px 0px 0px; / * top right bottom left * /
+    / * margin: 0 auto; * /
+}
+
+th, td {
+    / * border: 1px dashed red; * /
+    padding: 1px 5px 1px 3px; / * top right bottom left * /
+    margin: 0;
+}
+
+thead th {
+    text-align: left;
+    border-bottom: 1px solid black;
+    font-weight: normal;
+    background-color: #ddd;
+}
+
+
+div.resultset table {
+    border: 1px dashed black;
+}
+
+div.resultset thead th {
+    border-bottom: 1px dashed black;
+}
+
+
+dl {
+    clear: both;
+    padding: 15px 0px 0px 8px; / * top right bottom left * /
+}
+
+dd, dt {
+    float: left;
+    padding: 0px 0px 10px 5px; / * top right bottom left * /
+}
+
+dt {
+    font-weight: bold;
+    clear: left;
+}
+
+dd {
+    margin-left: 20px;
+}
+
+
+code strong {
+    font-weight: bold;
+}
+
+*/
+
+table {
+    width: 700px;
+    border-collapse: collapse;
+}
+table, td {
+    border: 1px solid black;
+}
+td {
+    width: 50%;
+    padding: 10px;
+}
+caption { 
+    border: 1px solid black;
+    border-width: 1px 1px 0px 1px;
+    font-weight: bold;
+}
