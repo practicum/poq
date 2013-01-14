@@ -104,6 +104,74 @@ C = fccy463, D = 1 .</code></td>
 <p>&nbsp;<p>&nbsp;
 
     <table cellspacing="0">
+      <caption>Example 3a: Flawed logic in use of LEFT JOIN</caption>
+      <tr>
+	<!-- sql query -->
+	<td><p class="quadtitle">SQL Query</p>
+<code>SELECT * FROM Person p
+LEFT JOIN ExtraInfo ei
+ON p.p_id = ei.p_id
+AND coalesce( ei.title, '') <> 'mr';</code></td>
+	<!-- proof task -->
+	<td><p class="quadtitle">Proof Task</p>
+<code>axiomatized_query
+  (Person,ExtraInfo,Q_RESULT),
+member( (ID,_,_), Q_RESULT ),
+member( (ID,mr),  ExtraInfo ).  </code></td>
+      </tr>
+      <tr>
+	<!-- sql DDL code -->
+	<td><p class="quadtitle">SQL DDL Code</p>
+<code>CREATE TEMPORARY TABLE Person
+( p_id INT UNSIGNED NOT NULL,
+  PRIMARY KEY (p_id));
+
+CREATE TEMPORARY TABLE ExtraInfo
+( p_id  INT UNSIGNED NOT NULL,
+  title VARCHAR(20) NOT NULL,
+  PRIMARY KEY (p_id));</code></td>
+	<!-- output -->
+	<td><p class="quadtitle">Result (Counterexample)</p>
+<code>Person = [2, 0, 1],
+ExtraInfo = [ (0, mrs),
+              (1, mr) ],
+Q_RESULT = [ (0, 0, mrs),
+             (2, null, null),
+             (1, null, null) ],
+ID = 1 </code></td>
+      </tr>
+    </table>
+
+
+
+<p>&nbsp;<p>&nbsp;
+
+    <table cellspacing="0">
+      <caption>Example X: asdf</caption>
+      <tr>
+	<!-- sql query -->
+	<td><p class="quadtitle">SQL Query</p>
+<code></code></td>
+	<!-- proof task -->
+	<td><p class="quadtitle">Proof Task</p>
+<code></code></td>
+      </tr>
+      <tr>
+	<!-- sql DDL code -->
+	<td><p class="quadtitle">SQL DDL Code</p>
+<code></code></td>
+	<!-- output -->
+	<td><p class="quadtitle">Result (Counterexample)</p>
+<code></code></td>
+      </tr>
+    </table>
+
+
+
+
+<p>&nbsp;<p>&nbsp;
+
+    <table cellspacing="0">
       <caption>Example X: asdf</caption>
       <tr>
 	<!-- sql query -->
