@@ -6,14 +6,18 @@
 %:- use_module(modules/dbms/datatypes).  NO. DO NOT ENABLE. instead, the user imports ONE of several choices.
 
 /*
-axiomatized_query(E,Q_RESULT),
-member((DPT,_,_),E),
+axiomatized_query(Employee,Q_RESULT),
+member((DPT,_,_),Employee),
 \+member((DPT,_,_),Q_RESULT).
 
-length(E,3),
-axiomatized_query(E,Q_RESULT),
-member((DPT,_,_),E),
+length(Employee,3),
+axiomatized_query(Employee,Q_RESULT),
+member((DPT,_,_),Employee),
 \+member((DPT,_,_),Q_RESULT).
+
+  Employee = [ (0, jacob, 850), (0, william, 850), (1, isabella, 4500)],
+Q_RESULT = [ (0, jacob, 2)],
+DPT = 1 ;
 
 
 */
@@ -196,9 +200,9 @@ agg_base_col_three(COL_3,COL_3_AGG) :-
         agg_base_count(COL_3,COL_3_AGG).
 
 % this is query B, which is flawed
-axiomatized_query(E,Q_RESULT) :-
-        employee_table(E),
-        apply_where_clause(E,E2),
+axiomatized_query(Employee,Q_RESULT) :-
+        employee_table(Employee),
+        apply_where_clause(Employee,E2),
         group_by(E2,A),
         assoc_to_values(A,Q_RESULT).
 */
@@ -212,7 +216,7 @@ agg_base_col_three(INCOMING,OUTPUT) :-
         function_1(INCOMING,OUTPUT).
 
 % this is query A (good)
-axiomatized_query(E,Q_RESULT) :-
-        group_by(E,A), assoc_to_values(A,Q_RESULT).
+axiomatized_query(Employee,Q_RESULT) :-
+        group_by(Employee,A), assoc_to_values(A,Q_RESULT).
 
 
