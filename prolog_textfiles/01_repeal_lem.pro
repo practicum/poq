@@ -8,26 +8,18 @@
 an example that asks whether the sum of outputs of both queries can ever sum to LESS than the size of the source table.
   (and it shows that, presumably surprisingly and helpfully, the answer actually is YES).
 
-remove_nonmatches([X|XT],XR),inverse_remove_nonmatches([X|XT],XR2),length([X|XT],LOT),length(XR,LXR),length(XR2,LXR2),SUM is LXR+LXR2,SUM@<LOT.
-
-axiomatized_query(P,DT1,DT2,Q_RESULT) :-
-        remove_nonmatches(P,DT1),
-        inverse_remove_nonmatches(P,DT2),
-        merge(DT1,DT2,Q_RESULT).
 
 
-?-  axiomatized_query(P,DT1,DT2,Q_RESULT),
-    length(P,PL),
-    length(Q_RESULT,QL),
-    QL@<PL.
+axiomatized_query(Person,Q_RESULT),
+length(Person,PLength),
+length(Q_RESULT,QLength),
+QLength@<PLength.
 
 CEX:
-  P = [ (william, jacob, isabella), (jacob, null, jacob)],
-D1 = [ (william, jacob, isabella)],
-D2 = [],
-Q = [ (william, jacob, isabella)],
-PL = 2,
-QL = 1 ;
+Person = [ (william, jacob, isabella), (jacob, null, jacob)],
+Q_RESULT = [ (william, jacob, isabella)],
+PLength = 2,
+QLength = 1 ;
 
 
   */
@@ -118,8 +110,8 @@ inverse_remove_nonmatches([(F,M,L)|X1],Y) :-
 
 
 
-axiomatized_query(P,DT1,DT2,Q_RESULT) :-
-        remove_nonmatches(P,DT1),
-        inverse_remove_nonmatches(P,DT2),
+axiomatized_query(Person,Q_RESULT) :-
+        remove_nonmatches(Person,DT1),
+        inverse_remove_nonmatches(Person,DT2),
         merge(DT1,DT2,Q_RESULT).
 
