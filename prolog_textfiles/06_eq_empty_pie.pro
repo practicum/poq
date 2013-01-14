@@ -11,9 +11,29 @@ run_query(S,P,XING,SP,Q),
   member((A),Q),
   \+member( (A,B), SP).
 
+axiomatized_query(Supplier,Part,SPJoin,Q_RESULT),
+  member( (SID), Q_RESULT ),
+  \+member( (SID,_), SPJoin ).
 
-S = [0, 1],
-SP = [ (0, 0), (0, 1)],
+Supplier = [0, 1],
+Part = [],
+SPJoin = [ (0, 0), (0, 1)],
+Q_RESULT = [0, 1],
+SID = 1
+
+length(Part,L),
+within_table_size_limit(Part),
+L@>0,
+
+  within_table_size_limit(Part),
+  L@>0,
+  axiomatized_query(Supplier,Part,SPJoin,Q_RESULT),
+  member( (SID), Q_RESULT ),
+  \+member( (SID,_), SPJoin ),
+  length(Part,L),
+  L@>0.
+
+  axiomatized_query(Supplier,Part,SPJoin,Q_RESULT), member( (SID), Q_RESULT ), \+member( (SID,_), SPJoin ), length(Part,L), L@>0.
 
   */
 
@@ -327,12 +347,12 @@ join_on_expression(
 
 
  */
-run_query(STAB,PTAB,XSP,SPJ,QR) :-
+axiomatized_query(Supplier,Part,SPJoin,Q_RESULT) :-
 
-        join_on_expression(STAB,PTAB,XSP),
-        spjoin_table(SPJ),
+        join_on_expression(Supplier,Part,XSP),
+        spjoin_table(SPJoin),
 
-        filter_supp(SPJ,XSP,STAB,QR).
+        filter_supp(SPJoin,XSP,Supplier,Q_RESULT).
 
 
 filter_supp(_SPJ_CONST,[],STAB_SUBSET,STAB_SUBSET) :- % could check type of SPJ_CONST
