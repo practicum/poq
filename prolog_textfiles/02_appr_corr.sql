@@ -1,21 +1,23 @@
 
 
 CREATE TEMPORARY TABLE ShoppingCart
-(
-cart VARCHAR(20),
-cart_date DATE NOT NULL,
-PRIMARY KEY (cart)
-);
+(cart      VARCHAR(20),
+ cart_date DATE NOT NULL,
+ PRIMARY KEY (cart));
 
 CREATE TEMPORARY TABLE CartDetail
-(
-cart VARCHAR(20),
-product VARCHAR(20),
-PRIMARY KEY (cart,product)
-);
+(cart    VARCHAR(20),
+ product VARCHAR(20),
+ PRIMARY KEY (cart,product));
 
 
-SELECT max(c.cart_date) as recent_date, ci.product, max( c.cart ) as recent_cart FROM ShoppingCart c JOIN CartDetail ci ON c.cart = ci.cart  GROUP BY ci.product;
+SELECT max( c.cart ) AS recent_cart_c,
+       max( c.cart_date ) AS recent_date,
+       max( ci.cart ) AS recent_cart_ci,
+       ci.product
+FROM ShoppingCart c JOIN CartDetail ci
+ON c.cart = ci.cart
+GROUP BY ci.product;
 
 
 

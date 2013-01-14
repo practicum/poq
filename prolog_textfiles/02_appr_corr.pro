@@ -12,31 +12,18 @@ CI is CartDetail table.
 J is the intermediate join of C and CI (using the condition from the query)
 Q_RESULT is the q_result
 
-
-axiomatized_query(C,CI,J,Q_RESULT) :-
-
-        join_on_expression(C,CI,J),
-        group_by(J,t,LOUT),
-        assoc_to_values(LOUT,Q_RESULT).
+axiomatized_query(ShoppingCart,CartDetail,Q_RESULT),
+member( (C,D,_,_), Q_RESULT),
+\+member( (C,D), ShoppingCart ).
 
 
-axiomatized_query(C,CI,J,Q_RESULT),
-member( (CA,D1,CA,P), J ),
-member( (CB,D2,CB,P), J),
-member( (CA,D2,CA,P), Q_RESULT ),
-CB \= CA,
-D2 \= D1.
 
-
-C = [ (fccy463, 0), (ddd213, 1)],
-CI = [ (ddd213, aspirin), (fccy463, aspirin)],
-J = [ (ddd213, 1, ddd213, aspirin), (fccy463, 0, fccy463, aspirin)],
+ShoppingCart = [ (fccy463, 0), (ddd213, 1)],
+CartDetail = [ (ddd213, aspirin), (fccy463, aspirin)],
 Q_RESULT = [ (fccy463, 1, fccy463, aspirin)],
-CA = fccy463,
-D1 = 0,
-P = aspirin,
-CB = ddd213,
-D2 = 1 ;
+C = fccy463,
+D = 1 .
+
 
 
 
@@ -437,9 +424,9 @@ group_by(
 
 
 
-axiomatized_query(C,CI,J,Q_RESULT) :-
+axiomatized_query(ShoppingCart,CartDetail,Q_RESULT) :-
 
-        join_on_expression(C,CI,J),
+        join_on_expression(ShoppingCart,CartDetail,J),
         group_by(J,t,LOUT),
         assoc_to_values(LOUT,Q_RESULT).
 
