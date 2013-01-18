@@ -231,7 +231,8 @@
           <group delimiter=", ">
             <text macro="title"/>
             <text variable="genre"/>
-            <text macro="publisher"/>
+            <text variable="shortTitle"/>
+            <text variable="publisher"/>
             <text macro="issued"/>
           </group>
         </else-if>
