@@ -178,19 +178,19 @@
     </group>
   </macro>
   <!-- Citation -->
-  <citation collapse="citation-number">
+  <citation collapse="citation-label">
     <sort>
-      <key variable="citation-number"/>
+      <key variable="citation-label"/>
     </sort>
     <layout prefix="[" suffix="]" delimiter="], [">
-      <text variable="citation-number"/>
+      <text variable="citation-label"/>
     </layout>
   </citation>
   <!-- Bibliography -->
   <bibliography entry-spacing="0" second-field-align="flush">
     <layout suffix=".">
       <!-- Citation Number -->
-      <text variable="citation-number" prefix="[" suffix="]"/>
+      <text variable="citation-label" prefix="[" suffix="]"/>
       <!-- Author(s) -->
       <text macro="author" prefix=" " suffix=", "/>
       <!-- Rest of Citation -->
@@ -246,8 +246,18 @@
           <text variable="number" prefix="U.S. Patent "/>
           <text macro="issued"/>
         </else-if>
+        <else-if type="book">
+          <group delimiter=", " suffix=". ">
+            <text macro="title"/>
+            <text macro="locators"/>
+          </group>
+          <group delimiter=", ">
+            <text macro="publisher"/>
+            <text macro="issued"/>
+          </group>
+        </else-if>
         <!-- Generic/Fallback Formats -->
-        <else-if type="bill book graphic legal_case legislation motion_picture report song" match="any">
+        <else-if type="bill graphic legal_case legislation motion_picture report song" match="any">
           <group delimiter=", " suffix=". ">
             <text macro="title"/>
             <text macro="locators"/>
