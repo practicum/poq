@@ -11382,7 +11382,16 @@ L</m:t>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t xml:space="preserve"> is not what is happening in the SQL interpretation of these queries.</w:t>
+<w:t xml:space="preserve"> is not what is happening in the SQL </w:t>
+</w:r>
+<w:r>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:lastRenderedPageBreak/>
+<w:t>interpretation of these queries.</w:t>
 </w:r>
 <w:r w:rsidR="00EC40E8">
 <w:rPr>
@@ -11629,8 +11638,6 @@ L</m:t>
 <w:szCs w:val="24"/>
 </w:rPr>
 </w:pPr>
-<w:bookmarkStart w:id="0" w:name="_GoBack"/>
-<w:bookmarkEnd w:id="0"/>
 </w:p>
 <w:p w:rsidR="00186F02" w:rsidRDefault="00186F02" w:rsidP="00577E9E">
 <w:pPr>
@@ -11649,6 +11656,7 @@ L</m:t>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
+<w:lastRenderedPageBreak/>
 <w:drawing>
 <wp:inline distT="0" distB="0" distL="0" distR="0">
 <wp:extent cx="4983480" cy="2066544"/>
@@ -43657,7 +43665,7 @@ z∨¬x∨¬y∨¬z</m:t>
 </w:rPr>
 </w:pPr>
 </w:p>
-<w:p w:rsidR="00531BBA" w:rsidRPr="00531BBA" w:rsidRDefault="00531BBA" w:rsidP="00531BBA">
+<w:p w:rsidR="00A334CA" w:rsidRPr="00A334CA" w:rsidRDefault="00A334CA" w:rsidP="00A334CA">
 <w:pPr>
 <w:autoSpaceDE w:val="0"/>
 <w:autoSpaceDN w:val="0"/>
@@ -43669,15 +43677,74 @@ z∨¬x∨¬y∨¬z</m:t>
 <w:szCs w:val="24"/>
 </w:rPr>
 </w:pPr>
-<w:r w:rsidRPr="00531BBA">
+</w:p>
+<w:p w:rsidR="00A334CA" w:rsidRPr="00A334CA" w:rsidRDefault="00A334CA" w:rsidP="00A334CA">
+<w:pPr>
+<w:autoSpaceDE w:val="0"/>
+<w:autoSpaceDN w:val="0"/>
+<w:adjustRightInd w:val="0"/>
+<w:spacing w:after="0" w:line="240" w:lineRule="auto"/>
+<w:ind w:left="639" w:hanging="639"/>
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t xml:space="preserve">[1] J. B. Almeida, </w:t>
+</w:pPr>
+<w:r w:rsidRPr="00A334CA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve">[AFSM11] </w:t>
 </w:r>
-<w:r w:rsidRPr="00531BBA">
+<w:proofErr w:type="gramStart"/>
+<w:r w:rsidRPr="00A334CA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve">J. B. Almeida, M. J. </w:t>
+</w:r>
+<w:proofErr w:type="spellStart"/>
+<w:r w:rsidRPr="00A334CA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>Frade</w:t>
+</w:r>
+<w:proofErr w:type="spellEnd"/>
+<w:r w:rsidRPr="00A334CA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve">, J. Sousa Pinto, and S. </w:t>
+</w:r>
+<w:proofErr w:type="spellStart"/>
+<w:r w:rsidRPr="00A334CA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>Melo</w:t>
+</w:r>
+<w:proofErr w:type="spellEnd"/>
+<w:r w:rsidRPr="00A334CA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve"> de Sousa, </w:t>
+</w:r>
+<w:r w:rsidRPr="00A334CA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:i/>
@@ -43686,16 +43753,35 @@ z∨¬x∨¬y∨¬z</m:t>
 </w:rPr>
 <w:t>Rigorous Software Development</w:t>
 </w:r>
-<w:r w:rsidRPr="00531BBA">
+<w:r w:rsidRPr="00A334CA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t>. Springer, 2011, p. 263.</w:t>
+<w:t>.</w:t>
 </w:r>
+<w:proofErr w:type="gramEnd"/>
+<w:r w:rsidRPr="00A334CA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve"> </w:t>
+</w:r>
+<w:proofErr w:type="gramStart"/>
+<w:r w:rsidRPr="00A334CA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>Springer, 2011.</w:t>
+</w:r>
+<w:proofErr w:type="gramEnd"/>
 </w:p>
-<w:p w:rsidR="00531BBA" w:rsidRPr="00531BBA" w:rsidRDefault="00531BBA" w:rsidP="00531BBA">
+<w:p w:rsidR="00A334CA" w:rsidRPr="00A334CA" w:rsidRDefault="00A334CA" w:rsidP="00A334CA">
 <w:pPr>
 <w:autoSpaceDE w:val="0"/>
 <w:autoSpaceDN w:val="0"/>
@@ -43709,7 +43795,7 @@ z∨¬x∨¬y∨¬z</m:t>
 </w:rPr>
 </w:pPr>
 </w:p>
-<w:p w:rsidR="00531BBA" w:rsidRPr="00531BBA" w:rsidRDefault="00531BBA" w:rsidP="00531BBA">
+<w:p w:rsidR="00A334CA" w:rsidRPr="00A334CA" w:rsidRDefault="00A334CA" w:rsidP="00A334CA">
 <w:pPr>
 <w:autoSpaceDE w:val="0"/>
 <w:autoSpaceDN w:val="0"/>
@@ -43722,34 +43808,16 @@ z∨¬x∨¬y∨¬z</m:t>
 <w:szCs w:val="24"/>
 </w:rPr>
 </w:pPr>
-<w:r w:rsidRPr="00531BBA">
+<w:r w:rsidRPr="00A334CA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t xml:space="preserve">[2] Proceedings of the 25th European conference on Object-oriented </w:t>
+<w:t xml:space="preserve">[BaBG11] I. G. </w:t>
 </w:r>
 <w:proofErr w:type="spellStart"/>
-<w:r w:rsidRPr="00531BBA">
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-<w:t>programmingI</w:t>
-</w:r>
-<w:proofErr w:type="spellEnd"/>
-<w:r w:rsidRPr="00531BBA">
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-<w:t xml:space="preserve">. G. </w:t>
-</w:r>
-<w:proofErr w:type="spellStart"/>
-<w:r w:rsidRPr="00531BBA">
+<w:r w:rsidRPr="00A334CA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
@@ -43758,7 +43826,7 @@ z∨¬x∨¬y∨¬z</m:t>
 <w:t>Baltopoulos</w:t>
 </w:r>
 <w:proofErr w:type="spellEnd"/>
-<w:r w:rsidRPr="00531BBA">
+<w:r w:rsidRPr="00A334CA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
@@ -43767,7 +43835,7 @@ z∨¬x∨¬y∨¬z</m:t>
 <w:t xml:space="preserve">, J. </w:t>
 </w:r>
 <w:proofErr w:type="spellStart"/>
-<w:r w:rsidRPr="00531BBA">
+<w:r w:rsidRPr="00A334CA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
@@ -43776,15 +43844,15 @@ z∨¬x∨¬y∨¬z</m:t>
 <w:t>Borgström</w:t>
 </w:r>
 <w:proofErr w:type="spellEnd"/>
-<w:r w:rsidRPr="00531BBA">
+<w:r w:rsidRPr="00A334CA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t xml:space="preserve">, and A. D. Gordon, “Maintaining database integrity with refinement types,” </w:t>
+<w:t xml:space="preserve">, and A. D. Gordon, “Maintaining database integrity with refinement types,” in </w:t>
 </w:r>
-<w:r w:rsidRPr="00531BBA">
+<w:r w:rsidRPr="00A334CA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:i/>
@@ -43793,7 +43861,25 @@ z∨¬x∨¬y∨¬z</m:t>
 </w:rPr>
 <w:t>Proceedings of the 25th European conference on Object-oriented programming</w:t>
 </w:r>
-<w:r w:rsidRPr="00531BBA">
+<w:r w:rsidRPr="00A334CA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>, (ECOOP’11), Springer-</w:t>
+</w:r>
+<w:proofErr w:type="spellStart"/>
+<w:r w:rsidRPr="00A334CA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>Verlag</w:t>
+</w:r>
+<w:proofErr w:type="spellEnd"/>
+<w:r w:rsidRPr="00A334CA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
@@ -43802,7 +43888,7 @@ z∨¬x∨¬y∨¬z</m:t>
 <w:t>, 2011, pp. 484–509.</w:t>
 </w:r>
 </w:p>
-<w:p w:rsidR="00531BBA" w:rsidRPr="00531BBA" w:rsidRDefault="00531BBA" w:rsidP="00531BBA">
+<w:p w:rsidR="00A334CA" w:rsidRPr="00A334CA" w:rsidRDefault="00A334CA" w:rsidP="00A334CA">
 <w:pPr>
 <w:autoSpaceDE w:val="0"/>
 <w:autoSpaceDN w:val="0"/>
@@ -43816,7 +43902,7 @@ z∨¬x∨¬y∨¬z</m:t>
 </w:rPr>
 </w:pPr>
 </w:p>
-<w:p w:rsidR="00531BBA" w:rsidRPr="00531BBA" w:rsidRDefault="00531BBA" w:rsidP="00531BBA">
+<w:p w:rsidR="00A334CA" w:rsidRPr="00A334CA" w:rsidRDefault="00A334CA" w:rsidP="00A334CA">
 <w:pPr>
 <w:autoSpaceDE w:val="0"/>
 <w:autoSpaceDN w:val="0"/>
@@ -43829,35 +43915,25 @@ z∨¬x∨¬y∨¬z</m:t>
 <w:szCs w:val="24"/>
 </w:rPr>
 </w:pPr>
-<w:r w:rsidRPr="00531BBA">
+<w:r w:rsidRPr="00A334CA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t xml:space="preserve">[3] Proceedings of the First international conference on Certified Programs and </w:t>
+<w:t xml:space="preserve">[Bjør11] </w:t>
 </w:r>
-<w:proofErr w:type="spellStart"/>
-<w:r w:rsidRPr="00531BBA">
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-<w:t>ProofsN</w:t>
-</w:r>
-<w:proofErr w:type="spellEnd"/>
-<w:r w:rsidRPr="00531BBA">
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-<w:t xml:space="preserve">. </w:t>
-</w:r>
-<w:proofErr w:type="spellStart"/>
 <w:proofErr w:type="gramStart"/>
-<w:r w:rsidRPr="00531BBA">
+<w:r w:rsidRPr="00A334CA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve">N. </w:t>
+</w:r>
+<w:proofErr w:type="spellStart"/>
+<w:r w:rsidRPr="00A334CA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
@@ -43866,15 +43942,15 @@ z∨¬x∨¬y∨¬z</m:t>
 <w:t>Bjørner</w:t>
 </w:r>
 <w:proofErr w:type="spellEnd"/>
-<w:r w:rsidRPr="00531BBA">
+<w:r w:rsidRPr="00A334CA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t xml:space="preserve">, “Engineering theories with z3,” </w:t>
+<w:t xml:space="preserve">, “Engineering theories with z3,” in </w:t>
 </w:r>
-<w:r w:rsidRPr="00531BBA">
+<w:r w:rsidRPr="00A334CA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:i/>
@@ -43883,7 +43959,25 @@ z∨¬x∨¬y∨¬z</m:t>
 </w:rPr>
 <w:t>Proceedings of the First international conference on Certified Programs and Proofs</w:t>
 </w:r>
-<w:r w:rsidRPr="00531BBA">
+<w:r w:rsidRPr="00A334CA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>, (CPP’11), Springer-</w:t>
+</w:r>
+<w:proofErr w:type="spellStart"/>
+<w:r w:rsidRPr="00A334CA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>Verlag</w:t>
+</w:r>
+<w:proofErr w:type="spellEnd"/>
+<w:r w:rsidRPr="00A334CA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
@@ -43893,7 +43987,7 @@ z∨¬x∨¬y∨¬z</m:t>
 </w:r>
 <w:proofErr w:type="gramEnd"/>
 </w:p>
-<w:p w:rsidR="00531BBA" w:rsidRPr="00531BBA" w:rsidRDefault="00531BBA" w:rsidP="00531BBA">
+<w:p w:rsidR="00A334CA" w:rsidRPr="00A334CA" w:rsidRDefault="00A334CA" w:rsidP="00A334CA">
 <w:pPr>
 <w:autoSpaceDE w:val="0"/>
 <w:autoSpaceDN w:val="0"/>
@@ -43907,7 +44001,7 @@ z∨¬x∨¬y∨¬z</m:t>
 </w:rPr>
 </w:pPr>
 </w:p>
-<w:p w:rsidR="00531BBA" w:rsidRPr="00531BBA" w:rsidRDefault="00531BBA" w:rsidP="00531BBA">
+<w:p w:rsidR="00A334CA" w:rsidRPr="00A334CA" w:rsidRDefault="00A334CA" w:rsidP="00A334CA">
 <w:pPr>
 <w:autoSpaceDE w:val="0"/>
 <w:autoSpaceDN w:val="0"/>
@@ -43920,16 +44014,16 @@ z∨¬x∨¬y∨¬z</m:t>
 <w:szCs w:val="24"/>
 </w:rPr>
 </w:pPr>
-<w:r w:rsidRPr="00531BBA">
+<w:r w:rsidRPr="00A334CA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t xml:space="preserve">[4] A. R. Bradley and Z. Manna, </w:t>
+<w:t xml:space="preserve">[BrMa10] A. R. Bradley and Z. Manna, </w:t>
 </w:r>
 <w:proofErr w:type="gramStart"/>
-<w:r w:rsidRPr="00531BBA">
+<w:r w:rsidRPr="00A334CA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:i/>
@@ -43939,7 +44033,7 @@ z∨¬x∨¬y∨¬z</m:t>
 <w:t>The</w:t>
 </w:r>
 <w:proofErr w:type="gramEnd"/>
-<w:r w:rsidRPr="00531BBA">
+<w:r w:rsidRPr="00A334CA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:i/>
@@ -43948,60 +44042,7 @@ z∨¬x∨¬y∨¬z</m:t>
 </w:rPr>
 <w:t xml:space="preserve"> Calculus of Computation: Decision Procedures with Applications to Verification</w:t>
 </w:r>
-<w:r w:rsidRPr="00531BBA">
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-<w:t>. Springer, 2010, p. 366.</w:t>
-</w:r>
-</w:p>
-<w:p w:rsidR="00531BBA" w:rsidRPr="00531BBA" w:rsidRDefault="00531BBA" w:rsidP="00531BBA">
-<w:pPr>
-<w:autoSpaceDE w:val="0"/>
-<w:autoSpaceDN w:val="0"/>
-<w:adjustRightInd w:val="0"/>
-<w:spacing w:after="0" w:line="240" w:lineRule="auto"/>
-<w:ind w:left="640" w:hanging="640"/>
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-</w:pPr>
-</w:p>
-<w:p w:rsidR="00531BBA" w:rsidRPr="00531BBA" w:rsidRDefault="00531BBA" w:rsidP="00531BBA">
-<w:pPr>
-<w:autoSpaceDE w:val="0"/>
-<w:autoSpaceDN w:val="0"/>
-<w:adjustRightInd w:val="0"/>
-<w:spacing w:after="0" w:line="240" w:lineRule="auto"/>
-<w:ind w:left="640" w:hanging="640"/>
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-</w:pPr>
-<w:r w:rsidRPr="00531BBA">
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-<w:t xml:space="preserve">[5] C. J. Date, </w:t>
-</w:r>
-<w:r w:rsidRPr="00531BBA">
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:i/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-<w:t>SQL and Relational Theory: How to Write Accurate SQL Code</w:t>
-</w:r>
-<w:r w:rsidRPr="00531BBA">
+<w:r w:rsidRPr="00A334CA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
@@ -44010,7 +44051,70 @@ z∨¬x∨¬y∨¬z</m:t>
 <w:t xml:space="preserve">. </w:t>
 </w:r>
 <w:proofErr w:type="gramStart"/>
-<w:r w:rsidRPr="00531BBA">
+<w:r w:rsidRPr="00A334CA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>Springer, 2010.</w:t>
+</w:r>
+<w:proofErr w:type="gramEnd"/>
+</w:p>
+<w:p w:rsidR="00A334CA" w:rsidRPr="00A334CA" w:rsidRDefault="00A334CA" w:rsidP="00A334CA">
+<w:pPr>
+<w:autoSpaceDE w:val="0"/>
+<w:autoSpaceDN w:val="0"/>
+<w:adjustRightInd w:val="0"/>
+<w:spacing w:after="0" w:line="240" w:lineRule="auto"/>
+<w:ind w:left="640" w:hanging="640"/>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+</w:pPr>
+</w:p>
+<w:p w:rsidR="00A334CA" w:rsidRPr="00A334CA" w:rsidRDefault="00A334CA" w:rsidP="00A334CA">
+<w:pPr>
+<w:autoSpaceDE w:val="0"/>
+<w:autoSpaceDN w:val="0"/>
+<w:adjustRightInd w:val="0"/>
+<w:spacing w:after="0" w:line="240" w:lineRule="auto"/>
+<w:ind w:left="640" w:hanging="640"/>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+</w:pPr>
+<w:r w:rsidRPr="00A334CA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve">[Date09] C. J. Date, </w:t>
+</w:r>
+<w:r w:rsidRPr="00A334CA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:i/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>SQL and Relational Theory: How to Write Accurate SQL Code</w:t>
+</w:r>
+<w:r w:rsidRPr="00A334CA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve">. </w:t>
+</w:r>
+<w:proofErr w:type="gramStart"/>
+<w:r w:rsidRPr="00A334CA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
@@ -44020,7 +44124,7 @@ z∨¬x∨¬y∨¬z</m:t>
 </w:r>
 <w:proofErr w:type="gramEnd"/>
 </w:p>
-<w:p w:rsidR="00531BBA" w:rsidRPr="00531BBA" w:rsidRDefault="00531BBA" w:rsidP="00531BBA">
+<w:p w:rsidR="00A334CA" w:rsidRPr="00A334CA" w:rsidRDefault="00A334CA" w:rsidP="00A334CA">
 <w:pPr>
 <w:autoSpaceDE w:val="0"/>
 <w:autoSpaceDN w:val="0"/>
@@ -44034,7 +44138,7 @@ z∨¬x∨¬y∨¬z</m:t>
 </w:rPr>
 </w:pPr>
 </w:p>
-<w:p w:rsidR="00531BBA" w:rsidRPr="00531BBA" w:rsidRDefault="00531BBA" w:rsidP="00531BBA">
+<w:p w:rsidR="00A334CA" w:rsidRPr="00A334CA" w:rsidRDefault="00A334CA" w:rsidP="00A334CA">
 <w:pPr>
 <w:autoSpaceDE w:val="0"/>
 <w:autoSpaceDN w:val="0"/>
@@ -44047,34 +44151,16 @@ z∨¬x∨¬y∨¬z</m:t>
 <w:szCs w:val="24"/>
 </w:rPr>
 </w:pPr>
-<w:r w:rsidRPr="00531BBA">
+<w:r w:rsidRPr="00A334CA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t xml:space="preserve">[6] Proceedings of the 2007 ACM SIGMOD international conference on Management of </w:t>
+<w:t xml:space="preserve">[EGGJ07] M. </w:t>
 </w:r>
 <w:proofErr w:type="spellStart"/>
-<w:r w:rsidRPr="00531BBA">
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-<w:t>dataM</w:t>
-</w:r>
-<w:proofErr w:type="spellEnd"/>
-<w:r w:rsidRPr="00531BBA">
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-<w:t xml:space="preserve">. </w:t>
-</w:r>
-<w:proofErr w:type="spellStart"/>
-<w:r w:rsidRPr="00531BBA">
+<w:r w:rsidRPr="00A334CA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
@@ -44083,7 +44169,7 @@ z∨¬x∨¬y∨¬z</m:t>
 <w:t>Elhemali</w:t>
 </w:r>
 <w:proofErr w:type="spellEnd"/>
-<w:r w:rsidRPr="00531BBA">
+<w:r w:rsidRPr="00A334CA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
@@ -44092,7 +44178,7 @@ z∨¬x∨¬y∨¬z</m:t>
 <w:t>, C. A. Galindo-</w:t>
 </w:r>
 <w:proofErr w:type="spellStart"/>
-<w:r w:rsidRPr="00531BBA">
+<w:r w:rsidRPr="00A334CA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
@@ -44101,7 +44187,7 @@ z∨¬x∨¬y∨¬z</m:t>
 <w:t>Legaria</w:t>
 </w:r>
 <w:proofErr w:type="spellEnd"/>
-<w:r w:rsidRPr="00531BBA">
+<w:r w:rsidRPr="00A334CA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
@@ -44110,7 +44196,7 @@ z∨¬x∨¬y∨¬z</m:t>
 <w:t xml:space="preserve">, T. Grabs, and M. M. Joshi, “Execution strategies for SQL </w:t>
 </w:r>
 <w:proofErr w:type="spellStart"/>
-<w:r w:rsidRPr="00531BBA">
+<w:r w:rsidRPr="00A334CA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
@@ -44119,15 +44205,15 @@ z∨¬x∨¬y∨¬z</m:t>
 <w:t>subqueries</w:t>
 </w:r>
 <w:proofErr w:type="spellEnd"/>
-<w:r w:rsidRPr="00531BBA">
+<w:r w:rsidRPr="00A334CA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t xml:space="preserve">,” </w:t>
+<w:t xml:space="preserve">,” in </w:t>
 </w:r>
-<w:r w:rsidRPr="00531BBA">
+<w:r w:rsidRPr="00A334CA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:i/>
@@ -44136,16 +44222,16 @@ z∨¬x∨¬y∨¬z</m:t>
 </w:rPr>
 <w:t>Proceedings of the 2007 ACM SIGMOD international conference on Management of data</w:t>
 </w:r>
-<w:r w:rsidRPr="00531BBA">
+<w:r w:rsidRPr="00A334CA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t>, 2007, pp. 993–1004.</w:t>
+<w:t>, (SIGMOD  ’07), ACM, 2007, pp. 993–1004.</w:t>
 </w:r>
 </w:p>
-<w:p w:rsidR="00531BBA" w:rsidRPr="00531BBA" w:rsidRDefault="00531BBA" w:rsidP="00531BBA">
+<w:p w:rsidR="00A334CA" w:rsidRPr="00A334CA" w:rsidRDefault="00A334CA" w:rsidP="00A334CA">
 <w:pPr>
 <w:autoSpaceDE w:val="0"/>
 <w:autoSpaceDN w:val="0"/>
@@ -44159,7 +44245,7 @@ z∨¬x∨¬y∨¬z</m:t>
 </w:rPr>
 </w:pPr>
 </w:p>
-<w:p w:rsidR="00531BBA" w:rsidRPr="00531BBA" w:rsidRDefault="00531BBA" w:rsidP="00531BBA">
+<w:p w:rsidR="00A334CA" w:rsidRPr="00A334CA" w:rsidRDefault="00A334CA" w:rsidP="00A334CA">
 <w:pPr>
 <w:autoSpaceDE w:val="0"/>
 <w:autoSpaceDN w:val="0"/>
@@ -44172,17 +44258,16 @@ z∨¬x∨¬y∨¬z</m:t>
 <w:szCs w:val="24"/>
 </w:rPr>
 </w:pPr>
-<w:proofErr w:type="gramStart"/>
-<w:r w:rsidRPr="00531BBA">
+<w:r w:rsidRPr="00A334CA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t xml:space="preserve">[7] R. </w:t>
+<w:t xml:space="preserve">[ElNa07] R. </w:t>
 </w:r>
 <w:proofErr w:type="spellStart"/>
-<w:r w:rsidRPr="00531BBA">
+<w:r w:rsidRPr="00A334CA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
@@ -44191,7 +44276,7 @@ z∨¬x∨¬y∨¬z</m:t>
 <w:t>Elmasri</w:t>
 </w:r>
 <w:proofErr w:type="spellEnd"/>
-<w:r w:rsidRPr="00531BBA">
+<w:r w:rsidRPr="00A334CA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
@@ -44200,7 +44285,7 @@ z∨¬x∨¬y∨¬z</m:t>
 <w:t xml:space="preserve"> and S. </w:t>
 </w:r>
 <w:proofErr w:type="spellStart"/>
-<w:r w:rsidRPr="00531BBA">
+<w:r w:rsidRPr="00A334CA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
@@ -44209,7 +44294,7 @@ z∨¬x∨¬y∨¬z</m:t>
 <w:t>Navathe</w:t>
 </w:r>
 <w:proofErr w:type="spellEnd"/>
-<w:r w:rsidRPr="00531BBA">
+<w:r w:rsidRPr="00A334CA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
@@ -44217,7 +44302,7 @@ z∨¬x∨¬y∨¬z</m:t>
 </w:rPr>
 <w:t xml:space="preserve">, </w:t>
 </w:r>
-<w:r w:rsidRPr="00531BBA">
+<w:r w:rsidRPr="00A334CA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:i/>
@@ -44226,61 +44311,71 @@ z∨¬x∨¬y∨¬z</m:t>
 </w:rPr>
 <w:t>Fundamentals of Database Systems</w:t>
 </w:r>
-<w:r w:rsidRPr="00531BBA">
+<w:r w:rsidRPr="00A334CA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t>.</w:t>
+<w:t xml:space="preserve">. </w:t>
+</w:r>
+<w:proofErr w:type="gramStart"/>
+<w:r w:rsidRPr="00A334CA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>Pearson/Addison Wesley, 2007.</w:t>
 </w:r>
 <w:proofErr w:type="gramEnd"/>
-<w:r w:rsidRPr="00531BBA">
+</w:p>
+<w:p w:rsidR="00A334CA" w:rsidRPr="00A334CA" w:rsidRDefault="00A334CA" w:rsidP="00A334CA">
+<w:pPr>
+<w:autoSpaceDE w:val="0"/>
+<w:autoSpaceDN w:val="0"/>
+<w:adjustRightInd w:val="0"/>
+<w:spacing w:after="0" w:line="240" w:lineRule="auto"/>
+<w:ind w:left="640" w:hanging="640"/>
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t xml:space="preserve"> Pearson/Addison Wesley, 2007, p. 1139.</w:t>
+</w:pPr>
+</w:p>
+<w:p w:rsidR="00A334CA" w:rsidRPr="00A334CA" w:rsidRDefault="00A334CA" w:rsidP="00A334CA">
+<w:pPr>
+<w:autoSpaceDE w:val="0"/>
+<w:autoSpaceDN w:val="0"/>
+<w:adjustRightInd w:val="0"/>
+<w:spacing w:after="0" w:line="240" w:lineRule="auto"/>
+<w:ind w:left="640" w:hanging="640"/>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+</w:pPr>
+<w:r w:rsidRPr="00A334CA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve">[Farr11] </w:t>
 </w:r>
-</w:p>
-<w:p w:rsidR="00531BBA" w:rsidRPr="00531BBA" w:rsidRDefault="00531BBA" w:rsidP="00531BBA">
-<w:pPr>
-<w:autoSpaceDE w:val="0"/>
-<w:autoSpaceDN w:val="0"/>
-<w:adjustRightInd w:val="0"/>
-<w:spacing w:after="0" w:line="240" w:lineRule="auto"/>
-<w:ind w:left="640" w:hanging="640"/>
+<w:proofErr w:type="gramStart"/>
+<w:r w:rsidRPr="00A334CA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-</w:pPr>
-</w:p>
-<w:p w:rsidR="00531BBA" w:rsidRPr="00531BBA" w:rsidRDefault="00531BBA" w:rsidP="00531BBA">
-<w:pPr>
-<w:autoSpaceDE w:val="0"/>
-<w:autoSpaceDN w:val="0"/>
-<w:adjustRightInd w:val="0"/>
-<w:spacing w:after="0" w:line="240" w:lineRule="auto"/>
-<w:ind w:left="640" w:hanging="640"/>
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-</w:pPr>
-<w:r w:rsidRPr="00531BBA">
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-<w:t xml:space="preserve">[8] E. R. </w:t>
+<w:t xml:space="preserve">E. R. </w:t>
 </w:r>
 <w:proofErr w:type="spellStart"/>
-<w:r w:rsidRPr="00531BBA">
+<w:r w:rsidRPr="00A334CA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
@@ -44289,16 +44384,17 @@ z∨¬x∨¬y∨¬z</m:t>
 <w:t>Farrer</w:t>
 </w:r>
 <w:proofErr w:type="spellEnd"/>
-<w:r w:rsidRPr="00531BBA">
+<w:r w:rsidRPr="00A334CA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t>, “A quantitative analysis of whether unit testing obviates static type checking for error detection,” California State University, Chico, Chico, Calif., 2011.</w:t>
+<w:t>, “A quantitative analysis of whether unit testing obviates static type checking for error detection,” master’s thesis, Computer Science Dept., California State University, Chico, 2011.</w:t>
 </w:r>
+<w:proofErr w:type="gramEnd"/>
 </w:p>
-<w:p w:rsidR="00531BBA" w:rsidRPr="00531BBA" w:rsidRDefault="00531BBA" w:rsidP="00531BBA">
+<w:p w:rsidR="00A334CA" w:rsidRPr="00A334CA" w:rsidRDefault="00A334CA" w:rsidP="00A334CA">
 <w:pPr>
 <w:autoSpaceDE w:val="0"/>
 <w:autoSpaceDN w:val="0"/>
@@ -44312,7 +44408,7 @@ z∨¬x∨¬y∨¬z</m:t>
 </w:rPr>
 </w:pPr>
 </w:p>
-<w:p w:rsidR="00531BBA" w:rsidRPr="00531BBA" w:rsidRDefault="00531BBA" w:rsidP="00531BBA">
+<w:p w:rsidR="00A334CA" w:rsidRPr="00A334CA" w:rsidRDefault="00A334CA" w:rsidP="00A334CA">
 <w:pPr>
 <w:autoSpaceDE w:val="0"/>
 <w:autoSpaceDN w:val="0"/>
@@ -44325,43 +44421,123 @@ z∨¬x∨¬y∨¬z</m:t>
 <w:szCs w:val="24"/>
 </w:rPr>
 </w:pPr>
-<w:r w:rsidRPr="00531BBA">
+<w:r w:rsidRPr="00A334CA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t xml:space="preserve">[9] SIGMOD </w:t>
+<w:t xml:space="preserve">[Fett09] D. Fetter, “High Performance SQL with </w:t>
 </w:r>
 <w:proofErr w:type="spellStart"/>
-<w:r w:rsidRPr="00531BBA">
+<w:r w:rsidRPr="00A334CA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t>Rec.C</w:t>
+<w:t>PostgreSQL</w:t>
 </w:r>
 <w:proofErr w:type="spellEnd"/>
-<w:r w:rsidRPr="00531BBA">
+<w:r w:rsidRPr="00A334CA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t xml:space="preserve">. </w:t>
+<w:t xml:space="preserve"> 8.4,” </w:t>
+</w:r>
+<w:r w:rsidRPr="00A334CA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:i/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>OSCON 2009</w:t>
+</w:r>
+<w:r w:rsidRPr="00A334CA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve">, 2009. </w:t>
 </w:r>
 <w:proofErr w:type="gramStart"/>
-<w:r w:rsidRPr="00531BBA">
+<w:r w:rsidRPr="00A334CA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t>Galindo-</w:t>
+<w:t>[Online].</w:t>
+</w:r>
+<w:proofErr w:type="gramEnd"/>
+<w:r w:rsidRPr="00A334CA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve"> Available: http://assets.en.oreilly.com/1/event/27/High Performance SQL with </w:t>
 </w:r>
 <w:proofErr w:type="spellStart"/>
-<w:r w:rsidRPr="00531BBA">
+<w:r w:rsidRPr="00A334CA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>PostgreSQL</w:t>
+</w:r>
+<w:proofErr w:type="spellEnd"/>
+<w:r w:rsidRPr="00A334CA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve"> Presentation.pdf.</w:t>
+</w:r>
+</w:p>
+<w:p w:rsidR="00A334CA" w:rsidRPr="00A334CA" w:rsidRDefault="00A334CA" w:rsidP="00A334CA">
+<w:pPr>
+<w:autoSpaceDE w:val="0"/>
+<w:autoSpaceDN w:val="0"/>
+<w:adjustRightInd w:val="0"/>
+<w:spacing w:after="0" w:line="240" w:lineRule="auto"/>
+<w:ind w:left="640" w:hanging="640"/>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+</w:pPr>
+</w:p>
+<w:p w:rsidR="00A334CA" w:rsidRPr="00A334CA" w:rsidRDefault="00A334CA" w:rsidP="00A334CA">
+<w:pPr>
+<w:autoSpaceDE w:val="0"/>
+<w:autoSpaceDN w:val="0"/>
+<w:adjustRightInd w:val="0"/>
+<w:spacing w:after="0" w:line="240" w:lineRule="auto"/>
+<w:ind w:left="640" w:hanging="640"/>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+</w:pPr>
+<w:r w:rsidRPr="00A334CA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>[GaJo01] C. Galindo-</w:t>
+</w:r>
+<w:proofErr w:type="spellStart"/>
+<w:r w:rsidRPr="00A334CA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
@@ -44370,7 +44546,7 @@ z∨¬x∨¬y∨¬z</m:t>
 <w:t>Legaria</w:t>
 </w:r>
 <w:proofErr w:type="spellEnd"/>
-<w:r w:rsidRPr="00531BBA">
+<w:r w:rsidRPr="00A334CA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
@@ -44379,7 +44555,7 @@ z∨¬x∨¬y∨¬z</m:t>
 <w:t xml:space="preserve"> and M. Joshi, “Orthogonal optimization of </w:t>
 </w:r>
 <w:proofErr w:type="spellStart"/>
-<w:r w:rsidRPr="00531BBA">
+<w:r w:rsidRPr="00A334CA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
@@ -44388,7 +44564,7 @@ z∨¬x∨¬y∨¬z</m:t>
 <w:t>subqueries</w:t>
 </w:r>
 <w:proofErr w:type="spellEnd"/>
-<w:r w:rsidRPr="00531BBA">
+<w:r w:rsidRPr="00A334CA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
@@ -44396,7 +44572,7 @@ z∨¬x∨¬y∨¬z</m:t>
 </w:rPr>
 <w:t xml:space="preserve"> and aggregation,” </w:t>
 </w:r>
-<w:r w:rsidRPr="00531BBA">
+<w:r w:rsidRPr="00A334CA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:i/>
@@ -44405,17 +44581,16 @@ z∨¬x∨¬y∨¬z</m:t>
 </w:rPr>
 <w:t>SIGMOD Rec.</w:t>
 </w:r>
-<w:r w:rsidRPr="00531BBA">
+<w:r w:rsidRPr="00A334CA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t>, vol. 30, no. 2, pp. 571–581, May 2001.</w:t>
+<w:t>, vol. 30, no. 2, May 2001, pp. 571–581.</w:t>
 </w:r>
-<w:proofErr w:type="gramEnd"/>
 </w:p>
-<w:p w:rsidR="00531BBA" w:rsidRPr="00531BBA" w:rsidRDefault="00531BBA" w:rsidP="00531BBA">
+<w:p w:rsidR="00A334CA" w:rsidRPr="00A334CA" w:rsidRDefault="00A334CA" w:rsidP="00A334CA">
 <w:pPr>
 <w:autoSpaceDE w:val="0"/>
 <w:autoSpaceDN w:val="0"/>
@@ -44429,7 +44604,7 @@ z∨¬x∨¬y∨¬z</m:t>
 </w:rPr>
 </w:pPr>
 </w:p>
-<w:p w:rsidR="00531BBA" w:rsidRPr="00531BBA" w:rsidRDefault="00531BBA" w:rsidP="00531BBA">
+<w:p w:rsidR="00A334CA" w:rsidRPr="00A334CA" w:rsidRDefault="00A334CA" w:rsidP="00A334CA">
 <w:pPr>
 <w:autoSpaceDE w:val="0"/>
 <w:autoSpaceDN w:val="0"/>
@@ -44442,61 +44617,16 @@ z∨¬x∨¬y∨¬z</m:t>
 <w:szCs w:val="24"/>
 </w:rPr>
 </w:pPr>
-<w:r w:rsidRPr="00531BBA">
+<w:r w:rsidRPr="00A334CA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t xml:space="preserve">[10] </w:t>
+<w:t xml:space="preserve">[HRAS12] P. Hawkins, M. </w:t>
 </w:r>
 <w:proofErr w:type="spellStart"/>
-<w:r w:rsidRPr="00531BBA">
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-<w:t>Commun</w:t>
-</w:r>
-<w:proofErr w:type="spellEnd"/>
-<w:r w:rsidRPr="00531BBA">
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-<w:t xml:space="preserve">. </w:t>
-</w:r>
-<w:proofErr w:type="gramStart"/>
-<w:r w:rsidRPr="00531BBA">
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-<w:t>ACMP.</w:t>
-</w:r>
-<w:proofErr w:type="gramEnd"/>
-<w:r w:rsidRPr="00531BBA">
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-<w:t xml:space="preserve"> </w:t>
-</w:r>
-<w:proofErr w:type="gramStart"/>
-<w:r w:rsidRPr="00531BBA">
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-<w:t xml:space="preserve">Hawkins, M. </w:t>
-</w:r>
-<w:proofErr w:type="spellStart"/>
-<w:r w:rsidRPr="00531BBA">
+<w:r w:rsidRPr="00A334CA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
@@ -44505,7 +44635,7 @@ z∨¬x∨¬y∨¬z</m:t>
 <w:t>Rinard</w:t>
 </w:r>
 <w:proofErr w:type="spellEnd"/>
-<w:r w:rsidRPr="00531BBA">
+<w:r w:rsidRPr="00A334CA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
@@ -44514,7 +44644,7 @@ z∨¬x∨¬y∨¬z</m:t>
 <w:t xml:space="preserve">, A. Aiken, M. </w:t>
 </w:r>
 <w:proofErr w:type="spellStart"/>
-<w:r w:rsidRPr="00531BBA">
+<w:r w:rsidRPr="00A334CA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
@@ -44523,7 +44653,7 @@ z∨¬x∨¬y∨¬z</m:t>
 <w:t>Sagiv</w:t>
 </w:r>
 <w:proofErr w:type="spellEnd"/>
-<w:r w:rsidRPr="00531BBA">
+<w:r w:rsidRPr="00A334CA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
@@ -44532,7 +44662,7 @@ z∨¬x∨¬y∨¬z</m:t>
 <w:t xml:space="preserve">, and K. Fisher, “An introduction to data representation synthesis,” </w:t>
 </w:r>
 <w:proofErr w:type="spellStart"/>
-<w:r w:rsidRPr="00531BBA">
+<w:r w:rsidRPr="00A334CA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:i/>
@@ -44542,117 +44672,7 @@ z∨¬x∨¬y∨¬z</m:t>
 <w:t>Commun</w:t>
 </w:r>
 <w:proofErr w:type="spellEnd"/>
-<w:r w:rsidRPr="00531BBA">
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:i/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-<w:t>.</w:t>
-</w:r>
-<w:proofErr w:type="gramEnd"/>
-<w:r w:rsidRPr="00531BBA">
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:i/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-<w:t xml:space="preserve"> ACM</w:t>
-</w:r>
-<w:r w:rsidRPr="00531BBA">
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-<w:t>, vol. 55, no. 12, pp. 91–99, Dec. 2012.</w:t>
-</w:r>
-</w:p>
-<w:p w:rsidR="00531BBA" w:rsidRPr="00531BBA" w:rsidRDefault="00531BBA" w:rsidP="00531BBA">
-<w:pPr>
-<w:autoSpaceDE w:val="0"/>
-<w:autoSpaceDN w:val="0"/>
-<w:adjustRightInd w:val="0"/>
-<w:spacing w:after="0" w:line="240" w:lineRule="auto"/>
-<w:ind w:left="640" w:hanging="640"/>
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-</w:pPr>
-</w:p>
-<w:p w:rsidR="00531BBA" w:rsidRPr="00531BBA" w:rsidRDefault="00531BBA" w:rsidP="00531BBA">
-<w:pPr>
-<w:autoSpaceDE w:val="0"/>
-<w:autoSpaceDN w:val="0"/>
-<w:adjustRightInd w:val="0"/>
-<w:spacing w:after="0" w:line="240" w:lineRule="auto"/>
-<w:ind w:left="640" w:hanging="640"/>
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-</w:pPr>
-<w:r w:rsidRPr="00531BBA">
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-<w:t xml:space="preserve">[11] </w:t>
-</w:r>
-<w:proofErr w:type="spellStart"/>
-<w:r w:rsidRPr="00531BBA">
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-<w:t>Commun</w:t>
-</w:r>
-<w:proofErr w:type="spellEnd"/>
-<w:r w:rsidRPr="00531BBA">
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-<w:t xml:space="preserve">. </w:t>
-</w:r>
-<w:proofErr w:type="gramStart"/>
-<w:r w:rsidRPr="00531BBA">
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-<w:t>ACMC.</w:t>
-</w:r>
-<w:proofErr w:type="gramEnd"/>
-<w:r w:rsidRPr="00531BBA">
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-<w:t xml:space="preserve"> A. R. Hoare, “An axiomatic basis for computer programming,” </w:t>
-</w:r>
-<w:proofErr w:type="spellStart"/>
-<w:r w:rsidRPr="00531BBA">
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:i/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-<w:t>Commun</w:t>
-</w:r>
-<w:proofErr w:type="spellEnd"/>
-<w:r w:rsidRPr="00531BBA">
+<w:r w:rsidRPr="00A334CA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:i/>
@@ -44661,16 +44681,16 @@ z∨¬x∨¬y∨¬z</m:t>
 </w:rPr>
 <w:t>. ACM</w:t>
 </w:r>
-<w:r w:rsidRPr="00531BBA">
+<w:r w:rsidRPr="00A334CA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t>, vol. 12, no. 10, pp. 576–580, Oct. 1969.</w:t>
+<w:t>, vol. 55, no. 12, Dec. 2012, pp. 91–99.</w:t>
 </w:r>
 </w:p>
-<w:p w:rsidR="00531BBA" w:rsidRPr="00531BBA" w:rsidRDefault="00531BBA" w:rsidP="00531BBA">
+<w:p w:rsidR="00A334CA" w:rsidRPr="00A334CA" w:rsidRDefault="00A334CA" w:rsidP="00A334CA">
 <w:pPr>
 <w:autoSpaceDE w:val="0"/>
 <w:autoSpaceDN w:val="0"/>
@@ -44684,7 +44704,7 @@ z∨¬x∨¬y∨¬z</m:t>
 </w:rPr>
 </w:pPr>
 </w:p>
-<w:p w:rsidR="00531BBA" w:rsidRPr="00531BBA" w:rsidRDefault="00531BBA" w:rsidP="00531BBA">
+<w:p w:rsidR="00A334CA" w:rsidRPr="00A334CA" w:rsidRDefault="00A334CA" w:rsidP="00A334CA">
 <w:pPr>
 <w:autoSpaceDE w:val="0"/>
 <w:autoSpaceDN w:val="0"/>
@@ -44697,34 +44717,80 @@ z∨¬x∨¬y∨¬z</m:t>
 <w:szCs w:val="24"/>
 </w:rPr>
 </w:pPr>
-<w:r w:rsidRPr="00531BBA">
+<w:r w:rsidRPr="00A334CA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t xml:space="preserve">[12] Proceedings of the 2012 Joint EDBT/ICDT </w:t>
+<w:t xml:space="preserve">[Hoar69] C. A. R. Hoare, “An axiomatic basis for computer programming,” </w:t>
 </w:r>
 <w:proofErr w:type="spellStart"/>
-<w:r w:rsidRPr="00531BBA">
+<w:r w:rsidRPr="00A334CA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:i/>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t>WorkshopsM</w:t>
+<w:t>Commun</w:t>
 </w:r>
 <w:proofErr w:type="spellEnd"/>
-<w:r w:rsidRPr="00531BBA">
+<w:r w:rsidRPr="00A334CA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:i/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>. ACM</w:t>
+</w:r>
+<w:r w:rsidRPr="00A334CA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t xml:space="preserve">. A. </w:t>
+<w:t>, vol. 12, no. 10, Oct. 1969, pp. 576–580.</w:t>
+</w:r>
+</w:p>
+<w:p w:rsidR="00A334CA" w:rsidRPr="00A334CA" w:rsidRDefault="00A334CA" w:rsidP="00A334CA">
+<w:pPr>
+<w:autoSpaceDE w:val="0"/>
+<w:autoSpaceDN w:val="0"/>
+<w:adjustRightInd w:val="0"/>
+<w:spacing w:after="0" w:line="240" w:lineRule="auto"/>
+<w:ind w:left="640" w:hanging="640"/>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+</w:pPr>
+</w:p>
+<w:p w:rsidR="00A334CA" w:rsidRPr="00A334CA" w:rsidRDefault="00A334CA" w:rsidP="00A334CA">
+<w:pPr>
+<w:autoSpaceDE w:val="0"/>
+<w:autoSpaceDN w:val="0"/>
+<w:adjustRightInd w:val="0"/>
+<w:spacing w:after="0" w:line="240" w:lineRule="auto"/>
+<w:ind w:left="640" w:hanging="640"/>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+</w:pPr>
+<w:r w:rsidRPr="00A334CA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve">[JaEm12] M. A. </w:t>
 </w:r>
 <w:proofErr w:type="spellStart"/>
-<w:r w:rsidRPr="00531BBA">
+<w:r w:rsidRPr="00A334CA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
@@ -44733,7 +44799,7 @@ z∨¬x∨¬y∨¬z</m:t>
 <w:t>Javid</w:t>
 </w:r>
 <w:proofErr w:type="spellEnd"/>
-<w:r w:rsidRPr="00531BBA">
+<w:r w:rsidRPr="00A334CA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
@@ -44742,7 +44808,7 @@ z∨¬x∨¬y∨¬z</m:t>
 <w:t xml:space="preserve"> and S. M. </w:t>
 </w:r>
 <w:proofErr w:type="spellStart"/>
-<w:r w:rsidRPr="00531BBA">
+<w:r w:rsidRPr="00A334CA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
@@ -44751,15 +44817,15 @@ z∨¬x∨¬y∨¬z</m:t>
 <w:t>Embury</w:t>
 </w:r>
 <w:proofErr w:type="spellEnd"/>
-<w:r w:rsidRPr="00531BBA">
+<w:r w:rsidRPr="00A334CA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t xml:space="preserve">, “Diagnosing faults in embedded queries in database applications,” </w:t>
+<w:t xml:space="preserve">, “Diagnosing faults in embedded queries in database applications,” in </w:t>
 </w:r>
-<w:r w:rsidRPr="00531BBA">
+<w:r w:rsidRPr="00A334CA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:i/>
@@ -44768,16 +44834,34 @@ z∨¬x∨¬y∨¬z</m:t>
 </w:rPr>
 <w:t>Proceedings of the 2012 Joint EDBT/ICDT Workshops</w:t>
 </w:r>
-<w:r w:rsidRPr="00531BBA">
+<w:r w:rsidRPr="00A334CA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t>, 2012, pp. 239–244.</w:t>
+<w:t>, (EDBT-ICDT</w:t>
+</w:r>
+<w:proofErr w:type="gramStart"/>
+<w:r w:rsidRPr="00A334CA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>  ’12</w:t>
+</w:r>
+<w:proofErr w:type="gramEnd"/>
+<w:r w:rsidRPr="00A334CA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>), ACM, 2012, pp. 239–244.</w:t>
 </w:r>
 </w:p>
-<w:p w:rsidR="00531BBA" w:rsidRPr="00531BBA" w:rsidRDefault="00531BBA" w:rsidP="00531BBA">
+<w:p w:rsidR="00A334CA" w:rsidRPr="00A334CA" w:rsidRDefault="00A334CA" w:rsidP="00A334CA">
 <w:pPr>
 <w:autoSpaceDE w:val="0"/>
 <w:autoSpaceDN w:val="0"/>
@@ -44791,7 +44875,7 @@ z∨¬x∨¬y∨¬z</m:t>
 </w:rPr>
 </w:pPr>
 </w:p>
-<w:p w:rsidR="00531BBA" w:rsidRPr="00531BBA" w:rsidRDefault="00531BBA" w:rsidP="00531BBA">
+<w:p w:rsidR="00A334CA" w:rsidRPr="00A334CA" w:rsidRDefault="00A334CA" w:rsidP="00A334CA">
 <w:pPr>
 <w:autoSpaceDE w:val="0"/>
 <w:autoSpaceDN w:val="0"/>
@@ -44804,16 +44888,16 @@ z∨¬x∨¬y∨¬z</m:t>
 <w:szCs w:val="24"/>
 </w:rPr>
 </w:pPr>
-<w:r w:rsidRPr="00531BBA">
+<w:r w:rsidRPr="00A334CA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t xml:space="preserve">[13] B. </w:t>
+<w:t xml:space="preserve">[Karw10] B. </w:t>
 </w:r>
 <w:proofErr w:type="spellStart"/>
-<w:r w:rsidRPr="00531BBA">
+<w:r w:rsidRPr="00A334CA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
@@ -44822,7 +44906,7 @@ z∨¬x∨¬y∨¬z</m:t>
 <w:t>Karwin</w:t>
 </w:r>
 <w:proofErr w:type="spellEnd"/>
-<w:r w:rsidRPr="00531BBA">
+<w:r w:rsidRPr="00A334CA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
@@ -44830,7 +44914,7 @@ z∨¬x∨¬y∨¬z</m:t>
 </w:rPr>
 <w:t xml:space="preserve">, </w:t>
 </w:r>
-<w:r w:rsidRPr="00531BBA">
+<w:r w:rsidRPr="00A334CA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:i/>
@@ -44840,7 +44924,7 @@ z∨¬x∨¬y∨¬z</m:t>
 <w:t xml:space="preserve">SQL </w:t>
 </w:r>
 <w:proofErr w:type="spellStart"/>
-<w:r w:rsidRPr="00531BBA">
+<w:r w:rsidRPr="00A334CA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:i/>
@@ -44850,7 +44934,7 @@ z∨¬x∨¬y∨¬z</m:t>
 <w:t>Antipatterns</w:t>
 </w:r>
 <w:proofErr w:type="spellEnd"/>
-<w:r w:rsidRPr="00531BBA">
+<w:r w:rsidRPr="00A334CA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:i/>
@@ -44859,7 +44943,7 @@ z∨¬x∨¬y∨¬z</m:t>
 </w:rPr>
 <w:t>: Avoiding the Pitfalls of Database Programming</w:t>
 </w:r>
-<w:r w:rsidRPr="00531BBA">
+<w:r w:rsidRPr="00A334CA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
@@ -44868,7 +44952,7 @@ z∨¬x∨¬y∨¬z</m:t>
 <w:t xml:space="preserve">. O’Reilly </w:t>
 </w:r>
 <w:proofErr w:type="spellStart"/>
-<w:r w:rsidRPr="00531BBA">
+<w:r w:rsidRPr="00A334CA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
@@ -44877,16 +44961,16 @@ z∨¬x∨¬y∨¬z</m:t>
 <w:t>Vlg</w:t>
 </w:r>
 <w:proofErr w:type="spellEnd"/>
-<w:r w:rsidRPr="00531BBA">
+<w:r w:rsidRPr="00A334CA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t>. GmbH &amp; Company, 2010, p. 333.</w:t>
+<w:t>. GmbH &amp; Company, 2010.</w:t>
 </w:r>
 </w:p>
-<w:p w:rsidR="00531BBA" w:rsidRPr="00531BBA" w:rsidRDefault="00531BBA" w:rsidP="00531BBA">
+<w:p w:rsidR="00A334CA" w:rsidRPr="00A334CA" w:rsidRDefault="00A334CA" w:rsidP="00A334CA">
 <w:pPr>
 <w:autoSpaceDE w:val="0"/>
 <w:autoSpaceDN w:val="0"/>
@@ -44900,7 +44984,7 @@ z∨¬x∨¬y∨¬z</m:t>
 </w:rPr>
 </w:pPr>
 </w:p>
-<w:p w:rsidR="00531BBA" w:rsidRPr="00531BBA" w:rsidRDefault="00531BBA" w:rsidP="00531BBA">
+<w:p w:rsidR="00A334CA" w:rsidRPr="00A334CA" w:rsidRDefault="00A334CA" w:rsidP="00A334CA">
 <w:pPr>
 <w:autoSpaceDE w:val="0"/>
 <w:autoSpaceDN w:val="0"/>
@@ -44913,34 +44997,16 @@ z∨¬x∨¬y∨¬z</m:t>
 <w:szCs w:val="24"/>
 </w:rPr>
 </w:pPr>
-<w:r w:rsidRPr="00531BBA">
+<w:r w:rsidRPr="00A334CA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t xml:space="preserve">[14] Proceedings of the 2008 23rd IEEE/ACM International Conference on Automated Software </w:t>
+<w:t xml:space="preserve">[KELK08] S. A. </w:t>
 </w:r>
 <w:proofErr w:type="spellStart"/>
-<w:r w:rsidRPr="00531BBA">
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-<w:t>EngineeringS</w:t>
-</w:r>
-<w:proofErr w:type="spellEnd"/>
-<w:r w:rsidRPr="00531BBA">
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-<w:t xml:space="preserve">. A. </w:t>
-</w:r>
-<w:proofErr w:type="spellStart"/>
-<w:r w:rsidRPr="00531BBA">
+<w:r w:rsidRPr="00A334CA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
@@ -44949,7 +45015,7 @@ z∨¬x∨¬y∨¬z</m:t>
 <w:t>Khalek</w:t>
 </w:r>
 <w:proofErr w:type="spellEnd"/>
-<w:r w:rsidRPr="00531BBA">
+<w:r w:rsidRPr="00A334CA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
@@ -44958,7 +45024,7 @@ z∨¬x∨¬y∨¬z</m:t>
 <w:t xml:space="preserve">, B. </w:t>
 </w:r>
 <w:proofErr w:type="spellStart"/>
-<w:r w:rsidRPr="00531BBA">
+<w:r w:rsidRPr="00A334CA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
@@ -44967,7 +45033,7 @@ z∨¬x∨¬y∨¬z</m:t>
 <w:t>Elkarablieh</w:t>
 </w:r>
 <w:proofErr w:type="spellEnd"/>
-<w:r w:rsidRPr="00531BBA">
+<w:r w:rsidRPr="00A334CA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
@@ -44976,7 +45042,7 @@ z∨¬x∨¬y∨¬z</m:t>
 <w:t xml:space="preserve">, Y. O. </w:t>
 </w:r>
 <w:proofErr w:type="spellStart"/>
-<w:r w:rsidRPr="00531BBA">
+<w:r w:rsidRPr="00A334CA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
@@ -44985,7 +45051,7 @@ z∨¬x∨¬y∨¬z</m:t>
 <w:t>Laleye</w:t>
 </w:r>
 <w:proofErr w:type="spellEnd"/>
-<w:r w:rsidRPr="00531BBA">
+<w:r w:rsidRPr="00A334CA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
@@ -44994,7 +45060,7 @@ z∨¬x∨¬y∨¬z</m:t>
 <w:t xml:space="preserve">, and S. </w:t>
 </w:r>
 <w:proofErr w:type="spellStart"/>
-<w:r w:rsidRPr="00531BBA">
+<w:r w:rsidRPr="00A334CA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
@@ -45003,15 +45069,15 @@ z∨¬x∨¬y∨¬z</m:t>
 <w:t>Khurshid</w:t>
 </w:r>
 <w:proofErr w:type="spellEnd"/>
-<w:r w:rsidRPr="00531BBA">
+<w:r w:rsidRPr="00A334CA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t xml:space="preserve">, “Query-Aware Test Generation Using a Relational Constraint Solver,” </w:t>
+<w:t xml:space="preserve">, “Query-Aware Test Generation Using a Relational Constraint Solver,” in </w:t>
 </w:r>
-<w:r w:rsidRPr="00531BBA">
+<w:r w:rsidRPr="00A334CA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:i/>
@@ -45020,16 +45086,16 @@ z∨¬x∨¬y∨¬z</m:t>
 </w:rPr>
 <w:t>Proceedings of the 2008 23rd IEEE/ACM International Conference on Automated Software Engineering</w:t>
 </w:r>
-<w:r w:rsidRPr="00531BBA">
+<w:r w:rsidRPr="00A334CA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t>, 2008, pp. 238–247.</w:t>
+<w:t>, (ASE  ’08), IEEE Computer Society, 2008, pp. 238–247.</w:t>
 </w:r>
 </w:p>
-<w:p w:rsidR="00531BBA" w:rsidRPr="00531BBA" w:rsidRDefault="00531BBA" w:rsidP="00531BBA">
+<w:p w:rsidR="00A334CA" w:rsidRPr="00A334CA" w:rsidRDefault="00A334CA" w:rsidP="00A334CA">
 <w:pPr>
 <w:autoSpaceDE w:val="0"/>
 <w:autoSpaceDN w:val="0"/>
@@ -45043,7 +45109,7 @@ z∨¬x∨¬y∨¬z</m:t>
 </w:rPr>
 </w:pPr>
 </w:p>
-<w:p w:rsidR="00531BBA" w:rsidRPr="00531BBA" w:rsidRDefault="00531BBA" w:rsidP="00531BBA">
+<w:p w:rsidR="00A334CA" w:rsidRPr="00A334CA" w:rsidRDefault="00A334CA" w:rsidP="00A334CA">
 <w:pPr>
 <w:autoSpaceDE w:val="0"/>
 <w:autoSpaceDN w:val="0"/>
@@ -45056,15 +45122,15 @@ z∨¬x∨¬y∨¬z</m:t>
 <w:szCs w:val="24"/>
 </w:rPr>
 </w:pPr>
-<w:r w:rsidRPr="00531BBA">
+<w:r w:rsidRPr="00A334CA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t xml:space="preserve">[15] Proceedings of IFIP Congress 1974R. A. Kowalski, “Predicate Logic as Programming Language,” </w:t>
+<w:t xml:space="preserve">[Kowa74] R. A. Kowalski, “Predicate Logic as Programming Language,” in </w:t>
 </w:r>
-<w:r w:rsidRPr="00531BBA">
+<w:r w:rsidRPr="00A334CA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:i/>
@@ -45073,16 +45139,34 @@ z∨¬x∨¬y∨¬z</m:t>
 </w:rPr>
 <w:t>Proceedings of IFIP Congress 1974</w:t>
 </w:r>
-<w:r w:rsidRPr="00531BBA">
+<w:r w:rsidRPr="00A334CA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t>, 1974, pp. 569–574.</w:t>
+<w:t>, (IFIP</w:t>
+</w:r>
+<w:proofErr w:type="gramStart"/>
+<w:r w:rsidRPr="00A334CA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>  ’74</w:t>
+</w:r>
+<w:proofErr w:type="gramEnd"/>
+<w:r w:rsidRPr="00A334CA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>), North Holland Publishing Co., 1974, pp. 569–574.</w:t>
 </w:r>
 </w:p>
-<w:p w:rsidR="00531BBA" w:rsidRPr="00531BBA" w:rsidRDefault="00531BBA" w:rsidP="00531BBA">
+<w:p w:rsidR="00A334CA" w:rsidRPr="00A334CA" w:rsidRDefault="00A334CA" w:rsidP="00A334CA">
 <w:pPr>
 <w:autoSpaceDE w:val="0"/>
 <w:autoSpaceDN w:val="0"/>
@@ -45096,7 +45180,7 @@ z∨¬x∨¬y∨¬z</m:t>
 </w:rPr>
 </w:pPr>
 </w:p>
-<w:p w:rsidR="00531BBA" w:rsidRPr="00531BBA" w:rsidRDefault="00531BBA" w:rsidP="00531BBA">
+<w:p w:rsidR="00A334CA" w:rsidRPr="00A334CA" w:rsidRDefault="00A334CA" w:rsidP="00A334CA">
 <w:pPr>
 <w:autoSpaceDE w:val="0"/>
 <w:autoSpaceDN w:val="0"/>
@@ -45109,16 +45193,16 @@ z∨¬x∨¬y∨¬z</m:t>
 <w:szCs w:val="24"/>
 </w:rPr>
 </w:pPr>
-<w:r w:rsidRPr="00531BBA">
+<w:r w:rsidRPr="00A334CA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t xml:space="preserve">[16] M. </w:t>
+<w:t xml:space="preserve">[LeLo99] M. </w:t>
 </w:r>
 <w:proofErr w:type="spellStart"/>
-<w:r w:rsidRPr="00531BBA">
+<w:r w:rsidRPr="00A334CA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
@@ -45127,7 +45211,7 @@ z∨¬x∨¬y∨¬z</m:t>
 <w:t>Levene</w:t>
 </w:r>
 <w:proofErr w:type="spellEnd"/>
-<w:r w:rsidRPr="00531BBA">
+<w:r w:rsidRPr="00A334CA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
@@ -45136,7 +45220,7 @@ z∨¬x∨¬y∨¬z</m:t>
 <w:t xml:space="preserve"> and G. </w:t>
 </w:r>
 <w:proofErr w:type="spellStart"/>
-<w:r w:rsidRPr="00531BBA">
+<w:r w:rsidRPr="00A334CA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
@@ -45145,7 +45229,7 @@ z∨¬x∨¬y∨¬z</m:t>
 <w:t>Loizou</w:t>
 </w:r>
 <w:proofErr w:type="spellEnd"/>
-<w:r w:rsidRPr="00531BBA">
+<w:r w:rsidRPr="00A334CA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
@@ -45154,7 +45238,7 @@ z∨¬x∨¬y∨¬z</m:t>
 <w:t xml:space="preserve">, </w:t>
 </w:r>
 <w:proofErr w:type="gramStart"/>
-<w:r w:rsidRPr="00531BBA">
+<w:r w:rsidRPr="00A334CA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:i/>
@@ -45164,7 +45248,7 @@ z∨¬x∨¬y∨¬z</m:t>
 <w:t>A</w:t>
 </w:r>
 <w:proofErr w:type="gramEnd"/>
-<w:r w:rsidRPr="00531BBA">
+<w:r w:rsidRPr="00A334CA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:i/>
@@ -45173,16 +45257,26 @@ z∨¬x∨¬y∨¬z</m:t>
 </w:rPr>
 <w:t xml:space="preserve"> Guided Tour of Relational Databases and Beyond</w:t>
 </w:r>
-<w:r w:rsidRPr="00531BBA">
+<w:r w:rsidRPr="00A334CA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t>. Springer, 1999, p. 625.</w:t>
+<w:t xml:space="preserve">. </w:t>
 </w:r>
+<w:proofErr w:type="gramStart"/>
+<w:r w:rsidRPr="00A334CA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>Springer, 1999.</w:t>
+</w:r>
+<w:proofErr w:type="gramEnd"/>
 </w:p>
-<w:p w:rsidR="00531BBA" w:rsidRPr="00531BBA" w:rsidRDefault="00531BBA" w:rsidP="00531BBA">
+<w:p w:rsidR="00A334CA" w:rsidRPr="00A334CA" w:rsidRDefault="00A334CA" w:rsidP="00A334CA">
 <w:pPr>
 <w:autoSpaceDE w:val="0"/>
 <w:autoSpaceDN w:val="0"/>
@@ -45196,7 +45290,7 @@ z∨¬x∨¬y∨¬z</m:t>
 </w:rPr>
 </w:pPr>
 </w:p>
-<w:p w:rsidR="00531BBA" w:rsidRPr="00531BBA" w:rsidRDefault="00531BBA" w:rsidP="00531BBA">
+<w:p w:rsidR="00A334CA" w:rsidRPr="00A334CA" w:rsidRDefault="00A334CA" w:rsidP="00A334CA">
 <w:pPr>
 <w:autoSpaceDE w:val="0"/>
 <w:autoSpaceDN w:val="0"/>
@@ -45209,15 +45303,15 @@ z∨¬x∨¬y∨¬z</m:t>
 <w:szCs w:val="24"/>
 </w:rPr>
 </w:pPr>
-<w:r w:rsidRPr="00531BBA">
+<w:r w:rsidRPr="00A334CA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t xml:space="preserve">[17] J. W. Lloyd, </w:t>
+<w:t xml:space="preserve">[Lloy84] J. W. Lloyd, </w:t>
 </w:r>
-<w:r w:rsidRPr="00531BBA">
+<w:r w:rsidRPr="00A334CA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:i/>
@@ -45226,7 +45320,7 @@ z∨¬x∨¬y∨¬z</m:t>
 </w:rPr>
 <w:t>Foundations of Logic Programming</w:t>
 </w:r>
-<w:r w:rsidRPr="00531BBA">
+<w:r w:rsidRPr="00A334CA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
@@ -45235,7 +45329,7 @@ z∨¬x∨¬y∨¬z</m:t>
 <w:t>. Springer-</w:t>
 </w:r>
 <w:proofErr w:type="spellStart"/>
-<w:r w:rsidRPr="00531BBA">
+<w:r w:rsidRPr="00A334CA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
@@ -45244,16 +45338,16 @@ z∨¬x∨¬y∨¬z</m:t>
 <w:t>Verlag</w:t>
 </w:r>
 <w:proofErr w:type="spellEnd"/>
-<w:r w:rsidRPr="00531BBA">
+<w:r w:rsidRPr="00A334CA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t xml:space="preserve"> New York Incorporated, 1984, p. 140.</w:t>
+<w:t xml:space="preserve"> New York Incorporated, 1984.</w:t>
 </w:r>
 </w:p>
-<w:p w:rsidR="00531BBA" w:rsidRPr="00531BBA" w:rsidRDefault="00531BBA" w:rsidP="00531BBA">
+<w:p w:rsidR="00A334CA" w:rsidRPr="00A334CA" w:rsidRDefault="00A334CA" w:rsidP="00A334CA">
 <w:pPr>
 <w:autoSpaceDE w:val="0"/>
 <w:autoSpaceDN w:val="0"/>
@@ -45267,7 +45361,7 @@ z∨¬x∨¬y∨¬z</m:t>
 </w:rPr>
 </w:pPr>
 </w:p>
-<w:p w:rsidR="00531BBA" w:rsidRPr="00531BBA" w:rsidRDefault="00531BBA" w:rsidP="00531BBA">
+<w:p w:rsidR="00A334CA" w:rsidRPr="00A334CA" w:rsidRDefault="00A334CA" w:rsidP="00A334CA">
 <w:pPr>
 <w:autoSpaceDE w:val="0"/>
 <w:autoSpaceDN w:val="0"/>
@@ -45280,35 +45374,16 @@ z∨¬x∨¬y∨¬z</m:t>
 <w:szCs w:val="24"/>
 </w:rPr>
 </w:pPr>
-<w:r w:rsidRPr="00531BBA">
+<w:r w:rsidRPr="00A334CA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t xml:space="preserve">[18] SIGPLAN </w:t>
+<w:t xml:space="preserve">[MMSW10] G. </w:t>
 </w:r>
 <w:proofErr w:type="spellStart"/>
-<w:r w:rsidRPr="00531BBA">
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-<w:t>Not.G</w:t>
-</w:r>
-<w:proofErr w:type="spellEnd"/>
-<w:r w:rsidRPr="00531BBA">
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-<w:t xml:space="preserve">. </w:t>
-</w:r>
-<w:proofErr w:type="spellStart"/>
-<w:proofErr w:type="gramStart"/>
-<w:r w:rsidRPr="00531BBA">
+<w:r w:rsidRPr="00A334CA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
@@ -45317,7 +45392,7 @@ z∨¬x∨¬y∨¬z</m:t>
 <w:t>Malecha</w:t>
 </w:r>
 <w:proofErr w:type="spellEnd"/>
-<w:r w:rsidRPr="00531BBA">
+<w:r w:rsidRPr="00A334CA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
@@ -45326,7 +45401,7 @@ z∨¬x∨¬y∨¬z</m:t>
 <w:t xml:space="preserve">, G. </w:t>
 </w:r>
 <w:proofErr w:type="spellStart"/>
-<w:r w:rsidRPr="00531BBA">
+<w:r w:rsidRPr="00A334CA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
@@ -45335,7 +45410,7 @@ z∨¬x∨¬y∨¬z</m:t>
 <w:t>Morrisett</w:t>
 </w:r>
 <w:proofErr w:type="spellEnd"/>
-<w:r w:rsidRPr="00531BBA">
+<w:r w:rsidRPr="00A334CA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
@@ -45344,7 +45419,7 @@ z∨¬x∨¬y∨¬z</m:t>
 <w:t xml:space="preserve">, A. </w:t>
 </w:r>
 <w:proofErr w:type="spellStart"/>
-<w:r w:rsidRPr="00531BBA">
+<w:r w:rsidRPr="00A334CA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
@@ -45353,7 +45428,7 @@ z∨¬x∨¬y∨¬z</m:t>
 <w:t>Shinnar</w:t>
 </w:r>
 <w:proofErr w:type="spellEnd"/>
-<w:r w:rsidRPr="00531BBA">
+<w:r w:rsidRPr="00A334CA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
@@ -45362,7 +45437,7 @@ z∨¬x∨¬y∨¬z</m:t>
 <w:t xml:space="preserve">, and R. </w:t>
 </w:r>
 <w:proofErr w:type="spellStart"/>
-<w:r w:rsidRPr="00531BBA">
+<w:r w:rsidRPr="00A334CA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
@@ -45371,7 +45446,7 @@ z∨¬x∨¬y∨¬z</m:t>
 <w:t>Wisnesky</w:t>
 </w:r>
 <w:proofErr w:type="spellEnd"/>
-<w:r w:rsidRPr="00531BBA">
+<w:r w:rsidRPr="00A334CA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
@@ -45379,7 +45454,7 @@ z∨¬x∨¬y∨¬z</m:t>
 </w:rPr>
 <w:t xml:space="preserve">, “Toward a verified relational database management system,” </w:t>
 </w:r>
-<w:r w:rsidRPr="00531BBA">
+<w:r w:rsidRPr="00A334CA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:i/>
@@ -45388,17 +45463,16 @@ z∨¬x∨¬y∨¬z</m:t>
 </w:rPr>
 <w:t>SIGPLAN Not.</w:t>
 </w:r>
-<w:r w:rsidRPr="00531BBA">
+<w:r w:rsidRPr="00A334CA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t>, vol. 45, no. 1, pp. 237–248, Jan. 2010.</w:t>
+<w:t>, vol. 45, no. 1, Jan. 2010, pp. 237–248.</w:t>
 </w:r>
-<w:proofErr w:type="gramEnd"/>
 </w:p>
-<w:p w:rsidR="00531BBA" w:rsidRPr="00531BBA" w:rsidRDefault="00531BBA" w:rsidP="00531BBA">
+<w:p w:rsidR="00A334CA" w:rsidRPr="00A334CA" w:rsidRDefault="00A334CA" w:rsidP="00A334CA">
 <w:pPr>
 <w:autoSpaceDE w:val="0"/>
 <w:autoSpaceDN w:val="0"/>
@@ -45412,7 +45486,7 @@ z∨¬x∨¬y∨¬z</m:t>
 </w:rPr>
 </w:pPr>
 </w:p>
-<w:p w:rsidR="00531BBA" w:rsidRPr="00531BBA" w:rsidRDefault="00531BBA" w:rsidP="00531BBA">
+<w:p w:rsidR="00A334CA" w:rsidRPr="00A334CA" w:rsidRDefault="00A334CA" w:rsidP="00A334CA">
 <w:pPr>
 <w:autoSpaceDE w:val="0"/>
 <w:autoSpaceDN w:val="0"/>
@@ -45425,43 +45499,16 @@ z∨¬x∨¬y∨¬z</m:t>
 <w:szCs w:val="24"/>
 </w:rPr>
 </w:pPr>
-<w:r w:rsidRPr="00531BBA">
+<w:r w:rsidRPr="00A334CA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t xml:space="preserve">[19] Proceedings of the 30th international conference on Software </w:t>
+<w:t xml:space="preserve">[MaER08] A. Maule, W. </w:t>
 </w:r>
 <w:proofErr w:type="spellStart"/>
-<w:r w:rsidRPr="00531BBA">
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-<w:t>engineeringA</w:t>
-</w:r>
-<w:proofErr w:type="spellEnd"/>
-<w:r w:rsidRPr="00531BBA">
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-<w:t xml:space="preserve">. </w:t>
-</w:r>
-<w:proofErr w:type="gramStart"/>
-<w:r w:rsidRPr="00531BBA">
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-<w:t xml:space="preserve">Maule, W. </w:t>
-</w:r>
-<w:proofErr w:type="spellStart"/>
-<w:r w:rsidRPr="00531BBA">
+<w:r w:rsidRPr="00A334CA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
@@ -45470,7 +45517,7 @@ z∨¬x∨¬y∨¬z</m:t>
 <w:t>Emmerich</w:t>
 </w:r>
 <w:proofErr w:type="spellEnd"/>
-<w:r w:rsidRPr="00531BBA">
+<w:r w:rsidRPr="00A334CA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
@@ -45479,7 +45526,7 @@ z∨¬x∨¬y∨¬z</m:t>
 <w:t xml:space="preserve">, and D. S. </w:t>
 </w:r>
 <w:proofErr w:type="spellStart"/>
-<w:r w:rsidRPr="00531BBA">
+<w:r w:rsidRPr="00A334CA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
@@ -45488,15 +45535,15 @@ z∨¬x∨¬y∨¬z</m:t>
 <w:t>Rosenblum</w:t>
 </w:r>
 <w:proofErr w:type="spellEnd"/>
-<w:r w:rsidRPr="00531BBA">
+<w:r w:rsidRPr="00A334CA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t xml:space="preserve">, “Impact analysis of database schema changes,” </w:t>
+<w:t xml:space="preserve">, “Impact analysis of database schema changes,” in </w:t>
 </w:r>
-<w:r w:rsidRPr="00531BBA">
+<w:r w:rsidRPr="00A334CA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:i/>
@@ -45505,17 +45552,16 @@ z∨¬x∨¬y∨¬z</m:t>
 </w:rPr>
 <w:t>Proceedings of the 30th international conference on Software engineering</w:t>
 </w:r>
-<w:r w:rsidRPr="00531BBA">
+<w:r w:rsidRPr="00A334CA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t>, 2008, pp. 451–460.</w:t>
+<w:t>, (ICSE  ’08), ACM, 2008, pp. 451–460.</w:t>
 </w:r>
-<w:proofErr w:type="gramEnd"/>
 </w:p>
-<w:p w:rsidR="00531BBA" w:rsidRPr="00531BBA" w:rsidRDefault="00531BBA" w:rsidP="00531BBA">
+<w:p w:rsidR="00A334CA" w:rsidRPr="00A334CA" w:rsidRDefault="00A334CA" w:rsidP="00A334CA">
 <w:pPr>
 <w:autoSpaceDE w:val="0"/>
 <w:autoSpaceDN w:val="0"/>
@@ -45529,7 +45575,7 @@ z∨¬x∨¬y∨¬z</m:t>
 </w:rPr>
 </w:pPr>
 </w:p>
-<w:p w:rsidR="00531BBA" w:rsidRPr="00531BBA" w:rsidRDefault="00531BBA" w:rsidP="00531BBA">
+<w:p w:rsidR="00A334CA" w:rsidRPr="00A334CA" w:rsidRDefault="00A334CA" w:rsidP="00A334CA">
 <w:pPr>
 <w:autoSpaceDE w:val="0"/>
 <w:autoSpaceDN w:val="0"/>
@@ -45542,15 +45588,15 @@ z∨¬x∨¬y∨¬z</m:t>
 <w:szCs w:val="24"/>
 </w:rPr>
 </w:pPr>
-<w:r w:rsidRPr="00531BBA">
+<w:r w:rsidRPr="00A334CA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t xml:space="preserve">[20] J. Melton and A. R. Simon, </w:t>
+<w:t xml:space="preserve">[MeSi01] J. Melton and A. R. Simon, </w:t>
 </w:r>
-<w:r w:rsidRPr="00531BBA">
+<w:r w:rsidRPr="00A334CA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:i/>
@@ -45559,16 +45605,16 @@ z∨¬x∨¬y∨¬z</m:t>
 </w:rPr>
 <w:t>SQL: 1999 - Understanding Relational Language Components</w:t>
 </w:r>
-<w:r w:rsidRPr="00531BBA">
+<w:r w:rsidRPr="00A334CA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t>, vol. 0. Morgan Kaufmann, 2001, p. 893.</w:t>
+<w:t>, vol. 0. Morgan Kaufmann, 2001.</w:t>
 </w:r>
 </w:p>
-<w:p w:rsidR="00531BBA" w:rsidRPr="00531BBA" w:rsidRDefault="00531BBA" w:rsidP="00531BBA">
+<w:p w:rsidR="00A334CA" w:rsidRPr="00A334CA" w:rsidRDefault="00A334CA" w:rsidP="00A334CA">
 <w:pPr>
 <w:autoSpaceDE w:val="0"/>
 <w:autoSpaceDN w:val="0"/>
@@ -45582,7 +45628,7 @@ z∨¬x∨¬y∨¬z</m:t>
 </w:rPr>
 </w:pPr>
 </w:p>
-<w:p w:rsidR="00531BBA" w:rsidRPr="00531BBA" w:rsidRDefault="00531BBA" w:rsidP="00531BBA">
+<w:p w:rsidR="00A334CA" w:rsidRPr="00A334CA" w:rsidRDefault="00A334CA" w:rsidP="00A334CA">
 <w:pPr>
 <w:autoSpaceDE w:val="0"/>
 <w:autoSpaceDN w:val="0"/>
@@ -45595,33 +45641,15 @@ z∨¬x∨¬y∨¬z</m:t>
 <w:szCs w:val="24"/>
 </w:rPr>
 </w:pPr>
-<w:r w:rsidRPr="00531BBA">
+<w:r w:rsidRPr="00A334CA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t>[21] SOFTWARE PRACTICE ADVANCEMENT (SPA</w:t>
+<w:t xml:space="preserve">[MoMa06] B. Moseley and P. Marks, “Out of the Tar Pit,” in </w:t>
 </w:r>
-<w:proofErr w:type="gramStart"/>
-<w:r w:rsidRPr="00531BBA">
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-<w:t>)B</w:t>
-</w:r>
-<w:proofErr w:type="gramEnd"/>
-<w:r w:rsidRPr="00531BBA">
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-<w:t xml:space="preserve">. Moseley and P. Marks, “Out of the Tar Pit,” </w:t>
-</w:r>
-<w:r w:rsidRPr="00531BBA">
+<w:r w:rsidRPr="00A334CA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:i/>
@@ -45630,7 +45658,7 @@ z∨¬x∨¬y∨¬z</m:t>
 </w:rPr>
 <w:t>SOFTWARE PRACTICE ADVANCEMENT (SPA)</w:t>
 </w:r>
-<w:r w:rsidRPr="00531BBA">
+<w:r w:rsidRPr="00A334CA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
@@ -45639,7 +45667,7 @@ z∨¬x∨¬y∨¬z</m:t>
 <w:t>, 2006.</w:t>
 </w:r>
 </w:p>
-<w:p w:rsidR="00531BBA" w:rsidRPr="00531BBA" w:rsidRDefault="00531BBA" w:rsidP="00531BBA">
+<w:p w:rsidR="00A334CA" w:rsidRPr="00A334CA" w:rsidRDefault="00A334CA" w:rsidP="00A334CA">
 <w:pPr>
 <w:autoSpaceDE w:val="0"/>
 <w:autoSpaceDN w:val="0"/>
@@ -45653,7 +45681,7 @@ z∨¬x∨¬y∨¬z</m:t>
 </w:rPr>
 </w:pPr>
 </w:p>
-<w:p w:rsidR="00531BBA" w:rsidRPr="00531BBA" w:rsidRDefault="00531BBA" w:rsidP="00531BBA">
+<w:p w:rsidR="00A334CA" w:rsidRPr="00A334CA" w:rsidRDefault="00A334CA" w:rsidP="00A334CA">
 <w:pPr>
 <w:autoSpaceDE w:val="0"/>
 <w:autoSpaceDN w:val="0"/>
@@ -45666,16 +45694,15 @@ z∨¬x∨¬y∨¬z</m:t>
 <w:szCs w:val="24"/>
 </w:rPr>
 </w:pPr>
-<w:r w:rsidRPr="00531BBA">
+<w:r w:rsidRPr="00A334CA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:lastRenderedPageBreak/>
-<w:t xml:space="preserve">[22] J. ACMJ. A. Robinson, “A Machine-Oriented Logic Based on the Resolution Principle,” </w:t>
+<w:t xml:space="preserve">[Robi65] J. A. Robinson, “A Machine-Oriented Logic Based on the Resolution Principle,” </w:t>
 </w:r>
-<w:r w:rsidRPr="00531BBA">
+<w:r w:rsidRPr="00A334CA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:i/>
@@ -45684,16 +45711,16 @@ z∨¬x∨¬y∨¬z</m:t>
 </w:rPr>
 <w:t>J. ACM</w:t>
 </w:r>
-<w:r w:rsidRPr="00531BBA">
+<w:r w:rsidRPr="00A334CA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t>, vol. 12, no. 1, pp. 23–41, Jan. 1965.</w:t>
+<w:t>, vol. 12, no. 1, Jan. 1965, pp. 23–41.</w:t>
 </w:r>
 </w:p>
-<w:p w:rsidR="00531BBA" w:rsidRPr="00531BBA" w:rsidRDefault="00531BBA" w:rsidP="00531BBA">
+<w:p w:rsidR="00A334CA" w:rsidRPr="00A334CA" w:rsidRDefault="00A334CA" w:rsidP="00A334CA">
 <w:pPr>
 <w:autoSpaceDE w:val="0"/>
 <w:autoSpaceDN w:val="0"/>
@@ -45707,7 +45734,7 @@ z∨¬x∨¬y∨¬z</m:t>
 </w:rPr>
 </w:pPr>
 </w:p>
-<w:p w:rsidR="00531BBA" w:rsidRPr="00531BBA" w:rsidRDefault="00531BBA" w:rsidP="00531BBA">
+<w:p w:rsidR="00A334CA" w:rsidRPr="00A334CA" w:rsidRDefault="00A334CA" w:rsidP="00A334CA">
 <w:pPr>
 <w:autoSpaceDE w:val="0"/>
 <w:autoSpaceDN w:val="0"/>
@@ -45720,16 +45747,16 @@ z∨¬x∨¬y∨¬z</m:t>
 <w:szCs w:val="24"/>
 </w:rPr>
 </w:pPr>
-<w:r w:rsidRPr="00531BBA">
+<w:r w:rsidRPr="00A334CA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t xml:space="preserve">[23] J. M. </w:t>
+<w:t xml:space="preserve">[Schu01] J. M. </w:t>
 </w:r>
 <w:proofErr w:type="gramStart"/>
-<w:r w:rsidRPr="00531BBA">
+<w:r w:rsidRPr="00A334CA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
@@ -45738,7 +45765,7 @@ z∨¬x∨¬y∨¬z</m:t>
 <w:t>Schumann,</w:t>
 </w:r>
 <w:proofErr w:type="gramEnd"/>
-<w:r w:rsidRPr="00531BBA">
+<w:r w:rsidRPr="00A334CA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
@@ -45746,7 +45773,7 @@ z∨¬x∨¬y∨¬z</m:t>
 </w:rPr>
 <w:t xml:space="preserve"> </w:t>
 </w:r>
-<w:r w:rsidRPr="00531BBA">
+<w:r w:rsidRPr="00A334CA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:i/>
@@ -45755,61 +45782,7 @@ z∨¬x∨¬y∨¬z</m:t>
 </w:rPr>
 <w:t>Automated Theorem Proving in Software Engineering</w:t>
 </w:r>
-<w:r w:rsidRPr="00531BBA">
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-<w:t>. Springer, 2001, p. 228.</w:t>
-</w:r>
-</w:p>
-<w:p w:rsidR="00531BBA" w:rsidRPr="00531BBA" w:rsidRDefault="00531BBA" w:rsidP="00531BBA">
-<w:pPr>
-<w:autoSpaceDE w:val="0"/>
-<w:autoSpaceDN w:val="0"/>
-<w:adjustRightInd w:val="0"/>
-<w:spacing w:after="0" w:line="240" w:lineRule="auto"/>
-<w:ind w:left="640" w:hanging="640"/>
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-</w:pPr>
-</w:p>
-<w:p w:rsidR="00531BBA" w:rsidRPr="00531BBA" w:rsidRDefault="00531BBA" w:rsidP="00531BBA">
-<w:pPr>
-<w:autoSpaceDE w:val="0"/>
-<w:autoSpaceDN w:val="0"/>
-<w:adjustRightInd w:val="0"/>
-<w:spacing w:after="0" w:line="240" w:lineRule="auto"/>
-<w:ind w:left="640" w:hanging="640"/>
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-</w:pPr>
-<w:r w:rsidRPr="00531BBA">
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-<w:t xml:space="preserve">[24] ACM </w:t>
-</w:r>
-<w:proofErr w:type="spellStart"/>
-<w:r w:rsidRPr="00531BBA">
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-<w:t>Comput</w:t>
-</w:r>
-<w:proofErr w:type="spellEnd"/>
-<w:r w:rsidRPr="00531BBA">
+<w:r w:rsidRPr="00A334CA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
@@ -45817,26 +45790,53 @@ z∨¬x∨¬y∨¬z</m:t>
 </w:rPr>
 <w:t xml:space="preserve">. </w:t>
 </w:r>
-<w:proofErr w:type="spellStart"/>
 <w:proofErr w:type="gramStart"/>
-<w:r w:rsidRPr="00531BBA">
+<w:r w:rsidRPr="00A334CA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t>Surv.N</w:t>
+<w:t>Springer, 2001.</w:t>
 </w:r>
-<w:proofErr w:type="spellEnd"/>
-<w:r w:rsidRPr="00531BBA">
+<w:proofErr w:type="gramEnd"/>
+</w:p>
+<w:p w:rsidR="00A334CA" w:rsidRPr="00A334CA" w:rsidRDefault="00A334CA" w:rsidP="00A334CA">
+<w:pPr>
+<w:autoSpaceDE w:val="0"/>
+<w:autoSpaceDN w:val="0"/>
+<w:adjustRightInd w:val="0"/>
+<w:spacing w:after="0" w:line="240" w:lineRule="auto"/>
+<w:ind w:left="640" w:hanging="640"/>
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t xml:space="preserve">. Shankar, “Automated deduction for verification,” </w:t>
+</w:pPr>
+</w:p>
+<w:p w:rsidR="00A334CA" w:rsidRPr="00A334CA" w:rsidRDefault="00A334CA" w:rsidP="00A334CA">
+<w:pPr>
+<w:autoSpaceDE w:val="0"/>
+<w:autoSpaceDN w:val="0"/>
+<w:adjustRightInd w:val="0"/>
+<w:spacing w:after="0" w:line="240" w:lineRule="auto"/>
+<w:ind w:left="640" w:hanging="640"/>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+</w:pPr>
+<w:r w:rsidRPr="00A334CA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve">[Shan09] N. Shankar, “Automated deduction for verification,” </w:t>
 </w:r>
-<w:r w:rsidRPr="00531BBA">
+<w:r w:rsidRPr="00A334CA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:i/>
@@ -45846,7 +45846,7 @@ z∨¬x∨¬y∨¬z</m:t>
 <w:t xml:space="preserve">ACM </w:t>
 </w:r>
 <w:proofErr w:type="spellStart"/>
-<w:r w:rsidRPr="00531BBA">
+<w:r w:rsidRPr="00A334CA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:i/>
@@ -45856,28 +45856,18 @@ z∨¬x∨¬y∨¬z</m:t>
 <w:t>Comput</w:t>
 </w:r>
 <w:proofErr w:type="spellEnd"/>
-<w:r w:rsidRPr="00531BBA">
+<w:r w:rsidRPr="00A334CA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:i/>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t>.</w:t>
-</w:r>
-<w:proofErr w:type="gramEnd"/>
-<w:r w:rsidRPr="00531BBA">
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:i/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-<w:t xml:space="preserve"> </w:t>
+<w:t xml:space="preserve">. </w:t>
 </w:r>
 <w:proofErr w:type="spellStart"/>
 <w:proofErr w:type="gramStart"/>
-<w:r w:rsidRPr="00531BBA">
+<w:r w:rsidRPr="00A334CA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:i/>
@@ -45887,7 +45877,7 @@ z∨¬x∨¬y∨¬z</m:t>
 <w:t>Surv</w:t>
 </w:r>
 <w:proofErr w:type="spellEnd"/>
-<w:r w:rsidRPr="00531BBA">
+<w:r w:rsidRPr="00A334CA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:i/>
@@ -45896,7 +45886,7 @@ z∨¬x∨¬y∨¬z</m:t>
 </w:rPr>
 <w:t>.</w:t>
 </w:r>
-<w:r w:rsidRPr="00531BBA">
+<w:r w:rsidRPr="00A334CA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
@@ -45905,16 +45895,16 @@ z∨¬x∨¬y∨¬z</m:t>
 <w:t>,</w:t>
 </w:r>
 <w:proofErr w:type="gramEnd"/>
-<w:r w:rsidRPr="00531BBA">
+<w:r w:rsidRPr="00A334CA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t xml:space="preserve"> vol. 41, no. 4, pp. 20:1–20:56, Oct. 2009.</w:t>
+<w:t xml:space="preserve"> vol. 41, no. 4, Oct. 2009, pp. 20:1–20:56.</w:t>
 </w:r>
 </w:p>
-<w:p w:rsidR="00531BBA" w:rsidRPr="00531BBA" w:rsidRDefault="00531BBA" w:rsidP="00531BBA">
+<w:p w:rsidR="00A334CA" w:rsidRPr="00A334CA" w:rsidRDefault="00A334CA" w:rsidP="00A334CA">
 <w:pPr>
 <w:autoSpaceDE w:val="0"/>
 <w:autoSpaceDN w:val="0"/>
@@ -45928,7 +45918,7 @@ z∨¬x∨¬y∨¬z</m:t>
 </w:rPr>
 </w:pPr>
 </w:p>
-<w:p w:rsidR="00531BBA" w:rsidRPr="00531BBA" w:rsidRDefault="00531BBA" w:rsidP="00531BBA">
+<w:p w:rsidR="00A334CA" w:rsidRPr="00A334CA" w:rsidRDefault="00A334CA" w:rsidP="00A334CA">
 <w:pPr>
 <w:autoSpaceDE w:val="0"/>
 <w:autoSpaceDN w:val="0"/>
@@ -45941,16 +45931,16 @@ z∨¬x∨¬y∨¬z</m:t>
 <w:szCs w:val="24"/>
 </w:rPr>
 </w:pPr>
-<w:r w:rsidRPr="00531BBA">
+<w:r w:rsidRPr="00A334CA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t xml:space="preserve">[25] L. Sterling and E. Y. Shapiro, </w:t>
+<w:t xml:space="preserve">[StSh94] L. Sterling and E. Y. Shapiro, </w:t>
 </w:r>
 <w:proofErr w:type="gramStart"/>
-<w:r w:rsidRPr="00531BBA">
+<w:r w:rsidRPr="00A334CA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:i/>
@@ -45960,7 +45950,7 @@ z∨¬x∨¬y∨¬z</m:t>
 <w:t>The</w:t>
 </w:r>
 <w:proofErr w:type="gramEnd"/>
-<w:r w:rsidRPr="00531BBA">
+<w:r w:rsidRPr="00A334CA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:i/>
@@ -45969,61 +45959,7 @@ z∨¬x∨¬y∨¬z</m:t>
 </w:rPr>
 <w:t xml:space="preserve"> Art of Prolog: Advanced Programming Techniques</w:t>
 </w:r>
-<w:r w:rsidRPr="00531BBA">
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-<w:t>. MIT Press, 1994, p. 509.</w:t>
-</w:r>
-</w:p>
-<w:p w:rsidR="00531BBA" w:rsidRPr="00531BBA" w:rsidRDefault="00531BBA" w:rsidP="00531BBA">
-<w:pPr>
-<w:autoSpaceDE w:val="0"/>
-<w:autoSpaceDN w:val="0"/>
-<w:adjustRightInd w:val="0"/>
-<w:spacing w:after="0" w:line="240" w:lineRule="auto"/>
-<w:ind w:left="640" w:hanging="640"/>
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-</w:pPr>
-</w:p>
-<w:p w:rsidR="00531BBA" w:rsidRPr="00531BBA" w:rsidRDefault="00531BBA" w:rsidP="00531BBA">
-<w:pPr>
-<w:autoSpaceDE w:val="0"/>
-<w:autoSpaceDN w:val="0"/>
-<w:adjustRightInd w:val="0"/>
-<w:spacing w:after="0" w:line="240" w:lineRule="auto"/>
-<w:ind w:left="640" w:hanging="640"/>
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-</w:pPr>
-<w:r w:rsidRPr="00531BBA">
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-<w:t xml:space="preserve">[26] </w:t>
-</w:r>
-<w:proofErr w:type="spellStart"/>
-<w:r w:rsidRPr="00531BBA">
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-<w:t>Commun</w:t>
-</w:r>
-<w:proofErr w:type="spellEnd"/>
-<w:r w:rsidRPr="00531BBA">
+<w:r w:rsidRPr="00A334CA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
@@ -46032,26 +45968,53 @@ z∨¬x∨¬y∨¬z</m:t>
 <w:t xml:space="preserve">. </w:t>
 </w:r>
 <w:proofErr w:type="gramStart"/>
-<w:r w:rsidRPr="00531BBA">
+<w:r w:rsidRPr="00A334CA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t>ACMM.</w:t>
+<w:t>MIT Press, 1994.</w:t>
 </w:r>
 <w:proofErr w:type="gramEnd"/>
-<w:r w:rsidRPr="00531BBA">
+</w:p>
+<w:p w:rsidR="00A334CA" w:rsidRPr="00A334CA" w:rsidRDefault="00A334CA" w:rsidP="00A334CA">
+<w:pPr>
+<w:autoSpaceDE w:val="0"/>
+<w:autoSpaceDN w:val="0"/>
+<w:adjustRightInd w:val="0"/>
+<w:spacing w:after="0" w:line="240" w:lineRule="auto"/>
+<w:ind w:left="640" w:hanging="640"/>
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t xml:space="preserve"> </w:t>
+</w:pPr>
+</w:p>
+<w:p w:rsidR="00A334CA" w:rsidRPr="00A334CA" w:rsidRDefault="00A334CA" w:rsidP="00A334CA">
+<w:pPr>
+<w:autoSpaceDE w:val="0"/>
+<w:autoSpaceDN w:val="0"/>
+<w:adjustRightInd w:val="0"/>
+<w:spacing w:after="0" w:line="240" w:lineRule="auto"/>
+<w:ind w:left="640" w:hanging="640"/>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+</w:pPr>
+<w:r w:rsidRPr="00A334CA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve">[Ston12] M. </w:t>
 </w:r>
 <w:proofErr w:type="spellStart"/>
-<w:proofErr w:type="gramStart"/>
-<w:r w:rsidRPr="00531BBA">
+<w:r w:rsidRPr="00A334CA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
@@ -46060,7 +46023,7 @@ z∨¬x∨¬y∨¬z</m:t>
 <w:t>Stonebraker</w:t>
 </w:r>
 <w:proofErr w:type="spellEnd"/>
-<w:r w:rsidRPr="00531BBA">
+<w:r w:rsidRPr="00A334CA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
@@ -46069,7 +46032,7 @@ z∨¬x∨¬y∨¬z</m:t>
 <w:t xml:space="preserve">, “New opportunities for New SQL,” </w:t>
 </w:r>
 <w:proofErr w:type="spellStart"/>
-<w:r w:rsidRPr="00531BBA">
+<w:r w:rsidRPr="00A334CA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:i/>
@@ -46079,35 +46042,25 @@ z∨¬x∨¬y∨¬z</m:t>
 <w:t>Commun</w:t>
 </w:r>
 <w:proofErr w:type="spellEnd"/>
-<w:r w:rsidRPr="00531BBA">
+<w:r w:rsidRPr="00A334CA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:i/>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t>.</w:t>
+<w:t>. ACM</w:t>
 </w:r>
-<w:proofErr w:type="gramEnd"/>
-<w:r w:rsidRPr="00531BBA">
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:i/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-<w:t xml:space="preserve"> ACM</w:t>
-</w:r>
-<w:r w:rsidRPr="00531BBA">
+<w:r w:rsidRPr="00A334CA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t>, vol. 55, no. 11, pp. 10–11, Nov. 2012.</w:t>
+<w:t>, vol. 55, no. 11, Nov. 2012, pp. 10–11.</w:t>
 </w:r>
 </w:p>
-<w:p w:rsidR="00531BBA" w:rsidRPr="00531BBA" w:rsidRDefault="00531BBA" w:rsidP="00531BBA">
+<w:p w:rsidR="00A334CA" w:rsidRPr="00A334CA" w:rsidRDefault="00A334CA" w:rsidP="00A334CA">
 <w:pPr>
 <w:autoSpaceDE w:val="0"/>
 <w:autoSpaceDN w:val="0"/>
@@ -46121,7 +46074,7 @@ z∨¬x∨¬y∨¬z</m:t>
 </w:rPr>
 </w:pPr>
 </w:p>
-<w:p w:rsidR="00531BBA" w:rsidRPr="00531BBA" w:rsidRDefault="00531BBA" w:rsidP="00531BBA">
+<w:p w:rsidR="00A334CA" w:rsidRPr="00A334CA" w:rsidRDefault="00A334CA" w:rsidP="00A334CA">
 <w:pPr>
 <w:autoSpaceDE w:val="0"/>
 <w:autoSpaceDN w:val="0"/>
@@ -46134,16 +46087,16 @@ z∨¬x∨¬y∨¬z</m:t>
 <w:szCs w:val="24"/>
 </w:rPr>
 </w:pPr>
-<w:r w:rsidRPr="00531BBA">
+<w:r w:rsidRPr="00A334CA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t xml:space="preserve">[27] V. </w:t>
+<w:t xml:space="preserve">[TrBu07] V. </w:t>
 </w:r>
 <w:proofErr w:type="spellStart"/>
-<w:r w:rsidRPr="00531BBA">
+<w:r w:rsidRPr="00A334CA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
@@ -46152,7 +46105,7 @@ z∨¬x∨¬y∨¬z</m:t>
 <w:t>Tropashko</w:t>
 </w:r>
 <w:proofErr w:type="spellEnd"/>
-<w:r w:rsidRPr="00531BBA">
+<w:r w:rsidRPr="00A334CA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
@@ -46160,7 +46113,7 @@ z∨¬x∨¬y∨¬z</m:t>
 </w:rPr>
 <w:t xml:space="preserve"> and D. K. Burleson, </w:t>
 </w:r>
-<w:r w:rsidRPr="00531BBA">
+<w:r w:rsidRPr="00A334CA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:i/>
@@ -46169,16 +46122,25 @@ z∨¬x∨¬y∨¬z</m:t>
 </w:rPr>
 <w:t>SQL Design Patterns: Expert Guide to SQL Programming</w:t>
 </w:r>
-<w:r w:rsidRPr="00531BBA">
+<w:r w:rsidRPr="00A334CA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t xml:space="preserve">. Rampant </w:t>
+<w:t xml:space="preserve">. </w:t>
+</w:r>
+<w:proofErr w:type="gramStart"/>
+<w:r w:rsidRPr="00A334CA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve">Rampant </w:t>
 </w:r>
 <w:proofErr w:type="spellStart"/>
-<w:r w:rsidRPr="00531BBA">
+<w:r w:rsidRPr="00A334CA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
@@ -46187,16 +46149,17 @@ z∨¬x∨¬y∨¬z</m:t>
 <w:t>TechPress</w:t>
 </w:r>
 <w:proofErr w:type="spellEnd"/>
-<w:r w:rsidRPr="00531BBA">
+<w:r w:rsidRPr="00A334CA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t>, 2007, p. 255.</w:t>
+<w:t>, 2007.</w:t>
 </w:r>
+<w:proofErr w:type="gramEnd"/>
 </w:p>
-<w:p w:rsidR="00531BBA" w:rsidRPr="00531BBA" w:rsidRDefault="00531BBA" w:rsidP="00531BBA">
+<w:p w:rsidR="00A334CA" w:rsidRPr="00A334CA" w:rsidRDefault="00A334CA" w:rsidP="00A334CA">
 <w:pPr>
 <w:autoSpaceDE w:val="0"/>
 <w:autoSpaceDN w:val="0"/>
@@ -46210,7 +46173,7 @@ z∨¬x∨¬y∨¬z</m:t>
 </w:rPr>
 </w:pPr>
 </w:p>
-<w:p w:rsidR="00531BBA" w:rsidRPr="00531BBA" w:rsidRDefault="00531BBA" w:rsidP="00531BBA">
+<w:p w:rsidR="00A334CA" w:rsidRPr="00A334CA" w:rsidRDefault="00A334CA" w:rsidP="00A334CA">
 <w:pPr>
 <w:autoSpaceDE w:val="0"/>
 <w:autoSpaceDN w:val="0"/>
@@ -46223,16 +46186,16 @@ z∨¬x∨¬y∨¬z</m:t>
 <w:szCs w:val="24"/>
 </w:rPr>
 </w:pPr>
-<w:r w:rsidRPr="00531BBA">
+<w:r w:rsidRPr="00A334CA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t xml:space="preserve">[28] L. M. Van </w:t>
+<w:t xml:space="preserve">[Exel12] L. M. Van </w:t>
 </w:r>
 <w:proofErr w:type="spellStart"/>
-<w:r w:rsidRPr="00531BBA">
+<w:r w:rsidRPr="00A334CA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
@@ -46241,70 +46204,70 @@ z∨¬x∨¬y∨¬z</m:t>
 <w:t>Exel</w:t>
 </w:r>
 <w:proofErr w:type="spellEnd"/>
-<w:r w:rsidRPr="00531BBA">
+<w:r w:rsidRPr="00A334CA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t>, “Applying Database Refactoring Techniques to Procedural SQL,” California State University, Long Beach, Long Beach, Calif., 2012.</w:t>
-</w:r>
-</w:p>
-<w:p w:rsidR="00531BBA" w:rsidRPr="00531BBA" w:rsidRDefault="00531BBA" w:rsidP="00531BBA">
-<w:pPr>
-<w:autoSpaceDE w:val="0"/>
-<w:autoSpaceDN w:val="0"/>
-<w:adjustRightInd w:val="0"/>
-<w:spacing w:after="0" w:line="240" w:lineRule="auto"/>
-<w:ind w:left="640" w:hanging="640"/>
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-</w:pPr>
-</w:p>
-<w:p w:rsidR="00531BBA" w:rsidRPr="00531BBA" w:rsidRDefault="00531BBA" w:rsidP="00531BBA">
-<w:pPr>
-<w:autoSpaceDE w:val="0"/>
-<w:autoSpaceDN w:val="0"/>
-<w:adjustRightInd w:val="0"/>
-<w:spacing w:after="0" w:line="240" w:lineRule="auto"/>
-<w:ind w:left="640" w:hanging="640"/>
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-</w:pPr>
-<w:r w:rsidRPr="00531BBA">
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-<w:t xml:space="preserve">[29] Proceedings of the 16th international conference on Logic for programming, artificial intelligence, and </w:t>
+<w:t xml:space="preserve">, “Applying Database Refactoring Techniques to Procedural SQL,” master’s thesis, Department of Computer Engineering and Computer </w:t>
 </w:r>
 <w:proofErr w:type="spellStart"/>
-<w:r w:rsidRPr="00531BBA">
+<w:r w:rsidRPr="00A334CA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t>reasoningM</w:t>
+<w:t>Sc</w:t>
 </w:r>
 <w:proofErr w:type="spellEnd"/>
-<w:r w:rsidRPr="00531BBA">
+<w:r w:rsidRPr="00A334CA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t xml:space="preserve">. </w:t>
+<w:t>, California State University, Long Beach, 2012.</w:t>
+</w:r>
+</w:p>
+<w:p w:rsidR="00A334CA" w:rsidRPr="00A334CA" w:rsidRDefault="00A334CA" w:rsidP="00A334CA">
+<w:pPr>
+<w:autoSpaceDE w:val="0"/>
+<w:autoSpaceDN w:val="0"/>
+<w:adjustRightInd w:val="0"/>
+<w:spacing w:after="0" w:line="240" w:lineRule="auto"/>
+<w:ind w:left="640" w:hanging="640"/>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+</w:pPr>
+</w:p>
+<w:p w:rsidR="00A334CA" w:rsidRPr="00A334CA" w:rsidRDefault="00A334CA" w:rsidP="00A334CA">
+<w:pPr>
+<w:autoSpaceDE w:val="0"/>
+<w:autoSpaceDN w:val="0"/>
+<w:adjustRightInd w:val="0"/>
+<w:spacing w:after="0" w:line="240" w:lineRule="auto"/>
+<w:ind w:left="640" w:hanging="640"/>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+</w:pPr>
+<w:r w:rsidRPr="00A334CA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve">[VeTH10] M. </w:t>
 </w:r>
 <w:proofErr w:type="spellStart"/>
-<w:r w:rsidRPr="00531BBA">
+<w:r w:rsidRPr="00A334CA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
@@ -46313,7 +46276,7 @@ z∨¬x∨¬y∨¬z</m:t>
 <w:t>Veanes</w:t>
 </w:r>
 <w:proofErr w:type="spellEnd"/>
-<w:r w:rsidRPr="00531BBA">
+<w:r w:rsidRPr="00A334CA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
@@ -46322,7 +46285,7 @@ z∨¬x∨¬y∨¬z</m:t>
 <w:t xml:space="preserve">, N. </w:t>
 </w:r>
 <w:proofErr w:type="spellStart"/>
-<w:r w:rsidRPr="00531BBA">
+<w:r w:rsidRPr="00A334CA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
@@ -46331,7 +46294,7 @@ z∨¬x∨¬y∨¬z</m:t>
 <w:t>Tillmann</w:t>
 </w:r>
 <w:proofErr w:type="spellEnd"/>
-<w:r w:rsidRPr="00531BBA">
+<w:r w:rsidRPr="00A334CA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
@@ -46340,7 +46303,7 @@ z∨¬x∨¬y∨¬z</m:t>
 <w:t xml:space="preserve">, and J. de </w:t>
 </w:r>
 <w:proofErr w:type="spellStart"/>
-<w:r w:rsidRPr="00531BBA">
+<w:r w:rsidRPr="00A334CA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
@@ -46349,7 +46312,7 @@ z∨¬x∨¬y∨¬z</m:t>
 <w:t>Halleux</w:t>
 </w:r>
 <w:proofErr w:type="spellEnd"/>
-<w:r w:rsidRPr="00531BBA">
+<w:r w:rsidRPr="00A334CA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
@@ -46358,7 +46321,7 @@ z∨¬x∨¬y∨¬z</m:t>
 <w:t>, “</w:t>
 </w:r>
 <w:proofErr w:type="spellStart"/>
-<w:r w:rsidRPr="00531BBA">
+<w:r w:rsidRPr="00A334CA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
@@ -46367,15 +46330,15 @@ z∨¬x∨¬y∨¬z</m:t>
 <w:t>Qex</w:t>
 </w:r>
 <w:proofErr w:type="spellEnd"/>
-<w:r w:rsidRPr="00531BBA">
+<w:r w:rsidRPr="00A334CA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t xml:space="preserve">: symbolic SQL query explorer,” </w:t>
+<w:t xml:space="preserve">: symbolic SQL query explorer,” in </w:t>
 </w:r>
-<w:r w:rsidRPr="00531BBA">
+<w:r w:rsidRPr="00A334CA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:i/>
@@ -46384,7 +46347,25 @@ z∨¬x∨¬y∨¬z</m:t>
 </w:rPr>
 <w:t>Proceedings of the 16th international conference on Logic for programming, artificial intelligence, and reasoning</w:t>
 </w:r>
-<w:r w:rsidRPr="00531BBA">
+<w:r w:rsidRPr="00A334CA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>, (LPAR’10), Springer-</w:t>
+</w:r>
+<w:proofErr w:type="spellStart"/>
+<w:r w:rsidRPr="00A334CA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>Verlag</w:t>
+</w:r>
+<w:proofErr w:type="spellEnd"/>
+<w:r w:rsidRPr="00A334CA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
@@ -46393,7 +46374,7 @@ z∨¬x∨¬y∨¬z</m:t>
 <w:t>, 2010, pp. 425–446.</w:t>
 </w:r>
 </w:p>
-<w:p w:rsidR="00531BBA" w:rsidRPr="00531BBA" w:rsidRDefault="00531BBA" w:rsidP="00531BBA">
+<w:p w:rsidR="00A334CA" w:rsidRPr="00A334CA" w:rsidRDefault="00A334CA" w:rsidP="00A334CA">
 <w:pPr>
 <w:autoSpaceDE w:val="0"/>
 <w:autoSpaceDN w:val="0"/>
@@ -46407,7 +46388,7 @@ z∨¬x∨¬y∨¬z</m:t>
 </w:rPr>
 </w:pPr>
 </w:p>
-<w:p w:rsidR="00531BBA" w:rsidRPr="00531BBA" w:rsidRDefault="00531BBA" w:rsidP="00531BBA">
+<w:p w:rsidR="00A334CA" w:rsidRPr="00A334CA" w:rsidRDefault="00A334CA" w:rsidP="00A334CA">
 <w:pPr>
 <w:autoSpaceDE w:val="0"/>
 <w:autoSpaceDN w:val="0"/>
@@ -46420,17 +46401,16 @@ z∨¬x∨¬y∨¬z</m:t>
 <w:szCs w:val="24"/>
 </w:rPr>
 </w:pPr>
-<w:proofErr w:type="gramStart"/>
-<w:r w:rsidRPr="00531BBA">
+<w:r w:rsidRPr="00A334CA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t xml:space="preserve">[30] W. </w:t>
+<w:t xml:space="preserve">[Wein07] W. </w:t>
 </w:r>
 <w:proofErr w:type="spellStart"/>
-<w:r w:rsidRPr="00531BBA">
+<w:r w:rsidRPr="00A334CA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
@@ -46439,7 +46419,7 @@ z∨¬x∨¬y∨¬z</m:t>
 <w:t>Weinmann</w:t>
 </w:r>
 <w:proofErr w:type="spellEnd"/>
-<w:r w:rsidRPr="00531BBA">
+<w:r w:rsidRPr="00A334CA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
@@ -46448,7 +46428,7 @@ z∨¬x∨¬y∨¬z</m:t>
 <w:t xml:space="preserve">, “Applying Patterns and SQL Idioms to </w:t>
 </w:r>
 <w:proofErr w:type="spellStart"/>
-<w:r w:rsidRPr="00531BBA">
+<w:r w:rsidRPr="00A334CA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
@@ -46457,17 +46437,16 @@ z∨¬x∨¬y∨¬z</m:t>
 <w:t>Optimise</w:t>
 </w:r>
 <w:proofErr w:type="spellEnd"/>
-<w:r w:rsidRPr="00531BBA">
+<w:r w:rsidRPr="00A334CA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t xml:space="preserve"> Relational Database Queries,” The Open University, Milton Keynes, England, 2007.</w:t>
+<w:t xml:space="preserve"> Relational Database Queries,” master’s thesis, Dept. of Computing and IT, The Open University, 2007.</w:t>
 </w:r>
-<w:proofErr w:type="gramEnd"/>
 </w:p>
-<w:p w:rsidR="00531BBA" w:rsidRPr="00531BBA" w:rsidRDefault="00531BBA" w:rsidP="00531BBA">
+<w:p w:rsidR="00A334CA" w:rsidRPr="00A334CA" w:rsidRDefault="00A334CA" w:rsidP="00A334CA">
 <w:pPr>
 <w:autoSpaceDE w:val="0"/>
 <w:autoSpaceDN w:val="0"/>
@@ -46481,7 +46460,43 @@ z∨¬x∨¬y∨¬z</m:t>
 </w:rPr>
 </w:pPr>
 </w:p>
-<w:p w:rsidR="00531BBA" w:rsidRPr="00531BBA" w:rsidRDefault="00531BBA" w:rsidP="00531BBA">
+<w:p w:rsidR="00A334CA" w:rsidRPr="00A334CA" w:rsidRDefault="00A334CA" w:rsidP="00A334CA">
+<w:pPr>
+<w:autoSpaceDE w:val="0"/>
+<w:autoSpaceDN w:val="0"/>
+<w:adjustRightInd w:val="0"/>
+<w:spacing w:after="0" w:line="240" w:lineRule="auto"/>
+<w:ind w:left="640" w:hanging="640"/>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+</w:pPr>
+<w:r w:rsidRPr="00A334CA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>[99] “ISO/IEC 9075:1999,” Information technology - Database languages - SQL, ISO, 1999.</w:t>
+</w:r>
+</w:p>
+<w:p w:rsidR="00A334CA" w:rsidRPr="00A334CA" w:rsidRDefault="00A334CA" w:rsidP="00A334CA">
+<w:pPr>
+<w:autoSpaceDE w:val="0"/>
+<w:autoSpaceDN w:val="0"/>
+<w:adjustRightInd w:val="0"/>
+<w:spacing w:after="0" w:line="240" w:lineRule="auto"/>
+<w:ind w:left="640" w:hanging="640"/>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+</w:pPr>
+</w:p>
+<w:p w:rsidR="00A334CA" w:rsidRPr="00A334CA" w:rsidRDefault="00A334CA" w:rsidP="00A334CA">
 <w:pPr>
 <w:autoSpaceDE w:val="0"/>
 <w:autoSpaceDN w:val="0"/>
@@ -46517,6 +46532,8 @@ z∨¬x∨¬y∨¬z</m:t>
 <w:docGrid w:linePitch="360"/>
 </w:sectPr>
 </w:pPr>
+<w:bookmarkStart w:id="0" w:name="_GoBack"/>
+<w:bookmarkEnd w:id="0"/>
 </w:p>
 <w:p w:rsidR="00F23974" w:rsidRPr="00F53FC1" w:rsidRDefault="00F23974" w:rsidP="00F23974">
 <w:pPr>
@@ -46583,14 +46600,14 @@ z∨¬x∨¬y∨¬z</m:t>
 </w:rPr>
 <w:fldChar w:fldCharType="separate"/>
 </w:r>
-<w:r w:rsidR="00987FA3">
+<w:r w:rsidR="00A334CA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:noProof/>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t>28</w:t>
+<w:t>125</w:t>
 </w:r>
 <w:r w:rsidRPr="00952998">
 <w:rPr>
@@ -46643,7 +46660,7 @@ z∨¬x∨¬y∨¬z</m:t>
 </w:rPr>
 <w:fldChar w:fldCharType="separate"/>
 </w:r>
-<w:r>
+<w:r w:rsidR="00A334CA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:noProof/>
@@ -81367,6 +81384,7 @@ tte974VvTP5hCfpD1te+98VvfvW7X/7217//BXCABTxgAhfYwAdGcIIVvGAGN9jBD4ZwhCU8YQpX
 <w:rsid w:val="00522622"/>
 <w:rsid w:val="00531BBA"/>
 <w:rsid w:val="005360C9"/>
+<w:rsid w:val="00554795"/>
 <w:rsid w:val="00556300"/>
 <w:rsid w:val="00560F79"/>
 <w:rsid w:val="005622AB"/>
@@ -81519,6 +81537,7 @@ tte974VvTP5hCfpD1te+98VvfvW7X/7217//BXCABTxgAhfYwAdGcIIVvGAGN9jBD4ZwhCU8YQpX
 <w:rsid w:val="00A10CBF"/>
 <w:rsid w:val="00A16EE1"/>
 <w:rsid w:val="00A3192E"/>
+<w:rsid w:val="00A334CA"/>
 <w:rsid w:val="00A33DBC"/>
 <w:rsid w:val="00A33DBE"/>
 <w:rsid w:val="00A37DDC"/>
@@ -82255,13 +82274,13 @@ tte974VvTP5hCfpD1te+98VvfvW7X/7217//BXCABTxgAhfYwAdGcIIVvGAGN9jBD4ZwhCU8YQpX
 <Template>
 Normal.dotm</Template>
 <TotalTime>
-1172</TotalTime>
+1360</TotalTime>
 <Pages>
 136</Pages>
 <Words>
-21545</Words>
+21548</Words>
 <Characters>
-122810</Characters>
+122826</Characters>
 <Application>
 Microsoft Office Word</Application>
 <DocSecurity>
@@ -82293,7 +82312,7 @@ Title</vt:lpstr>
 <LinksUpToDate>
 false</LinksUpToDate>
 <CharactersWithSpaces>
-144067</CharactersWithSpaces>
+144086</CharactersWithSpaces>
 <SharedDoc>
 false</SharedDoc>
 <HyperlinksChanged>
@@ -82312,7 +82331,7 @@ false</HyperlinksChanged>
 </pkg:part>
 <pkg:part pkg:name="/customXml/itemProps1.xml" pkg:contentType="application/vnd.openxmlformats-officedocument.customXmlProperties+xml" pkg:padding="32">
 <pkg:xmlData pkg:originalXmlStandalone="no">
-<ds:datastoreItem ds:itemID="{C5BC6A72-6D67-4C56-9097-5C64F205DC9E}" xmlns:ds="http://schemas.openxmlformats.org/officeDocument/2006/customXml">
+<ds:datastoreItem ds:itemID="{060DECBC-533E-4AEC-B5A8-0625777CC53A}" xmlns:ds="http://schemas.openxmlformats.org/officeDocument/2006/customXml">
 <ds:schemaRefs>
 <ds:schemaRef ds:uri="http://schemas.openxmlformats.org/officeDocument/2006/bibliography"/>
 </ds:schemaRefs>
@@ -82682,13 +82701,13 @@ Someone</dc:creator>
 <cp:lastModifiedBy>
 Someone</cp:lastModifiedBy>
 <cp:revision>
-461</cp:revision>
+464</cp:revision>
 <cp:lastPrinted>
 2012-09-11T04:21:00Z</cp:lastPrinted>
 <dcterms:created xsi:type="dcterms:W3CDTF">
 2012-08-19T03:41:00Z</dcterms:created>
 <dcterms:modified xsi:type="dcterms:W3CDTF">
-2012-09-07T20:22:00Z</dcterms:modified>
+2012-09-07T23:32:00Z</dcterms:modified>
 </cp:coreProperties>
 </pkg:xmlData>
 </pkg:part>
