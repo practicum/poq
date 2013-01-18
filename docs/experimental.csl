@@ -201,8 +201,8 @@
             <text macro="title"/>
             <text variable="container-title" font-style="italic" form="short"/>
             <text macro="locators"/>
-            <text macro="page"/>
             <text macro="issued"/>
+            <text macro="page"/>
           </group>
         </if>
         <else-if type="paper-conference">
