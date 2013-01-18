@@ -10567,7 +10567,42 @@ L</m:t>
 </w:drawing>
 </w:r>
 </w:p>
-<w:p w:rsidR="00577E9E" w:rsidRDefault="005A0A66" w:rsidP="00577E9E">
+<w:p w:rsidR="00577E9E" w:rsidRDefault="001C0B7C" w:rsidP="001C0B7C">
+<w:pPr>
+<w:spacing w:after="240" w:line="240" w:lineRule="auto"/>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+</w:pPr>
+<w:r>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve">FIGURE UU.  </w:t>
+</w:r>
+<w:r w:rsidRPr="001C0B7C">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:i/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>Approximated Correlation</w:t>
+</w:r>
+<w:r>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>: a SQL pitfall based on incorrect assumptions about sequencing.</w:t>
+</w:r>
+</w:p>
+<w:p w:rsidR="001C0B7C" w:rsidRDefault="001C0B7C" w:rsidP="00577E9E">
 <w:pPr>
 <w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
 <w:contextualSpacing/>
@@ -10577,18 +10612,15 @@ L</m:t>
 <w:szCs w:val="24"/>
 </w:rPr>
 </w:pPr>
-<w:proofErr w:type="spellStart"/>
-<w:proofErr w:type="gramStart"/>
 <w:r>
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t>asdf</w:t>
+<w:tab/>
+<w:t>next</w:t>
 </w:r>
-<w:proofErr w:type="spellEnd"/>
-<w:proofErr w:type="gramEnd"/>
 </w:p>
 <w:p w:rsidR="005A0A66" w:rsidRDefault="005A0A66" w:rsidP="00577E9E">
 <w:pPr>
@@ -11164,7 +11196,64 @@ L</m:t>
 </w:drawing>
 </w:r>
 </w:p>
-<w:p w:rsidR="00186F02" w:rsidRDefault="00186F02" w:rsidP="00577E9E">
+<w:p w:rsidR="00186F02" w:rsidRDefault="00C4273E" w:rsidP="00A3192E">
+<w:pPr>
+<w:spacing w:after="240" w:line="240" w:lineRule="auto"/>
+<w:contextualSpacing/>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+</w:pPr>
+<w:r>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve">FIGURE UU.  </w:t>
+</w:r>
+<w:proofErr w:type="gramStart"/>
+<w:r w:rsidRPr="00C4273E">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:i/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>Repealed Law of the Excluded Middle</w:t>
+</w:r>
+<w:r>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>: a SQL pitfall to watch for in the presence of NULLs.</w:t>
+</w:r>
+<w:proofErr w:type="gramEnd"/>
+<w:r>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve"> </w:t>
+</w:r>
+</w:p>
+<w:p w:rsidR="00A3192E" w:rsidRDefault="00A3192E" w:rsidP="00A3192E">
+<w:pPr>
+<w:spacing w:after="240" w:line="240" w:lineRule="auto"/>
+<w:contextualSpacing/>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+</w:pPr>
+</w:p>
+<w:p w:rsidR="000831A7" w:rsidRDefault="007C465C" w:rsidP="00577E9E">
 <w:pPr>
 <w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
 <w:contextualSpacing/>
@@ -11174,6 +11263,374 @@ L</m:t>
 <w:szCs w:val="24"/>
 </w:rPr>
 </w:pPr>
+<w:r>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:tab/>
+</w:r>
+<w:proofErr w:type="gramStart"/>
+<w:r w:rsidR="00C27B6B" w:rsidRPr="00C27B6B">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:i/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>Repealed Law of the Excluded Middle</w:t>
+</w:r>
+<w:r w:rsidR="00C27B6B">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve"> (Figure UU).</w:t>
+</w:r>
+<w:proofErr w:type="gramEnd"/>
+<w:r w:rsidR="00C27B6B">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve">  The name of this pitfall is a playful reference to the well-known principle in classical logic whereby for any pair of contradictory statements, exactly one must be true.</w:t>
+</w:r>
+<w:r w:rsidR="002636CC">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve">  Of course, because SQL employs three-valued logic (3VL) instead of classic Boolean logic, the law of the excluded middle often cannot be applied when reasoning about SQL queries.</w:t>
+</w:r>
+<w:r w:rsidR="002131B3">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve">  In the presence of 3VL, the outcome of filtering RDB data using logical predicates often clashes with one’s “common sense intuition.”  Figure UU is intended to show one example of such an unintuitive outcome.</w:t>
+</w:r>
+<w:r w:rsidR="000831A7">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve">  </w:t>
+</w:r>
+</w:p>
+<w:p w:rsidR="00E0411C" w:rsidRDefault="000831A7" w:rsidP="00577E9E">
+<w:pPr>
+<w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
+<w:contextualSpacing/>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+</w:pPr>
+<w:r>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:tab/>
+</w:r>
+<w:r>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve">In Figure UU, Query A seems like a reasonable way to express the request “show me everyone in the Person table whose middle initial is P.”  Likewise, Query B is intended to express “show me everyone in the Person table whose middle initial is </w:t>
+</w:r>
+<w:r w:rsidRPr="000831A7">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:i/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>not</w:t>
+</w:r>
+<w:r>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve"> P.”  Common sense dictates that if we have seen every person with middle initial P, and then we have subsequently seen every person not having middle initial P, then certainly we have seen all the people.  However, as shown in the </w:t>
+</w:r>
+<w:proofErr w:type="gramStart"/>
+<w:r>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>figure, that</w:t>
+</w:r>
+<w:proofErr w:type="gramEnd"/>
+<w:r>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve"> is not what is happening in the SQL interpretation of these queries.</w:t>
+</w:r>
+<w:r w:rsidR="00EC40E8">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve">  The queries failed to show all the people; Alice never appeared in either result set.</w:t>
+</w:r>
+<w:r w:rsidR="00152D63">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve">  </w:t>
+</w:r>
+</w:p>
+<w:p w:rsidR="00C4273E" w:rsidRDefault="00E0411C" w:rsidP="00577E9E">
+<w:pPr>
+<w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
+<w:contextualSpacing/>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+</w:pPr>
+<w:r>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:tab/>
+</w:r>
+<w:r w:rsidR="00152D63">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve">Because </w:t>
+</w:r>
+<w:proofErr w:type="spellStart"/>
+<w:r w:rsidR="00152D63">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>Person.middle</w:t>
+</w:r>
+<w:proofErr w:type="spellEnd"/>
+<w:r w:rsidR="00152D63">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve"> is a nullable column</w:t>
+</w:r>
+<w:r w:rsidR="00EC40E8">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>, a SQL user is required to understand that Query B actually means “show me everyone whose middle initial is not unknown (not omitted from the data) and is (therefore) definitely not P.”</w:t>
+</w:r>
+<w:r w:rsidR="00BC0DEC">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve">  Once this more precise interpretation of Query B is understood, then it becomes clear that seeing all the people in the Person table requires three queries: one</w:t>
+</w:r>
+<w:r w:rsidR="00ED1910">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve"> query</w:t>
+</w:r>
+<w:r w:rsidR="00BC0DEC">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve"> for initial P, one for </w:t>
+</w:r>
+<w:r w:rsidR="00BC0DEC" w:rsidRPr="00ED1910">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:i/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>not</w:t>
+</w:r>
+<w:r w:rsidR="00BC0DEC">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve"> initial P, and </w:t>
+</w:r>
+<w:r w:rsidR="00ED1910">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>a third query</w:t>
+</w:r>
+<w:r w:rsidR="00BC0DEC">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve"> for </w:t>
+</w:r>
+<w:r w:rsidR="00BC0DEC" w:rsidRPr="00ED1910">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:i/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>initial unknown</w:t>
+</w:r>
+<w:r w:rsidR="00BC0DEC">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>.</w:t>
+</w:r>
+<w:r w:rsidR="00ED1910">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve">  </w:t>
+</w:r>
+</w:p>
+<w:p w:rsidR="00A3192E" w:rsidRDefault="00D072CC" w:rsidP="00577E9E">
+<w:pPr>
+<w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
+<w:contextualSpacing/>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+</w:pPr>
+<w:r>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:tab/>
+</w:r>
+<w:r>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve">Experienced SQL users can certainly learn over time to keep 3VL concepts in mind constantly.  Nonetheless, the burden of consistently mentally interpreting conditional SQL predicates using the 3VL system should not be underestimated, especially for SQL users that also regularly employ other computer languages </w:t>
+</w:r>
+<w:r w:rsidR="006843A4">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve">based on Boolean logic rather than </w:t>
+</w:r>
+<w:r>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>3VL.</w:t>
+</w:r>
+<w:r w:rsidR="009F6CAE">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve">  Furthermore, even if all SQL users can be assumed to faithfully understand and apply 3VL, there is still reason to be cautious about the pitfall in Figure UU.</w:t>
+</w:r>
+<w:r w:rsidR="00CC56A3">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve">  Imagine that the queries in Figure UU are not written directly by a trained SQL user, but instead are pieced together in response to various checkboxes and text fields exposed via the interface of some web application.</w:t>
+</w:r>
+<w:r w:rsidR="005C524E">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve">  In that case, the end user is now removed from knowing that the underlying retrieval process will even use the SQL language.  It seems terribly unwise in that case to expect the ultimate end user of the application to exercise any intuitions based in 3VL.</w:t>
+</w:r>
+<w:r w:rsidR="00987FA3">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve">  Even when a SQL expert could be expected to know better, this hypothetical end user would almost certainly be surprised that the set of “not P” individuals and the set of “P” individuals fail to sum to all individuals.</w:t>
+</w:r>
+<w:r w:rsidR="005C524E">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve"> </w:t>
+</w:r>
+</w:p>
+<w:p w:rsidR="00C4273E" w:rsidRDefault="00C4273E" w:rsidP="00577E9E">
+<w:pPr>
+<w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
+<w:contextualSpacing/>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+</w:pPr>
+<w:bookmarkStart w:id="0" w:name="_GoBack"/>
+<w:bookmarkEnd w:id="0"/>
 </w:p>
 <w:p w:rsidR="00186F02" w:rsidRDefault="00186F02" w:rsidP="00577E9E">
 <w:pPr>
@@ -30793,25 +31250,7 @@ z∨¬x∨¬y∨¬z</m:t>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t xml:space="preserve">The most important type remaining is the string type.  The introduction of that type will involve another discussion of design trade-offs.  Therefore, before we consider strings, we shall cover the simple technique of supporting </w:t>
-</w:r>
-<w:proofErr w:type="spellStart"/>
-<w:r w:rsidRPr="00B7247F">
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-<w:t>nullable</w:t>
-</w:r>
-<w:proofErr w:type="spellEnd"/>
-<w:r w:rsidRPr="00B7247F">
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-<w:t xml:space="preserve"> attributes in our system.  We only need one way to represent NULL, so we will use the Prolog constant 'null.'  Constants must begin with lower-case letters in Prolog, so we are unable to use a constant </w:t>
+<w:t xml:space="preserve">The most important type remaining is the string type.  The introduction of that type will involve another discussion of design trade-offs.  Therefore, before we consider strings, we shall cover the simple technique of supporting nullable attributes in our system.  We only need one way to represent NULL, so we will use the Prolog constant 'null.'  Constants must begin with lower-case letters in Prolog, so we are unable to use a constant </w:t>
 </w:r>
 <w:r w:rsidRPr="00B7247F">
 <w:rPr>
@@ -31381,25 +31820,7 @@ z∨¬x∨¬y∨¬z</m:t>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t xml:space="preserve">null)' in order to support </w:t>
-</w:r>
-<w:proofErr w:type="spellStart"/>
-<w:r w:rsidRPr="00B7247F">
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-<w:t>nullable</w:t>
-</w:r>
-<w:proofErr w:type="spellEnd"/>
-<w:r w:rsidRPr="00B7247F">
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-<w:t xml:space="preserve"> string columns.  After that, however, the possibilities are vast regarding what other items should become members of this finite domain.  In the earlier discussion of GUIDs, it was deemed reasonable to expect that a user would accept 'fccy463' as representing a GUID, even if it is an imperfect representative.  However, while we could also request that our users accept things like '</w:t>
+<w:t>null)' in order to support nullable string columns.  After that, however, the possibilities are vast regarding what other items should become members of this finite domain.  In the earlier discussion of GUIDs, it was deemed reasonable to expect that a user would accept 'fccy463' as representing a GUID, even if it is an imperfect representative.  However, while we could also request that our users accept things like '</w:t>
 </w:r>
 <w:proofErr w:type="spellStart"/>
 <w:r w:rsidRPr="00B7247F">
@@ -46096,8 +46517,6 @@ z∨¬x∨¬y∨¬z</m:t>
 <w:docGrid w:linePitch="360"/>
 </w:sectPr>
 </w:pPr>
-<w:bookmarkStart w:id="0" w:name="_GoBack"/>
-<w:bookmarkEnd w:id="0"/>
 </w:p>
 <w:p w:rsidR="00F23974" w:rsidRPr="00F53FC1" w:rsidRDefault="00F23974" w:rsidP="00F23974">
 <w:pPr>
@@ -46129,7 +46548,7 @@ z∨¬x∨¬y∨¬z</m:t>
 <pkg:part pkg:name="/word/footer2.xml" pkg:contentType="application/vnd.openxmlformats-officedocument.wordprocessingml.footer+xml">
 <pkg:xmlData>
 <w:ftr mc:Ignorable="w14 wp14" xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" xmlns:m="http://schemas.openxmlformats.org/officeDocument/2006/math" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:wp14="http://schemas.microsoft.com/office/word/2010/wordprocessingDrawing" xmlns:wp="http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing" xmlns:w10="urn:schemas-microsoft-com:office:word" xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main" xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml" xmlns:wpg="http://schemas.microsoft.com/office/word/2010/wordprocessingGroup" xmlns:wpi="http://schemas.microsoft.com/office/word/2010/wordprocessingInk" xmlns:wne="http://schemas.microsoft.com/office/word/2006/wordml" xmlns:wps="http://schemas.microsoft.com/office/word/2010/wordprocessingShape">
-<w:p w:rsidR="0042040C" w:rsidRPr="00F53FC1" w:rsidRDefault="0042040C" w:rsidP="00F53FC1">
+<w:p w:rsidR="00C27B6B" w:rsidRPr="00F53FC1" w:rsidRDefault="00C27B6B" w:rsidP="00F53FC1">
 <w:pPr>
 <w:pStyle w:val="Footer"/>
 <w:jc w:val="center"/>
@@ -46164,14 +46583,14 @@ z∨¬x∨¬y∨¬z</m:t>
 </w:rPr>
 <w:fldChar w:fldCharType="separate"/>
 </w:r>
-<w:r w:rsidR="00531BBA">
+<w:r w:rsidR="00987FA3">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:noProof/>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t>123</w:t>
+<w:t>28</w:t>
 </w:r>
 <w:r w:rsidRPr="00952998">
 <w:rPr>
@@ -46189,7 +46608,7 @@ z∨¬x∨¬y∨¬z</m:t>
 <pkg:part pkg:name="/word/footer1.xml" pkg:contentType="application/vnd.openxmlformats-officedocument.wordprocessingml.footer+xml">
 <pkg:xmlData>
 <w:ftr mc:Ignorable="w14 wp14" xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" xmlns:m="http://schemas.openxmlformats.org/officeDocument/2006/math" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:wp14="http://schemas.microsoft.com/office/word/2010/wordprocessingDrawing" xmlns:wp="http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing" xmlns:w10="urn:schemas-microsoft-com:office:word" xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main" xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml" xmlns:wpg="http://schemas.microsoft.com/office/word/2010/wordprocessingGroup" xmlns:wpi="http://schemas.microsoft.com/office/word/2010/wordprocessingInk" xmlns:wne="http://schemas.microsoft.com/office/word/2006/wordml" xmlns:wps="http://schemas.microsoft.com/office/word/2010/wordprocessingShape">
-<w:p w:rsidR="0042040C" w:rsidRPr="00F53FC1" w:rsidRDefault="0042040C" w:rsidP="00F53FC1">
+<w:p w:rsidR="00C27B6B" w:rsidRPr="00F53FC1" w:rsidRDefault="00C27B6B" w:rsidP="00F53FC1">
 <w:pPr>
 <w:pStyle w:val="Footer"/>
 <w:jc w:val="center"/>
@@ -46224,7 +46643,7 @@ z∨¬x∨¬y∨¬z</m:t>
 </w:rPr>
 <w:fldChar w:fldCharType="separate"/>
 </w:r>
-<w:r w:rsidR="00531BBA">
+<w:r>
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:noProof/>
@@ -46250,7 +46669,7 @@ z∨¬x∨¬y∨¬z</m:t>
 <pkg:xmlData>
 <w:footnotes mc:Ignorable="w14 wp14" xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" xmlns:m="http://schemas.openxmlformats.org/officeDocument/2006/math" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:wp14="http://schemas.microsoft.com/office/word/2010/wordprocessingDrawing" xmlns:wp="http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing" xmlns:w10="urn:schemas-microsoft-com:office:word" xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main" xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml" xmlns:wpg="http://schemas.microsoft.com/office/word/2010/wordprocessingGroup" xmlns:wpi="http://schemas.microsoft.com/office/word/2010/wordprocessingInk" xmlns:wne="http://schemas.microsoft.com/office/word/2006/wordml" xmlns:wps="http://schemas.microsoft.com/office/word/2010/wordprocessingShape">
 <w:footnote w:type="separator" w:id="-1">
-<w:p w:rsidR="0042040C" w:rsidRDefault="0042040C" w:rsidP="00F53FC1">
+<w:p w:rsidR="00C27B6B" w:rsidRDefault="00C27B6B" w:rsidP="00F53FC1">
 <w:pPr>
 <w:spacing w:after="0" w:line="240" w:lineRule="auto"/>
 </w:pPr>
@@ -46260,7 +46679,7 @@ z∨¬x∨¬y∨¬z</m:t>
 </w:p>
 </w:footnote>
 <w:footnote w:type="continuationSeparator" w:id="0">
-<w:p w:rsidR="0042040C" w:rsidRDefault="0042040C" w:rsidP="00F53FC1">
+<w:p w:rsidR="00C27B6B" w:rsidRDefault="00C27B6B" w:rsidP="00F53FC1">
 <w:pPr>
 <w:spacing w:after="0" w:line="240" w:lineRule="auto"/>
 </w:pPr>
@@ -46276,7 +46695,7 @@ z∨¬x∨¬y∨¬z</m:t>
 <pkg:xmlData>
 <w:endnotes mc:Ignorable="w14 wp14" xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" xmlns:m="http://schemas.openxmlformats.org/officeDocument/2006/math" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:wp14="http://schemas.microsoft.com/office/word/2010/wordprocessingDrawing" xmlns:wp="http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing" xmlns:w10="urn:schemas-microsoft-com:office:word" xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main" xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml" xmlns:wpg="http://schemas.microsoft.com/office/word/2010/wordprocessingGroup" xmlns:wpi="http://schemas.microsoft.com/office/word/2010/wordprocessingInk" xmlns:wne="http://schemas.microsoft.com/office/word/2006/wordml" xmlns:wps="http://schemas.microsoft.com/office/word/2010/wordprocessingShape">
 <w:endnote w:type="separator" w:id="-1">
-<w:p w:rsidR="0042040C" w:rsidRDefault="0042040C" w:rsidP="00F53FC1">
+<w:p w:rsidR="00C27B6B" w:rsidRDefault="00C27B6B" w:rsidP="00F53FC1">
 <w:pPr>
 <w:spacing w:after="0" w:line="240" w:lineRule="auto"/>
 </w:pPr>
@@ -46286,7 +46705,7 @@ z∨¬x∨¬y∨¬z</m:t>
 </w:p>
 </w:endnote>
 <w:endnote w:type="continuationSeparator" w:id="0">
-<w:p w:rsidR="0042040C" w:rsidRDefault="0042040C" w:rsidP="00F53FC1">
+<w:p w:rsidR="00C27B6B" w:rsidRDefault="00C27B6B" w:rsidP="00F53FC1">
 <w:pPr>
 <w:spacing w:after="0" w:line="240" w:lineRule="auto"/>
 </w:pPr>
@@ -46301,7 +46720,7 @@ z∨¬x∨¬y∨¬z</m:t>
 <pkg:part pkg:name="/word/footer3.xml" pkg:contentType="application/vnd.openxmlformats-officedocument.wordprocessingml.footer+xml">
 <pkg:xmlData>
 <w:ftr mc:Ignorable="w14 wp14" xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" xmlns:m="http://schemas.openxmlformats.org/officeDocument/2006/math" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:wp14="http://schemas.microsoft.com/office/word/2010/wordprocessingDrawing" xmlns:wp="http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing" xmlns:w10="urn:schemas-microsoft-com:office:word" xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main" xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml" xmlns:wpg="http://schemas.microsoft.com/office/word/2010/wordprocessingGroup" xmlns:wpi="http://schemas.microsoft.com/office/word/2010/wordprocessingInk" xmlns:wne="http://schemas.microsoft.com/office/word/2006/wordml" xmlns:wps="http://schemas.microsoft.com/office/word/2010/wordprocessingShape">
-<w:p w:rsidR="0042040C" w:rsidRPr="00F53FC1" w:rsidRDefault="0042040C" w:rsidP="00F53FC1">
+<w:p w:rsidR="00C27B6B" w:rsidRPr="00F53FC1" w:rsidRDefault="00C27B6B" w:rsidP="00F53FC1">
 <w:pPr>
 <w:pStyle w:val="Footer"/>
 <w:jc w:val="center"/>
@@ -80788,6 +81207,7 @@ tte974VvTP5hCfpD1te+98VvfvW7X/7217//BXCABTxgAhfYwAdGcIIVvGAGN9jBD4ZwhCU8YQpX
 <w:rsid w:val="00047C90"/>
 <w:rsid w:val="00057B1A"/>
 <w:rsid w:val="0006725C"/>
+<w:rsid w:val="000831A7"/>
 <w:rsid w:val="00085B6C"/>
 <w:rsid w:val="00097C00"/>
 <w:rsid w:val="000A517E"/>
@@ -80811,6 +81231,7 @@ tte974VvTP5hCfpD1te+98VvfvW7X/7217//BXCABTxgAhfYwAdGcIIVvGAGN9jBD4ZwhCU8YQpX
 <w:rsid w:val="00141242"/>
 <w:rsid w:val="00145191"/>
 <w:rsid w:val="00146BF2"/>
+<w:rsid w:val="00152D63"/>
 <w:rsid w:val="00153F96"/>
 <w:rsid w:val="001605B3"/>
 <w:rsid w:val="00161875"/>
@@ -80825,6 +81246,7 @@ tte974VvTP5hCfpD1te+98VvfvW7X/7217//BXCABTxgAhfYwAdGcIIVvGAGN9jBD4ZwhCU8YQpX
 <w:rsid w:val="001A5B4C"/>
 <w:rsid w:val="001A699F"/>
 <w:rsid w:val="001B08AA"/>
+<w:rsid w:val="001C0B7C"/>
 <w:rsid w:val="001C251F"/>
 <w:rsid w:val="001C4299"/>
 <w:rsid w:val="001D2996"/>
@@ -80832,6 +81254,7 @@ tte974VvTP5hCfpD1te+98VvfvW7X/7217//BXCABTxgAhfYwAdGcIIVvGAGN9jBD4ZwhCU8YQpX
 <w:rsid w:val="0020007C"/>
 <w:rsid w:val="002014D1"/>
 <w:rsid w:val="0021175C"/>
+<w:rsid w:val="002131B3"/>
 <w:rsid w:val="00235288"/>
 <w:rsid w:val="00244A72"/>
 <w:rsid w:val="0024746B"/>
@@ -80839,6 +81262,7 @@ tte974VvTP5hCfpD1te+98VvfvW7X/7217//BXCABTxgAhfYwAdGcIIVvGAGN9jBD4ZwhCU8YQpX
 <w:rsid w:val="00253C98"/>
 <w:rsid w:val="00255F4B"/>
 <w:rsid w:val="00260A4E"/>
+<w:rsid w:val="002636CC"/>
 <w:rsid w:val="002646FF"/>
 <w:rsid w:val="00267422"/>
 <w:rsid w:val="002761E6"/>
@@ -80958,6 +81382,7 @@ tte974VvTP5hCfpD1te+98VvfvW7X/7217//BXCABTxgAhfYwAdGcIIVvGAGN9jBD4ZwhCU8YQpX
 <w:rsid w:val="005A56A3"/>
 <w:rsid w:val="005B10AF"/>
 <w:rsid w:val="005B2124"/>
+<w:rsid w:val="005C524E"/>
 <w:rsid w:val="005C78F6"/>
 <w:rsid w:val="005F064D"/>
 <w:rsid w:val="005F58C1"/>
@@ -80972,6 +81397,7 @@ tte974VvTP5hCfpD1te+98VvfvW7X/7217//BXCABTxgAhfYwAdGcIIVvGAGN9jBD4ZwhCU8YQpX
 <w:rsid w:val="00671938"/>
 <w:rsid w:val="0068133A"/>
 <w:rsid w:val="00684298"/>
+<w:rsid w:val="006843A4"/>
 <w:rsid w:val="0068682D"/>
 <w:rsid w:val="00694889"/>
 <w:rsid w:val="00695037"/>
@@ -81009,6 +81435,7 @@ tte974VvTP5hCfpD1te+98VvfvW7X/7217//BXCABTxgAhfYwAdGcIIVvGAGN9jBD4ZwhCU8YQpX
 <w:rsid w:val="007A0F66"/>
 <w:rsid w:val="007B1266"/>
 <w:rsid w:val="007C3BBC"/>
+<w:rsid w:val="007C465C"/>
 <w:rsid w:val="007C701F"/>
 <w:rsid w:val="007D4EA8"/>
 <w:rsid w:val="007E2928"/>
@@ -81067,6 +81494,7 @@ tte974VvTP5hCfpD1te+98VvfvW7X/7217//BXCABTxgAhfYwAdGcIIVvGAGN9jBD4ZwhCU8YQpX
 <w:rsid w:val="00964305"/>
 <w:rsid w:val="00974C5E"/>
 <w:rsid w:val="009824A3"/>
+<w:rsid w:val="00987FA3"/>
 <w:rsid w:val="00990028"/>
 <w:rsid w:val="009907F9"/>
 <w:rsid w:val="009A27A9"/>
@@ -81085,10 +81513,12 @@ tte974VvTP5hCfpD1te+98VvfvW7X/7217//BXCABTxgAhfYwAdGcIIVvGAGN9jBD4ZwhCU8YQpX
 <w:rsid w:val="009E2084"/>
 <w:rsid w:val="009E453B"/>
 <w:rsid w:val="009E657F"/>
+<w:rsid w:val="009F6CAE"/>
 <w:rsid w:val="00A03C81"/>
 <w:rsid w:val="00A04F63"/>
 <w:rsid w:val="00A10CBF"/>
 <w:rsid w:val="00A16EE1"/>
+<w:rsid w:val="00A3192E"/>
 <w:rsid w:val="00A33DBC"/>
 <w:rsid w:val="00A33DBE"/>
 <w:rsid w:val="00A37DDC"/>
@@ -81141,6 +81571,7 @@ tte974VvTP5hCfpD1te+98VvfvW7X/7217//BXCABTxgAhfYwAdGcIIVvGAGN9jBD4ZwhCU8YQpX
 <w:rsid w:val="00BA2D4B"/>
 <w:rsid w:val="00BA64D5"/>
 <w:rsid w:val="00BA71BA"/>
+<w:rsid w:val="00BC0DEC"/>
 <w:rsid w:val="00BC10F7"/>
 <w:rsid w:val="00BC3E18"/>
 <w:rsid w:val="00BD0F81"/>
@@ -81158,7 +81589,9 @@ tte974VvTP5hCfpD1te+98VvfvW7X/7217//BXCABTxgAhfYwAdGcIIVvGAGN9jBD4ZwhCU8YQpX
 <w:rsid w:val="00C20139"/>
 <w:rsid w:val="00C22B27"/>
 <w:rsid w:val="00C261FF"/>
+<w:rsid w:val="00C27B6B"/>
 <w:rsid w:val="00C41BC4"/>
+<w:rsid w:val="00C4273E"/>
 <w:rsid w:val="00C42C5A"/>
 <w:rsid w:val="00C50D3C"/>
 <w:rsid w:val="00C5159E"/>
@@ -81177,6 +81610,7 @@ tte974VvTP5hCfpD1te+98VvfvW7X/7217//BXCABTxgAhfYwAdGcIIVvGAGN9jBD4ZwhCU8YQpX
 <w:rsid w:val="00CA032F"/>
 <w:rsid w:val="00CA4055"/>
 <w:rsid w:val="00CC13A2"/>
+<w:rsid w:val="00CC56A3"/>
 <w:rsid w:val="00CC6492"/>
 <w:rsid w:val="00CC7159"/>
 <w:rsid w:val="00CC7E66"/>
@@ -81185,6 +81619,7 @@ tte974VvTP5hCfpD1te+98VvfvW7X/7217//BXCABTxgAhfYwAdGcIIVvGAGN9jBD4ZwhCU8YQpX
 <w:rsid w:val="00D037AC"/>
 <w:rsid w:val="00D039A2"/>
 <w:rsid w:val="00D04A9C"/>
+<w:rsid w:val="00D072CC"/>
 <w:rsid w:val="00D11545"/>
 <w:rsid w:val="00D231AD"/>
 <w:rsid w:val="00D26F00"/>
@@ -81207,6 +81642,7 @@ tte974VvTP5hCfpD1te+98VvfvW7X/7217//BXCABTxgAhfYwAdGcIIVvGAGN9jBD4ZwhCU8YQpX
 <w:rsid w:val="00DE230C"/>
 <w:rsid w:val="00DE78FD"/>
 <w:rsid w:val="00DF3E0C"/>
+<w:rsid w:val="00E0411C"/>
 <w:rsid w:val="00E06EE1"/>
 <w:rsid w:val="00E123B4"/>
 <w:rsid w:val="00E13B95"/>
@@ -81234,8 +81670,10 @@ tte974VvTP5hCfpD1te+98VvfvW7X/7217//BXCABTxgAhfYwAdGcIIVvGAGN9jBD4ZwhCU8YQpX
 <w:rsid w:val="00EB1C70"/>
 <w:rsid w:val="00EB73BC"/>
 <w:rsid w:val="00EC3C8D"/>
+<w:rsid w:val="00EC40E8"/>
 <w:rsid w:val="00EC442C"/>
 <w:rsid w:val="00EC4E3E"/>
+<w:rsid w:val="00ED1910"/>
 <w:rsid w:val="00ED2705"/>
 <w:rsid w:val="00ED6F8B"/>
 <w:rsid w:val="00EF1798"/>
@@ -81817,21 +82255,21 @@ tte974VvTP5hCfpD1te+98VvfvW7X/7217//BXCABTxgAhfYwAdGcIIVvGAGN9jBD4ZwhCU8YQpX
 <Template>
 Normal.dotm</Template>
 <TotalTime>
-1074</TotalTime>
+1172</TotalTime>
 <Pages>
-134</Pages>
+136</Pages>
 <Words>
-21074</Words>
+21545</Words>
 <Characters>
-120124</Characters>
+122810</Characters>
 <Application>
 Microsoft Office Word</Application>
 <DocSecurity>
 0</DocSecurity>
 <Lines>
-1001</Lines>
+1023</Lines>
 <Paragraphs>
-281</Paragraphs>
+288</Paragraphs>
 <ScaleCrop>
 false</ScaleCrop>
 <HeadingPairs>
@@ -81855,7 +82293,7 @@ Title</vt:lpstr>
 <LinksUpToDate>
 false</LinksUpToDate>
 <CharactersWithSpaces>
-140917</CharactersWithSpaces>
+144067</CharactersWithSpaces>
 <SharedDoc>
 false</SharedDoc>
 <HyperlinksChanged>
@@ -81874,7 +82312,7 @@ false</HyperlinksChanged>
 </pkg:part>
 <pkg:part pkg:name="/customXml/itemProps1.xml" pkg:contentType="application/vnd.openxmlformats-officedocument.customXmlProperties+xml" pkg:padding="32">
 <pkg:xmlData pkg:originalXmlStandalone="no">
-<ds:datastoreItem ds:itemID="{1912DEF8-898B-4C3C-8FFF-463F87E9DEF1}" xmlns:ds="http://schemas.openxmlformats.org/officeDocument/2006/customXml">
+<ds:datastoreItem ds:itemID="{C5BC6A72-6D67-4C56-9097-5C64F205DC9E}" xmlns:ds="http://schemas.openxmlformats.org/officeDocument/2006/customXml">
 <ds:schemaRefs>
 <ds:schemaRef ds:uri="http://schemas.openxmlformats.org/officeDocument/2006/bibliography"/>
 </ds:schemaRefs>
@@ -82244,13 +82682,13 @@ Someone</dc:creator>
 <cp:lastModifiedBy>
 Someone</cp:lastModifiedBy>
 <cp:revision>
-442</cp:revision>
+461</cp:revision>
 <cp:lastPrinted>
 2012-09-11T04:21:00Z</cp:lastPrinted>
 <dcterms:created xsi:type="dcterms:W3CDTF">
 2012-08-19T03:41:00Z</dcterms:created>
 <dcterms:modified xsi:type="dcterms:W3CDTF">
-2012-09-07T07:37:00Z</dcterms:modified>
+2012-09-07T20:22:00Z</dcterms:modified>
 </cp:coreProperties>
 </pkg:xmlData>
 </pkg:part>
