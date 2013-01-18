@@ -15,3 +15,28 @@ financial industry use of SQL. correctness seems like a big deal there.
 at least three ways that errors could happen. (four? five? add more if you have em') 1. unexpected parameter to the query. 2. unexpected table states, 3. table schema definitions CHANGE!!
 
 ... note: #3 is a big one!  even if we all think we write code that we are convinced is correct 'in the now', how to we 'protect' it going forward?
+
+relational programming/thinking as one of many programming paradigms, like OO, functional, logical.
+
+even though relational SQL is not turing complete, that does not rule out that SQL can express a wide swath of the calculations carried out by many programs.  many programs are based principally on receiving input and then transforming the input into some other format. settings configured in a gui are transformed into sound waves in a sound file. user input is transformed into an html file suitable for publishing to the web.  these and many similar scenarios do not require turing completeness.
+
+No.  There are cases where we cannot prove termination -- an
+interpreter for a Turing-complete programming languages is one of
+them.  This fact is what started the current thread in the first
+place.
+
+This being said, however, I claim that most programs are not of this
+nature.  In fact, I can't think of any other example.  Most "useful"
+programs are written by their respective programmers with an
+(informal) termination proof in mind (*).  The existence of the
+termination proof implies that the program could have been written in
+a language where all programs terminate.
+
+ Perpetually running programs such as OS kernels
+
+
+testing vs verification for C code:  both involve running a process. possibly having one process launch and monitor another.
+
+testing vs verification for SQL: with verification, one process can statically verify SQL code (query code and DDL code). with testing, a database must be populated. a connection established.
+
+regression testing in the face of schema changes?
