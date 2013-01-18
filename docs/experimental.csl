@@ -209,6 +209,8 @@
           <group delimiter=", ">
             <text macro="title"/>
             <text macro="event"/>
+            <text variable="genre" prefix="(" suffix=")"/>
+            <text variable="publisher"/>
             <text macro="issued"/>
             <text macro="locators"/>
             <text macro="page"/>
