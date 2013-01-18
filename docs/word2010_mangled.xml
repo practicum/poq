@@ -27301,6 +27301,7 @@ z∨¬x∨¬y∨¬z</m:t>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
+<w:lastRenderedPageBreak/>
 <w:drawing>
 <wp:inline distT="0" distB="0" distL="0" distR="0">
 <wp:extent cx="5486400" cy="2506980"/>
@@ -27360,17 +27361,7 @@ z∨¬x∨¬y∨¬z</m:t>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t>Figure JJJ illustrates several fundamental points abou</w:t>
-</w:r>
-<w:bookmarkStart w:id="0" w:name="_GoBack"/>
-<w:bookmarkEnd w:id="0"/>
-<w:r w:rsidRPr="00B7247F">
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-<w:t>t the high-level architecture of POQ and a sort of high-level 'call graph' showing how various modules call each other inside the system.</w:t>
+<w:t>Figure JJJ illustrates several fundamental points about the high-level architecture of POQ and a sort of high-level 'call graph' showing how various modules call each other inside the system.</w:t>
 </w:r>
 </w:p>
 <w:p w:rsidR="00B7247F" w:rsidRPr="00B7247F" w:rsidRDefault="00B7247F" w:rsidP="00B7247F">
@@ -27448,37 +27439,7 @@ z∨¬x∨¬y∨¬z</m:t>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t>The processing flow depicted in Figure JJJ is intended to represent the processing of a single query.  A single query is defined as one SELECT statement terminated with a semicolon.  The SELECT statement may be of an arbitrary length and composition, as long as it is syntactically correct SQL code.  All the examples in this chapter are aligned with the idea of processing a single query at a time.</w:t>
-</w:r>
-</w:p>
-<w:p w:rsidR="00B7247F" w:rsidRPr="00B7247F" w:rsidRDefault="00B7247F" w:rsidP="00B7247F">
-<w:pPr>
-<w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
-<w:contextualSpacing/>
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-</w:pPr>
-</w:p>
-<w:p w:rsidR="00B7247F" w:rsidRPr="00B7247F" w:rsidRDefault="00B7247F" w:rsidP="00B7247F">
-<w:pPr>
-<w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
-<w:contextualSpacing/>
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-</w:pPr>
-<w:r w:rsidRPr="00B7247F">
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-<w:t xml:space="preserve">Even for processing just one query, the system requires a more SQL code as input than just the single statement beginning with SELECT and ending with a semicolon.  The SQL code that must be inputted for one round of processing includes the query *and* all CREATE TABLE statements that define each table used in the query.  Both inputs are required.  POQ does not operate on SELECT statements that reference zero tables; therefore, at least one CREATE TABLE declaration will always be required.  Wherever </w:t>
+<w:t xml:space="preserve">The processing flow depicted in Figure JJJ is intended to represent the processing of a single query.  A single query is defined as one SELECT statement terminated with a semicolon.  The SELECT statement may be of an arbitrary length and composition, as </w:t>
 </w:r>
 <w:r w:rsidRPr="00B7247F">
 <w:rPr>
@@ -27487,7 +27448,37 @@ z∨¬x∨¬y∨¬z</m:t>
 <w:szCs w:val="24"/>
 </w:rPr>
 <w:lastRenderedPageBreak/>
-<w:t>this chapter mentions "inputting SQL code" into the tool, the intent is to refer to a single query accompanied by all relevant CREATE TABLE statements.  This is also evident in each example.</w:t>
+<w:t>long as it is syntactically correct SQL code.  All the examples in this chapter are aligned with the idea of processing a single query at a time.</w:t>
+</w:r>
+</w:p>
+<w:p w:rsidR="00B7247F" w:rsidRPr="00B7247F" w:rsidRDefault="00B7247F" w:rsidP="00B7247F">
+<w:pPr>
+<w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
+<w:contextualSpacing/>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+</w:pPr>
+</w:p>
+<w:p w:rsidR="00B7247F" w:rsidRPr="00B7247F" w:rsidRDefault="00B7247F" w:rsidP="00B7247F">
+<w:pPr>
+<w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
+<w:contextualSpacing/>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+</w:pPr>
+<w:r w:rsidRPr="00B7247F">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>Even for processing just one query, the system requires a more SQL code as input than just the single statement beginning with SELECT and ending with a semicolon.  The SQL code that must be inputted for one round of processing includes the query *and* all CREATE TABLE statements that define each table used in the query.  Both inputs are required.  POQ does not operate on SELECT statements that reference zero tables; therefore, at least one CREATE TABLE declaration will always be required.  Wherever this chapter mentions "inputting SQL code" into the tool, the intent is to refer to a single query accompanied by all relevant CREATE TABLE statements.  This is also evident in each example.</w:t>
 </w:r>
 </w:p>
 <w:p w:rsidR="00B7247F" w:rsidRPr="00B7247F" w:rsidRDefault="00B7247F" w:rsidP="00B7247F">
@@ -27571,7 +27562,16 @@ z∨¬x∨¬y∨¬z</m:t>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t xml:space="preserve"> represent a contract or guarantee that the SQL query will never contain some specific manner of flawed output.  Preconditions, on the other hand, place restrictions on when and where the query can safely be called.  Whenever code is intended to be general-purpose and highly reusable--be it SQL code, C code, Java code, or other--it is common to avoid placing preconditions into the code contract.  By using the "empty precondition" (more formally known as the trivial precondition &gt;&gt;&gt; T &lt;&lt;&lt;), the code's author indicates that the code may be called at any time and it will adhere to its </w:t>
+<w:t xml:space="preserve"> represent a contract or guarantee that the SQL query will never contain some specific manner of flawed output.  Preconditions, on the other hand, place restrictions on when and where the query can safely be called.  Whenever code is intended to be general-purpose and highly reusable--be it SQL code, C code, Java code, or other--it is common to avoid placing preconditions into the code contract.  By using the "empty precondition" (more formally known as the trivial precondition &gt;&gt;&gt; T &lt;&lt;&lt;), the code's author indicates that the code may be called at any </w:t>
+</w:r>
+<w:r w:rsidRPr="00B7247F">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:lastRenderedPageBreak/>
+<w:t xml:space="preserve">time and it will adhere to its </w:t>
 </w:r>
 <w:proofErr w:type="spellStart"/>
 <w:r w:rsidRPr="00B7247F">
@@ -27709,16 +27709,7 @@ z∨¬x∨¬y∨¬z</m:t>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t xml:space="preserve"> engine.  The SQL code must be parsed and found to be syntactically correct.  Each base table named in the SQL query must properly resolve to </w:t>
-</w:r>
-<w:r w:rsidRPr="00B7247F">
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-<w:lastRenderedPageBreak/>
-<w:t>some table described in the inputted CREATE TABLE statements.  Basic parsing and syntax-checking should also be performed on the annotations.  Based on the results of parsing, the Synthesis &amp; Translation Layer subsequently proceeds to generate FOL axioms and proof goals.</w:t>
+<w:t xml:space="preserve"> engine.  The SQL code must be parsed and found to be syntactically correct.  Each base table named in the SQL query must properly resolve to some table described in the inputted CREATE TABLE statements.  Basic parsing and syntax-checking should also be performed on the annotations.  Based on the results of parsing, the Synthesis &amp; Translation Layer subsequently proceeds to generate FOL axioms and proof goals.</w:t>
 </w:r>
 </w:p>
 <w:p w:rsidR="00B7247F" w:rsidRPr="00B7247F" w:rsidRDefault="00B7247F" w:rsidP="00B7247F">
@@ -27868,6 +27859,7 @@ z∨¬x∨¬y∨¬z</m:t>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
+<w:lastRenderedPageBreak/>
 <w:t xml:space="preserve">In future versions of POQ, the assumption that assertions arrive into UI layer in a format already suitable for the </w:t>
 </w:r>
 <w:proofErr w:type="spellStart"/>
@@ -27922,16 +27914,7 @@ z∨¬x∨¬y∨¬z</m:t>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t xml:space="preserve"> </w:t>
-</w:r>
-<w:r w:rsidRPr="00B7247F">
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-<w:lastRenderedPageBreak/>
-<w:t>Engine), these assertions turned out to be surprisingly intuitive, easy to read, and easy to write.  Here (an excerpt... or not) is one such assertion:</w:t>
+<w:t xml:space="preserve"> Engine), these assertions turned out to be surprisingly intuitive, easy to read, and easy to write.  Here (an excerpt... or not) is one such assertion:</w:t>
 </w:r>
 </w:p>
 <w:p w:rsidR="00B7247F" w:rsidRPr="00B7247F" w:rsidRDefault="00B7247F" w:rsidP="00B7247F">
@@ -28092,7 +28075,16 @@ z∨¬x∨¬y∨¬z</m:t>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t xml:space="preserve"> %%%555.  Badly formulated assertions like these must be flagged before the </w:t>
+<w:t xml:space="preserve"> %%%555.  </w:t>
+</w:r>
+<w:r w:rsidRPr="00B7247F">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:lastRenderedPageBreak/>
+<w:t xml:space="preserve">Badly formulated assertions like these must be flagged before the </w:t>
 </w:r>
 <w:proofErr w:type="spellStart"/>
 <w:r w:rsidRPr="00B7247F">
@@ -28215,16 +28207,7 @@ z∨¬x∨¬y∨¬z</m:t>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t xml:space="preserve"> Engine.  Therefore, the axioms must be encoded </w:t>
-</w:r>
-<w:r w:rsidRPr="00B7247F">
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-<w:lastRenderedPageBreak/>
-<w:t xml:space="preserve">in a language understood by the </w:t>
+<w:t xml:space="preserve"> Engine.  Therefore, the axioms must be encoded in a language understood by the </w:t>
 </w:r>
 <w:proofErr w:type="spellStart"/>
 <w:r w:rsidRPr="00B7247F">
@@ -28314,7 +28297,16 @@ z∨¬x∨¬y∨¬z</m:t>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t xml:space="preserve">.  This is why a result of "false" from the Prolog </w:t>
+<w:t xml:space="preserve">.  This is why </w:t>
+</w:r>
+<w:r w:rsidRPr="00B7247F">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:lastRenderedPageBreak/>
+<w:t xml:space="preserve">a result of "false" from the Prolog </w:t>
 </w:r>
 <w:proofErr w:type="spellStart"/>
 <w:r w:rsidRPr="00B7247F">
@@ -28410,7 +28402,6 @@ z∨¬x∨¬y∨¬z</m:t>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:lastRenderedPageBreak/>
 <w:t xml:space="preserve">Once POQ completes Step 3 from Figure JJJ, information begins flowing upward through the layers until it arrives at the UI for viewing by the user.  In case of a successful proof, the Prolog </w:t>
 </w:r>
 <w:proofErr w:type="spellStart"/>
@@ -28554,6 +28545,7 @@ z∨¬x∨¬y∨¬z</m:t>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
+<w:lastRenderedPageBreak/>
 <w:t>There are at least two helpful transformations that the Synthesis &amp; Translation layer could apply to such a result.  One is to display essentially the same information as shown above in Prolog, but to render it in a tabular format that is familiar to SQL users.  Another is to generate a complete SQL script that would create and populate SQL tables, run the original SQL query, and demonstrate the entire counter-scenario inside an actual RDB system (and outside of POQ).  Users could execute such scripts in an RDB system of their choosing.  Both of these potential transformations are shown in Figure LLL.  Again, the UI Layer is left unspecified in this thesis.  Therefore, no choice is made here as to whether the tabular counter-example and/or the counter-example SQL script would be displayed in a graphical window or printed at the command-line, or displayed or transmitted in any other manner.</w:t>
 </w:r>
 </w:p>
@@ -28813,6 +28805,7 @@ z∨¬x∨¬y∨¬z</m:t>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
+<w:lastRenderedPageBreak/>
 <w:t>=========================================================</w:t>
 </w:r>
 </w:p>
@@ -28873,7 +28866,6 @@ z∨¬x∨¬y∨¬z</m:t>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:lastRenderedPageBreak/>
 <w:t>Producing a query tree from a SQL statement is similar to producing any arbitrary abstract syntax tree (AST) from source code in any computer language.  Query trees, however, exhibit a greater degree of regularity and simplicity that an arbitrary AST.  An example of a query tree is shown in Figure MMM.  All relational SQL operators are either unary or binary, which means that no operator node in a query tree will ever have more than two children.  Also, the closure property of relational algebra means that the application of any operator to its child relations always produces a relation as an output.  These guarantees on node count and output types guarantee a high degree of regularity in the tree's structure.</w:t>
 </w:r>
 </w:p>
@@ -28940,7 +28932,16 @@ z∨¬x∨¬y∨¬z</m:t>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t xml:space="preserve"> are used in two upcoming examples in this chapter.  However, it remains an open question whether the manually-generated axioms in those examples are as suitable for automation as the axioms from the remaining four samples.</w:t>
+<w:t xml:space="preserve"> are used in two upcoming examples in this </w:t>
+</w:r>
+<w:r w:rsidRPr="00B7247F">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:lastRenderedPageBreak/>
+<w:t>chapter.  However, it remains an open question whether the manually-generated axioms in those examples are as suitable for automation as the axioms from the remaining four samples.</w:t>
 </w:r>
 </w:p>
 <w:p w:rsidR="00B7247F" w:rsidRPr="00B7247F" w:rsidRDefault="00B7247F" w:rsidP="00B7247F">
@@ -29036,8 +29037,30 @@ z∨¬x∨¬y∨¬z</m:t>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t xml:space="preserve">, generating the correct query tree from the SQL code inputted to POQ is all that is necessary to enable automated generation of the required axioms.  Once the query tree is known, the algorithm for generating the axioms can be built based on a post-order traversal of the (binary) query tree.  Coercions are </w:t>
+<w:t>, generating the correct query tree from the SQL code inputted to POQ is all that is necessary to enable automated generation of the required axioms.  Once the query tree is known, the algorithm for generating the axioms can be built based on a post-order traversal of the (binary) query tree.  Coercions are presumed not to exist, so every node represents a relation (table).  Leaf nodes represent base tables, and each non-leaf node represents a single operation producing a derived table.  When a leaf node is visited, the algorithm uses the CREATE TABLE input to generate axioms governing the structure of this base table (and its tuples).  When a non-leaf node is visited, the algorithm relies on ready-made axiom schemas built into POQ.  These axiom schemas are discussed in detail later in this chapter.  At a non-leaf node, the appropriate axiom schema is chosen based on the operation associated with that node.  The axiom schema is instantiated using information from the child node (or child nodes) of the non-leaf node.  Once the post-order tree traversal completes, then all the required axioms have been generated.</w:t>
 </w:r>
+</w:p>
+<w:p w:rsidR="00B7247F" w:rsidRPr="00B7247F" w:rsidRDefault="00B7247F" w:rsidP="00B7247F">
+<w:pPr>
+<w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
+<w:contextualSpacing/>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+</w:pPr>
+</w:p>
+<w:p w:rsidR="00B7247F" w:rsidRPr="00B7247F" w:rsidRDefault="00B7247F" w:rsidP="00B7247F">
+<w:pPr>
+<w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
+<w:contextualSpacing/>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+</w:pPr>
 <w:r w:rsidRPr="00B7247F">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
@@ -29045,36 +29068,6 @@ z∨¬x∨¬y∨¬z</m:t>
 <w:szCs w:val="24"/>
 </w:rPr>
 <w:lastRenderedPageBreak/>
-<w:t>presumed not to exist, so every node represents a relation (table).  Leaf nodes represent base tables, and each non-leaf node represents a single operation producing a derived table.  When a leaf node is visited, the algorithm uses the CREATE TABLE input to generate axioms governing the structure of this base table (and its tuples).  When a non-leaf node is visited, the algorithm relies on ready-made axiom schemas built into POQ.  These axiom schemas are discussed in detail later in this chapter.  At a non-leaf node, the appropriate axiom schema is chosen based on the operation associated with that node.  The axiom schema is instantiated using information from the child node (or child nodes) of the non-leaf node.  Once the post-order tree traversal completes, then all the required axioms have been generated.</w:t>
-</w:r>
-</w:p>
-<w:p w:rsidR="00B7247F" w:rsidRPr="00B7247F" w:rsidRDefault="00B7247F" w:rsidP="00B7247F">
-<w:pPr>
-<w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
-<w:contextualSpacing/>
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-</w:pPr>
-</w:p>
-<w:p w:rsidR="00B7247F" w:rsidRPr="00B7247F" w:rsidRDefault="00B7247F" w:rsidP="00B7247F">
-<w:pPr>
-<w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
-<w:contextualSpacing/>
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-</w:pPr>
-<w:r w:rsidRPr="00B7247F">
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
 <w:t>Currently, the source code of the POQ project [</w:t>
 </w:r>
 <w:proofErr w:type="spellStart"/>
@@ -29259,7 +29252,6 @@ z∨¬x∨¬y∨¬z</m:t>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:lastRenderedPageBreak/>
 <w:t>To further illustrate the readiness with which query tree traversal and axiom generation can be automated, the processing of a leaf node (base table node) and the processing of a non-leaf node (operator node) will now be shown in detail.  The processing is entirely straightforward; no complications arise that would prohibit automation.</w:t>
 </w:r>
 </w:p>
@@ -29458,6 +29450,7 @@ z∨¬x∨¬y∨¬z</m:t>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
+<w:lastRenderedPageBreak/>
 <w:t xml:space="preserve">A base table is always shown as a leaf node in a query tree, which is to say it has no further subordinate elements shown in the tree.  Nonetheless, a table can itself be broken down further into constituent parts.  A table </w:t>
 </w:r>
 <w:proofErr w:type="spellStart"/>
@@ -29572,7 +29565,6 @@ z∨¬x∨¬y∨¬z</m:t>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:lastRenderedPageBreak/>
 <w:t>POQ begins with the domain of each column, and then creates axioms in a bottom-up fashion.  Tuple type axioms are built in terms of domain axioms.  Table axioms, in turn, are built in terms of tuple axioms.  Later, both the table axioms and the tuple axioms contribute to the instantiation of the operator axiom schemas at non-leaf nodes.</w:t>
 </w:r>
 </w:p>
@@ -29706,6 +29698,7 @@ z∨¬x∨¬y∨¬z</m:t>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
+<w:lastRenderedPageBreak/>
 <w:t>natural_</w:t>
 </w:r>
 <w:proofErr w:type="gramStart"/>
@@ -30017,7 +30010,6 @@ z∨¬x∨¬y∨¬z</m:t>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:lastRenderedPageBreak/>
 <w:t xml:space="preserve">Given the above specification for </w:t>
 </w:r>
 <w:proofErr w:type="spellStart"/>
@@ -30156,6 +30148,7 @@ z∨¬x∨¬y∨¬z</m:t>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
+<w:lastRenderedPageBreak/>
 <w:t xml:space="preserve">Natural numbers are used in databases in many ways.  A column that represents, say, the number of cartons of roofing shingles in stock at a warehouse would likely use the natural number type.  Natural numbers are also often used as unique row identifier numbers in database tables.  In additional to natural numbers, another </w:t>
 </w:r>
 <w:proofErr w:type="spellStart"/>
@@ -30403,7 +30396,6 @@ z∨¬x∨¬y∨¬z</m:t>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:lastRenderedPageBreak/>
 <w:t xml:space="preserve">Actual GUID values are longer than 'fccy463' and the other values shown above.  The choice of using shortened values to represent GUIDs is a deliberate design decision in our system.  To explain this decision, it is helpful to first consider the role that these values will play in the system.  To restate a prior point, the values that we use to populate the finite domain of each type are precisely the values that will later appear as attributes in concrete tuples.  However, in cases where assertions are proved valid, the end user of the proof system may never need to view any of the </w:t>
 </w:r>
 <w:proofErr w:type="spellStart"/>
@@ -30422,37 +30414,7 @@ z∨¬x∨¬y∨¬z</m:t>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t xml:space="preserve"> tuples that were created during the proof process.  So in the case of a successful proof, it does not matter too much what our values look like, as long as they map closely enough to a real-life representation of the database so that we can have confidence in the proof.  In cases where assumptions are invalid, then our design requirements for these values become a bit more stringent.  As stated earlier, the detection of invalid statements will cause the system to output a counterexample.  The counterexample is an assignment of values to each variable that was featured in the assertion.  Recall that the variables in the assertion can represent table values, row values, and parameter values (in cases where the SQL statement is parameterized).  This means that the system's GUID values--such as 'fccy463'--will be shown to the user as part of a concrete counterexample.</w:t>
-</w:r>
-</w:p>
-<w:p w:rsidR="00B7247F" w:rsidRPr="00B7247F" w:rsidRDefault="00B7247F" w:rsidP="00B7247F">
-<w:pPr>
-<w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
-<w:contextualSpacing/>
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-</w:pPr>
-</w:p>
-<w:p w:rsidR="00B7247F" w:rsidRPr="00B7247F" w:rsidRDefault="00B7247F" w:rsidP="00B7247F">
-<w:pPr>
-<w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
-<w:contextualSpacing/>
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-</w:pPr>
-<w:r w:rsidRPr="00B7247F">
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-<w:t xml:space="preserve">Depending on whether we expect our end user to have a flexible imagination or not, we might accept or reject certain design criteria in defining our GUID domain.  The design criteria that have been applied here are simple.  When a GUID is printed out as part of a counterexample, our user must recognize this value as representing a plausible potential value that might someday get inserted into the pertinent database table.  The value does </w:t>
+<w:t xml:space="preserve"> tuples that were created during the proof process.  So in the case of a successful proof, it does not matter too much what our values look like, as long as they map closely enough to a real-life representation of the database so that we can have confidence in the proof.  In cases where assumptions are invalid, then our design requirements for these values become a bit more stringent.  As </w:t>
 </w:r>
 <w:r w:rsidRPr="00B7247F">
 <w:rPr>
@@ -30461,7 +30423,37 @@ z∨¬x∨¬y∨¬z</m:t>
 <w:szCs w:val="24"/>
 </w:rPr>
 <w:lastRenderedPageBreak/>
-<w:t xml:space="preserve">not need to be an actual value that is currently present in the real-life database.  Quite the contrary, because if it did need to be present currently, then our tool would only check the </w:t>
+<w:t>stated earlier, the detection of invalid statements will cause the system to output a counterexample.  The counterexample is an assignment of values to each variable that was featured in the assertion.  Recall that the variables in the assertion can represent table values, row values, and parameter values (in cases where the SQL statement is parameterized).  This means that the system's GUID values--such as 'fccy463'--will be shown to the user as part of a concrete counterexample.</w:t>
+</w:r>
+</w:p>
+<w:p w:rsidR="00B7247F" w:rsidRPr="00B7247F" w:rsidRDefault="00B7247F" w:rsidP="00B7247F">
+<w:pPr>
+<w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
+<w:contextualSpacing/>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+</w:pPr>
+</w:p>
+<w:p w:rsidR="00B7247F" w:rsidRPr="00B7247F" w:rsidRDefault="00B7247F" w:rsidP="00B7247F">
+<w:pPr>
+<w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
+<w:contextualSpacing/>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+</w:pPr>
+<w:r w:rsidRPr="00B7247F">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve">Depending on whether we expect our end user to have a flexible imagination or not, we might accept or reject certain design criteria in defining our GUID domain.  The design criteria that have been applied here are simple.  When a GUID is printed out as part of a counterexample, our user must recognize this value as representing a plausible potential value that might someday get inserted into the pertinent database table.  The value does not need to be an actual value that is currently present in the real-life database.  Quite the contrary, because if it did need to be present currently, then our tool would only check the </w:t>
 </w:r>
 <w:proofErr w:type="spellStart"/>
 <w:r w:rsidRPr="00B7247F">
@@ -30497,7 +30489,16 @@ z∨¬x∨¬y∨¬z</m:t>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t xml:space="preserve"> of a SQL statement given the current database state, and that is not the intent of the tool at all.  The intent of the tool is to prove that certain properties of the SQL statement and its result set will hold true for all states that this database can attain, including past states, present states, and future states.  The user is expected to understand that 'fccy463' represents something that might someday appear in the database.  Even when the user knows that the appearance of 'fccy463' in a counterexample in no way indicates that 'fccy463' is present in the real-life database currently, the user could still raise objections.  One such objection would be that 'fccy463' is not formatted appropriately the way that real-life GUIDs are.  This is where the expectation of a "flexible imagination" comes into play.  It seems reasonable to expect that most trained users could easily know to "mentally map" a symbol like 'fccy463' into a realistic GUID such as '{5224F545-A443-4859-BA23-7B5A95BDC8EF}' in order to visualize the real-life equivalent of the counterexample, and in order to generate a real-life SQL script filled with test data for testing the counterexample, if needed.  The idea that our users will be flexible enough to accept "reasonably recognizable" values allows us to keep the Prolog code simple, and allows us to avoid any potential hassles in cases where a true-to-life representation of a </w:t>
+<w:t xml:space="preserve"> of a SQL statement given the current database state, and that is not the intent of the tool at all.  The intent of the tool is to prove that certain properties of the SQL statement and its result set will hold true for all states that this database can attain, including past states, present states, and future states.  The user is expected to understand that 'fccy463' represents something that might someday appear in the database.  Even when the user knows that the appearance of 'fccy463' in a counterexample in no way indicates that 'fccy463' is present in the real-life database currently, the user could still raise objections.  One such objection would be that 'fccy463' is not formatted appropriately the way that real-life GUIDs are.  This is where the </w:t>
+</w:r>
+<w:r w:rsidRPr="00B7247F">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:lastRenderedPageBreak/>
+<w:t xml:space="preserve">expectation of a "flexible imagination" comes into play.  It seems reasonable to expect that most trained users could easily know to "mentally map" a symbol like 'fccy463' into a realistic GUID such as '{5224F545-A443-4859-BA23-7B5A95BDC8EF}' in order to visualize the real-life equivalent of the counterexample, and in order to generate a real-life SQL script filled with test data for testing the counterexample, if needed.  The idea that our users will be flexible enough to accept "reasonably recognizable" values allows us to keep the Prolog code simple, and allows us to avoid any potential hassles in cases where a true-to-life representation of a </w:t>
 </w:r>
 <w:proofErr w:type="spellStart"/>
 <w:r w:rsidRPr="00B7247F">
@@ -30810,7 +30811,16 @@ z∨¬x∨¬y∨¬z</m:t>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t xml:space="preserve"> attributes in our system.  We only need one way to represent NULL, so we will use the Prolog constant 'null.'  Constants must begin with lower-case letters in Prolog, so we are unable to use a constant that would faithfully coincide with the capitalized keyword that SQL uses.  Here we declare our constant as the only thing that is null:</w:t>
+<w:t xml:space="preserve"> attributes in our system.  We only need one way to represent NULL, so we will use the Prolog constant 'null.'  Constants must begin with lower-case letters in Prolog, so we are unable to use a constant </w:t>
+</w:r>
+<w:r w:rsidRPr="00B7247F">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:lastRenderedPageBreak/>
+<w:t>that would faithfully coincide with the capitalized keyword that SQL uses.  Here we declare our constant as the only thing that is null:</w:t>
 </w:r>
 </w:p>
 <w:p w:rsidR="00B7247F" w:rsidRPr="00B7247F" w:rsidRDefault="00B7247F" w:rsidP="00B7247F">
@@ -31090,7 +31100,6 @@ z∨¬x∨¬y∨¬z</m:t>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:lastRenderedPageBreak/>
 <w:t xml:space="preserve">Ignoring the special case of a primary key column, the default behavior in SQL table creation (double-check standard. cite section of standard?) is to create each table column such that NULL can appear in any column, no matter the </w:t>
 </w:r>
 <w:proofErr w:type="spellStart"/>
@@ -31251,6 +31260,7 @@ z∨¬x∨¬y∨¬z</m:t>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
+<w:lastRenderedPageBreak/>
 <w:t xml:space="preserve">Instead of using the above declaration of </w:t>
 </w:r>
 <w:proofErr w:type="spellStart"/>
@@ -31863,7 +31873,16 @@ z∨¬x∨¬y∨¬z</m:t>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t>.  However, because the numeric component is also the table's primary key in this case, SQL will automatically disallow it from ever containing NULL.  Based on that, the system can create the following tuple type definition:</w:t>
+<w:t xml:space="preserve">.  However, because the numeric component is also the table's primary </w:t>
+</w:r>
+<w:r w:rsidRPr="00B7247F">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:lastRenderedPageBreak/>
+<w:t>key in this case, SQL will automatically disallow it from ever containing NULL.  Based on that, the system can create the following tuple type definition:</w:t>
 </w:r>
 </w:p>
 <w:p w:rsidR="00B7247F" w:rsidRPr="00B7247F" w:rsidRDefault="00B7247F" w:rsidP="00B7247F">
@@ -32307,7 +32326,16 @@ z∨¬x∨¬y∨¬z</m:t>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t xml:space="preserve"> as the head, so this would be the only way allowable to conclude that some sequence </w:t>
+<w:t xml:space="preserve"> as the head, so this would </w:t>
+</w:r>
+<w:r w:rsidRPr="00B7247F">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:lastRenderedPageBreak/>
+<w:t xml:space="preserve">be the only way allowable to conclude that some sequence </w:t>
 </w:r>
 <w:proofErr w:type="gramStart"/>
 <w:r w:rsidRPr="00B7247F">
@@ -32451,16 +32479,7 @@ z∨¬x∨¬y∨¬z</m:t>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t xml:space="preserve">;' affects </w:t>
-</w:r>
-<w:r w:rsidRPr="00B7247F">
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-<w:lastRenderedPageBreak/>
-<w:t>queries that do not contain any special keywords that require the sorting of results.  When the pragma is enabled, the RDB will output result sets for such queries in the *reverse* order of whatever the retrieval algorithm normally would have done.  By alternating whether this pragma is enabled or disabled, SQLite users have a better chance of noticing where faulty presumptions of sorting have led to bugs in their application.</w:t>
+<w:t>;' affects queries that do not contain any special keywords that require the sorting of results.  When the pragma is enabled, the RDB will output result sets for such queries in the *reverse* order of whatever the retrieval algorithm normally would have done.  By alternating whether this pragma is enabled or disabled, SQLite users have a better chance of noticing where faulty presumptions of sorting have led to bugs in their application.</w:t>
 </w:r>
 </w:p>
 <w:p w:rsidR="00B7247F" w:rsidRPr="00B7247F" w:rsidRDefault="00B7247F" w:rsidP="00B7247F">
@@ -32565,6 +32584,7 @@ z∨¬x∨¬y∨¬z</m:t>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
+<w:lastRenderedPageBreak/>
 <w:t xml:space="preserve">The preceding discussion establishes the relevant properties that our table types should possess.  Designing a structure that admits duplicate tuples is not difficult.  However, attempting to provide a true sense of the absence of any ordering is potentially trickier.  A list structure obviously has an order, so using the built-in Prolog list type to express SQL tables would at first glance seem problematic.  Nevertheless, Prolog lists are the chosen method in our system.  Thankfully, it turns out that the </w:t>
 </w:r>
 <w:proofErr w:type="gramStart"/>
@@ -32631,16 +32651,7 @@ z∨¬x∨¬y∨¬z</m:t>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t xml:space="preserve">We continue to use the same 'CREATE TABLE' declaration that was shown above for the Product table.  The table has a primary key, so we will eventually need to enforce </w:t>
-</w:r>
-<w:r w:rsidRPr="00B7247F">
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-<w:lastRenderedPageBreak/>
-<w:t xml:space="preserve">uniqueness on the </w:t>
+<w:t xml:space="preserve">We continue to use the same 'CREATE TABLE' declaration that was shown above for the Product table.  The table has a primary key, so we will eventually need to enforce uniqueness on the </w:t>
 </w:r>
 <w:proofErr w:type="spellStart"/>
 <w:r w:rsidRPr="00B7247F">
@@ -32921,6 +32932,7 @@ z∨¬x∨¬y∨¬z</m:t>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
+<w:lastRenderedPageBreak/>
 <w:t xml:space="preserve">        </w:t>
 </w:r>
 <w:proofErr w:type="spellStart"/>
@@ -33116,7 +33128,6 @@ z∨¬x∨¬y∨¬z</m:t>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:lastRenderedPageBreak/>
 <w:t>product_table_with_constraints</w:t>
 </w:r>
 <w:proofErr w:type="spellEnd"/>
@@ -33174,7 +33185,16 @@ z∨¬x∨¬y∨¬z</m:t>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t xml:space="preserve"> to enforce an upper bound on table size.  Placing limits on domain size and on table size weakens the proofs that are emitted, and requires us to clearly label each proof with the boundaries that were in effect during validity testing.  For example, it would not be appropriate for the system to state simply that an assertion was "proved valid."  Instead, the only appropriate claims will be those of the format: "assertion was proved valid in a database where table sizes cannot grow beyond 20 rows, and where the numeric domain ranges from 0 to 20, and where there are never more than 15 unique strings stored throughout the database at any time."</w:t>
+<w:t xml:space="preserve"> to enforce an upper bound on table size.  Placing limits on domain size and on table size weakens the proofs that are emitted, and requires us to clearly label each proof with the boundaries that were in effect during validity testing.  </w:t>
+</w:r>
+<w:r w:rsidRPr="00B7247F">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:lastRenderedPageBreak/>
+<w:t>For example, it would not be appropriate for the system to state simply that an assertion was "proved valid."  Instead, the only appropriate claims will be those of the format: "assertion was proved valid in a database where table sizes cannot grow beyond 20 rows, and where the numeric domain ranges from 0 to 20, and where there are never more than 15 unique strings stored throughout the database at any time."</w:t>
 </w:r>
 </w:p>
 <w:p w:rsidR="00B7247F" w:rsidRPr="00B7247F" w:rsidRDefault="00B7247F" w:rsidP="00B7247F">
@@ -33222,7 +33242,37 @@ z∨¬x∨¬y∨¬z</m:t>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t xml:space="preserve"> tool in any significant way.  For queries that reference only a handful of tables, flaws in the query formulation can typically be easily demonstrated using counterexamples that are populated with only small-sized tables.  Therefore, it will normally be efficient to run the first few proof attempts using tight bounds on domain size and table size.  If those proofs succeed, yet more confidence in the correctness of the SQL is still desired, then the bounds can be incrementally lifted as more and more proofs are attempted using larger and larger table definitions.  This </w:t>
+<w:t xml:space="preserve"> tool in any significant way.  For queries that reference only a handful of tables, flaws in the query formulation can typically be easily demonstrated using counterexamples that are populated with only small-sized tables.  Therefore, it will normally be efficient to run the first few proof attempts using tight bounds on domain size and table size.  If those proofs succeed, yet more confidence in the correctness of the SQL is still desired, then the bounds can be incrementally lifted as more and more proofs are attempted using larger and larger table definitions.  This incrementally widening approach can be continued either until sufficient confidence is gained, or until the proof task becomes intractable.  Furthermore, it is definitely not necessary for our system to represent infinite domains or tables of infinite size.  If the only counterexample to the correctness of some assumption were a counterexample that relied on an infinite table, then this would not serve any practical application.  In practice, all databases are finite, with attributes ranging over finite domains.</w:t>
+</w:r>
+</w:p>
+<w:p w:rsidR="00B7247F" w:rsidRPr="00B7247F" w:rsidRDefault="00B7247F" w:rsidP="00B7247F">
+<w:pPr>
+<w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
+<w:contextualSpacing/>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+</w:pPr>
+</w:p>
+<w:p w:rsidR="00B7247F" w:rsidRPr="00B7247F" w:rsidRDefault="00B7247F" w:rsidP="00B7247F">
+<w:pPr>
+<w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
+<w:contextualSpacing/>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+</w:pPr>
+<w:r w:rsidRPr="00B7247F">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve">In other words, the size restrictions are notable but not overly troubling.  However, the system will have to perform bookkeeping to make sure that the sizes of the domains are </w:t>
 </w:r>
 <w:r w:rsidRPr="00B7247F">
 <w:rPr>
@@ -33231,37 +33281,7 @@ z∨¬x∨¬y∨¬z</m:t>
 <w:szCs w:val="24"/>
 </w:rPr>
 <w:lastRenderedPageBreak/>
-<w:t>incrementally widening approach can be continued either until sufficient confidence is gained, or until the proof task becomes intractable.  Furthermore, it is definitely not necessary for our system to represent infinite domains or tables of infinite size.  If the only counterexample to the correctness of some assumption were a counterexample that relied on an infinite table, then this would not serve any practical application.  In practice, all databases are finite, with attributes ranging over finite domains.</w:t>
-</w:r>
-</w:p>
-<w:p w:rsidR="00B7247F" w:rsidRPr="00B7247F" w:rsidRDefault="00B7247F" w:rsidP="00B7247F">
-<w:pPr>
-<w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
-<w:contextualSpacing/>
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-</w:pPr>
-</w:p>
-<w:p w:rsidR="00B7247F" w:rsidRPr="00B7247F" w:rsidRDefault="00B7247F" w:rsidP="00B7247F">
-<w:pPr>
-<w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
-<w:contextualSpacing/>
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-</w:pPr>
-<w:r w:rsidRPr="00B7247F">
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-<w:t xml:space="preserve">In other words, the size restrictions are notable but not overly troubling.  However, the system will have to perform bookkeeping to make sure that the sizes of the domains are large enough to populate any maximum-sized table that may have unique constraints on each of its columns.  Similarly, some reasonable heuristic may need to be devised so that table sizes are </w:t>
+<w:t xml:space="preserve">large enough to populate any maximum-sized table that may have unique constraints on each of its columns.  Similarly, some reasonable heuristic may need to be devised so that table sizes are </w:t>
 </w:r>
 <w:proofErr w:type="spellStart"/>
 <w:r w:rsidRPr="00B7247F">
@@ -33309,16 +33329,7 @@ z∨¬x∨¬y∨¬z</m:t>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t xml:space="preserve">The use of finite domains for each attribute raises another issue beyond weakened proof power.  The other issue pertains to what might be called the "degree of query awareness" that our tool can (or cannot) achieve while using small finite domains for attributes.  The researchers who created the ADUSA tool for testing RDB query engines sought to avoid </w:t>
-</w:r>
-<w:r w:rsidRPr="00B7247F">
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-<w:lastRenderedPageBreak/>
-<w:t xml:space="preserve">a particular problem of </w:t>
+<w:t xml:space="preserve">The use of finite domains for each attribute raises another issue beyond weakened proof power.  The other issue pertains to what might be called the "degree of query awareness" that our tool can (or cannot) achieve while using small finite domains for attributes.  The researchers who created the ADUSA tool for testing RDB query engines sought to avoid a particular problem of </w:t>
 </w:r>
 <w:proofErr w:type="spellStart"/>
 <w:r w:rsidRPr="00B7247F">
@@ -33396,7 +33407,16 @@ z∨¬x∨¬y∨¬z</m:t>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t>No matter how many times the Student table is filled with random test data, it will be highly unlikely that a random generator type of tool would ever put "Amelia Barnett" into the Student table.  Therefore, the test query might be executed many times, but the test framework would never be able to ascertain anything particularly meaningful about the characteristics of the data that this query might potentially return.</w:t>
+<w:t xml:space="preserve">No matter how many times the Student table is filled with random test data, it will be highly unlikely that a random generator type of tool would ever put "Amelia Barnett" into the Student table.  Therefore, the test query might be executed many times, but the test </w:t>
+</w:r>
+<w:r w:rsidRPr="00B7247F">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:lastRenderedPageBreak/>
+<w:t>framework would never be able to ascertain anything particularly meaningful about the characteristics of the data that this query might potentially return.</w:t>
 </w:r>
 </w:p>
 <w:p w:rsidR="00B7247F" w:rsidRPr="00B7247F" w:rsidRDefault="00B7247F" w:rsidP="00B7247F">
@@ -33540,16 +33560,7 @@ z∨¬x∨¬y∨¬z</m:t>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t xml:space="preserve"> must be some string that is *not* present in the Student table.  It seems that the only motivation for running tests on the "Amelia Barnett" query would be to see how the query behaves </w:t>
-</w:r>
-<w:r w:rsidRPr="00B7247F">
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-<w:lastRenderedPageBreak/>
-<w:t>when "Amelia Barnett" is located, and/or how the query behaves when "Amelia Barnett" is *not* located.  As long as the motivation is as just described, then our "@</w:t>
+<w:t xml:space="preserve"> must be some string that is *not* present in the Student table.  It seems that the only motivation for running tests on the "Amelia Barnett" query would be to see how the query behaves when "Amelia Barnett" is located, and/or how the query behaves when "Amelia Barnett" is *not* located.  As long as the motivation is as just described, then our "@</w:t>
 </w:r>
 <w:proofErr w:type="spellStart"/>
 <w:r w:rsidRPr="00B7247F">
@@ -33585,7 +33596,16 @@ z∨¬x∨¬y∨¬z</m:t>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t xml:space="preserve"> domain.  On the other hand, there may be some rare case where a user wished to specifically execute a query containing "Amelia Barnett" due to some suspicious of an obscure bug in the RDB related to precisely that string.  In that case, asking our Prolog tool to test the query is pointless, since there is very little similarity between the internals of the Prolog tool and the internals of whatever real-life RDB is suspected of having the obscure bug.</w:t>
+<w:t xml:space="preserve"> domain.  On the other hand, there may be some rare case where a user wished to specifically execute a query containing "Amelia Barnett" due to some suspicious of an obscure bug in the RDB related to precisely that string.  In that case, asking our Prolog tool to test the query is </w:t>
+</w:r>
+<w:r w:rsidRPr="00B7247F">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:lastRenderedPageBreak/>
+<w:t>pointless, since there is very little similarity between the internals of the Prolog tool and the internals of whatever real-life RDB is suspected of having the obscure bug.</w:t>
 </w:r>
 </w:p>
 <w:p w:rsidR="00B7247F" w:rsidRPr="00B7247F" w:rsidRDefault="00B7247F" w:rsidP="00B7247F">
@@ -33729,7 +33749,7 @@ z∨¬x∨¬y∨¬z</m:t>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t xml:space="preserve">Domains are built-in, but specific tuple types are not.  The tuple types POQ requires will potentially be different for each SQL query POQ is tasked with processing.  These types, </w:t>
+<w:t xml:space="preserve">Domains are built-in, but specific tuple types are not.  The tuple types POQ requires will potentially be different for each SQL query POQ is tasked with processing.  These types, therefore, must be generated during the post-order traversal of the query tree during each new run of the tool.  The same is true for the table axioms.  Of course, if the user knows in advance that he/she will be processing many SQL queries that all access the same database, then it might be reasonable to have POQ generate up front all the tuple types and table axioms for all base tables in the database.  Those axioms could then be cached for reuse during the processing of each query.  However, the time saved by this up-front processing would likely be negligible.  On the other hand, the user may appreciate only </w:t>
 </w:r>
 <w:r w:rsidRPr="00B7247F">
 <w:rPr>
@@ -33738,7 +33758,7 @@ z∨¬x∨¬y∨¬z</m:t>
 <w:szCs w:val="24"/>
 </w:rPr>
 <w:lastRenderedPageBreak/>
-<w:t>therefore, must be generated during the post-order traversal of the query tree during each new run of the tool.  The same is true for the table axioms.  Of course, if the user knows in advance that he/she will be processing many SQL queries that all access the same database, then it might be reasonable to have POQ generate up front all the tuple types and table axioms for all base tables in the database.  Those axioms could then be cached for reuse during the processing of each query.  However, the time saved by this up-front processing would likely be negligible.  On the other hand, the user may appreciate only having to provide DDL input once, rather than providing the CREATE TABLE declarations each time a new query is input.</w:t>
+<w:t>having to provide DDL input once, rather than providing the CREATE TABLE declarations each time a new query is input.</w:t>
 </w:r>
 </w:p>
 <w:p w:rsidR="00B7247F" w:rsidRPr="00B7247F" w:rsidRDefault="00B7247F" w:rsidP="00B7247F">
@@ -33982,16 +34002,7 @@ z∨¬x∨¬y∨¬z</m:t>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t xml:space="preserve"> tool would be to only require the most straightforward parsing of the SQL </w:t>
-</w:r>
-<w:r w:rsidRPr="00B7247F">
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-<w:lastRenderedPageBreak/>
-<w:t>queries.  The goal was to translate the SQL into an equivalent set of FOL formulas in the simplest and most direct way possible.  In other words, a front-end parser for the tool would not be required to do any re-writing or optimizing of the initial query tree generated via simple parsing.</w:t>
+<w:t xml:space="preserve"> tool would be to only require the most straightforward parsing of the SQL queries.  The goal was to translate the SQL into an equivalent set of FOL formulas in the simplest and most direct way possible.  In other words, a front-end parser for the tool would not be required to do any re-writing or optimizing of the initial query tree generated via simple parsing.</w:t>
 </w:r>
 </w:p>
 <w:p w:rsidR="00B7247F" w:rsidRPr="00B7247F" w:rsidRDefault="00B7247F" w:rsidP="00B7247F">
@@ -34039,7 +34050,16 @@ z∨¬x∨¬y∨¬z</m:t>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t xml:space="preserve"> product of the relevant tables, followed by statements to describe a filtering of the </w:t>
+<w:t xml:space="preserve"> product of the relevant tables, followed by statements to describe a </w:t>
+</w:r>
+<w:r w:rsidRPr="00B7247F">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:lastRenderedPageBreak/>
+<w:t xml:space="preserve">filtering of the </w:t>
 </w:r>
 <w:proofErr w:type="spellStart"/>
 <w:proofErr w:type="gramStart"/>
@@ -34269,16 +34289,7 @@ z∨¬x∨¬y∨¬z</m:t>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t xml:space="preserve">CART_ID,CUST_ID)" </w:t>
-</w:r>
-<w:r w:rsidRPr="00B7247F">
-<w:rPr>
-<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
-<w:sz w:val="24"/>
-<w:szCs w:val="24"/>
-</w:rPr>
-<w:lastRenderedPageBreak/>
-<w:t>and "</w:t>
+<w:t>CART_ID,CUST_ID)" and "</w:t>
 </w:r>
 <w:proofErr w:type="spellStart"/>
 <w:r w:rsidRPr="00B7247F">
@@ -34344,7 +34355,16 @@ z∨¬x∨¬y∨¬z</m:t>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t xml:space="preserve">The remainder of this section will be devoted to discussion of these axioms for the JOIN operation.  This operation has the largest set of axioms of any operation in the system.  Also, the properties of these axioms are representative of properties contained within the axioms for aggregation and </w:t>
+<w:t xml:space="preserve">The remainder of this section will be devoted to discussion of these axioms for the JOIN operation.  This operation has the largest set of axioms of any operation in the system.  Also, the properties of these axioms are representative of properties contained within the </w:t>
+</w:r>
+<w:r w:rsidRPr="00B7247F">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:lastRenderedPageBreak/>
+<w:t xml:space="preserve">axioms for aggregation and </w:t>
 </w:r>
 <w:proofErr w:type="spellStart"/>
 <w:r w:rsidRPr="00B7247F">
@@ -34681,7 +34701,6 @@ z∨¬x∨¬y∨¬z</m:t>
 <w:sz w:val="18"/>
 <w:szCs w:val="18"/>
 </w:rPr>
-<w:lastRenderedPageBreak/>
 <w:t>[]    []</w:t>
 </w:r>
 </w:p>
@@ -34846,6 +34865,7 @@ z∨¬x∨¬y∨¬z</m:t>
 <w:sz w:val="18"/>
 <w:szCs w:val="18"/>
 </w:rPr>
+<w:lastRenderedPageBreak/>
 <w:t>meets_join_sc_</w:t>
 </w:r>
 <w:proofErr w:type="gramStart"/>
@@ -35531,7 +35551,6 @@ z∨¬x∨¬y∨¬z</m:t>
 <w:sz w:val="18"/>
 <w:szCs w:val="18"/>
 </w:rPr>
-<w:lastRenderedPageBreak/>
 <w:t xml:space="preserve">        </w:t>
 </w:r>
 <w:proofErr w:type="spellStart"/>
@@ -36878,6 +36897,7 @@ z∨¬x∨¬y∨¬z</m:t>
 <w:sz w:val="18"/>
 <w:szCs w:val="18"/>
 </w:rPr>
+<w:lastRenderedPageBreak/>
 <w:t xml:space="preserve">        </w:t>
 </w:r>
 <w:proofErr w:type="gramStart"/>
@@ -37554,7 +37574,6 @@ z∨¬x∨¬y∨¬z</m:t>
 <w:sz w:val="18"/>
 <w:szCs w:val="18"/>
 </w:rPr>
-<w:lastRenderedPageBreak/>
 <w:t xml:space="preserve">        </w:t>
 </w:r>
 <w:proofErr w:type="spellStart"/>
@@ -37868,6 +37887,7 @@ z∨¬x∨¬y∨¬z</m:t>
 <w:sz w:val="18"/>
 <w:szCs w:val="18"/>
 </w:rPr>
+<w:lastRenderedPageBreak/>
 <w:t>% longer carts list but SINGLE details item, FAILS TO MEET JOIN conditions</w:t>
 </w:r>
 </w:p>
@@ -38564,7 +38584,6 @@ z∨¬x∨¬y∨¬z</m:t>
 <w:sz w:val="18"/>
 <w:szCs w:val="18"/>
 </w:rPr>
-<w:lastRenderedPageBreak/>
 <w:t xml:space="preserve">  [(</w:t>
 </w:r>
 <w:proofErr w:type="spellStart"/>
@@ -39609,7 +39628,6 @@ z∨¬x∨¬y∨¬z</m:t>
 <w:sz w:val="18"/>
 <w:szCs w:val="18"/>
 </w:rPr>
-<w:lastRenderedPageBreak/>
 <w:t xml:space="preserve">        </w:t>
 </w:r>
 <w:proofErr w:type="spellStart"/>
@@ -39945,6 +39963,7 @@ z∨¬x∨¬y∨¬z</m:t>
 <w:sz w:val="18"/>
 <w:szCs w:val="18"/>
 </w:rPr>
+<w:lastRenderedPageBreak/>
 <w:t xml:space="preserve">        </w:t>
 </w:r>
 <w:proofErr w:type="spellStart"/>
@@ -43166,14 +43185,6 @@ z∨¬x∨¬y∨¬z</m:t>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:sectPr w:rsidR="00004586" w:rsidSect="00952998">
-<w:footerReference w:type="default" r:id="rId43"/>
-<w:pgSz w:w="12240" w:h="15840"/>
-<w:pgMar w:top="1440" w:right="1440" w:bottom="1440" w:left="2160" w:header="720" w:footer="1440" w:gutter="0"/>
-<w:pgNumType w:start="1"/>
-<w:cols w:space="720"/>
-<w:docGrid w:linePitch="360"/>
-</w:sectPr>
 </w:pPr>
 <w:r>
 <w:rPr>
@@ -43209,6 +43220,2884 @@ z∨¬x∨¬y∨¬z</m:t>
 </w:rPr>
 <w:t xml:space="preserve"> line</w:t>
 </w:r>
+</w:p>
+<w:p w:rsidR="00531BBA" w:rsidRDefault="00531BBA" w:rsidP="00F23974">
+<w:pPr>
+<w:tabs>
+<w:tab w:val="left" w:pos="540"/>
+<w:tab w:val="left" w:pos="900"/>
+</w:tabs>
+<w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
+<w:contextualSpacing/>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+</w:pPr>
+</w:p>
+<w:p w:rsidR="00531BBA" w:rsidRPr="00531BBA" w:rsidRDefault="00531BBA" w:rsidP="00531BBA">
+<w:pPr>
+<w:autoSpaceDE w:val="0"/>
+<w:autoSpaceDN w:val="0"/>
+<w:adjustRightInd w:val="0"/>
+<w:spacing w:after="0" w:line="240" w:lineRule="auto"/>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+</w:pPr>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve">[1] J. B. Almeida, </w:t>
+</w:r>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:i/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>Rigorous Software Development</w:t>
+</w:r>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>. Springer, 2011, p. 263.</w:t>
+</w:r>
+</w:p>
+<w:p w:rsidR="00531BBA" w:rsidRPr="00531BBA" w:rsidRDefault="00531BBA" w:rsidP="00531BBA">
+<w:pPr>
+<w:autoSpaceDE w:val="0"/>
+<w:autoSpaceDN w:val="0"/>
+<w:adjustRightInd w:val="0"/>
+<w:spacing w:after="0" w:line="240" w:lineRule="auto"/>
+<w:ind w:left="640" w:hanging="640"/>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+</w:pPr>
+</w:p>
+<w:p w:rsidR="00531BBA" w:rsidRPr="00531BBA" w:rsidRDefault="00531BBA" w:rsidP="00531BBA">
+<w:pPr>
+<w:autoSpaceDE w:val="0"/>
+<w:autoSpaceDN w:val="0"/>
+<w:adjustRightInd w:val="0"/>
+<w:spacing w:after="0" w:line="240" w:lineRule="auto"/>
+<w:ind w:left="640" w:hanging="640"/>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+</w:pPr>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve">[2] Proceedings of the 25th European conference on Object-oriented </w:t>
+</w:r>
+<w:proofErr w:type="spellStart"/>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>programmingI</w:t>
+</w:r>
+<w:proofErr w:type="spellEnd"/>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve">. G. </w:t>
+</w:r>
+<w:proofErr w:type="spellStart"/>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>Baltopoulos</w:t>
+</w:r>
+<w:proofErr w:type="spellEnd"/>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve">, J. </w:t>
+</w:r>
+<w:proofErr w:type="spellStart"/>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>Borgström</w:t>
+</w:r>
+<w:proofErr w:type="spellEnd"/>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve">, and A. D. Gordon, “Maintaining database integrity with refinement types,” </w:t>
+</w:r>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:i/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>Proceedings of the 25th European conference on Object-oriented programming</w:t>
+</w:r>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>, 2011, pp. 484–509.</w:t>
+</w:r>
+</w:p>
+<w:p w:rsidR="00531BBA" w:rsidRPr="00531BBA" w:rsidRDefault="00531BBA" w:rsidP="00531BBA">
+<w:pPr>
+<w:autoSpaceDE w:val="0"/>
+<w:autoSpaceDN w:val="0"/>
+<w:adjustRightInd w:val="0"/>
+<w:spacing w:after="0" w:line="240" w:lineRule="auto"/>
+<w:ind w:left="640" w:hanging="640"/>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+</w:pPr>
+</w:p>
+<w:p w:rsidR="00531BBA" w:rsidRPr="00531BBA" w:rsidRDefault="00531BBA" w:rsidP="00531BBA">
+<w:pPr>
+<w:autoSpaceDE w:val="0"/>
+<w:autoSpaceDN w:val="0"/>
+<w:adjustRightInd w:val="0"/>
+<w:spacing w:after="0" w:line="240" w:lineRule="auto"/>
+<w:ind w:left="640" w:hanging="640"/>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+</w:pPr>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve">[3] Proceedings of the First international conference on Certified Programs and </w:t>
+</w:r>
+<w:proofErr w:type="spellStart"/>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>ProofsN</w:t>
+</w:r>
+<w:proofErr w:type="spellEnd"/>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve">. </w:t>
+</w:r>
+<w:proofErr w:type="spellStart"/>
+<w:proofErr w:type="gramStart"/>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>Bjørner</w:t>
+</w:r>
+<w:proofErr w:type="spellEnd"/>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve">, “Engineering theories with z3,” </w:t>
+</w:r>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:i/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>Proceedings of the First international conference on Certified Programs and Proofs</w:t>
+</w:r>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>, 2011, pp. 1–2.</w:t>
+</w:r>
+<w:proofErr w:type="gramEnd"/>
+</w:p>
+<w:p w:rsidR="00531BBA" w:rsidRPr="00531BBA" w:rsidRDefault="00531BBA" w:rsidP="00531BBA">
+<w:pPr>
+<w:autoSpaceDE w:val="0"/>
+<w:autoSpaceDN w:val="0"/>
+<w:adjustRightInd w:val="0"/>
+<w:spacing w:after="0" w:line="240" w:lineRule="auto"/>
+<w:ind w:left="640" w:hanging="640"/>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+</w:pPr>
+</w:p>
+<w:p w:rsidR="00531BBA" w:rsidRPr="00531BBA" w:rsidRDefault="00531BBA" w:rsidP="00531BBA">
+<w:pPr>
+<w:autoSpaceDE w:val="0"/>
+<w:autoSpaceDN w:val="0"/>
+<w:adjustRightInd w:val="0"/>
+<w:spacing w:after="0" w:line="240" w:lineRule="auto"/>
+<w:ind w:left="640" w:hanging="640"/>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+</w:pPr>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve">[4] A. R. Bradley and Z. Manna, </w:t>
+</w:r>
+<w:proofErr w:type="gramStart"/>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:i/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>The</w:t>
+</w:r>
+<w:proofErr w:type="gramEnd"/>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:i/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve"> Calculus of Computation: Decision Procedures with Applications to Verification</w:t>
+</w:r>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>. Springer, 2010, p. 366.</w:t>
+</w:r>
+</w:p>
+<w:p w:rsidR="00531BBA" w:rsidRPr="00531BBA" w:rsidRDefault="00531BBA" w:rsidP="00531BBA">
+<w:pPr>
+<w:autoSpaceDE w:val="0"/>
+<w:autoSpaceDN w:val="0"/>
+<w:adjustRightInd w:val="0"/>
+<w:spacing w:after="0" w:line="240" w:lineRule="auto"/>
+<w:ind w:left="640" w:hanging="640"/>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+</w:pPr>
+</w:p>
+<w:p w:rsidR="00531BBA" w:rsidRPr="00531BBA" w:rsidRDefault="00531BBA" w:rsidP="00531BBA">
+<w:pPr>
+<w:autoSpaceDE w:val="0"/>
+<w:autoSpaceDN w:val="0"/>
+<w:adjustRightInd w:val="0"/>
+<w:spacing w:after="0" w:line="240" w:lineRule="auto"/>
+<w:ind w:left="640" w:hanging="640"/>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+</w:pPr>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve">[5] C. J. Date, </w:t>
+</w:r>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:i/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>SQL and Relational Theory: How to Write Accurate SQL Code</w:t>
+</w:r>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve">. </w:t>
+</w:r>
+<w:proofErr w:type="gramStart"/>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>O’Reilly Media, 2009.</w:t>
+</w:r>
+<w:proofErr w:type="gramEnd"/>
+</w:p>
+<w:p w:rsidR="00531BBA" w:rsidRPr="00531BBA" w:rsidRDefault="00531BBA" w:rsidP="00531BBA">
+<w:pPr>
+<w:autoSpaceDE w:val="0"/>
+<w:autoSpaceDN w:val="0"/>
+<w:adjustRightInd w:val="0"/>
+<w:spacing w:after="0" w:line="240" w:lineRule="auto"/>
+<w:ind w:left="640" w:hanging="640"/>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+</w:pPr>
+</w:p>
+<w:p w:rsidR="00531BBA" w:rsidRPr="00531BBA" w:rsidRDefault="00531BBA" w:rsidP="00531BBA">
+<w:pPr>
+<w:autoSpaceDE w:val="0"/>
+<w:autoSpaceDN w:val="0"/>
+<w:adjustRightInd w:val="0"/>
+<w:spacing w:after="0" w:line="240" w:lineRule="auto"/>
+<w:ind w:left="640" w:hanging="640"/>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+</w:pPr>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve">[6] Proceedings of the 2007 ACM SIGMOD international conference on Management of </w:t>
+</w:r>
+<w:proofErr w:type="spellStart"/>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>dataM</w:t>
+</w:r>
+<w:proofErr w:type="spellEnd"/>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve">. </w:t>
+</w:r>
+<w:proofErr w:type="spellStart"/>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>Elhemali</w:t>
+</w:r>
+<w:proofErr w:type="spellEnd"/>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>, C. A. Galindo-</w:t>
+</w:r>
+<w:proofErr w:type="spellStart"/>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>Legaria</w:t>
+</w:r>
+<w:proofErr w:type="spellEnd"/>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve">, T. Grabs, and M. M. Joshi, “Execution strategies for SQL </w:t>
+</w:r>
+<w:proofErr w:type="spellStart"/>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>subqueries</w:t>
+</w:r>
+<w:proofErr w:type="spellEnd"/>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve">,” </w:t>
+</w:r>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:i/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>Proceedings of the 2007 ACM SIGMOD international conference on Management of data</w:t>
+</w:r>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>, 2007, pp. 993–1004.</w:t>
+</w:r>
+</w:p>
+<w:p w:rsidR="00531BBA" w:rsidRPr="00531BBA" w:rsidRDefault="00531BBA" w:rsidP="00531BBA">
+<w:pPr>
+<w:autoSpaceDE w:val="0"/>
+<w:autoSpaceDN w:val="0"/>
+<w:adjustRightInd w:val="0"/>
+<w:spacing w:after="0" w:line="240" w:lineRule="auto"/>
+<w:ind w:left="640" w:hanging="640"/>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+</w:pPr>
+</w:p>
+<w:p w:rsidR="00531BBA" w:rsidRPr="00531BBA" w:rsidRDefault="00531BBA" w:rsidP="00531BBA">
+<w:pPr>
+<w:autoSpaceDE w:val="0"/>
+<w:autoSpaceDN w:val="0"/>
+<w:adjustRightInd w:val="0"/>
+<w:spacing w:after="0" w:line="240" w:lineRule="auto"/>
+<w:ind w:left="640" w:hanging="640"/>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+</w:pPr>
+<w:proofErr w:type="gramStart"/>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve">[7] R. </w:t>
+</w:r>
+<w:proofErr w:type="spellStart"/>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>Elmasri</w:t>
+</w:r>
+<w:proofErr w:type="spellEnd"/>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve"> and S. </w:t>
+</w:r>
+<w:proofErr w:type="spellStart"/>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>Navathe</w:t>
+</w:r>
+<w:proofErr w:type="spellEnd"/>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve">, </w:t>
+</w:r>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:i/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>Fundamentals of Database Systems</w:t>
+</w:r>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>.</w:t>
+</w:r>
+<w:proofErr w:type="gramEnd"/>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve"> Pearson/Addison Wesley, 2007, p. 1139.</w:t>
+</w:r>
+</w:p>
+<w:p w:rsidR="00531BBA" w:rsidRPr="00531BBA" w:rsidRDefault="00531BBA" w:rsidP="00531BBA">
+<w:pPr>
+<w:autoSpaceDE w:val="0"/>
+<w:autoSpaceDN w:val="0"/>
+<w:adjustRightInd w:val="0"/>
+<w:spacing w:after="0" w:line="240" w:lineRule="auto"/>
+<w:ind w:left="640" w:hanging="640"/>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+</w:pPr>
+</w:p>
+<w:p w:rsidR="00531BBA" w:rsidRPr="00531BBA" w:rsidRDefault="00531BBA" w:rsidP="00531BBA">
+<w:pPr>
+<w:autoSpaceDE w:val="0"/>
+<w:autoSpaceDN w:val="0"/>
+<w:adjustRightInd w:val="0"/>
+<w:spacing w:after="0" w:line="240" w:lineRule="auto"/>
+<w:ind w:left="640" w:hanging="640"/>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+</w:pPr>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve">[8] E. R. </w:t>
+</w:r>
+<w:proofErr w:type="spellStart"/>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>Farrer</w:t>
+</w:r>
+<w:proofErr w:type="spellEnd"/>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>, “A quantitative analysis of whether unit testing obviates static type checking for error detection,” California State University, Chico, Chico, Calif., 2011.</w:t>
+</w:r>
+</w:p>
+<w:p w:rsidR="00531BBA" w:rsidRPr="00531BBA" w:rsidRDefault="00531BBA" w:rsidP="00531BBA">
+<w:pPr>
+<w:autoSpaceDE w:val="0"/>
+<w:autoSpaceDN w:val="0"/>
+<w:adjustRightInd w:val="0"/>
+<w:spacing w:after="0" w:line="240" w:lineRule="auto"/>
+<w:ind w:left="640" w:hanging="640"/>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+</w:pPr>
+</w:p>
+<w:p w:rsidR="00531BBA" w:rsidRPr="00531BBA" w:rsidRDefault="00531BBA" w:rsidP="00531BBA">
+<w:pPr>
+<w:autoSpaceDE w:val="0"/>
+<w:autoSpaceDN w:val="0"/>
+<w:adjustRightInd w:val="0"/>
+<w:spacing w:after="0" w:line="240" w:lineRule="auto"/>
+<w:ind w:left="640" w:hanging="640"/>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+</w:pPr>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve">[9] SIGMOD </w:t>
+</w:r>
+<w:proofErr w:type="spellStart"/>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>Rec.C</w:t>
+</w:r>
+<w:proofErr w:type="spellEnd"/>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve">. </w:t>
+</w:r>
+<w:proofErr w:type="gramStart"/>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>Galindo-</w:t>
+</w:r>
+<w:proofErr w:type="spellStart"/>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>Legaria</w:t>
+</w:r>
+<w:proofErr w:type="spellEnd"/>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve"> and M. Joshi, “Orthogonal optimization of </w:t>
+</w:r>
+<w:proofErr w:type="spellStart"/>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>subqueries</w:t>
+</w:r>
+<w:proofErr w:type="spellEnd"/>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve"> and aggregation,” </w:t>
+</w:r>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:i/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>SIGMOD Rec.</w:t>
+</w:r>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>, vol. 30, no. 2, pp. 571–581, May 2001.</w:t>
+</w:r>
+<w:proofErr w:type="gramEnd"/>
+</w:p>
+<w:p w:rsidR="00531BBA" w:rsidRPr="00531BBA" w:rsidRDefault="00531BBA" w:rsidP="00531BBA">
+<w:pPr>
+<w:autoSpaceDE w:val="0"/>
+<w:autoSpaceDN w:val="0"/>
+<w:adjustRightInd w:val="0"/>
+<w:spacing w:after="0" w:line="240" w:lineRule="auto"/>
+<w:ind w:left="640" w:hanging="640"/>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+</w:pPr>
+</w:p>
+<w:p w:rsidR="00531BBA" w:rsidRPr="00531BBA" w:rsidRDefault="00531BBA" w:rsidP="00531BBA">
+<w:pPr>
+<w:autoSpaceDE w:val="0"/>
+<w:autoSpaceDN w:val="0"/>
+<w:adjustRightInd w:val="0"/>
+<w:spacing w:after="0" w:line="240" w:lineRule="auto"/>
+<w:ind w:left="640" w:hanging="640"/>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+</w:pPr>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve">[10] </w:t>
+</w:r>
+<w:proofErr w:type="spellStart"/>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>Commun</w:t>
+</w:r>
+<w:proofErr w:type="spellEnd"/>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve">. </w:t>
+</w:r>
+<w:proofErr w:type="gramStart"/>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>ACMP.</w:t>
+</w:r>
+<w:proofErr w:type="gramEnd"/>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve"> </w:t>
+</w:r>
+<w:proofErr w:type="gramStart"/>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve">Hawkins, M. </w:t>
+</w:r>
+<w:proofErr w:type="spellStart"/>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>Rinard</w:t>
+</w:r>
+<w:proofErr w:type="spellEnd"/>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve">, A. Aiken, M. </w:t>
+</w:r>
+<w:proofErr w:type="spellStart"/>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>Sagiv</w:t>
+</w:r>
+<w:proofErr w:type="spellEnd"/>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve">, and K. Fisher, “An introduction to data representation synthesis,” </w:t>
+</w:r>
+<w:proofErr w:type="spellStart"/>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:i/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>Commun</w:t>
+</w:r>
+<w:proofErr w:type="spellEnd"/>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:i/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>.</w:t>
+</w:r>
+<w:proofErr w:type="gramEnd"/>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:i/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve"> ACM</w:t>
+</w:r>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>, vol. 55, no. 12, pp. 91–99, Dec. 2012.</w:t>
+</w:r>
+</w:p>
+<w:p w:rsidR="00531BBA" w:rsidRPr="00531BBA" w:rsidRDefault="00531BBA" w:rsidP="00531BBA">
+<w:pPr>
+<w:autoSpaceDE w:val="0"/>
+<w:autoSpaceDN w:val="0"/>
+<w:adjustRightInd w:val="0"/>
+<w:spacing w:after="0" w:line="240" w:lineRule="auto"/>
+<w:ind w:left="640" w:hanging="640"/>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+</w:pPr>
+</w:p>
+<w:p w:rsidR="00531BBA" w:rsidRPr="00531BBA" w:rsidRDefault="00531BBA" w:rsidP="00531BBA">
+<w:pPr>
+<w:autoSpaceDE w:val="0"/>
+<w:autoSpaceDN w:val="0"/>
+<w:adjustRightInd w:val="0"/>
+<w:spacing w:after="0" w:line="240" w:lineRule="auto"/>
+<w:ind w:left="640" w:hanging="640"/>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+</w:pPr>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve">[11] </w:t>
+</w:r>
+<w:proofErr w:type="spellStart"/>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>Commun</w:t>
+</w:r>
+<w:proofErr w:type="spellEnd"/>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve">. </w:t>
+</w:r>
+<w:proofErr w:type="gramStart"/>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>ACMC.</w:t>
+</w:r>
+<w:proofErr w:type="gramEnd"/>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve"> A. R. Hoare, “An axiomatic basis for computer programming,” </w:t>
+</w:r>
+<w:proofErr w:type="spellStart"/>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:i/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>Commun</w:t>
+</w:r>
+<w:proofErr w:type="spellEnd"/>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:i/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>. ACM</w:t>
+</w:r>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>, vol. 12, no. 10, pp. 576–580, Oct. 1969.</w:t>
+</w:r>
+</w:p>
+<w:p w:rsidR="00531BBA" w:rsidRPr="00531BBA" w:rsidRDefault="00531BBA" w:rsidP="00531BBA">
+<w:pPr>
+<w:autoSpaceDE w:val="0"/>
+<w:autoSpaceDN w:val="0"/>
+<w:adjustRightInd w:val="0"/>
+<w:spacing w:after="0" w:line="240" w:lineRule="auto"/>
+<w:ind w:left="640" w:hanging="640"/>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+</w:pPr>
+</w:p>
+<w:p w:rsidR="00531BBA" w:rsidRPr="00531BBA" w:rsidRDefault="00531BBA" w:rsidP="00531BBA">
+<w:pPr>
+<w:autoSpaceDE w:val="0"/>
+<w:autoSpaceDN w:val="0"/>
+<w:adjustRightInd w:val="0"/>
+<w:spacing w:after="0" w:line="240" w:lineRule="auto"/>
+<w:ind w:left="640" w:hanging="640"/>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+</w:pPr>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve">[12] Proceedings of the 2012 Joint EDBT/ICDT </w:t>
+</w:r>
+<w:proofErr w:type="spellStart"/>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>WorkshopsM</w:t>
+</w:r>
+<w:proofErr w:type="spellEnd"/>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve">. A. </w:t>
+</w:r>
+<w:proofErr w:type="spellStart"/>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>Javid</w:t>
+</w:r>
+<w:proofErr w:type="spellEnd"/>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve"> and S. M. </w:t>
+</w:r>
+<w:proofErr w:type="spellStart"/>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>Embury</w:t>
+</w:r>
+<w:proofErr w:type="spellEnd"/>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve">, “Diagnosing faults in embedded queries in database applications,” </w:t>
+</w:r>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:i/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>Proceedings of the 2012 Joint EDBT/ICDT Workshops</w:t>
+</w:r>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>, 2012, pp. 239–244.</w:t>
+</w:r>
+</w:p>
+<w:p w:rsidR="00531BBA" w:rsidRPr="00531BBA" w:rsidRDefault="00531BBA" w:rsidP="00531BBA">
+<w:pPr>
+<w:autoSpaceDE w:val="0"/>
+<w:autoSpaceDN w:val="0"/>
+<w:adjustRightInd w:val="0"/>
+<w:spacing w:after="0" w:line="240" w:lineRule="auto"/>
+<w:ind w:left="640" w:hanging="640"/>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+</w:pPr>
+</w:p>
+<w:p w:rsidR="00531BBA" w:rsidRPr="00531BBA" w:rsidRDefault="00531BBA" w:rsidP="00531BBA">
+<w:pPr>
+<w:autoSpaceDE w:val="0"/>
+<w:autoSpaceDN w:val="0"/>
+<w:adjustRightInd w:val="0"/>
+<w:spacing w:after="0" w:line="240" w:lineRule="auto"/>
+<w:ind w:left="640" w:hanging="640"/>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+</w:pPr>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve">[13] B. </w:t>
+</w:r>
+<w:proofErr w:type="spellStart"/>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>Karwin</w:t>
+</w:r>
+<w:proofErr w:type="spellEnd"/>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve">, </w:t>
+</w:r>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:i/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve">SQL </w:t>
+</w:r>
+<w:proofErr w:type="spellStart"/>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:i/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>Antipatterns</w:t>
+</w:r>
+<w:proofErr w:type="spellEnd"/>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:i/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>: Avoiding the Pitfalls of Database Programming</w:t>
+</w:r>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve">. O’Reilly </w:t>
+</w:r>
+<w:proofErr w:type="spellStart"/>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>Vlg</w:t>
+</w:r>
+<w:proofErr w:type="spellEnd"/>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>. GmbH &amp; Company, 2010, p. 333.</w:t>
+</w:r>
+</w:p>
+<w:p w:rsidR="00531BBA" w:rsidRPr="00531BBA" w:rsidRDefault="00531BBA" w:rsidP="00531BBA">
+<w:pPr>
+<w:autoSpaceDE w:val="0"/>
+<w:autoSpaceDN w:val="0"/>
+<w:adjustRightInd w:val="0"/>
+<w:spacing w:after="0" w:line="240" w:lineRule="auto"/>
+<w:ind w:left="640" w:hanging="640"/>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+</w:pPr>
+</w:p>
+<w:p w:rsidR="00531BBA" w:rsidRPr="00531BBA" w:rsidRDefault="00531BBA" w:rsidP="00531BBA">
+<w:pPr>
+<w:autoSpaceDE w:val="0"/>
+<w:autoSpaceDN w:val="0"/>
+<w:adjustRightInd w:val="0"/>
+<w:spacing w:after="0" w:line="240" w:lineRule="auto"/>
+<w:ind w:left="640" w:hanging="640"/>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+</w:pPr>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve">[14] Proceedings of the 2008 23rd IEEE/ACM International Conference on Automated Software </w:t>
+</w:r>
+<w:proofErr w:type="spellStart"/>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>EngineeringS</w:t>
+</w:r>
+<w:proofErr w:type="spellEnd"/>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve">. A. </w:t>
+</w:r>
+<w:proofErr w:type="spellStart"/>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>Khalek</w:t>
+</w:r>
+<w:proofErr w:type="spellEnd"/>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve">, B. </w:t>
+</w:r>
+<w:proofErr w:type="spellStart"/>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>Elkarablieh</w:t>
+</w:r>
+<w:proofErr w:type="spellEnd"/>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve">, Y. O. </w:t>
+</w:r>
+<w:proofErr w:type="spellStart"/>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>Laleye</w:t>
+</w:r>
+<w:proofErr w:type="spellEnd"/>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve">, and S. </w:t>
+</w:r>
+<w:proofErr w:type="spellStart"/>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>Khurshid</w:t>
+</w:r>
+<w:proofErr w:type="spellEnd"/>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve">, “Query-Aware Test Generation Using a Relational Constraint Solver,” </w:t>
+</w:r>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:i/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>Proceedings of the 2008 23rd IEEE/ACM International Conference on Automated Software Engineering</w:t>
+</w:r>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>, 2008, pp. 238–247.</w:t>
+</w:r>
+</w:p>
+<w:p w:rsidR="00531BBA" w:rsidRPr="00531BBA" w:rsidRDefault="00531BBA" w:rsidP="00531BBA">
+<w:pPr>
+<w:autoSpaceDE w:val="0"/>
+<w:autoSpaceDN w:val="0"/>
+<w:adjustRightInd w:val="0"/>
+<w:spacing w:after="0" w:line="240" w:lineRule="auto"/>
+<w:ind w:left="640" w:hanging="640"/>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+</w:pPr>
+</w:p>
+<w:p w:rsidR="00531BBA" w:rsidRPr="00531BBA" w:rsidRDefault="00531BBA" w:rsidP="00531BBA">
+<w:pPr>
+<w:autoSpaceDE w:val="0"/>
+<w:autoSpaceDN w:val="0"/>
+<w:adjustRightInd w:val="0"/>
+<w:spacing w:after="0" w:line="240" w:lineRule="auto"/>
+<w:ind w:left="640" w:hanging="640"/>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+</w:pPr>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve">[15] Proceedings of IFIP Congress 1974R. A. Kowalski, “Predicate Logic as Programming Language,” </w:t>
+</w:r>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:i/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>Proceedings of IFIP Congress 1974</w:t>
+</w:r>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>, 1974, pp. 569–574.</w:t>
+</w:r>
+</w:p>
+<w:p w:rsidR="00531BBA" w:rsidRPr="00531BBA" w:rsidRDefault="00531BBA" w:rsidP="00531BBA">
+<w:pPr>
+<w:autoSpaceDE w:val="0"/>
+<w:autoSpaceDN w:val="0"/>
+<w:adjustRightInd w:val="0"/>
+<w:spacing w:after="0" w:line="240" w:lineRule="auto"/>
+<w:ind w:left="640" w:hanging="640"/>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+</w:pPr>
+</w:p>
+<w:p w:rsidR="00531BBA" w:rsidRPr="00531BBA" w:rsidRDefault="00531BBA" w:rsidP="00531BBA">
+<w:pPr>
+<w:autoSpaceDE w:val="0"/>
+<w:autoSpaceDN w:val="0"/>
+<w:adjustRightInd w:val="0"/>
+<w:spacing w:after="0" w:line="240" w:lineRule="auto"/>
+<w:ind w:left="640" w:hanging="640"/>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+</w:pPr>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve">[16] M. </w:t>
+</w:r>
+<w:proofErr w:type="spellStart"/>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>Levene</w:t>
+</w:r>
+<w:proofErr w:type="spellEnd"/>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve"> and G. </w:t>
+</w:r>
+<w:proofErr w:type="spellStart"/>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>Loizou</w:t>
+</w:r>
+<w:proofErr w:type="spellEnd"/>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve">, </w:t>
+</w:r>
+<w:proofErr w:type="gramStart"/>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:i/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>A</w:t>
+</w:r>
+<w:proofErr w:type="gramEnd"/>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:i/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve"> Guided Tour of Relational Databases and Beyond</w:t>
+</w:r>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>. Springer, 1999, p. 625.</w:t>
+</w:r>
+</w:p>
+<w:p w:rsidR="00531BBA" w:rsidRPr="00531BBA" w:rsidRDefault="00531BBA" w:rsidP="00531BBA">
+<w:pPr>
+<w:autoSpaceDE w:val="0"/>
+<w:autoSpaceDN w:val="0"/>
+<w:adjustRightInd w:val="0"/>
+<w:spacing w:after="0" w:line="240" w:lineRule="auto"/>
+<w:ind w:left="640" w:hanging="640"/>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+</w:pPr>
+</w:p>
+<w:p w:rsidR="00531BBA" w:rsidRPr="00531BBA" w:rsidRDefault="00531BBA" w:rsidP="00531BBA">
+<w:pPr>
+<w:autoSpaceDE w:val="0"/>
+<w:autoSpaceDN w:val="0"/>
+<w:adjustRightInd w:val="0"/>
+<w:spacing w:after="0" w:line="240" w:lineRule="auto"/>
+<w:ind w:left="640" w:hanging="640"/>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+</w:pPr>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve">[17] J. W. Lloyd, </w:t>
+</w:r>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:i/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>Foundations of Logic Programming</w:t>
+</w:r>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>. Springer-</w:t>
+</w:r>
+<w:proofErr w:type="spellStart"/>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>Verlag</w:t>
+</w:r>
+<w:proofErr w:type="spellEnd"/>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve"> New York Incorporated, 1984, p. 140.</w:t>
+</w:r>
+</w:p>
+<w:p w:rsidR="00531BBA" w:rsidRPr="00531BBA" w:rsidRDefault="00531BBA" w:rsidP="00531BBA">
+<w:pPr>
+<w:autoSpaceDE w:val="0"/>
+<w:autoSpaceDN w:val="0"/>
+<w:adjustRightInd w:val="0"/>
+<w:spacing w:after="0" w:line="240" w:lineRule="auto"/>
+<w:ind w:left="640" w:hanging="640"/>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+</w:pPr>
+</w:p>
+<w:p w:rsidR="00531BBA" w:rsidRPr="00531BBA" w:rsidRDefault="00531BBA" w:rsidP="00531BBA">
+<w:pPr>
+<w:autoSpaceDE w:val="0"/>
+<w:autoSpaceDN w:val="0"/>
+<w:adjustRightInd w:val="0"/>
+<w:spacing w:after="0" w:line="240" w:lineRule="auto"/>
+<w:ind w:left="640" w:hanging="640"/>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+</w:pPr>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve">[18] SIGPLAN </w:t>
+</w:r>
+<w:proofErr w:type="spellStart"/>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>Not.G</w:t>
+</w:r>
+<w:proofErr w:type="spellEnd"/>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve">. </w:t>
+</w:r>
+<w:proofErr w:type="spellStart"/>
+<w:proofErr w:type="gramStart"/>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>Malecha</w:t>
+</w:r>
+<w:proofErr w:type="spellEnd"/>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve">, G. </w:t>
+</w:r>
+<w:proofErr w:type="spellStart"/>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>Morrisett</w:t>
+</w:r>
+<w:proofErr w:type="spellEnd"/>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve">, A. </w:t>
+</w:r>
+<w:proofErr w:type="spellStart"/>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>Shinnar</w:t>
+</w:r>
+<w:proofErr w:type="spellEnd"/>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve">, and R. </w:t>
+</w:r>
+<w:proofErr w:type="spellStart"/>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>Wisnesky</w:t>
+</w:r>
+<w:proofErr w:type="spellEnd"/>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve">, “Toward a verified relational database management system,” </w:t>
+</w:r>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:i/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>SIGPLAN Not.</w:t>
+</w:r>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>, vol. 45, no. 1, pp. 237–248, Jan. 2010.</w:t>
+</w:r>
+<w:proofErr w:type="gramEnd"/>
+</w:p>
+<w:p w:rsidR="00531BBA" w:rsidRPr="00531BBA" w:rsidRDefault="00531BBA" w:rsidP="00531BBA">
+<w:pPr>
+<w:autoSpaceDE w:val="0"/>
+<w:autoSpaceDN w:val="0"/>
+<w:adjustRightInd w:val="0"/>
+<w:spacing w:after="0" w:line="240" w:lineRule="auto"/>
+<w:ind w:left="640" w:hanging="640"/>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+</w:pPr>
+</w:p>
+<w:p w:rsidR="00531BBA" w:rsidRPr="00531BBA" w:rsidRDefault="00531BBA" w:rsidP="00531BBA">
+<w:pPr>
+<w:autoSpaceDE w:val="0"/>
+<w:autoSpaceDN w:val="0"/>
+<w:adjustRightInd w:val="0"/>
+<w:spacing w:after="0" w:line="240" w:lineRule="auto"/>
+<w:ind w:left="640" w:hanging="640"/>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+</w:pPr>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve">[19] Proceedings of the 30th international conference on Software </w:t>
+</w:r>
+<w:proofErr w:type="spellStart"/>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>engineeringA</w:t>
+</w:r>
+<w:proofErr w:type="spellEnd"/>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve">. </w:t>
+</w:r>
+<w:proofErr w:type="gramStart"/>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve">Maule, W. </w:t>
+</w:r>
+<w:proofErr w:type="spellStart"/>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>Emmerich</w:t>
+</w:r>
+<w:proofErr w:type="spellEnd"/>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve">, and D. S. </w:t>
+</w:r>
+<w:proofErr w:type="spellStart"/>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>Rosenblum</w:t>
+</w:r>
+<w:proofErr w:type="spellEnd"/>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve">, “Impact analysis of database schema changes,” </w:t>
+</w:r>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:i/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>Proceedings of the 30th international conference on Software engineering</w:t>
+</w:r>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>, 2008, pp. 451–460.</w:t>
+</w:r>
+<w:proofErr w:type="gramEnd"/>
+</w:p>
+<w:p w:rsidR="00531BBA" w:rsidRPr="00531BBA" w:rsidRDefault="00531BBA" w:rsidP="00531BBA">
+<w:pPr>
+<w:autoSpaceDE w:val="0"/>
+<w:autoSpaceDN w:val="0"/>
+<w:adjustRightInd w:val="0"/>
+<w:spacing w:after="0" w:line="240" w:lineRule="auto"/>
+<w:ind w:left="640" w:hanging="640"/>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+</w:pPr>
+</w:p>
+<w:p w:rsidR="00531BBA" w:rsidRPr="00531BBA" w:rsidRDefault="00531BBA" w:rsidP="00531BBA">
+<w:pPr>
+<w:autoSpaceDE w:val="0"/>
+<w:autoSpaceDN w:val="0"/>
+<w:adjustRightInd w:val="0"/>
+<w:spacing w:after="0" w:line="240" w:lineRule="auto"/>
+<w:ind w:left="640" w:hanging="640"/>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+</w:pPr>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve">[20] J. Melton and A. R. Simon, </w:t>
+</w:r>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:i/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>SQL: 1999 - Understanding Relational Language Components</w:t>
+</w:r>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>, vol. 0. Morgan Kaufmann, 2001, p. 893.</w:t>
+</w:r>
+</w:p>
+<w:p w:rsidR="00531BBA" w:rsidRPr="00531BBA" w:rsidRDefault="00531BBA" w:rsidP="00531BBA">
+<w:pPr>
+<w:autoSpaceDE w:val="0"/>
+<w:autoSpaceDN w:val="0"/>
+<w:adjustRightInd w:val="0"/>
+<w:spacing w:after="0" w:line="240" w:lineRule="auto"/>
+<w:ind w:left="640" w:hanging="640"/>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+</w:pPr>
+</w:p>
+<w:p w:rsidR="00531BBA" w:rsidRPr="00531BBA" w:rsidRDefault="00531BBA" w:rsidP="00531BBA">
+<w:pPr>
+<w:autoSpaceDE w:val="0"/>
+<w:autoSpaceDN w:val="0"/>
+<w:adjustRightInd w:val="0"/>
+<w:spacing w:after="0" w:line="240" w:lineRule="auto"/>
+<w:ind w:left="640" w:hanging="640"/>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+</w:pPr>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>[21] SOFTWARE PRACTICE ADVANCEMENT (SPA</w:t>
+</w:r>
+<w:proofErr w:type="gramStart"/>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>)B</w:t>
+</w:r>
+<w:proofErr w:type="gramEnd"/>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve">. Moseley and P. Marks, “Out of the Tar Pit,” </w:t>
+</w:r>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:i/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>SOFTWARE PRACTICE ADVANCEMENT (SPA)</w:t>
+</w:r>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>, 2006.</w:t>
+</w:r>
+</w:p>
+<w:p w:rsidR="00531BBA" w:rsidRPr="00531BBA" w:rsidRDefault="00531BBA" w:rsidP="00531BBA">
+<w:pPr>
+<w:autoSpaceDE w:val="0"/>
+<w:autoSpaceDN w:val="0"/>
+<w:adjustRightInd w:val="0"/>
+<w:spacing w:after="0" w:line="240" w:lineRule="auto"/>
+<w:ind w:left="640" w:hanging="640"/>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+</w:pPr>
+</w:p>
+<w:p w:rsidR="00531BBA" w:rsidRPr="00531BBA" w:rsidRDefault="00531BBA" w:rsidP="00531BBA">
+<w:pPr>
+<w:autoSpaceDE w:val="0"/>
+<w:autoSpaceDN w:val="0"/>
+<w:adjustRightInd w:val="0"/>
+<w:spacing w:after="0" w:line="240" w:lineRule="auto"/>
+<w:ind w:left="640" w:hanging="640"/>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+</w:pPr>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:lastRenderedPageBreak/>
+<w:t xml:space="preserve">[22] J. ACMJ. A. Robinson, “A Machine-Oriented Logic Based on the Resolution Principle,” </w:t>
+</w:r>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:i/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>J. ACM</w:t>
+</w:r>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>, vol. 12, no. 1, pp. 23–41, Jan. 1965.</w:t>
+</w:r>
+</w:p>
+<w:p w:rsidR="00531BBA" w:rsidRPr="00531BBA" w:rsidRDefault="00531BBA" w:rsidP="00531BBA">
+<w:pPr>
+<w:autoSpaceDE w:val="0"/>
+<w:autoSpaceDN w:val="0"/>
+<w:adjustRightInd w:val="0"/>
+<w:spacing w:after="0" w:line="240" w:lineRule="auto"/>
+<w:ind w:left="640" w:hanging="640"/>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+</w:pPr>
+</w:p>
+<w:p w:rsidR="00531BBA" w:rsidRPr="00531BBA" w:rsidRDefault="00531BBA" w:rsidP="00531BBA">
+<w:pPr>
+<w:autoSpaceDE w:val="0"/>
+<w:autoSpaceDN w:val="0"/>
+<w:adjustRightInd w:val="0"/>
+<w:spacing w:after="0" w:line="240" w:lineRule="auto"/>
+<w:ind w:left="640" w:hanging="640"/>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+</w:pPr>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve">[23] J. M. </w:t>
+</w:r>
+<w:proofErr w:type="gramStart"/>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>Schumann,</w:t>
+</w:r>
+<w:proofErr w:type="gramEnd"/>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve"> </w:t>
+</w:r>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:i/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>Automated Theorem Proving in Software Engineering</w:t>
+</w:r>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>. Springer, 2001, p. 228.</w:t>
+</w:r>
+</w:p>
+<w:p w:rsidR="00531BBA" w:rsidRPr="00531BBA" w:rsidRDefault="00531BBA" w:rsidP="00531BBA">
+<w:pPr>
+<w:autoSpaceDE w:val="0"/>
+<w:autoSpaceDN w:val="0"/>
+<w:adjustRightInd w:val="0"/>
+<w:spacing w:after="0" w:line="240" w:lineRule="auto"/>
+<w:ind w:left="640" w:hanging="640"/>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+</w:pPr>
+</w:p>
+<w:p w:rsidR="00531BBA" w:rsidRPr="00531BBA" w:rsidRDefault="00531BBA" w:rsidP="00531BBA">
+<w:pPr>
+<w:autoSpaceDE w:val="0"/>
+<w:autoSpaceDN w:val="0"/>
+<w:adjustRightInd w:val="0"/>
+<w:spacing w:after="0" w:line="240" w:lineRule="auto"/>
+<w:ind w:left="640" w:hanging="640"/>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+</w:pPr>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve">[24] ACM </w:t>
+</w:r>
+<w:proofErr w:type="spellStart"/>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>Comput</w:t>
+</w:r>
+<w:proofErr w:type="spellEnd"/>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve">. </w:t>
+</w:r>
+<w:proofErr w:type="spellStart"/>
+<w:proofErr w:type="gramStart"/>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>Surv.N</w:t>
+</w:r>
+<w:proofErr w:type="spellEnd"/>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve">. Shankar, “Automated deduction for verification,” </w:t>
+</w:r>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:i/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve">ACM </w:t>
+</w:r>
+<w:proofErr w:type="spellStart"/>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:i/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>Comput</w:t>
+</w:r>
+<w:proofErr w:type="spellEnd"/>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:i/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>.</w:t>
+</w:r>
+<w:proofErr w:type="gramEnd"/>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:i/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve"> </w:t>
+</w:r>
+<w:proofErr w:type="spellStart"/>
+<w:proofErr w:type="gramStart"/>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:i/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>Surv</w:t>
+</w:r>
+<w:proofErr w:type="spellEnd"/>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:i/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>.</w:t>
+</w:r>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>,</w:t>
+</w:r>
+<w:proofErr w:type="gramEnd"/>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve"> vol. 41, no. 4, pp. 20:1–20:56, Oct. 2009.</w:t>
+</w:r>
+</w:p>
+<w:p w:rsidR="00531BBA" w:rsidRPr="00531BBA" w:rsidRDefault="00531BBA" w:rsidP="00531BBA">
+<w:pPr>
+<w:autoSpaceDE w:val="0"/>
+<w:autoSpaceDN w:val="0"/>
+<w:adjustRightInd w:val="0"/>
+<w:spacing w:after="0" w:line="240" w:lineRule="auto"/>
+<w:ind w:left="640" w:hanging="640"/>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+</w:pPr>
+</w:p>
+<w:p w:rsidR="00531BBA" w:rsidRPr="00531BBA" w:rsidRDefault="00531BBA" w:rsidP="00531BBA">
+<w:pPr>
+<w:autoSpaceDE w:val="0"/>
+<w:autoSpaceDN w:val="0"/>
+<w:adjustRightInd w:val="0"/>
+<w:spacing w:after="0" w:line="240" w:lineRule="auto"/>
+<w:ind w:left="640" w:hanging="640"/>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+</w:pPr>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve">[25] L. Sterling and E. Y. Shapiro, </w:t>
+</w:r>
+<w:proofErr w:type="gramStart"/>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:i/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>The</w:t>
+</w:r>
+<w:proofErr w:type="gramEnd"/>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:i/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve"> Art of Prolog: Advanced Programming Techniques</w:t>
+</w:r>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>. MIT Press, 1994, p. 509.</w:t>
+</w:r>
+</w:p>
+<w:p w:rsidR="00531BBA" w:rsidRPr="00531BBA" w:rsidRDefault="00531BBA" w:rsidP="00531BBA">
+<w:pPr>
+<w:autoSpaceDE w:val="0"/>
+<w:autoSpaceDN w:val="0"/>
+<w:adjustRightInd w:val="0"/>
+<w:spacing w:after="0" w:line="240" w:lineRule="auto"/>
+<w:ind w:left="640" w:hanging="640"/>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+</w:pPr>
+</w:p>
+<w:p w:rsidR="00531BBA" w:rsidRPr="00531BBA" w:rsidRDefault="00531BBA" w:rsidP="00531BBA">
+<w:pPr>
+<w:autoSpaceDE w:val="0"/>
+<w:autoSpaceDN w:val="0"/>
+<w:adjustRightInd w:val="0"/>
+<w:spacing w:after="0" w:line="240" w:lineRule="auto"/>
+<w:ind w:left="640" w:hanging="640"/>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+</w:pPr>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve">[26] </w:t>
+</w:r>
+<w:proofErr w:type="spellStart"/>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>Commun</w:t>
+</w:r>
+<w:proofErr w:type="spellEnd"/>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve">. </w:t>
+</w:r>
+<w:proofErr w:type="gramStart"/>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>ACMM.</w:t>
+</w:r>
+<w:proofErr w:type="gramEnd"/>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve"> </w:t>
+</w:r>
+<w:proofErr w:type="spellStart"/>
+<w:proofErr w:type="gramStart"/>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>Stonebraker</w:t>
+</w:r>
+<w:proofErr w:type="spellEnd"/>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve">, “New opportunities for New SQL,” </w:t>
+</w:r>
+<w:proofErr w:type="spellStart"/>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:i/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>Commun</w:t>
+</w:r>
+<w:proofErr w:type="spellEnd"/>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:i/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>.</w:t>
+</w:r>
+<w:proofErr w:type="gramEnd"/>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:i/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve"> ACM</w:t>
+</w:r>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>, vol. 55, no. 11, pp. 10–11, Nov. 2012.</w:t>
+</w:r>
+</w:p>
+<w:p w:rsidR="00531BBA" w:rsidRPr="00531BBA" w:rsidRDefault="00531BBA" w:rsidP="00531BBA">
+<w:pPr>
+<w:autoSpaceDE w:val="0"/>
+<w:autoSpaceDN w:val="0"/>
+<w:adjustRightInd w:val="0"/>
+<w:spacing w:after="0" w:line="240" w:lineRule="auto"/>
+<w:ind w:left="640" w:hanging="640"/>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+</w:pPr>
+</w:p>
+<w:p w:rsidR="00531BBA" w:rsidRPr="00531BBA" w:rsidRDefault="00531BBA" w:rsidP="00531BBA">
+<w:pPr>
+<w:autoSpaceDE w:val="0"/>
+<w:autoSpaceDN w:val="0"/>
+<w:adjustRightInd w:val="0"/>
+<w:spacing w:after="0" w:line="240" w:lineRule="auto"/>
+<w:ind w:left="640" w:hanging="640"/>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+</w:pPr>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve">[27] V. </w:t>
+</w:r>
+<w:proofErr w:type="spellStart"/>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>Tropashko</w:t>
+</w:r>
+<w:proofErr w:type="spellEnd"/>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve"> and D. K. Burleson, </w:t>
+</w:r>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:i/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>SQL Design Patterns: Expert Guide to SQL Programming</w:t>
+</w:r>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve">. Rampant </w:t>
+</w:r>
+<w:proofErr w:type="spellStart"/>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>TechPress</w:t>
+</w:r>
+<w:proofErr w:type="spellEnd"/>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>, 2007, p. 255.</w:t>
+</w:r>
+</w:p>
+<w:p w:rsidR="00531BBA" w:rsidRPr="00531BBA" w:rsidRDefault="00531BBA" w:rsidP="00531BBA">
+<w:pPr>
+<w:autoSpaceDE w:val="0"/>
+<w:autoSpaceDN w:val="0"/>
+<w:adjustRightInd w:val="0"/>
+<w:spacing w:after="0" w:line="240" w:lineRule="auto"/>
+<w:ind w:left="640" w:hanging="640"/>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+</w:pPr>
+</w:p>
+<w:p w:rsidR="00531BBA" w:rsidRPr="00531BBA" w:rsidRDefault="00531BBA" w:rsidP="00531BBA">
+<w:pPr>
+<w:autoSpaceDE w:val="0"/>
+<w:autoSpaceDN w:val="0"/>
+<w:adjustRightInd w:val="0"/>
+<w:spacing w:after="0" w:line="240" w:lineRule="auto"/>
+<w:ind w:left="640" w:hanging="640"/>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+</w:pPr>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve">[28] L. M. Van </w:t>
+</w:r>
+<w:proofErr w:type="spellStart"/>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>Exel</w:t>
+</w:r>
+<w:proofErr w:type="spellEnd"/>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>, “Applying Database Refactoring Techniques to Procedural SQL,” California State University, Long Beach, Long Beach, Calif., 2012.</w:t>
+</w:r>
+</w:p>
+<w:p w:rsidR="00531BBA" w:rsidRPr="00531BBA" w:rsidRDefault="00531BBA" w:rsidP="00531BBA">
+<w:pPr>
+<w:autoSpaceDE w:val="0"/>
+<w:autoSpaceDN w:val="0"/>
+<w:adjustRightInd w:val="0"/>
+<w:spacing w:after="0" w:line="240" w:lineRule="auto"/>
+<w:ind w:left="640" w:hanging="640"/>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+</w:pPr>
+</w:p>
+<w:p w:rsidR="00531BBA" w:rsidRPr="00531BBA" w:rsidRDefault="00531BBA" w:rsidP="00531BBA">
+<w:pPr>
+<w:autoSpaceDE w:val="0"/>
+<w:autoSpaceDN w:val="0"/>
+<w:adjustRightInd w:val="0"/>
+<w:spacing w:after="0" w:line="240" w:lineRule="auto"/>
+<w:ind w:left="640" w:hanging="640"/>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+</w:pPr>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve">[29] Proceedings of the 16th international conference on Logic for programming, artificial intelligence, and </w:t>
+</w:r>
+<w:proofErr w:type="spellStart"/>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>reasoningM</w:t>
+</w:r>
+<w:proofErr w:type="spellEnd"/>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve">. </w:t>
+</w:r>
+<w:proofErr w:type="spellStart"/>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>Veanes</w:t>
+</w:r>
+<w:proofErr w:type="spellEnd"/>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve">, N. </w:t>
+</w:r>
+<w:proofErr w:type="spellStart"/>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>Tillmann</w:t>
+</w:r>
+<w:proofErr w:type="spellEnd"/>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve">, and J. de </w:t>
+</w:r>
+<w:proofErr w:type="spellStart"/>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>Halleux</w:t>
+</w:r>
+<w:proofErr w:type="spellEnd"/>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>, “</w:t>
+</w:r>
+<w:proofErr w:type="spellStart"/>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>Qex</w:t>
+</w:r>
+<w:proofErr w:type="spellEnd"/>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve">: symbolic SQL query explorer,” </w:t>
+</w:r>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:i/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>Proceedings of the 16th international conference on Logic for programming, artificial intelligence, and reasoning</w:t>
+</w:r>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>, 2010, pp. 425–446.</w:t>
+</w:r>
+</w:p>
+<w:p w:rsidR="00531BBA" w:rsidRPr="00531BBA" w:rsidRDefault="00531BBA" w:rsidP="00531BBA">
+<w:pPr>
+<w:autoSpaceDE w:val="0"/>
+<w:autoSpaceDN w:val="0"/>
+<w:adjustRightInd w:val="0"/>
+<w:spacing w:after="0" w:line="240" w:lineRule="auto"/>
+<w:ind w:left="640" w:hanging="640"/>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+</w:pPr>
+</w:p>
+<w:p w:rsidR="00531BBA" w:rsidRPr="00531BBA" w:rsidRDefault="00531BBA" w:rsidP="00531BBA">
+<w:pPr>
+<w:autoSpaceDE w:val="0"/>
+<w:autoSpaceDN w:val="0"/>
+<w:adjustRightInd w:val="0"/>
+<w:spacing w:after="0" w:line="240" w:lineRule="auto"/>
+<w:ind w:left="640" w:hanging="640"/>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+</w:pPr>
+<w:proofErr w:type="gramStart"/>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve">[30] W. </w:t>
+</w:r>
+<w:proofErr w:type="spellStart"/>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>Weinmann</w:t>
+</w:r>
+<w:proofErr w:type="spellEnd"/>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve">, “Applying Patterns and SQL Idioms to </w:t>
+</w:r>
+<w:proofErr w:type="spellStart"/>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t>Optimise</w:t>
+</w:r>
+<w:proofErr w:type="spellEnd"/>
+<w:r w:rsidRPr="00531BBA">
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve"> Relational Database Queries,” The Open University, Milton Keynes, England, 2007.</w:t>
+</w:r>
+<w:proofErr w:type="gramEnd"/>
+</w:p>
+<w:p w:rsidR="00531BBA" w:rsidRPr="00531BBA" w:rsidRDefault="00531BBA" w:rsidP="00531BBA">
+<w:pPr>
+<w:autoSpaceDE w:val="0"/>
+<w:autoSpaceDN w:val="0"/>
+<w:adjustRightInd w:val="0"/>
+<w:spacing w:after="0" w:line="240" w:lineRule="auto"/>
+<w:ind w:left="640" w:hanging="640"/>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+</w:pPr>
+</w:p>
+<w:p w:rsidR="00531BBA" w:rsidRPr="00531BBA" w:rsidRDefault="00531BBA" w:rsidP="00531BBA">
+<w:pPr>
+<w:autoSpaceDE w:val="0"/>
+<w:autoSpaceDN w:val="0"/>
+<w:adjustRightInd w:val="0"/>
+<w:spacing w:after="0" w:line="240" w:lineRule="auto"/>
+<w:ind w:left="640" w:hanging="640"/>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+</w:pPr>
+</w:p>
+<w:p w:rsidR="00531BBA" w:rsidRDefault="00531BBA" w:rsidP="00F23974">
+<w:pPr>
+<w:tabs>
+<w:tab w:val="left" w:pos="540"/>
+<w:tab w:val="left" w:pos="900"/>
+</w:tabs>
+<w:spacing w:after="0" w:line="480" w:lineRule="auto"/>
+<w:contextualSpacing/>
+<w:rPr>
+<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+<w:sz w:val="24"/>
+<w:szCs w:val="24"/>
+</w:rPr>
+<w:sectPr w:rsidR="00531BBA" w:rsidSect="00952998">
+<w:footerReference w:type="default" r:id="rId43"/>
+<w:pgSz w:w="12240" w:h="15840"/>
+<w:pgMar w:top="1440" w:right="1440" w:bottom="1440" w:left="2160" w:header="720" w:footer="1440" w:gutter="0"/>
+<w:pgNumType w:start="1"/>
+<w:cols w:space="720"/>
+<w:docGrid w:linePitch="360"/>
+</w:sectPr>
+</w:pPr>
+<w:bookmarkStart w:id="0" w:name="_GoBack"/>
+<w:bookmarkEnd w:id="0"/>
 </w:p>
 <w:p w:rsidR="00F23974" w:rsidRPr="00F53FC1" w:rsidRDefault="00F23974" w:rsidP="00F23974">
 <w:pPr>
@@ -43275,14 +46164,14 @@ z∨¬x∨¬y∨¬z</m:t>
 </w:rPr>
 <w:fldChar w:fldCharType="separate"/>
 </w:r>
-<w:r w:rsidR="005057EA">
+<w:r w:rsidR="00531BBA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:noProof/>
 <w:sz w:val="24"/>
 <w:szCs w:val="24"/>
 </w:rPr>
-<w:t>71</w:t>
+<w:t>123</w:t>
 </w:r>
 <w:r w:rsidRPr="00952998">
 <w:rPr>
@@ -43335,7 +46224,7 @@ z∨¬x∨¬y∨¬z</m:t>
 </w:rPr>
 <w:fldChar w:fldCharType="separate"/>
 </w:r>
-<w:r w:rsidR="00C04A7D">
+<w:r w:rsidR="00531BBA">
 <w:rPr>
 <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
 <w:noProof/>
@@ -78052,6 +80941,7 @@ tte974VvTP5hCfpD1te+98VvfvW7X/7217//BXCABTxgAhfYwAdGcIIVvGAGN9jBD4ZwhCU8YQpX
 <w:rsid w:val="00521633"/>
 <w:rsid w:val="0052177F"/>
 <w:rsid w:val="00522622"/>
+<w:rsid w:val="00531BBA"/>
 <w:rsid w:val="005360C9"/>
 <w:rsid w:val="00556300"/>
 <w:rsid w:val="00560F79"/>
@@ -78927,21 +81817,21 @@ tte974VvTP5hCfpD1te+98VvfvW7X/7217//BXCABTxgAhfYwAdGcIIVvGAGN9jBD4ZwhCU8YQpX
 <Template>
 Normal.dotm</Template>
 <TotalTime>
-1072</TotalTime>
+1074</TotalTime>
 <Pages>
-132</Pages>
+134</Pages>
 <Words>
-20328</Words>
+21074</Words>
 <Characters>
-115871</Characters>
+120124</Characters>
 <Application>
 Microsoft Office Word</Application>
 <DocSecurity>
 0</DocSecurity>
 <Lines>
-965</Lines>
+1001</Lines>
 <Paragraphs>
-271</Paragraphs>
+281</Paragraphs>
 <ScaleCrop>
 false</ScaleCrop>
 <HeadingPairs>
@@ -78965,7 +81855,7 @@ Title</vt:lpstr>
 <LinksUpToDate>
 false</LinksUpToDate>
 <CharactersWithSpaces>
-135928</CharactersWithSpaces>
+140917</CharactersWithSpaces>
 <SharedDoc>
 false</SharedDoc>
 <HyperlinksChanged>
@@ -78984,7 +81874,7 @@ false</HyperlinksChanged>
 </pkg:part>
 <pkg:part pkg:name="/customXml/itemProps1.xml" pkg:contentType="application/vnd.openxmlformats-officedocument.customXmlProperties+xml" pkg:padding="32">
 <pkg:xmlData pkg:originalXmlStandalone="no">
-<ds:datastoreItem ds:itemID="{8DBD4F29-2FCC-43EF-B6DF-8219C73094F9}" xmlns:ds="http://schemas.openxmlformats.org/officeDocument/2006/customXml">
+<ds:datastoreItem ds:itemID="{1912DEF8-898B-4C3C-8FFF-463F87E9DEF1}" xmlns:ds="http://schemas.openxmlformats.org/officeDocument/2006/customXml">
 <ds:schemaRefs>
 <ds:schemaRef ds:uri="http://schemas.openxmlformats.org/officeDocument/2006/bibliography"/>
 </ds:schemaRefs>
@@ -79354,13 +82244,13 @@ Someone</dc:creator>
 <cp:lastModifiedBy>
 Someone</cp:lastModifiedBy>
 <cp:revision>
-441</cp:revision>
+442</cp:revision>
 <cp:lastPrinted>
 2012-09-11T04:21:00Z</cp:lastPrinted>
 <dcterms:created xsi:type="dcterms:W3CDTF">
 2012-08-19T03:41:00Z</dcterms:created>
 <dcterms:modified xsi:type="dcterms:W3CDTF">
-2012-09-10T05:24:00Z</dcterms:modified>
+2012-09-07T07:37:00Z</dcterms:modified>
 </cp:coreProperties>
 </pkg:xmlData>
 </pkg:part>
