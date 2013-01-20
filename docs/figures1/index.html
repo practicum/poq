@@ -1971,6 +1971,24 @@ FROM Person;</code>
           </tbody>
         </table>
       </div>
+      <div class="element">
+        <h3>B2</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>int_b</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>7</td>
+            </tr>
+            <tr>
+              <td>NULL</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
       <div class="element resultset">
         <h3>QA</h3>
         <table>
@@ -2016,7 +2034,19 @@ FROM Person;</code>
           </tbody>
         </table>
       </div>
+      <div class="element resultset">
+        <h3>QC</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>int_a</th>
+            </tr>
+          </thead>
+          <tbody>
 
+          </tbody>
+        </table>
+      </div>
 
 
       <dl>
@@ -2032,7 +2062,11 @@ FROM Person;</code>
 ( SELECT int_b FROM B b WHERE b.int_b = a.int_a );</code>
         </dd>
 
+        <dt>QC:</dt>
+        <dd><code>SELECT * FROM A a WHERE a.int_a NOT IN
+( SELECT int_b FROM B2 );</code>
 
+        </dd>
 
       </dl>
     </div>
