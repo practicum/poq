@@ -1,28 +1,11 @@
-
-
-
-:- use_module(modules/dbms/small_lists).
-:- use_module(modules/dbms/small_lists).
-
 /*
-an example that asks whether the sum of outputs of both queries can ever sum to LESS than the size of the source table.
-  (and it shows that, presumably surprisingly and helpfully, the answer actually is YES).
+  https://github.com/practicum/poq
 
+  Axiomatized query from example 1 of Chapter 5.
+*/
 
+:- use_module(modules/dbms/small_lists).
 
-axiomatized_query(Person,Q_RESULT),
-length(Person,PLength),
-length(Q_RESULT,QLength),
-QLength@<PLength.
-
-CEX:
-Person = [ (william, jacob, isabella), (jacob, null, jacob)],
-Q_RESULT = [ (william, jacob, isabella)],
-PLength = 2,
-QLength = 1 ;
-
-
-  */
 
 person_tuple(
   FIRST,
@@ -48,8 +31,6 @@ person_tuple_in_order(
 
 % ----------------------------------------------------------
 
-% the uniqueness contraint (compound key) in this case is not really meant to reflect 'real life'
-% it is just a reasonable restriction on the search space in this case.
 person_table(L) :-
         % t is the empty mapping, from library assoc
         person_table_with_constraints(L,t,_,L).
@@ -67,8 +48,10 @@ person_table_with_constraints(
         within_table_size_limit([(F,M,L)   |LT]),
         person_tuple(F,M,L),
 
-        \+get_assoc((F,M,L),MAP,_EXISTSVAL),  % map key needs to be instantiated by here.
-        put_assoc((F,M,L),MAP,inmap,MAP2),    % 'inmap' is an arbitrary ground value to link with the key.
+        % map key needs to be instantiated by here.
+        \+get_assoc((F,M,L),MAP,_EXISTSVAL),
+        % 'inmap': an arbitrary ground value for the key/val pair
+        put_assoc((F,M,L),MAP,inmap,MAP2),
         person_table_with_constraints(LT,MAP2,LT_MAX,REST),
         person_tuple_in_order(F,M,L,LT_MAX,CURR_MAX).
 
