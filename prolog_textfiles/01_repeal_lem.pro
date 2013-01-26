@@ -35,25 +35,28 @@ person_table(L) :-
         % t is the empty mapping, from library assoc
         person_table_with_constraints(L,t,_,L).
 
-
 person_table_with_constraints([],_ASSOC,0,[]).
 
-
+% Note: 'LT' stands for 'list tail'
 person_table_with_constraints(
-  [(F,M,L)   |LT],
-  MAP,
-  CURR_MAX,
-  [(F,M,L)   |REST]) :-
+  [ (F,M,L)  |LT], % axiom will recurse on LT
+  MAP,    % map ensures no primary key value is repeated
+  MAX,    % the MAX number enforces the arbitrary tuple
+          % ordering scheme to avoid producing two equivalent
+          % tables such as [(a),(b)] and [(b),(a)]
+  [ (F,M,L)  |LT2]
+  ) :-
 
-        within_table_size_limit([(F,M,L)   |LT]),
+        %enforce maximum base-table size
+        within_table_size_limit([ (F,M,L)  |LT]),
+        %enforce tuple type (enforce domain types of each column)
         person_tuple(F,M,L),
 
-        % map key needs to be instantiated by here.
+        %negation on next line means key is not yet in map
         \+get_assoc((F,M,L),MAP,_EXISTSVAL),
-        % 'inmap': an arbitrary ground value for the key/val pair
         put_assoc((F,M,L),MAP,inmap,MAP2),
-        person_table_with_constraints(LT,MAP2,LT_MAX,REST),
-        person_tuple_in_order(F,M,L,LT_MAX,CURR_MAX).
+        person_table_with_constraints(LT,MAP2,LT_MAX,LT2),
+        person_tuple_in_order(F,M,L,LT_MAX,MAX).
 
 % ----------------------------------------------------------
 

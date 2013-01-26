@@ -79,23 +79,28 @@ person_table(L) :-
         % t is the empty mapping, from library assoc
         person_table_with_constraints(L,t,_,L).
 
-
 person_table_with_constraints([],_ASSOC,0,[]).
 
-
+% Note: 'LT' stands for 'list tail'
 person_table_with_constraints(
-  [(PID)   |LT],
-  MAP,
-  CURR_MAX,
-  [(PID)   |REST]) :-
+  [ (PID)  |LT], % axiom will recurse on LT
+  MAP,    % map ensures no primary key value is repeated
+  MAX,    % the MAX number enforces the arbitrary tuple
+          % ordering scheme to avoid producing two equivalent
+          % tables such as [(a),(b)] and [(b),(a)]
+  [ (PID)  |LT2]
+  ) :-
 
-        within_table_size_limit([(PID)   |LT]),
+        %enforce maximum base-table size
+        within_table_size_limit([ (PID)  |LT]),
+        %enforce tuple type (enforce domain types of each column)
         person_tuple(PID),
 
-        \+get_assoc((PID),MAP,_EXISTSVAL),  % map key needs to be instantiated by here.
-        put_assoc((PID),MAP,inmap,MAP2),    % 'inmap' is an arbitrary ground value to link with the key.
-        person_table_with_constraints(LT,MAP2,LT_MAX,REST),
-        person_tuple_in_order(PID,LT_MAX,CURR_MAX).
+        %negation on next line means key is not yet in map
+        \+get_assoc((PID),MAP,_EXISTSVAL),
+        put_assoc((PID),MAP,inmap,MAP2),
+        person_table_with_constraints(LT,MAP2,LT_MAX,LT2),
+        person_tuple_in_order(PID,LT_MAX,MAX).
 
 
 % ----------------------------------------------------------
@@ -105,47 +110,39 @@ extra_info_table(L) :-
         % t is the empty mapping, from library assoc
         extra_info_table_with_constraints(L,t,_,L).
 
-
 extra_info_table_with_constraints([],_ASSOC,0,[]).
 
-
+% Note: 'LT' stands for 'list tail'
 extra_info_table_with_constraints(
-  [(PID,TITLE)   |LT],
-  MAP,
-  CURR_MAX,
-  [(PID,TITLE)   |REST]) :-
+  [ (PID,TITLE)  |LT], % axiom will recurse on LT
+  MAP,    % map ensures no primary key value is repeated
+  MAX,    % the MAX number enforces the arbitrary tuple
+          % ordering scheme to avoid producing two equivalent
+          % tables such as [(a),(b)] and [(b),(a)]
+  [ (PID,TITLE)  |LT2]
+  ) :-
 
-        within_table_size_limit([(PID,TITLE)   |LT]),
+        %enforce maximum base-table size
+        within_table_size_limit([ (PID,TITLE)  |LT]),
+        %enforce tuple type (enforce domain types of each column)
         extra_info_tuple(PID,TITLE),
 
-        \+get_assoc((PID),MAP,_EXISTSVAL),  % map key needs to be instantiated by here.
-        put_assoc((PID),MAP,inmap,MAP2),    % 'inmap' is an arbitrary ground value to link with the key.
-        extra_info_table_with_constraints(LT,MAP2,LT_MAX,REST),
-        extra_info_tuple_in_order(PID,TITLE,LT_MAX,CURR_MAX).
+        %negation on next line means key is not yet in map
+        \+get_assoc((PID),MAP,_EXISTSVAL),
+        put_assoc((PID),MAP,inmap,MAP2),
+        extra_info_table_with_constraints(LT,MAP2,LT_MAX,LT2),
+        extra_info_tuple_in_order(PID,TITLE,LT_MAX,MAX).
+
 
 
 % ----------------------------------------------------------
 
 
-
 /*
-There are 7 different clauses to express internal_join_axioms.
+There are 9 different clauses to express internal_join_axioms.
 
-There should be no duplication in outcomes due to careful management
-of when each of the 7 clauses is allowed to be applied.
-
-Each one of the 7 handles a NON-OVERLAPPING subset of cases based on
-the SIZE of the first two list variables.
-
-The cases (by size of the two lists) are:
-
-[]    []
-1+    []
-[]    1+
-1     >1
-1+    1     (1+ means 'one or more')
-2+    2+  ... and the first list size is greater to or EQUAL to the second
-2+    2+  ... and the first list size is LESS THAN the second
+For a complete discussion of why there are 9, please refer to
+commentary inside the file 'template_left_join.pro'
 */
 
 
@@ -156,22 +153,29 @@ table_two_table(L) :-
         extra_info_table(L).
 
 table_one_tuple(PID) :-
-        person_tuple(PID). % to be filled in on a case-by-case basis
+        person_tuple(PID).
 
 table_two_tuple(PID2,TITLE) :-
-        extra_info_tuple(PID2,TITLE). % to be filled in on a case-by-case basis
+        extra_info_tuple(PID2,TITLE).
 
 
 
 left_join_on_expression(T1,T2,JT) :-
+        % the final term in internal_join_axioms (namely, T1R),
+        % represents all rows from table T1 that did not
+        % successfully join to anything in T2.
         internal_join_axioms(T1,T2,JA,T1,T1R),
+        % rows in T1R (T1's so-called 'remainder') need to be
+        % null-extended, which is done by pad_right_side
         pad_right_side(T1R,T1RP),
         merge(JA,T1RP,JT).
 
 
 pad_right_side([],[]).
 
-pad_right_side([(PID)|OK1],[(PID , null,null )|OK2]) :-
+pad_right_side(
+  [(PID)|OK1],
+  [(PID , null,null )|OK2]) :-
         table_one_tuple( PID ),
         pad_right_side(OK1,OK2).
 
@@ -179,10 +183,10 @@ pad_right_side([(PID)|OK1],[(PID , null,null )|OK2]) :-
 % look towards end of this file for the 'meets_join' predicate
 
 
-% case 1 of 7: left-hand list and right-hand list are [], []
+% case 1 of 7: list sizes are: [], []
 internal_join_axioms( [], [], [], T1R, T1R ).
 
-% case 2 of 7: left-hand list and right-hand list are sizes: 1+, []
+% case 2 of 7: list sizes are: 1+, []
 internal_join_axioms(
   [(  PID ) |L2T],
   [],
@@ -190,12 +194,12 @@ internal_join_axioms(
   T1R,
   T1R) :-
 
-        table_one_table([( PID )   |L2T]), % type assertion
+        table_one_table([( PID )   |L2T]),
 
         within_table_size_limit([( PID )   |L2T]).
 
 
-% case 3 of 7: left-hand list and right-hand list are sizes: [], 1+
+% case 3 of 7: list sizes are: [], 1+
 internal_join_axioms(
   [],
   [( PID2,TITLE )   |L2T],
@@ -203,13 +207,13 @@ internal_join_axioms(
   T1R,
   T1R) :-
 
-        table_two_table([( PID2,TITLE )   |L2T]), % type assertion
+        table_two_table([( PID2,TITLE )   |L2T]),
 
         within_table_size_limit([( PID2,TITLE )   |L2T]).
 
 
-% case 4 of 7 - A: left-hand list and right-hand list are sizes: 1, >1
-% single item in left-hand list but longer right-hand list, MEETS JOIN conditions
+% case 4 of 7 - A: list sizes are: 1, >1
+% 4A: concatenated output-tuple MEETS JOIN conditions
 internal_join_axioms(
   [( PID )   |[]],
 
@@ -217,26 +221,29 @@ internal_join_axioms(
 
   [( PID,PID2,TITLE ) |R],
 
-  T1RA,
+  T1RA, % T1's remainder *before* consuming current T1 head
 
-  T1RC) :-
+  T1RC  % T1's remainder *after* consuming current T1 head
+  ) :-
 
 
-        table_one_tuple( PID ),  % type assertion
+        table_one_tuple( PID ),
 
-        table_two_table([( PID2,TITLE )   |[MID2|L2T]]), % type assertion
+        table_two_table([( PID2,TITLE )   |[MID2|L2T]]),
 
         within_joined_size_limit([( PID,PID2,TITLE ) |R]),
 
         meets_join( PID,PID2,TITLE ),
 
+        % we now have one fewer 'remainder' item:
         delete(T1RA,( PID ),T1RB),
 
-        internal_join_axioms([( PID )   |[]] , [MID2|L2T], R, T1RB, T1RC ).
+        internal_join_axioms(
+          [( PID )   |[]] , [MID2|L2T], R, T1RB, T1RC ).
 
 
-% case 4 of 7 - B: left-hand list and right-hand list are sizes: 1, >1
-% single item in left-hand list but longer right-hand list, FAILS TO MEET JOIN conditions
+% case 4 of 7 - B: list sizes are: 1, >1
+% 4B: concatenated output-tuple FAILS TO MEET JOIN conditions
 internal_join_axioms(
   [( PID )   |[]],
 
@@ -248,19 +255,20 @@ internal_join_axioms(
 
   T1RB) :-
 
-        table_one_tuple( PID ),% type assertion
+        table_one_tuple( PID ),
 
-        table_two_table([( PID2,TITLE )   |[MID2|L2T]]),% type assertion
+        table_two_table([( PID2,TITLE )   |[MID2|L2T]]),
 
         within_joined_size_limit(R),
 
         \+meets_join( PID,PID2,TITLE ),
 
-        internal_join_axioms([( PID )   |[]] , [MID2|L2T], R, T1RA, T1RB ).
+        internal_join_axioms(
+          [( PID )   |[]] , [MID2|L2T], R, T1RA, T1RB ).
 
 
-% case 5 of 7 - A: left-hand list and right-hand list are sizes: 1+, 1 (1+ means 'one or more')
-% longer left-hand list but only a single item in right-hand list, MEETS JOIN conditions
+% case 5 of 7 - A: list sizes are: 1+, 1 (1+ means 'one or more')
+% 5A: concatenated output-tuple MEETS JOIN conditions
 internal_join_axioms(
   [( PID )   |L2T],
 
@@ -268,26 +276,29 @@ internal_join_axioms(
 
   [( PID,PID2,TITLE ) |R],
 
-  T1RA,
+  T1RA, % T1's remainder *before* consuming current T1 head
 
-  T1RC) :-
+  T1RC  % T1's remainder *after* consuming current T1 head
+  ) :-
 
 
-        table_one_table([( PID )   |L2T]),% type assertion
+        table_one_table([( PID )   |L2T]),
 
-        table_two_tuple( PID2,TITLE ),% type assertion
+        table_two_tuple( PID2,TITLE ),
 
         within_joined_size_limit([( PID,PID2,TITLE ) |R]),
 
         meets_join( PID,PID2,TITLE ),
 
+        % we now have one fewer 'remainder' item:
         delete(T1RA,( PID ),T1RB),
 
-        internal_join_axioms( L2T, [( PID2,TITLE )   |[]] ,   R, T1RB, T1RC ).
+        internal_join_axioms(
+          L2T, [( PID2,TITLE )   |[]] ,   R, T1RB, T1RC ).
 
 
-% case 5 of 7 - B: left-hand list and right-hand list are sizes: 1+, 1 (1+ means 'one or more')
-% longer left-hand list but only a single item in right-hand list, FAILS TO MEET JOIN conditions
+% case 5 of 7 - B: list sizes are: 1+, 1 (1+ means 'one or more')
+% 5B: concatenated output-tuple FAILS TO MEET JOIN conditions
 internal_join_axioms(
   [( PID )   |L2T],
 
@@ -299,20 +310,28 @@ internal_join_axioms(
 
   T1RB) :-
 
-        table_one_table([( PID )   |L2T]),% type assertion
+        table_one_table([( PID )   |L2T]),
 
-        table_two_tuple( PID2,TITLE ),% type assertion
+        table_two_tuple( PID2,TITLE ),
 
         within_joined_size_limit(R),
 
         \+meets_join( PID,PID2,TITLE ),
 
-        internal_join_axioms( L2T, [( PID2,TITLE )   |[]] ,   R, T1RA, T1RB ).
+        internal_join_axioms(
+          L2T, [( PID2,TITLE )   |[]] ,   R, T1RA, T1RB ).
 
 
-% case 6 of 7: left-hand list and right-hand list are sizes:
-%  2+    2+  ... and the first list size is greater to or EQUAL to the second
-% adding one more right-hand-list item to an 'already crossing'
+/*
+ case 6 of 7: list sizes are: 2+ 2+ ... and the first list size
+ is greater to or EQUAL to the second
+
+ this predicate states that in order to join a left-hand table
+ with a right-hand table, first compute the join of the left-hand
+ table with the TAIL of the right-hand table list, then compute
+ the join of the left-hand table with the HEAD of the right-hand
+ table list, then merge those two intermediate results.
+*/
 internal_join_axioms(
   [( PID )   |[MID1|L1T]],
 
@@ -320,27 +339,45 @@ internal_join_axioms(
 
   FINAL,
 
-  T1RA,
+  T1RA, % T1's remainder *before* the binary recursion
 
-  T1RZ) :-
+  T1RZ  % T1's remainder *after* the binary recursion
+  ) :-
 
-        table_one_table([( PID )   |[MID1|L1T]]),% type assertion
+    table_one_table([( PID ) |[MID1|L1T]]),
 
-        table_two_table([( PID2,TITLE )   |[MID2|L2T]]),% type assertion
+    table_two_table([( PID2,TITLE ) |[MID2|L2T]]),
 
-        length([( PID )   |[MID1|L1T]],  X),
-        length([( PID2,TITLE )   |[MID2|L2T]],  Y),
+    length([( PID ) |[MID1|L1T]],  X),
+    length([( PID2,TITLE ) |[MID2|L2T]],  Y),
 
-        X>=Y,
-        internal_join_axioms([( PID )   |[MID1|L1T]],    [MID2|L2T],      POUT, T1RA, T1RB),
-        internal_join_axioms([( PID )   |[MID1|L1T]], [( PID2,TITLE )   |[]],  MOUT, T1RB, T1RZ),
-        merge(POUT,MOUT,FINAL).
+    X>=Y,
+    internal_join_axioms(
+       [( PID )   |[MID1|L1T]],
+       [MID2|L2T],
+       POUT,
+       T1RA,
+       T1RB),
+    internal_join_axioms(
+       [( PID )   |[MID1|L1T]],
+       [( PID2,TITLE )   |[]],
+       MOUT,
+       T1RB,
+       T1RZ),
+    merge(POUT,MOUT,FINAL).
 
 
+/*
+  case 7 of 7: list sizes are: 2+ 2+ ... and the first list size
+  is LESS THAN the second
 
-% case 7 of 7: left-hand list and right-hand list are sizes:
-%  2+    2+  ... and the first list size is LESS THAN the second
-% adding one more left-hand-list item to an 'already crossing'
+ this predicate states that in order to join a right-hand table
+ with a left-hand table, first compute the join of the TAIL of
+ the left-hand table list with the (entire) right-hand list, then
+ compute the join of the HEAD of the left-hand table list with
+ the (entire) right-hand table, then merge those two intermediate
+ results.
+*/
 internal_join_axioms(
   [( PID )   |[MID1|L1T]],
 
@@ -348,23 +385,32 @@ internal_join_axioms(
 
   FINAL,
 
-  T1RA,
+  T1RA, % T1's remainder *before* the binary recursion
 
-  T1RZ) :-
+  T1RZ  % T1's remainder *after* the binary recursion
+  ) :-
 
-        table_one_table([( PID )   |[MID1|L1T]]),% type assertion
+    table_one_table([( PID ) |[MID1|L1T]]),
 
-        table_two_table([( PID2,TITLE )   |[MID2|L2T]]),% type assertion
+    table_two_table([( PID2,TITLE ) |[MID2|L2T]]),
 
-        length([( PID )   |[MID1|L1T]],  X),
-        length([( PID2,TITLE )   |[MID2|L2T]],  Y),
+    length([( PID ) |[MID1|L1T]],  X),
+    length([( PID2,TITLE ) |[MID2|L2T]],  Y),
 
-        X<Y,
-        internal_join_axioms([MID1|L1T],  [( PID2,TITLE )   |[MID2|L2T]],   POUT, T1RA, T1RB),
-        internal_join_axioms([( PID )   |[]],   [( PID2,TITLE )   |[MID2|L2T]],    MOUT, T1RB, T1RZ),
-        merge(POUT,MOUT,FINAL).
-
-
+    X<Y,
+    internal_join_axioms(
+       [MID1|L1T],
+       [( PID2,TITLE )   |[MID2|L2T]],
+       POUT,
+       T1RA,
+       T1RB),
+    internal_join_axioms(
+       [( PID )   |[]],
+       [( PID2,TITLE )   |[MID2|L2T]],
+       MOUT,
+       T1RB,
+       T1RZ),
+    merge(POUT,MOUT,FINAL).
 
 % ----------------------------------------------------------
 

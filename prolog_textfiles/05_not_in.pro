@@ -52,58 +52,68 @@ type_two_tuple_in_order(
 
 % ----------------------------------------------------------
 
-% putting the UNIQUE  info here
+
 type_one_table(L) :-
         % t is the empty mapping, from library assoc
         type_one_table_with_constraints(L,t,_,L).
 
-
 type_one_table_with_constraints([],_ASSOC,0,[]).
 
-
+% Note: 'LT' stands for 'list tail'
 type_one_table_with_constraints(
-  [(T01)   |LT],
-  MAP,
-  CURR_MAX,
-  [(T01)   |REST]) :-
+  [ (T01)  |LT], % axiom will recurse on LT
+  MAP,    % map ensures no primary key value is repeated
+  MAX,    % the MAX number enforces the arbitrary tuple
+          % ordering scheme to avoid producing two equivalent
+          % tables such as [(a),(b)] and [(b),(a)]
+  [ (T01)  |LT2]
+  ) :-
 
-        within_table_size_limit([(T01)   |LT]),
+        %enforce maximum base-table size
+        within_table_size_limit([ (T01)  |LT]),
+        %enforce tuple type (enforce domain types of each column)
         type_one_tuple(T01),
 
-        \+get_assoc((T01),MAP,_EXISTSVAL),  % map key needs to be instantiated by here.
-        put_assoc((T01),MAP,inmap,MAP2),    % 'inmap' is an arbitrary ground value to link with the key.
-        type_one_table_with_constraints(LT,MAP2,LT_MAX,REST),
-        type_one_tuple_in_order(T01,LT_MAX,CURR_MAX).
+        %negation on next line means key is not yet in map
+        \+get_assoc((T01),MAP,_EXISTSVAL),
+        put_assoc((T01),MAP,inmap,MAP2),
+        type_one_table_with_constraints(LT,MAP2,LT_MAX,LT2),
+        type_one_tuple_in_order(T01,LT_MAX,MAX).
+
+% ----------------------------------------------------------
+
+
+type_two_table(L) :-
+        % t is the empty mapping, from library assoc
+        type_two_table_with_constraints(L,t,_,L).
+
+type_two_table_with_constraints([],_ASSOC,0,[]).
+
+% Note: 'LT' stands for 'list tail'
+type_two_table_with_constraints(
+  [ (T02)  |LT], % axiom will recurse on LT
+  MAP,    % map ensures no primary key value is repeated
+  MAX,    % the MAX number enforces the arbitrary tuple
+          % ordering scheme to avoid producing two equivalent
+          % tables such as [(a),(b)] and [(b),(a)]
+  [ (T02)  |LT2]
+  ) :-
+
+        %enforce maximum base-table size
+        within_table_size_limit([ (T02)  |LT]),
+        %enforce tuple type (enforce domain types of each column)
+        type_two_tuple(T02),
+
+        %negation on next line means key is not yet in map
+        \+get_assoc((T02),MAP,_EXISTSVAL),
+        put_assoc((T02),MAP,inmap,MAP2),
+        type_two_table_with_constraints(LT,MAP2,LT_MAX,LT2),
+        type_two_tuple_in_order(T02,LT_MAX,MAX).
 
 
 
 
 % ----------------------------------------------------------
-
-% putting the UNIQUE  information here.
-type_two_table(L) :-
-        % t is the empty mapping, from library assoc
-        type_two_table_with_constraints(L,t,_,L).
-
-
-type_two_table_with_constraints([],_ASSOC,0,[]).
-
-
-type_two_table_with_constraints(
-  [(T02)   |LT],
-  MAP,
-  CURR_MAX,
-  [(T02)   |REST]) :-
-
-        within_table_size_limit([(T02)   |LT]),
-        type_two_tuple(T02),
-
-        \+get_assoc((T02),MAP,_EXISTSVAL),  % map key needs to be instantiated by here.
-        put_assoc((T02),MAP,inmap,MAP2),    % 'inmap' is an arbitrary ground value to link with the key.
-        type_two_table_with_constraints(LT,MAP2,LT_MAX,REST),
-        type_two_tuple_in_order(T02,LT_MAX,CURR_MAX).
-
-
 
 
 /*

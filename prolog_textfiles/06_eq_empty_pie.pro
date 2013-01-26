@@ -86,83 +86,96 @@ part_tuple_in_order(
 
 % ----------------------------------------------------------
 
-% putting the UNIQUE S_ID_s info here
+
 supplier_table(L) :-
         % t is the empty mapping, from library assoc
         supplier_table_with_constraints(L,t,_,L).
 
-
 supplier_table_with_constraints([],_ASSOC,0,[]).
 
-
+% Note: 'LT' stands for 'list tail'
 supplier_table_with_constraints(
-  [(S_ID_s)   |LT],
-  MAP,
-  CURR_MAX,
-  [(S_ID_s)   |REST]) :-
+  [ (S_ID_s)  |LT], % axiom will recurse on LT
+  MAP,    % map ensures no primary key value is repeated
+  MAX,    % the MAX number enforces the arbitrary tuple
+          % ordering scheme to avoid producing two equivalent
+          % tables such as [(a),(b)] and [(b),(a)]
+  [ (S_ID_s)  |LT2]
+  ) :-
 
-        within_table_size_limit([(S_ID_s)   |LT]),
+        %enforce maximum base-table size
+        within_table_size_limit([ (S_ID_s)  |LT]),
+        %enforce tuple type (enforce domain types of each column)
         supplier_tuple(S_ID_s),
 
-        \+get_assoc((S_ID_s),MAP,_EXISTSVAL),  % map key needs to be instantiated by here.
-        put_assoc((S_ID_s),MAP,inmap,MAP2),    % 'inmap' is an arbitrary ground value to link with the key.
-        supplier_table_with_constraints(LT,MAP2,LT_MAX,REST),
-        supplier_tuple_in_order(S_ID_s,LT_MAX,CURR_MAX).
+        %negation on next line means key is not yet in map
+        \+get_assoc((S_ID_s),MAP,_EXISTSVAL),
+        put_assoc((S_ID_s),MAP,inmap,MAP2),
+        supplier_table_with_constraints(LT,MAP2,LT_MAX,LT2),
+        supplier_tuple_in_order(S_ID_s,LT_MAX,MAX).
 
 
 % ----------------------------------------------------------
 
-% putting the UNIQUE P_ID_p information here.
+
 part_table(L) :-
         % t is the empty mapping, from library assoc
         part_table_with_constraints(L,t,_,L).
 
-
 part_table_with_constraints([],_ASSOC,0,[]).
 
-
+% Note: 'LT' stands for 'list tail'
 part_table_with_constraints(
-  [(P_ID_p)   |LT],
-  MAP,
-  CURR_MAX,
-  [(P_ID_p)   |REST]) :-
+  [ (P_ID_p)  |LT], % axiom will recurse on LT
+  MAP,    % map ensures no primary key value is repeated
+  MAX,    % the MAX number enforces the arbitrary tuple
+          % ordering scheme to avoid producing two equivalent
+          % tables such as [(a),(b)] and [(b),(a)]
+  [ (P_ID_p)  |LT2]
+  ) :-
 
-        within_table_size_limit([(P_ID_p)   |LT]),
+        %enforce maximum base-table size
+        within_table_size_limit([ (P_ID_p)  |LT]),
+        %enforce tuple type (enforce domain types of each column)
         part_tuple(P_ID_p),
 
-        \+get_assoc((P_ID_p),MAP,_EXISTSVAL),  % map key needs to be instantiated by here.
-        put_assoc((P_ID_p),MAP,inmap,MAP2),    % 'inmap' is an arbitrary ground value to link with the key.
-        part_table_with_constraints(LT,MAP2,LT_MAX,REST),
-        part_tuple_in_order(P_ID_p,LT_MAX,CURR_MAX).
+        %negation on next line means key is not yet in map
+        \+get_assoc((P_ID_p),MAP,_EXISTSVAL),
+        put_assoc((P_ID_p),MAP,inmap,MAP2),
+        part_table_with_constraints(LT,MAP2,LT_MAX,LT2),
+        part_tuple_in_order(P_ID_p,LT_MAX,MAX).
+
 
 
 % ----------------------------------------------------------
 
-% putting the UNIQUE (S_ID_sp,P_ID_sp) information here.
+
 spjoin_table(L) :-
         % t is the empty mapping, from library assoc
         spjoin_table_with_constraints(L,t,_,L).
 
-
 spjoin_table_with_constraints([],_ASSOC,0,[]).
 
-
+% Note: 'LT' stands for 'list tail'
 spjoin_table_with_constraints(
-  [(S_ID_sp,P_ID_sp)   |LT],
-  MAP,
-  CURR_MAX,
-  [(S_ID_sp,P_ID_sp)   |REST]) :-
+  [ (S_ID_sp,P_ID_sp)  |LT], % axiom will recurse on LT
+  MAP,    % map ensures no primary key value is repeated
+  MAX,    % the MAX number enforces the arbitrary tuple
+          % ordering scheme to avoid producing two equivalent
+          % tables such as [(a),(b)] and [(b),(a)]
+  [ (S_ID_sp,P_ID_sp)  |LT2]
+  ) :-
 
-        within_table_size_limit([(S_ID_sp,P_ID_sp)   |LT]),
+        %enforce maximum base-table size
+        within_table_size_limit([ (S_ID_sp,P_ID_sp)  |LT]),
+        %enforce tuple type (enforce domain types of each column)
         spjoin_tuple(S_ID_sp,P_ID_sp),
 
-        \+get_assoc((S_ID_sp,P_ID_sp),MAP,_EXISTSVAL),  % map key needs to be instantiated by here.
-        put_assoc((S_ID_sp,P_ID_sp),MAP,inmap,MAP2),    % 'inmap' is an arbitrary ground value to link with the key.
-        spjoin_table_with_constraints(LT,MAP2,LT_MAX,REST),
-        spjoin_tuple_in_order(S_ID_sp,P_ID_sp,LT_MAX,CURR_MAX).
-
-
-% ----------------------------------------------------------
+        %negation on next line means key is not yet in map
+        \+get_assoc((S_ID_sp,P_ID_sp),MAP,_EXISTSVAL),
+        put_assoc((S_ID_sp,P_ID_sp),MAP,inmap,MAP2),
+        spjoin_table_with_constraints(LT,MAP2,LT_MAX,LT2),
+        spjoin_tuple_in_order(S_ID_sp,P_ID_sp,LT_MAX,MAX).
 
 
 
