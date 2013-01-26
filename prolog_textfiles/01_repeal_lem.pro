@@ -64,13 +64,8 @@ person_table_with_constraints(
 meets_criteria_middle_name(_F,M,_L) :-
         M = jacob.
 
-inverse_criteria(_F,M,_L) :-
-        not_null(M),
-        M \= jacob.
-
-
-
 remove_nonmatches([],[]).
+
 remove_nonmatches([(F,M,L)|X1],[(F,M,L)|Y]) :-
         person_table([(F,M,L)|X1]),
         meets_criteria_middle_name(F,M,L),
@@ -81,9 +76,14 @@ remove_nonmatches([(F,M,L)|X1],Y) :-
         \+meets_criteria_middle_name(F,M,L),
         remove_nonmatches(X1,Y).
 
+% ----------------------------------------------------------
 
+inverse_criteria(_F,M,_L) :-
+        not_null(M),
+        M \= jacob.
 
 inverse_remove_nonmatches([],[]).
+
 inverse_remove_nonmatches([(F,M,L)|X1],[(F,M,L)|Y]) :-
         person_table([(F,M,L)|X1]),
         inverse_criteria(F,M,L),
@@ -94,7 +94,7 @@ inverse_remove_nonmatches([(F,M,L)|X1],Y) :-
         \+inverse_criteria(F,M,L),
         inverse_remove_nonmatches(X1,Y).
 
-
+% ----------------------------------------------------------
 
 axiomatized_query(Person,Q_RESULT) :-
         remove_nonmatches(Person,DT1),
