@@ -60,44 +60,57 @@ person_table_with_constraints(
 
 % ----------------------------------------------------------
 
-
-meets_criteria_middle_name(_F,M,_L) :-
+meets_criteria_middle_jacob(_F,M,_L) :-
         M = jacob.
 
-remove_nonmatches([],[]).
+filter_list_middle_jacob([],[]).
 
-remove_nonmatches([(F,M,L)|X1],[(F,M,L)|Y]) :-
-        person_table([(F,M,L)|X1]),
-        meets_criteria_middle_name(F,M,L),
-        remove_nonmatches(X1,Y).
+% Note: 'LT' stands for 'list tail'
+filter_list_middle_jacob(
+  [(F,M,L)|LT],
+  [(F,M,L)|LT2]) :-
 
-remove_nonmatches([(F,M,L)|X1],Y) :-
-        person_table([(F,M,L)|X1]),
-        \+meets_criteria_middle_name(F,M,L),
-        remove_nonmatches(X1,Y).
+        person_table([(F,M,L)|LT]),
+        meets_criteria_middle_jacob(F,M,L),
+        filter_list_middle_jacob(LT,LT2).
+
+filter_list_middle_jacob(
+  [(F,M,L)|LT],
+  LT2) :-
+
+        person_table([(F,M,L)|LT]),
+        \+meets_criteria_middle_jacob(F,M,L),
+        filter_list_middle_jacob(LT,LT2).
 
 % ----------------------------------------------------------
 
-inverse_criteria(_F,M,_L) :-
+meets_criteria_middle_not_jacob(_F,M,_L) :-
         not_null(M),
         M \= jacob.
 
-inverse_remove_nonmatches([],[]).
+filter_list_middle_not_jacob([],[]).
 
-inverse_remove_nonmatches([(F,M,L)|X1],[(F,M,L)|Y]) :-
-        person_table([(F,M,L)|X1]),
-        inverse_criteria(F,M,L),
-        inverse_remove_nonmatches(X1,Y).
+% Note: 'LT' stands for 'list tail'
+filter_list_middle_not_jacob(
+  [(F,M,L)|LT],
+  [(F,M,L)|LT2]) :-
 
-inverse_remove_nonmatches([(F,M,L)|X1],Y) :-
-        person_table([(F,M,L)|X1]),
-        \+inverse_criteria(F,M,L),
-        inverse_remove_nonmatches(X1,Y).
+        person_table([(F,M,L)|LT]),
+        meets_criteria_middle_not_jacob(F,M,L),
+        filter_list_middle_not_jacob(LT,LT2).
+
+filter_list_middle_not_jacob(
+  [(F,M,L)|LT],
+  LT2) :-
+
+        person_table([(F,M,L)|LT]),
+        \+meets_criteria_middle_not_jacob(F,M,L),
+        filter_list_middle_not_jacob(LT,LT2).
 
 % ----------------------------------------------------------
 
 axiomatized_query(Person,Q_RESULT) :-
-        remove_nonmatches(Person,DT1),
-        inverse_remove_nonmatches(Person,DT2),
+        filter_list_middle_jacob(Person,DT1),
+        filter_list_middle_not_jacob(Person,DT2),
         merge(DT1,DT2,Q_RESULT).
 

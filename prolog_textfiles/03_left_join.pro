@@ -31,11 +31,11 @@ ID = 1
 
 % ----------------------------------------------------------
 
+% this expression is re-used. it can be the join criteria or the
+% where-clause criteria.
 expression_1(TITLE) :-
 
         TITLE \= mr.
-
-
 
 % ----------------------------------------------------------
 
@@ -414,31 +414,43 @@ internal_join_axioms(
 
 % ----------------------------------------------------------
 
-apply_where_clause([],[]).
 
-apply_where_clause([(PID1,PID2,TITLE)|L1T],[(PID1,PID2,TITLE)|L2T]) :-
+meets_criteria_where_clause(_PID1,_PID2,TITLE) :-
+        expression_1(TITLE).
+
+filter_list_where_clause([],[]).
+
+% Note: 'LT' stands for 'list tail'
+filter_list_where_clause(
+  [(PID1,PID2,TITLE)|LT],
+  [(PID1,PID2,TITLE)|LT2]) :-
+
         natural_type(PID1),
         natural_type(PID2),
         title_string_type(TITLE),
-        expression_1(TITLE),
-        apply_where_clause(L1T,L2T).
+        meets_criteria_where_clause(PID1,PID2,TITLE),
+        filter_list_where_clause(LT,LT2).
 
-apply_where_clause([(PID1,PID2,TITLE)|L1T],L2T) :-
+filter_list_where_clause(
+  [(PID1,PID2,TITLE)|LT],
+  LT2) :-
+
         natural_type(PID1),
         natural_type(PID2),
         title_string_type(TITLE),
-        \+expression_1(TITLE),
-        apply_where_clause(L1T,L2T).
+        \+meets_criteria_where_clause(PID1,PID2,TITLE),
+        filter_list_where_clause(LT,LT2).
 
+% ----------------------------------------------------------
 
 
 meets_join(   PID,PID2,_TITLE   ) :-
-        PID = PID2. % this can change and be arbitrarily complex
+        PID = PID2.
 
 % this is QC, which is well-behaved
 axiomatized_query(Person,ExtraInfo,Q_RESULT) :-
         left_join_on_expression(Person,ExtraInfo,JT),
-        apply_where_clause(JT,Q_RESULT).
+        filter_list_where_clause(JT,Q_RESULT).
 
 
 /*

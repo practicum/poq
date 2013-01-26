@@ -88,13 +88,6 @@ employee_table_with_constraints(
 % ----------------------------------------------------------
 
 
-
-
-
-% ----------------------------------------------------------
-
-
-
 required_table_type_for_group_by(T) :-
         employee_table(T).
 
@@ -183,24 +176,32 @@ group_by(
                   MAP2),
         group_by(LT,MAP2,MAP_OUT).
 
+% ----------------------------------------------------------
+
+meets_criteria_where_clause(_DEPT,_EMP,SALARY) :-
+        expression_1(SALARY).
+
+filter_list_where_clause([],[]).
+
+% Note: 'LT' stands for 'list tail'
+filter_list_where_clause(
+  [(DEPT,EMP,SALARY)|LT],
+  [(DEPT,EMP,SALARY)|LT2]) :-
+
+        employee_table([(DEPT,EMP,SALARY)|LT]),
+        meets_criteria_where_clause(DEPT,EMP,SALARY),
+        filter_list_where_clause(LT,LT2).
+
+filter_list_where_clause(
+  [(DEPT,EMP,SALARY)|LT],
+  LT2) :-
+
+        employee_table([(DEPT,EMP,SALARY)|LT]),
+        \+meets_criteria_where_clause(DEPT,EMP,SALARY),
+        filter_list_where_clause(LT,LT2).
 
 
-apply_where_clause([],[]).
-
-apply_where_clause([(DEPT,EMP,SALARY)|L1T],[(DEPT,EMP,SALARY)|L2T]) :-
-        natural_type(DEPT),
-        name_string_type(EMP),
-        salary_type(SALARY),
-        expression_1(SALARY),
-        apply_where_clause(L1T,L2T).
-
-apply_where_clause([(DEPT,EMP,SALARY)|L1T],L2T) :-
-        natural_type(DEPT),
-        name_string_type(EMP),
-        salary_type(SALARY),
-        \+expression_1(SALARY),
-        apply_where_clause(L1T,L2T).
-
+% ----------------------------------------------------------
 
 
 
@@ -215,7 +216,7 @@ agg_base_col_three(COL_3,COL_3_AGG) :-
 % this is query B, which is flawed
 axiomatized_query(Employee,Q_RESULT) :-
         employee_table(Employee),
-        apply_where_clause(Employee,E2),
+        filter_list_where_clause(Employee,E2),
         group_by(E2,A),
         assoc_to_values(A,Q_RESULT).
 */
