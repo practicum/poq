@@ -1,26 +1,5 @@
 
 
-:- use_module(modules/dbms/small_lists).
-:- use_module(modules/dbms/dbms_builtins).
-
-%:- use_module(modules/dbms/datatypes).  NO. DO NOT ENABLE. instead, the user imports ONE of several choices.
-
-/*
-axiomatized_query(Employee,Q_RESULT),
-member((DPT,_,_),Employee),
-\+member((DPT,_,_),Q_RESULT).
-
-length(Employee,3),
-axiomatized_query(Employee,Q_RESULT),
-member((DPT,_,_),Employee),
-\+member((DPT,_,_),Q_RESULT).
-
-  Employee = [ (0, jacob, 850), (0, william, 850), (1, isabella, 4500)],
-Q_RESULT = [ (0, jacob, 2)],
-DPT = 1 ;
-
-
-*/
 
 expression_1(SALARY) :-
         SALARY @< 1000.
@@ -204,9 +183,10 @@ filter_list_where_clause(
 % ----------------------------------------------------------
 
 
-
-
 /*
+  % this section of code will be used when you run:
+  %   ./prolog_driver.sh run_04a.pro
+
 agg_field_col_three(COL_3_SOFAR,COL_3,COL_3_AGG) :-
         agg_field_count(COL_3_SOFAR,COL_3,COL_3_AGG).
 
@@ -222,6 +202,10 @@ axiomatized_query(Employee,Q_RESULT) :-
 */
 
 
+/*
+  % this section of code will be used when you run:
+  %   ./prolog_driver.sh run_04b.pro
+
 agg_field_col_three(PREVIOUS,INCOMING,WINNER) :-
         function_1(INCOMING,OUT),
         WINNER is PREVIOUS + OUT.
@@ -232,5 +216,5 @@ agg_base_col_three(INCOMING,OUTPUT) :-
 % this is query A (good)
 axiomatized_query(Employee,Q_RESULT) :-
         group_by(Employee,A), assoc_to_values(A,Q_RESULT).
-
+*/
 

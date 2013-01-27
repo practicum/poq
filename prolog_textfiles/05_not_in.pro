@@ -1,28 +1,6 @@
 
 
 
-:- use_module(modules/dbms/small_lists).
-:- use_module(modules/dbms/dbms_builtins).
-
-/*
-  two sample tests to see whether either query would allow a NULL in the result set. one does, and the other does not.
-
-  axiomatized_query(EntityA,EntityB,X),member(null,X).
-
-axiomatized_query(EntityA,EntityB,Q_RESULT),member(null,Q_RESULT)
-
-run_query_not_exists(EntityA,EntityB,Q_RESULT),member(null,Q_RESULT)
-?- run_query_not_exists(T1,T2,X),member(null,X).
-
-EntityA = [2, null, 0],
-EntityB = [2],
-Q_RESULT = [null, 0] ;
-
-
-
-?- run_query_not_in(T1,T2,X),member(null,X).
-  */
-
 
 
 type_one_tuple(T01) :-

@@ -1,39 +1,9 @@
 
 
-:- use_module(modules/dbms/small_lists).
-:- use_module(modules/dbms/dbms_builtins).
 
 /*
 example of asking 'can i ever have a supplier in the results that does NOT supply anything?'
   (and the answer, presumed to be unexpected but helpful, is yes)
-
-run_query(S,P,XING,SP,Q),
-  member((A),Q),
-  \+member( (A,B), SP).
-
-axiomatized_query(Supplier,Part,SPJoin,Q_RESULT),
-  member( (SID), Q_RESULT ),
-  \+member( (SID,_), SPJoin ).
-
-Supplier = [0, 1],
-Part = [],
-SPJoin = [ (0, 0), (0, 1)],
-Q_RESULT = [0, 1],
-SID = 1
-
-length(Part,L),
-within_table_size_limit(Part),
-L@>0,
-
-  within_table_size_limit(Part),
-  L@>0,
-  axiomatized_query(Supplier,Part,SPJoin,Q_RESULT),
-  member( (SID), Q_RESULT ),
-  \+member( (SID,_), SPJoin ),
-  length(Part,L),
-  L@>0.
-
-  axiomatized_query(Supplier,Part,SPJoin,Q_RESULT), member( (SID), Q_RESULT ), \+member( (SID,_), SPJoin ), length(Part,L), L@>0.
 
   */
 
