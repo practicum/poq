@@ -15,12 +15,12 @@ user:prolog_file_type(pro,prolog).
 
 
 main :-
-        L@>0,
-        L@<5,
-        length(Part,L),
+        % assert the precondition
+        non_empty_table(Part),
 
         % begin proof task as shown in thesis manuscript
-        axiomatized_query(Supplier,Part,SPJoin,Q_RESULT),
+        axiomatized_query(
+           Supplier,Part,SPJoin,Q_RESULT),
         member( (SID), Q_RESULT ),
         \+member( (SID,_), SPJoin ),
         % end proof task as shown in thesis manuscript
