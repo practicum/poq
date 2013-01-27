@@ -1,5 +1,13 @@
+/*
+  https://github.com/practicum/poq
 
+  Axiomatized query from example 4 of Chapter 5.
 
+  Using SWI-Prolog Version 6, example runs on Linux by invoking
+  either of:
+        ./prolog_driver.sh run_04a.pro # counterexample found
+        ./prolog_driver.sh run_04b.pro # verification success
+*/
 
 expression_1(SALARY) :-
         SALARY @< 1000.
@@ -33,6 +41,7 @@ employee_tuple_in_order(
         RANK_OF_THIS_TUPLE is V0 + V1 + V2,
         RANK_OF_THIS_TUPLE @>= PRECEDING_VAL.
 
+
 % ----------------------------------------------------------
 
 
@@ -40,7 +49,9 @@ employee_table(L) :-
         % t is the empty mapping, from library assoc
         employee_table_with_constraints(L,t,_,L).
 
+
 employee_table_with_constraints([],_ASSOC,0,[]).
+
 
 % Note: 'LT' stands for 'list tail'
 employee_table_with_constraints(
@@ -49,12 +60,9 @@ employee_table_with_constraints(
   MAX,    % the MAX number enforces the arbitrary tuple
           % ordering scheme to avoid producing two equivalent
           % tables such as [(a),(b)] and [(b),(a)]
-  [ (DEPT,EMP,SALARY)  |LT2]
-  ) :-
+  [ (DEPT,EMP,SALARY)  |LT2]   ) :-
 
-        %enforce maximum base-table size
         within_table_size_limit([ (DEPT,EMP,SALARY)  |LT]),
-        %enforce tuple type (enforce domain types of each column)
         employee_tuple(DEPT,EMP,SALARY),
 
         %negation on next line means key is not yet in map
@@ -63,9 +71,7 @@ employee_table_with_constraints(
         employee_table_with_constraints(LT,MAP2,LT_MAX,LT2),
         employee_tuple_in_order(DEPT,EMP,SALARY,LT_MAX,MAX).
 
-
 % ----------------------------------------------------------
-
 
 required_table_type_for_group_by(T) :-
         employee_table(T).
@@ -78,8 +84,6 @@ restrict_list_tail_size(T) :-
 
 
 group_by(L,LOUT) :-
-
-        % assert the type of the table
         required_table_type_for_group_by(L),
         group_by(L,t,LOUT).
 
@@ -87,7 +91,6 @@ group_by(L,LOUT) :-
 % nothing in the list for further processing. so your 'map
 % so-far' is your finished map.
 group_by([],MAP,MAP) :-
-
         write( '   -----------------------   ' ), nl.
 
 
@@ -179,13 +182,11 @@ filter_list_where_clause(
         \+meets_criteria_where_clause(DEPT,EMP,SALARY),
         filter_list_where_clause(LT,LT2).
 
-
 % ----------------------------------------------------------
 
-
 /*
-  % this section of code will be used when you run:
-  %   ./prolog_driver.sh run_04a.pro
+% this section of code will be used when you run:
+%   ./prolog_driver.sh run_04a.pro
 
 agg_field_col_three(COL_3_SOFAR,COL_3,COL_3_AGG) :-
         agg_field_count(COL_3_SOFAR,COL_3,COL_3_AGG).
@@ -193,7 +194,6 @@ agg_field_col_three(COL_3_SOFAR,COL_3,COL_3_AGG) :-
 agg_base_col_three(COL_3,COL_3_AGG) :-
         agg_base_count(COL_3,COL_3_AGG).
 
-% this is query B, which is flawed
 axiomatized_query(Employee,Q_RESULT) :-
         employee_table(Employee),
         filter_list_where_clause(Employee,E2),
@@ -201,6 +201,7 @@ axiomatized_query(Employee,Q_RESULT) :-
         assoc_to_values(A,Q_RESULT).
 */
 
+% ----------------------------------------------------------
 
 /*
   % this section of code will be used when you run:
@@ -217,4 +218,3 @@ agg_base_col_three(INCOMING,OUTPUT) :-
 axiomatized_query(Employee,Q_RESULT) :-
         group_by(Employee,A), assoc_to_values(A,Q_RESULT).
 */
-

@@ -2,18 +2,18 @@
   https://github.com/practicum/poq
 
   Axiomatized query from example 1 of Chapter 5.
-*/
 
+  Using SWI-Prolog Version 6, example runs on Linux by invoking:
+        ./prolog_driver.sh run_01.pro
+*/
 
 person_tuple(
   FIRST,
   MIDDLE,
   LAST) :-
-
         name_string_type(FIRST), not_null(FIRST),
         name_string_type(MIDDLE),
         name_string_type(LAST), not_null(LAST).
-
 
 person_tuple_in_order(
   FIRST,
@@ -45,9 +45,7 @@ person_table_with_constraints(
   [ (F,M,L)  |LT2]
   ) :-
 
-        %enforce maximum base-table size
         within_table_size_limit([ (F,M,L)  |LT]),
-        %enforce tuple type (enforce domain types of each column)
         person_tuple(F,M,L),
 
         %negation on next line means key is not yet in map
@@ -63,7 +61,6 @@ meets_criteria_middle_jacob(_F,M,_L) :-
 
 filter_list_middle_jacob([],[]).
 
-% Note: 'LT' stands for 'list tail'
 filter_list_middle_jacob(
   [(F,M,L)|LT],
   [(F,M,L)|LT2]) :-
@@ -88,7 +85,6 @@ meets_criteria_middle_not_jacob(_F,M,_L) :-
 
 filter_list_middle_not_jacob([],[]).
 
-% Note: 'LT' stands for 'list tail'
 filter_list_middle_not_jacob(
   [(F,M,L)|LT],
   [(F,M,L)|LT2]) :-
@@ -111,4 +107,3 @@ axiomatized_query(Person,Q_RESULT) :-
         filter_list_middle_jacob(Person,DT1),
         filter_list_middle_not_jacob(Person,DT2),
         merge(DT1,DT2,Q_RESULT).
-

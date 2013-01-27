@@ -1,7 +1,14 @@
+/*
+  https://github.com/practicum/poq
 
+  Axiomatized query from example 3 of Chapter 5.
 
+  Using SWI-Prolog Version 6, example runs on Linux by invoking
+  either of:
+        ./prolog_driver.sh run_03a.pro # counterexample found
+        ./prolog_driver.sh run_03b.pro # verification success
+*/
 
-% ----------------------------------------------------------
 
 % this expression is re-used. it can be the join criteria or the
 % where-clause criteria.
@@ -10,7 +17,6 @@ expression_1(TITLE) :-
         TITLE \= mr.
 
 % ----------------------------------------------------------
-
 
 person_tuple(
   PID) :-
@@ -77,26 +83,21 @@ person_table_with_constraints(
 
 % ----------------------------------------------------------
 
-
 extra_info_table(L) :-
         % t is the empty mapping, from library assoc
         extra_info_table_with_constraints(L,t,_,L).
 
 extra_info_table_with_constraints([],_ASSOC,0,[]).
 
-% Note: 'LT' stands for 'list tail'
 extra_info_table_with_constraints(
   [ (PID,TITLE)  |LT], % axiom will recurse on LT
   MAP,    % map ensures no primary key value is repeated
   MAX,    % the MAX number enforces the arbitrary tuple
           % ordering scheme to avoid producing two equivalent
           % tables such as [(a),(b)] and [(b),(a)]
-  [ (PID,TITLE)  |LT2]
-  ) :-
+  [ (PID,TITLE)  |LT2]  ) :-
 
-        %enforce maximum base-table size
         within_table_size_limit([ (PID,TITLE)  |LT]),
-        %enforce tuple type (enforce domain types of each column)
         extra_info_tuple(PID,TITLE),
 
         %negation on next line means key is not yet in map
@@ -105,10 +106,7 @@ extra_info_table_with_constraints(
         extra_info_table_with_constraints(LT,MAP2,LT_MAX,LT2),
         extra_info_tuple_in_order(PID,TITLE,LT_MAX,MAX).
 
-
-
 % ----------------------------------------------------------
-
 
 /*
 There are 9 different clauses to express internal_join_axioms.
@@ -116,7 +114,6 @@ There are 9 different clauses to express internal_join_axioms.
 For a complete discussion of why there are 9, please refer to
 commentary inside the file 'template_left_join.pro'
 */
-
 
 table_one_table(L) :-
         person_table(L).
@@ -130,8 +127,6 @@ table_one_tuple(PID) :-
 table_two_tuple(PID2,TITLE) :-
         extra_info_tuple(PID2,TITLE).
 
-
-
 left_join_on_expression(T1,T2,JT) :-
         % the final term in internal_join_axioms (namely, T1R),
         % represents all rows from table T1 that did not
@@ -141,7 +136,6 @@ left_join_on_expression(T1,T2,JT) :-
         % null-extended, which is done by pad_right_side
         pad_right_side(T1R,T1RP),
         merge(JA,T1RP,JT).
-
 
 pad_right_side([],[]).
 
@@ -416,8 +410,23 @@ filter_list_where_clause(
 % ----------------------------------------------------------
 
 /*
-  % this section of code will be used when you run:
-  %   ./prolog_driver.sh run_03b.pro
+% this section of code will be used when you run:
+%   ./prolog_driver.sh run_03a.pro
+
+meets_join(   PID,PID2,TITLE   ) :-
+        PID = PID2,
+        expression_1(TITLE).
+
+axiomatized_query(Person,ExtraInfo,Q_RESULT) :-
+        left_join_on_expression(Person,ExtraInfo,Q_RESULT).
+
+*/
+
+% ----------------------------------------------------------
+
+/*
+% this section of code will be used when you run:
+%   ./prolog_driver.sh run_03b.pro
 
 meets_join(   PID,PID2,_TITLE   ) :-
         PID = PID2.
@@ -427,19 +436,3 @@ axiomatized_query(Person,ExtraInfo,Q_RESULT) :-
         left_join_on_expression(Person,ExtraInfo,JT),
         filter_list_where_clause(JT,Q_RESULT).
 */
-
-
-/*
-  % this section of code will be used when you run:
-  %   ./prolog_driver.sh run_03a.pro
-
-meets_join(   PID,PID2,TITLE   ) :-
-        PID = PID2,
-        expression_1(TITLE).
-
-% this is QD, which is flawed
-axiomatized_query(Person,ExtraInfo,Q_RESULT) :-
-        left_join_on_expression(Person,ExtraInfo,Q_RESULT).
-
-*/
-

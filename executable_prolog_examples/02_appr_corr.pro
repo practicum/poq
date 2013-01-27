@@ -1,5 +1,11 @@
+/*
+  https://github.com/practicum/poq
 
+  Axiomatized query from example 2 of Chapter 5.
 
+  Using SWI-Prolog Version 6, example runs on Linux by invoking:
+        ./prolog_driver.sh run_02.pro
+*/
 
 
 shopping_cart_tuple(
@@ -8,6 +14,7 @@ shopping_cart_tuple(
 
         guid_type(CART), not_null(CART),
         natural_type(CART_DATE), not_null(CART_DATE).
+
 
 shopping_cart_tuple_in_order(
   CART,
@@ -19,12 +26,14 @@ shopping_cart_tuple_in_order(
         RANK_OF_THIS_TUPLE is V0 + V1,
         RANK_OF_THIS_TUPLE @>= PRECEDING_VAL.
 
+
 cart_detail_tuple(
   CART,
   PRODUCT) :-
 
         guid_type(CART), not_null(CART),
         product_string_type(PRODUCT), not_null(PRODUCT).
+
 
 cart_detail_tuple_in_order(
   CART,
@@ -35,8 +44,6 @@ cart_detail_tuple_in_order(
         map_product(PRODUCT,1,V1),
         RANK_OF_THIS_TUPLE is V0 + V1,
         RANK_OF_THIS_TUPLE @>= PRECEDING_VAL.
-
-
 
 % ----------------------------------------------------------
 
@@ -75,7 +82,6 @@ cart_detail_table(L) :-
 
 cart_detail_table_with_constraints([],_ASSOC,0,[]).
 
-% Note: 'LT' stands for 'list tail'
 cart_detail_table_with_constraints(
   [ (CART_cd,PRODUCT)  |LT], % axiom will recurse on LT
   MAP,    % map ensures no primary key value is repeated
@@ -98,15 +104,11 @@ cart_detail_table_with_constraints(
 
 % ----------------------------------------------------------
 
-
-
 /*
 There are 9 different clauses to express join_on_expression.
-
 For a complete discussion of why there are 9, please refer to
 commentary inside the file 'template_join.pro'
 */
-
 
 table_one_table(L) :-
         shopping_cart_table(L).
@@ -120,14 +122,6 @@ table_one_tuple(CART_sc,CART_DATE) :-
 table_two_tuple(CART_cd,PRODUCT) :-
         cart_detail_tuple(CART_cd,PRODUCT).
 
-
-/*
-  Note: to produce a Cartesian cross-product, simply let the body
-  of 'meets_join' look like:
-
-  meets_join(   CART_sc,CART_DATE,CART_cd,PRODUCT   ) :-
-        true.
-*/
 meets_join(   CART_sc,_CART_DATE,CART_cd,_PRODUCT   ) :-
         CART_sc = CART_cd.
 
@@ -221,6 +215,7 @@ join_on_expression(
         meets_join( CART_sc,CART_DATE,CART_cd,PRODUCT ),
 
         join_on_expression( L2T, [(CART_cd,PRODUCT) |[]] , R ).
+
 
 
 % case 5 of 7 - B: list sizes are: 1+, 1 (1+ means 'one or more')
@@ -321,10 +316,15 @@ join_on_expression(
 % ----------------------------------------------------------
 
 
-% Note: required_table_type_for_group_by not used here, because nothing in this example
-% needed to use the group_by predicate taking only two terms.
+% Note: required_table_type_for_group_by not used here, because
+% nothing in this example needed to use the group_by predicate
+% taking only two terms.
 
-required_tuple_type_for_group_by( CART,CART_DATE,CART,PRODUCT ) :-
+required_tuple_type_for_group_by(
+  CART,
+  CART_DATE,
+  CART,
+  PRODUCT ) :-
 
         shopping_cart_tuple(CART,CART_DATE),
         cart_detail_tuple(CART,PRODUCT).
@@ -337,7 +337,6 @@ restrict_list_tail_size(LT) :-
 % nothing in the list for further processing. so your 'map
 % so-far' is your finished map.
 group_by([],MAP,MAP) :-
-
         write( '   -----------------------   ' ), nl.
 
 
@@ -408,12 +407,8 @@ group_by(
         group_by(LT,MAP2,MAP_OUT).
 
 
-
-
-
 axiomatized_query(ShoppingCart,CartDetail,Q_RESULT) :-
 
         join_on_expression(ShoppingCart,CartDetail,J),
         group_by(J,t,LOUT),
         assoc_to_values(LOUT,Q_RESULT).
-
