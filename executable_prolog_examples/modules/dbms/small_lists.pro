@@ -31,9 +31,8 @@ within_table_size_limit(LIST) :-
         length(LIST,1);
         length(LIST,2);
         length(LIST,3);
-        length(LIST,4);
-        length(LIST,5);
-        length(LIST,6).
+        length(LIST,4).
+
 
 
 % note the use of SEMI-COLON, which is DISJUNCTION
@@ -54,23 +53,15 @@ within_joined_size_limit(LIST) :-
         length(LIST,13);
         length(LIST,14);
         length(LIST,15);
-        length(LIST,16);
-        length(LIST,17);
-        length(LIST,18);
-        length(LIST,19);
-        length(LIST,20);
-        length(LIST,21);
-        length(LIST,22);
-        length(LIST,23);
-        length(LIST,24);
-        length(LIST,25).
+        length(LIST,16).
+
 
 % note the use of SEMI-COLON, which is DISJUNCTION
 non_empty_table(LIST) :-
         length(LIST,1);
         length(LIST,2);
         length(LIST,3);
-        length(LIST,4);
-        length(LIST,5);
-        length(LIST,6).
+        length(LIST,4).
+
+
 
