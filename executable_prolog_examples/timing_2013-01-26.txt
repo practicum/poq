@@ -1,0 +1,218 @@
+echo '-------------' >> $TIMINGFILE; echo $WHICHSAMPLE >> $TIMINGFILE; (time ./prolog_driver.sh $WHICHSAMPLE > /dev/null ) >> $TIMINGFILE 2>&1
+
+-------------
+run_01.pro
+
+real	0m0.040s
+user	0m0.028s
+sys	0m0.009s
+-------------
+run_01.pro
+
+real	0m0.040s
+user	0m0.029s
+sys	0m0.008s
+-------------
+run_01.pro
+
+real	0m0.042s
+user	0m0.033s
+sys	0m0.006s
+-------------
+run_01.pro
+
+real	0m0.042s
+user	0m0.033s
+sys	0m0.006s
+-------------
+run_02.pro
+
+real	0m4.721s
+user	0m4.691s
+sys	0m0.011s
+-------------
+run_02.pro
+
+real	0m4.668s
+user	0m4.641s
+sys	0m0.007s
+-------------
+run_02.pro
+
+real	0m4.731s
+user	0m4.703s
+sys	0m0.009s
+-------------
+run_02.pro
+
+real	0m4.780s
+user	0m4.751s
+sys	0m0.009s
+-------------
+run_03a.pro
+
+real	0m0.045s
+user	0m0.035s
+sys	0m0.007s
+-------------
+run_03a.pro
+
+real	0m0.041s
+user	0m0.030s
+sys	0m0.009s
+-------------
+run_03a.pro
+
+real	0m0.046s
+user	0m0.035s
+sys	0m0.008s
+-------------
+run_03a.pro
+
+real	0m0.045s
+user	0m0.036s
+sys	0m0.007s
+-------------
+run_03b.pro
+
+real	0m22.005s
+user	0m21.917s
+sys	0m0.009s
+-------------
+run_03b.pro
+
+real	0m21.805s
+user	0m21.716s
+sys	0m0.010s
+-------------
+run_03b.pro
+
+real	0m21.927s
+user	0m21.838s
+sys	0m0.009s
+-------------
+run_03b.pro
+
+real	0m21.701s
+user	0m21.614s
+sys	0m0.008s
+-------------
+run_04a.pro
+
+real	0m0.039s
+user	0m0.029s
+sys	0m0.007s
+-------------
+run_04a.pro
+
+real	0m0.041s
+user	0m0.031s
+sys	0m0.007s
+-------------
+run_04a.pro
+
+real	0m0.041s
+user	0m0.031s
+sys	0m0.008s
+-------------
+run_04a.pro
+
+real	0m0.040s
+user	0m0.032s
+sys	0m0.006s
+-------------
+run_04b.pro
+
+real	0m0.581s
+user	0m0.572s
+sys	0m0.005s
+-------------
+run_04b.pro
+
+real	0m0.592s
+user	0m0.581s
+sys	0m0.008s
+-------------
+run_04b.pro
+
+real	0m0.589s
+user	0m0.576s
+sys	0m0.009s
+-------------
+run_04b.pro
+
+real	0m0.584s
+user	0m0.564s
+sys	0m0.016s
+-------------
+run_05_notexists.pro
+
+real	0m0.042s
+user	0m0.031s
+sys	0m0.009s
+-------------
+run_05_notexists.pro
+
+real	0m0.037s
+user	0m0.024s
+sys	0m0.011s
+-------------
+run_05_notexists.pro
+
+real	0m0.032s
+user	0m0.024s
+sys	0m0.006s
+-------------
+run_05_notexists.pro
+
+real	0m0.040s
+user	0m0.027s
+sys	0m0.011s
+-------------
+run_06a.pro
+
+real	0m0.038s
+user	0m0.027s
+sys	0m0.008s
+-------------
+run_06a.pro
+
+real	0m0.034s
+user	0m0.025s
+sys	0m0.007s
+-------------
+run_06a.pro
+
+real	0m0.035s
+user	0m0.026s
+sys	0m0.006s
+-------------
+run_06a.pro
+
+real	0m0.031s
+user	0m0.020s
+sys	0m0.009s
+-------------
+run_06b.pro
+
+real	1m37.636s
+user	1m37.274s
+sys	0m0.020s
+-------------
+run_06b.pro
+
+real	1m39.462s
+user	1m38.979s
+sys	0m0.017s
+-------------
+run_06b.pro
+
+real	1m39.083s
+user	1m38.728s
+sys	0m0.018s
+-------------
+run_06b.pro
+
+real	1m40.714s
+user	1m40.355s
+sys	0m0.020s
