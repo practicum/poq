@@ -1,33 +1,5 @@
 
 
-:- use_module(modules/dbms/small_lists).
-:- use_module(modules/dbms/dbms_builtins).
-
-%:- use_module(modules/dbms/datatypes).  NO. DO NOT ENABLE. instead, the user imports ONE of several choices.
-
-/*
-axiomatized_query(Person,ExtraInfo,Q_RESULT),
-member( (ID,_,_), Q_RESULT ),
-member( (ID,mr), ExtraInfo ).
-
-length(Person,3),
-axiomatized_query(Person,ExtraInfo,Q_RESULT),
-member( (ID,_,_), Q_RESULT ),
-member( (ID,mr), ExtraInfo ).
-
-
-Person = [2, 0, 1],
-ExtraInfo = [ (0, mrs), (1, mr)],
-Q_RESULT = [ (0, 0, mrs), (2, null, null), (1, null, null)],
-ID = 1
-
-
-
-
-
-*/
-
-
 
 % ----------------------------------------------------------
 
@@ -443,6 +415,9 @@ filter_list_where_clause(
 
 % ----------------------------------------------------------
 
+/*
+  % this section of code will be used when you run:
+  %   ./prolog_driver.sh run_03b.pro
 
 meets_join(   PID,PID2,_TITLE   ) :-
         PID = PID2.
@@ -451,9 +426,13 @@ meets_join(   PID,PID2,_TITLE   ) :-
 axiomatized_query(Person,ExtraInfo,Q_RESULT) :-
         left_join_on_expression(Person,ExtraInfo,JT),
         filter_list_where_clause(JT,Q_RESULT).
+*/
 
 
 /*
+  % this section of code will be used when you run:
+  %   ./prolog_driver.sh run_03a.pro
+
 meets_join(   PID,PID2,TITLE   ) :-
         PID = PID2,
         expression_1(TITLE).

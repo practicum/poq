@@ -1,36 +1,5 @@
 
 
-:- use_module(modules/dbms/small_lists).
-:- use_module(modules/dbms/dbms_builtins).
-
-%:- use_module(modules/dbms/datatypes).  NO. DO NOT ENABLE. instead, the user imports ONE of several choices.
-
-/*
-
-C is ShoppingCart table.
-CI is CartDetail table.
-J is the intermediate join of C and CI (using the condition from the query)
-Q_RESULT is the q_result
-
-axiomatized_query(ShoppingCart,CartDetail,Q_RESULT),
-member( (C,D,_,_), Q_RESULT),
-\+member( (C,D), ShoppingCart ).
-
-
-
-ShoppingCart = [ (fccy463, 0), (ddd213, 1)],
-CartDetail = [ (ddd213, aspirin), (fccy463, aspirin)],
-Q_RESULT = [ (fccy463, 1, fccy463, aspirin)],
-C = fccy463,
-D = 1 .
-
-
-
-
-*/
-
-
-
 
 
 shopping_cart_tuple(

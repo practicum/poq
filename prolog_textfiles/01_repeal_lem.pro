@@ -4,8 +4,6 @@
   Axiomatized query from example 1 of Chapter 5.
 */
 
-:- use_module(modules/dbms/small_lists).
-
 
 person_tuple(
   FIRST,
