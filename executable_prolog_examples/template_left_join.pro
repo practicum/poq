@@ -1,6 +1,10 @@
 /*
   https://github.com/practicum/poq
 
+  Filename: template_left_join.pro
+
+  Axiom schema for binary operation 'left_join_on_expression.'
+
   The code below is a template. Filling in the parameters of the
   template will produce usable Prolog axioms.
 */
@@ -63,9 +67,6 @@
   be null-extended, and the null-extended tuple is output.
 */
 
-
-
-
 % ----------------------------------------------------------
 
 /*
@@ -100,12 +101,12 @@ The 7 scenarios (by size of the two lists) are:
 2+  2+  ... and 1st list size is LESS THAN the 2nd
 */
 
-
 table_one_table(L) :-
         predicate_for_table_1(L).
 
 table_two_table(L) :-
         predicate_for_table_2(L).
+
 
 % 'particulartable_tuple' is to be REPLACED by the relevant tuple
 % typing predicate
@@ -116,7 +117,6 @@ table_one_tuple(# STCT1 #) :-
 % tuple typing predicate
 table_two_tuple(# STCT2 #) :-
         particulartable2_tuple(# STCT2 #).
-
 
 
 left_join_on_expression(T1,T2,JT) :-
@@ -372,9 +372,3 @@ internal_join_axioms(
        T1RB,
        T1RZ),
     merge(POUT,MOUT,FINAL).
-
-
-% ----------------------------------------------------------
-
-
-

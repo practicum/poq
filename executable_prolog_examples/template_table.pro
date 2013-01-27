@@ -1,13 +1,15 @@
-/*
-  https://github.com/practicum/poq
+/* https://github.com/practicum/poq
 
-  The code below is a template. Filling in the parameters of the
-  template will produce usable Prolog axioms.
+   Filename: template_table.pro
+
+   Axiom schema for a SQL table.
+
+   The code below is a template. Filling in the parameters of the
+   template will produce usable Prolog axioms.
 */
 
 /*
-  Three parameters need filling in each time this template is
-  employed:
+  Three parameters need filling in:
 
   ~~t-name~~  :
         fill in with table name in valid Prolog predicate syntax

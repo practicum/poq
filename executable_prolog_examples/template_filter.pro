@@ -1,13 +1,16 @@
 /*
   https://github.com/practicum/poq
 
+  Filename: template_filter.pro
+
+  Axiom schema for unary operation 'filter.'
+
   The code below is a template. Filling in the parameters of the
   template will produce usable Prolog axioms.
 */
 
 /*
-  Three parameters need filling in each time this template is
-  employed:
+  Three parameters need filling in:
 
   ~~filter-name~~  :
         fill in with any unique filter name in valid Prolog
@@ -25,8 +28,6 @@
         names should be valid Prolog variable names.
         for example:  CART_ID, CART_DATE, CUSTOMER_ID
 */
-
-
 
 meets_criteria_~~filter-name~~(#domain-tup-vars#) :-
         % logical formula for criteria goes here.

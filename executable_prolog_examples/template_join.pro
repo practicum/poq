@@ -1,6 +1,10 @@
 /*
   https://github.com/practicum/poq
 
+  Filename: template_join.pro
+
+  Axiom schema for binary operation 'join_on_expression.'
+
   The code below is a template. Filling in the parameters of the
   template will produce usable Prolog axioms.
 */
@@ -55,9 +59,6 @@
   join will be a Cartesian cross-product.
 */
 
-
-
-
 % ----------------------------------------------------------
 
 /*
@@ -92,7 +93,6 @@ The 7 scenarios (by size of the two lists) are:
 2+  2+  ... and 1st list size is LESS THAN the 2nd
 */
 
-
 table_one_table(L) :-
         predicate_for_table_1(L).
 
@@ -119,7 +119,7 @@ table_two_tuple(# STCT2 #) :-
 */
 meets_join(   # STCJR #   ) :-
         % the body of this clause can be arbitrarily complex
-        ONE_ID_one = ONE_ID_two.
+        ONE_ID_one = ONE_ID_two. % to be replaced!
 
 
 % case 1 of 7: list sizes are: [], []
@@ -302,9 +302,3 @@ join_on_expression(
        MOUT),
 
     merge(POUT,MOUT,FINAL).
-
-
-% ----------------------------------------------------------
-
-
-

@@ -1,10 +1,13 @@
 /*
   https://github.com/practicum/poq
 
+  Filename: template_aggregation.pro
+
+  Axiom schema for unary operation 'group_by.'
+
   The code below is a template. Filling in the parameters of the
   template will produce usable Prolog axioms.
 */
-
 
 /*
   to fill in the group_by template:
@@ -33,23 +36,14 @@
      table', and other times we might be working with a join
      result (derived table), and therefore may need to assert a
      join-sized table.
-
-  Note: when using the group_by predicates, be sure to call
-  use_module for the 'dbms_builtins' module, because that is
-  where the aggregate helper functions are defined.
 */
 
 
-/*
-  Note: the final map can be examined with:
-     assoc_to_list, assoc_to_values
-*/
+%Note: examine map with: assoc_to_list, assoc_to_values
 group_by(L,LOUT) :-
-
         % assert the type of the table
         required_table_type_for_group_by(L),
         group_by(L,t,LOUT).
-
 
 
 /*
