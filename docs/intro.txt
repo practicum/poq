@@ -30,6 +30,23 @@ The main problem addressed in this thesis is the lack of quality assurance (QA) 
 An important objective of this work was to keep discussions and ideas grounded in real-life code using production-quality execution environments.  SQL is used throughout this document because it is by far the most common language for interacting with relational data stores.  Similarly, SLD resolution is the proof system used here because it is arguably the proof system with the longest history of continued use on modern computers.  Nonetheless, SQL is not necessarily an optimal or perfectly elegant relational language.  Likewise, SLD resolution is not the most efficient or modern automated proof procedure.  However, the choice of a single concrete database language and a single concrete proof procedure does not restrict the generality of the results of this thesis.  In general, this thesis is concerned with generating predicate logic proofs for statements in the relational calculus.  If another relational language overtakes SQL in the marketplace, the framework given in this thesis should still be applicable.  Likewise, if the proof engine shown in this document is replaced with a newer engine, the overall approach should remain essentially the same.
 
 
+SQL occupies a unique and somewhat perplexing spot in the current programming language landscape.  Depending on who you ask, SQL is either a very popular programming language or it is not a programming language at all.  LangPop.com lists SQL as one of the top 10 most popular programming languages (using data from April 2011).  However, TIOBE Software, which maintains the TIOBE Index of language popularity, says:
+
+SQL is not a programming language because it is, for instance, impossible to write an infinite loop in it. On the other hand, SQL extensions PL/SQL and Transact-SQL are programming languages. 
+
+In other words, TIOBE requires Turing completeness before a language will be included into their rankings index.  The idea that achieving the status of *programming language* requires Turing completeness is fairly widespread.  Given that this thesis focuses only on a subset of standard SQL, we must clarify whether or not Turing completeness is assumed.
+
+
+
+... most ... does not use SQL as a Turing complete language.
+
+The relevant subset of SQL under consideration in this thesis is not Turing complete.  In this way, it might in some sense fall short of qualifying as a programming language.  However, this is open to debate.  Some would argue that except for applications such as language interpreter shells, there is no need for infitine loops in a programming language.  For all other arbitrary loops, there is a well-known SQL technique using a "Number Table" that allows a SQL user to apply relational JOIN operations to achieve precisely the effect that looping would have in loop-bearing languages.
+
+
+
+SQL is definitely not typically used for programming the parts of an application that gather input from an end user.  Therefore, even the most SQL-laden systems usually have at least a thin UI layer written in another language.  The SQL portions of an application can nevertheless be quite extensive and complex.
+
+
 
 
 
