@@ -1,4 +1,88 @@
 
+
+SQL
+RDB
+CRM
+ERD
+DDL
+SLD
+
+Relational database theory holds a respected role as an essential topic in the study of computer science.  Offered as a valuable complement to topics like algorithm design, operating systems, and networking, database theory receives first-class treatment in university curricula.
+
+The practical medium in industry for implementing relational concepts is the SQL language.  Just as database theory is popular in universities, the use of SQL is widespread in practice.  SQL is the language de rigueur provided with all the popular relational database (RDB) systems.  Traditional application domains where SQL is prominent include finance and customer relationship management (CRM).  Furthermore, the vast majority of websites store content in and retrieve content from a central database.  Other SQL-intensive networked applications transacting outside of the world wide web include massive online gaming environments for consoles and personal computers.  More recently, an entirely new setting for SQL code has seen explosive growth: embedded relational data stores for iPhone, Android, and Windows 8 Metro apps.
+
+Despite the positive academic focus on database theory, and despite the commercial proliferation of SQL, the SQL language lags behind other software languages in terms of the tool support it enjoys from vendors and in terms of shared cultural lore among SQL developers.
+
+Tool support from SQL vendors is heavily focused on RDB system internals and database content rather that on SQL language analysis.  Numerous tools exist for entity relationship diagram (ERD) modeling and data definition language (DDL) script generation.  Similarly, many alternatives exist for comparing and synchronizing the content and structure of database tables, and for auditing permissions on database tables and other stored objects.  Also abundant are tools focused on performance tuning and performance monitoring of RDB systems.  In general, one finds a rich set of tools for the administration of an RDB system, and comparatively few tools supporting the act of writing SQL code and debugging it.
+
+There is a further caveat for tabulating the number of SQL debugging tools currently available: many tools described as SQL debugging tools only target the imperative programming portions of the language, and do not cover debugging of purely relational statements.  The fact that SQL supports a relational paradigm in addition to an imperative one is arguably its central strength.  Therefore, it is unacceptable to ignore the relational paradigm and only provide debugging tools for the imperative parts of the language.
+
+In addition to tools, the developer culture surrounding a programming language is also important for its successful use.  Both the Agile programming movement and the Design Patterns community have argued that shared programming idioms, shared vocabulary, and shared metaphors enable a pool of developers to leverage the prior knowledge gained by others.  The Agile movement also advocates higher software quality based on automated tests and continuous integration.
+
+The time is ripe for introducing greater tool support for SQL.  With agile software ideals experiencing widespread popularity, developers are seeking automated tool support as a matter of course.  With the SQL language now widely-used and mature, the lack of tools for SQL debugging and regression testing cannot persist much longer.
+
+Indeed, there appears to be a growing trend toward SQL language tool support and a culture of SQL idioms. In industry, promising tools have emerged from ApexSQL, Redgate, and Quest.  These tools focus on testing and analysis of SQL code.  In academia, recent papers have been written regarding the identification of SQL idioms, the application of refactoring patterns to SQL, and the visualization of patterns in SQL query structure [],[],[].  In the professional literature, books are beginning to emerge that combine SQL and refactoring, or that combine SQL and patterns, although these books are still sparse compared to similarly-themed works for Java, C++, Javascript, and so forth.
+
+This thesis offers proposals on both fronts: SQL design vocabulary and tool support.  To aid in the vocabulary area, Chapter 2 contains a modest taxonomy of pitfalls that can cause subtle errors in relational SQL code.  To aid in the tool-support arena, Chapter 4 outlines a new strategy to implement key pieces of a quality assurance tool for SQL code.
+
+The main problem addressed in this thesis is the lack of quality assurance (QA) tool support for SQL.  The solution proposed is a tailored formal verification framework.  The remaining chapters provide greater detail about both the problem and the proposed solution.  Chapter 2 provides an overview of the SQL language.  Chapter 2 will also include a preview of the tool support ideas to be developed throughout the document.  Chapter 3 provides an overview of one particular automated proof system (namely, SLD resolution).  Chapter 4 will combine the SQL language with the automated proof system to develop a formal verification tool.  Arguments are put forth that verification of SQL can fill the role of automated testing--and even of debugging--for this unique relational language.  Concrete examples are given in Chapter EE.  Finally, the document closes with a conclusion in Chapter FF.  Before closing, similar research prototypes by other authors will also be examined.
+
+An important objective of this work was to keep discussions and ideas grounded in real-life code using production-quality execution environments.  SQL is used throughout this document because it is by far the most common language for interacting with relational data stores.  Similarly, SLD resolution is the proof system used here because it is arguably the proof system with the longest history of continued use on modern computers.  Nonetheless, SQL is not necessarily an optimal or perfectly elegant relational language.  Likewise, SLD resolution is not the most efficient or modern automated proof procedure.  However, the choice of a single concrete database language and a single concrete proof procedure does not restrict the generality of the results of this thesis.  In general, this thesis is concerned with generating predicate logic proofs for statements in the relational calculus.  If another relational language overtakes SQL in the marketplace, the framework given in this thesis should still be applicable.  Likewise, if the proof engine shown in this document is replaced with a newer engine, the overall approach should remain essentially the same.
+
+
+
+
+
+
+
+why html is not a programming language.
+
+
+at the same time that its adoption is widespread, it is still struggling with 'image problems.' what is it?? (and tools)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 Relational database theory holds a respected role as an essential topic in the study of computer science.  Standing shoulder-to-shoulder with ___, ____, operating systems, ____, database theory receives first-class treatment in university curricula.  As with so many things, though, database theory and practice do not perfectly coincide.  The first-class status of database theory (in academia) has not translated into a first-class status for database programming in commercial application development.
 
 
