@@ -1,4 +1,18 @@
 
+--------------------------------------------------------------
+
+'clarity' and 'anchor' statements:
+
+
+each function/method in a program is seen as having a 'contract.' SQL statements should be no different. each should have a contract.
+
+once you have contracts, the question is how to 'enforce' them. tests or verification? (dijkstra says tests never show absense of bugs, only presence) in imperative lang, test is easy, verification is hard. so tests 'win'. but in sql, what if verification is easier than testing?
+
+
+
+--------------------------------------------------------------
+
+
 testing versus proving.
 
 the paper about how unit tests (on duck-typed code) do a lot of what a compiler does in strong-typed code.

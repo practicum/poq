@@ -2,25 +2,18 @@
 
 
 
+http://troels.arvin.dk/db/rdbms/  # comparison of portability and feature differences amongst rdb vendors
 
-
-SQL 1999 core. relational closure, nesting.  not (in this paper) interested in a turing complete SQL.
-SQL 1999 was a big leap over 92.
-
-SQL/Foundation section has hardly changed in 2003 and 2008.
-
-http://troels.arvin.dk/db/rdbms/
-r-sql^pe
 http://wiki.postgresql.org/wiki/Mandelbrot_set
 http://stackoverflow.com/questions/900055/is-sql-or-even-tsql-turing-complete
 http://assets.en.oreilly.com/1/event/27/High%20Performance%20SQL%20with%20PostgreSQL%20Presentation.pdf
-http://www.wiscorp.com/book_v1dsm.pdf
-http://docs.oracle.com/cd/B28359_01/server.111/b28314/tdpdw_sql.htm#CIHICDAE
-http://www.jcc.com/sql.htm
--- interrow calculations:  http://docs.oracle.com/cd/B28359_01/server.111/b28314/tdpdw_sql.htm#CIHICDAE
+
+http://www.wiscorp.com/book_v1dsm.pdf  # sample chapter of book by Michael Gorman. 'semantics management'. i'm intrigued, but not convinced.
+
+
 http://stackoverflow.com/questions/4980766/reserved-keywords-count-by-programming-language
 http://repeatgeek.com/technical/keyword-counts-of-popular-programming-languages/
 http://www.sqlite.org/lang_keywords.html
 http://publib.boulder.ibm.com/infocenter/idshelp/v115/index.jsp?topic=%2Fcom.ibm.sqls.doc%2Fids_sqs_1951.htm
 http://msdn.microsoft.com/en-us/library/aa238507%28v=sql.80%29.aspx
-http://www.wiscorp.com/is_sql_a_real_standard.pdf
+

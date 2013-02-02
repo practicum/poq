@@ -1,0 +1,80 @@
+
+double-check: in my listings of 'weaknesses/troublespots' of choosing prolog, did i mention that everything has to be expressed in Horn clause form?  (which is obviously fine. it is also similar to how the microsoft Z3 paper did it anyway)
+
+another thing for the 'weaknesses/troublespots': prolog doesnt have syntactic sugar for the MANY SORTED case. many-sorted case comes from adding extra predicates per ___ (per variable? per object?) like is_int or is_string or what have you.
+
+Prolog has been a successful base (or influence?) on: SETHEO, PTTP, ...
+
+CONSIDERATIONS FOR 'TRANSLATING' THE QUERY INTO PROLOG:
+
+1. Prolog casing requirements. Capitalized things are variables! so lower case for all constants. also.. just atoms to represent strings.
+
+However, queries to be tested might involve MIN/MAX applied to strings. are we doing case-insensitive string comparison? Do we need to designate some weird prefix character to 'string' atoms by convention so that the 'real' string can choose to be initially capitalized or not?
+
+2. we will use 'unifies' in prolog to equate to EQUALS in sql. this will work because all domains for all our table-column content are composed entirely of ground atoms in prolog.  Likewise, we will use 'does not unify' for 'not equals'.
+
+OTHER CONSIDERATIONS OF THE PROLOG TOOL IMPLEMENTATION:
+
+it is sometimes hard to generate a list of a desired length. for example... it might take a really long time to ask to for a primary-keyed list of size five, but not of size 2 or 3.  but if we 'seed' the length-5 list by using (reusing) what was generated for the size-2 or size-3 lists, we can meet our requirements (and in a more reasonable time).
+
+
+RAMIFICATIONS OF NEGATION AS FAILURE:
+
+if you have:
+
+    conseq(X) :- aa(X), bb(X).
+    nonconseq(X) :- \+ conseq(X).
+
+then you cannot reasonably expect to query:
+
+    ?- nonconseq(A).
+
+it will just fail.
+
+What this means (i think) is that anywhere I have \+something(X) I require X to be instantiated by then, right?
+
+RAMIFICATIONS OF OCCURS CHECK BEING MISSING/PRESENT:
+
+?- A=thing(A).
+false.
+
+?- thing(c(X,bla(X)))=thing(c(bla(X),Y)).
+false.
+
+?- current_prolog_flag(occurs_check,X).
+X = true.
+
+?- set_prolog_flag(occurs_check,false).
+true.
+
+?- current_prolog_flag(occurs_check,X).
+X = false.
+
+?- thing(c(X,bla(X)))=thing(c(bla(X),Y)).
+X = bla(**),
+Y = bla(bla(**)).
+
+RAMIFICATIONS OF THE CUT:
+
+so far my only use is with the nonnull predicate (i should continue to track any new uses)
+
+OTHER PROLOG 'IDIOSYNCRASIES' THAT ONLY AFFECT PERFORMANCE (NOT VALIDITY):
+
+see this:
+
+commit 2aab7d30f4713e5bdbe8eba5b4559b2a926aadf0
+Author: Someone <someone@localhost>
+Date:   Sat Sep 15 21:16:58 2012 -0700
+
+    improvements to eliminate overlap in scenarios that would allow the application of instances of rule(s) cross_student_score
+
+
+
+
+--------------------------
+
+in some sense, writing SQL queries and writing prolog code are both 'programming in FOL'.  In prolog the principal focus is on inference rules in a restricted Horn-clause structure.  In SQL the principal focus is on relational joins.
+
+--------------------------
+
+
