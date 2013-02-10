@@ -5,6 +5,358 @@
   </head>
   <body>
 
+
+
+    <div class="wrapper"> <!-- two. second. 02 -->
+
+      <h1>TDD Example - Desired Outcome</h1>
+ 
+
+      <div class="element">
+        <h3>Customer</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>cust_id</th>
+              <th>email</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>3</td>
+              <td>a@abc.com</td>
+            </tr>
+            <tr>
+              <td>5</td>
+              <td>b@abc.com</td>
+            </tr>
+            <tr>
+              <td>12</td>
+              <td>c@abc.com</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="element">
+        <h3>OrdersPlaced</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>cust_id</th>
+              <th>order_id</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>3</td>
+              <td>a</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>b</td>
+            </tr>
+            <tr>
+              <td>5</td>
+              <td>c</td>
+            </tr>
+            <tr>
+              <td>12</td>
+              <td>d</td>
+            </tr>
+            <tr>
+              <td>12</td>
+              <td>e</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="element resultset">
+        <h3>Orders Per Customer</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>email</th>
+              <th>order_qty</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>a@abc.com</td>
+              <td>2</td>
+            </tr>
+            <tr>
+              <td>b@abc.com</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>c@abc.com</td>
+              <td>2</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+
+      <dl>
+        <dt>Orders Per Customer:</dt>
+        <dd><code>SELECT c.email, 
+  COUNT(op.order_id) AS order_qty 
+FROM Customer c JOIN OrdersPlaced op 
+ON c.cust_id = op.cust_id GROUP BY c.email;</code>
+        </dd>
+
+
+
+      </dl>
+    </div>
+
+
+
+
+
+    <div class="wrapper"> <!-- two. second. 02 -->
+
+      <h1>TDD Example - Initial Na&#239;ve Stub Query</h1>
+ 
+
+      <div class="element">
+        <h3>Customer</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>cust_id</th>
+              <th>email</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>3</td>
+              <td>a@abc.com</td>
+            </tr>
+            <tr>
+              <td>5</td>
+              <td>b@abc.com</td>
+            </tr>
+            <tr>
+              <td>12</td>
+              <td>c@abc.com</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="element">
+        <h3>OrdersPlaced</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>cust_id</th>
+              <th>order_id</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>3</td>
+              <td>a</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>b</td>
+            </tr>
+            <tr>
+              <td>5</td>
+              <td>c</td>
+            </tr>
+            <tr>
+              <td>12</td>
+              <td>d</td>
+            </tr>
+            <tr>
+              <td>12</td>
+              <td>e</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+
+      <div class="element resultset">
+        <h3>Stub Query</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>cust_id</th>
+              <th>email</th>
+              <th>cust_id</th>
+              <th>order_id</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>3</td>
+              <td>a@abc.com</td>
+              <td>3</td>
+              <td>a</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>a@abc.com</td>
+              <td>3</td>
+              <td>b</td>
+            </tr>
+            <tr>
+              <td>5</td>
+              <td>b@abc.com</td>
+              <td>5</td>
+              <td>c</td>
+            </tr>
+            <tr>
+              <td>12</td>
+              <td>c@abc.com</td>
+              <td>12</td>
+              <td>d</td>
+            </tr>
+            <tr>
+              <td>12</td>
+              <td>c@abc.com</td>
+              <td>12</td>
+              <td>e</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+
+      <dl>
+        <dt>Stub Query:</dt>
+        <dd><code>SELECT * FROM Customer c 
+JOIN OrdersPlaced op ON c.cust_id = op.cust_id;</code>
+        </dd>
+
+
+
+      </dl>
+    </div>
+
+
+
+
+
+
+
+    <div class="wrapper"> <!-- two. second. 02 -->
+
+      <h1>TDD Example - Possible Silent Failure</h1>
+ 
+
+      <div class="element">
+        <h3>Customer</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>cust_id</th>
+              <th>email</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>3</td>
+              <td>a@abc.com</td>
+            </tr>
+            <tr>
+              <td>5</td>
+              <td>b@abc.com</td>
+            </tr>
+            <tr>
+              <td>12</td>
+              <td>c@abc.com</td>
+            </tr>
+            <tr>
+              <td>13</td>
+              <td>c@abc.com</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="element">
+        <h3>OrdersPlaced</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>cust_id</th>
+              <th>order_id</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>3</td>
+              <td>a</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>b</td>
+            </tr>
+            <tr>
+              <td>5</td>
+              <td>c</td>
+            </tr>
+            <tr>
+              <td>12</td>
+              <td>d</td>
+            </tr>
+            <tr>
+              <td>12</td>
+              <td>e</td>
+            </tr>
+            <tr>
+              <td>13</td>
+              <td>f</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="element resultset">
+        <h3>Orders Per Customer</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>email</th>
+              <th>order_qty</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>a@abc.com</td>
+              <td>2</td>
+            </tr>
+            <tr>
+              <td>b@abc.com</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>c@abc.com</td>
+              <td>3</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+
+      <dl>
+        <dt>Orders Per Customer:</dt>
+        <dd><code>SELECT c.email, 
+  COUNT(op.order_id) AS order_qty 
+FROM Customer c JOIN OrdersPlaced op 
+ON c.cust_id = op.cust_id GROUP BY c.email;</code>
+        </dd>
+
+
+
+      </dl>
+    </div>
+
+
+
+
     <div class="wrapper"> <!-- one. first. 01  -->
 
       <h1>VeterinaryVisit Table</h1>
