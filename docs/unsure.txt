@@ -9,8 +9,36 @@ each function/method in a program is seen as having a 'contract.' SQL statements
 once you have contracts, the question is how to 'enforce' them. tests or verification? (dijkstra says tests never show absense of bugs, only presence) in imperative lang, test is easy, verification is hard. so tests 'win'. but in sql, what if verification is easier than testing?
 
 
+obviously the SQL query itself imposes constraints on the outcome. also, the table schema imposes constraints on the outcome.  but poq is targeting the additional "imagined or intended" constraints (app-domain relevant, semantic contstraints) that the sql author had in mind, and verifying those.
+
+a specification should be implementation agnostic. modular. and therefore let us swap implementations. this is the same goal (in many cases) as test coverage.
+
+if part of the db is modified, what other parts are affected and "by how much" or "how severely" (or 'does the effect matter?'). this means the possibility of prevention of errors, but also potentially saving time examining every query with a given table-name, when some won't mind the change.
+
+
+------------------------------------------------------------
+
+TODO:  make clear: The purpose of the tool is to prove that certain properties of the SQL statement and its result set will hold true for all states that this database can attain, including past states, present states, and future states.
+
+The query semantics become part of the "theory" that is active in the prover.
+
+Custom axioms represent the rules for evaluating SQL queries.
+
 
 --------------------------------------------------------------
+
+
+----------
+
+The pitfalls described in chapter 2 were all demonstrated using (on average) only about two base tables.  Admittedly, when only two tables participate in a query, manual inspection can indeed be an effective and efficient method for error-checking.  In this chapter, as well, examples are presented using as few tables and as few columns as possible.
+
+relational queries can be much larger (in practice)
+tables can be of much greater arity (in practice)
+DDL is not always kept close at hand while coding (in practice)
+SQL operators often imply an on-the-fly generation of numerous 'virtual tables' while generating the final resultset.
+
+----------
+
 
 
 testing versus proving.
