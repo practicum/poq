@@ -364,12 +364,11 @@ WHERE NOT EXISTS (
     AND sp.p_id = p.p_id ) );</code></td>
 	<!-- proof task -->
 	<td><p class="quadtitle">Proof Task</p>
-<code>axiomatized_query
-  (Supplier,Part,SPJoin,Q_RESULT),
-member  ( (SID),   Q_RESULT ),
-\+member( (SID,_), SPJoin ),
-length(Part,L),
-L@&gt;0.</code></td>
+<code>non_empty_table(Part),
+axiomatized_query(
+  Supplier,Part,SPJoin,Q_RESULT),
+member( (SID), Q_RESULT ),
+\+member( (SID,_), SPJoin ).</code></td>
       </tr>
       <tr>
 	<!-- sql DDL code -->
