@@ -7,6 +7,150 @@
 
 
 
+
+    <div class="wrapper"> <!-- two. second. 02 -->
+
+      <h1>Debugging Example - Duplicate Complaint Output</h1>
+ 
+      <div class="element">
+        <h3>Product</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>p_id</th>
+              <th>name</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>wastebin</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>cabinet</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>bench</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="element">
+        <h3>CustomerComplaint</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>p_id</th>
+              <th>code</th>
+              <th>timestamp</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>3</td>
+              <td>TOO_HEAVY</td>
+              <td>7623</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>ARRIVED_BROKEN</td>
+              <td>7423</td>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>ARRIVED_BROKEN</td>
+              <td>3423</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="element">
+        <h3>InternalEmployeeComplaint</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>p_id</th>
+              <th>code</th>
+              <th>timestamp</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>3</td>
+              <td>TOO_HEAVY</td>
+              <td>5487</td>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>WRONG_LOGO</td>
+              <td>5487</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="element resultset">
+        <h3>Complaints Report</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>name</th>
+              <th>code</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>bench</td>
+              <td>TOO_HEAVY</td>
+            </tr>
+            <tr>
+              <td>cabinet</td>
+              <td>ARRIVED_BROKEN</td>
+            </tr>
+            <tr>
+              <td>wastebin</td>
+              <td>ARRIVED_BROKEN</td>
+            </tr>
+            <tr>
+              <td>wastebin</td>
+              <td>WRONG_LOGO</td>
+            </tr>
+            <tr>
+              <td>bench</td>
+              <td>TOO_HEAVY</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+
+
+
+      <dl>
+        <dt>Complaints Report:</dt>
+        <dd><code>SELECT name, code FROM 
+(
+   SELECT p.name, cc.code, MAX(cc.timestamp) FROM Product p 
+   JOIN CustomerComplaint cc ON p.p_id = cc.p_id 
+   GROUP BY p.name, cc.code 
+UNION 
+   SELECT p.name, iec.code, MAX(iec.timestamp) FROM Product p 
+   JOIN InternalEmployeeComplaint iec ON p.p_id = iec.p_id 
+   GROUP BY p.name, iec.code
+) AS complaints;</code>
+        </dd>
+
+
+
+      </dl>
+    </div>
+
+
+
+
+
+
     <div class="wrapper"> <!-- two. second. 02 -->
 
       <h1>TDD Example - Desired Outcome</h1>
