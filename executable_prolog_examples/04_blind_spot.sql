@@ -1,33 +1,40 @@
+--
+-- https://github.com/practicum/poq
+--
+-- Executable SQL code from example 4 of Chapter 5.
+--
 
 
-CREATE TEMPORARY TABLE Employee
-( dept   INT UNSIGNED NOT NULL,
-  emp    VARCHAR(20)  NOT NULL,
-  salary INT UNSIGNED NOT NULL,
-  PRIMARY KEY (emp));
+CREATE TABLE Employee
+(
+    dept   INT UNSIGNED NOT NULL,
+    emp    VARCHAR(20)  NOT NULL,
+    salary INT UNSIGNED NOT NULL,
 
+    PRIMARY KEY (emp)
+);
 
 
 -- Query A: (good)
 SELECT dept,
-  count(emp),
-  sum( case when salary < 1000
-            then 1
-            else 0 end ) as low_wage
+  COUNT(emp),
+  SUM( CASE WHEN salary < 1000
+            THEN 1
+            ELSE 0 END ) AS low_wage
 FROM Employee GROUP BY dept;
 
 -- Query B: (flawed)
 SELECT dept,
-  count(emp),
-  count(salary) as low_wage_count
+  COUNT(emp),
+  COUNT(salary) AS low_wage_count
 FROM Employee WHERE salary < 1000
 GROUP BY dept;
 
 
 
-insert into Employee values (0,'jacob',850);
+INSERT INTO Employee VALUES (0,'jacob',850);
 
-insert into Employee values (0,'william',850);
+INSERT INTO Employee VALUES (0,'william',850);
 
-insert into Employee values (1,'isabella',4500);
+INSERT INTO Employee VALUES (1,'isabella',4500);
 

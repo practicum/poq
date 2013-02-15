@@ -1,19 +1,24 @@
+--
+-- https://github.com/practicum/poq
+--
+-- Executable SQL code from example 1 of Chapter 5.
+--
 
 
--- 'problematic' definition where middle initial can be null
-CREATE TEMPORARY TABLE Person
+-- problematic definition where middle initial can be NULL
+CREATE TABLE Person
 (
     first  VARCHAR(20) NOT NULL,
     middle VARCHAR(20) NULL,
     last   VARCHAR(20) NOT NULL
 );
 
--- 'repaired' definition where middle initial cannot be null
-create temporary table Person
+-- repaired definition where middle initial cannot be null
+CREATE TABLE Person
 (
-first varchar(20) not null,
-middle varchar(20) not null,
-last varchar(20) not null
+    first  VARCHAR(20) NOT NULL,
+    middle VARCHAR(20) NOT NULL,
+    last   VARCHAR(20) NOT NULL
 );
 
 
