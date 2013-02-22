@@ -19,3 +19,51 @@ reiterate that there there are four inputs: query, ddl, pre, post. so when the p
 
 
 >> particular example brings up the DATE stuff
+
+
+======================================
+4a and 4b
+======================================
+
+
+the spec stayed the same. fixed the query code.
+
+Example 4a is based on the pitfall "" (Figure {} in Chapter 2).  The SQL user has written a query that should provide a per-department summary of the number of low wage earners in each department.
+
+A postcondition has been written to verify that the query does not exclude any department from the result set.  The original postcondition stated in prose is:  "all Employee.dept values must appear in Q_RESULT." In first order logic, De Morgan's laws for quantifiers give us the equivalence "Ax P(x) === -Ex - P(x)", which allows us to restate the postcondition as "there does not exist an Employee.dept value that does not appear in Q_RESULT."  Negating this latter assertion yields "there exists an Employee.dept value that is not included in Q_RESULT," which is shown in Prolog in Figure {} as "".
+
+The proof engine determines that the negated postcondition is satisfiable, and a counterexample is produced.  As the counterexample indicates, the postcondition fails to hold when the Employee table contains a department that does not have any low wage earners.  In the counterexample, department 1 only employs a single high-earning employee, and department 1 is excluded from the result set.
+
+Revising the SQL query code is the best option for achieving successful verification in this case.  Nonetheless, this example provides an opportunity to briefly discuss the lesser-known DDL command CREATE ASSERTION.  Were CREATE ASSERTION available, it would provide a DDL-related way to fix example 4a.
+
+The CREATE ASSERTION command is part of the SQL standard, but it is not required by the standard for conformance to to Core SQL [].  Besides being excluded from Core SQL, CREATE ASSERTION is rarely seen in practice due to the lack of support for this command in popular RDB products.  As defined in the standard, CREATE ASSERTION allows one to specify an arbitrary SQL predicate that must never be violated in the database.  The predicate will be checked each time any SQL statement is run against the database.  Any SQL statement that would cause an assertion violation is undone.
+
+In the case of Example 4a, the following DDL could be used to enforce a database policy disallowing any department from having zero low wage earners:
+
+CREATE ASSERTION each_dept_low_earn CHECK( (SELECT COUNT(DISTINCT dept) FROM Employee) = (SELECT COUNT(DISTINCT dept) FROM Employee WHERE salary < 1000) );
+
+If such DDL statements ever become supported in RDB products, it will be important for POQ to process them.  If the DDL of the database in Example 4a included a CREATE ASSERTION declaration to enforce that all departments in the Employee table will always have at least one low wage earner, then the SQL code in Figure {} would obey its postcondition after all.  It would be incorrect for POQ to output the counterexmple of Figure {} in that case, since the RDB would reject the insertion of row "(1, isabella, 4500)" into Employee in light of the ASSERTION.
+
+Nevertheless, at the time of this writing no major RDB vendor supports CREATE ASSERTION.  Furthermore, it is not difficult to reformulate the SQL query code to meet the specification.  Example 4b follows the query reformulation option.
+
+
+
+
+In Example 4b, the WHERE clause has been removed from the query.  Removal of the WHERE clause ensures that every row from Employee will be considered to produce the final results.  Rows are no longer dropped based on salary.  Since all rows from Employee are now processed, applying the COUNT aggregate function is no longer sufficient to compute a targeted tally of only low wage earners.  Instead, this new query uses the Conditional Summation technique from Tropashko [].  The case expression inside the SUM acts as an ==indicator function==, returning 1 when an Employee row is a member of the low wage earner set and 0 otherwise.  The SQL query code was revised, but the DDL and the postcondition remain the same as in Example 4a.  By reformulating the query code, the verification task succeeds.  The once again demonstrates specification reuse.
+
+
+Example 5 (Figure {}) and Example 6 (Figure {}) both involve correlated subqueries.  As mentioned in Chapter 4, generating FOL axioms from a SELECT statement that contains a correlated subquery cannot be done using the straightforward query-tree approach described earlier in this thesis.  More work is required to equip the POQ system with an automated way to handle correlated subqueries.
+
+The full set of axioms supporting Example 5 and Example 6 are given in Appendix __.  The rationale behind the axioms will be described here in this chapter.  The rationale hinges upon observations specific to each example.  For verification of correlated subqueries to become automated, a generalized approach must be devised.  The necessary transformation techniques certainly do exist in the literature.  In particular, SQL Server researchers have described a number of identity rules that allow correlated subqueries to be rewritten using only the standard operators product, filter, project, union, and difference [],[].  Future work will equip POQ with the capability of performing such transformations.
+
+SQL queries *not* containing correlated subqueries can nearly always be understood as examining one tuple at a time, and examining the tuple in isolation.  By "examining the tuple in isolation," that is to say that certain attributes from within the single tuple are compared amongst themselves (and not against any other tuple or other table).  When an attribute from a single tuple is compared to a literal number or literal string, that is also an example of examining the tuple in isolation, since no other tuples are involved.
+
+For example, in "SELECT * FROM Employee WHERE salary < 1000," each individual tuple in Employee is tested independently to determine if Employee.salary is less than 1000.  The "tuple in isolation" perspective is still valid even in queries with JOIN, such as "SELECT * FROM ShoppingCart sc JOIN CartDetail cd WHERE sc.cart = cd.cart;"  Despite the fact that two base tables are named in the query, "sc.cart = cd.cart" can still be understood as an equality test that examines a single tuple in isolation.  Conceptually, the operation "ShoppingCart sc JOIN CartDetail cd" creates a single virtual table.  Then, the WHERE clause examines each tuple from the virtual table in isolation, comparing one attribute value of the tuple with another attribute value from within the same tuple.
+
+The syntax of correlated subqueries expresses a method of evaluating predicates that cannot be seen as "examining a single tuple in isolation."  Instead, the subquery represents a parameterized anonymous function.  Rather than examine each tuple from some base table strictly in terms of itself, each tuple is passed to the anonymous function, which performs some arbitrarily complex task that can involve any number of other tables.
+
+For example, note that the inner block of the query in Figure {5} cannot be executed on its own.  Trying to execute "SELECT int_b FROM EntityB b WHERE b.int_b = a.int_a" will provoke an error because "a.int_a" cannot be resolved to any known value.  The role of the inner block is that of an anonymous function parameterized to accept some value for "a.int_a."  Conceptually, the query will be performed by taking each row of EntityA and determining the truth value of the WHERE clause after passing each row to the anonymous function.
+
+
+
+
