@@ -277,3 +277,56 @@ sample execution:
 ?- length([student(a,k),student(b,l),student(c,m)],3),length([score(a,sp,bad)],1),length(Z,0),myselect([student(a,k),student(b,l),student(c,m)],[score(a,sp,bad)],Z).
 
 */
+
+
+
+pos_nat_squared(1,1).
+pos_nat_squared(2,4).
+pos_nat_squared(3,9).
+pos_nat_squared(4,16).
+
+pos_nat_squared(X,the_square(X)).
+
+is_one(X) :- pos_nat_squared(X,X).
+
+
+
+mammal(dog).
+mammal(cat).
+mammal(human).
+
+walks_on_2_legs(human).
+walks_on_2_legs(seagull).
+
+homo_sapiens(X) :- mammal(X), walks_on_2_legs(X).
+
+not_homosapiens(X) :- \+ homo_sapiens(X).
+
+
+apple_list(L) :- L = [apple|_].
+
+
+/*
+if you have:
+
+    conseq(X) :- aa(X), bb(X).
+    nonconseq(X) :- \+ conseq(X).
+
+then you cannot reasonably expect to query:
+
+    ?- nonconseq(A).
+*/
+
+
+sweet(jelly).
+
+common_food_pairing(peanut_butter,jelly).
+common_food_pairing(fish,chips).
+common_food_pairing(sour_cream,chives).
+
+common_food_pairing(X,Y) :-
+        common_food_pairing(Y,X).
+
+sweet_and_pairable(Y) :-
+        common_food_pairing(_,Y), sweet(Y).
+
