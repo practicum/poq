@@ -1,0 +1,86 @@
+
+==========================================
+  PROLOG STRENGTHS
+==========================================
+
+
+In the Prolog programming language, every statement is either an implication (e.g. p -> q), a fact (a declaration that p(x) holds), or a goal.  The term rule is also used to refer to the implication statements.  Variables appearing in the implications and facts are taken to be implicitly universally quantified.  Variables appearing in goal statements are taken to be existentially quantified.  Goal statements initiate computation, and computation proceeds by repeatedly applying the resolution inference principle to derive a proof for the goal.  The implications and facts can be seen as axioms of a theory, and executing a Prolog program can been seen as conjecturing a theorem (the goal statement) and attempting to prove this theorem.
+
+Prolog was created in the 1970s by Alain Colmerauer, who at times worked together with Robert Kowalski [].  At the time, Colmerauer was working on logical processing of French language statements, and Kowalski was working on theorem-proving and logic programming.
+
+The mathematical basis supporting Prolog's inference mechanism dates farther back than the 1970s.  A crucial breakthrough for automated theorem-proving comes from the work on John Alan Robinson a decade prior [].  Robinson introduced the resolution principle, which in turn is based on work from the 1920s and 30s by the French logician Jacques Herbrand.  Kowalski developed restricted resolution algorithms such as SL-resolution [] and depth-first SL-resolution (known as SLD-resolution), which ultimately became the mechanism implemented in Prolog.
+
+The influence upon Prolog of the mathematical logic results of Herbrand and Robinson is significant.  The workings of Prolog are not just "loosely informed by" Herbrand's work and Robinsons resolution; rather, the ISO standard for Prolog heavily relies on what it calls a "Herbrand algorithm" for unification and the "resolution algorithm" for attempting to satisfy a goal [iso].  A excellent intermediate-level overview of how unification and resolution are applied in Prolog is given by Sterling Shapiro.  A slightly more rigurous exposition can be found in Lloyd [].
+
+Prolog technology was ultimately chosen for testing the ideas in this thesis because Prolog is stable, standardized, extremely well-documented, actively supported by several communities of Prolog users.  However, Prolog is clearly no longer the state-of-the-art in automated deduction.  A recent review of the state-of-the-art in automated deducation is given by Shankar [].
+
+Early on during the elaboration of this thesis, the use of modern SMT solver tools was attempted.  Modern SMT solver tools are emerging as part of cutting-edge research projects, and the solvers are therefore unstable, under-documented, and often targeted towards narrow problems and benchmarks rather than general-purpose applicability.  Due to time constraints, a trade-off was made in this thesis in favor of decades-old Prolog technology.  This trade-off allowed us to arrive at some tangible results (detailed in Chapter 5), but at the cost of postponing the necessary research into SMT technology that must still take place for future iterations of the SQL verification tool.
+
+
+==========================================
+  PROLOG WEAKNESSES
+==========================================
+
+After choosing Prolog, a careful investigation of Prolog's weak points was undertaken.  Virtually every introduction to Prolog is emphatic in stating that Prolog is principally a programming language and can only be treated as a theorem-prover in a limited sense [],[].  Based on a survey of books and papers written about Prolog, the following list of six theorem-proving obstacles in Prolog was formed.  This is believed to be an exhaustive list of arguments to be made against using Prolog as a sound logical deduction tool.
+
+The purpose of listing these obstacles is to show that each one has specifically been avoided in the Prolog code in the Appendices of this thesis.  Because these obstacles were painstakingly avoided, executing the Prolog code in the Appendices will indeed produce logically sound, valid results.
+
+SECTION: Syntax is Restricted to Horn Clauses
+
+Clause form is a commonly-used normal form for FOL formulas.  Arbitrary FOL formulas can be converted to this normal form, which simplifies subsequent alorithms that consume the formulas.
+
+In clause form, sets of atomic formulas are the only syntactic structure allowed.  The atomic formulas can be positive (non-negated) or negative (negated).  The truth of a set of atomic formulas is the conjunction of the formulas.
+
+Horn clauses obey a further restriction stating that the set of formulas contain at most one positive atomic formula.  What this means for users of Prolog is that all logic must be expressed using only the following three syntactic forms:
+
+    (vector notation, x-bar, is used here to denotes the sequence of all variables used in the formula)
+
+    FORALL x-bar. P(...) <- Q1(...) /\ Q2(...) ... /\ Qn(...)
+
+    FORALL x-bar. P(...) <- T.
+
+    E x-bar. Q1(...) /\ Q2(...) ... /\ Qn(...)
+
+During the formulation of axioms used in this thesis, the Horn clause restriction was not a hindrance.  Furthermore, logic expressed in Horn clauses is no less correct than formulas where disjunction appears.  In other words, this particular limitation of Prolog does not threaten the soundness of any inferences, so we do not dwell on it any further.
+
+
+SECTION: Unsound Unification
+
+In Robinson's development of the resolution principle, one of his key insights was that a unification algorithm can be applied so that resolving a set of non-ground clauses becomes nearly as simple as resolving a set of ground clauses [rob],[lloyd].
+
+In order for unification to form part of a sound inference system, the unification algorithm must include a step known as the occurs check [sterling],[lloyd].  When the occurs check is omitted, proof trees may be derived that do not represent valid logical deductions.
+
+By default, Prolog execution calls upon a unification method that omits the occurs check.  An example of an incorrect outcome due to unsound unification is shown in Figure {}.  In Figure {}, "the_square(X)" (meaning "the square of X, or X^2) should not be outputted as a valid way to satisfy the goal "is_one(X)."  Given the logical statements in the top half of the figure, the only value for which is_one should hold is 1.
+
+Thankfully, ISO Prolog provides a way to override this problematic default behavior.  There is a flag that allows a Prolog user to specify that the occurs check must be applied during every application of the unification algorithm.  As shown in the bottom portion of Figure {}, enabling this option results in the correct behavior, wherein only "X=1" is generated as a satisfying assignment for Ex. is_one(X).
+
+This Prolog obstacle was duly addressed in this thesis by running all code in an execution environment where the occurs_check flag had been enabled.
+
+SECTION: Arithmetic Issues
+
+For multiple reasons, Prolog's support for arithmetic predicates relies on a hybrid approach that uses the computer hardware for efficient arithmetic evaluation, but that sacrifices the full logical expressiveness of predicates involving numeric relationships [sterling].
+
+As illustrated in Figure {}, the consequence of this is that Prolog cannot prove statements such as Ex. 7 = 3 + X and E.x 3 < X.
+
+This obstacle can at times cause frustration, but at no time can it cause Prolog to incorrectly deem conjectures like Ex. 7 = 3 + X to be invalid.  Instead, a runtime exception aborts the proof attempt.  This means that while arithmetic issues might impede our ability to cleanly encode certain logical relationships, it will not cause unsound inferences.  All code in the Appendices executes without runtime exceptions.
+
+SECTION: Negation
+
+Prolog's negation concept is the first obstacle on our list that poses a severe threat to Prolog's utility as a theorem-prover.  Prolog does not technically support actual logical negation.  Instead, it uses an alternative operation called *negation as failure*. The result of this is that for any variable X, it is impossible for Prolog to prove any statement of the form: Ex. -`alpha(x).  What's worse, Prolog actually outputs "provably invalid" (under the negation as failure rule) when asked to prove such statements.
+
+The Prolog expression closest to Ex. -`alpha(x) is any goal statement of the form: \+ some_predicate(X).  It is tempting to read that as "NOT some_predicate(X)," but such a reading is incorrect.  The Prolog symbol "\+" can only be read as "not" when applied to a *ground formula*.  A ground formula is one with no variables, such as "is_even(2)" or "is_mammal(dog)."  If there are variables in the formula, then "\+" does not mean "not."  Instead, with regard to the predicate that "\+" precedes, it means "predicate is not demonstrably satisfiable using the available set of Prolog program statements."
+
+Figure {} helps make this discussion of negation more concrete.  The first goal statement in the figure appears to be asking "does there exist some X such that X is not homo sapiens?"  However, in Prolog the only correct reading of the goal is "is it the case that we cannot satisfy homo_sapiens(X) in this program?"  Sadly, in Prolog there is no way to ask the first question.  Also, there is virtually never any point to asking the second, more awkward question, since asking "can we satisfy homo_sapiens(X)?" is simpler and clearer.
+
+In this thesis, we need to be able to interpret "\+ some_predicate(X)" as having the logical meaning "NOT some_predicate(X)."  As stated above, that is only valid if the formula is ground.  Another way of saying this is that (in Prolog) all variables in the formula must be instantiated before the negated formula becomes the next resolvent formula selected for unification.
+
+
+SECTION: Depth-First Search
+
+SECTION: Meta-Logical and Extra-Logical Features
+
+
+
+In this chapter, an automated-theorem proving technology was chosen.  The soundness of its features has been examined, and weak points have been acknowledged and slated for concerted avoidance.  Now that theorem-proving capabilities have been obtained, the next Chapter explains how they will be harnessed as part of a SQL verification framework.
+
+
