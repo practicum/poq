@@ -30,3 +30,46 @@ Of course, the only reason regression tests have a special name is to indicate t
 One setting in which tests are inarguably proactive is in Test-Driven Development (TDD).  When applying TDD, a developer will not write application code until he/she has deeply considered how the output of the planned new code will look in a variety of circumstances.  Based on these considerations, tests are created that will detect whether or not the final application code matches the expected outcomes.  Also, a small piece of naive "stub" code is created that can be exercised by the test.  The stub code is initially designed to fail.  Once the test and stub are runnable, then an actual implementation is crafted to replace the stub code.  By applying TDD, the developer ensures that every part of the application has one or more tests enforcing the continued proper behavior the code during all future evolutions of the codebase.  Proactive test coverage such as this can be particularly important in applications that must continue to remain reverse-compatible with historically supported input formats or historically supported guarantees of legacy APIs.
 
 Figure ____ will help illustrate how a SQL verification tool could be used in a TDD-like development style.
+
+
+
+
+
+
+======================================
+
+Figure {} illustrates a sample reporting task that is common in databases for customer purchase histories.  The database contains base tables for customer records and for linking customers to purchases.  The reporting task can be summarized as "produce one summary row per customer to tally the total count of orders ever placed by that customer."
+
+In order to implement the report using a TDD methodology, the developer will consider future outcomes before writing code.  In this case, the developer will visualize what the proper output of the report will look like.  Figure {} shows a visualization, but the figure also includes sample SQL code.  At early stages in a TDD approach to this task, the visualized output would exist, but the code would not.
+
+Using the feature requirements and a tentative idea of future outcomes, the developer will then devise a test that must necessarily be passed by any proposed implementation of the feature.  In the case of the present example, one such test would ensure that the row count of the output matches the row count of the Customer table.  Testing whether the two row counts are equal can be accomplished using __(assertion formula)____(what we last called the tool)______.
+
+To keep this example simple, we will assume that each customer in the table has at least one ____.  This way, we know that no customers will be excluded ....  By eliminating the possiblity ______, we focus on other errors, such as ____.
+
+Once the test has been devised, the next step is to create a very simple stub implementation to demonstrate that the chosen test framework is operational.  The stub implementation intentionally seeks to provoke a "fail" result from the test.  The goal of this step is to establish that the test is runnable and to demonstrate that the test indeed detects a problem when an implementation is flawed.  One sample stub implementation is shown in figure {}.  The stub is adequate for provoking test failure, because the output contains a larger row count than the Customer base table.
+
+The final task for the developer in this example is to write a proper implementation that faithfully adheres to the original requirements.  Once the proper code has been written, a "success" result should be obtained by re-running the test.  After completing this final step, both the implmentation and the test are saved as important pieces of the application's codebase.  
+
+Henceforth, any time the codebase undergoes new revisions, all the tests in the codebase are re-run.  In this way, a team gains confidence that working features are not accidentally broken by future changes.
+
+Depending on the schema definition of the Customer table, the query shown in Figure {} may or may not be a correct implementation of the "Orders Per Customer" report.  If the Customer.email column is declared with a NOT NULL UNIQUE constraint, then indeed the query is correct.  (Recall, also, the simplifying assumption that each customer is guaranteed to have one or more orders.)
+
+The fact that a query's correctness can depend on the underlying database schema raises two key points.  One is that the automated verification system will need to have access to the schema definitions.  The other point is that in the running TDD example, the schema definitions must also be tracked as essential parts of the codebase alongside the query code and the tests.
+
+So far in this discussion of TDD, one could cynically conclude that TDD simply adds extra effort while still ultimately producing the same query that could have been written without TDD.  The payoff for the extra effort is about to become clear.
+
+Assume that Customer.email is indeed constrained as NOT NULL UNIQUE.  Further assume that TDD was followed and that the SQL implementation of Figure {} passed the test.  The test, the query, and the schema definitions became part of the codebase.
+
+Now imagine that a year has gone by, and the development team hardly remembers implementing the Orders Per Customer report.  Perhaps the developer who authored the query is no longer even employed at the company.  Now the development team is working on a new change to the system that involes altering the definition of the Customer table.  Management now requires that two or more customer id numbers be allowed to use the same email address.  The Customer.email column will no longer be marked as UNIQUE.  Without testing, this new situation would lead to errors such as the one shown in Figure {}.  The report in Figure {} indicates that there is one customer with the email address "c@abc.com" that is responsible for three orders.  The report is flawed.
+
+The user of tool-supported TDD as described in this section can prevent application bugs like the one in Figure {}.  In the running example, the chosen test was [ assertion ].  The schema definitions are part of the codebase, and whever the codebase changes, the tests are re-run.  When the Customer schema is changed to remove UNIQUE from the email column, the TDD test designed for the Orders Per Customer report will fail.  The failed test will alert the developers so that they avoid accidentally breaking the report.
+
+The ability to prevent flaws like that of Figure {} is the single most important benefit offered by a SQL verification tool.  Without a tool that considers the user's expectations about a query's outcome, the bug shown in Figure {} is virtually impossible to detect.  The code in Figure {} is syntactically correct and runs without any runtime error.
+
+Therefore, without automated test support to detect the undesirable behavior change, the Orders Per Customer report would *silently* *break* following a DDL revision to remove UNIQUE from the email column.
+
+The phrase *silently break* is used to indicate that the report executes without any hint of a problem, yet its output may contain erroneous data.  Worst of all, any erroneous data will be impossible to detect when viewing only the report output in isolation.
+
+The prospect of introducting these silent flaws into an application is frightful to many developers.  For many development teams, the preferred approach for addressing the issue is simply to avoid changing the database at all costs [?? refactoring?].  Avoidance of schema changes leads to its own set of problems, as developers must cope with a database that becomes less and less suited to support the evolving application over time [?].
+
+There is great value in any tool that can empower teams to update their database schemas without the fear of silent breakages.  This is a key motivating factor of this thesis.
